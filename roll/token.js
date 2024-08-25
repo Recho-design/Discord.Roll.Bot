@@ -27,20 +27,20 @@ const prefixs = function () {
 }
 const getHelpMessage = function () {
     return `【製作Token】.token
-用來製作跑團Token的功能
+用來製作跑团Token的功能
 可以自定两行名字和圖片內容
 
-分別有两種製作外框樣式
+分別有两种製作外框樣式
 1. .token 为方形(相片型)
 2. .token2 为透底圓形
 3. .token3 为透底圓形，外框为根據你的Discord名字或输入名字決定的顏色
 
 使用方法:
-reply一个有圖片的訊息 或傳送一張圖片時，输入.token 
-就可以產生一个token圖片
-如果沒有指定圖片，則自動使用你的頭像 作为token
+reply一个有圖片的訊息 或傳送一张圖片时，输入.token 
+就可以产生一个token圖片
+如果没有指定圖片，则自动使用你的头像 作为token
 
-同時可以输入两行內容，作为圖片上的文字
+同时可以输入两行內容，作为圖片上的文字
 如.token 
 Sad
 HKTRPG
@@ -93,7 +93,7 @@ const circleTokernMaker = async (discordMessage, inputStr, mainMsg, discordClien
         const text = await getName(discordMessage, inputStr, mainMsg)
         const avatar = await getAvatar(discordMessage, discordClient)
         if (!avatar) {
-            rply.text = `沒有找到reply 的圖示, 請再次檢查 \n\n${getHelpMessage()}`;
+            rply.text = `没有找到reply 的圖示, 请再次检查 \n\n${getHelpMessage()}`;
             return rply;
         }
         const response = await getImage(avatar);
@@ -106,7 +106,7 @@ const circleTokernMaker = async (discordMessage, inputStr, mainMsg, discordClien
         const circleToken = await maskImage(token, './assets/token/tokenCircleMask.png');
         let newImage = await addTextOnImage2(circleToken, text.text, text.secondLine, name)
         if (!newImage) {
-            rply.text = `製作失敗，可能出現某些錯誤。 \n\n${getHelpMessage()}`
+            rply.text = `製作失败，可能出现某些错误。 \n\n${getHelpMessage()}`
             return rply;
         }
 
@@ -123,7 +123,7 @@ const circleTokernMaker3 = async (discordMessage, inputStr, mainMsg, discordClie
         const text = await getName(discordMessage, inputStr, mainMsg)
         const avatar = await getAvatar(discordMessage, discordClient)
         if (!avatar) {
-            rply.text = `沒有找到reply 的圖示, 請再次檢查 \n\n${getHelpMessage()}`;
+            rply.text = `没有找到reply 的圖示, 请再次检查 \n\n${getHelpMessage()}`;
             return rply;
         }
         const response = await getImage(avatar);
@@ -153,7 +153,7 @@ const circleTokernMaker3 = async (discordMessage, inputStr, mainMsg, discordClie
             .toBuffer()
         let newImage = await addTextOnImage2(circleToken2, text.text, text.secondLine, name)
         if (!newImage) {
-            rply.text = `製作失敗，可能出現某些錯誤。 \n\n${getHelpMessage()}`
+            rply.text = `製作失败，可能出现某些错误。 \n\n${getHelpMessage()}`
             return rply;
         }
         rply.sendImage = `./temp/finally_${name}`;
@@ -178,7 +178,7 @@ const polaroidTokernMaker = async (discordMessage, inputStr, mainMsg, discordCli
         const text = await getName(discordMessage, inputStr, mainMsg)
         const avatar = await getAvatar(discordMessage, discordClient)
         if (!avatar) {
-            rply.text = `沒有找到reply 的圖示, 請再次檢查 \n\n${getHelpMessage()}`;
+            rply.text = `没有找到reply 的圖示, 请再次检查 \n\n${getHelpMessage()}`;
             return rply;
         }
 
@@ -192,7 +192,7 @@ const polaroidTokernMaker = async (discordMessage, inputStr, mainMsg, discordCli
 
         let newImage = await addTextOnImage(token, text.text, text.secondLine, name)
         if (!newImage) {
-            rply.text = `製作失敗，可能出現某些錯誤。 \n\n${getHelpMessage()}`;
+            rply.text = `製作失败，可能出现某些错误。 \n\n${getHelpMessage()}`;
             return rply;
         }
         rply.sendImage = `./temp/finally_${name}`;

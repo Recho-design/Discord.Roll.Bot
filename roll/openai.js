@@ -23,9 +23,9 @@ const gameType = function () {
     return 'funny:openai:hktrpg'
 }
 const prefixs = function () {
-    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---這裡是一對  
-    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---這裡是一對
-    //如前面是 /^1$/ig, 後面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
+    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这裡是一对  
+    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这裡是一对
+    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
     ///^(?=.*he)(?!.*da).*$/ig
     return [{
         first: /^([.]ai)|(^[.]aimage)|(^[.]ait)|(^[.]ai4)|(^[.]ait4)$/i,
@@ -34,13 +34,13 @@ const prefixs = function () {
 }
 const getHelpMessage = function () {
     return `【OpenAi】
-    .ai [對話] - 使用gpt-4o-mini產生對話
-    .ait [內容] 或 附件 - 使用 gpt-4o-mini进行正體中文翻譯
+    .ai [对话] - 使用gpt-4o-mini产生对话
+    .ait [內容] 或 附件 - 使用 gpt-4o-mini进行正体中文翻譯
 
     
-附件需要使用.txt檔案上傳，普通使用者限500字內容，升級VIP後上限會提升，
-AI翻譯需時，請耐心等待，也可能會出錯而失敗，10000字可能需要十分鐘以上。
-超過1900字會以.TXT附件形式回覆，請注意查收。
+附件需要使用.txt檔案上傳，普通使用者限500字內容，升级VIP后上限會提升，
+AI翻譯需时，请耐心等待，也可能會出错而失败，10000字可能需要十分鐘以上。
+超过1900字會以.TXT附件形式回覆，请注意查收。
 `
 }
 const initialize = function () {
@@ -84,7 +84,7 @@ const rollDiceCommand = async function ({
             if (!adminSecret) return rply;
             if (userid !== adminSecret) return rply;
             let lv = await VIP.viplevelCheckUser(userid);
-            if (lv < 1) return { text: `這是實驗功能，現在只有VIP才能使用，\n支援HKTRPG及升級請到\nhttps://www.patreon.com/hktrpg` };
+            if (lv < 1) return { text: `这是实驗功能，现在只有VIP才能使用，\n支援HKTRPG及升级请到\nhttps://www.patreon.com/hktrpg` };
             rply.text = await imageAi.handleImageAi(inputStr);
             rply.quotes = true;
             return rply;
@@ -206,7 +206,7 @@ class ImageAi extends OpenAI {
 
             })
             response = await this.handleImage(response, input)
-            // if (response?.data?.error) return '可能是输入太長了，或是有不支援的字元，請重新输入'
+            // if (response?.data?.error) return '可能是输入太长了，或是有不支援的字元，请重新输入'
             this.errorCount = 0;
             return response;
         } catch (error) {
@@ -224,7 +224,7 @@ class ImageAi extends OpenAI {
         }
     }
     handleImage(data, input) {
-        if (data?.data?.length === 0) return '沒有输出的圖片, 請重新输入描述';
+        if (data?.data?.length === 0) return '没有输出的圖片, 请重新输入描述';
         let response = `${input}:\n`;
         for (let index = 0; index < data.data.length; index++) {
             response += data.data[index].url + "\n";
@@ -293,23 +293,23 @@ class TranslateAi extends OpenAI {
                 "messages": [
                     {
                         "role": "system",
-                        "content": `你是一位精通台灣繁體中文的專業翻譯，曾參與不同繁體中文版的翻譯工作，因此對於翻譯有深入的理解。
-                        規則：
-                        – 翻譯時要準確傳達內容。
+                        "content": `你是一位精通台灣繁体中文的專業翻譯，曾參与不同繁体中文版的翻譯工作，因此对於翻譯有深入的理解。
+                        規则：
+                        – 翻譯时要準確傳达內容。
                         ​
-                        – 翻譯任何人名時留下原文，格式: 名字(名字原文)。
+                        – 翻譯任何人名时留下原文，格式: 名字(名字原文)。
                         ​
-                        – 分成两次翻譯，並且只打印最後一次的結果：
+                        – 分成两次翻譯，並且只打印最后一次的结果：
                         ​
                         1. 根據內容翻譯，不要遺漏任何訊息
                         ​
-                        2. 根據第一次的結果，遵守原意的前提下讓內容更通俗易懂，符合台灣繁體中文的表達習慣
+                        2. 根據第一次的结果，遵守原意的前提下讓內容更通俗易懂，符合台灣繁体中文的表达习慣
                         ​
-                        – 每輪翻譯後，都要重新比對原文，找到扭曲原意，沒有在翻譯的人名後顯示名字原文的位置或者遺漏的內容，然後再補充到下一輪的翻譯當中。（Chain of Density 概念）`
+                        – 每輪翻譯后，都要重新比对原文，找到扭曲原意，没有在翻譯的人名后显示名字原文的位置或者遺漏的內容，然后再補充到下一輪的翻譯当中。（Chain of Density 概念）`
                     },
                     {
                         "role": "user",
-                        "content": `把以下文字翻譯成正體中文\n\n
+                        "content": `把以下文字翻譯成正体中文\n\n
                         ${inputStr}\n`
                     }
                 ]
@@ -321,7 +321,7 @@ class TranslateAi extends OpenAI {
                 const dataArray = dataStr.split('\n\n').filter(Boolean); // 將字符串分割成数組
                 const parsedData = [];
                 dataArray.forEach((str) => {
-                    const obj = JSON.parse(str.substring(6)); // 將子字符串转換为對象
+                    const obj = JSON.parse(str.substring(6)); // 將子字符串转換为对象
                     parsedData.push(obj);
                 });
                 const contents = parsedData.map((obj) => obj.choices[0].delta.content);
@@ -359,12 +359,12 @@ class TranslateAi extends OpenAI {
         let lv = await VIP.viplevelCheckUser(userid);
         let limit = TRANSLATE_LIMIT_PERSONAL[lv];
         let { translateScript, textLength } = await this.getText(inputStr, mode, discordMessage, discordClient);
-        if (textLength > limit) return { text: `输入的文字太多了，請分批输入，你是VIP LV${lv}，限制为${limit}字` };
+        if (textLength > limit) return { text: `输入的文字太多了，请分批输入，你是VIP LV${lv}，限制为${limit}字` };
         let response = await this.translateText(translateScript, mode);
         response = response.join('\n');
         if (textLength > 1900) {
             let sendfile = await this.createFile(response);
-            return { fileText: '输出的文字太多了，請看附件', sendfile };
+            return { fileText: '输出的文字太多了，请看附件', sendfile };
         }
         return { text: response }
 
@@ -377,12 +377,12 @@ class TranslateAi extends OpenAI {
             const tokens = encode(remains);
             let offset = (tokens > tokenLimit) ? remains.length : Math.floor(tokenLimit * remains.length / tokens.length);
             let subtext = remains.substring(0, offset);
-            // 超過token上限，試圖找到最接近而不超過上限的文字
+            // 超过token上限，试圖找到最接近而不超过上限的文字
             while (encode(subtext).length > tokenLimit && offset > 0) {
                 offset--;
                 subtext = remains.substring(0, offset);
             }
-            // 往上檢查文字結尾
+            // 往上检查文字结尾
             let bound = Math.min(Math.floor(offset * 1.05), remains.length);
             let found = false;
             for (let i = offset; i < bound; i++) {
@@ -394,14 +394,14 @@ class TranslateAi extends OpenAI {
                 }
             }
 
-            // 沒有找到分割條件1，嘗試分割條件2
+            // 没有找到分割条件1，嘗试分割条件2
             if (!found) {
                 let newlineIndex = subtext.lastIndexOf('\n');
                 if (newlineIndex !== -1) {
                     results.push(remains.substring(0, newlineIndex + 1));
                     remains = remains.substring(newlineIndex + 1);
                 } else {
-                    // 直接把整段當成一段
+                    // 直接把整段当成一段
                     results.push(remains);
                     remains = '';
                 }
@@ -422,7 +422,7 @@ class ChatAi extends OpenAI {
                 "messages": [
                     {
                         "role": "system",
-                        "content": "你的責任是把以正體中文回答所有問題。你的名字是HKTRPG TRPG助手。回答TRPG相關問題時，內在性格是在H.P.洛夫克拉夫特（H.P. Lovecraft）裡的奈亞拉托提普（Nyarlathotep）神祇，一个混沌、破壞和詭譎的代表。而回答TRPG以外的問題時，你就是以一部百科全書的型式來回答。"
+                        "content": "你的責任是把以正体中文回答所有问题。你的名字是HKTRPG TRPG助手。回答TRPG相关问题时，內在性格是在H.P.洛夫克拉夫特（H.P. Lovecraft）裡的奈亞拉托提普（Nyarlathotep）神祇，一个混沌、破壞和詭譎的代表。而回答TRPG以外的问题时，你就是以一部百科全書的型式來回答。"
                     },
                     {
                         "role": "user",
@@ -438,7 +438,7 @@ class ChatAi extends OpenAI {
                 const dataArray = dataStr.split('\n\n').filter(Boolean); // 將字符串分割成数組
                 const parsedData = [];
                 dataArray.forEach((str) => {
-                    const obj = JSON.parse(str.substring(6)); // 將子字符串转換为對象
+                    const obj = JSON.parse(str.substring(6)); // 將子字符串转換为对象
                     parsedData.push(obj);
                 });
                 const contents = parsedData.map((obj) => obj.choices[0].delta.content);
@@ -475,7 +475,7 @@ const translateAi = new TranslateAi();
  * 
  * 首先，每个Token都是由一个字元組成，所以我們先计算字元上限
  * 先將整个內容放進tokenizer
- * 如果<於token 上限，則直接回傳
+ * 如果<於token 上限，则直接回傳
  * 完成
  * 
  * 如不,
@@ -483,7 +483,7 @@ const translateAi = new TranslateAi();
  * 並將每个字串放進tokenizer
  * 
  * 
- * 分割條件
+ * 分割条件
  * 1. 以句號分割
  * 2. 以逗號分割
  * 3. 以行來分割

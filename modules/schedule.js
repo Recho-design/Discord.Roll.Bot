@@ -33,12 +33,12 @@ agenda.on("fail", (err, job) => {
     console.error(`#33 Job failed with error: ${err.message}`);
 });
 /**
- * 對schedule 中發佈的文字进行處理
+ * 对schedule 中发佈的文字进行處理
  *
  * 先掷骰一次
  *
- * 有沒有結果，也把內容进行REPLACE
- * 支援{}類置換，
+ * 有没有结果，也把內容进行REPLACE
+ * 支援{}类置換，
  * 
  */
 

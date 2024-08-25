@@ -5,16 +5,16 @@ if (!process.env.DISCORD_CHANNEL_SECRET) {
 const variables = {};
 const { SlashCommandBuilder } = require('discord.js');
 const gameName = function () {
-    return '【要求掷骰/點擊功能】'
+    return '【要求掷骰/点擊功能】'
 }
 
 const gameType = function () {
     return 'funny:request:hktrpg'
 }
 const prefixs = function () {
-    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---這裡是一對  
-    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---這裡是一對
-    //如前面是 /^1$/ig, 後面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
+    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这裡是一对  
+    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这裡是一对
+    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
     ///^(?=.*he)(?!.*da).*$/ig
     return [{
         first: /^\.re$/i,
@@ -22,10 +22,10 @@ const prefixs = function () {
     }]
 }
 const getHelpMessage = function () {
-    return `【要求掷骰/點擊功能】
+    return `【要求掷骰/点擊功能】
     Discord 專用功能
-    .re 要求掷骰/點擊功能
-    範例 .re 1d100 哈哈, 1d3 SC成功, 1d10 SC失敗, 簽到`
+    .re 要求掷骰/点擊功能
+    範例 .re 1d100 哈哈, 1d3 SC成功, 1d10 SC失败, 签到`
 }
 const initialize = function () {
     return variables;
@@ -78,7 +78,7 @@ const discordCommand = [
     {
         data: new SlashCommandBuilder()
             .setName('re')
-            .setDescription('要求掷骰/點擊功能')
+            .setDescription('要求掷骰/点擊功能')
             .addStringOption(option => option.setName('text1').setDescription('输入第一个掷骰內容').setRequired(true))
             .addStringOption(option => option.setName('text2').setDescription('输入第二个掷骰內容'))
             .addStringOption(option => option.setName('text3').setDescription('输入第三个掷骰內容'))

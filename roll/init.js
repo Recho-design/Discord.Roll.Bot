@@ -22,19 +22,19 @@ const prefixs = function () {
 }
 const getHelpMessage = async function () {
     return `【先攻表功能】 .in (remove clear reroll) .init
-這是讓你快速自定義先攻表的功能
-它可以儲存你的掷骰方法，然後直接重新投掷，而不需要再输入。
+这是讓你快速自定義先攻表的功能
+它可以儲存你的掷骰方法，然后直接重新投掷，而不需要再输入。
 .in (掷骰或数字) (名字)  - 樣式
 .in 1d20+3 (名字)  
-.in 1d3 (如沒有输入, 會用聊天軟件中的名字)
+.in 1d3 (如没有输入, 會用聊天軟件中的名字)
 .in 80          - 直接取代先攻值
 .in -3+6*3/2.1  - 加減
 ------------
 .in remove (名字) - 移除該角色
-.in reroll - 根據算式重擲先攻表
+.in reroll - 根據算式重掷先攻表
 .in clear  - 清除整个先攻表
-.init      - 顯示先攻表，由大到小
-.initn     - 顯示先攻表，由小到大
+.init      - 显示先攻表，由大到小
+.initn     - 显示先攻表，由小到大
 `
 }
 const initialize = function () {
@@ -63,11 +63,11 @@ const rollDiceCommand = async function ({
         rply.text = await this.getHelpMessage();
         rply.quotes = true;
         if (botname == "Line")
-            rply.text += "\n因为Line的機制, 如掷骰時並無顯示用家名字, 請到下列網址,和機器人任意說一句話,成为好友. \n https://line.me/R/ti/p/svMLqy9Mik"
+            rply.text += "\n因为Line的机制, 如掷骰时並无显示用家名字, 请到下列網址,和机器人任意说一句话,成为好友. \n https://line.me/R/ti/p/svMLqy9Mik"
         return rply;
     }
     if (!groupid && mainMsg[1]) {
-        rply.text = "這是群組功能，請於群組使用。"
+        rply.text = "这是群組功能，请於群組使用。"
         return rply;
     }
     switch (true) {
@@ -91,14 +91,14 @@ const rollDiceCommand = async function ({
             temp = await schema.init.deleteOne({
                 "groupID": channelid || groupid
             })
-            rply.text = (temp) ? '已移除這群組的先攻值' : '找不到這群組的先攻表';
+            rply.text = (temp) ? '已移除这群組的先攻值' : '找不到这群組的先攻表';
             return rply;
         case /(^[.]in$)/i.test(mainMsg[0]) && /^reroll$/i.test(mainMsg[1]):
             temp = await schema.init.findOne({
                 "groupID": channelid || groupid
             });
             if (!temp) {
-                rply.text = "找不到先攻表, 如有疑問, 可以输入.init help 觀看說明"
+                rply.text = "找不到先攻表, 如有疑问, 可以输入.init help 观看说明"
                 return rply;
             }
             for (let i = 0; i < temp.list.length; i++) {
@@ -107,7 +107,7 @@ const rollDiceCommand = async function ({
             try {
                 await temp.save();
             } catch (error) {
-                rply.text = "先攻表更新失敗，\n" + error;
+                rply.text = "先攻表更新失败，\n" + error;
                 return rply;
             }
             rply.text = await showInit(temp)
@@ -117,7 +117,7 @@ const rollDiceCommand = async function ({
                 "groupID": channelid || groupid
             });
             if (!temp) {
-                rply.text = "找不到先攻表, 如有疑問, 可以输入.init help 觀看說明"
+                rply.text = "找不到先攻表, 如有疑问, 可以输入.init help 观看说明"
                 return rply;
             }
             objIndex = temp.list.findIndex((obj => obj.name.toLowerCase() == name.toLowerCase()));
@@ -129,11 +129,11 @@ const rollDiceCommand = async function ({
             try {
                 await temp.save();
             } catch (error) {
-                rply.text = "先攻表更新失敗，\n" + error;
+                rply.text = "先攻表更新失败，\n" + error;
                 return rply;
             }
-            rply.text = temp.list[objIndex].name + '已經 ' + mainMsg[1] + ' 先攻值'
-            rply.text += '\n現在的先攻值:  ' + temp.list[objIndex].result;
+            rply.text = temp.list[objIndex].name + '已经 ' + mainMsg[1] + ' 先攻值'
+            rply.text += '\n现在的先攻值:  ' + temp.list[objIndex].result;
             return rply;
         case /(^[.]in$)/i.test(mainMsg[0]) && /^\w+/i.test(mainMsg[1]):
             result = await countInit(mainMsg[1]);
@@ -153,7 +153,7 @@ const rollDiceCommand = async function ({
                 try {
                     await temp.save();
                 } catch (error) {
-                    rply.text = "先攻表更新失敗，\n" + error;
+                    rply.text = "先攻表更新失败，\n" + error;
                     console.error('init #154 mongoDB error: ', error.name, error.reson)
                     return rply;
                 }
@@ -169,7 +169,7 @@ const rollDiceCommand = async function ({
             try {
                 await temp.save();
             } catch (error) {
-                rply.text = "先攻表更新失敗，\n" + error;
+                rply.text = "先攻表更新失败，\n" + error;
                 return rply;
             }
             rply.text = temp.list[objIndex].name + ' 的先攻值是 ' + Number(result);
@@ -180,7 +180,7 @@ const rollDiceCommand = async function ({
                 "groupID": channelid || groupid
             });
             if (!temp) {
-                rply.text = "找不到先攻表, 如有疑問, 可以输入.init help 觀看說明"
+                rply.text = "找不到先攻表, 如有疑问, 可以输入.init help 观看说明"
                 return rply;
             }
             rply.text = await showInit(temp)
@@ -190,7 +190,7 @@ const rollDiceCommand = async function ({
                 "groupID": channelid || groupid
             });
             if (!temp) {
-                rply.text = "找不到先攻表, 如有疑問, 可以输入.init help 觀看說明"
+                rply.text = "找不到先攻表, 如有疑问, 可以输入.init help 观看说明"
                 return rply;
             }
             rply.text = await showInitn(temp)

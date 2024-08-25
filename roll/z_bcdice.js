@@ -17,9 +17,9 @@ const gameType = function () {
     return 'Dice:bcdice:hktrpg'
 }
 const prefixs = function () {
-    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---這裡是一對  
-    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---這裡是一對
-    //如前面是 /^1$/ig, 後面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
+    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这裡是一对  
+    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这裡是一对
+    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
     ///^(?=.*he)(?!.*da).*$/ig
     return [{
         first: /^\.bc$|^\.al$|^\.kk$|^\.mk$|^\.ss$|^\.sg$|^\.UK$|^\.dx$|^\.nc$|^\.sw$/i,
@@ -28,15 +28,15 @@ const prefixs = function () {
 }
 const getHelpMessage = function () {
     return `【BcDice】日系掷骰
-這是讓你可以使用Bcdice 那100種掷骰系統的功能
+这是讓你可以使用Bcdice 那100种掷骰系統的功能
 
 使用方法
 首先，先在BCDICE官方的骰表ID中找出你所想的系統
-然後输入.bc use (ID) 进行登記
-現在，你可以以.bc (骰子指令)來进行掷骰了。 
-想看骰子說明可输入.bc dicehelp
+然后输入.bc use (ID) 进行登記
+现在，你可以以.bc (骰子指令)來进行掷骰了。 
+想看骰子说明可输入.bc dicehelp
 
-注: 登記需要Admin或頻道管理權限
+注: 登記需要Admin或频道管理權限
 
 https://bcdice.org/systems/
 `
@@ -92,7 +92,7 @@ const rollDiceCommand = async function ({
                 rply.text = await callHelp(doc.trpgId) || '';
                 return rply;
             } else {
-                rply.text = `沒有已設定的骰表ID\n\n請输入ID，ID可以在下列網站找到\nhttps://bcdice.org/systems/ \n\n使用例子: .bc use CthulhuTech`;
+                rply.text = `没有已設定的骰表ID\n\n请输入ID，ID可以在下列網站找到\nhttps://bcdice.org/systems/ \n\n使用例子: .bc use CthulhuTech`;
                 rply.quotes = true;
                 return rply;
             }
@@ -107,20 +107,20 @@ const rollDiceCommand = async function ({
                 return rply;
             }
             if (!mainMsg[2]) {
-                rply.text = `請输入ID，ID可以在下列網站找到\nhttps://bcdice.org/systems/\n\n使用例子: .bc use CthulhuTech`
+                rply.text = `请输入ID，ID可以在下列網站找到\nhttps://bcdice.org/systems/\n\n使用例子: .bc use CthulhuTech`
                 return rply;
             }
             let help = await callHelp(mainMsg[2]);
             if (!help) {
-                rply.text = `此骰表ID沒有回應，請檢查是不是正確\nhttps://bcdice.org/systems/\n\n使用例子: .bc use CthulhuTech`
+                rply.text = `此骰表ID没有回應，请检查是不是正確\nhttps://bcdice.org/systems/\n\n使用例子: .bc use CthulhuTech`
                 return rply;
             }
             let doc = await schema.bcdiceRegedit.findOneAndUpdate(filter, { trpgId: mainMsg[2] }, { upsert: true, returnDocument: 'after', returnNewDocument: true }).catch(err => null)
-            if (doc) rply.text = `已更新BcDice，現在此頻道正在使用 ${doc.trpgId}
+            if (doc) rply.text = `已更新BcDice，现在此频道正在使用 ${doc.trpgId}
 
-            使用說明: \n${help}
+            使用说明: \n${help}
             `
-            else rply.text = `登記失敗，請以後再嘗試`
+            else rply.text = `登記失败，请以后再嘗试`
             return rply;
         }
         case /^delete+$/i.test(mainMsg[1]): {
@@ -134,7 +134,7 @@ const rollDiceCommand = async function ({
 
             let doc = await schema.bcdiceRegedit.findOneAndDelete(filter, { returnDocument: true }).catch(err => console.error(err))
             if (doc) rply.text = `已刪除BcDice的設定`
-            else rply.text = `刪除失敗，請以後再嘗試`
+            else rply.text = `刪除失败，请以后再嘗试`
             return rply;
         }
         case /^\S/.test(mainMsg[1] || ''): {
@@ -144,19 +144,19 @@ const rollDiceCommand = async function ({
                 return rply;
             }
             else {
-                rply.text = '沒有已設定的BcDice 骰表ID\n請查找骰表ID 並输入 .bc use (id)\nhttps://bcdice.org/systems/'
+                rply.text = '没有已設定的BcDice 骰表ID\n请查找骰表ID 並输入 .bc use (id)\nhttps://bcdice.org/systems/'
                 return rply;
             }
         }
         default: {
-            rply.text = `這骰組已經整合成BcDice
+            rply.text = `这骰組已经整合成BcDice
 使用方法
 首先，先在BcDice官方的骰表ID中找出你所想的系統
-然後输入.bc use (ID) 进行登記
-現在，你可以以.bc (骰子指令)來进行掷骰了。 
-想看骰子說明可输入.bc dicehelp
+然后输入.bc use (ID) 进行登記
+现在，你可以以.bc (骰子指令)來进行掷骰了。 
+想看骰子说明可输入.bc dicehelp
 
-注: 登記需要Admin或頻道管理權限
+注: 登記需要Admin或频道管理權限
 
 https://bcdice.org/systems/
 `
@@ -180,16 +180,16 @@ const discordCommand = [
     {
         data: new SlashCommandBuilder()
             .setName('bcdice設定')
-            .setDescription('进行bcdice的設定(說明/登記/刪除)')
+            .setDescription('进行bcdice的設定(说明/登記/刪除)')
             .addStringOption(option =>
                 option.setName('指令')
                     .setDescription('进行bcdice的設定')
                     .setRequired(true)
-                    .addChoices({ name: '顯示使用說明', value: 'help' },
-                        { name: '顯示BcDice骰組使用說明(登記後可使用)', value: 'dicehelp' },
+                    .addChoices({ name: '显示使用说明', value: 'help' },
+                        { name: '显示BcDice骰組使用说明(登記后可使用)', value: 'dicehelp' },
                         { name: '登記使用的骰表ID', value: 'use' },
                         { name: '移除使用的骰表ID', value: 'delete' }))
-            .addStringOption(option => option.setName('usetext').setDescription('如登記，請在這裡填寫ID').setRequired(false))
+            .addStringOption(option => option.setName('usetext').setDescription('如登記，请在这裡填寫ID').setRequired(false))
         ,
         async execute(interaction) {
             const useText = interaction.options.getString('usetext') || '';

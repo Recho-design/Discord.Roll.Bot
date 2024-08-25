@@ -1,6 +1,6 @@
 if (!process.env.mongoURL) return;
 const oneMinuts = (process.env.DEBUG) ? 1 : 60000;
-//60000 一分鐘多久可以升級及增加經驗
+//60000 一分鐘多久可以升级及增加经驗
 const checkMongodb = require('./dbWatchdog.js');
 exports.rollbase = require('../roll/rollbase');
 const THIRTY_MINUTES = (process.env.DEBUG) ? 1 : 60000 * 30;
@@ -54,7 +54,7 @@ async function EXPUP(groupid, userid, displayname, displaynameDiscord, membercou
                 SwitchV2: gpInfo.SwitchV2
             })
     }
-    //1. 檢查GROUP ID 有沒有開啓CONFIG 功能 1
+    //1. 检查GROUP ID 有没有开启CONFIG 功能 1
     if (!gpInfo || !gpInfo.SwitchV2) return;
     if (!checkMongodb.isDbOnline()) return;
     let userInfo = await schema.trpgLevelSystemMember.findOne({
@@ -69,11 +69,11 @@ async function EXPUP(groupid, userid, displayname, displaynameDiscord, membercou
         await newUser(gpInfo, groupid, userid, displayname, displaynameDiscord, tgDisplayname);
         return;
     }
-    userInfo.name = tgDisplayname || displaynameDiscord || displayname || '無名';
+    userInfo.name = tgDisplayname || displaynameDiscord || displayname || '无名';
     (userInfo.decreaseEXPTimes > 0) ? reply.statue += "🧟‍♂️🧟‍♀️" : null;
     (userInfo.multiEXPTimes > 0) ? reply.statue += "🧙‍♂️🧙‍♀️" : null;
     (userInfo.stopExp > 0) ? reply.statue += "☢️☣️" : null;
-    //4. 有-> 檢查上次紀錄的時間 超過60000 (1分鐘) 即增加15+(1-9) 經驗值
+    //4. 有-> 检查上次记录的时间 超过60000 (1分鐘) 即增加15+(1-9) 经驗值
     if ((new Date(Date.now()) - userInfo.LastSpeakTime) < oneMinuts) {
         return reply;
     }
@@ -107,13 +107,13 @@ async function EXPUP(groupid, userid, displayname, displaynameDiscord, membercou
     userInfo.LastSpeakTime = Date.now();
     let LVsumOne = Number(userInfo.Level) + 1;
     let levelUP = false;
-    //5. 檢查現LEVEL 需不需要上升. =5 / 6 * LVL * (2 * LVL * LVL + 27 * LVL )+ 91DD
+    //5. 检查现LEVEL 需不需要上升. =5 / 6 * LVL * (2 * LVL * LVL + 27 * LVL )+ 91DD
     let newLevelExp = 5 / 6 * (LVsumOne) * (2 * (LVsumOne) * (LVsumOne) + 30 * (LVsumOne)) + 100;
     if (userInfo.EXP > newLevelExp) {
         userInfo.Level++;
         levelUP = true;
     }
-    //8. 更新MLAB資料
+    //8. 更新MLAB资料
     try {
         if (!checkMongodb.isDbOnline()) return;
         await userInfo.save();
@@ -122,9 +122,9 @@ async function EXPUP(groupid, userid, displayname, displaynameDiscord, membercou
         checkMongodb.dbErrOccurs();
     }
 
-    //6. 需要 -> 檢查有沒有開啓通知
+    //6. 需要 -> 检查有没有开启通知
     if (gpInfo.HiddenV2 == false || levelUP == false) return reply;
-    //1. 讀取LEVELUP語
+    //1. 讀取LEVELUP语
     reply.text = await returnTheLevelWord(gpInfo, userInfo, membercount, groupid, discordMessage);
     return reply;
     //6 / 7 * LVL * (2 * LVL * LVL + 30 * LVL + 100)
@@ -152,9 +152,9 @@ async function returnTheLevelWord(gpInfo, userInfo, membercount, groupid, discor
     let userRanking = myselfIndex + 1;
     let userRankingPer = Math.ceil(userRanking / usermember_count * 10000) / 100 + '%';
     let userTitle = await checkTitle(userlevel, gpInfo.Title);
-    let tempUPWord = gpInfo.LevelUpWord || "恭喜 {user.displayName}《{user.title}》，你的克蘇魯神話知識現在是 {user.level}點了！\n現在排名是{server.member_count}人中的第{user.Ranking}名！";
+    let tempUPWord = gpInfo.LevelUpWord || "恭喜 {user.displayName}《{user.title}》，你的克苏鲁神话知識现在是 {user.level}点了！\n现在排名是{server.member_count}人中的第{user.Ranking}名！";
     if (tempUPWord.match(/{user.displayName}/ig)) {
-        let userDisplayName = await getDisplayName(discordMessage) || username || "無名";
+        let userDisplayName = await getDisplayName(discordMessage) || username || "无名";
         tempUPWord = tempUPWord.replace(/{user.displayName}/ig, userDisplayName)
     }
     return tempUPWord.replace(/{user.name}/ig, username).replace(/{user.level}/ig, userlevel).replace(/{user.exp}/ig, userexp).replace(/{user.Ranking}/ig, userRanking).replace(/{user.RankingPer}/ig, userRankingPer).replace(/{server.member_count}/ig, usermember_count).replace(/{user.title}/ig, userTitle);
@@ -163,11 +163,11 @@ async function returnTheLevelWord(gpInfo, userInfo, membercount, groupid, discor
 
 async function newUser(gpInfo, groupid, userid, displayname, displaynameDiscord, tgDisplayname) {
     if (!checkMongodb.isDbOnline()) return;
-    //3. 沒有 -> 新增
+    //3. 没有 -> 新增
     let temp = {
         userid: userid,
         groupid: groupid,
-        name: tgDisplayname || displaynameDiscord || displayname || '無名',
+        name: tgDisplayname || displaynameDiscord || displayname || '无名',
         EXP: await exports.rollbase.Dice(9) + 15,
         //EXP: math.floor(math.random() * 10) + 15,
         Level: 0,
@@ -189,18 +189,18 @@ async function getDisplayName(message) {
 
 const Title = function () {
     let Title = []
-    Title[0] = "無名調查員";
+    Title[0] = "无名调查员";
     Title[3] = "雀";
-    Title[4] = "調查員";
+    Title[4] = "调查员";
     Title[8] = "記者";
-    Title[11] = "偵探";
+    Title[11] = "侦探";
     Title[13] = "小熊";
     Title[14] = "考古家";
-    Title[18] = "神秘學家";
+    Title[18] = "神秘学家";
     Title[21] = "狂信徒";
     Title[24] = "教主";
     Title[28] = "眷族";
-    Title[31] = "眷族首領";
+    Title[31] = "眷族首领";
     Title[33] = "南";
     Title[34] = "化身";
     Title[38] = "舊神";

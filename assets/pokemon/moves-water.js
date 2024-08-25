@@ -9,21 +9,21 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Water",
 		"tags": ["target|l|foe", "frame|priority||up|1"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
 		"effect": "先制招式。",
-		"desc": "使用者利用強力的水流推動自己，以迅雷不及掩耳的高速襲擊對手。"
+		"desc": "使用者利用强力的水流推动自己，以迅雷不及掩耳的高速襲擊对手。"
 	},
 	{
-		"name": "水流環", "alias": "アクアリング|Aqua Ring",
+		"name": "水流环", "alias": "アクアリング|Aqua Ring",
 		"power": "-",
 		"category": "support",
 		"type": "Water",
 		"tags": ["target|l|self", "frame|heal||heal|1"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "若成功，則消耗 1 點意志點以使其生效。使用者將在每个戰鬥輪結束時回復 1 點HP。持續 4 輪。",
-		"desc": "使用者以一種特殊的流水環包裹自身，減輕疼痛。"
+		"effect": "若成功，则消耗 1 点意志点以使其生效。使用者將在每个戰鬥輪结束时回復 1 点HP。持續 4 輪。",
+		"desc": "使用者以一种特殊的流水环包裹自身，減輕疼痛。"
 	},
 	{
 		"name": "水流尾", "alias": "アクアテール|Aqua Tail",
@@ -31,10 +31,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Water",
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "frame|flinch||number|d3"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "骰 3 顆機率骰以使敵人陷入「畏縮」狀態。",
-		"desc": "使用者揮動牠的尾八，就彷彿那是狂猛暴風雨颳起的驚濤駭浪一般。"
+		"effect": "骰 3 顆机率骰以使敵人陷入「畏缩」状態。",
+		"desc": "使用者揮动牠的尾八，就彷彿那是狂猛暴風雨颳起的驚濤駭浪一般。"
 	},
 	{
 		"name": "活活氣泡", "alias": "いきいきバブル|Bouncy Bubble",
@@ -42,10 +42,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "使用者回復等同於造成傷害一半的HP（尾数捨去）。如果這个招式的使用者處於最終進化階段，則這个招式自動失敗。",
-		"desc": "使用者向牠的目標射出泡泡，這些充滿清水的泡泡會反彈到使用者面前。你應該喝下泡泡裡的水嗎？誰在乎？好玩就好！"
+		"effect": "使用者回復等同於造成傷害一半的HP（尾数捨去）。如果这个招式的使用者處於最終進化階段，则这个招式自动失败。",
+		"desc": "使用者向牠的目标射出泡泡，这些充满清水的泡泡會反彈到使用者面前。你應該喝下泡泡裡的水嗎？誰在乎？好玩就好！"
 	},
 	{
 		"name": "鹽水", "alias": "しおみず|Brine",
@@ -53,32 +53,32 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "如果敵人的HP只剩下一半或以下，則這个招式的傷害骰池額外增加 3 顆骰子。",
-		"desc": "使用者以高密度的鹽水噴射重擊敵人，如果目標感到疲倦，那麼牠們可能會更容易被水壓給輕易擊倒。"
+		"effect": "如果敵人的HP只剩下一半或以下，则这个招式的傷害骰池额外增加 3 顆骰子。",
+		"desc": "使用者以高密度的鹽水噴射重擊敵人，如果目标感到疲倦，那么牠們可能會更容易被水壓給輕易擊倒。"
 	},
 	{
 		"name": "泡沫", "alias": "あわ|Bubble",
 		"power": "2",
 		"category": "special",
 		"type": "Water",
-		"tags": ["target|l|allfoe", "dice|l|1", "frame|target|靈巧|down|1"],
-		"accuracy": "靈巧 + 導引",
+		"tags": ["target|l|allfoe", "dice|l|1", "frame|target|灵巧|down|1"],
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "以所有範圍內的敵人为目標。骰 1 顆機率骰以降低目標的靈巧。",
-		"desc": "一堆泡泡飛行圍繞在敵人周圍，其中一些泡泡會沾黏牠們的身體以阻礙其行動。"
+		"effect": "以所有範圍內的敵人为目标。骰 1 顆机率骰以降低目标的灵巧。",
+		"desc": "一堆泡泡飛行圍繞在敵人周圍，其中一些泡泡會沾黏牠們的身体以阻礙其行动。"
 	},
 	{
 		"name": "泡沫光線", "alias": "バブルこうせん|Bubble Beam",
 		"power": "3",
 		"category": "special",
 		"type": "Water",
-		"tags": ["target|l|foe", "dice|l|1", "frame|target|靈巧|down|1"],
-		"accuracy": "靈巧 + 導引",
+		"tags": ["target|l|foe", "dice|l|1", "frame|target|灵巧|down|1"],
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "骰 1 顆機率骰以降低敵人的靈巧。",
-		"desc": "一長串泡泡擊中敵人，這些泡沫有可能會阻礙目標自由行動。"
+		"effect": "骰 1 顆机率骰以降低敵人的灵巧。",
+		"desc": "一长串泡泡擊中敵人，这些泡沫有可能會阻礙目标自由行动。"
 	},
 	{
 		"name": "貝殼夾擊", "alias": "からではさむ|Clamp",
@@ -86,10 +86,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Water",
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "effect|l|block"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
-		"effect": "阻擋。每个戰鬥輪結束時，骰 2 顆傷害骰以對敵人造成傷害。持續 4 輪。",
-		"desc": "使用者使用他堅硬厚重的甲殼夾困並擠壓對手进行攻擊。"
+		"effect": "阻擋。每个戰鬥輪结束时，骰 2 顆傷害骰以对敵人造成傷害。持續 4 輪。",
+		"desc": "使用者使用他堅硬厚重的甲殼夾困並擠壓对手进行攻擊。"
 	},
 	{
 		"name": "蟹鉗錘", "alias": "クラブハンマー|Crabhammer",
@@ -97,10 +97,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Water",
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "effect|l|crit"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
 		"effect": "容易擊中要害。",
-		"desc": "龐大的鉗爪以鐵鎚般的力道敲打敵人，這一擊的破壞力道相當驚人。"
+		"desc": "庞大的鉗爪以鐵鎚般的力道敲打敵人，这一擊的破壞力道相当驚人。"
 	},
 	{
 		"name": "潛水", "alias": "ダイビング|Dive",
@@ -108,9 +108,9 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Water",
 		"tags": ["target|l|foe", "effect|l|charge"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
-		"effect": "蓄力招式。當這个招式在蓄力時，使用者將脫離所有招式的影響範圍。這个招式能讓這隻寶可夢潛到深海之中。",
+		"effect": "蓄力招式。当这个招式在蓄力时，使用者將脫離所有招式的影響範圍。这个招式能讓这隻寶可夢潛到深海之中。",
 		"desc": "使用者潛入水中，並以驚人速度持續俯衝下潛。"
 	},
 	{
@@ -119,10 +119,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Water",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3*",
-		"effect": "若目標在這个戰鬥輪中還沒有进行過牠的回合，則這个招式的傷害骰池額外增加 2 顆骰子。",
-		"desc": "寶可夢使用牠的腮顎朝著牠的目標咬下，即使牠們沒有牙齒，這一擊仍然具有能粉碎敵人的強度。"
+		"effect": "若目标在这个戰鬥輪中還没有进行过牠的回合，则这个招式的傷害骰池额外增加 2 顆骰子。",
+		"desc": "寶可夢使用牠的腮顎朝著牠的目标咬下，即使牠們没有牙齿，这一擊仍然具有能粉碎敵人的强度。"
 	},
 	{
 		"name": "加農水炮", "alias": "ハイドロカノン|Hydro Cannon",
@@ -133,7 +133,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 6",
 		"effect": "必須重新充能。",
-		"desc": "寶可夢朝著對手噴出足以讓房屋倒坍的強大水壓。使用者在這之後將會需要好好休息。"
+		"desc": "寶可夢朝著对手噴出足以讓房屋倒坍的强大水壓。使用者在这之后將會需要好好休息。"
 	},
 	{
 		"name": "水砲", "alias": "高壓幫浦|ハイドロポンプ|Hydro Pump",
@@ -143,7 +143,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|accuracy||down|1"],
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 5",
-		"desc": "使用者在體內積蓄水壓，然後向目標釋放巨量並強力的水壓进行攻擊。"
+		"desc": "使用者在体內積蓄水壓，然后向目标釋放巨量並强力的水壓进行攻擊。"
 	},
 	{
 		"name": "生命水滴", "alias": "いのちのしずく|Life Dew",
@@ -153,8 +153,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allally", "frame|heal||c_heal|1"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "若成功，則消耗 1 點意志點以使其生效。使用者以及範圍內的友方將在每个戰鬥輪結束時回復 1 點HP。持續 4 輪。",
-		"desc": "使用者創造出能讓自己和同伴充滿能量的清新露水。"
+		"effect": "若成功，则消耗 1 点意志点以使其生效。使用者以及範圍內的友方將在每个戰鬥輪结束时回復 1 点HP。持續 4 輪。",
+		"desc": "使用者创造出能讓自己和同伴充满能量的清新露水。"
 	},
 	{
 		"name": "水流裂破", "alias": "アクアブレイク|Liquidation",
@@ -162,10 +162,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Water",
 		"tags": ["target|l|foe", "effect|l|lethal", "dice|l|2", "frame|target|防禦|down|1"],
-		"accuracy": "力量 + 鬥毆",
+		"accuracy": "力量 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "致命傷害。骰 2 顆機率骰以降低敵人的防禦。",
-		"desc": "寶可夢接近牠的敵人，然後以全力迸發出高壓水爆以重擊對手，這股水流有可能切穿或打凹敵人的護甲。"
+		"effect": "致命傷害。骰 2 顆机率骰以降低敵人的防禦。",
+		"desc": "寶可夢接近牠的敵人，然后以全力迸发出高壓水爆以重擊对手，这股水流有可能切穿或打凹敵人的護甲。"
 	},
 	{
 		"name": "濁流", "alias": "だくりゅう|Muddy Water",
@@ -173,10 +173,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|allfoe", "frame|accuracy||down|2", "dice|l|3", "frame|target|命中|down|1"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "以所有範圍內的敵人为目標。骰 3 顆機率骰以降低目標的命中。",
-		"desc": "使用者將泥土塞滿嘴巴，並朝著敵人噴吐出一道泥濘激流。 這些泥漿可能噴濺到敵人的雙眼之中。"
+		"effect": "以所有範圍內的敵人为目标。骰 3 顆机率骰以降低目标的命中。",
+		"desc": "使用者將泥土塞满嘴巴，並朝著敵人噴吐出一道泥濘激流。 这些泥漿可能噴濺到敵人的双眼之中。"
 	},
 	{
 		"name": "章魚桶炮", "alias": "オクタンほう|Octazooka",
@@ -184,13 +184,13 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|foe", "frame|accuracy||down|2", "dice|l|5", "frame|target|命中|down|1"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "骰 5 顆機率骰以降低敵人的命中。",
-		"desc": "使用者將墨水噴到目標臉上以遮蔽牠們的視線。"
+		"effect": "骰 5 顆机率骰以降低敵人的命中。",
+		"desc": "使用者將墨水噴到目标脸上以遮蔽牠們的視線。"
 	},
 	{
-		"name": "根源波動", "alias": "こんげんのはどう|Origin Pulse",
+		"name": "根源波动", "alias": "こんげんのはどう|Origin Pulse",
 		"power": "4",
 		"category": "special",
 		"type": "Water",
@@ -198,7 +198,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 4",
 		"effect": "致命傷害。",
-		"desc": "寶可夢從水下釋放一道創造出一連串連鎖效應的巨大脈衝，讓浩瀚水量以奔騰水流之姿四竄。傳說海洋中的所有水流都源自於此。"
+		"desc": "寶可夢從水下釋放一道创造出一連串連锁效應的巨大脈衝，讓浩瀚水量以奔騰水流之姿四竄。傳说海洋中的所有水流都源自於此。"
 	},
 	{
 		"name": "求雨", "alias": "あまごい|Rain Dance",
@@ -208,8 +208,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|field", "weather|l|rain"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "讓天氣狀態在接下來 4 輪期間變为下雨。",
-		"desc": "使用者表演一種古怪神秘的舞蹈以呼喚大雨。"
+		"effect": "讓天氣状態在接下來 4 輪期间變为下雨。",
+		"desc": "使用者表演一种古怪神秘的舞蹈以呼喚大雨。"
 	},
 	{
 		"name": "貝殼刃", "alias": "シェルブレード|Razor Shell",
@@ -217,10 +217,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Water",
 		"tags": ["target|l|foe", "dice|l|1", "frame|target|防禦|down|1"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "骰 1 顆機率骰以降低敵人的防禦。",
-		"desc": "寶可夢用牠鋒利的貝殼斬切對手的皮毛、盔甲、或任何保護牠們身體不受傷害的事物。"
+		"effect": "骰 1 顆机率骰以降低敵人的防禦。",
+		"desc": "寶可夢用牠鋒利的貝殼斬切对手的皮毛、盔甲、或任何保護牠們身体不受傷害的事物。"
 	},
 	{
 		"name": "熱水", "alias": "ねっとう|Scald",
@@ -228,10 +228,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|foe", "frame|burn1||number|d3"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "骰 3 顆機率骰以使敵人陷入「灼傷 1 級」狀態。",
-		"desc": "使用者噴射出滾燙的沸水进行攻擊，這可能會使對手在被浸濕的同時灼傷。"
+		"effect": "骰 3 顆机率骰以使敵人陷入「灼傷 1 级」状態。",
+		"desc": "使用者噴射出滾燙的沸水进行攻擊，这可能會使对手在被浸湿的同时灼傷。"
 	},
 	{
 		"name": "狙擊", "alias": "ねらいうち|Snipe Shot",
@@ -239,10 +239,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|foe", "effect|l|crit"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 3",
 		"effect": "容易擊中要害。",
-		"desc": "使用者以驚人的精準度射出疾馳的水槍。"
+		"desc": "使用者以驚人的精準度射出疾馳的水枪。"
 	},
 	{
 		"name": "浸水", "alias": "みずびたし|Soak",
@@ -252,19 +252,19 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
-		"effect": "將目標的屬性變更为水屬性。",
-		"desc": "使用者噴射出大量的水流和濕氣，如同外衣一般包裹著敵人的身體。"
+		"effect": "將目标的属性變更为水属性。",
+		"desc": "使用者噴射出大量的水流和湿氣，如同外衣一般包裹著敵人的身体。"
 	},
 	{
-		"name": "泡影的詠歎調", "alias": "うたかたのアリア|Sparkling Aria",
+		"name": "泡影的詠歎调", "alias": "うたかたのアリア|Sparkling Aria",
 		"power": "3",
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|area", "effect|l|sound"],
 		"accuracy": "特殊 + 表演",
 		"damage": "特殊 + 3",
-		"effect": "範圍攻擊。如果目標寶可夢身上有任何「灼傷」狀態，則牠不會受到傷害，而是改为治療「灼傷」狀態。",
-		"desc": "寶可夢唱出優美的旋律，歌聲幻成一座閃閃發光的噴泉，並在撞擊的瞬間爆開，熄滅任何路徑上的火焰。"
+		"effect": "範圍攻擊。如果目标寶可夢身上有任何「灼傷」状態，则牠不會受到傷害，而是改为治療「灼傷」状態。",
+		"desc": "寶可夢唱出優美的旋律，歌聲幻成一座闪闪发光的噴泉，並在撞擊的瞬间爆开，熄滅任何路徑上的火焰。"
 	},
 	{
 		"name": "滔滔衝浪", "alias": "ざぶざぶサーフ|Splishy Splash",
@@ -272,10 +272,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|foe", "frame|paralysis||number|d3"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "骰 3 顆機率骰以使敵人陷入「麻痺」狀態。如果這个招式的使用者處於最終進化階段，則這个招式自動失敗。",
-		"desc": "寶可夢彷彿衝浪一般騎在電流巨浪上。這看起來相當刺激，但也相當危險，畢竟電流可沒有跟水一樣能讓你安全衝浪的性質。"
+		"effect": "骰 3 顆机率骰以使敵人陷入「麻痺」状態。如果这个招式的使用者處於最終進化階段，则这个招式自动失败。",
+		"desc": "寶可夢彷彿衝浪一般騎在電流巨浪上。这看起來相当刺激，但也相当危險，畢竟電流可没有跟水一樣能讓你安全衝浪的性质。"
 	},
 	{
 		"name": "蒸汽爆炸", "alias": "スチームバースト|Steam Eruption",
@@ -283,10 +283,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "effect|l|lethal", "frame|burn2||number|d3"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 4",
-		"effect": "致命傷害。骰 3 顆機率骰以使敵人陷入「灼傷 2 級」狀態。",
-		"desc": "在一瞬間，暴走引擎上沸騰的蒸氣爆鳴貫穿敵人的耳膜，緊接著超高溫的蒸汽劃破天氣噴向了對手。"
+		"effect": "致命傷害。骰 3 顆机率骰以使敵人陷入「灼傷 2 级」状態。",
+		"desc": "在一瞬间，暴走引擎上沸騰的蒸氣爆鳴貫穿敵人的耳膜，紧接著超高温的蒸汽劃破天氣噴向了对手。"
 	},
 	{
 		"name": "衝浪", "alias": "なみのり|Surf",
@@ -294,20 +294,20 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|area"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 3",
 		"effect": "範圍攻擊。",
-		"desc": "一道大浪橫掃整个區域，而使用者在同時於巨浪之上悠閒游泳。"
+		"desc": "一道大浪橫掃整个區域，而使用者在同时於巨浪之上悠閒游泳。"
 	},
 	{
-		"name": "水槍", "alias": "みずでっぽう|Water Gun",
+		"name": "水枪", "alias": "みずでっぽう|Water Gun",
 		"power": "2",
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 2",
-		"desc": "使用者學會已足夠的力道向敵人噴射水流來傷害對方。"
+		"desc": "使用者学會已足夠的力道向敵人噴射水流來傷害对方。"
 	},
 	{
 		"name": "水之誓約", "alias": "みずのちかい|Water Pledge",
@@ -315,32 +315,32 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|area", "target|l|field", "pdice|l|2"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "範圍攻擊。創造出一道彩紅，能使所有機率骰判定都增加 2 顆骰子。這个效果將持續 4 个戰鬥輪。",
-		"desc": "寶可夢吟唱召喚水之力量的咒語。空氣中水氣將使光線折射，創造出鼓舞人心的彩虹，戰場上的所有人都會为之一振。"
+		"effect": "範圍攻擊。创造出一道彩紅，能使所有机率骰判定都增加 2 顆骰子。这个效果將持續 4 个戰鬥輪。",
+		"desc": "寶可夢吟唱召喚水之力量的咒语。空氣中水氣將使光線折射，创造出鼓舞人心的彩虹，戰場上的所有人都會为之一振。"
 	},
 	{
-		"name": "水之波動", "alias": "みずのはどう|Water Pulse",
+		"name": "水之波动", "alias": "みずのはどう|Water Pulse",
 		"power": "2",
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|foe", "frame|confuse||number|d3"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "骰 3 顆機率骰以使敵人陷入「混亂」狀態。",
-		"desc": "寶可夢使用水的震動波來攻擊敵人，這一擊可能會使敵人感到頭暈目眩。"
+		"effect": "骰 3 顆机率骰以使敵人陷入「混亂」状態。",
+		"desc": "寶可夢使用水的震动波來攻擊敵人，这一擊可能會使敵人感到头暈目眩。"
 	},
 	{
-		"name": "飛水手裡劍", "alias": "みずしゅりけん|Water Shuriken",
+		"name": "飛水手裡剑", "alias": "みずしゅりけん|Water Shuriken",
 		"power": "1",
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|foe", "frame|priority||up|1", "effect|l|sact_5"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 1",
-		"effect": "遠程攻擊。先制招式。連續行動。",
-		"desc": "寶可夢快速地投掷出手裡劍形狀的鋒利水流。"
+		"effect": "遠程攻擊。先制招式。連續行动。",
+		"desc": "寶可夢快速地投掷出手裡剑形状的鋒利水流。"
 	},
 	{
 		"name": "玩水", "alias": "みずあそび|Water Sport",
@@ -350,8 +350,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|field"],
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
-		"effect": "在接下來 4 个戰鬥輪期間，火屬性攻擊的傷害骰池將無法獲得其招式威力的加值。",
-		"desc": "使用者讓施氣浸透整个戰場，使火屬性攻擊更難以點燃。"
+		"effect": "在接下來 4 个戰鬥輪期间，火属性攻擊的傷害骰池將无法獲得其招式威力的加值。",
+		"desc": "使用者讓施氣浸透整个戰場，使火属性攻擊更难以点燃。"
 	},
 	{
 		"name": "噴水", "alias": "しおふき|Water Spout",
@@ -359,10 +359,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|allfoe"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 6*",
-		"effect": "以所有範圍內的敵人为目標。使用者每失去 1 點HP，這个招式的傷害骰池就會減少 1 顆骰子。這个方式最多會減少 5 顆骰子。",
-		"desc": "寶可夢製造出驚人的水壓並釋放出巨大的圓柱狀渦流，其高度甚至可以觸及雲層。"
+		"effect": "以所有範圍內的敵人为目标。使用者每失去 1 点HP，这个招式的傷害骰池就會減少 1 顆骰子。这个方式最多會減少 5 顆骰子。",
+		"desc": "寶可夢製造出驚人的水壓並釋放出巨大的圓柱状渦流，其高度甚至可以觸及雲层。"
 	},
 	{
 		"name": "攀瀑", "alias": "たきのぼり|Waterfall",
@@ -370,10 +370,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Water",
 		"tags": ["target|l|foe", "frame|flinch||number|d3"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "骰 3 顆機率骰以使敵人陷入「畏縮」狀態。",
-		"desc": "寶可夢以如此強大的力量游泳，甚至能夠逆著瀑布向上攀泳。"
+		"effect": "骰 3 顆机率骰以使敵人陷入「畏缩」状態。",
+		"desc": "寶可夢以如此强大的力量游泳，甚至能夠逆著瀑布向上攀泳。"
 	},
 	{
 		"name": "潮旋", "alias": "うずしお|Whirlpool",
@@ -381,18 +381,18 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Water",
 		"tags": ["target|l|foe", "frame|accuracy||down|2", "effect|l|block"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "阻擋。每个戰鬥輪結束時，骰 2 顆傷害骰以對敵人造成傷害。持續 4 輪。",
-		"desc": "將敵人困在劇烈旋转的漩渦中，使敵人無法從戰鬥中逃脫。"
+		"effect": "阻擋。每个戰鬥輪结束时，骰 2 顆傷害骰以对敵人造成傷害。持續 4 輪。",
+		"desc": "將敵人困在劇烈旋转的漩渦中，使敵人无法從戰鬥中逃脫。"
 	},
 	{
-		"name": "縮入殼中", "alias": "からにこもる|Withdraw",
+		"name": "缩入殼中", "alias": "からにこもる|Withdraw",
 		"power": "-",
 		"category": "support",
 		"type": "Water",
 		"tags": ["target|l|self", "frame|self|防禦|up|1"],
-		"accuracy": "活力 + 鬥毆",
+		"accuracy": "活力 + 斗殴",
 		"damage": "-",
 		"effect": "提升使用者的防禦。",
 		"desc": "使用者躲進牠厚重的殼中以從來襲的攻擊中保護自己。"

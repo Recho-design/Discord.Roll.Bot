@@ -19,9 +19,9 @@ const gameType = function () {
     return 'Demo:Demo:hktrpg'
 }
 const prefixs = function () {
-    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---這裡是一對  
-    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---這裡是一對
-    //如前面是 /^1$/ig, 後面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
+    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这裡是一对  
+    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这裡是一对
+    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
     ///^(?=.*he)(?!.*da).*$/ig
     return [{
         first: /^\.chatroom$/i,
@@ -84,7 +84,7 @@ const rollDiceCommand = async function ({
                 });
                 await multiServer.getRecords();
                 rply.text = `已把${channel.guild.name} - ${channel.name}新增到聊天室`
-                //，想把其他頻道加入，請输入\n .chatroom join ${multiId} (其他頻道的ID)
+                //，想把其他频道加入，请输入\n .chatroom join ${multiId} (其他频道的ID)
                 return rply;
             } catch (error) {
                 console.error('error', error)
@@ -114,7 +114,7 @@ const rollDiceCommand = async function ({
                     return
                 });
                 await multiServer.getRecords();
-                rply.text = `已把${channel.guild.name} - ${channel.name}新增到聊天室，想把其他頻道加入，請输入 .join ${mainMsg[2]} (其他頻道的ID)`
+                rply.text = `已把${channel.guild.name} - ${channel.name}新增到聊天室，想把其他频道加入，请输入 .join ${mainMsg[2]} (其他频道的ID)`
                 return rply;
             } catch (error) {
                 console.error('error', error)

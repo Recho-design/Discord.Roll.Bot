@@ -27,14 +27,14 @@
     <div class="container" id="array-rendering">
         <div class="alert alert-warning alert-dismissible fade show overlay" style="position: fixed;
         z-index: 999;" role="alert" id="warning-update">
-            <strong>更新成功!</strong> 你可以在聊天平台上使用新資料了。
+            <strong>更新成功!</strong> 你可以在聊天平台上使用新资料了。
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="alert alert-warning alert-dismissible fade show overlay" style="position: fixed;
         z-index: 999;" role="alert" id="warning-updateError">
-            <strong>更新失敗!</strong> 請檢查或向HKTRPG回報。
+            <strong>更新失败!</strong> 请检查或向HKTRPG回報。
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -44,13 +44,13 @@
             <span class="iconify" data-icon="mdi:login" data-inline="false"></span>登入/登出
         </button>
         <button type="button" class="btn btn-secondary float-right" onclick="selectCard()">
-            <span class="iconify" data-icon="grommet-icons:select" data-inline="false"></span>選擇角色卡
+            <span class="iconify" data-icon="grommet-icons:select" data-inline="false"></span>选擇角色卡
         </button>
         <button type="button" class="btn btn-info float-right" v-if="name" onclick="updateCard()">
             <span class="iconify" data-icon="ic:outline-save-alt" data-inline="false"></span>儲存角色卡
         </button>
         <button type="button" class="btn btn-dark float-right" onclick="readme()">
-            <span class="iconify" data-icon="gg:readme" data-inline="false"></span>說明
+            <span class="iconify" data-icon="gg:readme" data-inline="false"></span>说明
         </button>
         <h3>
             <span class="iconify" data-icon="wpf:name" data-inline="false"></span> {{name}}
@@ -58,14 +58,14 @@
         <div class="form-check" v-if="name">
             <input class="form-check-input" type="checkbox" value="true" v-model="public" id="invalidCheck">
             <label class="form-check-label" for="invalidCheck">
-                公開這角色卡
+                公开这角色卡
             </label>
         </div>
         <div v-if="gpList">
             <br>
             <h4 class="bg-color3 p-1">
                 <span class="iconify" data-icon="grommet-icons:channel" data-inline="false" data-width="20px"
-                    data-height="20px"></span>掷骰頻道
+                    data-height="20px"></span>掷骰频道
             </h4>
             <button type="button" class="btn btn-warning float-right" v-on:click="config()">
                 設定
@@ -91,7 +91,7 @@
         <br>
         <h4 class="bg-color3 p-1">
             <span class="iconify" data-icon="carbon:data-base" data-inline="false" data-width="20px"
-                data-height="20px"></span>基本屬性
+                data-height="20px"></span>基本属性
         </h4>
         <button type="button" class="btn btn-warning float-right" v-if="name" onclick="newItem(0)">
             +
@@ -189,10 +189,10 @@
                         </div>
                     </form>
                 </div>
-                <div id="warning" class="small" style="color:red;display:none">登入失敗或沒有角色卡</div>
+                <div id="warning" class="small" style="color:red;display:none">登入失败或没有角色卡</div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark float-right" onclick="readme()">
-                        <span class="iconify" data-icon="gg:readme" data-inline="false"></span>說明
+                        <span class="iconify" data-icon="gg:readme" data-inline="false"></span>说明
                     </button>
                     <button type="button" class="btn btn-primary" onclick="login()">登入</button>
                 </div>
@@ -206,7 +206,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="cardListModalLabel">選擇角色卡</h5>
+                    <h5 class="modal-title" id="cardListModalLabel">选擇角色卡</h5>
                 </div>
                 <div class="modal-body">
                     <form id="cardList-Form">
@@ -229,54 +229,54 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="readmeModalLongTitle">使用說明</h5>
+                    <h5 class="modal-title" id="readmeModalLongTitle">使用说明</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    使用前，首先要與HKTRPG骰子機器人對話，<br>
-                    新增一張角色卡及一个管理用的ACC。<br>
+                    使用前，首先要与HKTRPG骰子机器人对话，<br>
+                    新增一张角色卡及一个管理用的ACC。<br>
                     方法如下:<br>
                     <strong> 1. 新增角色卡</strong><br>
                     <img src="https://github.com/hktrpg/TG.line.Discord.Roll.Bot/raw/master/views/image/d01.jpg"
                         alt="01" class="img-thumbnail">
-                    對HKTRPG(在discord之類的平台) 输入 .char add name[Sad]~ state[HP:15/15;mp:10/10;con:60;]~ roll[鬥毆: cc 50;心理學:
+                    对HKTRPG(在discord之类的平台) 输入 .char add name[Sad]~ state[HP:15/15;mp:10/10;con:60;]~ roll[斗殴: cc 50;心理学:
                     cc 60;]~
-                    notes[筆記:這是測試,請試試在群組输入 .char use Sad;]~<br>
-                    Sad 是角色的名字，可以改成其他，也可以在這步直接設定能力值，<br>
-                    詳細說明請输入.char<br><br>
+                    notes[筆記:这是測试,请试试在群組输入 .char use Sad;]~<br>
+                    Sad 是角色的名字，可以改成其他，也可以在这步直接設定能力值，<br>
+                    詳细说明请输入.char<br><br>
                     <strong> 2. 新增管理用的ACC</strong><br>
                     <img src="https://github.com/hktrpg/TG.line.Discord.Roll.Bot/raw/master/views/image/d02.jpg"
                         alt="02" class="img-thumbnail">
-                    對HKTRPG输入.admin account (帳號) (密碼)<br>
-                    成功後，在這網頁 输入帳號密碼，<br>
+                    对HKTRPG输入.admin account (帳號) (密碼)<br>
+                    成功后，在这網頁 输入帳號密碼，<br>
                     就可以管理角色卡，在網頁上 修改角色卡能力。<br><br>
-                    <strong>3.在頻道中使用角卡</strong><br>
-                    詳細可看 <a href="https://github.com/hktrpg/TG.line.Discord.Roll.Bot/wiki/Character-Card"
+                    <strong>3.在频道中使用角卡</strong><br>
+                    詳细可看 <a href="https://github.com/hktrpg/TG.line.Discord.Roll.Bot/wiki/Character-Card"
                         class="tooltip-Character" title="Tooltip">HKTRPG WIKI</a> <br>
                     <img src="https://github.com/hktrpg/TG.line.Discord.Roll.Bot/raw/master/views/image/d03.jpg"
                         alt="03" class="img-thumbnail">
-                    但簡單來說，在你想使用這張角色卡的聊天軟件頻道输入<br>
+                    但簡单來说，在你想使用这张角色卡的聊天軟件频道输入<br>
                     .char use Sad 或你角色名字，就可以使用角卡<br>
                     <img src="https://github.com/hktrpg/TG.line.Discord.Roll.Bot/raw/master/views/image/d04.jpg"
                         alt="04" class="img-thumbnail">
-                    例如你在掷骰欄有一招名叫 鬥毆 內容是 cc 80<br>
-                    那你在登記了的頻道输入 .ch 鬥毆 就可以使出 cc 80<br>
-                    又或你在 基本屬性 中加入一个 HP 18<br>
+                    例如你在掷骰欄有一招名叫 斗殴 內容是 cc 80<br>
+                    那你在登記了的频道输入 .ch 斗殴 就可以使出 cc 80<br>
+                    又或你在 基本属性 中加入一个 HP 18<br>
                     那你输入 .ch hp -6 就可以扣減HP<br>
                     <br>
-                    <strong>4.把掷骰結果傳送到已登記的Discord，TG，LINE上的聊天群組上: </strong><br>
+                    <strong>4.把掷骰结果傳送到已登記的Discord，TG，LINE上的聊天群組上: </strong><br>
                     <img src="https://github.com/hktrpg/TG.line.Discord.Roll.Bot/raw/master/views/image/d05.jpg"
                         alt="05" class="img-thumbnail">
                     讓你可以在使用網頁,直接在聊天軟件掷骰，不用再打指令，<br>
-                    输入後你的網站角色卡就會顯示該平台名稱，讓你可以選擇<br>
+                    输入后你的網站角色卡就會显示該平台名稱，讓你可以选擇<br>
                     A) 由該群組的Admin授權允許 输入 .admin allowrolling <br>
-                    B) 登記該群組到自己的名單中 输入 .admin registerChannel <br>
+                    B) 登記該群組到自己的名单中 输入 .admin registerChannel <br>
                     <br>
                     取消方法<br>
                     A) 由該群組的Admin取消授權 输入 .admin disallowrolling <br>
-                    B) 取消登記該群組到名單 输入 .admin unregisterChannel <br>
+                    B) 取消登記該群組到名单 输入 .admin unregisterChannel <br>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -584,20 +584,20 @@
 
 输入 .char online
 
--> 產生 和 顯示一組ID 和 PASSWORD.
--> 產生一个DB -> 這組ID, 對應一个ACC.
+-> 产生 和 显示一組ID 和 PASSWORD.
+-> 产生一个DB -> 这組ID, 对應一个ACC.
 
 
 
-試入USER NAME和 密碼, 可以登入
+试入USER NAME和 密碼, 可以登入
 
-顯示角色卡列表
+显示角色卡列表
 
-點擊進入, 取得內容
+点擊進入, 取得內容
 
 角色卡內容可以修改
 
-修改後按碓定鍵送出
+修改后按碓定鍵送出
 
 
 

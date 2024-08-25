@@ -4,11 +4,11 @@ if (!process.env.mongoURL) return;
 const debugMode = (process.env.DEBUG) ? true : false;
 const schema = require('./schema.js');
 const checkMongodb = require('./dbWatchdog.js');
-//50次 多少條訊息會上傳一次LOG
+//50次 多少条訊息會上傳一次LOG
 const ONE_HOUR = 1 * 60 * 60 * 1000;
 const FIVE_MINUTES = 5 * 60 * 1000;
 let shardid = 0;
-//每一小時 24 * 60 * 60 * 1000 多久會上傳一次LOG紀錄 
+//每一小时 24 * 60 * 60 * 1000 多久會上傳一次LOG记录 
 const RollingLog = {
     LastTimeLog: "",
     StartTime: "",
@@ -29,7 +29,7 @@ const RollingLog = {
     ApiCountText: 0
 };
 
-//Log 開始
+//Log 开始
 (async () => {
     try {
         await getRecords();
@@ -61,7 +61,7 @@ const getState = async function () {
 
 //上傳用
 async function saveLog() {
-    //更新LogTime 然後上傳紀錄
+    //更新LogTime 然后上傳记录
     if (!checkMongodb.isDbOnline()) return;
     RollingLog.LogTime = Date(Date.now()).toLocaleString("en-US", {
         timeZone: "Asia/HongKong"
@@ -97,7 +97,7 @@ async function saveLog() {
     //把掷骰的次数還原 为0
     resetLog();
 
-    //假如過了一小時則上載中途紀錄RollingLog
+    //假如过了一小时则上載中途记录RollingLog
     if (Date.now() - RollingLog.LastTimeLog >= (ONE_HOUR))
         pushToDefiniteLog();
     return null;
@@ -105,7 +105,7 @@ async function saveLog() {
 
 async function pushToDefiniteLog() {
     if (shardid !== 0) return;
-    //更新最後的RollingLog 儲存時間
+    //更新最后的RollingLog 儲存时间
     RollingLog.LastTimeLog = Date.now();
     let theNewData = await schema.RealTimeRollingLog.findOne({}).catch(error => console.error('log #105 mongoDB error: ', error.name, error.reson));
     let temp = {

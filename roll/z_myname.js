@@ -27,53 +27,53 @@ const prefixs = function () {
 }
 const getHelpMessage = function () {
     return `【你的名字】Discord限定功能
-TRPG扮演發言功能
-你可以設定一个角色的名字及頭像，
-然後你只要输入指令和說話，
-就會幫你使用該角色發言。
+TRPG扮演发言功能
+你可以設定一个角色的名字及头像，
+然后你只要输入指令和说话，
+就會幫你使用該角色发言。
 
 示範
 https://i.imgur.com/VSzO08U.png
 
-注意: 此功能需求編輯Webhook及訊息功能，請確定授權。
+注意: 此功能需求編輯Webhook及訊息功能，请確定授權。
 
 指令列表
 
 1.設定角色
-.myname "名字" 角色圖片網址 名字縮寫(非必要)
+.myname "名字" 角色圖片網址 名字缩寫(非必要)
 範例 
 .myname "泉心 造史" https://images.pexels.com/photos/10013067/pexels-photo-10013067.jpeg 造
 
-*名字*是角色名字，會作为角色顯示的名字，但如果該名字有空格就需要用開引號"包著
+*名字*是角色名字，會作为角色显示的名字，但如果該名字有空格就需要用开引號"包著
 如"泉心 造史" 不然可以省去
 
-圖片則是角色圖示，如果圖片出錯會變成最簡單的Discord圖示，
-圖片可以直接上傳到DISCORD或IMGUR.COM上，然後複製連結
+圖片则是角色圖示，如果圖片出错會變成最簡单的Discord圖示，
+圖片可以直接上傳到DISCORD或IMGUR.COM上，然后复製連结
 
-名字縮寫是 是用來方便你啓動它
+名字缩寫是 是用來方便你启动它
 例如 .me造 「來玩吧」
 
 2.刪除角色
-.myname delete  序號 / 名字縮寫  
-刪除方式是delete 後面接上序號或名字縮寫
+.myname delete  序號 / 名字缩寫  
+刪除方式是delete 后面接上序號或名字缩寫
 
 
-3.顯示角色列表
+3.显示角色列表
 .myname show
 
-4.使用角色發言
-.me(序號/名字縮寫) 訊息
+4.使用角色发言
+.me(序號/名字缩寫) 訊息
 如
-.me1 泉心慢慢的走到他們旁邊，伺機行動
+.me1 泉心慢慢的走到他們旁边，伺机行动
 .me造 「我接受你的挑戰」 
 .me造 「我接受你的挑戰」 
 [[CC 80]] 
 [[立FLAG]]
 
-支援掷骰，請使用[[]]來包著掷骰指令
+支援掷骰，请使用[[]]來包著掷骰指令
     `
 }
-const errorMessage = `输入出錯\n留意各个資料前要有空格分隔\n 
+const errorMessage = `输入出错\n留意各个资料前要有空格分隔\n 
 範例
 .myname "泉心 造史" https://example.com/example.jpg 造史
 .myname 泉心造史 https://example.com/example.jpg 1
@@ -120,7 +120,7 @@ const rollDiceCommand = async function ({
         }
         case /^\.myname+$/i.test(mainMsg[0]) && /^delete$/i.test(mainMsg[1]): {
             if (!mainMsg[2] || !/\d+/i.test(mainMsg[2])) {
-                rply.text = '移除角色指令为 .myname delete (序號/名字縮寫) \n 如 .myname delete 0 / .myname delete 小雲'
+                rply.text = '移除角色指令为 .myname delete (序號/名字缩寫) \n 如 .myname delete 0 / .myname delete 小雲'
                 return rply
             }
             if (mainMsg[2].match(/\d+/)) {
@@ -131,12 +131,12 @@ const rollDiceCommand = async function ({
                         rply.text = `移除成功，${result.name} 已被移除`
                         return rply
                     } else {
-                        rply.text = '移除出錯\n移除角色指令为 .myname delete (序號 或 名字縮寫) \n 如 .myname delete 1 / .myname delete 小雲\n序號請使用.myname show 查詢'
+                        rply.text = '移除出错\n移除角色指令为 .myname delete (序號 或 名字缩寫) \n 如 .myname delete 1 / .myname delete 小雲\n序號请使用.myname show 查詢'
                         return rply
                     }
                 } catch (error) {
-                    //   console.error("移除角色失敗, inputStr: ", inputStr);
-                    rply.text = '移除出錯\n移除角色指令为 .myname delete (序號 或 名字縮寫) \n 如 .myname delete 1 / .myname delete 小雲\n序號請使用.myname show 查詢'
+                    //   console.error("移除角色失败, inputStr: ", inputStr);
+                    rply.text = '移除出错\n移除角色指令为 .myname delete (序號 或 名字缩寫) \n 如 .myname delete 1 / .myname delete 小雲\n序號请使用.myname show 查詢'
                     return rply
                 }
             }
@@ -149,13 +149,13 @@ const rollDiceCommand = async function ({
                     rply.quotes = true;
                     return rply
                 } else {
-                    rply.text = '移除出錯\n移除角色指令为 .myname delete (序號/名字縮寫) \n 如 .myname delete 1 / .myname delete 小雲\n序號請使用.myname show 查詢'
+                    rply.text = '移除出错\n移除角色指令为 .myname delete (序號/名字缩寫) \n 如 .myname delete 1 / .myname delete 小雲\n序號请使用.myname show 查詢'
                     rply.quotes = true;
                     return rply
                 }
             } catch (error) {
-                //   console.error("移除角色失敗, inputStr: ", inputStr);
-                rply.text = '移除出錯\n移除角色指令为 .myname delete (序號/名字縮寫) \n 如 .myname delete 1 / .myname delete 小雲\n序號請使用.myname show 查詢'
+                //   console.error("移除角色失败, inputStr: ", inputStr);
+                rply.text = '移除出错\n移除角色指令为 .myname delete (序號/名字缩寫) \n 如 .myname delete 1 / .myname delete 小雲\n序號请使用.myname show 查詢'
                 rply.quotes = true;
                 return rply
             }
@@ -171,7 +171,7 @@ const rollDiceCommand = async function ({
             let limit = limitAtArr[lv];
             let myNamesLength = await schema.myName.countDocuments({ userID: userid })
             if (myNamesLength >= limit) {
-                rply.text = '.myname 个人上限为' + limit + '个\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                rply.text = '.myname 个人上限为' + limit + '个\n支援及解锁上限 https://www.patreon.com/HKTRPG\n';
                 rply.quotes = true;
                 return rply;
             }
@@ -182,7 +182,7 @@ const rollDiceCommand = async function ({
                 return rply;
             }
             if (!checkName.imageLink.match(/^http/i)) {
-                rply.text = `输入出錯\n 圖示link 必須符合 http/https 開頭`;
+                rply.text = `输入出错\n 圖示link 必須符合 http/https 开头`;
                 rply.quotes = true;
                 return rply;
             }
@@ -190,7 +190,7 @@ const rollDiceCommand = async function ({
             try {
                 myName = await schema.myName.findOneAndUpdate({ userID: userid, name: checkName.name }, { imageLink: checkName.imageLink, shortName: checkName.shortName }, opt)
             } catch (error) {
-                rply.text = `發生了一點錯誤，請稍後再試`;
+                rply.text = `发生了一点错误，请稍后再试`;
                 return rply;
             }
             rply.text = `已新增角色 - ${myName.name}`;
@@ -208,7 +208,7 @@ const rollDiceCommand = async function ({
                 return;
             }
             if (!groupid) {
-                rply.text = ".me(X) 這功能只可以在頻道中使用"
+                rply.text = ".me(X) 这功能只可以在频道中使用"
                 rply.quotes = true;
                 return rply;
             }
@@ -224,13 +224,13 @@ const rollDiceCommand = async function ({
                 try {
                     myName = await schema.myName.findOne({ userID: userid, shortName: new RegExp('^' + convertRegex(checkName) + '$', 'i') });
                 } catch (error) {
-                    // rply.text = `找不到角色 - ${checkName} \n可能是序號或名字不對`;
+                    // rply.text = `找不到角色 - ${checkName} \n可能是序號或名字不对`;
                     // rply.quotes = true;
                     return rply;
                 }
             }
             if (!myName) {
-                //   rply.text = `找不到角色 - ${checkName} \n可能是序號或名字不對`;
+                //   rply.text = `找不到角色 - ${checkName} \n可能是序號或名字不对`;
                 // rply.quotes = true;
                 return rply;
             }
@@ -287,12 +287,12 @@ function showNames(names) {
             let name = names[index];
             reply[index] = {
                 content: `序號#${index + 1} \n${(name.shortName) ? `安安，我的別名是${name.shortName}` : `嘻，我的名字是${name.name}`}
-\n使用我來發言的指令是输入  \n.me${index + 1} 加上你想說的話${(name.shortName) ? `\n或 \n .me${name.shortName} 加上你想說的話` : ''} `,
+\n使用我來发言的指令是输入  \n.me${index + 1} 加上你想说的话${(name.shortName) ? `\n或 \n .me${name.shortName} 加上你想说的话` : ''} `,
                 username: name.name,
                 avatarURL: name.imageLink
             }
         }
-    } else reply = "沒有找到角色"
+    } else reply = "没有找到角色"
     return reply;
 }
 
@@ -302,10 +302,10 @@ function showNamesInText(names) {
         for (let index = 0; index < names.length; index++) {
             let name = names[index];
             reply += `序號#${index + 1} \n${(name.shortName) ? `安安，我是${name.name}，我的別名是${name.shortName}` : `嘻，我的名字是${name.name}`} \n${name.imageLink} \n
-\n使用我來發言的指令是输入  \n.me${index + 1} 加上你想說的話${(name.shortName) ? `\n或 \n .me${name.shortName} 加上你想說的話` : ''} `
+\n使用我來发言的指令是输入  \n.me${index + 1} 加上你想说的话${(name.shortName) ? `\n或 \n .me${name.shortName} 加上你想说的话` : ''} `
         }
     }
-    else reply = "沒有找到角色"
+    else reply = "没有找到角色"
     return reply;
 }
 
@@ -316,12 +316,12 @@ function showName(names, targetName) {
             let name = names[index];
             if (names[index].name == targetName)
                 reply = {
-                    content: `序號#${index + 1} \n${(name.shortName) ? `Hello, 我的別名是${name.shortName}` : `你好，我的名字是${name.name}`} \n使用我來發言的指令是输入  \n.me${index + 1} 加上你想說的話${(name.shortName) ? `\n或 \n .me${name.shortName} 加上你想說的話` : ''} `,
+                    content: `序號#${index + 1} \n${(name.shortName) ? `Hello, 我的別名是${name.shortName}` : `你好，我的名字是${name.name}`} \n使用我來发言的指令是输入  \n.me${index + 1} 加上你想说的话${(name.shortName) ? `\n或 \n .me${name.shortName} 加上你想说的话` : ''} `,
                     username: name.name,
                     avatarURL: name.imageLink
                 }
         }
-    } else reply = "沒有找到角色"
+    } else reply = "没有找到角色"
     return reply;
 }
 

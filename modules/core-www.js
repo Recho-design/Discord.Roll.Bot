@@ -114,10 +114,10 @@ www.get('/api', async (req, res) => {
     let trigger = '';
     let mainMsg = req.query.msg.match(MESSAGE_SPLITOR); // 定義输入字串
     if (mainMsg && mainMsg[0])
-        trigger = mainMsg[0].toString().toLowerCase(); // 指定啟動詞在第一个詞&把大階強制转成細階
+        trigger = mainMsg[0].toString().toLowerCase(); // 指定啟动詞在第一个詞&把大階强制转成细階
 
-    // 訊息來到後, 會自動跳到analytics.js进行骰組分析
-    // 如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
+    // 訊息來到后, 會自动跳到analytics.js进行骰組分析
+    // 如希望增加修改骰組,只要修改analytics.js的条件式 和ROLL內的骰組檔案即可,然后在HELP.JS 增加说明.
     if (channelKeyword != '' && trigger == channelKeyword.toString().toLowerCase()) {
         rplyVal = await exports.analytics.parseInput({
             inputStr: mainMsg.join(' '),
@@ -175,7 +175,7 @@ www.get('/:xx', (req, res) => {
 io.on('connection', async (socket) => {
     socket.on('getListInfo', async message => {
         if (await limitRaterCard(socket.handshake.address)) return;
-        //回傳 message 給發送訊息的 Client
+        //回傳 message 給发送訊息的 Client
         let filter = {
             userName: message.userName,
             password: SHA(message.userPassword)
@@ -199,7 +199,7 @@ io.on('connection', async (socket) => {
 
     socket.on('getPublicListInfo', async () => {
         if (await limitRaterCard(socket.handshake.address)) return;
-        //回傳 message 給發送訊息的 Client
+        //回傳 message 給发送訊息的 Client
         let filter = {
             public: true
         }
@@ -226,8 +226,8 @@ io.on('connection', async (socket) => {
             })
         }
 
-        // 訊息來到後, 會自動跳到analytics.js进行骰組分析
-        // 如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
+        // 訊息來到后, 會自动跳到analytics.js进行骰組分析
+        // 如希望增加修改骰組,只要修改analytics.js的条件式 和ROLL內的骰組檔案即可,然后在HELP.JS 增加说明.
         if (rplyVal && rplyVal.text) {
             socket.emit('publicRolling', result.characterReRollName + '：\n' + rplyVal.text)
         }
@@ -244,8 +244,8 @@ io.on('connection', async (socket) => {
             })
         }
 
-        // 訊息來到後, 會自動跳到analytics.js进行骰組分析
-        // 如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
+        // 訊息來到后, 會自动跳到analytics.js进行骰組分析
+        // 如希望增加修改骰組,只要修改analytics.js的条件式 和ROLL內的骰組檔案即可,然后在HELP.JS 增加说明.
         if (rplyVal && rplyVal.text) {
             socket.emit('rolling', result.characterReRollName + '：\n' + rplyVal.text + candle.checker())
             if (message.rollTarget && message.rollTarget.id && message.rollTarget.botname && message.userName && message.userPassword && message.cardName) {
@@ -282,7 +282,7 @@ io.on('connection', async (socket) => {
 
     socket.on('removeChannel', async message => {
         if (await limitRaterCard(socket.handshake.address)) return;
-        //回傳 message 給發送訊息的 Client
+        //回傳 message 給发送訊息的 Client
         try {
             await schema.accountPW.updateOne({
                 "userName": message.userName,
@@ -303,7 +303,7 @@ io.on('connection', async (socket) => {
 
     socket.on('updateCard', async message => {
         if (await limitRaterCard(socket.handshake.address)) return;
-        //回傳 message 給發送訊息的 Client
+        //回傳 message 給发送訊息的 Client
         let filter = {
             userName: message.userName,
             password: SHA(message.userPassword)
@@ -335,15 +335,15 @@ io.on('connection', async (socket) => {
 
 
 
-    // 有連線發生時增加人数
+    // 有連線发生时增加人数
     onlineCount++;
-    // 發送人数給網頁
+    // 发送人数給網頁
     io.emit("online", onlineCount);
-    // 發送紀錄最大值
+    // 发送记录最大值
     socket.emit("maxRecord", records.chatRoomGetMax());
-    // 發送紀錄
+    // 发送记录
     //socket.emit("chatRecord", records.get());
-    records.chatRoomGet("公共房間", (msgs) => {
+    records.chatRoomGet("公共房间", (msgs) => {
         socket.emit("chatRecord", msgs);
     });
 
@@ -366,7 +366,7 @@ io.on('connection', async (socket) => {
         // 如果 msg 內容鍵值小於 2 等於是訊息傳送不完全
         // 因此我們直接 return ，終止函式執行。
         if (!msg) return;
-        let roomNumber = msg || "公共房間";
+        let roomNumber = msg || "公共房间";
         records.chatRoomGet(roomNumber, (msgs) => {
             socket.emit("chatRecord", msgs);
         });
@@ -391,10 +391,10 @@ records.on("new_message", async (message) => {
     let trigger = '';
     let mainMsg = message.msg.match(MESSAGE_SPLITOR); // 定義输入字串
     if (mainMsg && mainMsg[0])
-        trigger = mainMsg[0].toString().toLowerCase(); // 指定啟動詞在第一个詞&把大階強制转成細階
+        trigger = mainMsg[0].toString().toLowerCase(); // 指定啟动詞在第一个詞&把大階强制转成细階
 
-    // 訊息來到後, 會自動跳到analytics.js进行骰組分析
-    // 如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
+    // 訊息來到后, 會自动跳到analytics.js进行骰組分析
+    // 如希望增加修改骰組,只要修改analytics.js的条件式 和ROLL內的骰組檔案即可,然后在HELP.JS 增加说明.
     if (channelKeyword != '' && trigger == channelKeyword.toString().toLowerCase()) {
         rplyVal = await exports.analytics.parseInput({
             inputStr: mainMsg.join(' '),
@@ -478,7 +478,7 @@ async function limitRaterApi(address) {
 let sendTo;
 if (isMaster) {
     const WebSocket = require('ws');
-    //將 express 放進 http 中開啟 Server 的 3000 port ，正確開啟後會在 console 中印出訊息
+    //將 express 放進 http 中开啟 Server 的 3000 port ，正確开啟后會在 console 中印出訊息
     const wss = new WebSocket.Server({
         port: 53589
     }, () => {

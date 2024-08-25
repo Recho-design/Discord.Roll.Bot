@@ -42,44 +42,47 @@ COC export to roll20?
 
 const getHelpMessage = async function () {
     return `【角色卡功能】
-以个人为單位, 一張卡可以在不同的群組使用
-目標是文字團可以快速掷骰，及更新角色狀態。
+以个人为单位, 一张卡可以在不同的群组使用
+目标是文字团可以快速掷骰，及更新角色状态。
 
-簡單新增角色卡 .char add name[Sad]~ state[HP:15/15;]~ roll[鬥毆: cc 50;]~ notes[筆記:這是測試,請試試在群組输入 .char use Sad;]~ 
-新增了角色卡後，可以输入 .admin account (username) (password) 
-然後在網頁: https://card.hktrpg.com/ 中直接进行修改
+👤简单新增角色卡↓
+ .char add name[Sad]~ state[HP:15/15;]~ roll[斗殴: cc 50;]~ notes[笔记:这是测试,请试试在群组输入 .char use Sad;]~ 
+新增了角色卡后，可以输入 ↓
+.admin account (username) (password) 
+然后在网页: https://card.hktrpg.com/ 中直接进行修改（需要管理员先授权频道）
 
-把結果傳送到已登記的Discord，TG，LINE上的聊天群組的登記方法: 
-由該群組的Admin授權允許 输入 .admin allowrolling  
-登記該群組到自己的名單中 输入 .admin registerChannel  
-取消方法
-由該群組的Admin取消授權 输入 .admin disallowrolling  
-取消登記該群組到名單 输入 .admin unregisterChannel  
+把结果传送到已登记的Discord，TG，LINE上的聊天群组的登记方法: 
+由该群组的Admin授权允许 输入 .admin allowrolling  
+登记该群组到自己的名单中 输入 .admin registerChannel 
+ 
+❎︎取消方法
+由该群组的Admin取消授权 输入 .admin disallowrolling  
+取消登记该群组到名单 输入 .admin unregisterChannel  
 
-最後網站會顯示群組名稱，點擊就可以使用了
+最后网站会显示群组名称，点击就可以使用了
 
 -----.char-----
-.char add name[Sad]~ state[HP:15/15;con:60;san:60]~ roll[鬥毆: cc 50;投掷: cc 15;sc:cc {san}]~ notes[筆記:這是測試,請試試在群組输入 .char use Sad;]~  
+.char add name[Sad]~ state[HP:15/15;con:60;san:60]~ roll[斗殴: cc 50;投掷: cc 15;sc:cc {san}]~ notes[笔记:这是测试,请试试在群组输入 .char use Sad;]~  
 - 可以新增及更新角色卡
-.char Show - 可以顯示角色卡列表
-.char Show0 - 可以顯示0號角色卡內容 0可以用其他数字取代
+.char Show - 可以显示角色卡列表
+.char Show0 - 可以显示0号角色卡内容 0可以用其他数字取代
 .char edit name[角色卡名字]~ - 可以以add的格式修改指定角色卡
-.char use 角色卡名字 - 可以在該群組中使用指定角色卡
-.char nonuse - 可以在該群組中取消使用角色卡
-.char delete 角色卡名字 - 可以刪除指定角色卡
-.char button 角色卡名字 - Discord限定，可以產生按鈕指令，會使用直接掷骰指令
+.char use 角色卡名字 - 可以在该群组中使用指定角色卡
+.char nonuse - 可以在该群组中取消使用角色卡
+.char delete 角色卡名字 - 可以删除指定角色卡
+.char button 角色卡名字 - Discord限定，可以产生按钮指令，会使用直接掷骰指令
 -----.ch 功能-----
-在群組中使用.char use (角色名) 後, 就可以啟動角色卡功能
-.ch 項目名稱 項目名稱 - 沒有加減的話, 會單純顯示数據或掷骰
-.ch 項目名稱 (数字)  - 可以立即把如HP變成該数字
-.ch 項目名稱 (+-*/数字)  - 可以立即對如HP进行四則運算
-.ch 項目名稱 (+-*/xDy)  - 可以對如HP进行掷骰四則運算
-.ch set 項目名稱 新內容 - 直接更改內容
-.ch show - 顯示角色卡的state 和roll 內容
-.ch showall - 顯示角色卡的所有內容
-.ch button  - Discord限定，可以產生按鈕指令，會調用.ch 指令
------範例及運算式-----
-角色卡還可以进行運算，詳情請看
+在群组中使用.char use (角色名) 后, 就可以启动角色卡功能
+.ch 项目名称 项目名称 - 没有加减的话, 会单纯显示数据或掷骰
+.ch 项目名称 (数字)  - 可以立即把如HP变成该数字
+.ch 项目名称 (+-*/数字)  - 可以立即对如HP进行四则运算
+.ch 项目名称 (+-*/xDy)  - 可以对如HP进行掷骰四则运算
+.ch set 项目名称 新内容 - 直接更改内容
+.ch show - 显示角色卡的state 和roll 内容
+.ch showall - 显示角色卡的所有内容
+.ch button  - Discord限定，可以产生按钮指令，会调用.ch 指令
+-----范例及运算式-----
+角色卡还可以进行运算，详情请看
 https://github.com/hktrpg/TG.line.Discord.Roll.Bot/wiki/Character-Card `
 }
 
@@ -121,7 +124,7 @@ const rollDiceCommand = async function ({
         // .ch(0) ADD(1) TOPIC(2) CONTACT(3)
         case /(^[.]char$)/i.test(mainMsg[0]) && /^public+/i.test(mainMsg[1]):
             if (!mainMsg[2]) {
-                rply.text = "未输入要公開的角色卡名字"
+                rply.text = "未输入要公开的角色卡名字"
                 return rply;
             }
             filter = {
@@ -130,7 +133,7 @@ const rollDiceCommand = async function ({
             }
             doc = await schema.characterCard.findOne(filter);
             if (!doc) {
-                rply.text = '沒有此角色卡'
+                rply.text = '没有此角色卡'
                 return rply
             }
             try {
@@ -138,16 +141,16 @@ const rollDiceCommand = async function ({
                 await doc.save();
 
             } catch (error) {
-                console.error('GET ERROR 修改失敗' + error)
-                rply.text = '修改失敗\n' + error;
+                console.error('GET ERROR 修改失败' + error)
+                rply.text = '修改失败\n' + error;
                 return rply;
             }
 
-            rply.text = '修改成功\n現在角色卡: ' + doc.name + ' 已經公開。\n請到以下網址查看\n https://publiccard.hktrpg.com/ ';
+            rply.text = '修改成功\n现在角色卡: ' + doc.name + ' 已经公开。\n请到以下網址查看\n https://publiccard.hktrpg.com/ ';
             return rply;
         case /(^[.]char$)/i.test(mainMsg[0]) && /^unpublic+/i.test(mainMsg[1]):
             if (!mainMsg[2]) {
-                rply.text = "未输入要公開的角色卡名字"
+                rply.text = "未输入要公开的角色卡名字"
                 return rply;
             }
             filter = {
@@ -156,7 +159,7 @@ const rollDiceCommand = async function ({
             }
             doc = await schema.characterCard.findOne(filter);
             if (!doc) {
-                rply.text = '沒有此角色卡'
+                rply.text = '没有此角色卡'
                 return rply
             }
             try {
@@ -164,19 +167,19 @@ const rollDiceCommand = async function ({
                 await doc.save();
 
             } catch (error) {
-                console.error('GET ERROR 修改失敗' + error)
-                rply.text = '修改失敗\n' + error;
+                console.error('GET ERROR 修改失败' + error)
+                rply.text = '修改失败\n' + error;
                 return rply;
             }
 
-            rply.text = '修改成功\n現在角色卡: ' + doc.name + ' 已經不公開。\n請到以下網址查看\n https://publiccard.hktrpg.com/ ';
+            rply.text = '修改成功\n现在角色卡: ' + doc.name + ' 已经不公开。\n请到以下網址查看\n https://publiccard.hktrpg.com/ ';
             return rply;
         case /(^[.]char$)/i.test(mainMsg[0]) && /^show\d+/i.test(mainMsg[1]):
             filter = {
                 id: userid
             }
             temp = mainMsg[1].replace(/^show/ig, '');
-            //取得本來的資料, 如有重覆, 以新的覆蓋
+            //取得本來的资料, 如有重覆, 以新的覆蓋
             try {
                 doc = await schema.characterCard.find(filter);
             } catch (error) {
@@ -191,7 +194,7 @@ const rollDiceCommand = async function ({
                 id: userid
             }
             rply.text += '角色卡列表\n';
-            //取得本來的資料, 如有重覆, 以新的覆蓋
+            //取得本來的资料, 如有重覆, 以新的覆蓋
             try {
                 doc = await schema.characterCard.find(filter);
             } catch (error) {
@@ -200,23 +203,23 @@ const rollDiceCommand = async function ({
             for (let index = 0; index < doc.length; index++) {
                 rply.text += index + ': ' + doc[index].name + '　\n';
             }
-            rply.text += `\n输入 .char show0 可以顯示0號角色卡
-            .char button 角色名字 可以產生你的角色卡按鈕
-            输入 .char use 角色名字  可以在頻道中使用角色卡
+            rply.text += `\n输入 .char show0 可以显示0號角色卡
+            .char button 角色名字 可以产生你的角色卡按鈕
+            输入 .char use 角色名字  可以在频道中使用角色卡
             
-            输入use後，
-            再输入 .ch button 也可以產生你的角色卡按鈕
+            输入use后，
+            再输入 .ch button 也可以产生你的角色卡按鈕
             
-            两種產生的按鈕指令會有所不同，前者調用.ch後者產生直接掷骰的指令 `;
+            两种产生的按鈕指令會有所不同，前者调用.ch后者产生直接掷骰的指令 `;
             return rply;
         case /(^[.]char$)/i.test(mainMsg[0]) && /^add$/i.test(mainMsg[1]) && /^\S+$/.test(mainMsg[2]): {
-            Card = await analysicInputCharacterCard(inputStr); //分析输入的資料
+            Card = await analysicInputCharacterCard(inputStr); //分析输入的资料
             if (!Card.name) {
-                rply.text = '沒有输入角色咭名字，請重新整理內容 格式为 \n.char add name[Sad]~ \nstate[HP:15/15;MP:6/6;]~\nroll[投掷:cc 80 投掷;鬥毆:cc 40 鬥毆;]~\nnotes[心靈支柱: 無;notes:這是測試,請試試在群組输入 .char use Sad;]~\n'
+                rply.text = '没有输入角色咭名字，请重新整理內容 格式为 \n.char add name[Sad]~ \nstate[HP:15/15;MP:6/6;]~\nroll[投掷:cc 80 投掷;斗殴:cc 40 斗殴;]~\nnotes[心灵支柱: 无;notes:这是測试,请试试在群組输入 .char use Sad;]~\n'
                 return rply;
             }
             /*
-            只限四張角色卡.
+            只限四张角色卡.
             使用VIPCHECK
             */
             lv = await VIP.viplevelCheckUser(userid);
@@ -227,14 +230,14 @@ const rollDiceCommand = async function ({
                 id: userid
             });
             if (check.length >= limit) {
-                rply.text = '你的角色卡上限为' + limit + '張' + '\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                rply.text = '你的角色卡上限为' + limit + '张' + '\n支援及解锁上限 https://www.patreon.com/HKTRPG\n';
                 return rply
             }
             filter = {
                 id: userid,
                 name: new RegExp('^' + convertRegex(Card.name) + '$', "i")
             }
-            //取得本來的資料, 如有重覆, 以新的覆蓋
+            //取得本來的资料, 如有重覆, 以新的覆蓋
             doc = await schema.characterCard.findOne(filter);
             //把舊和新的合併
             if (doc) {
@@ -248,30 +251,30 @@ const rollDiceCommand = async function ({
                     Card, opt);
             } catch (error) {
                 console.error('新增角色卡 GET ERROR: ', error)
-                rply.text = '新增角色卡失敗\n因为 ' + error.message
+                rply.text = '新增角色卡失败\n因为 ' + error.message
                 return rply;
             }
-            //增加資料庫
-            //檢查有沒有重覆
+            //增加资料庫
+            //检查有没有重覆
             rply.text = await showCharacter(Card, 'addMode');
             return rply;
         }
 
         case /(^[.]char$)/i.test(mainMsg[0]) && /^edit$/i.test(mainMsg[1]) && /^\S+$/.test(mainMsg[2]):
-            Card = await analysicInputCharacterCard(inputStr); //分析输入的資料
+            Card = await analysicInputCharacterCard(inputStr); //分析输入的资料
             if (!Card.name) {
-                rply.text = '沒有输入角色咭名字，請重新整理內容 格式为 .char edit name[Sad]~ \nstate[HP:15/15;MP:6/6;]~\nroll[投掷:cc 80 投掷;鬥毆:cc 40 鬥毆;]~\nnotes[心靈支柱: 無;notes:這是測試,請試試在群組输入 .char use Sad;]~\n'
+                rply.text = '没有输入角色咭名字，请重新整理內容 格式为 .char edit name[Sad]~ \nstate[HP:15/15;MP:6/6;]~\nroll[投掷:cc 80 投掷;斗殴:cc 40 斗殴;]~\nnotes[心灵支柱: 无;notes:这是測试,请试试在群組输入 .char use Sad;]~\n'
                 return rply;
             }
             /*
-            只限四張角色卡.
+            只限四张角色卡.
             使用VIPCHECK
             */
             filter = {
                 id: userid,
                 name: new RegExp('^' + convertRegex(Card.name) + "$", "i")
             }
-            //取得本來的資料, 如有重覆, 以新的覆蓋
+            //取得本來的资料, 如有重覆, 以新的覆蓋
 
             doc = await schema.characterCard.findOne(filter);
             //把舊和新的合併
@@ -281,7 +284,7 @@ const rollDiceCommand = async function ({
                 Card.roll = await Merge(doc.roll, Card.roll, 'name');
                 Card.notes = await Merge(doc.notes, Card.notes, 'name');
             } else {
-                rply.text = '沒有此角色卡, 請重新檢查'
+                rply.text = '没有此角色卡, 请重新检查'
                 return rply;
             }
             try {
@@ -289,11 +292,11 @@ const rollDiceCommand = async function ({
                     Card);
             } catch (error) {
                 console.error('修改角色卡 GET ERROR:  ', error)
-                rply.text = '修改角色卡失敗\n因为 ' + error.message
+                rply.text = '修改角色卡失败\n因为 ' + error.message
                 return rply;
             }
-            //增加資料庫
-            //檢查有沒有重覆
+            //增加资料庫
+            //检查有没有重覆
             rply.text = await showCharacter(Card, 'addMode');
             return rply;
 
@@ -310,7 +313,7 @@ const rollDiceCommand = async function ({
             }
             doc = await schema.characterCard.findOne(filter);
             if (!doc) {
-                rply.text = '沒有此角色卡'
+                rply.text = '没有此角色卡'
                 return rply
             }
             try {
@@ -322,12 +325,12 @@ const rollDiceCommand = async function ({
                     cardId: doc._id
                 }, opt);
             } catch (error) {
-                console.error('GET ERROR 修改失敗' + error)
-                rply.text = '修改失敗\n' + error;
+                console.error('GET ERROR 修改失败' + error)
+                rply.text = '修改失败\n' + error;
                 return rply;
             }
 
-            rply.text = '修改成功\n現在使用角色卡: ' + doc.name;
+            rply.text = '修改成功\n现在使用角色卡: ' + doc.name;
             return rply;
         case /(^[.]char$)/i.test(mainMsg[0]) && /^nonuse$/i.test(mainMsg[1]):
             if (!groupid) {
@@ -343,11 +346,11 @@ const rollDiceCommand = async function ({
                     cardId: ''
                 }, opt);
             } catch (error) {
-                console.error('GET ERROR 修改失敗' + error)
-                rply.text = '修改失敗\n' + error;
+                console.error('GET ERROR 修改失败' + error)
+                rply.text = '修改失败\n' + error;
                 return rply;
             }
-            rply.text = '修改成功。\n現在這群組沒有使用角色卡， .ch 不會出現效果。'
+            rply.text = '修改成功。\n现在这群組没有使用角色卡， .ch 不會出现效果。'
             return rply;
 
         case /(^[.]char$)/i.test(mainMsg[0]) && /^delete$/i.test(mainMsg[1]) && /^\S+$/.test(mainMsg[2]):
@@ -358,7 +361,7 @@ const rollDiceCommand = async function ({
 
             doc = await schema.characterCard.findOne(filter);
             if (!doc) {
-                rply.text = '沒有此角色卡. 注意:刪除角色卡需要名字大小寫完全相同'
+                rply.text = '没有此角色卡. 注意:刪除角色卡需要名字大小寫完全相同'
                 return rply
             }
             try {
@@ -369,11 +372,11 @@ const rollDiceCommand = async function ({
                 await schema.characterGpSwitch.deleteMany(filterRemove);
             } catch (error) {
                 console.error('刪除角色卡 GET ERROR:  ', error)
-                rply.text = '刪除角色卡失敗'
+                rply.text = '刪除角色卡失败'
                 return rply;
             }
-            //增加資料庫
-            //檢查有沒有重覆
+            //增加资料庫
+            //检查有没有重覆
             rply.text = '刪除角色卡成功: ' + doc.name
             return rply;
         case /(^[.]char$)/i.test(mainMsg[0]) && /^button$/i.test(mainMsg[1]) && /^\S+$/.test(mainMsg[2]): {
@@ -382,7 +385,7 @@ const rollDiceCommand = async function ({
                 return rply
             }
             if (botname !== "Discord") {
-                rply.text = "這是Discord限定功能"
+                rply.text = "这是Discord限定功能"
                 return rply;
             }
 
@@ -392,7 +395,7 @@ const rollDiceCommand = async function ({
             }
             const doc = await schema.characterCard.findOne(filter);
             if (!doc) {
-                rply.text = '沒有此角色卡'
+                rply.text = '没有此角色卡'
                 return rply
             }
             if (doc.roll)
@@ -411,8 +414,8 @@ const rollDiceCommand = async function ({
             }
             /**
              * 流程
-             * .ch 功能需要在charactergpswitches 中, 找出現在在使用那張角色卡
-             * 再用charactergpswitches 中的名字, 到charactercard 使用那張咭的資料
+             * .ch 功能需要在charactergpswitches 中, 找出现在在使用那张角色卡
+             * 再用charactergpswitches 中的名字, 到charactercard 使用那张咭的资料
              * 
              * 
              * SET 直接改變数據
@@ -431,7 +434,7 @@ const rollDiceCommand = async function ({
                     _id: docSwitch.cardId
                 });
             } else {
-                rply.text = "未有登記的角色卡, \n請输入.char use 角色卡名字  \n进行登記"
+                rply.text = "未有登記的角色卡, \n请输入.char use 角色卡名字  \n进行登記"
             }
             if (doc) {
                 let useTarget = new RegExp(mainMsg[0] + '\\s+' + mainMsg[1] + '\\s+' + convertRegex(mainMsg[2]));
@@ -466,8 +469,8 @@ const rollDiceCommand = async function ({
                     console.error('doc error', doc)
                     console.error('inputSTR: ', inputStr)
                     console.error('doc SAVE  GET ERROR:', error)
-                    console.error('更新角色卡失敗: ', error)
-                    rply.text = '更新角色卡失敗'
+                    console.error('更新角色卡失败: ', error)
+                    rply.text = '更新角色卡失败'
                     return rply;
                 }
             }
@@ -491,7 +494,7 @@ const rollDiceCommand = async function ({
                     _id: docSwitch.cardId
                 });
             } else {
-                rply.text = "未有登記的角色卡, \n請输入.char use 角色卡名字  \n进行登記"
+                rply.text = "未有登記的角色卡, \n请输入.char use 角色卡名字  \n进行登記"
                 return rply;
             }
             rply.text = await showCharacter(doc, 'showMode');
@@ -513,7 +516,7 @@ const rollDiceCommand = async function ({
                     _id: docSwitch.cardId
                 });
             } else {
-                rply.text = "未有登記的角色卡, \n請输入.char use 角色卡名字  \n进行登記"
+                rply.text = "未有登記的角色卡, \n请输入.char use 角色卡名字  \n进行登記"
                 return rply;
             }
             rply.text = await showCharacter(doc, 'showAllMode');
@@ -524,7 +527,7 @@ const rollDiceCommand = async function ({
                 return rply
             }
             if (botname !== "Discord") {
-                rply.text = "這是Discord限定功能"
+                rply.text = "这是Discord限定功能"
                 return rply;
             }
             const filter = {
@@ -562,18 +565,18 @@ const rollDiceCommand = async function ({
                     _id: docSwitch.cardId
                 });
             } else {
-                rply.text = "未有登記的角色卡, \n請输入.char use 角色卡名字  \n进行登記"
+                rply.text = "未有登記的角色卡, \n请输入.char use 角色卡名字  \n进行登記"
                 return rply;
             }
-            //顯示關鍵字
+            //显示关鍵字
             /**
-             * 對mainMsg 1以後的內容全部进行對比
+             * 对mainMsg 1以后的內容全部进行对比
              * 如果是roll的, 就變成掷骰MODE(最優先)
              * 在roll指令中, 如果有{\w+} 转換成数字
-             * 沒有的話, 再對比所有, 如果有state 的內容
-             * 而且後面跟著数字 +3 -3, 會进行+-運算
-             * 然後顯示State
-             * 如果只有一个, 則顯示該項目
+             * 没有的话, 再对比所有, 如果有state 的內容
+             * 而且后面跟著数字 +3 -3, 會进行+-运算
+             * 然后显示State
+             * 如果只有一个, 则显示該项目
              * 
              */
 
@@ -668,13 +671,13 @@ async function mainCharacter(doc, mainMsg) {
     if (Object.keys(findState).length > 0 || Object.keys(findNotes).length > 0) {
         for (let i = 0; i < findState.length; i++) {
             //如果i 是object , i+1 是STRING 和数字, 就进行加減
-            //否則就正常输出
+            //否则就正常输出
             if (typeof (findState[i]) == 'object' && typeof (findState[i + 1]) == 'string') {
                 doc.state.forEach(async (element, index) => {
                     if (element.name === findState[i].name) {
                         //如果是一个数字, 取代本來的数值
-                        //不然就嘗試计算它
-                        //還是失敗就強制變成一个数字,进行運算
+                        //不然就嘗试计算它
+                        //還是失败就强制變成一个数字,进行运算
                         if (findState[i + 1].match(/^([0-9]*[.])?[0-9]+$/i)) {
                             doc.state[index].itemA = findState[i + 1];
                         } else {
@@ -713,7 +716,7 @@ async function mainCharacter(doc, mainMsg) {
         if (findNotes.length > 0) {
             for (let i = 0; i < findNotes.length; i++) {
                 //如果i 是object , i+1 是STRING 和数字, 就进行加減
-                //否則就正常输出
+                //否则就正常输出
                 tempRply.text += findNotes[i].name + ': ' + findNotes[i].itemA + '　\n';
             }
         }
@@ -754,7 +757,7 @@ async function showCharacter(Card, mode) {
     空手: cc 50
     -------
     筆記: SAD
-    心靈支柱: 特質
+    心灵支柱: 特质
 
     ======
     */
@@ -868,7 +871,7 @@ async function analysicStr(inputStr, state, term) {
             myArray[3] = temp2[2]
         }
 
-        //防止誤输入
+        //防止误输入
         myArray[3] = (myArray[3] == ';') ? '' : myArray[3];
         myArray[1] = myArray[1].replace(/\s+/g, '');
         if (term !== "notes") {
@@ -910,10 +913,10 @@ character = {
 //https://stackoverflow.com/questions/7146217/merge-2-arrays-of-objects
 async function Merge(target, source, prop, updateMode) {
     /**
-     * target 本來的資料
-     * source 新資料
-     * prop  以什麼項目作比較對像
-     * updateMode True 只會更新已有資料 False 沒有的話, 加上去
+     * target 本來的资料
+     * source 新资料
+     * prop  以什么项目作比较对像
+     * updateMode True 只會更新已有资料 False 没有的话, 加上去
      */
     if (!target) target = []
     if (!source) source = []
@@ -979,26 +982,26 @@ module.exports = {
 
 
 /*
-以个人为單位, 一張咭可以在不同的群組使用
+以个人为单位, 一张咭可以在不同的群組使用
 .char add 的输入格式,用來增建角色卡
 .char add name[Sad]~
 state[HP:5/5;MP:3/3;SAN:50/99;護甲:6]~
-roll[投掷:cc 80 投掷;空手鬥毆: cc [[50 +{hp}]]]~
-notes[筆記:SAD;心靈支柱: 特質]~
+roll[投掷:cc 80 投掷;空手斗殴: cc [[50 +{hp}]]]~
+notes[筆記:SAD;心灵支柱: 特质]~
 
 // state 可以进行增減
 // notes 文字筆記
 // roll 掷骰指令
 
-如果沒有名字 會更新修正正在USE的角色卡
-但沒有的話,  就會出錯
+如果没有名字 會更新修正正在USE的角色卡
+但没有的话,  就會出错
 ============
 
 
 ===
 .char use 使用角色卡
 .char use sad
-會自動使用名叫Sad 的角色卡
+會自动使用名叫Sad 的角色卡
 ====
 .char nonuse
 .char use
@@ -1011,11 +1014,11 @@ notes[筆記:SAD;心靈支柱: 特質]~
 
 ====
 
-顯示SHOW 功能:
+显示SHOW 功能:
 
-.ch show (顯示 名字 state 和roll)
-.ch shows  (顯示 名字 state,notes 和roll)
-.ch show notes (顯示 名字 和notes)
+.ch show (显示 名字 state 和roll)
+.ch shows  (显示 名字 state,notes 和roll)
+.ch show notes (显示 名字 和notes)
 
 
 角色名字
@@ -1025,22 +1028,22 @@ HP: 5/5 MP: 3/3 SAN: 50/90 護甲: 6
 空手: cc 50
 -------
 筆記: SAD
-心靈支柱: 特質
+心灵支柱: 特质
 
 ======
 
 功能 使用角色卡的state 和notes
 
-.ch set HP  10 直接把現在值變成10
-.ch set HP  10/20 直接把現在值變成10 最大值變成20
+.ch set HP  10 直接把现在值變成10
+.ch set HP  10/20 直接把现在值變成10 最大值變成20
 
 
 
-.ch HP MP 顯示該內容
+.ch HP MP 显示該內容
 HP 5/5 MP 3/3
 
-.ch HP -5 如果HP是State 自動減5
-.ch HP +5  如果HP是State 自動加5 如果是
+.ch HP -5 如果HP是State 自动減5
+.ch HP +5  如果HP是State 自动加5 如果是
 
 
 
@@ -1049,7 +1052,7 @@ HP 5/5 MP 3/3
 .ch  投掷
 cc 80 投掷
 在指令中可以加上 +{HP} -{san}
-在結果中會进行運算。
+在结果中會进行运算。
 
 
 ======

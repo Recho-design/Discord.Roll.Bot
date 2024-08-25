@@ -159,7 +159,7 @@ if (retry > maxRetry) {
 			trigger = mainMsg[0].toString().toLowerCase();
 
 		}
-		//指定啟動詞在第一个詞&把大階強制转成細階
+		//指定啟动詞在第一个詞&把大階强制转成细階
 		if ((trigger == ".me" || trigger == ".mee") && !z_stop(mainMsg, groupid)) {
 			displaynamecheck = false;
 		}
@@ -203,12 +203,12 @@ if (retry > maxRetry) {
 		displayname = (getContact && getContact.pushname) || '';
 		let rplyVal = {};
 		if (mainMsg && mainMsg[0])
-			trigger = mainMsg[0].toString().toLowerCase(); // 指定啟動詞在第一个詞&把大階強制转成細階
+			trigger = mainMsg[0].toString().toLowerCase(); // 指定啟动詞在第一个詞&把大階强制转成细階
 		if (trigger == ".me" || trigger == ".mee") {
 			displaynamecheck = false;
 		}
-		// 訊息來到後, 會自動跳到analytics.js进行骰組分析
-		// 如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
+		// 訊息來到后, 會自动跳到analytics.js进行骰組分析
+		// 如希望增加修改骰組,只要修改analytics.js的条件式 和ROLL內的骰組檔案即可,然后在HELP.JS 增加说明.
 
 		//設定私訊的模式 0-普通 1-自己 2-自己+GM 3-GM
 
@@ -273,7 +273,7 @@ if (retry > maxRetry) {
 					for (let i = 0; i < TargetGMTempID.length; i++) {
 						targetGMNameTemp = targetGMNameTemp + ", " + (TargetGMTempdiyName[i] || "@" + TargetGMTempdisplayname[i]);
 					}
-					SendDR(msg, "@" + displayname + '暗骰进行中 \n目標: 自己 ' + targetGMNameTemp);
+					SendDR(msg, "@" + displayname + '暗骰进行中 \n目标: 自己 ' + targetGMNameTemp);
 				}
 				rplyVal.text = "@" + displayname + " 的暗骰\n" + rplyVal.text;
 				await SendToId(msg.from, rplyVal, client);
@@ -289,7 +289,7 @@ if (retry > maxRetry) {
 					for (let i = 0; i < TargetGMTempID.length; i++) {
 						targetGMNameTemp = targetGMNameTemp + " " + (TargetGMTempdiyName[i] || "@" + TargetGMTempdisplayname[i]);
 					}
-					SendDR(msg, "@" + displayname + '暗骰进行中 \n目標: ' + targetGMNameTemp);
+					SendDR(msg, "@" + displayname + '暗骰进行中 \n目标: ' + targetGMNameTemp);
 				}
 				rplyVal.text = "@" + displayname + " 的暗骰\n" + rplyVal.text;
 				for (let i = 0; i < TargetGMTempID.length; i++) {
@@ -323,7 +323,7 @@ if (retry > maxRetry) {
 
 	if (agenda && agenda.agenda) {
 		agenda.agenda.define("scheduleAtMessageWhatsapp", async (job) => {
-			//指定時間一次
+			//指定时间一次
 			let data = job.attrs.data;
 			let text = { text: data.replyText };
 			//SendToReply(ctx, text)
@@ -339,7 +339,7 @@ if (retry > maxRetry) {
 
 		});
 		agenda.agenda.define("scheduleCronMessageWhatsapp", async (job) => {
-			//指定時間
+			//指定时间
 			let data = job.attrs.data;
 			let text = { text: data.replyText };
 			//SendToReply(ctx, text)
@@ -351,7 +351,7 @@ if (retry > maxRetry) {
 				if ((new Date(Date.now()) - data.createAt) >= SIX_MONTH) {
 					await job.remove();
 					await SendToId(
-						data.groupid, { text: "已運行六个月, 移除此定時訊息" }, client
+						data.groupid, { text: "已运行六个月, 移除此定时訊息" }, client
 					)
 				}
 			} catch (e) {

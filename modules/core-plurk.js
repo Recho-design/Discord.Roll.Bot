@@ -57,8 +57,8 @@ Plurk_Client.on('new_plurk', async response => {
     }
     else return;
 
-    // 訊息來到後, 會自動跳到analytics.js进行骰組分析
-    // 如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
+    // 訊息來到后, 會自动跳到analytics.js进行骰組分析
+    // 如希望增加修改骰組,只要修改analytics.js的条件式 和ROLL內的骰組檔案即可,然后在HELP.JS 增加说明.
     let rplyVal = await exports.analytics.parseInput({
         inputStr: message.replace(/^\s*@hktrpg\s+/i, ''),
         groupid: groupid,
@@ -112,8 +112,8 @@ Plurk_Client.on('new_response', async response => {
     else return;
 
 
-    // 訊息來到後, 會自動跳到analytics.js进行骰組分析
-    // 如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
+    // 訊息來到后, 會自动跳到analytics.js进行骰組分析
+    // 如希望增加修改骰組,只要修改analytics.js的条件式 和ROLL內的骰組檔案即可,然后在HELP.JS 增加说明.
     let rplyVal = await exports.analytics.parseInput({
         inputStr: inputStr,
         groupid: groupid,

@@ -11,7 +11,7 @@ const checkTools = require('../modules/check.js');
 const VIP = require('../modules/veryImportantPerson');
 const FUNCTION_LIMIT = [30, 200, 200, 300, 300, 300, 300, 300];
 const gameName = function () {
-    return '【掷骰開關功能】 .bk (add del show)'
+    return '【掷骰开关功能】 .bk (add del show)'
 }
 
 const gameType = function () {
@@ -24,14 +24,14 @@ const prefixs = function () {
     }]
 }
 const getHelpMessage = async function () {
-    return `【掷骰開關功能】
-這是根據關鍵字來開關功能,只要符合內容,
-例如运势,那麼只要字句中包括,就不會讓Bot有反應
-所以注意如果用了D, 那麼1D100, .1WD 都會全部沒反應.
+    return `【掷骰开关功能】
+这是根據关鍵字來开关功能,只要符合內容,
+例如运势,那么只要字句中包括,就不會讓Bot有反應
+所以注意如果用了D, 那么1D100, .1WD 都會全部没反應.
 另外不可擋b,k,bk, 只可以擋漢字,数字和英文
-P.S.如果沒立即生效 用.bk show 刷新一下
-输入.bk add xxxxx 即可增加關鍵字 每次一个
-输入.bk show 顯示關鍵字
+P.S.如果没立即生效 用.bk show 刷新一下
+输入.bk add xxxxx 即可增加关鍵字 每次一个
+输入.bk show 显示关鍵字
 输入.bk del (編號)或all 即可刪除`
 }
 const initialize = function () {
@@ -56,9 +56,9 @@ const rollDiceCommand = async function ({
             rply.quotes = true;
             return rply;
         case /^add$/i.test(mainMsg[1]) && /^\S+$/ig.test(mainMsg[2]): {
-            //增加阻擋用關鍵字
+            //增加阻擋用关鍵字
             //if (!mainMsg[2]) return;
-            if (!mainMsg[2]) rply.text += '沒有關鍵字. '
+            if (!mainMsg[2]) rply.text += '没有关鍵字. '
             if (rply.text += checkTools.permissionErrMsg({
                 flag : checkTools.flag.ChkChannelManager,
                 gid : groupid,
@@ -78,7 +78,7 @@ const rollDiceCommand = async function ({
             });
             if (findVIP)
                 if (findVIP._doc.blockfunction.length >= limit) {
-                    rply.text = '關鍵字上限' + limit + '个\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                    rply.text = '关鍵字上限' + limit + '个\n支援及解锁上限 https://www.patreon.com/HKTRPG\n';
                     return rply;
                 }
 
@@ -97,7 +97,7 @@ const rollDiceCommand = async function ({
             return rply;
         }
         case /^del$/i.test(mainMsg[1]) && /^all$/i.test(mainMsg[2]):
-            //刪除阻擋用關鍵字
+            //刪除阻擋用关鍵字
             if (rply.text = checkTools.permissionErrMsg({
                 flag : checkTools.flag.ChkChannelManager,
                 gid : groupid,
@@ -115,13 +115,13 @@ const rollDiceCommand = async function ({
                             save.save = msgs
                         })
                     })
-                    rply.text = '刪除所有關鍵字'
+                    rply.text = '刪除所有关鍵字'
                 }
             }
             return rply;
         case /^del$/i.test(mainMsg[1]) && /^\d+$/i.test(mainMsg[2]):
-            //刪除阻擋用關鍵字
-            if (!mainMsg[2]) rply.text += '沒有關鍵字. '
+            //刪除阻擋用关鍵字
+            if (!mainMsg[2]) rply.text += '没有关鍵字. '
             if (rply.text += checkTools.permissionErrMsg({
                 flag : checkTools.flag.ChkChannelManager,
                 gid : groupid,
@@ -160,16 +160,16 @@ const rollDiceCommand = async function ({
             let temp = 0;
             for (let i = 0; i < save.save.length; i++) {
                 if (save.save[i].groupid == groupid) {
-                    rply.text += '阻擋用關鍵字列表:'
+                    rply.text += '阻擋用关鍵字列表:'
                     for (let a = 0; a < save.save[i].blockfunction.length; a++) {
                         temp = 1
                         rply.text += ("\n") + a + ": " + save.save[i].blockfunction[a]
                     }
                 }
             }
-            if (temp == 0) rply.text = '沒有阻擋用關鍵字. '
+            if (temp == 0) rply.text = '没有阻擋用关鍵字. '
 
-            //顯示阻擋用關鍵字
+            //显示阻擋用关鍵字
             return rply;
         }
         default:

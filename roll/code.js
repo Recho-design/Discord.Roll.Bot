@@ -3,27 +3,27 @@ const variables = {};
 const axios = require('axios');
 const { SlashCommandBuilder } = require('discord.js');
 const gameName = function () {
-    return '【.code [語言] [指令]】'
+    return '【.code [语言] [指令]】'
 }
 const gameType = function () {
     return 'funny:code:hktrpg'
 }
 const prefixs = function () {
-    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---這裡是一對  
-    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---這裡是一對
-    //如前面是 /^1$/ig, 後面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
+    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这裡是一对  
+    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这裡是一对
+    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
     ///^(?=.*he)(?!.*da).*$/ig
     return [{
         first: /^\.code$/i,second: null
     }]
 }
 const getHelpMessage = function () {
-    return `【.code】 [語言] [指令]
+    return `【.code】 [语言] [指令]
 使用piston Api
-格式: .code [語言] 
+格式: .code [语言] 
 [指令]
 
-現支援: js java
+现支援: js java
 `
 }
 const initialize = function () {

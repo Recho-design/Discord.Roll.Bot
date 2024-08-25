@@ -82,37 +82,37 @@ const trpgCommand = mongoose.model('trpgCommand', {
 const trpgLevelSystem = mongoose.model('trpgLevelSystem', {
     groupid: String,
     LevelUpWord: String,
-    //在這群組升級時的升級語
+    //在这群組升级时的升级语
     RankWord: String,
-    //在這群組查詢等級時的回應
+    //在这群組查詢等级时的回應
     Switch: {
         type: String
     },
-    //是否啓動功能 config 1X 則1
+    //是否启动功能 config 1X 则1
     Hidden: {
         type: String
     },
     SwitchV2: {
         type: Boolean
     },
-    //是否啓動功能 config 1X 則1
+    //是否启动功能 config 1X 则1
     HiddenV2: {
         type: Boolean
     },
     //大於此Lvl即为稱號.
     Title: Array,
-    //是否顯示升級語 config X1 則1
+    //是否显示升级语 config X1 则1
     trpgLevelSystemfunction: [{
         userid: String,
         name: String,
         EXP: Number,
-        //現在經驗值
+        //现在经驗值
         Level: String,
-        //等級
+        //等级
         LastSpeakTime: {
             type: Date,
             default: Date.now
-            //最後說話時間, 間隔一分鐘才提升經驗
+            //最后说话时间, 间隔一分鐘才提升经驗
         }
     }]
 });
@@ -122,9 +122,9 @@ const trpgLevelSystemMember = mongoose.model('trpgLevelSystemMember', {
     name: String,
     EXP: Number,
     TitleName: String,
-    //現在經驗值
+    //现在经驗值
     Level: Number,
-    //等級
+    //等级
     multiEXPTimes: Number,
     multiEXP: Number,
     stopExp: Number,
@@ -132,16 +132,16 @@ const trpgLevelSystemMember = mongoose.model('trpgLevelSystemMember', {
     decreaseEXPTimes: Number,
     //EVENT事件
     /**
-     * 4. 停止得到經驗(X分鐘內)
-     * 5. 發言經驗減少X(X分鐘內)
-     * 6. 發言經驗增加X(X分鐘內)
-    7. 吸收對方經驗(X分鐘內)
-    8. 對方得到經驗值 X 倍(X分鐘內)
+     * 4. 停止得到经驗(X分鐘內)
+     * 5. 发言经驗減少X(X分鐘內)
+     * 6. 发言经驗增加X(X分鐘內)
+    7. 吸收对方经驗(X分鐘內)
+    8. 对方得到经驗值 X 倍(X分鐘內)
      */
     LastSpeakTime: {
         type: Date,
         default: Date.now
-        //最後說話時間, 間隔一分鐘才提升經驗
+        //最后说话时间, 间隔一分鐘才提升经驗
     }
 });
 const trpgDarkRolling = mongoose.model('trpgDarkRolling', {
@@ -153,16 +153,16 @@ const trpgDarkRolling = mongoose.model('trpgDarkRolling', {
     }]
 });
 //
-//目的: 記錄發言数量及掷骰数量
-//紀錄掷骰結果
+//目的: 記錄发言数量及掷骰数量
+//记录掷骰结果
 //每日上傳一次
-//同時每500次顯示一次
+//同时每500次显示一次
 //
 const RealTimeRollingLog = mongoose.model('RealTimeRollingLog', {
     RealTimeRollingLogfunction: {
-        //第一次運行紀錄RollingLogfunction的時間
+        //第一次运行记录RollingLogfunction的时间
         StartTime: String,
-        //一小時一次
+        //一小时一次
         LastTimeLog: Date,
         //RealTimeLog
         LogTime: String,
@@ -251,7 +251,7 @@ const allowRolling = mongoose.model('allowRolling', new mongoose.Schema({
 
 const chatRoom = mongoose.model('chatRoom', new mongoose.Schema({
     name: { // 欄位名稱
-        type: String, // 欄位資料型別
+        type: String, // 欄位资料型別
         required: true, // 必須要有值
         maxlength: 50
     },
@@ -333,7 +333,7 @@ const init = mongoose.model('init', new mongoose.Schema({
     }]
 }));
 
-//个人新增event 時的紀錄。eventList會使用ID 來紀錄
+//个人新增event 时的记录。eventList會使用ID 來记录
 const eventMember = mongoose.model('eventMember', new mongoose.Schema({
     userID: String,
     userName: String,
@@ -351,7 +351,7 @@ const eventMember = mongoose.model('eventMember', new mongoose.Schema({
     }]
 }));
 
-//整个event 列表，會從這裡进行抽取
+//整个event 列表，會從这裡进行抽取
 const eventList = mongoose.model('eventList', new mongoose.Schema({
     title: String,
     chainTitle: String,
@@ -365,13 +365,13 @@ const eventList = mongoose.model('eventList', new mongoose.Schema({
 }));
 
 
-//成長的開關控制
+//成长的开关控制
 const developmentConductor = mongoose.model('developmentConductor', new mongoose.Schema({
     groupID: String,
     switch: Boolean
 }));
 
-//成長的每一个掷骰結果
+//成长的每一个掷骰结果
 const developmentRollingRecord = mongoose.model('developmentRollingRecord', new mongoose.Schema({
     userID: String,
     groupID: String,
@@ -381,7 +381,7 @@ const developmentRollingRecord = mongoose.model('developmentRollingRecord', new 
     skillResult: Number,
     skillPerStyle: String,
     userName: String
-    //成功,失敗,大成功,大失敗
+    //成功,失败,大成功,大失败
 }));
 
 //.schedule Cron

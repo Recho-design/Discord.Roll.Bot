@@ -16,7 +16,7 @@ const checkTools = require('../modules/check.js');
 
 
 const gameName = function () {
-    return '【定時發訊功能】.at /.cron  mins hours delete show'
+    return '【定时发訊功能】.at /.cron  mins hours delete show'
 }
 
 const gameType = function () {
@@ -29,46 +29,46 @@ const prefixs = function () {
     }]
 }
 const getHelpMessage = function () {
-    return `【定時任務功能】
-    两種模式
-    【at】  指定一个時間
-    如 20220604 1900  (年月日 時間)
-    .at 5mins  (五分鐘後)
-    .at 5hours (五小時後)
-    會發佈指定一个信息
+    return `【定时任務功能】
+    两种模式
+    【at】  指定一个时间
+    如 20220604 1900  (年月日 时间)
+    .at 5mins  (五分鐘后)
+    .at 5hours (五小时后)
+    會发佈指定一个信息
     可以掷骰 使用[[]]包著指令就可
     如.at 9mins [[CC 60]]
 
-    【cron】 每天指定一个時間可以發佈一个信息
-    如 1230  2200 (24小時制)
+    【cron】 每天指定一个时间可以发佈一个信息
+    如 1230  2200 (24小时制)
     或 1230-2 2200-Sun
-    可運行六个月, 然後會自動刪除
+    可运行六个月, 然后會自动刪除
     
-    .cron 0831 每天八時三十一分 
+    .cron 0831 每天八时三十一分 
     嚎叫吧!
 
     .cron 1921-2
-    我將會每隔两天的晚上7時21分發一次訊息
+    我將會每隔两天的晚上7时21分发一次訊息
 
     .cron 1921-wed-mon
-    我將會每个星期一和三發一次訊息
+    我將會每个星期一和三发一次訊息
 
     .cron 1921-2-wed-sun
-    我將會每隔二天，如果是星期三或星期日就發一次訊息
+    我將會每隔二天，如果是星期三或星期日就发一次訊息
 
     .cron  1921 
-    每天晚上七時二十一分擲 
-    [[CC 80 幸運]]
+    每天晚上七时二十一分掷 
+    [[CC 80 幸运]]
 
     星期代碼: Sun Mon Tue Wed thu fri Sat
     
-    .cron / .at show 可以顯示已新增的定時訊息
+    .cron / .at show 可以显示已新增的定时訊息
 
-    .cron / .at delete (序號) 可以刪除指定的定時訊息
-    如 .at delete 1   請使用.at show 查詢序號
+    .cron / .at delete (序號) 可以刪除指定的定时訊息
+    如 .at delete 1   请使用.at show 查詢序號
 
     patreoner 限定功能
-    自定發訊者名字和圖片(需要Webhook權限)
+    自定发訊者名字和圖片(需要Webhook權限)
     
     範例
     .cron 2258 
@@ -132,7 +132,7 @@ const rollDiceCommand = async function ({
             ).catch(error => console.error('agenda error: ', error.name, error.reson))
             rply.text = showJobs(jobs);
             if (userrole == 3 && botname == "Discord") {
-                rply.text = `\n本頻道列表\n\n${rply.text}`
+                rply.text = `\n本频道列表\n\n${rply.text}`
                 check = {
                     name: differentPeformAt(botname),
                     "data.groupid": groupid
@@ -152,7 +152,7 @@ const rollDiceCommand = async function ({
                 return rply
             }
             if (!mainMsg[2] || !/\d+/i.test(mainMsg[2])) {
-                rply.text = '移除定時訊息指令为 .at delete (序號) \n 如 .at delete 1'
+                rply.text = '移除定时訊息指令为 .at delete (序號) \n 如 .at delete 1'
                 return rply
             }
             let check = {}
@@ -176,7 +176,7 @@ const rollDiceCommand = async function ({
 
             } catch (e) {
                 console.error("Remove at Error removing job from collection. input: ", inputStr);
-                rply.text = "找不到該序號, 請使用.at show重新檢查"
+                rply.text = "找不到該序號, 请使用.at show重新检查"
                 return rply;
             }
             return rply;
@@ -199,7 +199,7 @@ const rollDiceCommand = async function ({
                 check
             ).catch(error => console.error('schedule  #171 mongoDB error: ', error.name, error.reson));
             if (checkGroupid >= limit) {
-                rply.text = '.at 整个群組上限' + limit + '个\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                rply.text = '.at 整个群組上限' + limit + '个\n支援及解锁上限 https://www.patreon.com/HKTRPG\n';
                 return rply;
             }
             let roleName = getAndRemoveRoleNameAndLink(inputStr);
@@ -207,20 +207,20 @@ const rollDiceCommand = async function ({
 
             let checkTime = checkAtTime(mainMsg[1], mainMsg[2]);
             if (!checkTime || checkTime.time == "Invalid Date") {
-                rply.text = `输入出錯\n ${this.getHelpMessage()}`;
+                rply.text = `输入出错\n ${this.getHelpMessage()}`;
                 return rply;
             }
             let text = (checkTime.threeColum) ? inputStr.replace(/^\s?\S+\s+\S+\s+\S+\s+/, '') : inputStr.replace(/^\s?\S+\s+\S+\s+/, '');
             let date = checkTime.time;
             if (roleName.roleName || roleName.imageLink) {
                 if (lv === 0) {
-                    rply.text = `.at裡的角色發言功能只供Patreoner使用，請支持伺服器運作，或自建Server\nhttps://www.patreon.com/HKTRPG`;
+                    rply.text = `.at裡的角色发言功能只供Patreoner使用，请支持服务器运作，或自建Server\nhttps://www.patreon.com/HKTRPG`;
                     return rply;
                 }
                 if (!roleName.roleName || !roleName.imageLink) {
-                    rply.text = `請完整設定名字和圖片網址
+                    rply.text = `请完整設定名字和圖片網址
                     格式为
-                    .at 時間
+                    .at 时间
                     name=名字
                     link=www.sample.com/sample.jpg
                     XXXXXX信息一堆`;
@@ -231,7 +231,7 @@ const rollDiceCommand = async function ({
 
             let callBotname = differentPeformAt(botname);
             await agenda.agenda.schedule(date, callBotname, { imageLink: roleName.imageLink, roleName: roleName.roleName, replyText: text, channelid: channelid, quotes: true, groupid: groupid, botname: botname, userid: userid }).catch(error => console.error('agenda error: ', error.name, error.reson))
-            rply.text = `已新增排定內容\n將於${date.toString().replace(/:\d+\s.*/, '')}運行`
+            rply.text = `已新增排定內容\n將於${date.toString().replace(/:\d+\s.*/, '')}运行`
             return rply;
         }
         case /^\.cron+$/i.test(mainMsg[0]) && /^show$/i.test(mainMsg[1]): {
@@ -260,7 +260,7 @@ const rollDiceCommand = async function ({
             ).catch(error => console.error('agenda error: ', error.name, error.reson))
             rply.text = showCronJobs(jobs);
             if (userrole == 3 && botname == "Discord") {
-                rply.text = `\n本頻道列表\n\n${rply.text}`
+                rply.text = `\n本频道列表\n\n${rply.text}`
                 check = {
                     name: differentPeformCron(botname),
                     "data.groupid": groupid
@@ -283,7 +283,7 @@ const rollDiceCommand = async function ({
             }
 
             if (!mainMsg[2] || !/\d+/i.test(mainMsg[2])) {
-                rply.text = '移除定時訊息指令为 .cron delete (序號) \n 如 .cron delete 1'
+                rply.text = '移除定时訊息指令为 .cron delete (序號) \n 如 .cron delete 1'
                 return rply
             }
             let check = {}
@@ -308,7 +308,7 @@ const rollDiceCommand = async function ({
 
             } catch (e) {
                 console.error("Remove Cron Error removing job from collection, input: ", inputStr);
-                rply.text = "找不到該序號, 請使用.cron show 重新檢查"
+                rply.text = "找不到該序號, 请使用.cron show 重新检查"
                 return rply;
             }
             return rply;
@@ -334,7 +334,7 @@ const rollDiceCommand = async function ({
                 check
             ).catch(error => console.error('schedule #278 mongoDB error: ', error.name, error.reson));
             if (checkGroupid >= limit) {
-                rply.text = '.cron 整个群組上限' + limit + '个\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                rply.text = '.cron 整个群組上限' + limit + '个\n支援及解锁上限 https://www.patreon.com/HKTRPG\n';
                 return rply;
             }
             let roleName = getAndRemoveRoleNameAndLink(inputStr);
@@ -342,18 +342,18 @@ const rollDiceCommand = async function ({
 
             let checkTime = checkCronTime(mainMsg[1]);
             if (!checkTime || !checkTime.min || !checkTime.hour) {
-                rply.text = `输入出錯\n ${this.getHelpMessage()} `;
+                rply.text = `输入出错\n ${this.getHelpMessage()} `;
                 return rply;
             }
             if (roleName.roleName || roleName.imageLink) {
                 if (lv === 0) {
-                    rply.text = `.cron裡的角色發言功能只供Patreoner使用，請支持伺服器運作，或自建Server\nhttps://www.patreon.com/HKTRPG`;
+                    rply.text = `.cron裡的角色发言功能只供Patreoner使用，请支持服务器运作，或自建Server\nhttps://www.patreon.com/HKTRPG`;
                     return rply;
                 }
                 if (!roleName.roleName || !roleName.imageLink) {
-                    rply.text = `請完整設定名字和圖片網址
+                    rply.text = `请完整設定名字和圖片網址
                     格式为
-                    .cron 時間
+                    .cron 时间
                     name=名字
                     link=www.sample.com/sample.jpg
                     XXXXXX信息一堆`;
@@ -377,7 +377,7 @@ const rollDiceCommand = async function ({
                 console.error("schedule #301 Error saving job to collection");
             }
 
-            rply.text = `已新增排定內容\n將於${checkTime.days ? `每隔${checkTime.days}天` : ''}  ${checkTime.weeks.length ? `每个星期的${checkTime.weeks}` : ''}${!checkTime.weeks && !checkTime.days ? `每天` : ''} ${checkTime.hour}:${checkTime.min} (24小時制)運行`
+            rply.text = `已新增排定內容\n將於${checkTime.days ? `每隔${checkTime.days}天` : ''}  ${checkTime.weeks.length ? `每个星期的${checkTime.weeks}` : ''}${!checkTime.weeks && !checkTime.days ? `每天` : ''} ${checkTime.hour}:${checkTime.min} (24小时制)运行`
             return rply;
         }
         default: {
@@ -426,9 +426,9 @@ function differentPeformCron(botname) {
 function checkAtTime(first, second) {
     //const date = new Date(2012, 11, 21, 5, 30, 0);
     //const date = new Date(Date.now() + 5000);
-    //   如 20220604 1900 < 年月日 時間
-    //5mins  (五分鐘後)
-    //5hours (五小時後)
+    //   如 20220604 1900 < 年月日 时间
+    //5mins  (五分鐘后)
+    //5hours (五小时后)
     switch (true) {
         case /^\d+mins$/i.test(first): {
             let time = first.match(/^(\d+)mins$/i)[1];
@@ -492,9 +492,9 @@ function showJobs(jobs) {
     if (jobs && jobs.length > 0) {
         for (let index = 0; index < jobs.length; index++) {
             let job = jobs[index];
-            reply += `序號#${index + 1} 下次運行時間 ${job.attrs.nextRunAt.toString().replace(/:\d+\s.*/, '')}\n${job.attrs.data.replyText}\n`;
+            reply += `序號#${index + 1} 下次运行时间 ${job.attrs.nextRunAt.toString().replace(/:\d+\s.*/, '')}\n${job.attrs.data.replyText}\n`;
         }
-    } else reply = "沒有找到定時任務"
+    } else reply = "没有找到定时任務"
     return reply;
 }
 function showCronJobs(jobs) {
@@ -504,9 +504,9 @@ function showCronJobs(jobs) {
             let job = jobs[index];
             let createAt = job.attrs.data.createAt;
             let time = job.attrs.repeatInterval.match(/^(\d+) (\d+)/);
-            reply += `序號#${index + 1} 創建時間 ${createAt.toString().replace(/:\d+\s.*/, '')}\n每天運行時間 ${(time && time[2]) || 'error'} ${(time && time[1]) || 'error'}\n${job.attrs.data.replyText}\n`;
+            reply += `序號#${index + 1} 创建时间 ${createAt.toString().replace(/:\d+\s.*/, '')}\n每天运行时间 ${(time && time[2]) || 'error'} ${(time && time[1]) || 'error'}\n${job.attrs.data.replyText}\n`;
         }
-    } else reply = "沒有找到定時任務"
+    } else reply = "没有找到定时任務"
     return reply;
 }
 

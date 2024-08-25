@@ -22,24 +22,24 @@ const prefixs = function () {
 }
 const getHelpMessage = async function () {
     return `【暗骰GM功能】.drgm(addgm del show) dr ddr dddr
-這是讓你可以私骰GM的功能
+这是讓你可以私骰GM的功能
 输入.drgm addgm 讓自己成为GM
-输入.drgm show 顯示GM列表
+输入.drgm show 显示GM列表
 输入.drgm del(編號)或all 即可刪除
 输入dr  (指令) 私訊自己 
 输入ddr (指令) 私訊GM及自己
 输入dddr(指令) 私訊GM
 -------
 想成为GM的人先输入.drgm addgm
-然後別人DDR 或DDDR (指令)即可以私訊給這位GM
-例如输入 ddr cc 80 鬥毆 
-就會把結果私訊GM及自己
-例如输入 dddr cc 80 鬥毆 
-就會把結果只私訊GM
+然后別人DDR 或DDDR (指令)即可以私訊給这位GM
+例如输入 ddr cc 80 斗殴 
+就會把结果私訊GM及自己
+例如输入 dddr cc 80 斗殴 
+就會把结果只私訊GM
 
 输入.drgm addgm (代名) 即可成为GM,如果想化名一下,
-可以在addgm 後输入一个名字, 暗骰時就會顯示
-不输入就會顯示原名
+可以在addgm 后输入一个名字, 暗骰时就會显示
+不输入就會显示原名
 `
 }
 const initialize = function () {
@@ -58,11 +58,11 @@ const rollDiceCommand = async function ({ mainMsg, groupid, userid, userrole, bo
             rply.text = await this.getHelpMessage();
             rply.quotes = true;
             if (botname == "Line")
-                rply.text += "\n因为Line的機制, 如掷骰時並無顯示用家名字, 請到下列網址,和機器人任意說一句話,成为好友. \n https://line.me/R/ti/p/svMLqy9Mik"
+                rply.text += "\n因为Line的机制, 如掷骰时並无显示用家名字, 请到下列網址,和机器人任意说一句话,成为好友. \n https://line.me/R/ti/p/svMLqy9Mik"
             return rply;
         case /(^[.]drgm$)/i.test(mainMsg[0]) && /^addgm$/i.test(mainMsg[1]): {
             //
-            //增加自定義關鍵字
+            //增加自定義关鍵字
             // .drgm[0] addgm[1] 代替名字[2]  
             if (rply.text = checkTools.permissionErrMsg({
                 flag : checkTools.flag.ChkChannelManager,
@@ -75,7 +75,7 @@ const rollDiceCommand = async function ({ mainMsg, groupid, userid, userrole, bo
             checkifsamename = 0
             if (channelid)
                 groupid = channelid
-            //因为在DISCROD以頻道作單位
+            //因为在DISCROD以频道作单位
             if (trpgDarkRollingfunction.trpgDarkRollingfunction)
                 for (let i = 0; i < trpgDarkRollingfunction.trpgDarkRollingfunction.length; i++) {
                     if (trpgDarkRollingfunction.trpgDarkRollingfunction[i].groupid == groupid) {
@@ -105,11 +105,11 @@ const rollDiceCommand = async function ({ mainMsg, groupid, userid, userrole, bo
                 })
                 rply.text = '新增成功: ' + (mainMsg[2] || displayname ||
                     "")
-            } else rply.text = '新增失敗. 你已在GM列表'
+            } else rply.text = '新增失败. 你已在GM列表'
             return rply;
         } case /(^[.]drgm$)/i.test(mainMsg[0]) && /^del$/i.test(mainMsg[1]) && /^all$/i.test(mainMsg[2]):
             //    
-            //刪除所有自定義關鍵字
+            //刪除所有自定義关鍵字
             //
             if (rply.text = checkTools.permissionErrMsg({
                 flag : checkTools.flag.ChkChannelManager,
@@ -141,7 +141,7 @@ const rollDiceCommand = async function ({ mainMsg, groupid, userid, userrole, bo
             //
             //刪除GM
             //
-            if (!mainMsg[2]) rply.text += '沒有已註冊GM. '
+            if (!mainMsg[2]) rply.text += '没有已註冊GM. '
             if (rply.text += checkTools.permissionErrMsg({
                 flag : checkTools.flag.ChkChannelManager,
                 gid : groupid,
@@ -167,7 +167,7 @@ const rollDiceCommand = async function ({ mainMsg, groupid, userid, userrole, bo
             return rply;
         case /(^[.]drgm$)/i.test(mainMsg[0]) && /^show$/i.test(mainMsg[1]):
             //
-            //顯示列表
+            //显示列表
             //
             if (channelid)
                 groupid = channelid
@@ -186,11 +186,11 @@ const rollDiceCommand = async function ({ mainMsg, groupid, userid, userrole, bo
                             }
                         }
                     }
-                if (temp == 0) rply.text = '沒有已註冊的暗骰GM. '
+                if (temp == 0) rply.text = '没有已註冊的暗骰GM. '
             } else {
                 rply.text = '不在群組. '
             }
-            //顯示GM
+            //显示GM
             rply.text = rply.text.replace(/^([^(,)\1]*?)\s*(,)\s*/mg, '$1: ').replace(/,/gm, ', ')
             return rply
         default:

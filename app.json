@@ -1,6 +1,6 @@
 {
 	"name": "RoboYabaso 六合一 Trpg RollBot @ HKTRPG",
-	"description": "簡單的、模組化的Trpg Bot, Telegram Discord Line Whatsapp plurk, 網頁版 六合一",
+	"description": "簡单的、模組化的Trpg Bot, Telegram Discord Line Whatsapp plurk, 網頁版 六合一",
 	"repository": "https://github.com/hktrpg/TG.line.Discord.Roll.Bot.git",
 	"keywords": [
 		"RoboYabaso",
@@ -18,7 +18,7 @@
 			"required": false
 		},
 		"DISCORD_CHANNEL_KEYWORD": {
-			"description": "Discord Bot的啓動語 如 !trpg 可留空",
+			"description": "Discord Bot的启动语 如 !trpg 可留空",
 			"required": false
 		},
 		"DISCORD_CHANNEL_SECRET": {
@@ -26,7 +26,7 @@
 			"required": false
 		},
 		"TELEGRAM_CHANNEL_KEYWORD": {
-			"description": "Telegram Bot的啓動語 如 !trpg 可留空",
+			"description": "Telegram Bot的启动语 如 !trpg 可留空",
 			"required": false
 		},
 		"TELEGRAM_CHANNEL_SECRET": {

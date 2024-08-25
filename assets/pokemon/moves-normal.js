@@ -4,26 +4,26 @@ module.exports.MoveList = MoveList;
 
 Array.prototype.push.apply(MoveList, [
 	{
-		"name": "點穴", "alias": "つぼをつく|Acupressure",
+		"name": "点穴", "alias": "つぼをつく|Acupressure",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self", "frame|self|随机|up|1"],
-		"accuracy": "靈巧 + 自然",
+		"accuracy": "灵巧 + 自然",
 		"damage": "-",
-		"effect": "提升一个随机特質。若這个招式被再次使用，則上一个被提升的特質將會被取消。",
-		"desc": "使用者開始按壓穴道，激發身體內的活力。"
+		"effect": "提升一个随机特质。若这个招式被再次使用，则上一个被提升的特质將會被取消。",
+		"desc": "使用者开始按壓穴道，激发身体內的活力。"
 	},
 	{
-		"name": "您先請", "alias": "おさきにどうぞ|After You",
+		"name": "您先请", "alias": "おさきにどうぞ|After You",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|ally"],
 		"accuracy": "帥氣 + 禮儀",
 		"damage": "-",
-		"effect": "目標在先攻順序中的位置將變为第一个。這个效果會持續直到這場戰鬥結束。",
-		"desc": "使用者鞠躬，並禮貌地讓一名隊友或敵人優先进行他們的行動。"
+		"effect": "目标在先攻順序中的位置將變为第一个。这个效果會持續直到这場戰鬥结束。",
+		"desc": "使用者鞠躬，並禮貌地讓一名隊友或敵人優先进行他們的行动。"
 	},
 	{
 		"name": "藉助", "alias": "ねこのて|Assist",
@@ -33,8 +33,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|ally"],
 		"accuracy": "聰明 + 表演",
 		"damage": "-",
-		"effect": "從你的隊伍中的一个随机成員中選擇一个牠知道的招式。你使用這个招式的命中判定來施展該招式。",
-		"desc": "寶可夢倉促回想起了一个搭檔使用過的行動。有些寶可夢甚至能執行人類能做的事，並協助他完成任何任務。"
+		"effect": "從你的隊伍中的一个随机成员中选擇一个牠知道的招式。你使用这个招式的命中判定來施展該招式。",
+		"desc": "寶可夢倉促回想起了一个搭檔使用过的行动。有些寶可夢甚至能執行人类能做的事，並協助他完成任何任務。"
 	},
 	{
 		"name": "迷人", "alias": "メロメロ|Attract",
@@ -42,10 +42,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|love||always"],
-		"accuracy": "美麗 + 誘惑",
+		"accuracy": "美丽 + 誘惑",
 		"damage": "-",
-		"effect": "若成功，目標將陷入「著迷」狀態。若目標为無性別或與使用者的性別相同，則這个招式自動失敗。",
-		"desc": "使用者利用牠的美貌和態度來迷惑牠的對手。"
+		"effect": "若成功，目标將陷入「著迷」状態。若目标为无性別或与使用者的性別相同，则这个招式自动失败。",
+		"desc": "使用者利用牠的美貌和態度來迷惑牠的对手。"
 	},
 	{
 		"name": "投球", "alias": "たまなげ|Barrage",
@@ -53,10 +53,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "effect|l|sact_5"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 1",
-		"effect": "遠程攻擊，連續行動。",
-		"desc": "寶可夢朝著目標投掷許多的圓形物體，一个接著一个。"
+		"effect": "遠程攻擊，連續行动。",
+		"desc": "寶可夢朝著目标投掷許多的圓形物体，一个接著一个。"
 	},
 	{
 		"name": "接棒", "alias": "バトンタッチ|Baton Pass",
@@ -66,8 +66,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "effect|l|switcher"],
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
-		"effect": "替換招式。由另一隻寶可夢替換使用者出場。使用者身上任何被提升的特質都會繼承給下一隻寶可夢。直到該場景結束之前，使用者都無法再提升自己的特質。",
-		"desc": "使用者將其一部份的力量儲存在樹枝或棍棒上，任何觸碰到該物體的對象都將接受其力量。"
+		"effect": "替換招式。由另一隻寶可夢替換使用者出場。使用者身上任何被提升的特质都會繼承給下一隻寶可夢。直到該場景结束之前，使用者都无法再提升自己的特质。",
+		"desc": "使用者將其一部份的力量儲存在樹枝或棍棒上，任何觸碰到該物体的对象都將接受其力量。"
 	},
 	{
 		"name": "腹鼓", "alias": "はらだいこ|Belly Drum",
@@ -75,10 +75,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self", "frame|self|力量|up|3"],
-		"accuracy": "強壯 + 表演",
+		"accuracy": "强壮 + 表演",
 		"damage": "-",
-		"effect": "使用者對自己造成等同於他自己總HP一半的傷害。提升使用者的力量。",
-		"desc": "寶可夢在拍打腹部的時候發出戰吼。"
+		"effect": "使用者对自己造成等同於他自己总HP一半的傷害。提升使用者的力量。",
+		"desc": "寶可夢在拍打腹部的时候发出戰吼。"
 	},
 	{
 		"name": "傳遞禮物", "alias": "ギフトパス|Bestow",
@@ -88,8 +88,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "帥氣 + 禮儀",
 		"damage": "-",
-		"effect": "若目標未持有道具，則使用者將會把自己持有的道具交給對方。",
-		"desc": "寶可夢會恭敬地給予一个道具，目標將接受並收著它以保持禮貌。"
+		"effect": "若目标未持有道具，则使用者將會把自己持有的道具交給对方。",
+		"desc": "寶可夢會恭敬地給予一个道具，目标將接受並收著它以保持禮貌。"
 	},
 	{
 		"name": "忍耐", "alias": "がまん|Bide",
@@ -97,21 +97,21 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "不定",
-		"effect": "使用者承受接下來的两次攻擊。在承受這两次攻擊之後，你可以再次使用這个招式，以「力量 + 這两次攻擊所承受傷害的两倍」來反擊。",
-		"desc": "使用者忍受打擊，接著還以更強大的攻擊。"
+		"effect": "使用者承受接下來的两次攻擊。在承受这两次攻擊之后，你可以再次使用这个招式，以「力量 + 这两次攻擊所承受傷害的两倍」來反擊。",
+		"desc": "使用者忍受打擊，接著還以更强大的攻擊。"
 	},
 	{
-		"name": "綁緊", "alias": "しめつける|Bind",
+		"name": "綁紧", "alias": "しめつける|Bind",
 		"power": "1",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|2", "effect|l|block"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 1",
-		"effect": "阻擋。每个戰鬥輪結束時，骰 2 顆傷害骰以對敵人造成傷害。持續 4 輪。",
-		"desc": "寶可夢使用牠的身體來綑綁敵人，束縛並擠壓牠。"
+		"effect": "阻擋。每个戰鬥輪结束时，骰 2 顆傷害骰以对敵人造成傷害。持續 4 輪。",
+		"desc": "寶可夢使用牠的身体來綑綁敵人，束縛並擠壓牠。"
 	},
 	{
 		"name": "擋路", "alias": "とおせんぼう|Block",
@@ -119,10 +119,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe", "effect|l|block"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "-",
 		"effect": "阻擋。",
-		"desc": "使用者迅速移動，阻擋敵人的逃跑路線。"
+		"desc": "使用者迅速移动，阻擋敵人的逃跑路線。"
 	},
 	{
 		"name": "泰山壓頂", "alias": "のしかかり|Body Slam",
@@ -130,10 +130,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|paralysis||number|d3"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "骰 3 顆機率骰以使敵人陷入「麻痺」狀態。",
-		"desc": "使用者衝向敵人並運用牠的身體將其壓倒，使目標暈眩。"
+		"effect": "骰 3 顆机率骰以使敵人陷入「麻痺」状態。",
+		"desc": "使用者衝向敵人並运用牠的身体將其壓倒，使目标暈眩。"
 	},
 	{
 		"name": "爆音波", "alias": "ばくおんぱ|Boomburst",
@@ -141,9 +141,9 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|area", "effect|l|sound"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 6",
-		"effect": "範圍攻擊。聲音類招式。",
+		"effect": "範圍攻擊。聲音类招式。",
 		"desc": "使用者製造出爆炸般的聲響，使戰場上的所有人震耳欲聾。"
 	},
 	{
@@ -154,8 +154,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "在這个場景期間，使用者的屬性將改變成與牠所處地形相符的屬性。（例如：若使用者處於岩石洞窟內，則牠改變为岩石屬性。）",
-		"desc": "使用者模仿牠所在的環境，與周圍融为一體。"
+		"effect": "在这个場景期间，使用者的属性將改變成与牠所處地形相符的属性。（例如：若使用者處於岩石洞窟內，则牠改變为岩石属性。）",
+		"desc": "使用者模仿牠所在的环境，与周圍融为一体。"
 	},
 	{
 		"name": "誘惑", "alias": "ゆうわく|Captivate",
@@ -163,10 +163,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|allfoe", "frame|target|特殊|down|2"],
-		"accuracy": "美麗 + 誘惑",
+		"accuracy": "美丽 + 誘惑",
 		"damage": "-",
-		"effect": "以所有範圍內的敵人为目標。若目標的性別與使用者相反，則降低目標的特殊。",
-		"desc": "寶可夢展現出牠的魅力，甚至與對手調情，讓那些被牠迷住的對手無法專注於戰鬥。"
+		"effect": "以所有範圍內的敵人为目标。若目标的性別与使用者相反，则降低目标的特殊。",
+		"desc": "寶可夢展现出牠的魅力，甚至与对手调情，讓那些被牠迷住的对手无法專注於戰鬥。"
 	},
 	{
 		"name": "逐步擊破", "alias": "なしくずし|Chip Away",
@@ -174,9 +174,9 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "這个攻擊能夠無視敵人身上的防禦和迴避加值。",
+		"effect": "这个攻擊能夠无視敵人身上的防禦和迴避加值。",
 		"desc": "使用者尋找破綻並向該處直擊，牠一步一步地踏破著最堅固的防禦。"
 	},
 	{
@@ -185,13 +185,13 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "effect|l|fist", "effect|l|sact_5"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 1",
-		"effect": "連續行動。拳頭類招式。",
+		"effect": "連續行动。拳头类招式。",
 		"desc": "使用者向敵人迅速揮出一連串的拳擊。"
 	},
 	{
-		"name": "密語", "alias": "ないしょばなし|Confide",
+		"name": "密语", "alias": "ないしょばなし|Confide",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
@@ -199,40 +199,40 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "可愛 + 誘惑",
 		"damage": "-",
 		"effect": "降低敵人的特殊。",
-		"desc": "寶可夢將一个祕密告訴了目標。敵人因此失去了專注的餘裕。"
+		"desc": "寶可夢將一个祕密告訴了目标。敵人因此失去了專注的餘裕。"
 	},
 	{
-		"name": "纏繞", "alias": "からみつく|Constrict",
+		"name": "缠繞", "alias": "からみつく|Constrict",
 		"power": "1",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "effect|l|block"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 1",
-		"effect": "阻擋。每个戰鬥輪結束時，骰 2 顆傷害骰以對敵人造成傷害。持續 4 輪。",
-		"desc": "寶可夢運用牠的身體制住並纏繞敵人。牠可不會輕易放手。"
+		"effect": "阻擋。每个戰鬥輪结束时，骰 2 顆傷害骰以对敵人造成傷害。持續 4 輪。",
+		"desc": "寶可夢运用牠的身体制住並缠繞敵人。牠可不會輕易放手。"
 	},
 	{
-		"name": "紋理", "alias": "テクスチャー|Conversion",
+		"name": "纹理", "alias": "テクスチャー|Conversion",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self"],
 		"accuracy": "意志 + 導引",
 		"damage": "-",
-		"effect": "使用者随机改變自己的屬性。",
+		"effect": "使用者随机改變自己的属性。",
 		"desc": "使用者下載一个招式的数據，並將其加入自己的代碼中。"
 	},
 	{
-		"name": "紋理２", "alias": "テクスチャー２|Conversion 2",
+		"name": "纹理２", "alias": "テクスチャー２|Conversion 2",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self"],
 		"accuracy": "意志 + 導引",
 		"damage": "-",
-		"effect": "在承受傷害之後，選擇一个對該攻擊有抗性的屬性。使用者的屬性將改變成該屬性，持續直到牠再次使用此招式。",
-		"desc": "使用者下載被用來對付牠的招式数據，並把自己的代碼修改成對該招式有抗性的屬性。"
+		"effect": "在承受傷害之后，选擇一个对該攻擊有抗性的属性。使用者的属性將改變成該属性，持續直到牠再次使用此招式。",
+		"desc": "使用者下載被用來对付牠的招式数據，並把自己的代碼修改成对該招式有抗性的属性。"
 	},
 	{
 		"name": "仿效", "alias": "まねっこ|Copycat",
@@ -240,10 +240,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "與被複製的招式相同。",
-		"damage": "與被複製的招式相同。",
-		"effect": "複製並使用敵人最後使用的招式。",
-		"desc": "使用者將仔細觀察目標的行動，並完美地模仿它們。"
+		"accuracy": "与被复製的招式相同。",
+		"damage": "与被复製的招式相同。",
+		"effect": "复製並使用敵人最后使用的招式。",
+		"desc": "使用者將仔细观察目标的行动，並完美地模仿它們。"
 	},
 	{
 		"name": "換場", "alias": "コートチェンジ|Court Change",
@@ -254,7 +254,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "聰明 + 禮儀",
 		"damage": "-",
 		"effect": "使用者和敵人交換場上的任何屏障（像是〈光牆〉、〈反射壁〉）、入場危害（像是〈毒菱〉、〈黏黏網〉）、和場地效果（像是〈順風〉、〈青草場地〉）。",
-		"desc": "寶可夢向裁判發出中場休息的信號，裁判同意，並讓雙方交換場地。等等，我們是不是忘了什麼？"
+		"desc": "寶可夢向裁判发出中場休息的信號，裁判同意，並讓双方交換場地。等等，我們是不是忘了什么？"
 	},
 	{
 		"name": "渴望", "alias": "ほしがる|Covet",
@@ -264,8 +264,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "聰明 + 隱匿",
 		"damage": "力量 + 2",
-		"effect": "如果使用者未持有道具，則偷走目標持有的攜帶物品。",
-		"desc": "使用者小心地靠近，快速出擊，並逮住機會偷走目標的道具。"
+		"effect": "如果使用者未持有道具，则偷走目标持有的攜帶物品。",
+		"desc": "使用者小心地靠近，快速出擊，並逮住机會偷走目标的道具。"
 	},
 	{
 		"name": "撕裂爪", "alias": "ブレイククロー|Crush Claw",
@@ -273,9 +273,9 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "dice|l|5", "frame|target|防禦|down|2"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "骰 5 顆機率骰以降低敵人的防禦。",
+		"effect": "骰 5 顆机率骰以降低敵人的防禦。",
 		"desc": "使用者用牠的利爪猛擊敵人，甚至有可能切穿敵人的表皮。"
 	},
 	{
@@ -284,10 +284,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "effect|l|lethal"],
-		"accuracy": "力量 + 鬥毆",
+		"accuracy": "力量 + 斗殴",
 		"damage": "力量 + 1*",
-		"effect": "致命傷害。如果敵人的基礎HP高於 3 點，則每超過 1 點，這个攻擊的傷害骰池就會增加 1 顆骰子。你最多可以透過這个方式增加 9 顆骰子。",
-		"desc": "寶可夢擒住敵人並開始輾壓牠。小型目標也許不容易被抓住，但身軀較大的目標在撐不住之前都不會被釋放。"
+		"effect": "致命傷害。如果敵人的基礎HP高於 3 点，则每超过 1 点，这个攻擊的傷害骰池就會增加 1 顆骰子。你最多可以透过这个方式增加 9 顆骰子。",
+		"desc": "寶可夢擒住敵人並开始輾壓牠。小型目标也許不容易被抓住，但身軀较大的目标在撐不住之前都不會被釋放。"
 	},
 	{
 		"name": "居合斬", "alias": "いあいぎり|Cut",
@@ -295,10 +295,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
 		"effect": "可以被用來斬倒樹木並清出道路。",
-		"desc": "一道簡潔而精準的斬擊，能夠砍斷任何一切。"
+		"desc": "一道簡洁而精準的斬擊，能夠砍斷任何一切。"
 	},
 	{
 		"name": "變圓", "alias": "まるくなる|Defense Curl",
@@ -306,7 +306,7 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self", "frame|self|防禦|up|1"],
-		"accuracy": "活力 + 鬥毆",
+		"accuracy": "活力 + 斗殴",
 		"damage": "-",
 		"effect": "提升使用者的防禦。",
 		"desc": "使用者蜷曲成球以從大部分威脅中保護自己。"
@@ -319,8 +319,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "洞察 + 導引",
 		"damage": "-",
-		"effect": "目標無法使用牠最後施展的招式。持續 4 輪。",
-		"desc": "使用者擊中敵人的神經，使其在短時間內無法執行牠之前的行動。"
+		"effect": "目标无法使用牠最后施展的招式。持續 4 輪。",
+		"desc": "使用者擊中敵人的神经，使其在短时间內无法執行牠之前的行动。"
 	},
 	{
 		"name": "迷昏拳", "alias": "ピヨピヨパンチ|Dizzy Punch",
@@ -328,10 +328,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "effect|l|fist", "frame|confuse||number|d2"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "拳頭類招式。骰 2 顆機率骰以使敵人陷入「混亂」狀態。",
-		"desc": "一發正中下巴的快拳讓目標转了一圈，可能讓目標頭暈目眩、迷失方向。"
+		"effect": "拳头类招式。骰 2 顆机率骰以使敵人陷入「混亂」状態。",
+		"desc": "一发正中下巴的快拳讓目标转了一圈，可能讓目标头暈目眩、迷失方向。"
 	},
 	{
 		"name": "二連擊", "alias": "ダブルアタック|Double Hit",
@@ -339,21 +339,21 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "effect|l|sact_2"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
-		"effect": "雙重行動。",
-		"desc": "寶可夢使用經典的左右連攻來攻擊敵人。"
+		"effect": "双重行动。",
+		"desc": "寶可夢使用经典的左右連攻來攻擊敵人。"
 	},
 	{
-		"name": "連環巴掌", "alias": "おうふくビンタ|Double Slap",
+		"name": "連环巴掌", "alias": "おうふくビンタ|Double Slap",
 		"power": "1",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|2", "effect|l|sact_5"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 1",
-		"effect": "連續行動。",
-		"desc": "使用者用連續两下或更多的巴掌來拍打敵人的臉。"
+		"effect": "連續行动。",
+		"desc": "使用者用連續两下或更多的巴掌來拍打敵人的脸。"
 	},
 	{
 		"name": "影子分身", "alias": "かげぶんしん|Double Team",
@@ -361,10 +361,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self"],
-		"accuracy": "靈巧 + 閃避",
+		"accuracy": "灵巧 + 闪避",
 		"damage": "-",
-		"effect": "使用者現在可以每輪进行最多 5 次閃避。",
-		"desc": "使用者快速地在敵人周圍移動，創造出自己分身的殘象。"
+		"effect": "使用者现在可以每輪进行最多 5 次闪避。",
+		"desc": "使用者快速地在敵人周圍移动，创造出自己分身的殘象。"
 	},
 	{
 		"name": "捨身衝撞", "alias": "すてみタックル|Double-Edge",
@@ -372,10 +372,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "effect|l|recoil"],
-		"accuracy": "力量 + 鬥毆",
+		"accuracy": "力量 + 斗殴",
 		"damage": "力量 + 5",
 		"effect": "反作用力傷害。",
-		"desc": "使用者不顧後果地猛撞敵人造成大量傷害，但這个過程很可能也會傷到他自己。"
+		"desc": "使用者不顧后果地猛撞敵人造成大量傷害，但这个过程很可能也會傷到他自己。"
 	},
 	{
 		"name": "回聲", "alias": "エコーボイス|Echoed Voice",
@@ -383,10 +383,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|foe", "effect|l|sound"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 2*",
-		"effect": "聲音類招式。這个招式在同一个戰鬥輪中可以被使用好幾次。你每連續使用這个招式一次，它的傷害骰池就會額外增加 1 顆骰子。你最多可以透過這个方式增加 8 顆骰子。如果使用者使用了其他招式、或进行了閃避或對抗，則將累積的傷害骰重置。",
-		"desc": "使用者大聲呼喊，回聲返響，每當回聲重複響起，牠就會喊得越來越大聲。"
+		"effect": "聲音类招式。这个招式在同一个戰鬥輪中可以被使用好幾次。你每連續使用这个招式一次，它的傷害骰池就會额外增加 1 顆骰子。你最多可以透过这个方式增加 8 顆骰子。如果使用者使用了其他招式、或进行了闪避或对抗，则將累積的傷害骰重置。",
+		"desc": "使用者大聲呼喊，回聲返響，每当回聲重复響起，牠就會喊得越來越大聲。"
 	},
 	{
 		"name": "炸蛋", "alias": "タマゴばくだん|Egg Bomb",
@@ -394,10 +394,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|2"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 4",
 		"effect": "遠程攻擊。",
-		"desc": "使用者朝著敵人丟出帶有強大衝擊力的大型蛋。"
+		"desc": "使用者朝著敵人丟出帶有强大衝擊力的大型蛋。"
 	},
 	{
 		"name": "再來一次", "alias": "安可|アンコール|Encore",
@@ -407,8 +407,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|priority||up|3"],
 		"accuracy": "帥氣 + 誘惑",
 		"damage": "-",
-		"effect": "先制招式。在這个效果持續期間，目標將會重複进行牠在這个戰鬥輪中进行過相同的一連串行動。目標必須要有一連串的行動。持續 4 輪。",
-		"desc": "使用者鼓掌喝采，鼓勵目標重複一遍牠剛剛採取過的行動。"
+		"effect": "先制招式。在这个效果持續期间，目标將會重复进行牠在这个戰鬥輪中进行过相同的一連串行动。目标必須要有一連串的行动。持續 4 輪。",
+		"desc": "使用者鼓掌喝采，鼓勵目标重复一遍牠剛剛採取过的行动。"
 	},
 	{
 		"name": "蠻幹", "alias": "がむしゃら|Endeavor",
@@ -418,8 +418,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "意志 + 導引",
 		"damage": "-",
-		"effect": "骰等同於使用者最大HP和當前HP差額的傷害骰（最多 10 顆）。使用者無法將目標的HP降到低於自己當前HP的数值。這个招式無視敵人的防禦。",
-		"desc": "藉著純粹的意志力，使用者無視著身上的痛楚與敵人纏鬥著。"
+		"effect": "骰等同於使用者最大HP和当前HP差额的傷害骰（最多 10 顆）。使用者无法將目标的HP降到低於自己当前HP的数值。这个招式无視敵人的防禦。",
+		"desc": "藉著純粹的意志力，使用者无視著身上的痛楚与敵人缠鬥著。"
 	},
 	{
 		"name": "挺住", "alias": "こらえる|Endure",
@@ -429,8 +429,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "frame|priority||up|5", "effect|l|shield"],
 		"accuracy": "意志 + 導引",
 		"damage": "-",
-		"effect": "先制招式。護盾。在這个戰鬥輪期間，傷害類招式將無法讓使用者的HP降到低於 1。然而異常狀態、天氣狀態、反作用力傷害、和自己造成的傷害仍然能夠如常造成傷害。",
-		"desc": "使用者做好準備接受致命打擊。儘管遭受嚴重傷害，牠仍然撐過了痛楚。"
+		"effect": "先制招式。護盾。在这个戰鬥輪期间，傷害类招式將无法讓使用者的HP降到低於 1。然而異常状態、天氣状態、反作用力傷害、和自己造成的傷害仍然能夠如常造成傷害。",
+		"desc": "使用者做好準備接受致命打擊。儘管遭受嚴重傷害，牠仍然撐过了痛楚。"
 	},
 	{
 		"name": "找夥伴", "alias": "なかまづくり|Entrainment",
@@ -440,8 +440,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "帥氣 + 表演",
 		"damage": "-",
-		"effect": "目標的特性將被使用者的特性給取代。（例如：愛心魚的悠游自如特性將會被取代成小拳石的結實特性）",
-		"desc": "寶可夢以好記的節奏開始翩翩起舞。目標同樣開始跳舞，且两人透過這个表演締結了相當親密的連結。"
+		"effect": "目标的特性將被使用者的特性給取代。（例如：愛心魚的悠游自如特性將會被取代成小拳石的结实特性）",
+		"desc": "寶可夢以好記的节奏开始翩翩起舞。目标同樣开始跳舞，且两人透过这个表演締结了相当親密的連结。"
 	},
 	{
 		"name": "大爆炸", "alias": "だいばくはつ|Explosion",
@@ -449,10 +449,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|area", "effect|l|lethal"],
-		"accuracy": "力量 + 鬥毆",
+		"accuracy": "力量 + 斗殴",
 		"damage": "力量 + 10",
-		"effect": "致命傷害。範圍攻擊。在造成傷害之後，使用者陷入瀕死狀態。",
-		"desc": "使用者專注於讓牠的身體爆炸，且這个爆炸將造成巨大的傷害衝擊波。非常危險的招式。"
+		"effect": "致命傷害。範圍攻擊。在造成傷害之后，使用者陷入瀕死状態。",
+		"desc": "使用者專注於讓牠的身体爆炸，且这个爆炸將造成巨大的傷害衝擊波。非常危險的招式。"
 	},
 	{
 		"name": "神速", "alias": "しんそく|Extreme Speed",
@@ -460,10 +460,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|priority|優先度|up|2"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "先制招式。將寶可夢的移動速度提升三倍。",
-		"desc": "使用者以炫目的高速向目標衝過去。"
+		"effect": "先制招式。將寶可夢的移动速度提升三倍。",
+		"desc": "使用者以炫目的高速向目标衝过去。"
 	},
 	{
 		"name": "硬撐", "alias": "からげんき|Facade",
@@ -471,10 +471,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3 (或 + 6)",
-		"effect": "如果使用者處於任何異常狀態（麻痺、中毒、灼傷等等），額外增加 3 顆骰子到傷害骰池中。",
-		"desc": "寶可夢进行一次正面攻擊，如果使用者正在受難，這个攻擊將會變得更強大。"
+		"effect": "如果使用者處於任何異常状態（麻痺、中毒、灼傷等等），额外增加 3 顆骰子到傷害骰池中。",
+		"desc": "寶可夢进行一次正面攻擊，如果使用者正在受难，这个攻擊將會變得更强大。"
 	},
 	{
 		"name": "擊掌奇襲", "alias": "ねこだまし|Fake Out",
@@ -482,21 +482,21 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|priority||up|1", "frame|flinch||always"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
-		"effect": "先制招式。使敵人陷入「畏縮」狀態。這个招式只會在該寶可夢進入戰鬥的第一輪發揮作用。從第二輪開始，這个招式將會自動失敗。",
-		"desc": "趁著仍在準備戰鬥的空隙，使用者忽然對敵人發起奇襲。"
+		"effect": "先制招式。使敵人陷入「畏缩」状態。这个招式只會在該寶可夢進入戰鬥的第一輪发揮作用。從第二輪开始，这个招式將會自动失败。",
+		"desc": "趁著仍在準備戰鬥的空隙，使用者忽然对敵人发起奇襲。"
 	},
 	{
-		"name": "點到为止", "alias": "みねうち|False Swipe",
+		"name": "点到为止", "alias": "みねうち|False Swipe",
 		"power": "2",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
-		"effect": "使用者不會因为被這个招式命中而使HP降到低於 1。",
-		"desc": "使用者命中敵人，但在最後一刻手下留情。"
+		"effect": "使用者不會因为被这个招式命中而使HP降到低於 1。",
+		"desc": "使用者命中敵人，但在最后一刻手下留情。"
 	},
 	{
 		"name": "佯攻", "alias": "フェイント|Feint",
@@ -504,10 +504,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|priority||up|2"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 1",
-		"effect": "先制招式。這个招式能夠無視任何護盾招式的效果。",
-		"desc": "這个寶可夢發起佯攻，並接著用真正的攻擊命中對手，就算對方嘗試保護自己也一樣。"
+		"effect": "先制招式。这个招式能夠无視任何護盾招式的效果。",
+		"desc": "这个寶可夢发起佯攻，並接著用真正的攻擊命中对手，就算对方嘗试保護自己也一樣。"
 	},
 	{
 		"name": "抓狂", "alias": "じたばた|Flail",
@@ -515,13 +515,13 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 1*",
-		"effect": "每 1 點使用者失去的HP都會使這个招式的傷害骰池額外增加 1 顆骰子。你最多可以透過這个方式增加 5 顆骰子。",
-		"desc": "使用者抓狂掙扎著求生，牠的身體越虛弱，這个攻擊就會變得越強力。"
+		"effect": "每 1 点使用者失去的HP都會使这个招式的傷害骰池额外增加 1 顆骰子。你最多可以透过这个方式增加 5 顆骰子。",
+		"desc": "使用者抓狂掙扎著求生，牠的身体越虚弱，这个攻擊就會變得越强力。"
 	},
 	{
-		"name": "閃光", "alias": "フラッシュ|Flash",
+		"name": "闪光", "alias": "フラッシュ|Flash",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
@@ -529,7 +529,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
 		"effect": "敵人的所有命中判定將被扣除 1 顆成功骰。",
-		"desc": "使用者的身體周遭忽然釋放出一道刺眼的強光。讓敵人因此頭暈目眩。"
+		"desc": "使用者的身体周遭忽然釋放出一道刺眼的强光。讓敵人因此头暈目眩。"
 	},
 	{
 		"name": "聚氣", "alias": "きあいだめ|Focus Energy",
@@ -539,7 +539,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self"],
 		"accuracy": "洞察 + 導引",
 		"damage": "-",
-		"effect": "使用者的所有傷害類招式現在起都將獲得「高要害率」的效果。這个效果將持續直到這个場景結束、或直到使用者從戰鬥中退場。",
+		"effect": "使用者的所有傷害类招式现在起都將獲得「高要害率」的效果。这个效果將持續直到这个場景结束、或直到使用者從戰鬥中退場。",
 		"desc": "寶可夢的能量被提升，讓牠的所有打擊都變得更加精準。"
 	},
 	{
@@ -550,8 +550,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "frame|priority||up|5"],
 		"accuracy": "帥氣 + 表演",
 		"damage": "-",
-		"effect": "直到這个戰鬥輪結束之前，敵人的所有招式都將以使用者为目標。",
-		"desc": "寶可夢將吸引所有人的注意力。所有敵人都將被惹火並做出最壞的行動。"
+		"effect": "直到这个戰鬥輪结束之前，敵人的所有招式都將以使用者为目标。",
+		"desc": "寶可夢將吸引所有人的注意力。所有敵人都將被惹火並做出最壞的行动。"
 	},
 	{
 		"name": "識破", "alias": "みやぶる|Foresight",
@@ -561,8 +561,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "洞察 + 警覺",
 		"damage": "-",
-		"effect": "敵人無法閃避使用者施展的招式。使用者將無視幽靈屬性對一般屬性招式的免疫能力，反之亦然。",
-		"desc": "寶可夢利用牠發達的感官和心靈能力來預見即將到來的未來。"
+		"effect": "敵人无法闪避使用者施展的招式。使用者將无視幽灵属性对一般属性招式的免疫能力，反之亦然。",
+		"desc": "寶可夢利用牠发达的感官和心灵能力來預見即將到來的未來。"
 	},
 	{
 		"name": "遷怒", "alias": "やつあたり|Frustration",
@@ -570,10 +570,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + *",
-		"effect": "每 1 點使用者缺少的幸福度都會使這个招式的傷害骰池額外增加 1 顆骰子。",
-		"desc": "這个招式的威力取決於寶可夢被多惡劣的對待而變得多惡毒和冷漠。"
+		"effect": "每 1 点使用者缺少的幸福度都會使这个招式的傷害骰池额外增加 1 顆骰子。",
+		"desc": "这个招式的威力取決於寶可夢被多恶劣的对待而變得多恶毒和冷漠。"
 	},
 	{
 		"name": "亂擊", "alias": "みだれづき|Fury Attack",
@@ -581,10 +581,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "effect|l|sact_5"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 1",
-		"effect": "連續行動。",
-		"desc": "寶可夢用一種特別紊亂的方式去做所有事情。"
+		"effect": "連續行动。",
+		"desc": "寶可夢用一种特別紊亂的方式去做所有事情。"
 	},
 	{
 		"name": "亂抓", "alias": "みだれひっかき|Fury Swipes",
@@ -592,21 +592,21 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "effect|l|sact_5"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 1",
-		"effect": "連續行動。",
+		"effect": "連續行动。",
 		"desc": "使用者迅速地使用牠的爪子攻擊敵人好幾次。"
 	},
 	{
-		"name": "終極衝擊", "alias": "ギガインパクト|Giga Impact",
+		"name": "終极衝擊", "alias": "ギガインパクト|Giga Impact",
 		"power": "6",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "effect|l|lethal", "effect|l|recharge"],
-		"accuracy": "力量 + 鬥毆",
+		"accuracy": "力量 + 斗殴",
 		"damage": "力量 + 6",
 		"effect": "必須重新充能。致命傷害。",
-		"desc": "寶可夢用盡牠全身的力量进行一次野蠻的攻擊。這个衝擊的反作用力將讓使用者有些暈眩。"
+		"desc": "寶可夢用盡牠全身的力量进行一次野蠻的攻擊。这个衝擊的反作用力將讓使用者有些暈眩。"
 	},
 	{
 		"name": "大蛇瞪眼", "alias": "へびにらみ|Glare",
@@ -614,10 +614,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "frame|paralysis||always"],
-		"accuracy": "強壯 + 威嚇",
+		"accuracy": "强壮 + 威吓",
 		"damage": "-",
-		"effect": "使敵人陷入「麻痺」狀態。",
-		"desc": "寶可夢使用牠那威嚇性的目光使敵人因为深陷純粹的恐懼而動彈不得。"
+		"effect": "使敵人陷入「麻痺」状態。",
+		"desc": "寶可夢使用牠那威吓性的目光使敵人因为深陷純粹的恐懼而动彈不得。"
 	},
 	{
 		"name": "叫聲", "alias": "なきごえ|Growl",
@@ -625,13 +625,13 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|allfoe", "effect|l|sound", "frame|target|力量|down|1"],
-		"accuracy": "強壯/可愛 + 表演",
+		"accuracy": "强壮/可愛 + 表演",
 		"damage": "-",
-		"effect": "降低敵人的力量。聲音類招式。",
-		"desc": "無論是透過凶狠的態度或可愛的舉止，敵人都會遲疑著是否該用全力攻擊使用者。"
+		"effect": "降低敵人的力量。聲音类招式。",
+		"desc": "无論是透过凶狠的態度或可愛的舉止，敵人都會遲疑著是否該用全力攻擊使用者。"
 	},
 	{
-		"name": "生長", "alias": "せいちょう|Growth",
+		"name": "生长", "alias": "せいちょう|Growth",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
@@ -639,18 +639,18 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
 		"effect": "提升使用者的力量和特殊。",
-		"desc": "寶可夢增長牠的身體，長得更大更壯。"
+		"desc": "寶可夢增长牠的身体，长得更大更壮。"
 	},
 	{
-		"name": "斷頭鉗", "alias": "ハサミギロチン|Guillotine",
+		"name": "斷头鉗", "alias": "ハサミギロチン|Guillotine",
 		"power": "*",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|5"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "-",
-		"effect": "直接造成等同於目標剩餘HP的傷害，外加 1 點致命傷害。",
-		"desc": "寶可夢使用牠身體最鋒利的部位，幾乎要斬斷敵人的脖子。這是个相當毀滅性的攻擊，敵人必須要夠幸運才能從中活下來。"
+		"effect": "直接造成等同於目标剩餘HP的傷害，外加 1 点致命傷害。",
+		"desc": "寶可夢使用牠身体最鋒利的部位，幾乎要斬斷敵人的脖子。这是个相当毀滅性的攻擊，敵人必須要夠幸运才能從中活下來。"
 	},
 	{
 		"name": "變硬", "alias": "かたくなる|Harden",
@@ -661,40 +661,40 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "活力 + 自然",
 		"damage": "-",
 		"effect": "提升使用者的防禦。",
-		"desc": "使用者讓自己的身體僵硬，以迎接任何即將到來的攻擊。"
+		"desc": "使用者讓自己的身体僵硬，以迎接任何即將到來的攻擊。"
 	},
 	{
-		"name": "爆炸頭突擊", "alias": "アフロブレイク|Head Charge",
+		"name": "爆炸头突擊", "alias": "アフロブレイク|Head Charge",
 		"power": "5",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "effect|l|recoil"],
-		"accuracy": "力量 + 鬥毆",
+		"accuracy": "力量 + 斗殴",
 		"damage": "力量 + 5",
 		"effect": "反作用力傷害。",
-		"desc": "寶可夢把牠的腦袋當作巨石來衝撞對手。"
+		"desc": "寶可夢把牠的腦袋当作巨石來衝撞对手。"
 	},
 	{
-		"name": "頭鎚", "alias": "頭錘|ずつき|Headbutt",
+		"name": "头鎚", "alias": "头錘|ずつき|Headbutt",
 		"power": "3",
 		"category": "physical",
 		"type": "Normal",
-		"tags": ["target|l|foe", "frame|flinch|畏縮|number|d3"],
-		"accuracy": "靈巧 + 鬥毆",
+		"tags": ["target|l|foe", "frame|flinch|畏缩|number|d3"],
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "骰 3 顆機率骰以使敵人陷入「畏縮」狀態。對樹木使用時可能會導致随机遭遇。",
-		"desc": "使用者用堅硬的頭部撞擊敵人。非常適合用來摘下樹上的水果、或把寶可夢從樹梢上的巢穴掉下來。"
+		"effect": "骰 3 顆机率骰以使敵人陷入「畏缩」状態。对樹木使用时可能會導致随机遭遇。",
+		"desc": "使用者用堅硬的头部撞擊敵人。非常適合用來摘下樹上的水果、或把寶可夢從樹梢上的巢穴掉下來。"
 	},
 	{
 		"name": "治癒鈴聲", "alias": "いやしのすず|Heal Bell",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
-		"tags": ["target|l|allally", "frame|heal|治療狀態|always", "effect|l|sound"],
+		"tags": ["target|l|allally", "frame|heal|治療状態|always", "effect|l|sound"],
 		"accuracy": "特殊 + 表演",
 		"damage": "-",
-		"effect": "聲音類招式。治療使用者和隊友的異常狀態，牠們甚至不需要在戰場上就能從這个效果中受益。",
-		"desc": "寶可夢敲響魔法鈴鐺，傳說這个使人平靜的聲音具有治療的功效。"
+		"effect": "聲音类招式。治療使用者和隊友的異常状態，牠們甚至不需要在戰場上就能從这个效果中受益。",
+		"desc": "寶可夢敲響魔法鈴鐺，傳说这个使人平靜的聲音具有治療的功效。"
 	},
 	{
 		"name": "幫助", "alias": "てだすけ|Helping Hand",
@@ -702,9 +702,9 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|ally", "frame|priority||up|5"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "-",
-		"effect": "先制招式。做为目標的寶可夢將在牠的下一个技能、命中、和傷害判定中額外獲得 2 顆骰子。",
+		"effect": "先制招式。做为目标的寶可夢將在牠的下一个技能、命中、和傷害判定中额外獲得 2 顆骰子。",
 		"desc": "寶可夢協助牠的同伴。兄弟同心，其利斷金！"
 	},
 	{
@@ -715,8 +715,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "不定",
 		"damage": "不定",
-		"effect": "這个招式的威力和屬性將由說書人決定。",
-		"desc": "每个寶可夢體內都隱藏著未知的力量，可以在釋放時帶來令人驚訝的結果。"
+		"effect": "这个招式的威力和属性將由说書人決定。",
+		"desc": "每个寶可夢体內都隱藏著未知的力量，可以在釋放时帶來令人驚訝的结果。"
 	},
 	{
 		"name": "角撞", "alias": "つのでつく|Horn Attack",
@@ -724,9 +724,9 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
-		"desc": "寶可夢用牠的角攻擊敵人，這一擊會相當痛喔。"
+		"desc": "寶可夢用牠的角攻擊敵人，这一擊會相当痛喔。"
 	},
 	{
 		"name": "角鑽", "alias": "尖角鑽|つのドリル|Horn Drill",
@@ -734,21 +734,21 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|5"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "-",
-		"effect": "直接造成等同於目標剩餘HP的傷害，外加 1 點致命傷害。",
-		"desc": "使用者如同鑽頭一樣使用牠的角來戳刺目標，敵人經常會因此陷入命危的狀態。這是个需要警惕的招式。"
+		"effect": "直接造成等同於目标剩餘HP的傷害，外加 1 点致命傷害。",
+		"desc": "使用者如同鑽头一樣使用牠的角來戳刺目标，敵人经常會因此陷入命危的状態。这是个需要警惕的招式。"
 	},
 	{
-		"name": "長嚎", "alias": "とおぼえ|Howl",
+		"name": "长嚎", "alias": "とおぼえ|Howl",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self", "frame|self|力量|up|1"],
-		"accuracy": "帥氣 + 威嚇",
+		"accuracy": "帥氣 + 威吓",
 		"damage": "-",
 		"effect": "提升使用者的力量。",
-		"desc": "寶可夢發出令人印象深刻的嚎叫，讓牠顯得更加兇猛。"
+		"desc": "寶可夢发出令人印象深刻的嚎叫，讓牠显得更加兇猛。"
 	},
 	{
 		"name": "破壞光線", "alias": "はかいこうせん|Hyper Beam",
@@ -759,18 +759,18 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 6",
 		"effect": "必須重新充能。致命傷害。",
-		"desc": "寶可夢噴射出一道驚人的光束，留下一道巨大毀滅性的痕跡。使用者的體力將因此耗竭。"
+		"desc": "寶可夢噴射出一道驚人的光束，留下一道巨大毀滅性的痕跡。使用者的体力將因此耗竭。"
 	},
 	{
-		"name": "必殺門牙", "alias": "ひっさつまえば|Hyper Fang",
+		"name": "必杀門牙", "alias": "ひっさつまえば|Hyper Fang",
 		"power": "3",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|flinch||number|d1"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "骰 1 顆機率骰以使敵人陷入「畏縮」狀態。",
-		"desc": "寶可夢用牠強力的門牙牢牢咬住敵人。"
+		"effect": "骰 1 顆机率骰以使敵人陷入「畏缩」状態。",
+		"desc": "寶可夢用牠强力的門牙牢牢咬住敵人。"
 	},
 	{
 		"name": "巨聲", "alias": "ハイパーボイス|Hyper Voice",
@@ -778,9 +778,9 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|allfoe", "effect|l|sound"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "以所有範圍內的敵人为目標。聲音類招式。",
+		"effect": "以所有範圍內的敵人为目标。聲音类招式。",
 		"desc": "使用者製造出震耳欲聾的可怕聲波。"
 	},
 	{
@@ -789,9 +789,9 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "洞察 + 威嚇",
+		"accuracy": "洞察 + 威吓",
 		"damage": "特殊 + *",
-		"effect": "無視防禦和特防。這个招式將被視作任何使用者想要的屬性。如果有任何事物將阻止這个招式造成傷害，將其忽略。這个招式無法被對抗。這个招式的威力和任何其他額外效果將由說書人決定。",
+		"effect": "无視防禦和特防。这个招式將被視作任何使用者想要的属性。如果有任何事物將阻止这个招式造成傷害，將其忽略。这个招式无法被对抗。这个招式的威力和任何其他额外效果將由说書人決定。",
 		"desc": "最終，所有人都將得到他們應得的制裁。"
 	},
 	{
@@ -802,8 +802,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self"],
 		"accuracy": "洞察 + 警覺",
 		"damage": "-",
-		"effect": "下一次使用者的攻擊成功命中時，該攻擊將被視作「擊中要害」。",
-		"desc": "透過牠不可思議的感知能力，寶可夢找到了一个能直擊敵人弱點的手段。接下來的這一擊必然能造成毀滅性的打擊。"
+		"effect": "下一次使用者的攻擊成功命中时，該攻擊將被視作「擊中要害」。",
+		"desc": "透过牠不可思議的感知能力，寶可夢找到了一个能直擊敵人弱点的手段。接下來的这一擊必然能造成毀滅性的打擊。"
 	},
 	{
 		"name": "珍藏", "alias": "とっておき|Last Resort",
@@ -811,10 +811,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 6",
-		"effect": "只有當使用者在該戰鬥期間使用過所有其他已知的招式至少一次之後，牠才能夠使用這个招式。",
-		"desc": "當所有其他手段都宣告失敗，寶可夢將在這最後一擊中孤注一擲。"
+		"effect": "只有当使用者在該戰鬥期间使用过所有其他已知的招式至少一次之后，牠才能夠使用这个招式。",
+		"desc": "当所有其他手段都宣告失败，寶可夢將在这最后一擊中孤注一掷。"
 	},
 	{
 		"name": "瞪眼", "alias": "にらみつける|Leer",
@@ -822,43 +822,43 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|allfoe", "frame|target|防禦|down|1"],
-		"accuracy": "強壯 + 威嚇",
+		"accuracy": "强壮 + 威吓",
 		"damage": "-",
-		"effect": "以所有範圍內的敵人为目標。降低目標的防禦。",
-		"desc": "兇惡犀利的目光將讓任何對手懷疑自己在戰鬥中的實力。"
+		"effect": "以所有範圍內的敵人为目标。降低目标的防禦。",
+		"desc": "兇恶犀利的目光將讓任何对手懷疑自己在戰鬥中的实力。"
 	},
 	{
-		"name": "鎖定", "alias": "ロックオン|Lock-On",
+		"name": "锁定", "alias": "ロックオン|Lock-On",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self"],
 		"accuracy": "洞察 + 警覺",
 		"damage": "-",
-		"effect": "使用者下一次进行的攻擊，其命中判定將會自動獲得 2 个無法被扣除的成功骰。",
-		"desc": "寶可夢的雙眼聚焦於移動中的目標，確保能在下次攻擊時精確命中對方。"
+		"effect": "使用者下一次进行的攻擊，其命中判定將會自动獲得 2 个无法被扣除的成功骰。",
+		"desc": "寶可夢的双眼聚焦於移动中的目标，確保能在下次攻擊时精確命中对方。"
 	},
 	{
-		"name": "惡魔之吻", "alias": "あくまのキッス|Lovely Kiss",
+		"name": "恶魔之吻", "alias": "あくまのキッス|Lovely Kiss",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|sleep||always"],
-		"accuracy": "(5-美麗) + 誘惑",
+		"accuracy": "(5-美丽) + 誘惑",
 		"damage": "-",
-		"effect": "使敵人陷入「睡眠」狀態。",
-		"desc": "寶可夢接近並強吻對手，牠醜陋的臉龐和可怕的親吻將使這可憐的生物在恐懼中昏倒。"
+		"effect": "使敵人陷入「睡眠」状態。",
+		"desc": "寶可夢接近並强吻对手，牠丑陋的脸庞和可怕的親吻將使这可憐的生物在恐懼中昏倒。"
 	},
 	{
-		"name": "幸運咒語", "alias": "おまじない|Lucky Chant",
+		"name": "幸运咒语", "alias": "おまじない|Lucky Chant",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|allally"],
 		"accuracy": "特殊 + 表演",
 		"damage": "-",
-		"effect": "直到該場景結束之前，使用者和範圍內的所有隊友都可以在牠們所有的掷骰判定中重骰一顆失敗的骰子。如果對手對我方的攻擊將要擊中要害，則該攻擊改为不會擊中要害。若在戰鬥外使用，則在說書人的裁斷下將會有好事發生。",
-		"desc": "寶可夢向天空歌頌咒語, 這个美麗的表演將为這隻寶可夢和其同伴賦予神聖的加護。"
+		"effect": "直到該場景结束之前，使用者和範圍內的所有隊友都可以在牠們所有的掷骰判定中重骰一顆失败的骰子。如果对手对我方的攻擊將要擊中要害，则該攻擊改为不會擊中要害。若在戰鬥外使用，则在说書人的裁斷下將會有好事发生。",
+		"desc": "寶可夢向天空歌頌咒语, 这个美丽的表演將为这隻寶可夢和其同伴賦予神聖的加護。"
 	},
 	{
 		"name": "搶先一步", "alias": "さきどり|Me First",
@@ -866,10 +866,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|priority||up|1"],
-		"accuracy": "靈巧 + 鬥毆",
-		"damage": "與被複製的招式相同 + 1",
-		"effect": "先制招式。使用者複製並使用目標打算使用的招式。該招式必須要是傷害類招式。",
-		"desc": "使用者預測到敵人的下一步攻擊，因此牠能夠以驚人速度搶先命中目標。"
+		"accuracy": "灵巧 + 斗殴",
+		"damage": "与被复製的招式相同 + 1",
+		"effect": "先制招式。使用者复製並使用目标打算使用的招式。該招式必須要是傷害类招式。",
+		"desc": "使用者預測到敵人的下一步攻擊，因此牠能夠以驚人速度搶先命中目标。"
 	},
 	{
 		"name": "黑色目光", "alias": "くろいまなざし|Mean Look",
@@ -877,10 +877,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe", "effect|l|block"],
-		"accuracy": "強壯 + 威嚇",
+		"accuracy": "强壮 + 威吓",
 		"damage": "-",
 		"effect": "阻擋。",
-		"desc": "寶可夢用兇惡的眼神凝視對手，使敵人因为恐懼而僵在原地。"
+		"desc": "寶可夢用兇恶的眼神凝視对手，使敵人因为恐懼而僵在原地。"
 	},
 	{
 		"name": "百萬噸重踢", "alias": "メガトンキック|Mega Kick",
@@ -888,9 +888,9 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|2"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 5",
-		"desc": "寶可夢使出力大無窮的重踢狠狠往敵人的臉上踹下。"
+		"desc": "寶可夢使出力大无窮的重踢狠狠往敵人的脸上踹下。"
 	},
 	{
 		"name": "百萬噸重拳", "alias": "メガトンパンチ|Mega Punch",
@@ -898,9 +898,9 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|1"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 5",
-		"desc": "寶可夢使出力大無窮的強力鉤拳狠狠往敵人的臉上揍下。"
+		"desc": "寶可夢使出力大无窮的强力鉤拳狠狠往敵人的脸上揍下。"
 	},
 	{
 		"name": "揮指", "alias": "ゆびをふる|Metronome",
@@ -908,10 +908,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 表演",
+		"accuracy": "灵巧 + 表演",
 		"damage": "特殊 + *",
-		"effect": "骰一顆骰子以決定這个招式的威力。這个招式的外觀特效與屬性將由說書人決定。",
-		"desc": "寶可夢有節奏地揮舞著雙手。周遭的能量將跟隨著韻律並呈現出令人印象深刻的攻擊。"
+		"effect": "骰一顆骰子以決定这个招式的威力。这个招式的外观特效与属性將由说書人決定。",
+		"desc": "寶可夢有节奏地揮舞著双手。周遭的能量將跟隨著韻律並呈现出令人印象深刻的攻擊。"
 	},
 	{
 		"name": "喝牛奶", "alias": "ミルクのみ|Milk Drink",
@@ -921,8 +921,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "effect|l|heal"],
 		"accuracy": "活力 + 自然",
 		"damage": "-",
-		"effect": "基礎治癒。若成功，則消耗 1 點意志點以使其生效。",
-		"desc": "寶可夢飲用一杯牠自己的牛奶，其豐富的味道和營養將使牠恢復活力。"
+		"effect": "基礎治癒。若成功，则消耗 1 点意志点以使其生效。",
+		"desc": "寶可夢飲用一杯牠自己的牛奶，其丰富的味道和營養將使牠恢復活力。"
 	},
 	{
 		"name": "模仿", "alias": "ものまね|Mimic",
@@ -932,8 +932,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "聰明 + 表演",
 		"damage": "-",
-		"effect": "複製目標最後使用的招式。直到該場景結束之前，該招式將會取代〈模仿〉招式。",
-		"desc": "利用其表演天賦，寶可夢模仿目標剛才採取的行为。"
+		"effect": "复製目标最后使用的招式。直到該場景结束之前，該招式將會取代〈模仿〉招式。",
+		"desc": "利用其表演天賦，寶可夢模仿目标剛才採取的行为。"
 	},
 	{
 		"name": "心之眼", "alias": "こころのめ|Mind Reader",
@@ -943,8 +943,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "洞察 + 導引",
 		"damage": "-",
-		"effect": "使用者將在下一次針對目標的命中判定或閃避判定中自動獲得 2 个成功骰。",
-		"desc": "使用者讀取目標的思想。牠清楚知道下一步該做什麼。"
+		"effect": "使用者將在下一次針对目标的命中判定或闪避判定中自动獲得 2 个成功骰。",
+		"desc": "使用者讀取目标的思想。牠清楚知道下一步該做什么。"
 	},
 	{
 		"name": "變小", "alias": "ちいさくなる|Minimize",
@@ -954,8 +954,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self"],
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
-		"effect": "使用者現在可以每輪进行最多 5 次閃避。",
-		"desc": "寶可夢緊縮自己的身體，使自己的體型看起來比原本還要小上許多。"
+		"effect": "使用者现在可以每輪进行最多 5 次闪避。",
+		"desc": "寶可夢紧缩自己的身体，使自己的体型看起來比原本還要小上許多。"
 	},
 	{
 		"name": "晨光", "alias": "あさのひざし|Morning Sun",
@@ -965,19 +965,19 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "effect|l|heal"],
 		"accuracy": "活力 + 自然",
 		"damage": "-",
-		"effect": "基礎治癒。若成功，則消耗 1 點意志點以使其生效。如果當前天氣狀態为大晴天，則這个招式變为 強效治癒。如果當前天氣狀態为下雨或沙暴、或在夜晚、或你處於室內或地下，則這个招式只會回復 1 點HP。",
-		"desc": "明亮的陽光照耀著寶可夢，並使牠感覺如清晨一樣青春煥發。"
+		"effect": "基礎治癒。若成功，则消耗 1 点意志点以使其生效。如果当前天氣状態为大晴天，则这个招式變为 强效治癒。如果当前天氣状態为下雨或沙暴、或在夜晚、或你處於室內或地下，则这个招式只會回復 1 点HP。",
+		"desc": "明亮的陽光照耀著寶可夢，並使牠感覺如清晨一樣青春煥发。"
 	},
 	{
-		"name": "多屬性攻擊", "alias": "マルチアタック|Multi-Attack",
+		"name": "多属性攻擊", "alias": "マルチアタック|Multi-Attack",
 		"power": "3",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "這个招式的屬性永遠會等同於使用者的第一屬性。",
-		"desc": "這隻有著怪異外觀的寶可夢向著敵人衝刺，這同樣的攻擊將會根據其攜帶的記憶碟不同而釋放出不同類型的能量。"
+		"effect": "这个招式的属性永遠會等同於使用者的第一属性。",
+		"desc": "这隻有著怪異外观的寶可夢向著敵人衝刺，这同樣的攻擊將會根據其攜帶的記憶碟不同而釋放出不同类型的能量。"
 	},
 	{
 		"name": "自然之恩", "alias": "しぜんのめぐみ|Natural Gift",
@@ -985,10 +985,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "力量 + 3",
-		"effect": "遠程攻擊。使用者將失去牠持有的樹果。這个招式的屬性將取決於樹果的口味，參見招式規則的「自然之恩」說明。",
-		"desc": "使用者將牠的樹果丟向敵人，結果可能會讓人非常驚訝。"
+		"effect": "遠程攻擊。使用者將失去牠持有的樹果。这个招式的属性將取決於樹果的口味，參見招式規则的「自然之恩」说明。",
+		"desc": "使用者將牠的樹果丟向敵人，结果可能會讓人非常驚訝。"
 	},
 	{
 		"name": "自然之力", "alias": "しぜんのちから|Nature Power",
@@ -998,8 +998,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "特殊 + 自然",
 		"damage": "特殊 + 3",
-		"effect": "這个招式的屬性將取決於所處的環境，參見招式規則的「自然之力」說明。",
-		"desc": "寶可夢運用周遭的地形，並尋求大自然的援助來協助自己戰鬥。"
+		"effect": "这个招式的属性將取決於所處的环境，參見招式規则的「自然之力」说明。",
+		"desc": "寶可夢运用周遭的地形，並尋求大自然的援助來協助自己戰鬥。"
 	},
 	{
 		"name": "戰吼", "alias": "おたけび|Noble Roar",
@@ -1007,21 +1007,21 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|target|力量|down|1", "frame|target|特殊|down|1"],
-		"accuracy": "強壯 + 威嚇",
+		"accuracy": "强壮 + 威吓",
 		"damage": "-",
 		"effect": "降低敵人的力量和特殊。",
-		"desc": "寶可夢發出咆哮，獲得所有聽見吼聲的人的敬重和權威。"
+		"desc": "寶可夢发出咆哮，獲得所有听見吼聲的人的敬重和權威。"
 	},
 	{
-		"name": "氣味偵測", "alias": "かぎわける|Odor Sleuth",
+		"name": "氣味侦測", "alias": "かぎわける|Odor Sleuth",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
 		"accuracy": "洞察 + 警覺",
 		"damage": "-",
-		"effect": "敵人無法閃避使用者施展的招式。使用者將無視幽靈屬性對一般屬性招式的免疫能力，反之亦然。在戰鬥外的場合，將這个招式的成功骰加到任何用來追蹤目標的判定上。",
-		"desc": "使用者運用牠敏銳的嗅覺來偵測敵人。"
+		"effect": "敵人无法闪避使用者施展的招式。使用者將无視幽灵属性对一般属性招式的免疫能力，反之亦然。在戰鬥外的場合，將这个招式的成功骰加到任何用來追蹤目标的判定上。",
+		"desc": "使用者运用牠敏銳的嗅覺來侦測敵人。"
 	},
 	{
 		"name": "分擔痛楚", "alias": "いたみわけ|Pain Split",
@@ -1031,8 +1031,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "意志 + 導引",
 		"damage": "-",
-		"effect": "雙方的HP保持不變。使用者將牠自己的疼痛懲罰转移給敵人，並忽略牠自己身上的疼痛懲罰。敵人將無法透過消耗意志點來忽略這个疼痛懲罰，但仍可以忽略牠自己本身的疼痛懲罰。",
-		"desc": "使用者與敵人分擔自己的痛苦，只需一會，這份痛苦就會使目標難以忍受。"
+		"effect": "双方的HP保持不變。使用者將牠自己的疼痛惩罚转移給敵人，並忽略牠自己身上的疼痛惩罚。敵人將无法透过消耗意志点來忽略这个疼痛惩罚，但仍可以忽略牠自己本身的疼痛惩罚。",
+		"desc": "使用者与敵人分擔自己的痛苦，只需一會，这份痛苦就會使目标难以忍受。"
 	},
 	{
 		"name": "聚寶功", "alias": "ネコにこばん|Pay Day",
@@ -1040,10 +1040,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
-		"effect": "遠程攻擊。在戰鬥結束時，根據使用者的階級給予其訓練家相應的金錢：<br>．新手/初學者-$20<br>．業餘者-$50<br>．菁英-$75<br>．專家-$100",
-		"desc": "這个招式能帶來好運，使其在每次戰鬥後更有可能獲得更多的金錢。"
+		"effect": "遠程攻擊。在戰鬥结束时，根據使用者的階级給予其訓練家相應的金錢：<br>．新手/初学者-$20<br>．業餘者-$50<br>．菁英-$75<br>．專家-$100",
+		"desc": "这个招式能帶來好运，使其在每次戰鬥后更有可能獲得更多的金錢。"
 	},
 	{
 		"name": "滅亡之歌", "alias": "ほろびのうた|Perish Song",
@@ -1051,10 +1051,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|area", "effect|l|sound"],
-		"accuracy": "美麗 + 表演",
+		"accuracy": "美丽 + 表演",
 		"damage": "-",
-		"effect": "聲音類招式。在三个戰鬥輪之後，如果有任何聽見這首歌且尚未脫離戰場的寶可夢，則牠將會受到等同於牠剩餘HP的傷害。",
-		"desc": "一首充斥著哀悼和絕望的歌曲，能引起所有聆聽者心中的共鳴，讓人感覺自己彷彿來到了臨終之時。"
+		"effect": "聲音类招式。在三个戰鬥輪之后，如果有任何听見这首歌且尚未脫離戰場的寶可夢，则牠將會受到等同於牠剩餘HP的傷害。",
+		"desc": "一首充斥著哀悼和絕望的歌曲，能引起所有聆听者心中的共鳴，讓人感覺自己彷彿來到了臨終之时。"
 	},
 	{
 		"name": "和睦相處", "alias": "なかよくする|Play Nice",
@@ -1065,7 +1065,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "可愛 + 誘惑",
 		"damage": "-",
 		"effect": "降低敵人的力量。",
-		"desc": "使用者開始以友好的方式與敵人玩耍。這將使敵人重新考慮要不要採取侵略性的舉止。"
+		"desc": "使用者开始以友好的方式与敵人玩耍。这將使敵人重新考慮要不要採取侵略性的舉止。"
 	},
 	{
 		"name": "拍擊", "alias": "はたく|Pound",
@@ -1073,7 +1073,7 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
 		"desc": "一記漂亮的打擊向敵人猛擊。"
 	},
@@ -1085,8 +1085,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|accuracy||down|1"],
 		"accuracy": "可愛 + 誘惑",
 		"damage": "-",
-		"effect": "掷骰以 50%-50% 的機率對目標造成 2 點固定傷害、或使目標回復 2 點HP。",
-		"desc": "使用者接近敵人並送給對方一个漂亮的禮物盒，這可能會是份很棒的禮物，但也有可能會是个惡作劇。"
+		"effect": "掷骰以 50%-50% 的机率对目标造成 2 点固定傷害、或使目标回復 2 点HP。",
+		"desc": "使用者接近敵人並送給对方一个漂亮的禮物盒，这可能會是份很棒的禮物，但也有可能會是个恶作劇。"
 	},
 	{
 		"name": "守住", "alias": "まもる|Protect",
@@ -1096,8 +1096,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "frame|priority||up|5", "effect|l|shield"],
 		"accuracy": "意志 + 導引",
 		"damage": "-",
-		"effect": "先制招式。護盾。傷害類招式對使用者造成的傷害減少 3 點。無效任何以使用者为目標的變化類招式效果。會對使用者造成固定傷害的招式的傷害將被降低为 0 點。",
-		"desc": "使用者創造出一个能量護盾來使攻擊偏折。有些寶可夢甚至能夠做出令人驚艷的格檔來阻止來襲的攻擊。"
+		"effect": "先制招式。護盾。傷害类招式对使用者造成的傷害減少 3 点。无效任何以使用者为目标的變化类招式效果。會对使用者造成固定傷害的招式的傷害將被降低为 0 点。",
+		"desc": "使用者创造出一个能量護盾來使攻擊偏折。有些寶可夢甚至能夠做出令人驚艷的格檔來阻止來襲的攻擊。"
 	},
 	{
 		"name": "自我暗示", "alias": "じこあんじ|Psych Up",
@@ -1107,19 +1107,19 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "洞察 + 導引",
 		"damage": "-",
-		"effect": "複製目標的特質和数值變化狀態，並保留它們直到該場景結束。",
-		"desc": "寶可夢暗示自己，使其認为自己比任何人都強大。牠將自我感覺良好。牠能贏！牠能做到！"
+		"effect": "复製目标的特质和数值變化状態，並保留它們直到該場景结束。",
+		"desc": "寶可夢暗示自己，使其認为自己比任何人都强大。牠將自我感覺良好。牠能贏！牠能做到！"
 	},
 	{
-		"name": "電光一閃", "alias": "でんこうせっか|Quick Attack",
+		"name": "電光一闪", "alias": "でんこうせっか|Quick Attack",
 		"power": "2",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|priority||up|1"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
-		"effect": "先制招式。將寶可夢的移動速度提升二倍。",
-		"desc": "一記彷彿閃電般快速的攻擊。"
+		"effect": "先制招式。將寶可夢的移动速度提升二倍。",
+		"desc": "一記彷彿闪電般快速的攻擊。"
 	},
 	{
 		"name": "憤怒", "alias": "いかり|Rage",
@@ -1127,20 +1127,20 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|self|力量|up|1"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 1",
-		"effect": "如果使用者在使用這个招式後受到傷害，則提升使用者的力量。這个效果可以疊加最多三次。",
-		"desc": "使用者大發雷霆，並對著敵人發洩憤怒。如果對方持續进行攻擊，那牠將會讓使用者變得越來越生氣。"
+		"effect": "如果使用者在使用这个招式后受到傷害，则提升使用者的力量。这个效果可以疊加最多三次。",
+		"desc": "使用者大发雷霆，並对著敵人发洩憤怒。如果对方持續进行攻擊，那牠將會讓使用者變得越來越生氣。"
 	},
 	{
 		"name": "高速旋转", "alias": "こうそくスピン|Rapid Spin",
 		"power": "2",
 		"category": "physical",
 		"type": "Normal",
-		"tags": ["target|l|foe", "frame|self|靈巧|up|1"],
-		"accuracy": "靈巧 + 鬥毆",
+		"tags": ["target|l|foe", "frame|self|灵巧|up|1"],
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
-		"effect": "清除我方場上的入場危害（像是〈毒菱〉、〈隱形岩〉等）和〈寄生種子〉的效果。提升使用者的靈巧。",
+		"effect": "清除我方場上的入場危害（像是〈毒菱〉、〈隱形岩〉等）和〈寄生种子〉的效果。提升使用者的灵巧。",
 		"desc": "寶可夢迅速自转並利用旋转的衝擊來攻擊敵人，任何在附近的東西也都將被擺脫四散。"
 	},
 	{
@@ -1149,10 +1149,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|allfoe", "effect|l|charge", "effect|l|crit"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "以所有範圍內的敵人为目標。蓄力招式。容易擊中要害。",
-		"desc": "一陣鋒利的疾風向著任何膽敢站在這隻寶可夢面前的敵人釋放而出。"
+		"effect": "以所有範圍內的敵人为目标。蓄力招式。容易擊中要害。",
+		"desc": "一陣鋒利的疾風向著任何膽敢站在这隻寶可夢面前的敵人釋放而出。"
 	},
 	{
 		"name": "自我再生", "alias": "じこさいせい|Recover",
@@ -1162,8 +1162,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "effect|l|heal"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "基礎治癒。若成功，則消耗 1 點意志點以使其生效。",
-		"desc": "寶可夢專注於讓自己的細胞以超乎想像的速度修復。"
+		"effect": "基礎治癒。若成功，则消耗 1 点意志点以使其生效。",
+		"desc": "寶可夢專注於讓自己的细胞以超乎想像的速度修復。"
 	},
 	{
 		"name": "回收利用", "alias": "リサイクル|Recycle",
@@ -1173,19 +1173,19 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self"],
 		"accuracy": "活力 + 自然",
 		"damage": "-",
-		"effect": "使用者重新使用一个已經被消耗掉的道具（像是樹果）。每个道具不能被〈回收利用〉影響超過 5 次。",
+		"effect": "使用者重新使用一个已经被消耗掉的道具（像是樹果）。每个道具不能被〈回收利用〉影響超过 5 次。",
 		"desc": "某个寶可夢眼中的垃圾可能會是另一隻寶可夢眼中的寶物。"
 	},
 	{
-		"name": "鏡面屬性", "alias": "ミラータイプ|Reflect Type",
+		"name": "镜面属性", "alias": "ミラータイプ|Reflect Type",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self"],
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
-		"effect": "使用者的屬性現在變成了與其中一个敵人相同的屬性。持續直到這个場景結束、或直到這个招式再次被使用。",
-		"desc": "寶可夢看起來改變了牠自己的生理構造。這个效果將改變使用者的屬性，使其與另一隻視野內寶可夢的屬性相同。"
+		"effect": "使用者的属性现在變成了与其中一个敵人相同的属性。持續直到这个場景结束、或直到这个招式再次被使用。",
+		"desc": "寶可夢看起來改變了牠自己的生理構造。这个效果將改變使用者的属性，使其与另一隻視野內寶可夢的属性相同。"
 	},
 	{
 		"name": "煥然一新", "alias": "リフレッシュ|Refresh",
@@ -1195,8 +1195,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self"],
 		"accuracy": "意志 + 導引",
 		"damage": "-",
-		"effect": "使用者解除自己身上的「中毒」、「劇毒」、「灼傷」、和「麻痺」狀態。",
-		"desc": "寶可夢花了数秒鐘的時間冷靜下來，並重新投入戰鬥。"
+		"effect": "使用者解除自己身上的「中毒」、「劇毒」、「灼傷」、和「麻痺」状態。",
+		"desc": "寶可夢花了数秒鐘的时间冷靜下來，並重新投入戰鬥。"
 	},
 	{
 		"name": "古老之歌", "alias": "いにしえのうた|Relic Song",
@@ -1206,8 +1206,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe", "effect|l|sound", "frame|sleep||number|d1"],
 		"accuracy": "特殊 + 表演",
 		"damage": "特殊 + 2",
-		"effect": "聲音類招式。骰 1 顆機率骰以使敵人陷入「睡眠」狀態。若成功，使用者可以選擇改變自己的型態。",
-		"desc": "使用者歌唱並隨著旋律跳舞，這旋律是如此美麗，你在聆聽時甚至不會意識到自己已經淚流滿面。"
+		"effect": "聲音类招式。骰 1 顆机率骰以使敵人陷入「睡眠」状態。若成功，使用者可以选擇改變自己的型態。",
+		"desc": "使用者歌唱並隨著旋律跳舞，这旋律是如此美丽，你在聆听时甚至不會意識到自己已经淚流满面。"
 	},
 	{
 		"name": "報仇", "alias": "かたきうち|Retaliate",
@@ -1215,10 +1215,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3*",
-		"effect": "如果有一名隊友在這个或前个戰鬥輪陷入瀕死狀態，則這个招式的傷害骰池將額外獲得 3 顆骰子。每个陷入瀕死狀態的隊友都只能讓這个效果生效一次。",
-		"desc": "一記強力的攻擊。如果使用者剛承受了失去隊友的痛苦，那這一擊將會變得更加強大。"
+		"effect": "如果有一名隊友在这个或前个戰鬥輪陷入瀕死状態，则这个招式的傷害骰池將额外獲得 3 顆骰子。每个陷入瀕死状態的隊友都只能讓这个效果生效一次。",
+		"desc": "一記强力的攻擊。如果使用者剛承受了失去隊友的痛苦，那这一擊將會變得更加强大。"
 	},
 	{
 		"name": "報恩", "alias": "おんがえし|Return",
@@ -1226,10 +1226,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + *",
-		"effect": "使用者的每一點幸福度，都會使這个招式的傷害骰池額外增加 1 顆骰子。",
-		"desc": "如果寶可夢平常被充滿愛與關照的方式對待，那牠將會透過在戰鬥中全力以赴來回報這份恩情。"
+		"effect": "使用者的每一点幸福度，都會使这个招式的傷害骰池额外增加 1 顆骰子。",
+		"desc": "如果寶可夢平常被充满愛与关照的方式对待，那牠將會透过在戰鬥中全力以赴來回報这份恩情。"
 	},
 	{
 		"name": "覺醒之舞", "alias": "めざめるダンス|Revelation Dance",
@@ -1237,10 +1237,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 表演",
+		"accuracy": "灵巧 + 表演",
 		"damage": "特殊 + 3",
-		"effect": "這个招式的屬性將會改變以符合使用者的第一屬性。",
-		"desc": "寶可夢表演起舞蹈，舞蹈本身的能量將影響這个招式的屬性。"
+		"effect": "这个招式的属性將會改變以符合使用者的第一属性。",
+		"desc": "寶可夢表演起舞蹈，舞蹈本身的能量將影響这个招式的属性。"
 	},
 	{
 		"name": "吼叫", "alias": "ほえる|Roar",
@@ -1248,10 +1248,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|priority||down|6", "effect|l|switcher"],
-		"accuracy": "強壯 + 威嚇",
+		"accuracy": "强壮 + 威吓",
 		"damage": "-",
-		"effect": "後制招式。替換招式。若在野外使用，則戰鬥直接結束。若在正式對戰中使用，則目標寶可夢將被強制換下場。如果牠是隊伍中的最後一隻或唯一一隻寶可夢，則這个招式將自動失敗。",
-		"desc": "一陣強猛的怒吼將使敵人受到驚嚇。"
+		"effect": "后制招式。替換招式。若在野外使用，则戰鬥直接结束。若在正式对戰中使用，则目标寶可夢將被强制換下場。如果牠是隊伍中的最后一隻或唯一一隻寶可夢，则这个招式將自动失败。",
+		"desc": "一陣强猛的怒吼將使敵人受到驚吓。"
 	},
 	{
 		"name": "攀岩", "alias": "ロッククライム|Rock Climb",
@@ -1259,10 +1259,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|2", "frame|confuse||number|d2"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "骰 2 顆機率骰以使敵人陷入「混亂」狀態。在戰鬥外的場合，這个招式可以被用來輕易地攀爬垂直表面。",
-		"desc": "使用者攀爬到敵人頂上，這可能會讓某些寶可夢感到混亂。"
+		"effect": "骰 2 顆机率骰以使敵人陷入「混亂」状態。在戰鬥外的場合，这个招式可以被用來輕易地攀爬垂直表面。",
+		"desc": "使用者攀爬到敵人頂上，这可能會讓某些寶可夢感到混亂。"
 	},
 	{
 		"name": "輪唱", "alias": "りんしょう|Round",
@@ -1272,8 +1272,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|sound"],
 		"accuracy": "特殊 + 表演",
 		"damage": "特殊 + 2*",
-		"effect": "如果使用者和一名隊友都能夠使用〈輪唱〉，則雙方可以選擇同時這麼做。如果牠們這麼做，則两隻寶可夢各自的傷害骰池都可以額外增加 2 顆骰子。",
-		"desc": "使用者利用歌聲攻擊敵人，如果隊友加入合唱，則這波攻擊將會變得更強大。"
+		"effect": "如果使用者和一名隊友都能夠使用〈輪唱〉，则双方可以选擇同时这么做。如果牠們这么做，则两隻寶可夢各自的傷害骰池都可以额外增加 2 顆骰子。",
+		"desc": "使用者利用歌聲攻擊敵人，如果隊友加入合唱，则这波攻擊將會變得更强大。"
 	},
 	{
 		"name": "神秘守護", "alias": "しんぴのまもり|Safeguard",
@@ -1283,19 +1283,19 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allally"],
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
-		"effect": "在接下來 4 輪中，使用者和所有隊友都將免疫於陷入異常狀態（麻痺、灼傷、中毒、劇毒、冰凍、睡眠）。之前造成的異常狀態仍會保留。",
-		"desc": "寶可夢創造出一道能量護盾，保護所有人不受傷害。"
+		"effect": "在接下來 4 輪中，使用者和所有隊友都將免疫於陷入異常状態（麻痺、灼傷、中毒、劇毒、冰凍、睡眠）。之前造成的異常状態仍會保留。",
+		"desc": "寶可夢创造出一道能量護盾，保護所有人不受傷害。"
 	},
 	{
 		"name": "鬼面", "alias": "こわいかお|Scary Face",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
-		"tags": ["target|l|foe", "frame|target|靈巧|down|2"],
-		"accuracy": "強壯 + 威嚇",
+		"tags": ["target|l|foe", "frame|target|灵巧|down|2"],
+		"accuracy": "强壮 + 威吓",
 		"damage": "-",
-		"effect": "降低敵人的靈巧。",
-		"desc": "藉著做出可怕的鬼臉，寶可夢將讓其他人再三考慮是否要接近過來。"
+		"effect": "降低敵人的灵巧。",
+		"desc": "藉著做出可怕的鬼脸，寶可夢將讓其他人再三考慮是否要接近过來。"
 	},
 	{
 		"name": "抓", "alias": "ひっかく|Scratch",
@@ -1303,7 +1303,7 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
 		"desc": "寶可夢使用牠銳利的爪子刮抓敵人。"
 	},
@@ -1313,10 +1313,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|target|防禦|down|2", "effect|l|sound"],
-		"accuracy": "強壯 + 表演",
+		"accuracy": "强壮 + 表演",
 		"damage": "-",
-		"effect": "降低敵人的防禦。聲音類招式。",
-		"desc": "使用者藉著對敵人的耳膜放送出尖銳的刺耳噪音來干擾敵人的戰鬥態勢。"
+		"effect": "降低敵人的防禦。聲音类招式。",
+		"desc": "使用者藉著对敵人的耳膜放送出尖銳的刺耳噪音來干擾敵人的戰鬥態勢。"
 	},
 	{
 		"name": "秘密之力", "alias": "ひみつのちから|Secret Power",
@@ -1324,10 +1324,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "造成特殊效果。參見招式規則的「秘密之力」說明。",
-		"desc": "這个招式會吸收使用者周遭的能量，這些能量可能會以出乎意料的方式被釋放出來。"
+		"effect": "造成特殊效果。參見招式規则的「秘密之力」说明。",
+		"desc": "这个招式會吸收使用者周遭的能量，这些能量可能會以出乎意料的方式被釋放出來。"
 	},
 	{
 		"name": "自爆", "alias": "じばく|Self-Destruct",
@@ -1335,10 +1335,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|area"],
-		"accuracy": "力量 + 鬥毆",
+		"accuracy": "力量 + 斗殴",
 		"damage": "力量 + 8",
-		"effect": "範圍攻擊。在施展這个招式後，使用者將承受等同於自己剩餘HP的傷害。",
-		"desc": "寶可夢利用牠的能力，以一種令人印象深刻的力量展現方式讓自己的身體部位爆炸。"
+		"effect": "範圍攻擊。在施展这个招式后，使用者將承受等同於自己剩餘HP的傷害。",
+		"desc": "寶可夢利用牠的能力，以一种令人印象深刻的力量展现方式讓自己的身体部位爆炸。"
 	},
 	{
 		"name": "稜角化", "alias": "かくばる|Sharpen",
@@ -1346,32 +1346,32 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self", "frame|self|力量|up|1"],
-		"accuracy": "靈巧 + 運動",
+		"accuracy": "灵巧 + 运动",
 		"damage": "-",
 		"effect": "提升使用者的力量。",
-		"desc": "使用者把牠身體的粗糙邊緣削尖，使其變得鋒利如刀。"
+		"desc": "使用者把牠身体的粗糙边緣削尖，使其變得鋒利如刀。"
 	},
 	{
 		"name": "破殼", "alias": "からをやぶる|Shell Smash",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
-		"tags": ["target|l|self", "frame|self|力量|up|2", "frame|self|特殊|up|2", "frame|self|靈巧|up|2", "frame|self|防禦|down|2", "frame|self|特防|down|2"],
-		"accuracy": "力量 + 鬥毆",
+		"tags": ["target|l|self", "frame|self|力量|up|2", "frame|self|特殊|up|2", "frame|self|灵巧|up|2", "frame|self|防禦|down|2", "frame|self|特防|down|2"],
+		"accuracy": "力量 + 斗殴",
 		"damage": "-",
-		"effect": "提升使用者的力量、特殊、和靈巧；降低使用者的防禦和特防。",
-		"desc": "透過破壞自己的外殼，使用者犧牲防禦力以換取能在戰鬥中全力以赴的靈活性。"
+		"effect": "提升使用者的力量、特殊、和灵巧；降低使用者的防禦和特防。",
+		"desc": "透过破壞自己的外殼，使用者犧牲防禦力以換取能在戰鬥中全力以赴的灵活性。"
 	},
 	{
-		"name": "單純光束", "alias": "シンプルビーム|Simple Beam",
+		"name": "单純光束", "alias": "シンプルビーム|Simple Beam",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
 		"accuracy": "洞察 + 共感",
 		"damage": "-",
-		"effect": "目標寶可夢的特性將被變为「單純」。",
-		"desc": "寶可夢對牠的目標射出一小段精神波，讓牠對世界的看法變得更加單純。"
+		"effect": "目标寶可夢的特性將被變为「单純」。",
+		"desc": "寶可夢对牠的目标射出一小段精神波，讓牠对世界的看法變得更加单純。"
 	},
 	{
 		"name": "唱歌", "alias": "うたう|Sing",
@@ -1381,7 +1381,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|accuracy||down|3", "effect|l|sound", "frame|sleep||always"],
 		"accuracy": "可愛 + 表演",
 		"damage": "-",
-		"effect": "聲音類招式。使敵人陷入「睡眠」狀態。",
+		"effect": "聲音类招式。使敵人陷入「睡眠」状態。",
 		"desc": "藉著迷人的歌曲，使用者將牠的敵人哄入夢鄉。"
 	},
 	{
@@ -1390,21 +1390,21 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 表演",
+		"accuracy": "灵巧 + 表演",
 		"damage": "-",
-		"effect": "永久性的複製一个目標使用過的招式。在複製之後，這个〈寫生〉招式將會被取代。",
-		"desc": "寶可夢描繪出敵人施展招式的畫面，牠將在這个過程中學會如何施展該招式。"
+		"effect": "永久性的复製一个目标使用过的招式。在复製之后，这个〈寫生〉招式將會被取代。",
+		"desc": "寶可夢描繪出敵人施展招式的畫面，牠將在这个过程中学會如何施展該招式。"
 	},
 	{
-		"name": "火箭頭錘", "alias": "ロケットずつき|Skull Bash",
+		"name": "火箭头錘", "alias": "ロケットずつき|Skull Bash",
 		"power": "5",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "effect|l|charge", "frame|self|防禦|up|1"],
-		"accuracy": "力量 + 鬥毆",
+		"accuracy": "力量 + 斗殴",
 		"damage": "力量 + 5",
 		"effect": "蓄力招式。提升使用者的防禦。",
-		"desc": "寶可夢縮進自己的殼中，接著朝著敵人猛衝而去。"
+		"desc": "寶可夢缩進自己的殼中，接著朝著敵人猛衝而去。"
 	},
 	{
 		"name": "偷懶", "alias": "なまける|Slack Off",
@@ -1414,8 +1414,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "effect|l|heal"],
 		"accuracy": "活力 + 自然",
 		"damage": "-",
-		"effect": "基礎治癒。若成功，則消耗 1 點意志點以使其生效。",
-		"desc": "寶可夢變得懶洋洋並無所事事而非投入戰鬥。這將提供牠一次短暫的休息。"
+		"effect": "基礎治癒。若成功，则消耗 1 点意志点以使其生效。",
+		"desc": "寶可夢變得懶洋洋並无所事事而非投入戰鬥。这將提供牠一次短暫的休息。"
 	},
 	{
 		"name": "摔打", "alias": "たたきつける|Slam",
@@ -1423,31 +1423,31 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|2"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
-		"desc": "使用者用牠的尾巴、藤蔓等部位鞭打敵人，造成可觀的傷害。"
+		"desc": "使用者用牠的尾巴、藤蔓等部位鞭打敵人，造成可观的傷害。"
 	},
 	{
-		"name": "劈開", "alias": "きりさく|Slash",
+		"name": "劈开", "alias": "きりさく|Slash",
 		"power": "3",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "effect|l|lethal", "effect|l|crit"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
 		"effect": "致命傷害。容易擊中要害。",
-		"desc": "將其身體部位當作刀刃，寶可夢以兇猛力道劈砍切開敵人。"
+		"desc": "將其身体部位当作刀刃，寶可夢以兇猛力道劈砍切开敵人。"
 	},
 	{
-		"name": "夢話", "alias": "ねごと|Sleep Talk",
+		"name": "夢话", "alias": "ねごと|Sleep Talk",
 		"power": "*",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|rfoe"],
 		"accuracy": "不定",
 		"damage": "不定",
-		"effect": "當這个寶可夢正處於「睡眠」狀態時，牠可以随机使用一个牠自己的招式。",
-		"desc": "在陷入沉睡之後，這隻寶可夢仍然做著自己還在戰鬥的夢。"
+		"effect": "当这个寶可夢正處於「睡眠」状態时，牠可以随机使用一个牠自己的招式。",
+		"desc": "在陷入沉睡之后，这隻寶可夢仍然做著自己還在戰鬥的夢。"
 	},
 	{
 		"name": "清醒", "alias": "きつけ|Smelling Salts",
@@ -1455,10 +1455,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3*",
-		"effect": "如果敵人處於「麻痺」狀態，則這个招式的傷害骰池額外增加 2 顆骰子。在造成傷害之後，解除敵人的「麻痺」狀態。",
-		"desc": "寶可夢把一些揮發性鹽丟到敵人臉上，被麻痺的寶可夢將會聞到一股強烈的氣味。"
+		"effect": "如果敵人處於「麻痺」状態，则这个招式的傷害骰池额外增加 2 顆骰子。在造成傷害之后，解除敵人的「麻痺」状態。",
+		"desc": "寶可夢把一些揮发性鹽丟到敵人脸上，被麻痺的寶可夢將會聞到一股强烈的氣味。"
 	},
 	{
 		"name": "煙幕", "alias": "えんまく|Smokescreen",
@@ -1469,7 +1469,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
 		"effect": "敵人的所有命中判定將被扣除 1 顆成功骰。",
-		"desc": "使用者將牠的敵人籠罩在一團煙幕之中。有些寶可夢會躲在這團煙霧中，而有些寶可夢則會把煙幕當做遮蔽物來趁機逃跑。"
+		"desc": "使用者將牠的敵人籠罩在一团煙幕之中。有些寶可夢會躲在这团煙霧中，而有些寶可夢则會把煙幕当做遮蔽物來趁机逃跑。"
 	},
 	{
 		"name": "打鼾", "alias": "いびき|Snore",
@@ -1479,8 +1479,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|flinch||number|d3", "effect|l|sound"],
 		"accuracy": "特殊 + 表演",
 		"damage": "特殊 + 2",
-		"effect": "這个招式只能在使用者處於「睡眠」狀態時被使用。骰 3 顆機率骰以使敵人陷入「畏縮」狀態。",
-		"desc": "在陷入沉睡後使用者發出一陣強大的鼾聲，干擾任何敵人正嘗試專注的行動。"
+		"effect": "这个招式只能在使用者處於「睡眠」状態时被使用。骰 3 顆机率骰以使敵人陷入「畏缩」状態。",
+		"desc": "在陷入沉睡后使用者发出一陣强大的鼾聲，干擾任何敵人正嘗试專注的行动。"
 	},
 	{
 		"name": "生蛋", "alias": "タマゴうみ|Soft Boiled",
@@ -1490,7 +1490,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "effect|l|heal"],
 		"accuracy": "洞察 + 自然",
 		"damage": "-",
-		"effect": "基礎治癒。若成功，則消耗 1 點意志點以使其生效。",
+		"effect": "基礎治癒。若成功，则消耗 1 点意志点以使其生效。",
 		"desc": "使用者烹煮一顆新鮮的蛋，並利用其中蘊含的能量來回復健康。"
 	},
 	{
@@ -1499,9 +1499,9 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|target|傷害|number|1"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "固定傷害",
-		"effect": "這个招式永遠會造成 1 點傷害。",
+		"effect": "这个招式永遠會造成 1 点傷害。",
 		"desc": "寶可夢使用一陣能夠穿透盔甲、厚皮、或牆壁的小型破壞音波來造成傷害。"
 	},
 	{
@@ -1510,10 +1510,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "effect|l|sact_5"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 1",
-		"effect": "遠程攻擊。連續行動。",
-		"desc": "寶可夢朝著敵人射出一波尖銳的物體。"
+		"effect": "遠程攻擊。連續行动。",
+		"desc": "寶可夢朝著敵人射出一波尖銳的物体。"
 	},
 	{
 		"name": "噴出", "alias": "はきだす|Spit Up",
@@ -1521,20 +1521,20 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 4",
-		"effect": "使用者必須先使用〈蓄力〉招式，否則這个招式將自動失敗。失去所有〈蓄力〉帶來的增益。",
-		"desc": "在積蓄力量之後，寶可夢朝著敵人噴出能量。使用者將變回原來的大小。"
+		"effect": "使用者必須先使用〈蓄力〉招式，否则这个招式將自动失败。失去所有〈蓄力〉帶來的增益。",
+		"desc": "在積蓄力量之后，寶可夢朝著敵人噴出能量。使用者將變回原來的大小。"
 	},
 	{
-		"name": "躍起", "alias": "水濺躍|はねる|Splash",
+		"name": "跃起", "alias": "水濺跃|はねる|Splash",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "-",
-		"desc": "使用者就只是彈跳並濺起些水花，這一點效果都沒有……"
+		"desc": "使用者就只是彈跳並濺起些水花，这一点效果都没有……"
 	},
 	{
 		"name": "聚光燈", "alias": "スポットライト|Spotlight",
@@ -1544,8 +1544,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|ally", "frame|priority||up|3"],
 		"accuracy": "帥氣 + 表演",
 		"damage": "-",
-		"effect": "先制招式。敵人在這个回合將選擇一个隊友做为目標。",
-		"desc": "使用者將聚光燈打在其中一个隊友身上，就彷彿牠在舞台上一樣，這名隊友將被迫吸引全場的注意力。"
+		"effect": "先制招式。敵人在这个回合將选擇一个隊友做为目标。",
+		"desc": "使用者將聚光燈打在其中一个隊友身上，就彷彿牠在舞台上一樣，这名隊友將被迫吸引全場的注意力。"
 	},
 	{
 		"name": "蓄力", "alias": "たくわえる|Stockpile",
@@ -1556,7 +1556,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "洞察 + 自然",
 		"damage": "-",
 		"effect": "提升使用者的防禦和特防。",
-		"desc": "寶可夢透過牠的嘴巴積蓄能量並膨脹，這將讓使用者稍微變得更能忍受傷害一些。"
+		"desc": "寶可夢透过牠的嘴巴積蓄能量並膨脹，这將讓使用者稍微變得更能忍受傷害一些。"
 	},
 	{
 		"name": "踩踏", "alias": "ふみつけ|Stomp",
@@ -1564,9 +1564,9 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|flinch||number|d3"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
-		"effect": "骰 3 顆機率骰以使敵人陷入「畏縮」狀態。",
+		"effect": "骰 3 顆机率骰以使敵人陷入「畏缩」状態。",
 		"desc": "寶可夢大腳踩踏敵人，其重量可能會使敵人深深陷在地板中。"
 	},
 	{
@@ -1575,10 +1575,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "力量 + 鬥毆",
+		"accuracy": "力量 + 斗殴",
 		"damage": "力量 + 3",
-		"effect": "在戰鬥外的場合，使用這个招式能讓寶可夢舉起牠原本舉重能力两倍的重量。",
-		"desc": "寶可夢拉緊肌肉以超越自己的極限。"
+		"effect": "在戰鬥外的場合，使用这个招式能讓寶可夢舉起牠原本舉重能力两倍的重量。",
+		"desc": "寶可夢拉紧肌肉以超越自己的极限。"
 	},
 	{
 		"name": "大快朵頤", "alias": "ほおばる|Stuff Cheeks",
@@ -1588,8 +1588,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "frame|self|防禦|up|2"],
 		"accuracy": "聰明 + 自然",
 		"damage": "-",
-		"effect": "使用者吃掉牠自己持有的樹果並獲得其效果，在這之後，提升使用者的防禦。",
-		"desc": "寶可夢咀嚼牠的樹果但把其中一部份留在牠的頰囊之中。這看起來很可愛，但實際上是牠用來度過嚴冬的生存技巧。"
+		"effect": "使用者吃掉牠自己持有的樹果並獲得其效果，在这之后，提升使用者的防禦。",
+		"desc": "寶可夢咀嚼牠的樹果但把其中一部份留在牠的颊囊之中。这看起來很可愛，但实際上是牠用來度过嚴冬的生存技巧。"
 	},
 	{
 		"name": "替身", "alias": "みがわり|Substitute",
@@ -1597,10 +1597,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self"],
-		"accuracy": "靈巧 + 隱匿",
+		"accuracy": "灵巧 + 隱匿",
 		"damage": "-",
-		"effect": "對使用者造成 2 點傷害，並放置一个2 HP，防禦和特防與使用者相同的替身誘餌。如果替身誘餌的HP耗盡，則它會憑空消失且使用者會重回戰場上。替身誘餌只會受到傷害類招式的影響。",
-		"desc": "寶可夢在一陣煙霧中消失不見。當煙霧散去後，一个看起來和使用者相同的物體將會留在牠原本的位置上來保護牠承受傷害。這東西看起來逼真到令人吃驚。"
+		"effect": "对使用者造成 2 点傷害，並放置一个2 HP，防禦和特防与使用者相同的替身誘餌。如果替身誘餌的HP耗盡，则它會憑空消失且使用者會重回戰場上。替身誘餌只會受到傷害类招式的影響。",
+		"desc": "寶可夢在一陣煙霧中消失不見。当煙霧散去后，一个看起來和使用者相同的物体將會留在牠原本的位置上來保護牠承受傷害。这東西看起來逼真到令人吃驚。"
 	},
 	{
 		"name": "憤怒門牙", "alias": "いかりのまえば|Super Fang",
@@ -1608,10 +1608,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|1"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "不定",
-		"effect": "將等同於敵人剩餘HP一半数量的骰子加到這个招式的傷害骰池中；你最多可以用這个方式增加最多 10 顆骰子。這个招式無視敵人的防禦。",
-		"desc": "寶可夢躍向敵人並用那可怕的啃咬碾碎對手。"
+		"effect": "將等同於敵人剩餘HP一半数量的骰子加到这个招式的傷害骰池中；你最多可以用这个方式增加最多 10 顆骰子。这个招式无視敵人的防禦。",
+		"desc": "寶可夢跃向敵人並用那可怕的啃咬碾碎对手。"
 	},
 	{
 		"name": "超音波", "alias": "ちょうおんぱ|Supersonic",
@@ -1619,21 +1619,21 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|3", "frame|confuse||always"],
-		"accuracy": "強壯 + 導引",
+		"accuracy": "强壮 + 導引",
 		"damage": "-",
-		"effect": "使敵人陷入「混亂」狀態。",
-		"desc": "寶可夢發送出一連串能使敵人頭暈目眩，動作失調的超音波。"
+		"effect": "使敵人陷入「混亂」状態。",
+		"desc": "寶可夢发送出一連串能使敵人头暈目眩，动作失调的超音波。"
 	},
 	{
-		"name": "虛張聲勢", "alias": "いばる|Swagger",
+		"name": "虚张聲勢", "alias": "いばる|Swagger",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|target|力量|up|2", "frame|confuse||always"],
-		"accuracy": "強壯 + 威嚇",
+		"accuracy": "强壮 + 威吓",
 		"damage": "-",
-		"effect": "提升敵人的力量，並使敵人陷入「混亂」狀態。",
-		"desc": "寶可夢用牠傲慢囂張的舉止激怒敵人，讓牠失去對戰鬥的專注力。"
+		"effect": "提升敵人的力量，並使敵人陷入「混亂」状態。",
+		"desc": "寶可夢用牠傲慢囂张的舉止激怒敵人，讓牠失去对戰鬥的專注力。"
 	},
 	{
 		"name": "吞下", "alias": "のみこむ|Swallow",
@@ -1643,8 +1643,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "frame|heal||heal|2"],
 		"accuracy": "活力 + 自然",
 		"damage": "-",
-		"effect": "使用者必須先使用〈蓄力〉招式，否則這个招式將自動失敗。若成功，則消耗 1 點意志點以使其生效。使用者回復最多 2 點HP，並失去所有〈蓄力〉帶來的增益。該寶可夢必須休息至少一个小時才能夠再次使用這个招式。",
-		"desc": "寶可夢吞下牠儲存的能量以治療一些傷害，在這之後牠將變回原來的大小。"
+		"effect": "使用者必須先使用〈蓄力〉招式，否则这个招式將自动失败。若成功，则消耗 1 点意志点以使其生效。使用者回復最多 2 点HP，並失去所有〈蓄力〉帶來的增益。該寶可夢必須休息至少一个小时才能夠再次使用这个招式。",
+		"desc": "寶可夢吞下牠儲存的能量以治療一些傷害，在这之后牠將變回原來的大小。"
 	},
 	{
 		"name": "甜甜香氣", "alias": "あまいかおり|Sweet Scent",
@@ -1654,8 +1654,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "以所有範圍內的敵人为目標。目標將無法閃避使用者施展的招式。在戰鬥外的場合，這个招式將會吸引野生寶可夢靠近。",
-		"desc": "寶可夢釋放出一陣香氣，敵人一定會愛上這股氣味。"
+		"effect": "以所有範圍內的敵人为目标。目标將无法闪避使用者施展的招式。在戰鬥外的場合，这个招式將會吸引野生寶可夢靠近。",
+		"desc": "寶可夢釋放出一陣香氣，敵人一定會愛上这股氣味。"
 	},
 	{
 		"name": "高速星星", "alias": "スピードスター|Swift",
@@ -1663,21 +1663,21 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|allfoe", "effect|l|neverfail"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 2",
 		"effect": "必中。",
-		"desc": "使用者射出星星形狀的光束，能以驚人的高速命中目標。"
+		"desc": "使用者射出星星形状的光束，能以驚人的高速命中目标。"
 	},
 	{
-		"name": "劍舞", "alias": "つるぎのまい|Swords Dance",
+		"name": "剑舞", "alias": "つるぎのまい|Swords Dance",
 		"power": "-",
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self", "frame|self|力量|up|2"],
-		"accuracy": "靈巧 + 表演",
+		"accuracy": "灵巧 + 表演",
 		"damage": "-",
 		"effect": "提升使用者的力量。",
-		"desc": "寶可夢跳起能夠激發其戰鬥之魂的舞蹈。"
+		"desc": "寶可夢跳起能夠激发其戰鬥之魂的舞蹈。"
 	},
 	{
 		"name": "撞擊", "alias": "たいあたり|Tackle",
@@ -1685,9 +1685,9 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
-		"desc": "向敵人衝撞的一種基本攻擊。"
+		"desc": "向敵人衝撞的一种基本攻擊。"
 	},
 	{
 		"name": "掃尾拍打", "alias": "スイープビンタ|Tail Slap",
@@ -1695,10 +1695,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "effect|l|sact_5"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 1",
-		"effect": "連續行動。",
-		"desc": "寶可夢用牠強勁的尾巴連續拍打敵人的臉。"
+		"effect": "連續行动。",
+		"desc": "寶可夢用牠强勁的尾巴連續拍打敵人的脸。"
 	},
 	{
 		"name": "搖尾巴", "alias": "しっぽをふる|Tail Whip",
@@ -1709,7 +1709,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "可愛 + 表演",
 		"damage": "-",
 		"effect": "降低敵人的防禦。",
-		"desc": "寶可夢以如此可愛的方式搖著尾巴，讓敵人很容易放鬆戒備。"
+		"desc": "寶可夢以如此可愛的方式搖著尾巴，讓敵人很容易放松戒備。"
 	},
 	{
 		"name": "猛撞", "alias": "とっしん|Take Down",
@@ -1717,7 +1717,7 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|2", "effect|l|recoil"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 3",
 		"effect": "反作用力傷害。",
 		"desc": "寶可夢魯莽地抓住敵人並將其撞倒在地上。"
@@ -1731,7 +1731,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "可愛 + 誘惑",
 		"damage": "-",
 		"effect": "降低敵人的力量和特殊。",
-		"desc": "寶可夢的雙眼開始泛淚，就彷彿牠要開始大哭一樣。牠的敵人將被淚水動搖並失去戰鬥的意志。"
+		"desc": "寶可夢的双眼开始泛淚，就彷彿牠要开始大哭一樣。牠的敵人將被淚水动搖並失去戰鬥的意志。"
 	},
 	{
 		"name": "茶會", "alias": "おちゃかい|Teatime",
@@ -1741,8 +1741,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|area"],
 		"accuracy": "洞察 + 禮儀",
 		"damage": "-",
-		"effect": "範圍招式。所有目標都將吃掉牠們持有的樹果而不會獲得其效果。在戰鬥外的場合，這將消除暴力意圖長達数分鐘。",
-		"desc": "寶可夢將大家聚集起來享用美味的茶，要是沒有配著點心的話可就太浪費了。"
+		"effect": "範圍招式。所有目标都將吃掉牠們持有的樹果而不會獲得其效果。在戰鬥外的場合，这將消除暴力意圖长达数分鐘。",
+		"desc": "寶可夢將大家聚集起來享用美味的茶，要是没有配著点心的话可就太浪費了。"
 	},
 	{
 		"name": "高科技光炮", "alias": "テクノバスター|Techno Blast",
@@ -1750,10 +1750,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|foe", "effect|l|lethal"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 5",
-		"effect": "致命傷害。如果是由蓋諾賽克特使用這个招式，則根據牠所攜帶的卡帶不同，這个招式的屬性將會變更成：火屬性、冰屬性、水屬性、或電屬性。",
-		"desc": "一道雷射從寶可夢身上迅速射出，無論命中什麼都會在一秒後爆炸。這个招式可以透過正確的電腦編程而被修改。"
+		"effect": "致命傷害。如果是由蓋諾賽克特使用这个招式，则根據牠所攜帶的卡帶不同，这个招式的属性將會變更成：火属性、冰属性、水属性、或電属性。",
+		"desc": "一道雷射從寶可夢身上迅速射出，无論命中什么都會在一秒后爆炸。这个招式可以透过正確的電腦編程而被修改。"
 	},
 	{
 		"name": "搖晃舞", "alias": "フラフラダンス|Teeter Dance",
@@ -1761,10 +1761,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|area", "frame|confuse||always"],
-		"accuracy": "靈巧 + 表演",
+		"accuracy": "灵巧 + 表演",
 		"damage": "-",
-		"effect": "範圍招式。使所有目標陷入「混亂」狀態。",
-		"desc": "使用者開始以搖晃的步伐跳起舞來，無論敵友都會因为嘗試跟上舞步而頭暈目眩。"
+		"effect": "範圍招式。使所有目标陷入「混亂」状態。",
+		"desc": "使用者开始以搖晃的步伐跳起舞來，无論敵友都會因为嘗试跟上舞步而头暈目眩。"
 	},
 	{
 		"name": "大鬧一番", "alias": "あばれる|Thrash",
@@ -1772,10 +1772,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|rfoe", "effect|l|rampage"],
-		"accuracy": "力量 + 鬥毆",
+		"accuracy": "力量 + 斗殴",
 		"damage": "力量 + 5",
-		"effect": "狂暴。以随机敵人为目標。",
-		"desc": "寶可夢陷入狂暴並開始攻擊破壞所有牠面前的一切。"
+		"effect": "狂暴。以随机敵人为目标。",
+		"desc": "寶可夢陷入狂暴並开始攻擊破壞所有牠面前的一切。"
 	},
 	{
 		"name": "搔癢", "alias": "くすぐる|Tickle",
@@ -1783,10 +1783,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|target|力量|down|1", "frame|target|防禦|down|1"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "-",
 		"effect": "降低敵人的力量和防禦。",
-		"desc": "寶可夢開始搔起敵人的癢。這些笑聲會對敵人的戰鬥姿態造成相當的干擾。"
+		"desc": "寶可夢开始搔起敵人的癢。这些笑聲會对敵人的戰鬥姿態造成相当的干擾。"
 	},
 	{
 		"name": "變身", "alias": "へんしん|Transform",
@@ -1796,8 +1796,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self"],
 		"accuracy": "意志 + 導引",
 		"damage": "-",
-		"effect": "使用者變身成目標的複製體，並擁有與目標相同的特性、特質、招式、以及其他数值修正值。被收回精靈球內會終止變身。",
-		"desc": "使用者修改牠自己的DNA以變化成任何牠能看見的寶可夢或物體的複製體。"
+		"effect": "使用者變身成目标的复製体，並擁有与目标相同的特性、特质、招式、以及其他数值修正值。被收回精灵球內會終止變身。",
+		"desc": "使用者修改牠自己的DNA以變化成任何牠能看見的寶可夢或物体的复製体。"
 	},
 	{
 		"name": "三重攻擊", "alias": "トライアタック|Tri Attack",
@@ -1805,10 +1805,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|paralysis||number|d2", "frame|burn1||number|d2", "frame|frozen||number|d2"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "骰 2 顆機率骰以使敵人陷入「麻痺」狀態。骰 2 顆機率骰以使敵人陷入「灼傷 1 級」狀態。骰 2 顆機率骰以使敵人陷入「冰凍」狀態。",
-		"desc": "使用者射出三道光束。每一道光束都蘊含著不同種類的能量。"
+		"effect": "骰 2 顆机率骰以使敵人陷入「麻痺」状態。骰 2 顆机率骰以使敵人陷入「灼傷 1 级」状態。骰 2 顆机率骰以使敵人陷入「冰凍」状態。",
+		"desc": "使用者射出三道光束。每一道光束都蘊含著不同种类的能量。"
 	},
 	{
 		"name": "王牌", "alias": "きりふだ|Trump Card",
@@ -1818,7 +1818,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "意志 + 導引",
 		"damage": "特殊 + 2*",
-		"effect": "如果使用者的意志點为只剩下一半或更少，則這个招式的傷害骰池額外增加 1 顆骰子；如果使用者的意志點耗盡，則這个招式的傷害骰池額外增加 8 顆骰子。",
+		"effect": "如果使用者的意志点为只剩下一半或更少，则这个招式的傷害骰池额外增加 1 顆骰子；如果使用者的意志点耗盡，则这个招式的傷害骰池额外增加 8 顆骰子。",
 		"desc": ""
 	},
 	{
@@ -1827,10 +1827,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|rfoe", "effect|l|sound"],
-		"accuracy": "靈巧 + 導引",
+		"accuracy": "灵巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "以随机敵人为目標。直到該戰鬥輪結束前，戰場上的所有人都將免疫「睡眠」狀態，如果有任何人處於「睡眠」狀態，將其解除。",
-		"desc": "寶可夢是如此賣力的大喊、尖叫、嘎吱作響，以至於製造出噪音讓所有人的耳朵隱隱作痛。沒有人能在這陣喧鬧中好好一覺到天亮。"
+		"effect": "以随机敵人为目标。直到該戰鬥輪结束前，戰場上的所有人都將免疫「睡眠」状態，如果有任何人處於「睡眠」状態，將其解除。",
+		"desc": "寶可夢是如此賣力的大喊、尖叫、嘎吱作響，以至於製造出噪音讓所有人的耳朵隱隱作痛。没有人能在这陣喧鬧中好好一覺到天亮。"
 	},
 	{
 		"name": "砰砰擊破", "alias": "ブイブイブレイク|Veevee Volley",
@@ -1838,10 +1838,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + *",
-		"effect": "使用者的每一點幸福度，都會使這个招式的傷害骰池額外增加 1 顆骰子。如果這个招式的使用者處於最終進化階段，則這个招式自動失敗。",
-		"desc": "長時間與你的寶可夢打排球使牠感到非常快樂。在戰鬥中，牠只不過是把排球換成了牠的敵人。"
+		"effect": "使用者的每一点幸福度，都會使这个招式的傷害骰池额外增加 1 顆骰子。如果这个招式的使用者處於最終進化階段，则这个招式自动失败。",
+		"desc": "长时间与你的寶可夢打排球使牠感到非常快樂。在戰鬥中，牠只不过是把排球換成了牠的敵人。"
 	},
 	{
 		"name": "夾住", "alias": "はさむ|Vise Grip",
@@ -1849,7 +1849,7 @@ Array.prototype.push.apply(MoveList, [
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 2",
 		"desc": "寶可夢用牠的鉗爪或下顎夾住敵人，並施加壓力以留下可怕的瘀青。"
 	},
@@ -1859,10 +1859,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "special",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "靈巧 + 自然",
+		"accuracy": "灵巧 + 自然",
 		"damage": "特殊 + 2*",
-		"effect": "如果戰場上有天氣狀態正在發揮作用，則這个招式的傷害骰池額外增加 2 顆骰子。這个招式的屬性將會根據天氣狀態變化：大晴天-火屬性；下雨-水屬性；沙暴-岩石屬性；亂流-飛行屬性；冰雹-冰屬性。",
-		"desc": "使用者創造出一顆能量球，這顆能量球會利用它周遭的溫度以成長为不同的大小和威力。"
+		"effect": "如果戰場上有天氣状態正在发揮作用，则这个招式的傷害骰池额外增加 2 顆骰子。这个招式的属性將會根據天氣状態變化：大晴天-火属性；下雨-水属性；沙暴-岩石属性；亂流-飛行属性；冰雹-冰属性。",
+		"desc": "使用者创造出一顆能量球，这顆能量球會利用它周遭的温度以成长为不同的大小和威力。"
 	},
 	{
 		"name": "吹飛", "alias": "ふきとばし|Whirlwind",
@@ -1870,10 +1870,10 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|priority||down|6", "effect|l|switcher"],
-		"accuracy": "靈巧 + 自然",
+		"accuracy": "灵巧 + 自然",
 		"damage": "-",
-		"effect": "後制招式。替換招式。若在野外使用，則戰鬥直接結束。若在正式對戰中使用，則目標寶可夢將被強制換下場。如果牠是隊伍中的最後一隻或唯一一隻寶可夢，則這个招式將自動失敗。",
-		"desc": "寶可夢製造出一陣強力的狂風，環繞著敵人並把牠吹得遠遠的。"
+		"effect": "后制招式。替換招式。若在野外使用，则戰鬥直接结束。若在正式对戰中使用，则目标寶可夢將被强制換下場。如果牠是隊伍中的最后一隻或唯一一隻寶可夢，则这个招式將自动失败。",
+		"desc": "寶可夢製造出一陣强力的狂風，环繞著敵人並把牠吹得遠遠的。"
 	},
 	{
 		"name": "祈願", "alias": "ねがいごと|Wish",
@@ -1883,8 +1883,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "effect|l|heal"],
 		"accuracy": "意志 + 導引",
 		"damage": "-",
-		"effect": "基礎治癒。若成功，則消耗 1 點意志點以使其生效。這个招式會在下一个戰鬥輪開始時發揮作用。",
-		"desc": "寶可夢竭盡全力許下願望，並以某種方式成真。"
+		"effect": "基礎治癒。若成功，则消耗 1 点意志点以使其生效。这个招式會在下一个戰鬥輪开始时发揮作用。",
+		"desc": "寶可夢竭盡全力許下願望，並以某种方式成真。"
 	},
 	{
 		"name": "自我激勵", "alias": "ふるいたてる|Work Up",
@@ -1892,32 +1892,32 @@ Array.prototype.push.apply(MoveList, [
 		"category": "support",
 		"type": "Normal",
 		"tags": ["target|l|self", "frame|self|力量|up|1", "frame|self|特殊|up|1"],
-		"accuracy": "力量 + 運動",
+		"accuracy": "力量 + 运动",
 		"damage": "-",
 		"effect": "提升使用者的力量和特殊。",
-		"desc": "寶可夢精力充沛地鍛鍊著，使身心靈都準備好戰鬥。"
+		"desc": "寶可夢精力充沛地鍛鍊著，使身心灵都準備好戰鬥。"
 	},
 	{
-		"name": "緊束", "alias": "まきつく|Wrap",
+		"name": "紧束", "alias": "まきつく|Wrap",
 		"power": "1",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "effect|l|block"],
-		"accuracy": "靈巧 + 鬥毆",
+		"accuracy": "灵巧 + 斗殴",
 		"damage": "力量 + 1",
-		"effect": "阻擋。每个戰鬥輪結束時，骰 2 顆傷害骰以對敵人造成傷害。持續 4 輪。",
-		"desc": "寶可夢用牠的身體或藤蔓纏住敵人，造成一些傷害。"
+		"effect": "阻擋。每个戰鬥輪结束时，骰 2 顆傷害骰以对敵人造成傷害。持續 4 輪。",
+		"desc": "寶可夢用牠的身体或藤蔓缠住敵人，造成一些傷害。"
 	},
 	{
-		"name": "絞緊", "alias": "しぼりとる|Wring Out",
+		"name": "絞紧", "alias": "しぼりとる|Wring Out",
 		"power": "5*",
 		"category": "physical",
 		"type": "Normal",
 		"tags": ["target|l|foe"],
-		"accuracy": "力量 + 鬥毆",
+		"accuracy": "力量 + 斗殴",
 		"damage": "力量 + 5*",
-		"effect": "目標每失去 1 點HP，這个招式的傷害骰池就會被扣除 1 顆骰子。這个方式最多只能扣除 4 顆骰子。",
-		"desc": "寶可夢字面意義上的把目標的生命力擠壓而出，隨著敵人生命力的減少，擠壓也會變得越來越困難。"
+		"effect": "目标每失去 1 点HP，这个招式的傷害骰池就會被扣除 1 顆骰子。这个方式最多只能扣除 4 顆骰子。",
+		"desc": "寶可夢字面意義上的把目标的生命力擠壓而出，隨著敵人生命力的減少，擠壓也會變得越來越困难。"
 	},
 	{
 		"name": "哈欠", "alias": "あくび|Yawn",
@@ -1927,7 +1927,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|sleep||always"],
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
-		"effect": "如果敵人在下个戰鬥輪開始時沒有從戰鬥中退場，則牠將會陷入「睡眠」狀態。",
-		"desc": "使用者發出帶有傳染力的哈欠，能讓任何人變得昏昏欲睡，並很快陷入夢鄉。"
+		"effect": "如果敵人在下个戰鬥輪开始时没有從戰鬥中退場，则牠將會陷入「睡眠」状態。",
+		"desc": "使用者发出帶有傳染力的哈欠，能讓任何人變得昏昏欲睡，並很快陷入夢鄉。"
 	}
 ]);

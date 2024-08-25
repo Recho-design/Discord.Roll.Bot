@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         name="viewport" />
-    <title>HKTRPG 掷骰機器人及聊天室 1D100 2D6 查詢指令输入Bothelp</title>
+    <title>HKTRPG 掷骰机器人及聊天室 1D100 2D6 查詢指令输入Bothelp</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="/socket.io/socket.io.js"></script>
@@ -29,7 +29,7 @@
                                 <span class="iconify" data-icon="bi:house-door" data-inline="false"
                                     style="color: black;" data-width="32" data-height="32"></span>
                                 <input type="text" class="form-control" name="roomNumber" id="roomNumber"
-                                    value="公共房間" placeholder="房間名稱" maxlength="50">
+                                    value="公共房间" placeholder="房间名稱" maxlength="50">
                                 <div class="input-group-append">
                                     <input type="submit" class="btn btn-danger mb-2" id="changeRoomNumber"
                                         value="變更">
@@ -42,11 +42,11 @@
                     <span class="iconify" data-icon="gg:readme" data-inline="false"></span>儲存
                 </button>
                 <button type="button" class="btn btn-dark float-right" onclick="readme()">
-                    <span class="iconify" data-icon="gg:readme" data-inline="false"></span>說明
+                    <span class="iconify" data-icon="gg:readme" data-inline="false"></span>说明
                 </button>
                 <div class="input-group-text font-weight-bold" id="status-box"> <span class="iconify"
                         data-icon="bi:house-door-fill" data-inline="false" style="color: black;" data-width="22"
-                        data-height="22"></span><span id="room">公共房間</span></div>
+                        data-height="22"></span><span id="room">公共房间</span></div>
                 <div class="badge-warning input-group-text font-weight-bold" id="status-box">
                     <span class="iconify" data-icon="bi:people" data-inline="false" style="color: black;"
                         data-width="22" data-height="22"></span>
@@ -65,7 +65,7 @@
                     <div class="col-auto">
                         <form id="send-form">
                             <div class="input-group text-center">
-                                <input type="text" name="msg" id="msg" value="1d100" placeholder="說點什麼？"
+                                <input type="text" name="msg" id="msg" value="1d100" placeholder="说点什么？"
                                     maxlength="1000">
                                 <div class="input-group-append">
                                     <input type="submit" class="btn btn-primary" id="submit" value="送出"
@@ -84,17 +84,17 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="readmeModalLongTitle">使用說明</h5>
+                        <h5 class="modal-title" id="readmeModalLongTitle">使用说明</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        每間房間上限100條信息<br>
-                        输入名字可以進入自定的房間<br>
-                        掷骰方法和HKTRPG骰子機械人一樣。<br>
-                        詳情可以點擊<br>
-                        <a href="https://bothelp.hktrpg.com/">HKTRPG使用教學!</a>
+                        每间房间上限100条信息<br>
+                        输入名字可以進入自定的房间<br>
+                        掷骰方法和HKTRPG骰子机械人一樣。<br>
+                        詳情可以点擊<br>
+                        <a href="https://bothelp.hktrpg.com/">HKTRPG使用教学!</a>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -132,7 +132,7 @@
 
     function genName() {
         if (!document.getElementById("name").value)
-            document.getElementById("name").value = "調查員" + Math.floor(Math.random() * 1000) + 1;
+            document.getElementById("name").value = "调查员" + Math.floor(Math.random() * 1000) + 1;
     }
 
     function save() {
@@ -163,7 +163,7 @@
         content.scrollTop = content.scrollHeight;
     }
     document.addEventListener("DOMContentLoaded", () => {
-        let roomNumber = "公共房間"
+        let roomNumber = "公共房间"
         let max_record = 100;
         //  let status = document.getElementById("status");
         let online = document.getElementById("online");
@@ -215,8 +215,8 @@
             e.preventDefault();
             color = 3;
             if (!roomText.value) {
-                roomText.innerHTML = "公共房間";
-                roomText.value = "公共房間";
+                roomText.innerHTML = "公共房间";
+                roomText.value = "公共房间";
             };
             if (roomText.value == roomNumber) {
                 return;

@@ -3,16 +3,16 @@ let rollbase = require('./rollbase.js');
 let variables = {};
 const mathjs = require('mathjs');
 const gameName = function () {
-    return '【命運Fate】 .4df(m|-)(加值)'
+    return '【命运Fate】 .4df(m|-)(加值)'
 }
 
 const gameType = function () {
     return 'Dice:fate'
 }
 const prefixs = function () {
-    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---這裡是一對  
-    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---這裡是一對
-    //如前面是 /^1$/ig, 後面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
+    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这裡是一对  
+    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这裡是一对
+    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
     ///^(?=.*he)(?!.*da).*$/ig
     return [{
         first: /^[.]4df(\d+|(\+|m|-)(\d+)|)/i,
@@ -20,11 +20,11 @@ const prefixs = function () {
     }]
 }
 const getHelpMessage = async function () {
-    return `【命運Fate】
-命運骰，又稱胡扯骰，是由两面「＋」號、两面「－」號，以及两面空白▉組成的六面骰
-「＋」號代表＋１，「－」號－１，▉則代表０
-.4df(+|m|-)(加值) 指令: .4df 如常骰出四粒命運骰
-.4df3 .4df+3  四粒命運骰結果+3  .4dfm4 或.4df-4  四粒命運骰結果-4`
+    return `【命运Fate】
+命运骰，又稱胡扯骰，是由两面「＋」號、两面「－」號，以及两面空白▉組成的六面骰
+「＋」號代表＋１，「－」號－１，▉则代表０
+.4df(+|m|-)(加值) 指令: .4df 如常骰出四粒命运骰
+.4df3 .4df+3  四粒命运骰结果+3  .4dfm4 或.4df-4  四粒命运骰结果-4`
 }
 const initialize = function () {
     return variables;
@@ -65,7 +65,7 @@ const rollDiceCommand = async function ({
 
                 }
             } catch (error) {
-                rply.text = `.4df 输入出錯 \n${error.message}`
+                rply.text = `.4df 输入出错 \n${error.message}`
             }
 
 

@@ -54,7 +54,7 @@ class Records extends EventEmitter {
         });
     }
 
-    //randomAns開始
+    //randomAns开始
     pushrandomAnsfunction(dbbase, msg, callback) {
         /*
             提醒:
@@ -132,7 +132,7 @@ class Records extends EventEmitter {
     }
 
     get(target, callback) {
-        // 取出所有資料
+        // 取出所有资料
         if (schema[target])
             schema[target].find({}, (err, msgs) => {
                 callback(msgs);
@@ -140,7 +140,7 @@ class Records extends EventEmitter {
     }
 
     /*
-        trpgDatabase開始
+        trpgDatabase开始
     */
     pushtrpgDatabasefunction(dbbase, msg, callback) {
         /*
@@ -220,7 +220,7 @@ class Records extends EventEmitter {
 
 
     /*
-          setGroupSetting開始
+          setGroupSetting开始
       */
     pushGroupSettingfunction(dbbase, msg, callback) {
         /*
@@ -264,7 +264,7 @@ class Records extends EventEmitter {
 
 
     /*
-        trpgsaveCommand開始
+        trpgsaveCommand开始
     */
     pushtrpgCommandfunction(dbbase, msg, callback) {
         /*
@@ -308,7 +308,7 @@ class Records extends EventEmitter {
 
 
     /*
-            trpgDarkRollingfunction開始
+            trpgDarkRollingfunction开始
         */
 
     pushtrpgDarkRollingfunction(dbbase, msg, callback) {
@@ -351,7 +351,7 @@ class Records extends EventEmitter {
         });
     }
     /*
-            trpgLevelSystem開始
+            trpgLevelSystem开始
         */
     pushtrpgLevelSystemfunction(dbbase, msg, callback) {
         /*
@@ -381,13 +381,13 @@ class Records extends EventEmitter {
         }, {
             $set: {
                 LevelUpWord: msg.LevelUpWord
-                //在這群組升級時的升級語
+                //在这群組升级时的升级语
                 //RankWord: msg.RankWord,
-                //在這群組查詢等級時的回應
+                //在这群組查詢等级时的回應
                 //Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 则1
                 //Hidden: msg.Hidden,
-                //是否顯示升級語 config X1 則1
+                //是否显示升级语 config X1 则1
                 //trpgLevelSystemfunction: msg.trpgLevelSystemfunction
             }
         }, {
@@ -407,13 +407,13 @@ class Records extends EventEmitter {
         }, {
             $set: {
                 //LevelUpWord: msg.LevelUpWord
-                //在這群組升級時的升級語
+                //在这群組升级时的升级语
                 RankWord: msg.RankWord
-                //在這群組查詢等級時的回應
+                //在这群組查詢等级时的回應
                 //Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 则1
                 //Hidden: msg.Hidden,
-                //是否顯示升級語 config X1 則1
+                //是否显示升级语 config X1 则1
                 //trpgLevelSystemfunction: msg.trpgLevelSystemfunction
             }
         }, {
@@ -433,13 +433,13 @@ class Records extends EventEmitter {
         }, {
             $set: {
                 //LevelUpWord: msg.LevelUpWord
-                //在這群組升級時的升級語
+                //在这群組升级时的升级语
                 //RankWord: msg.RankWord
-                //在這群組查詢等級時的回應
+                //在这群組查詢等级时的回應
                 Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 则1
                 Hidden: msg.Hidden
-                //是否顯示升級語 config X1 則1
+                //是否显示升级语 config X1 则1
                 //trpgLevelSystemfunction: msg.trpgLevelSystemfunction
             }
         }, {
@@ -459,13 +459,13 @@ class Records extends EventEmitter {
         }, {
             $push: {
                 //LevelUpWord: msg.LevelUpWord
-                //在這群組升級時的升級語
+                //在这群組升级时的升级语
                 //RankWord: msg.RankWord
-                //在這群組查詢等級時的回應
+                //在这群組查詢等级时的回應
                 //Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 则1
                 //Hidden: msg.Hidden,
-                //是否顯示升級語 config X1 則1
+                //是否显示升级语 config X1 则1
                 trpgLevelSystemfunction: msg.trpgLevelSystemfunction
             }
         }, {
@@ -485,16 +485,16 @@ class Records extends EventEmitter {
             groupid: msg.groupid
         }, {
             $set: {
-                //在這群的稱號
+                //在这群的稱號
                 Title: msg.Title
                 //LevelUpWord: msg.LevelUpWord
-                //在這群組升級時的升級語
+                //在这群組升级时的升级语
                 //RankWord: msg.RankWord
-                //在這群組查詢等級時的回應
+                //在这群組查詢等级时的回應
                 //Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 则1
                 //Hidden: msg.Hidden,
-                //是否顯示升級語 config X1 則1
+                //是否显示升级语 config X1 则1
                 //trpgLevelSystemfunction: msg.trpgLevelSystemfunction
             }
         }, {
@@ -515,13 +515,13 @@ class Records extends EventEmitter {
         }, {
             $set: {
                 //LevelUpWord: msg.LevelUpWord
-                //在這群組升級時的升級語
+                //在这群組升级时的升级语
                 //RankWord: msg.RankWord
-                //在這群組查詢等級時的回應
+                //在这群組查詢等级时的回應
                 //Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 则1
                 //Hidden: msg.Hidden,
-                //是否顯示升級語 config X1 則1
+                //是否显示升级语 config X1 则1
                 trpgLevelSystemfunction: msg
             }
         }, {
@@ -544,13 +544,13 @@ class Records extends EventEmitter {
         }, {
             $max: {
                 //LevelUpWord: msg.LevelUpWord
-                //在這群組升級時的升級語
+                //在这群組升级时的升级语
                 //RankWord: msg.RankWord
-                //在這群組查詢等級時的回應
+                //在这群組查詢等级时的回應
                 //Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 则1
                 //Hidden: msg.Hidden,
-                //是否顯示升級語 config X1 則1
+                //是否显示升级语 config X1 则1
                 'trpgLevelSystemfunction.$.EXP': exp,
                 'trpgLevelSystemfunction.$.Level': lv
             }
@@ -581,7 +581,7 @@ class Records extends EventEmitter {
                 "RealTimeRollingLogfunction.LastTimeLog": msg.LastTimeLog
             },
             $max: {
-                //實時資料 使用SET
+                //实时资料 使用SET
                 "RealTimeRollingLogfunction.DiscordCountRoll": msg.DiscordCountRoll,
                 "RealTimeRollingLogfunction.DiscordCountText": msg.DiscordCountText,
                 "RealTimeRollingLogfunction.LineCountRoll": msg.LineCountRoll,
@@ -592,9 +592,9 @@ class Records extends EventEmitter {
                 "RealTimeRollingLogfunction.WhatsappCountText": msg.WhatsappCountText,
                 "RealTimeRollingLogfunction.WWWCountRoll": msg.WWWCountRoll,
                 "RealTimeRollingLogfunction.WWWCountText": msg.WWWCountText
-                //中途紀錄資料 使用PUSH 每天紀錄一次
+                //中途记录资料 使用PUSH 每天记录一次
                 // RollingLogfunction: msg,
-                //掷骰的結果紀錄
+                //掷骰的结果记录
                 //Sided: msg
             }
         }, {
@@ -623,7 +623,7 @@ class Records extends EventEmitter {
                 "RollingLogfunction.LogTime": msg.LogTime,
             },
             $max: {
-                //大於則更新
+                //大於则更新
                 "RollingLogfunction.DiscordCountRoll": msg.DiscordCountRoll,
                 "RollingLogfunction.DiscordCountText": msg.DiscordCountText,
                 "RollingLogfunction.LineCountRoll": msg.LineCountRoll,
@@ -634,9 +634,9 @@ class Records extends EventEmitter {
                 "RollingLogfunction.WhatsappCountText": msg.WhatsappCountText,
                 "RollingLogfunction.WWWCountRoll": msg.WWWCountRoll,
                 "RollingLogfunction.WWWCountText": msg.WWWCountText
-                //中途紀錄資料 使用PUSH 每天紀錄一次
+                //中途记录资料 使用PUSH 每天记录一次
                 // RollingLogfunction: msg,
-                //掷骰的結果紀錄
+                //掷骰的结果记录
                 //Sided: msg
             }
         }, {
@@ -666,7 +666,7 @@ class Records extends EventEmitter {
         });
         /**
          * 计算有多少个
-         * 比較超出了多少个
+         * 比较超出了多少个
          * 找出那个的日子
          * 之前的全部刪除
          */

@@ -13,7 +13,7 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <!-- production version, optimized for size and speed -->
     <script src="https://unpkg.com/vue@3.0.5"></script>
-    <title>Character Card 公開角色卡 @ HKTRPG</title>
+    <title>Character Card 公开角色卡 @ HKTRPG</title>
     <link rel="icon" href="https://avatars2.githubusercontent.com/u/48795428?s=280&v=4" />
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
@@ -27,11 +27,11 @@
     <br>
     <div class="container" id="array-rendering">
         <button type="button" class="btn btn-secondary float-right" onclick="selectCard()">
-            <span class="iconify" data-icon="grommet-icons:select" data-inline="false"></span>選擇角色卡
+            <span class="iconify" data-icon="grommet-icons:select" data-inline="false"></span>选擇角色卡
         </button>
 
         <button type="button" class="btn btn-dark float-right" onclick="readme()">
-            <span class="iconify" data-icon="gg:readme" data-inline="false"></span>說明
+            <span class="iconify" data-icon="gg:readme" data-inline="false"></span>说明
         </button>
         <h3>
             <span class="iconify" data-icon="wpf:name" data-inline="false"></span> {{name}}
@@ -39,7 +39,7 @@
         <br>
         <h3 class="bg-color3 p-1">
             <span class="iconify" data-icon="carbon:data-base" data-inline="false" data-width="20px"
-                data-height="20px"></span>基本屬性
+                data-height="20px"></span>基本属性
         </h3>
         <div class="row align-items-start">
             <div v-for="item in state" id="state" class=" board1" style="height: 36px;">
@@ -110,7 +110,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark float-right" onclick="readme()">
-                        <span class="iconify" data-icon="gg:readme" data-inline="false"></span>說明
+                        <span class="iconify" data-icon="gg:readme" data-inline="false"></span>说明
                     </button>
                     <button type="button" class="btn btn-primary" onclick="login()">登入</button>
                 </div>
@@ -124,7 +124,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="cardListModalLabel">選擇角色卡</h5>
+                    <h5 class="modal-title" id="cardListModalLabel">选擇角色卡</h5>
                 </div>
                 <div class="modal-body">
                     <form id="cardList-Form">
@@ -146,15 +146,15 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="readmeModalLongTitle">使用說明</h5>
+                    <h5 class="modal-title" id="readmeModalLongTitle">使用说明</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    這是查看別人公開的角色卡的位置。 <br>
-                    可以在私人角色卡頁进行設定公開，<br>
-                    也可以對HKTRPG機械人输入 .char public (名字)公開<br>
+                    这是查看別人公开的角色卡的位置。 <br>
+                    可以在私人角色卡頁进行設定公开，<br>
+                    也可以对HKTRPG机械人输入 .char public (名字)公开<br>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -178,7 +178,7 @@
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
         </script>
     <script>
-        const TITLE = "HKTRPG 公開角色卡";
+        const TITLE = "HKTRPG 公开角色卡";
         $(function () {
             $("#header").load("includes/header.html", function () {
                 $("#title").text(TITLE);

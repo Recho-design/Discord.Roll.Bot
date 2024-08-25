@@ -33,19 +33,19 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Grass", "name": "吸取" },
-      { "rank": 1, "type": "Water", "name": "縮入殼中" },
+      { "rank": 1, "type": "Water", "name": "缩入殼中" },
       { "rank": 2, "type": "Dark", "name": "咬住" },
       { "rank": 2, "type": "Ghost", "name": "詛咒" },
-      { "rank": 2, "type": "Grass", "name": "寄生種子" },
+      { "rank": 2, "type": "Grass", "name": "寄生种子" },
       { "rank": 2, "type": "Grass", "name": "飛葉快刀" },
       { "rank": 2, "type": "Grass", "name": "光合作用" },
-      { "rank": 2, "type": "Grass", "name": "超級吸取" },
+      { "rank": 2, "type": "Grass", "name": "超级吸取" },
       { "rank": 3, "type": "Dark", "name": "咬碎" },
       { "rank": 3, "type": "Grass", "name": "飛葉風暴" },
-      { "rank": 3, "type": "Grass", "name": "終極吸取" },
-      { "rank": 4, "type": "Grass", "name": "種子炸彈" },
+      { "rank": 3, "type": "Grass", "name": "終极吸取" },
+      { "rank": 4, "type": "Grass", "name": "种子炸彈" },
       { "rank": 4, "type": "Grass", "name": "草之誓約" },
-      { "rank": 4, "type": "Ground", "name": "擲泥" }
+      { "rank": 4, "type": "Ground", "name": "掷泥" }
     ],
     "isNovice": true
   },
@@ -79,16 +79,16 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Grass", "name": "吸取" },
-      { "rank": 1, "type": "Water", "name": "縮入殼中" },
+      { "rank": 1, "type": "Water", "name": "缩入殼中" },
       { "rank": 2, "type": "Dark", "name": "咬住" },
       { "rank": 2, "type": "Ghost", "name": "詛咒" },
-      { "rank": 2, "type": "Grass", "name": "寄生種子" },
+      { "rank": 2, "type": "Grass", "name": "寄生种子" },
       { "rank": 2, "type": "Grass", "name": "飛葉快刀" },
       { "rank": 2, "type": "Grass", "name": "光合作用" },
-      { "rank": 2, "type": "Grass", "name": "超級吸取" },
+      { "rank": 2, "type": "Grass", "name": "超级吸取" },
       { "rank": 3, "type": "Dark", "name": "咬碎" },
       { "rank": 3, "type": "Grass", "name": "飛葉風暴" },
-      { "rank": 3, "type": "Grass", "name": "終極吸取" },
+      { "rank": 3, "type": "Grass", "name": "終极吸取" },
       { "rank": 4, "type": "Fight", "name": "蠻力" },
       { "rank": 4, "type": "Grass", "name": "青草場地" },
       { "rank": 4, "type": "Grass", "name": "草之誓約" }
@@ -123,20 +123,20 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Grass", "name": "吸取" },
-      { "rank": 1, "type": "Water", "name": "縮入殼中" },
+      { "rank": 1, "type": "Water", "name": "缩入殼中" },
       { "rank": 2, "type": "Dark", "name": "咬住" },
       { "rank": 2, "type": "Ghost", "name": "詛咒" },
-      { "rank": 2, "type": "Grass", "name": "寄生種子" },
-      { "rank": 2, "type": "Grass", "name": "超級吸取" },
+      { "rank": 2, "type": "Grass", "name": "寄生种子" },
+      { "rank": 2, "type": "Grass", "name": "超级吸取" },
       { "rank": 2, "type": "Grass", "name": "飛葉快刀" },
       { "rank": 2, "type": "Grass", "name": "光合作用" },
       { "rank": 2, "type": "Ground", "name": "地震" },
       { "rank": 3, "type": "Dark", "name": "咬碎" },
       { "rank": 3, "type": "Grass", "name": "飛葉風暴" },
-      { "rank": 3, "type": "Grass", "name": "終極吸取" },
+      { "rank": 3, "type": "Grass", "name": "終极吸取" },
       { "rank": 3, "type": "Grass", "name": "木槌" },
       { "rank": 4, "type": "Dragon", "name": "逆鱗" },
-      { "rank": 4, "type": "Grass", "name": "瘋狂植物" },
+      { "rank": 4, "type": "Grass", "name": "疯狂植物" },
       { "rank": 4, "type": "Rock", "name": "廣域防守" }
     ]
   },
@@ -174,7 +174,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Fire", "name": "火花" },
       { "rank": 2, "type": "Normal", "name": "硬撐" },
       { "rank": 2, "type": "Normal", "name": "亂抓" },
-      { "rank": 2, "type": "Dark", "name": "無理取鬧" },
+      { "rank": 2, "type": "Dark", "name": "无理取鬧" },
       { "rank": 2, "type": "Dark", "name": "詭计" },
       { "rank": 2, "type": "Fire", "name": "火焰旋渦" },
       { "rank": 2, "type": "Fire", "name": "火焰輪" },
@@ -221,13 +221,13 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Fire", "name": "火花" },
       { "rank": 2, "type": "Normal", "name": "佯攻" },
       { "rank": 2, "type": "Normal", "name": "亂抓" },
-      { "rank": 2, "type": "Dark", "name": "無理取鬧" },
+      { "rank": 2, "type": "Dark", "name": "无理取鬧" },
       { "rank": 2, "type": "Fight", "name": "音速拳" },
       { "rank": 2, "type": "Fire", "name": "火焰旋渦" },
       { "rank": 2, "type": "Fire", "name": "火焰輪" },
       { "rank": 3, "type": "Normal", "name": "偷懶" },
       { "rank": 3, "type": "Fight", "name": "近身戰" },
-      { "rank": 3, "type": "Fire", "name": "閃焰衝鋒" },
+      { "rank": 3, "type": "Fire", "name": "闪焰衝鋒" },
       { "rank": 3, "type": "Flying", "name": "雜技" },
       { "rank": 4, "type": "Electric", "name": "雷電拳" },
       { "rank": 4, "type": "Fire", "name": "火之誓約" },
@@ -267,12 +267,12 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Fire", "name": "火花" },
       { "rank": 2, "type": "Normal", "name": "佯攻" },
       { "rank": 2, "type": "Normal", "name": "亂抓" },
-      { "rank": 2, "type": "Dark", "name": "懲罰" },
+      { "rank": 2, "type": "Dark", "name": "惩罚" },
       { "rank": 2, "type": "Fight", "name": "音速拳" },
       { "rank": 2, "type": "Fire", "name": "火焰輪" },
       { "rank": 2, "type": "Fire", "name": "火焰旋渦" },
       { "rank": 3, "type": "Fight", "name": "近身戰" },
-      { "rank": 3, "type": "Fire", "name": "閃焰衝鋒" },
+      { "rank": 3, "type": "Fire", "name": "闪焰衝鋒" },
       { "rank": 3, "type": "Flying", "name": "雜技" },
       { "rank": 3, "type": "Psychic", "name": "冥想" },
       { "rank": 4, "type": "Normal", "name": "挺住" },
@@ -362,7 +362,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Normal", "name": "忍耐" },
       { "rank": 2, "type": "Normal", "name": "亂擊" },
       { "rank": 2, "type": "Flying", "name": "啄" },
-      { "rank": 2, "type": "Steel", "name": "金屬爪" },
+      { "rank": 2, "type": "Steel", "name": "金属爪" },
       { "rank": 2, "type": "Water", "name": "鹽水" },
       { "rank": 2, "type": "Water", "name": "潮旋" },
       { "rank": 2, "type": "Water", "name": "泡沫光線" },
@@ -370,7 +370,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Ice", "name": "白霧" },
       { "rank": 3, "type": "Water", "name": "水砲" },
       { "rank": 4, "type": "Flying", "name": "羽毛舞" },
-      { "rank": 4, "type": "Psychic", "name": "高速移動" },
+      { "rank": 4, "type": "Psychic", "name": "高速移动" },
       { "rank": 4, "type": "Water", "name": "水之誓約" }
     ]
   },
@@ -403,12 +403,12 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Normal", "name": "叫聲" },
       { "rank": 0, "type": "Normal", "name": "撞擊" },
-      { "rank": 1, "type": "Normal", "name": "劍舞" },
+      { "rank": 1, "type": "Normal", "name": "剑舞" },
       { "rank": 1, "type": "Water", "name": "泡沫" },
-      { "rank": 2, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 2, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 2, "type": "Normal", "name": "亂擊" },
       { "rank": 2, "type": "Flying", "name": "啄" },
-      { "rank": 2, "type": "Steel", "name": "金屬爪" },
+      { "rank": 2, "type": "Steel", "name": "金属爪" },
       { "rank": 2, "type": "Water", "name": "潮旋" },
       { "rank": 2, "type": "Water", "name": "鹽水" },
       { "rank": 2, "type": "Water", "name": "水流噴射" },
@@ -418,7 +418,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Water", "name": "水砲" },
       { "rank": 4, "type": "Steel", "name": "鐵壁" },
       { "rank": 4, "type": "Water", "name": "加農水砲" },
-      { "rank": 4, "type": "Water", "name": "水流環" }
+      { "rank": 4, "type": "Water", "name": "水流环" }
     ]
   },
   {
@@ -451,7 +451,7 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 0, "type": "Normal", "name": "叫聲" },
-      { "rank": 1, "type": "Normal", "name": "電光一閃" },
+      { "rank": 1, "type": "Normal", "name": "電光一闪" },
       { "rank": 1, "type": "Flying", "name": "翅膀攻擊" },
       { "rank": 2, "type": "Normal", "name": "蠻幹" },
       { "rank": 2, "type": "Normal", "name": "猛撞" },
@@ -460,10 +460,10 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Flying", "name": "燕返" },
       { "rank": 3, "type": "Fight", "name": "搏命" },
       { "rank": 3, "type": "Flying", "name": "勇鳥猛攻" },
-      { "rank": 3, "type": "Psychic", "name": "高速移動" },
+      { "rank": 3, "type": "Psychic", "name": "高速移动" },
       { "rank": 4, "type": "Normal", "name": "自我激勵" },
       { "rank": 4, "type": "Normal", "name": "吵鬧" },
-      { "rank": 4, "type": "Ghost", "name": "驚嚇" }
+      { "rank": 4, "type": "Ghost", "name": "驚吓" }
     ],
     "isNovice": true
   },
@@ -493,11 +493,11 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 1, "max": 3 },
       "ins": { "value": 1, "max": 3 }
     },
-    "ability": [ "威嚇" ],
+    "ability": [ "威吓" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 0, "type": "Normal", "name": "叫聲" },
-      { "rank": 1, "type": "Normal", "name": "電光一閃" },
+      { "rank": 1, "type": "Normal", "name": "電光一闪" },
       { "rank": 1, "type": "Flying", "name": "翅膀攻擊" },
       { "rank": 2, "type": "Normal", "name": "蠻幹" },
       { "rank": 2, "type": "Normal", "name": "猛撞" },
@@ -506,7 +506,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Flying", "name": "燕返" },
       { "rank": 3, "type": "Fight", "name": "搏命" },
       { "rank": 3, "type": "Flying", "name": "勇鳥猛攻" },
-      { "rank": 3, "type": "Psychic", "name": "高速移動" },
+      { "rank": 3, "type": "Psychic", "name": "高速移动" },
       { "rank": 4, "type": "Normal", "name": "吵鬧" },
       { "rank": 4, "type": "Fight", "name": "看穿" },
       { "rank": 4, "type": "Fight", "name": "報復" }
@@ -537,11 +537,11 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 4 },
       "ins": { "value": 2, "max": 4 }
     },
-    "ability": [ "威嚇" ],
+    "ability": [ "威吓" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 0, "type": "Normal", "name": "叫聲" },
-      { "rank": 1, "type": "Normal", "name": "電光一閃" },
+      { "rank": 1, "type": "Normal", "name": "電光一闪" },
       { "rank": 1, "type": "Flying", "name": "翅膀攻擊" },
       { "rank": 2, "type": "Normal", "name": "蠻幹" },
       { "rank": 2, "type": "Normal", "name": "猛撞" },
@@ -551,7 +551,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Fight", "name": "近身戰" },
       { "rank": 3, "type": "Fight", "name": "搏命" },
       { "rank": 3, "type": "Flying", "name": "勇鳥猛攻" },
-      { "rank": 3, "type": "Psychic", "name": "高速移動" },
+      { "rank": 3, "type": "Psychic", "name": "高速移动" },
       { "rank": 4, "type": "Dragon", "name": "龍捲風" },
       { "rank": 4, "type": "Flying", "name": "羽棲" },
       { "rank": 4, "type": "Steel", "name": "鋼翼" }
@@ -583,24 +583,24 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 1, "max": 3 },
       "ins": { "value": 1, "max": 3 }
     },
-    "ability": [ "單純", "純樸" ],
+    "ability": [ "单純", "純樸" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Normal", "name": "變圓" },
       { "rank": 1, "type": "Normal", "name": "猛撞" },
       { "rank": 1, "type": "Normal", "name": "叫聲" },
-      { "rank": 2, "type": "Normal", "name": "必殺門牙" },
-      { "rank": 2, "type": "Normal", "name": "頭鎚" },
+      { "rank": 2, "type": "Normal", "name": "必杀門牙" },
+      { "rank": 2, "type": "Normal", "name": "头鎚" },
       { "rank": 2, "type": "Normal", "name": "哈欠" },
       { "rank": 2, "type": "Dark", "name": "咬碎" },
-      { "rank": 2, "type": "Psychic", "name": "瞬間失憶" },
-      { "rank": 2, "type": "Rock", "name": "滾動" },
-      { "rank": 3, "type": "Normal", "name": "劍舞" },
+      { "rank": 2, "type": "Psychic", "name": "瞬间失憶" },
+      { "rank": 2, "type": "Rock", "name": "滾动" },
+      { "rank": 3, "type": "Normal", "name": "剑舞" },
       { "rank": 3, "type": "Normal", "name": "憤怒門牙" },
       { "rank": 3, "type": "Fight", "name": "蠻力" },
       { "rank": 3, "type": "Ghost", "name": "詛咒" },
       { "rank": 4, "type": "Normal", "name": "珍藏" },
-      { "rank": 4, "type": "Ground", "name": "擲泥" },
+      { "rank": 4, "type": "Ground", "name": "掷泥" },
       { "rank": 4, "type": "Water", "name": "玩水" }
     ],
     "isNovice": true
@@ -630,22 +630,22 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 4 },
       "ins": { "value": 2, "max": 4 }
     },
-    "ability": [ "單純", "純樸" ],
+    "ability": [ "单純", "純樸" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Normal", "name": "變圓" },
       { "rank": 1, "type": "Normal", "name": "猛撞" },
       { "rank": 1, "type": "Normal", "name": "叫聲" },
-      { "rank": 2, "type": "Normal", "name": "必殺門牙" },
+      { "rank": 2, "type": "Normal", "name": "必杀門牙" },
       { "rank": 2, "type": "Normal", "name": "哈欠" },
-      { "rank": 2, "type": "Normal", "name": "頭鎚" },
+      { "rank": 2, "type": "Normal", "name": "头鎚" },
       { "rank": 2, "type": "Dark", "name": "咬碎" },
       { "rank": 2, "type": "Ground", "name": "耕地" },
-      { "rank": 2, "type": "Psychic", "name": "瞬間失憶" },
-      { "rank": 2, "type": "Rock", "name": "滾動" },
-      { "rank": 2, "type": "Water", "name": "水槍" },
+      { "rank": 2, "type": "Psychic", "name": "瞬间失憶" },
+      { "rank": 2, "type": "Rock", "name": "滾动" },
+      { "rank": 2, "type": "Water", "name": "水枪" },
       { "rank": 3, "type": "Normal", "name": "憤怒門牙" },
-      { "rank": 3, "type": "Normal", "name": "劍舞" },
+      { "rank": 3, "type": "Normal", "name": "剑舞" },
       { "rank": 3, "type": "Fight", "name": "蠻力" },
       { "rank": 3, "type": "Ghost", "name": "詛咒" },
       { "rank": 4, "type": "Fight", "name": "真氣拳" },
@@ -722,7 +722,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Bug", "name": "連斬" },
       { "rank": 2, "type": "Normal", "name": "聚氣" },
       { "rank": 2, "type": "Normal", "name": "刺耳聲" },
-      { "rank": 2, "type": "Normal", "name": "劈開" },
+      { "rank": 2, "type": "Normal", "name": "劈开" },
       { "rank": 2, "type": "Normal", "name": "唱歌" },
       { "rank": 2, "type": "Bug", "name": "致命針刺" },
       { "rank": 2, "type": "Bug", "name": "十字剪" },
@@ -734,20 +734,20 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Dark", "name": "暗襲要害" },
       { "rank": 4, "type": "Normal", "name": "巨聲" },
       { "rank": 4, "type": "Bug", "name": "銀色旋風" },
-      { "rank": 4, "type": "Ground", "name": "擲泥" }
+      { "rank": 4, "type": "Ground", "name": "掷泥" }
     ]
   },
   {
     "id": "403",
     "region": "sinnoh",
-    "name": "小貓怪",
+    "name": "小猫怪",
     "alias": "Shinx",
     "type": [ "Electric" ],
     "info": {
       "image": "images/pokedex/403.png",
       "height": "0.5",
       "weight": "9",
-      "category": "閃光寶可夢",
+      "category": "闪光寶可夢",
       "text": "Its body transforms the energy of its own muscles into electricity. When in danger, their whole furs shine in a flash to blind the foes.They live with their parents and sibilings in mall prides."
     },
     "evolution": {
@@ -763,13 +763,13 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 1, "max": 3 },
       "ins": { "value": 1, "max": 3 }
     },
-    "ability": [ "鬥爭心", "威嚇" ],
+    "ability": [ "鬥爭心", "威吓" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "瞪眼" },
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Electric", "name": "充電" },
       { "rank": 1, "type": "Fairy", "name": "圓瞳" },
-      { "rank": 2, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 2, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 2, "type": "Normal", "name": "吼叫" },
       { "rank": 2, "type": "Dark", "name": "咬住" },
       { "rank": 2, "type": "Electric", "name": "雷電牙" },
@@ -777,7 +777,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Normal", "name": "鬼面" },
       { "rank": 3, "type": "Dark", "name": "咬碎" },
       { "rank": 3, "type": "Electric", "name": "放電" },
-      { "rank": 3, "type": "Electric", "name": "瘋狂伏特" },
+      { "rank": 3, "type": "Electric", "name": "疯狂伏特" },
       { "rank": 4, "type": "Dark", "name": "假哭" },
       { "rank": 4, "type": "Fire", "name": "火焰牙" },
       { "rank": 4, "type": "Ice", "name": "冰凍牙" }
@@ -787,7 +787,7 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "404",
     "region": "sinnoh",
-    "name": "勒克貓",
+    "name": "勒克猫",
     "alias": "Luxio",
     "type": [ "Electric" ],
     "info": {
@@ -810,13 +810,13 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 4 },
       "ins": { "value": 2, "max": 4 }
     },
-    "ability": [ "鬥爭心", "威嚇" ],
+    "ability": [ "鬥爭心", "威吓" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "瞪眼" },
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Electric", "name": "充電" },
       { "rank": 1, "type": "Fairy", "name": "圓瞳" },
-      { "rank": 2, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 2, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 2, "type": "Normal", "name": "吼叫" },
       { "rank": 2, "type": "Dark", "name": "咬住" },
       { "rank": 2, "type": "Electric", "name": "雷電牙" },
@@ -824,8 +824,8 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Normal", "name": "鬼面" },
       { "rank": 3, "type": "Dark", "name": "咬碎" },
       { "rank": 3, "type": "Electric", "name": "放電" },
-      { "rank": 3, "type": "Electric", "name": "瘋狂伏特" },
-      { "rank": 4, "type": "Normal", "name": "長嚎" },
+      { "rank": 3, "type": "Electric", "name": "疯狂伏特" },
+      { "rank": 4, "type": "Normal", "name": "长嚎" },
       { "rank": 4, "type": "Fire", "name": "火焰牙" },
       { "rank": 4, "type": "Ice", "name": "冰凍牙" }
     ]
@@ -833,7 +833,7 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "405",
     "region": "sinnoh",
-    "name": "倫琴貓",
+    "name": "倫琴猫",
     "alias": "Luxray",
     "type": [ "Electric" ],
     "info": {
@@ -855,13 +855,13 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 3, "max": 6 },
       "ins": { "value": 2, "max": 5 }
     },
-    "ability": [ "鬥爭心", "威嚇" ],
+    "ability": [ "鬥爭心", "威吓" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 0, "type": "Normal", "name": "瞪眼" },
       { "rank": 1, "type": "Electric", "name": "充電" },
       { "rank": 1, "type": "Electric", "name": "電氣場地" },
-      { "rank": 2, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 2, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 2, "type": "Normal", "name": "吼叫" },
       { "rank": 2, "type": "Dark", "name": "咬住" },
       { "rank": 2, "type": "Electric", "name": "雷電牙" },
@@ -869,7 +869,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Normal", "name": "鬼面" },
       { "rank": 3, "type": "Dark", "name": "咬碎" },
       { "rank": 3, "type": "Electric", "name": "放電" },
-      { "rank": 3, "type": "Electric", "name": "瘋狂伏特" },
+      { "rank": 3, "type": "Electric", "name": "疯狂伏特" },
       { "rank": 4, "type": "Dark", "name": "暗襲要害" },
       { "rank": 4, "type": "Electric", "name": "電磁飄浮" },
       { "rank": 4, "type": "Fight", "name": "蠻力" }
@@ -904,11 +904,11 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "自然回復", "毒刺" ],
     "moves": [
       { "rank": 0, "type": "Grass", "name": "吸取" },
-      { "rank": 1, "type": "Normal", "name": "生長" },
+      { "rank": 1, "type": "Normal", "name": "生长" },
       { "rank": 1, "type": "Grass", "name": "麻痺粉" },
       { "rank": 1, "type": "Water", "name": "玩水" },
-      { "rank": 2, "type": "Grass", "name": "煩惱種子" },
-      { "rank": 2, "type": "Grass", "name": "超級吸取" },
+      { "rank": 2, "type": "Grass", "name": "煩惱种子" },
+      { "rank": 2, "type": "Grass", "name": "超级吸取" },
       { "rank": 4, "type": "Normal", "name": "挺住" },
       { "rank": 4, "type": "Ground", "name": "撒菱" },
       { "rank": 4, "type": "Psychic", "name": "神通力" }
@@ -947,7 +947,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Normal", "name": "甜甜香氣" },
       { "rank": 2, "type": "Normal", "name": "氣象球" },
       { "rank": 2, "type": "Grass", "name": "魔法葉" },
-      { "rank": 2, "type": "Grass", "name": "超級吸取" },
+      { "rank": 2, "type": "Grass", "name": "超级吸取" },
       { "rank": 2, "type": "Poison", "name": "毒液陷阱" },
       { "rank": 4, "type": "Bug", "name": "飛彈針" },
       { "rank": 4, "type": "Grass", "name": "飛葉風暴" },
@@ -957,14 +957,14 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "408",
     "region": "sinnoh",
-    "name": "頭蓋龍",
+    "name": "头蓋龍",
     "alias": "Cranidos",
     "type": [ "Rock" ],
     "info": {
       "image": "images/pokedex/408.png",
       "height": "0.9",
       "weight": "31",
-      "category": "頭錘寶可夢",
+      "category": "头錘寶可夢",
       "text": "It was resurrected from an iron ball-like fossil. It downs prey with headbutts, and tramples trees and walls with ease.  They were plentiful 100 million years ago. You can’t find one nowdays except as a fossil. "
     },
     "evolution": {
@@ -988,15 +988,15 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Dark", "name": "追打" },
       { "rank": 2, "type": "Normal", "name": "逐步擊破" },
       { "rank": 2, "type": "Normal", "name": "鬼面" },
-      { "rank": 2, "type": "Normal", "name": "頭鎚" },
-      { "rank": 2, "type": "Dark", "name": "惡意追擊" },
+      { "rank": 2, "type": "Normal", "name": "头鎚" },
+      { "rank": 2, "type": "Dark", "name": "恶意追擊" },
       { "rank": 2, "type": "Rock", "name": "原始之力" },
       { "rank": 3, "type": "Normal", "name": "刺耳聲" },
-      { "rank": 3, "type": "Psychic", "name": "意念頭鎚" },
-      { "rank": 3, "type": "Rock", "name": "雙刃頭鎚" },
+      { "rank": 3, "type": "Psychic", "name": "意念头鎚" },
+      { "rank": 3, "type": "Rock", "name": "双刃头鎚" },
       { "rank": 4, "type": "Fight", "name": "臂錘" },
       { "rank": 4, "type": "Fight", "name": "蠻力" },
-      { "rank": 4, "type": "Steel", "name": "鐵頭" }
+      { "rank": 4, "type": "Steel", "name": "鐵头" }
     ]
   },
   {
@@ -1009,7 +1009,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/409.png",
       "height": "1.6",
       "weight": "204",
-      "category": "頭錘寶可夢",
+      "category": "头錘寶可夢",
       "text": "Its skull withstands any magnitude of impact. As a result, its brain never gets the chance to grow, this may have been the cause of its extintion.  It is capable of rolling a truck over with a single strike."
     },
     "evolution": {
@@ -1033,15 +1033,15 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Normal", "name": "逐步擊破" },
       { "rank": 2, "type": "Normal", "name": "鬼面" },
       { "rank": 2, "type": "Normal", "name": "蠻幹" },
-      { "rank": 2, "type": "Normal", "name": "頭鎚" },
-      { "rank": 2, "type": "Dark", "name": "惡意追擊" },
+      { "rank": 2, "type": "Normal", "name": "头鎚" },
+      { "rank": 2, "type": "Dark", "name": "恶意追擊" },
       { "rank": 2, "type": "Rock", "name": "原始之力" },
       { "rank": 3, "type": "Normal", "name": "刺耳聲" },
-      { "rank": 3, "type": "Psychic", "name": "意念頭鎚" },
-      { "rank": 3, "type": "Rock", "name": "雙刃頭鎚" },
+      { "rank": 3, "type": "Psychic", "name": "意念头鎚" },
+      { "rank": 3, "type": "Rock", "name": "双刃头鎚" },
       { "rank": 4, "type": "Dragon", "name": "逆鱗" },
       { "rank": 4, "type": "Fight", "name": "蠻力" },
-      { "rank": 4, "type": "Steel", "name": "鐵頭" }
+      { "rank": 4, "type": "Steel", "name": "鐵头" }
     ]
   },
   {
@@ -1070,21 +1070,21 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 1, "max": 3 },
       "ins": { "value": 2, "max": 5 }
     },
-    "ability": [ "結實" ],
+    "ability": [ "结实" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "守住" },
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Dark", "name": "挑釁" },
-      { "rank": 1, "type": "Steel", "name": "金屬音" },
+      { "rank": 1, "type": "Steel", "name": "金属音" },
       { "rank": 2, "type": "Normal", "name": "挺住" },
-      { "rank": 2, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 2, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 2, "type": "Normal", "name": "猛撞" },
       { "rank": 2, "type": "Rock", "name": "原始之力" },
       { "rank": 2, "type": "Steel", "name": "鐵壁" },
       { "rank": 3, "type": "Steel", "name": "重磅衝撞" },
-      { "rank": 3, "type": "Steel", "name": "金屬爆炸" },
-      { "rank": 3, "type": "Steel", "name": "鐵頭" },
-      { "rank": 4, "type": "Fight", "name": "雙倍奉還" },
+      { "rank": 3, "type": "Steel", "name": "金属爆炸" },
+      { "rank": 3, "type": "Steel", "name": "鐵头" },
+      { "rank": 4, "type": "Fight", "name": "双倍奉還" },
       { "rank": 4, "type": "Psychic", "name": "防守平分" },
       { "rank": 4, "type": "Rock", "name": "廣域防守" }
     ]
@@ -1114,21 +1114,21 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 4 },
       "ins": { "value": 3, "max": 7 }
     },
-    "ability": [ "結實" ],
+    "ability": [ "结实" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "守住" },
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Dark", "name": "挑釁" },
-      { "rank": 1, "type": "Steel", "name": "金屬音" },
+      { "rank": 1, "type": "Steel", "name": "金属音" },
       { "rank": 2, "type": "Normal", "name": "挺住" },
       { "rank": 2, "type": "Normal", "name": "擋路" },
-      { "rank": 2, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 2, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 2, "type": "Normal", "name": "猛撞" },
       { "rank": 2, "type": "Rock", "name": "原始之力" },
       { "rank": 2, "type": "Steel", "name": "鐵壁" },
-      { "rank": 3, "type": "Steel", "name": "鐵頭" },
+      { "rank": 3, "type": "Steel", "name": "鐵头" },
       { "rank": 3, "type": "Steel", "name": "重磅衝撞" },
-      { "rank": 3, "type": "Steel", "name": "金屬爆炸" },
+      { "rank": 3, "type": "Steel", "name": "金属爆炸" },
       { "rank": 4, "type": "Ground", "name": "地裂" },
       { "rank": 4, "type": "Psychic", "name": "防守平分" },
       { "rank": 4, "type": "Rock", "name": "廣域防守" }
@@ -1137,7 +1137,7 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "412",
     "region": "sinnoh",
-    "name": "結草兒",
+    "name": "结草兒",
     "alias": "Burmy",
     "type": [ "Bug" ],
     "info": {
@@ -1174,7 +1174,7 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "413-Plant",
     "region": "sinnoh",
-    "name": "結草貴婦_草木蓑衣",
+    "name": "结草貴婦_草木蓑衣",
     "alias": "Wormadam",
     "type": [ "Bug", "Grass" ],
     "info": {
@@ -1203,7 +1203,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Normal", "name": "撞擊" },
       { "rank": 2, "type": "Normal", "name": "覺醒力量" },
       { "rank": 2, "type": "Normal", "name": "抓狂" },
-      { "rank": 2, "type": "Normal", "name": "生長" },
+      { "rank": 2, "type": "Normal", "name": "生长" },
       { "rank": 2, "type": "Normal", "name": "誘惑" },
       { "rank": 2, "type": "Bug", "name": "蟲咬" },
       { "rank": 2, "type": "Grass", "name": "飛葉快刀" },
@@ -1214,16 +1214,16 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Bug", "name": "蝶舞" },
       { "rank": 3, "type": "Dark", "name": "突襲" },
       { "rank": 3, "type": "Grass", "name": "飛葉風暴" },
-      { "rank": 3, "type": "Psychic", "name": "精神強念" },
+      { "rank": 3, "type": "Psychic", "name": "精神强念" },
       { "rank": 4, "type": "Electric", "name": "電網" },
-      { "rank": 4, "type": "Grass", "name": "終極吸取" },
+      { "rank": 4, "type": "Grass", "name": "終极吸取" },
       { "rank": 4, "type": "Grass", "name": "光合作用" }
     ]
   },
   {
     "id": "413-Trash",
     "region": "sinnoh",
-    "name": "結草貴婦_垃圾蓑衣",
+    "name": "结草貴婦_垃圾蓑衣",
     "alias": "Wormadam-trash",
     "type": [ "Bug", "Steel" ],
     "info": {
@@ -1246,7 +1246,7 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 4 },
       "ins": { "value": 3, "max": 6 }
     },
-    "ability": [ "加速", "複眼" ],
+    "ability": [ "加速", "复眼" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "守住" },
       { "rank": 1, "type": "Normal", "name": "撞擊" },
@@ -1255,14 +1255,14 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Normal", "name": "抓狂" },
       { "rank": 2, "type": "Bug", "name": "蟲咬" },
       { "rank": 2, "type": "Psychic", "name": "幻象光線" },
-      { "rank": 2, "type": "Steel", "name": "金屬音" },
-      { "rank": 2, "type": "Steel", "name": "鏡光射擊" },
+      { "rank": 2, "type": "Steel", "name": "金属音" },
+      { "rank": 2, "type": "Steel", "name": "镜光射击" },
       { "rank": 3, "type": "Normal", "name": "迷人" },
       { "rank": 3, "type": "Bug", "name": "蟲鳴" },
       { "rank": 3, "type": "Bug", "name": "蝶舞" },
       { "rank": 3, "type": "Dark", "name": "突襲" },
-      { "rank": 3, "type": "Psychic", "name": "精神強念" },
-      { "rank": 3, "type": "Steel", "name": "鐵頭" },
+      { "rank": 3, "type": "Psychic", "name": "精神强念" },
+      { "rank": 3, "type": "Steel", "name": "鐵头" },
       { "rank": 4, "type": "Electric", "name": "電網" },
       { "rank": 4, "type": "Grass", "name": "光合作用" },
       { "rank": 4, "type": "Steel", "name": "鐵壁" }
@@ -1271,7 +1271,7 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "413-Sandy",
     "region": "sinnoh",
-    "name": "結草貴婦_砂土蓑衣",
+    "name": "结草貴婦_砂土蓑衣",
     "alias": "Wormadam-sandy",
     "type": [ "Bug", "Ground" ],
     "info": {
@@ -1294,7 +1294,7 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 4 },
       "ins": { "value": 2, "max": 5 }
     },
-    "ability": [ "加速", "複眼" ],
+    "ability": [ "加速", "复眼" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "守住" },
       { "rank": 1, "type": "Normal", "name": "撞擊" },
@@ -1311,7 +1311,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Bug", "name": "蝶舞" },
       { "rank": 3, "type": "Dark", "name": "突襲" },
       { "rank": 3, "type": "Ground", "name": "地裂" },
-      { "rank": 3, "type": "Psychic", "name": "精神強念" },
+      { "rank": 3, "type": "Psychic", "name": "精神强念" },
       { "rank": 4, "type": "Electric", "name": "電網" },
       { "rank": 4, "type": "Grass", "name": "光合作用" },
       { "rank": 4, "type": "Rock", "name": "隱形岩" }
@@ -1358,10 +1358,10 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Bug", "name": "蝶舞" },
       { "rank": 3, "type": "Bug", "name": "蟲鳴" },
       { "rank": 3, "type": "Bug", "name": "猛撲" },
-      { "rank": 3, "type": "Psychic", "name": "精神強念" },
+      { "rank": 3, "type": "Psychic", "name": "精神强念" },
       { "rank": 4, "type": "Dragon", "name": "龍捲風" },
       { "rank": 4, "type": "Electric", "name": "電網" },
-      { "rank": 4, "type": "Grass", "name": "終極吸取" }
+      { "rank": 4, "type": "Grass", "name": "終极吸取" }
     ]
   },
   {
@@ -1436,7 +1436,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Dark", "name": "追打" },
       { "rank": 1, "type": "Ghost", "name": "奇異之光" },
       { "rank": 1, "type": "Poison", "name": "毒針" },
-      { "rank": 2, "type": "Normal", "name": "劈開" },
+      { "rank": 2, "type": "Normal", "name": "劈开" },
       { "rank": 2, "type": "Normal", "name": "亂抓" },
       { "rank": 2, "type": "Bug", "name": "防禦指令" },
       { "rank": 2, "type": "Bug", "name": "攻擊指令" },
@@ -1444,7 +1444,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Bug", "name": "致命針刺" },
       { "rank": 2, "type": "Poison", "name": "劇毒" },
       { "rank": 2, "type": "Rock", "name": "力量寶石" },
-      { "rank": 3, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 3, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 3, "type": "Normal", "name": "誘惑" },
       { "rank": 3, "type": "Flying", "name": "空氣斬" },
       { "rank": 3, "type": "Ghost", "name": "同命" },
@@ -1482,22 +1482,22 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Normal", "name": "忍耐" },
       { "rank": 0, "type": "Normal", "name": "叫聲" },
-      { "rank": 1, "type": "Normal", "name": "電光一閃" },
-      { "rank": 1, "type": "Fairy", "name": "撒嬌" },
+      { "rank": 1, "type": "Normal", "name": "電光一闪" },
+      { "rank": 1, "type": "Fairy", "name": "撒娇" },
       { "rank": 2, "type": "Normal", "name": "高速星星" },
       { "rank": 2, "type": "Normal", "name": "挺住" },
       { "rank": 2, "type": "Electric", "name": "電磁波" },
       { "rank": 2, "type": "Electric", "name": "電球" },
-      { "rank": 2, "type": "Electric", "name": "蹭蹭臉頰" },
+      { "rank": 2, "type": "Electric", "name": "蹭蹭脸颊" },
       { "rank": 2, "type": "Electric", "name": "電光" },
       { "rank": 2, "type": "Fairy", "name": "天使之吻" },
       { "rank": 3, "type": "Normal", "name": "珍藏" },
       { "rank": 3, "type": "Normal", "name": "憤怒門牙" },
-      { "rank": 3, "type": "Normal", "name": "必殺門牙" },
+      { "rank": 3, "type": "Normal", "name": "必杀門牙" },
       { "rank": 3, "type": "Electric", "name": "放電" },
       { "rank": 4, "type": "Normal", "name": "看我嘛" },
       { "rank": 4, "type": "Dark", "name": "假哭" },
-      { "rank": 4, "type": "Grass", "name": "種子炸彈" }
+      { "rank": 4, "type": "Grass", "name": "种子炸彈" }
     ]
   },
   {
@@ -1530,7 +1530,7 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Normal", "name": "叫聲" },
       { "rank": 0, "type": "Normal", "name": "音爆" },
-      { "rank": 1, "type": "Normal", "name": "電光一閃" },
+      { "rank": 1, "type": "Normal", "name": "電光一闪" },
       { "rank": 1, "type": "Water", "name": "玩水" },
       { "rank": 2, "type": "Normal", "name": "旋風刀" },
       { "rank": 2, "type": "Normal", "name": "二連擊" },
@@ -1538,13 +1538,13 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Dark", "name": "追打" },
       { "rank": 2, "type": "Water", "name": "潮旋" },
       { "rank": 2, "type": "Water", "name": "水流噴射" },
-      { "rank": 2, "type": "Water", "name": "水槍" },
-      { "rank": 3, "type": "Psychic", "name": "高速移動" },
+      { "rank": 2, "type": "Water", "name": "水枪" },
+      { "rank": 3, "type": "Psychic", "name": "高速移动" },
       { "rank": 3, "type": "Water", "name": "水砲" },
       { "rank": 3, "type": "Water", "name": "水流尾" },
       { "rank": 4, "type": "Normal", "name": "掃尾拍打" },
       { "rank": 4, "type": "Ice", "name": "冰凍拳" },
-      { "rank": 4, "type": "Water", "name": "水流環" }
+      { "rank": 4, "type": "Water", "name": "水流环" }
     ],
     "isNovice": true
   },
@@ -1577,7 +1577,7 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Normal", "name": "叫聲" },
       { "rank": 0, "type": "Normal", "name": "音爆" },
-      { "rank": 1, "type": "Normal", "name": "電光一閃" },
+      { "rank": 1, "type": "Normal", "name": "電光一闪" },
       { "rank": 1, "type": "Ice", "name": "冰凍牙" },
       { "rank": 1, "type": "Water", "name": "玩水" },
       { "rank": 2, "type": "Normal", "name": "旋風刀" },
@@ -1586,14 +1586,14 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Dark", "name": "追打" },
       { "rank": 2, "type": "Water", "name": "潮旋" },
       { "rank": 2, "type": "Water", "name": "水流噴射" },
-      { "rank": 2, "type": "Water", "name": "水槍" },
+      { "rank": 2, "type": "Water", "name": "水枪" },
       { "rank": 3, "type": "Dark", "name": "咬碎" },
-      { "rank": 3, "type": "Psychic", "name": "高速移動" },
+      { "rank": 3, "type": "Psychic", "name": "高速移动" },
       { "rank": 3, "type": "Water", "name": "水砲" },
       { "rank": 3, "type": "Water", "name": "水流尾" },
       { "rank": 4, "type": "Ice", "name": "冰凍拳" },
       { "rank": 4, "type": "Steel", "name": "鐵尾" },
-      { "rank": 4, "type": "Water", "name": "水流環" }
+      { "rank": 4, "type": "Water", "name": "水流环" }
     ]
   },
   {
@@ -1625,20 +1625,20 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "葉綠素" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
-      { "rank": 1, "type": "Normal", "name": "生長" },
-      { "rank": 1, "type": "Grass", "name": "寄生種子" },
+      { "rank": 1, "type": "Normal", "name": "生长" },
+      { "rank": 1, "type": "Grass", "name": "寄生种子" },
       { "rank": 2, "type": "Normal", "name": "晨光" },
       { "rank": 2, "type": "Normal", "name": "猛撞" },
       { "rank": 2, "type": "Normal", "name": "幫助" },
       { "rank": 2, "type": "Fire", "name": "大晴天" },
-      { "rank": 2, "type": "Grass", "name": "煩惱種子" },
+      { "rank": 2, "type": "Grass", "name": "煩惱种子" },
       { "rank": 2, "type": "Grass", "name": "魔法葉" },
-      { "rank": 3, "type": "Normal", "name": "幸運咒語" },
+      { "rank": 3, "type": "Normal", "name": "幸运咒语" },
       { "rank": 3, "type": "Grass", "name": "落英繽紛" },
       { "rank": 3, "type": "Grass", "name": "日光束" },
       { "rank": 4, "type": "Normal", "name": "氣象球" },
       { "rank": 4, "type": "Normal", "name": "自然之力" },
-      { "rank": 4, "type": "Psychic", "name": "治愈波動" }
+      { "rank": 4, "type": "Psychic", "name": "治愈波动" }
     ],
     "isNovice": true
   },
@@ -1670,27 +1670,27 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "花之禮" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
-      { "rank": 1, "type": "Normal", "name": "生長" },
-      { "rank": 1, "type": "Grass", "name": "寄生種子" },
+      { "rank": 1, "type": "Normal", "name": "生长" },
+      { "rank": 1, "type": "Grass", "name": "寄生种子" },
       { "rank": 2, "type": "Normal", "name": "猛撞" },
       { "rank": 2, "type": "Normal", "name": "晨光" },
       { "rank": 2, "type": "Normal", "name": "幫助" },
       { "rank": 2, "type": "Fire", "name": "大晴天" },
       { "rank": 2, "type": "Grass", "name": "花瓣舞" },
       { "rank": 2, "type": "Grass", "name": "魔法葉" },
-      { "rank": 2, "type": "Grass", "name": "煩惱種子" },
-      { "rank": 3, "type": "Normal", "name": "幸運咒語" },
+      { "rank": 2, "type": "Grass", "name": "煩惱种子" },
+      { "rank": 3, "type": "Normal", "name": "幸运咒语" },
       { "rank": 3, "type": "Grass", "name": "落英繽紛" },
       { "rank": 3, "type": "Grass", "name": "日光束" },
       { "rank": 4, "type": "Grass", "name": "光合作用" },
       { "rank": 4, "type": "Grass", "name": "芳香治療" },
-      { "rank": 4, "type": "Psychic", "name": "治愈波動" }
+      { "rank": 4, "type": "Psychic", "name": "治愈波动" }
     ]
   },
   {
     "id": "422",
     "region": "sinnoh",
-    "name": "無殼海兔",
+    "name": "无殼海兔",
     "alias": "Shellos",
     "type": [ "Water" ],
     "info": {
@@ -1716,10 +1716,10 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "黏著", "引水" ],
     "moves": [
       { "rank": 0, "type": "Ground", "name": "玩泥巴" },
-      { "rank": 0, "type": "Ground", "name": "擲泥" },
+      { "rank": 0, "type": "Ground", "name": "掷泥" },
       { "rank": 1, "type": "Normal", "name": "變硬" },
       { "rank": 1, "type": "Ground", "name": "泥巴炸彈" },
-      { "rank": 1, "type": "Water", "name": "水之波動" },
+      { "rank": 1, "type": "Water", "name": "水之波动" },
       { "rank": 2, "type": "Normal", "name": "泰山壓頂" },
       { "rank": 2, "type": "Normal", "name": "覺醒力量" },
       { "rank": 2, "type": "Water", "name": "濁流" },
@@ -1727,14 +1727,14 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Normal", "name": "自我再生" },
       { "rank": 4, "type": "Ground", "name": "大地之力" },
       { "rank": 4, "type": "Poison", "name": "溶化" },
-      { "rank": 4, "type": "Psychic", "name": "瞬間失憶" }
+      { "rank": 4, "type": "Psychic", "name": "瞬间失憶" }
     ],
     "isNovice": true
   },
   {
     "id": "423",
     "region": "sinnoh",
-    "name": "海兔獸",
+    "name": "海兔兽",
     "alias": "Gastrodon",
     "type": [ "Water", "Ground" ],
     "info": {
@@ -1759,16 +1759,16 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "黏著", "引水" ],
     "moves": [
       { "rank": 0, "type": "Ground", "name": "玩泥巴" },
-      { "rank": 0, "type": "Ground", "name": "擲泥" },
+      { "rank": 0, "type": "Ground", "name": "掷泥" },
       { "rank": 1, "type": "Normal", "name": "變硬" },
       { "rank": 1, "type": "Ground", "name": "泥巴炸彈" },
-      { "rank": 1, "type": "Water", "name": "水之波動" },
+      { "rank": 1, "type": "Water", "name": "水之波动" },
       { "rank": 2, "type": "Normal", "name": "自我再生" },
       { "rank": 2, "type": "Normal", "name": "泰山壓頂" },
       { "rank": 2, "type": "Normal", "name": "覺醒力量" },
       { "rank": 2, "type": "Water", "name": "濁流" },
       { "rank": 2, "type": "Water", "name": "求雨" },
-      { "rank": 4, "type": "Fight", "name": "雙倍奉還" },
+      { "rank": 4, "type": "Fight", "name": "双倍奉還" },
       { "rank": 4, "type": "Ground", "name": "地裂" },
       { "rank": 4, "type": "Poison", "name": "溶化" }
     ]
@@ -1776,14 +1776,14 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "424",
     "region": "sinnoh",
-    "name": "雙尾怪手",
+    "name": "双尾怪手",
     "alias": "Ambipom",
     "type": [ "Normal" ],
     "info": {
       "image": "images/pokedex/424.png",
       "height": "1.2",
       "weight": "20",
-      "category": "長尾寶可夢",
+      "category": "长尾寶可夢",
       "text": "They live in large colonies on the tallest trees, linking their tails to show friendship among herd mates. It loves fresh fruit. Ambipom uses its two tails better than its own arms to swing around."
     },
     "evolution": {
@@ -1798,13 +1798,13 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 4 },
       "ins": { "value": 2, "max": 4 }
     },
-    "ability": [ "技術高手", "撿拾" ],
+    "ability": [ "技术高手", "撿拾" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "搖尾巴" },
       { "rank": 0, "type": "Normal", "name": "抓" },
       { "rank": 1, "type": "Normal", "name": "接棒" },
       { "rank": 1, "type": "Dragon", "name": "二連劈" },
-      { "rank": 1, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 1, "type": "Ghost", "name": "驚吓" },
       { "rank": 1, "type": "Ground", "name": "潑沙" },
       { "rank": 2, "type": "Normal", "name": "二連擊" },
       { "rank": 2, "type": "Normal", "name": "刺耳聲" },
@@ -1812,11 +1812,11 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Normal", "name": "高速星星" },
       { "rank": 2, "type": "Normal", "name": "搔癢" },
       { "rank": 2, "type": "Dark", "name": "投掷" },
-      { "rank": 2, "type": "Psychic", "name": "高速移動" },
+      { "rank": 2, "type": "Psychic", "name": "高速移动" },
       { "rank": 3, "type": "Normal", "name": "珍藏" },
       { "rank": 3, "type": "Dark", "name": "詭计" },
       { "rank": 4, "type": "Normal", "name": "擊掌奇襲" },
-      { "rank": 4, "type": "Grass", "name": "種子炸彈" },
+      { "rank": 4, "type": "Grass", "name": "种子炸彈" },
       { "rank": 4, "type": "Ice", "name": "冰凍拳" }
     ]
   },
@@ -1846,23 +1846,23 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 4 },
       "ins": { "value": 2, "max": 4 }
     },
-    "ability": [ "引爆", "輕裝" ],
+    "ability": [ "引爆", "輕装" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "變小" },
-      { "rank": 0, "type": "Normal", "name": "纏繞" },
+      { "rank": 0, "type": "Normal", "name": "缠繞" },
       { "rank": 1, "type": "Flying", "name": "起風" },
-      { "rank": 1, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 1, "type": "Ghost", "name": "驚吓" },
       { "rank": 2, "type": "Normal", "name": "吞下" },
       { "rank": 2, "type": "Normal", "name": "蓄力" },
       { "rank": 2, "type": "Normal", "name": "噴出" },
       { "rank": 2, "type": "Normal", "name": "聚氣" },
       { "rank": 2, "type": "Dark", "name": "以牙還牙" },
-      { "rank": 2, "type": "Ghost", "name": "禍不單行" },
+      { "rank": 2, "type": "Ghost", "name": "禍不单行" },
       { "rank": 2, "type": "Ghost", "name": "奇異之風" },
       { "rank": 3, "type": "Normal", "name": "接棒" },
       { "rank": 3, "type": "Normal", "name": "大爆炸" },
       { "rank": 3, "type": "Ghost", "name": "暗影球" },
-      { "rank": 3, "type": "Psychic", "name": "瞬間失憶" },
+      { "rank": 3, "type": "Psychic", "name": "瞬间失憶" },
       { "rank": 4, "type": "Normal", "name": "定身法" },
       { "rank": 4, "type": "Normal", "name": "氣象球" },
       { "rank": 4, "type": "Dark", "name": "突襲" }
@@ -1894,24 +1894,24 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 5 },
       "ins": { "value": 2, "max": 4 }
     },
-    "ability": [ "引爆", "輕裝" ],
+    "ability": [ "引爆", "輕装" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "變小" },
-      { "rank": 0, "type": "Normal", "name": "纏繞" },
+      { "rank": 0, "type": "Normal", "name": "缠繞" },
       { "rank": 1, "type": "Flying", "name": "起風" },
-      { "rank": 1, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 1, "type": "Ghost", "name": "驚吓" },
       { "rank": 2, "type": "Normal", "name": "吞下" },
       { "rank": 2, "type": "Normal", "name": "蓄力" },
       { "rank": 2, "type": "Normal", "name": "噴出" },
       { "rank": 2, "type": "Normal", "name": "聚氣" },
       { "rank": 2, "type": "Dark", "name": "以牙還牙" },
-      { "rank": 2, "type": "Ghost", "name": "禍不單行" },
+      { "rank": 2, "type": "Ghost", "name": "禍不单行" },
       { "rank": 2, "type": "Ghost", "name": "奇異之風" },
       { "rank": 3, "type": "Normal", "name": "接棒" },
       { "rank": 3, "type": "Normal", "name": "大爆炸" },
-      { "rank": 3, "type": "Ghost", "name": "潛靈奇襲" },
+      { "rank": 3, "type": "Ghost", "name": "潛灵奇襲" },
       { "rank": 3, "type": "Ghost", "name": "暗影球" },
-      { "rank": 3, "type": "Psychic", "name": "瞬間失憶" },
+      { "rank": 3, "type": "Psychic", "name": "瞬间失憶" },
       { "rank": 4, "type": "Dark", "name": "突襲" },
       { "rank": 4, "type": "Electric", "name": "電擊波" },
       { "rank": 4, "type": "Ice", "name": "冰凍之風" }
@@ -1946,19 +1946,19 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "逃跑", "笨拙" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "識破" },
-      { "rank": 0, "type": "Normal", "name": "躍起" },
+      { "rank": 0, "type": "Normal", "name": "跃起" },
       { "rank": 0, "type": "Normal", "name": "拍擊" },
       { "rank": 0, "type": "Normal", "name": "變圓" },
       { "rank": 1, "type": "Normal", "name": "挺住" },
       { "rank": 1, "type": "Fairy", "name": "圓瞳" },
       { "rank": 2, "type": "Normal", "name": "迷昏拳" },
       { "rank": 2, "type": "Normal", "name": "接棒" },
-      { "rank": 2, "type": "Normal", "name": "電光一閃" },
+      { "rank": 2, "type": "Normal", "name": "電光一闪" },
       { "rank": 2, "type": "Normal", "name": "遷怒" },
-      { "rank": 2, "type": "Fairy", "name": "撒嬌" },
+      { "rank": 2, "type": "Fairy", "name": "撒娇" },
       { "rank": 2, "type": "Fight", "name": "飛踢" },
-      { "rank": 2, "type": "Psychic", "name": "高速移動" },
-      { "rank": 3, "type": "Normal", "name": "您先請" },
+      { "rank": 2, "type": "Psychic", "name": "高速移动" },
+      { "rank": 3, "type": "Normal", "name": "您先请" },
       { "rank": 3, "type": "Normal", "name": "找夥伴" },
       { "rank": 3, "type": "Flying", "name": "彈跳" },
       { "rank": 3, "type": "Psychic", "name": "治愈之願" },
@@ -1971,7 +1971,7 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "428",
     "region": "sinnoh",
-    "name": "長耳兔",
+    "name": "长耳兔",
     "alias": "Lopunny",
     "type": [ "Normal" ],
     "info": {
@@ -1996,23 +1996,23 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "迷人之軀", "笨拙" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "識破" },
-      { "rank": 0, "type": "Normal", "name": "躍起" },
+      { "rank": 0, "type": "Normal", "name": "跃起" },
       { "rank": 0, "type": "Normal", "name": "拍擊" },
       { "rank": 0, "type": "Normal", "name": "變圓" },
       { "rank": 1, "type": "Normal", "name": "挺住" },
       { "rank": 2, "type": "Normal", "name": "報恩" },
       { "rank": 2, "type": "Normal", "name": "迷昏拳" },
       { "rank": 2, "type": "Normal", "name": "接棒" },
-      { "rank": 2, "type": "Normal", "name": "電光一閃" },
-      { "rank": 2, "type": "Fairy", "name": "撒嬌" },
+      { "rank": 2, "type": "Normal", "name": "電光一闪" },
+      { "rank": 2, "type": "Fairy", "name": "撒娇" },
       { "rank": 2, "type": "Fight", "name": "飛踢" },
       { "rank": 2, "type": "Flying", "name": "彈跳" },
       { "rank": 2, "type": "Ground", "name": "耕地" },
-      { "rank": 2, "type": "Psychic", "name": "高速移動" },
+      { "rank": 2, "type": "Psychic", "name": "高速移动" },
       { "rank": 2, "type": "Psychic", "name": "魔法反射" },
-      { "rank": 2, "type": "Psychic", "name": "鏡面反射" },
+      { "rank": 2, "type": "Psychic", "name": "镜面反射" },
       { "rank": 3, "type": "Normal", "name": "找夥伴" },
-      { "rank": 3, "type": "Normal", "name": "您先請" },
+      { "rank": 3, "type": "Normal", "name": "您先请" },
       { "rank": 3, "type": "Fight", "name": "飛膝踢" },
       { "rank": 3, "type": "Psychic", "name": "治愈之願" },
       { "rank": 4, "type": "Normal", "name": "搖晃舞" },
@@ -2023,7 +2023,7 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "428-M",
     "region": "sinnoh",
-    "name": "長耳兔_MEGA",
+    "name": "长耳兔_MEGA",
     "alias": "Lopunny",
     "type": [ "Normal" ],
     "info": {
@@ -2048,23 +2048,23 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "膽量" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "識破" },
-      { "rank": 0, "type": "Normal", "name": "躍起" },
+      { "rank": 0, "type": "Normal", "name": "跃起" },
       { "rank": 0, "type": "Normal", "name": "拍擊" },
       { "rank": 0, "type": "Normal", "name": "變圓" },
       { "rank": 1, "type": "Normal", "name": "挺住" },
       { "rank": 2, "type": "Normal", "name": "報恩" },
       { "rank": 2, "type": "Normal", "name": "迷昏拳" },
       { "rank": 2, "type": "Normal", "name": "接棒" },
-      { "rank": 2, "type": "Normal", "name": "電光一閃" },
-      { "rank": 2, "type": "Fairy", "name": "撒嬌" },
+      { "rank": 2, "type": "Normal", "name": "電光一闪" },
+      { "rank": 2, "type": "Fairy", "name": "撒娇" },
       { "rank": 2, "type": "Fight", "name": "飛踢" },
       { "rank": 2, "type": "Flying", "name": "彈跳" },
       { "rank": 2, "type": "Ground", "name": "耕地" },
-      { "rank": 2, "type": "Psychic", "name": "高速移動" },
+      { "rank": 2, "type": "Psychic", "name": "高速移动" },
       { "rank": 2, "type": "Psychic", "name": "魔法反射" },
-      { "rank": 2, "type": "Psychic", "name": "鏡面反射" },
+      { "rank": 2, "type": "Psychic", "name": "镜面反射" },
       { "rank": 3, "type": "Normal", "name": "找夥伴" },
-      { "rank": 3, "type": "Normal", "name": "您先請" },
+      { "rank": 3, "type": "Normal", "name": "您先请" },
       { "rank": 3, "type": "Fight", "name": "飛膝踢" },
       { "rank": 3, "type": "Psychic", "name": "治愈之願" },
       { "rank": 4, "type": "Normal", "name": "搖晃舞" },
@@ -2100,30 +2100,30 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "飄浮" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "叫聲" },
-      { "rank": 1, "type": "Normal", "name": "幸運咒語" },
+      { "rank": 1, "type": "Normal", "name": "幸运咒语" },
       { "rank": 1, "type": "Grass", "name": "魔法葉" },
-      { "rank": 2, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 2, "type": "Ghost", "name": "驚吓" },
       { "rank": 2, "type": "Ghost", "name": "怨恨" },
       { "rank": 2, "type": "Psychic", "name": "精神波" },
       { "rank": 2, "type": "Rock", "name": "力量寶石" },
       { "rank": 3, "type": "Fire", "name": "魔法火焰" },
-      { "rank": 3, "type": "Ghost", "name": "潛靈奇襲" },
+      { "rank": 3, "type": "Ghost", "name": "潛灵奇襲" },
       { "rank": 4, "type": "Dark", "name": "詭计" },
       { "rank": 4, "type": "Dark", "name": "欺詐" },
-      { "rank": 4, "type": "Psychic", "name": "奇妙空間" }
+      { "rank": 4, "type": "Psychic", "name": "奇妙空间" }
     ]
   },
   {
     "id": "430",
     "region": "sinnoh",
-    "name": "烏鴉頭頭",
+    "name": "烏鴉头头",
     "alias": "Honchkrow",
     "type": [ "Dark", "Flying" ],
     "info": {
       "image": "images/pokedex/430.png",
       "height": "0.9",
       "weight": "27",
-      "category": "大頭目寶可夢",
+      "category": "大头目寶可夢",
       "text": "It lets out a deep cry to summon Murkrows, they bring food and shiny objects to Honchkrow. It is, however, a tyrant to the Murkrow. It only goes out at night to carry out evil deeds."
     },
     "evolution": {
@@ -2138,18 +2138,18 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 3, "max": 6 },
       "ins": { "value": 2, "max": 4 }
     },
-    "ability": [ "不眠", "超幸運" ],
+    "ability": [ "不眠", "超幸运" ],
     "moves": [
-      { "rank": 0, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 0, "type": "Ghost", "name": "驚吓" },
       { "rank": 1, "type": "Dark", "name": "追打" },
       { "rank": 1, "type": "Flying", "name": "翅膀攻擊" },
       { "rank": 1, "type": "Ice", "name": "黑霧" },
-      { "rank": 2, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 2, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 2, "type": "Dark", "name": "詭计" },
       { "rank": 2, "type": "Dark", "name": "暗襲要害" },
       { "rank": 2, "type": "Dark", "name": "欺詐" },
-      { "rank": 2, "type": "Dark", "name": "惡之波動" },
-      { "rank": 3, "type": "Dark", "name": "延後" },
+      { "rank": 2, "type": "Dark", "name": "恶之波动" },
+      { "rank": 3, "type": "Dark", "name": "延后" },
       { "rank": 3, "type": "Dark", "name": "突襲" },
       { "rank": 4, "type": "Normal", "name": "滅亡之歌" },
       { "rank": 4, "type": "Fire", "name": "熱風" },
@@ -2166,7 +2166,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/431.png",
       "height": "0.5",
       "weight": "4",
-      "category": "裝乖寶可夢",
+      "category": "装乖寶可夢",
       "text": "It is plentiful in urban areas, as it is a popular pet. It has a very fickle nature, purring in happiness one second, then hooking its claws into its trainer’s nose. It loves to be  admired and pampered. "
     },
     "evolution": {
@@ -2187,14 +2187,14 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Normal", "name": "擊掌奇襲" },
       { "rank": 1, "type": "Normal", "name": "抓" },
       { "rank": 1, "type": "Normal", "name": "叫聲" },
-      { "rank": 2, "type": "Normal", "name": "劈開" },
+      { "rank": 2, "type": "Normal", "name": "劈开" },
       { "rank": 2, "type": "Normal", "name": "借助" },
       { "rank": 2, "type": "Normal", "name": "亂抓" },
       { "rank": 2, "type": "Normal", "name": "迷人" },
       { "rank": 2, "type": "Normal", "name": "誘惑" },
       { "rank": 2, "type": "Dark", "name": "出奇一擊" },
-      { "rank": 2, "type": "Fairy", "name": "撒嬌" },
-      { "rank": 2, "type": "Psychic", "name": "催眠術" },
+      { "rank": 2, "type": "Fairy", "name": "撒娇" },
+      { "rank": 2, "type": "Psychic", "name": "催眠术" },
       { "rank": 3, "type": "Dark", "name": "突襲" },
       { "rank": 3, "type": "Dark", "name": "磨爪" },
       { "rank": 3, "type": "Fairy", "name": "嬉鬧" },
@@ -2214,7 +2214,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/432.png",
       "height": "1.0",
       "weight": "43",
-      "category": "虎斑貓寶可夢",
+      "category": "虎斑猫寶可夢",
       "text": "It becomes wilder and aggressive after evolving. It is known to claim other Pokémon nests as its own. It will make itself appear bigger and glare with piercing eyes to achieve dominance over someone."
     },
     "evolution": {
@@ -2234,14 +2234,14 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Normal", "name": "擊掌奇襲" },
       { "rank": 1, "type": "Normal", "name": "抓" },
       { "rank": 1, "type": "Normal", "name": "叫聲" },
-      { "rank": 2, "type": "Normal", "name": "劈開" },
+      { "rank": 2, "type": "Normal", "name": "劈开" },
       { "rank": 2, "type": "Normal", "name": "借助" },
       { "rank": 2, "type": "Normal", "name": "亂抓" },
-      { "rank": 2, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 2, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 2, "type": "Normal", "name": "誘惑" },
       { "rank": 2, "type": "Dark", "name": "出奇一擊" },
-      { "rank": 2, "type": "Fairy", "name": "撒嬌" },
-      { "rank": 2, "type": "Psychic", "name": "催眠術" },
+      { "rank": 2, "type": "Fairy", "name": "撒娇" },
+      { "rank": 2, "type": "Psychic", "name": "催眠术" },
       { "rank": 3, "type": "Normal", "name": "泰山壓頂" },
       { "rank": 3, "type": "Normal", "name": "迷人" },
       { "rank": 3, "type": "Dark", "name": "磨爪" },
@@ -2278,9 +2278,9 @@ Array.prototype.push.apply(Pokedex, [
     },
     "ability": [ "飄浮" ],
     "moves": [
-      { "rank": 0, "type": "Normal", "name": "緊束" },
+      { "rank": 0, "type": "Normal", "name": "紧束" },
       { "rank": 1, "type": "Normal", "name": "叫聲" },
-      { "rank": 1, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 1, "type": "Ghost", "name": "驚吓" },
       { "rank": 2, "type": "Normal", "name": "吵鬧" },
       { "rank": 2, "type": "Normal", "name": "哈欠" },
       { "rank": 2, "type": "Psychic", "name": "念力" },
@@ -2318,7 +2318,7 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 1, "max": 3 },
       "ins": { "value": 1, "max": 3 }
     },
-    "ability": [ "惡臭", "引爆" ],
+    "ability": [ "恶臭", "引爆" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "聚氣" },
       { "rank": 0, "type": "Normal", "name": "抓" },
@@ -2326,7 +2326,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Normal", "name": "亂抓" },
       { "rank": 1, "type": "Poison", "name": "毒瓦斯" },
       { "rank": 2, "type": "Normal", "name": "煙幕" },
-      { "rank": 2, "type": "Normal", "name": "劈開" },
+      { "rank": 2, "type": "Normal", "name": "劈开" },
       { "rank": 2, "type": "Normal", "name": "佯攻" },
       { "rank": 2, "type": "Dark", "name": "咬住" },
       { "rank": 2, "type": "Poison", "name": "毒液陷阱" },
@@ -2367,7 +2367,7 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 5 },
       "ins": { "value": 2, "max": 4 }
     },
-    "ability": [ "惡臭", "引爆" ],
+    "ability": [ "恶臭", "引爆" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "聚氣" },
       { "rank": 0, "type": "Normal", "name": "抓" },
@@ -2375,7 +2375,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Normal", "name": "亂抓" },
       { "rank": 1, "type": "Poison", "name": "毒瓦斯" },
       { "rank": 2, "type": "Normal", "name": "煙幕" },
-      { "rank": 2, "type": "Normal", "name": "劈開" },
+      { "rank": 2, "type": "Normal", "name": "劈开" },
       { "rank": 2, "type": "Normal", "name": "佯攻" },
       { "rank": 2, "type": "Dark", "name": "咬住" },
       { "rank": 2, "type": "Fire", "name": "噴射火焰" },
@@ -2394,7 +2394,7 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "436",
     "region": "sinnoh",
-    "name": "銅鏡怪",
+    "name": "銅镜怪",
     "alias": "Bronzor",
     "type": [ "Steel", "Psychic" ],
     "info": {
@@ -2423,16 +2423,16 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Psychic", "name": "念力" },
       { "rank": 1, "type": "Ghost", "name": "奇異之光" },
       { "rank": 1, "type": "Psychic", "name": "封印" },
-      { "rank": 1, "type": "Psychic", "name": "催眠術" },
+      { "rank": 1, "type": "Psychic", "name": "催眠术" },
       { "rank": 2, "type": "Normal", "name": "神秘守護" },
       { "rank": 2, "type": "Dark", "name": "出奇一擊" },
       { "rank": 2, "type": "Psychic", "name": "預知未來" },
       { "rank": 2, "type": "Psychic", "name": "精神波" },
       { "rank": 2, "type": "Steel", "name": "陀螺球" },
-      { "rank": 2, "type": "Steel", "name": "金屬音" },
+      { "rank": 2, "type": "Steel", "name": "金属音" },
       { "rank": 2, "type": "Steel", "name": "鐵壁" },
       { "rank": 3, "type": "Dark", "name": "以牙還牙" },
-      { "rank": 3, "type": "Psychic", "name": "回复封鎖" },
+      { "rank": 3, "type": "Psychic", "name": "回复封锁" },
       { "rank": 3, "type": "Psychic", "name": "神通力" },
       { "rank": 3, "type": "Steel", "name": "重磅衝撞" },
       { "rank": 4, "type": "Bug", "name": "信號光束" },
@@ -2474,22 +2474,22 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Water", "name": "求雨" },
       { "rank": 1, "type": "Ghost", "name": "奇異之光" },
       { "rank": 1, "type": "Psychic", "name": "封印" },
-      { "rank": 1, "type": "Psychic", "name": "催眠術" },
+      { "rank": 1, "type": "Psychic", "name": "催眠术" },
       { "rank": 2, "type": "Normal", "name": "擋路" },
       { "rank": 2, "type": "Normal", "name": "神秘守護" },
       { "rank": 2, "type": "Dark", "name": "出奇一擊" },
       { "rank": 2, "type": "Psychic", "name": "預知未來" },
       { "rank": 2, "type": "Psychic", "name": "精神波" },
       { "rank": 2, "type": "Steel", "name": "陀螺球" },
-      { "rank": 2, "type": "Steel", "name": "金屬音" },
+      { "rank": 2, "type": "Steel", "name": "金属音" },
       { "rank": 2, "type": "Steel", "name": "鐵壁" },
       { "rank": 3, "type": "Dark", "name": "以牙還牙" },
-      { "rank": 3, "type": "Psychic", "name": "回复封鎖" },
+      { "rank": 3, "type": "Psychic", "name": "回复封锁" },
       { "rank": 3, "type": "Psychic", "name": "神通力" },
       { "rank": 3, "type": "Steel", "name": "重磅衝撞" },
       { "rank": 4, "type": "Psychic", "name": "特性互換" },
       { "rank": 4, "type": "Rock", "name": "原始之力" },
-      { "rank": 4, "type": "Steel", "name": "鐵頭" }
+      { "rank": 4, "type": "Steel", "name": "鐵头" }
     ]
   },
   {
@@ -2507,7 +2507,7 @@ Array.prototype.push.apply(Pokedex, [
     },
     "evolution": {
       "stage": "first",
-      "with": "學會〈模仿〉"
+      "with": "学會〈模仿〉"
     },
     "baseHP": 3,
     "rank": 0,
@@ -2518,7 +2518,7 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 1, "max": 2 },
       "ins": { "value": 2, "max": 4 }
     },
-    "ability": [ "結實", "堅硬腦袋" ],
+    "ability": [ "结实", "堅硬腦袋" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "仿效" },
       { "rank": 0, "type": "Dark", "name": "假哭" },
@@ -2528,11 +2528,11 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Normal", "name": "模仿" },
       { "rank": 2, "type": "Normal", "name": "淚眼汪汪" },
       { "rank": 2, "type": "Dark", "name": "出奇一擊" },
-      { "rank": 2, "type": "Rock", "name": "岩石封鎖" },
+      { "rank": 2, "type": "Rock", "name": "岩石封锁" },
       { "rank": 2, "type": "Rock", "name": "落石" },
       { "rank": 3, "type": "Normal", "name": "捨身衝撞" },
       { "rank": 3, "type": "Dark", "name": "突襲" },
-      { "rank": 3, "type": "Fight", "name": "雙倍奉還" },
+      { "rank": 3, "type": "Fight", "name": "双倍奉還" },
       { "rank": 3, "type": "Rock", "name": "岩崩" },
       { "rank": 4, "type": "Dark", "name": "欺詐" },
       { "rank": 4, "type": "Ground", "name": "流沙地獄" },
@@ -2555,7 +2555,7 @@ Array.prototype.push.apply(Pokedex, [
     },
     "evolution": {
       "stage": "first",
-      "with": "學會〈模仿〉"
+      "with": "学會〈模仿〉"
     },
     "baseHP": 3,
     "rank": 0,
@@ -2566,26 +2566,26 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 5 },
       "ins": { "value": 2, "max": 5 }
     },
-    "ability": [ "隔音", "過濾" ],
+    "ability": [ "隔音", "过濾" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "搔癢" },
       { "rank": 0, "type": "Psychic", "name": "屏障" },
       { "rank": 0, "type": "Psychic", "name": "念力" },
-      { "rank": 1, "type": "Normal", "name": "連環巴掌" },
+      { "rank": 1, "type": "Normal", "name": "連环巴掌" },
       { "rank": 1, "type": "Normal", "name": "仿效" },
       { "rank": 1, "type": "Psychic", "name": "瑜伽姿勢" },
       { "rank": 2, "type": "Normal", "name": "替身" },
       { "rank": 2, "type": "Normal", "name": "再來一次" },
       { "rank": 2, "type": "Normal", "name": "模仿" },
       { "rank": 2, "type": "Psychic", "name": "反射壁" },
-      { "rank": 2, "type": "Psychic", "name": "戲法" },
+      { "rank": 2, "type": "Psychic", "name": "戏法" },
       { "rank": 2, "type": "Psychic", "name": "幻象光線" },
       { "rank": 2, "type": "Psychic", "name": "光牆" },
       { "rank": 3, "type": "Normal", "name": "神秘守護" },
       { "rank": 3, "type": "Normal", "name": "回收利用" },
       { "rank": 3, "type": "Normal", "name": "接棒" },
       { "rank": 3, "type": "Psychic", "name": "扮演" },
-      { "rank": 3, "type": "Psychic", "name": "精神強念" },
+      { "rank": 3, "type": "Psychic", "name": "精神强念" },
       { "rank": 4, "type": "Normal", "name": "搖晃舞" },
       { "rank": 4, "type": "Dark", "name": "詭计" },
       { "rank": 4, "type": "Fight", "name": "喚醒巴掌" }
@@ -2621,7 +2621,7 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "自然回復", "天恩" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "拍擊" },
-      { "rank": 0, "type": "Fairy", "name": "撒嬌" },
+      { "rank": 0, "type": "Fairy", "name": "撒娇" },
       { "rank": 1, "type": "Normal", "name": "煥然一新" },
       { "rank": 1, "type": "Normal", "name": "仿效" },
       { "rank": 2, "type": "Fairy", "name": "天使之吻" },
@@ -2658,11 +2658,11 @@ Array.prototype.push.apply(Pokedex, [
     },
     "ability": [ "銳利目光", "蹣跚" ],
     "moves": [
-      { "rank": 0, "type": "Normal", "name": "密語" },
+      { "rank": 0, "type": "Normal", "name": "密语" },
       { "rank": 0, "type": "Dark", "name": "挑釁" },
       { "rank": 0, "type": "Flying", "name": "啄" },
       { "rank": 1, "type": "Normal", "name": "叫聲" },
-      { "rank": 1, "type": "Flying", "name": "鸚鵡學舌" },
+      { "rank": 1, "type": "Flying", "name": "鸚鵡学舌" },
       { "rank": 2, "type": "Normal", "name": "迴聲" },
       { "rank": 2, "type": "Normal", "name": "輪唱" },
       { "rank": 2, "type": "Normal", "name": "唱歌" },
@@ -2676,7 +2676,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Psychic", "name": "同步干擾" },
       { "rank": 4, "type": "Normal", "name": "爆音波" },
       { "rank": 4, "type": "Dark", "name": "詭计" },
-      { "rank": 4, "type": "Psychic", "name": "高速移動" }
+      { "rank": 4, "type": "Psychic", "name": "高速移动" }
     ]
   },
   {
@@ -2712,12 +2712,12 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Ghost", "name": "詛咒" },
       { "rank": 1, "type": "Dark", "name": "出奇一擊" },
       { "rank": 1, "type": "Ghost", "name": "影子偷襲" },
-      { "rank": 2, "type": "Dark", "name": "惡之波動" },
+      { "rank": 2, "type": "Dark", "name": "恶之波动" },
       { "rank": 2, "type": "Dark", "name": "突襲" },
       { "rank": 2, "type": "Dark", "name": "詭计" },
       { "rank": 2, "type": "Ghost", "name": "奇異之風" },
       { "rank": 2, "type": "Psychic", "name": "食夢" },
-      { "rank": 2, "type": "Psychic", "name": "催眠術" },
+      { "rank": 2, "type": "Psychic", "name": "催眠术" },
       { "rank": 3, "type": "Dark", "name": "臨別禮物" },
       { "rank": 4, "type": "Ghost", "name": "同命" },
       { "rank": 4, "type": "Psychic", "name": "封印" },
@@ -2755,7 +2755,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Dragon", "name": "龍之怒" },
       { "rank": 1, "type": "Ground", "name": "潑沙" },
-      { "rank": 2, "type": "Normal", "name": "劈開" },
+      { "rank": 2, "type": "Normal", "name": "劈开" },
       { "rank": 2, "type": "Normal", "name": "猛撞" },
       { "rank": 2, "type": "Dragon", "name": "龍爪" },
       { "rank": 2, "type": "Ground", "name": "流沙地獄" },
@@ -2764,7 +2764,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Dragon", "name": "龍之俯衝" },
       { "rank": 4, "type": "Normal", "name": "鬼面" },
       { "rank": 4, "type": "Dragon", "name": "流星群" },
-      { "rank": 4, "type": "Steel", "name": "鐵頭" }
+      { "rank": 4, "type": "Steel", "name": "鐵头" }
     ],
     "isNovice": true
   },
@@ -2799,7 +2799,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Dragon", "name": "龍之怒" },
       { "rank": 1, "type": "Ground", "name": "潑沙" },
-      { "rank": 2, "type": "Normal", "name": "劈開" },
+      { "rank": 2, "type": "Normal", "name": "劈开" },
       { "rank": 2, "type": "Normal", "name": "猛撞" },
       { "rank": 2, "type": "Dragon", "name": "龍爪" },
       { "rank": 2, "type": "Dragon", "name": "二連劈" },
@@ -2809,7 +2809,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Dragon", "name": "龍之俯衝" },
       { "rank": 4, "type": "Normal", "name": "鬼面" },
       { "rank": 4, "type": "Dragon", "name": "流星群" },
-      { "rank": 4, "type": "Steel", "name": "金屬爪" }
+      { "rank": 4, "type": "Steel", "name": "金属爪" }
     ]
   },
   {
@@ -2843,7 +2843,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Dragon", "name": "龍之怒" },
       { "rank": 1, "type": "Ground", "name": "潑沙" },
       { "rank": 2, "type": "Normal", "name": "猛撞" },
-      { "rank": 2, "type": "Normal", "name": "劈開" },
+      { "rank": 2, "type": "Normal", "name": "劈开" },
       { "rank": 2, "type": "Dark", "name": "咬碎" },
       { "rank": 2, "type": "Dragon", "name": "龍爪" },
       { "rank": 2, "type": "Dragon", "name": "二連劈" },
@@ -2888,7 +2888,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Dragon", "name": "龍之怒" },
       { "rank": 1, "type": "Ground", "name": "潑沙" },
       { "rank": 2, "type": "Normal", "name": "猛撞" },
-      { "rank": 2, "type": "Normal", "name": "劈開" },
+      { "rank": 2, "type": "Normal", "name": "劈开" },
       { "rank": 2, "type": "Dark", "name": "咬碎" },
       { "rank": 2, "type": "Dragon", "name": "龍爪" },
       { "rank": 2, "type": "Dragon", "name": "二連劈" },
@@ -2905,7 +2905,7 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "446",
     "region": "sinnoh",
-    "name": "小卡比獸",
+    "name": "小卡比兽",
     "alias": "Munchlax",
     "type": [ "Normal" ],
     "info": {
@@ -2930,26 +2930,26 @@ Array.prototype.push.apply(Pokedex, [
     },
     "ability": [ "撿拾", "厚脂肪" ],
     "moves": [
-      { "rank": 0, "type": "Normal", "name": "氣味偵測" },
+      { "rank": 0, "type": "Normal", "name": "氣味侦測" },
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 0, "type": "Dark", "name": "搶奪" },
       { "rank": 0, "type": "Ghost", "name": "舌舔" },
       { "rank": 1, "type": "Normal", "name": "變圓" },
       { "rank": 1, "type": "Normal", "name": "揮指" },
-      { "rank": 1, "type": "Psychic", "name": "瞬間失憶" },
+      { "rank": 1, "type": "Psychic", "name": "瞬间失憶" },
       { "rank": 2, "type": "Normal", "name": "吞下" },
       { "rank": 2, "type": "Normal", "name": "泰山壓頂" },
       { "rank": 2, "type": "Normal", "name": "逐步擊破" },
       { "rank": 2, "type": "Normal", "name": "蓄力" },
       { "rank": 2, "type": "Normal", "name": "刺耳聲" },
       { "rank": 2, "type": "Dark", "name": "投掷" },
-      { "rank": 2, "type": "Rock", "name": "滾動" },
+      { "rank": 2, "type": "Rock", "name": "滾动" },
       { "rank": 3, "type": "Normal", "name": "自然之恩" },
       { "rank": 3, "type": "Normal", "name": "珍藏" },
       { "rank": 3, "type": "Normal", "name": "腹鼓" },
-      { "rank": 4, "type": "Fairy", "name": "撒嬌" },
+      { "rank": 4, "type": "Fairy", "name": "撒娇" },
       { "rank": 4, "type": "Poison", "name": "打嗝" },
-      { "rank": 4, "type": "Psychic", "name": "意念頭鎚" }
+      { "rank": 4, "type": "Psychic", "name": "意念头鎚" }
     ],
     "isNovice": true
   },
@@ -2963,7 +2963,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/447.png",
       "height": "0.7",
       "weight": "20",
-      "category": "波紋寶可夢",
+      "category": "波纹寶可夢",
       "text": "Scarce in the wild but they have been seen in the mountains. It has the ability to see the auras of others,  through this power it is capable of sensing emotions, it won’t get close to those with selfish intentions."
     },
     "evolution": {
@@ -2981,20 +2981,20 @@ Array.prototype.push.apply(Pokedex, [
     },
     "ability": [ "不屈之心", "精神力" ],
     "moves": [
-      { "rank": 0, "type": "Normal", "name": "電光一閃" },
+      { "rank": 0, "type": "Normal", "name": "電光一闪" },
       { "rank": 0, "type": "Normal", "name": "挺住" },
       { "rank": 0, "type": "Normal", "name": "識破" },
       { "rank": 1, "type": "Normal", "name": "佯攻" },
-      { "rank": 1, "type": "Fight", "name": "雙倍奉還" },
+      { "rank": 1, "type": "Fight", "name": "双倍奉還" },
       { "rank": 2, "type": "Normal", "name": "刺耳聲" },
       { "rank": 2, "type": "Normal", "name": "仿效" },
-      { "rank": 2, "type": "Fight", "name": "發勁" },
+      { "rank": 2, "type": "Fight", "name": "发勁" },
       { "rank": 2, "type": "Fight", "name": "起死回生" },
       { "rank": 3, "type": "Dark", "name": "詭计" },
       { "rank": 3, "type": "Fight", "name": "搏命" },
       { "rank": 4, "type": "Fight", "name": "波導彈" },
       { "rank": 4, "type": "Fire", "name": "火焰踢" },
-      { "rank": 4, "type": "Psychic", "name": "高速移動" }
+      { "rank": 4, "type": "Psychic", "name": "高速移动" }
     ],
     "isNovice": true
   },
@@ -3025,26 +3025,26 @@ Array.prototype.push.apply(Pokedex, [
     },
     "ability": [ "不屈之心", "精神力" ],
     "moves": [
-      { "rank": 0, "type": "Normal", "name": "電光一閃" },
+      { "rank": 0, "type": "Normal", "name": "電光一闪" },
       { "rank": 0, "type": "Normal", "name": "識破" },
       { "rank": 0, "type": "Normal", "name": "磨礪" },
       { "rank": 1, "type": "Normal", "name": "佯攻" },
-      { "rank": 1, "type": "Fight", "name": "雙倍奉還" },
+      { "rank": 1, "type": "Fight", "name": "双倍奉還" },
       { "rank": 1, "type": "Fight", "name": "看穿" },
-      { "rank": 1, "type": "Steel", "name": "金屬爪" },
+      { "rank": 1, "type": "Steel", "name": "金属爪" },
       { "rank": 2, "type": "Normal", "name": "自我激勵" },
       { "rank": 2, "type": "Normal", "name": "搶先一步" },
-      { "rank": 2, "type": "Normal", "name": "劍舞" },
+      { "rank": 2, "type": "Normal", "name": "剑舞" },
       { "rank": 2, "type": "Fight", "name": "波導彈" },
       { "rank": 2, "type": "Fight", "name": "快速防守" },
-      { "rank": 2, "type": "Fight", "name": "增強拳" },
+      { "rank": 2, "type": "Fight", "name": "增强拳" },
       { "rank": 2, "type": "Ground", "name": "骨棒亂打" },
       { "rank": 2, "type": "Psychic", "name": "冥想" },
-      { "rank": 2, "type": "Steel", "name": "金屬音" },
+      { "rank": 2, "type": "Steel", "name": "金属音" },
       { "rank": 3, "type": "Normal", "name": "神速" },
-      { "rank": 3, "type": "Dragon", "name": "龍之波動" },
+      { "rank": 3, "type": "Dragon", "name": "龍之波动" },
       { "rank": 3, "type": "Fight", "name": "近身戰" },
-      { "rank": 3, "type": "Psychic", "name": "治愈波動" },
+      { "rank": 3, "type": "Psychic", "name": "治愈波动" },
       { "rank": 4, "type": "Normal", "name": "心之眼" },
       { "rank": 4, "type": "Fight", "name": "真空波" },
       { "rank": 4, "type": "Steel", "name": "鐵壁" }
@@ -3077,26 +3077,26 @@ Array.prototype.push.apply(Pokedex, [
     },
     "ability": [ "適應力" ],
     "moves": [
-      { "rank": 0, "type": "Normal", "name": "電光一閃" },
+      { "rank": 0, "type": "Normal", "name": "電光一闪" },
       { "rank": 0, "type": "Normal", "name": "識破" },
       { "rank": 0, "type": "Normal", "name": "磨礪" },
       { "rank": 1, "type": "Normal", "name": "佯攻" },
-      { "rank": 1, "type": "Fight", "name": "雙倍奉還" },
+      { "rank": 1, "type": "Fight", "name": "双倍奉還" },
       { "rank": 1, "type": "Fight", "name": "看穿" },
-      { "rank": 1, "type": "Steel", "name": "金屬爪" },
+      { "rank": 1, "type": "Steel", "name": "金属爪" },
       { "rank": 2, "type": "Normal", "name": "自我激勵" },
       { "rank": 2, "type": "Normal", "name": "搶先一步" },
-      { "rank": 2, "type": "Normal", "name": "劍舞" },
+      { "rank": 2, "type": "Normal", "name": "剑舞" },
       { "rank": 2, "type": "Fight", "name": "波導彈" },
       { "rank": 2, "type": "Fight", "name": "快速防守" },
-      { "rank": 2, "type": "Fight", "name": "增強拳" },
+      { "rank": 2, "type": "Fight", "name": "增强拳" },
       { "rank": 2, "type": "Ground", "name": "骨棒亂打" },
       { "rank": 2, "type": "Psychic", "name": "冥想" },
-      { "rank": 2, "type": "Steel", "name": "金屬音" },
+      { "rank": 2, "type": "Steel", "name": "金属音" },
       { "rank": 3, "type": "Normal", "name": "神速" },
-      { "rank": 3, "type": "Dragon", "name": "龍之波動" },
+      { "rank": 3, "type": "Dragon", "name": "龍之波动" },
       { "rank": 3, "type": "Fight", "name": "近身戰" },
-      { "rank": 3, "type": "Psychic", "name": "治愈波動" },
+      { "rank": 3, "type": "Psychic", "name": "治愈波动" },
       { "rank": 4, "type": "Normal", "name": "心之眼" },
       { "rank": 4, "type": "Fight", "name": "真空波" },
       { "rank": 4, "type": "Steel", "name": "鐵壁" }
@@ -3143,14 +3143,14 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Ground", "name": "地震" },
       { "rank": 4, "type": "Normal", "name": "偷懶" },
       { "rank": 4, "type": "Normal", "name": "蓄力" },
-      { "rank": 4, "type": "Water", "name": "水之波動" }
+      { "rank": 4, "type": "Water", "name": "水之波动" }
     ],
     "isNovice": true
   },
   {
     "id": "450",
     "region": "sinnoh",
-    "name": "河馬獸",
+    "name": "河馬兽",
     "alias": "Hippopotas",
     "type": [ "Ground" ],
     "info": {
@@ -3190,13 +3190,13 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Ground", "name": "地震" },
       { "rank": 4, "type": "Normal", "name": "偷懶" },
       { "rank": 4, "type": "Fight", "name": "報復" },
-      { "rank": 4, "type": "Steel", "name": "鐵頭" }
+      { "rank": 4, "type": "Steel", "name": "鐵头" }
     ]
   },
   {
     "id": "451",
     "region": "sinnoh",
-    "name": "鉗尾蠍",
+    "name": "鉗尾蝎",
     "alias": "Skorupi",
     "type": [ "Poison", "Bug" ],
     "info": {
@@ -3226,7 +3226,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Poison", "name": "毒針" },
       { "rank": 1, "type": "Bug", "name": "飛彈針" },
       { "rank": 1, "type": "Dark", "name": "拍落" },
-      { "rank": 2, "type": "Normal", "name": "點穴" },
+      { "rank": 2, "type": "Normal", "name": "点穴" },
       { "rank": 2, "type": "Bug", "name": "蟲咬" },
       { "rank": 2, "type": "Dark", "name": "磨爪" },
       { "rank": 2, "type": "Dark", "name": "追打" },
@@ -3239,7 +3239,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Dark", "name": "暗襲要害" },
       { "rank": 3, "type": "Poison", "name": "十字毒刃" },
       { "rank": 4, "type": "Poison", "name": "毒尾" },
-      { "rank": 4, "type": "Psychic", "name": "高速移動" },
+      { "rank": 4, "type": "Psychic", "name": "高速移动" },
       { "rank": 4, "type": "Water", "name": "水流尾" }
     ],
     "isNovice": true
@@ -3247,7 +3247,7 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "452",
     "region": "sinnoh",
-    "name": "龍王蠍",
+    "name": "龍王蝎",
     "alias": "Drapion",
     "type": [ "Poison", "Dark" ],
     "info": {
@@ -3276,7 +3276,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Poison", "name": "毒針" },
       { "rank": 1, "type": "Bug", "name": "飛彈針" },
       { "rank": 1, "type": "Dark", "name": "拍落" },
-      { "rank": 2, "type": "Normal", "name": "點穴" },
+      { "rank": 2, "type": "Normal", "name": "点穴" },
       { "rank": 2, "type": "Bug", "name": "蟲咬" },
       { "rank": 2, "type": "Dark", "name": "磨爪" },
       { "rank": 2, "type": "Dark", "name": "追打" },
@@ -3292,7 +3292,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Dark", "name": "暗襲要害" },
       { "rank": 3, "type": "Poison", "name": "十字毒刃" },
       { "rank": 4, "type": "Poison", "name": "毒尾" },
-      { "rank": 4, "type": "Psychic", "name": "高速移動" },
+      { "rank": 4, "type": "Psychic", "name": "高速移动" },
       { "rank": 4, "type": "Water", "name": "水流尾" }
     ]
   },
@@ -3322,13 +3322,13 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 4 },
       "ins": { "value": 1, "max": 3 }
     },
-    "ability": [ "危險預知", "乾燥皮膚" ],
+    "ability": [ "危險預知", "干燥皮肤" ],
     "moves": [
-      { "rank": 0, "type": "Ghost", "name": "驚嚇" },
-      { "rank": 0, "type": "Ground", "name": "擲泥" },
+      { "rank": 0, "type": "Ghost", "name": "驚吓" },
+      { "rank": 0, "type": "Ground", "name": "掷泥" },
       { "rank": 1, "type": "Dark", "name": "挑釁" },
       { "rank": 1, "type": "Poison", "name": "毒針" },
-      { "rank": 2, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 2, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 2, "type": "Dark", "name": "詭计" },
       { "rank": 2, "type": "Dark", "name": "突襲" },
       { "rank": 2, "type": "Dark", "name": "出奇一擊" },
@@ -3371,13 +3371,13 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 3, "max": 6 },
       "ins": { "value": 2, "max": 4 }
     },
-    "ability": [ "危險預知", "乾燥皮膚" ],
+    "ability": [ "危險預知", "干燥皮肤" ],
     "moves": [
-      { "rank": 0, "type": "Ghost", "name": "驚嚇" },
-      { "rank": 0, "type": "Ground", "name": "擲泥" },
+      { "rank": 0, "type": "Ghost", "name": "驚吓" },
+      { "rank": 0, "type": "Ground", "name": "掷泥" },
       { "rank": 1, "type": "Dark", "name": "挑釁" },
       { "rank": 1, "type": "Poison", "name": "毒針" },
-      { "rank": 2, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 2, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 2, "type": "Dark", "name": "詭计" },
       { "rank": 2, "type": "Dark", "name": "突襲" },
       { "rank": 2, "type": "Dark", "name": "出奇一擊" },
@@ -3421,8 +3421,8 @@ Array.prototype.push.apply(Pokedex, [
     },
     "ability": [ "飄浮" ],
     "moves": [
-      { "rank": 0, "type": "Normal", "name": "生長" },
-      { "rank": 0, "type": "Normal", "name": "綁緊" },
+      { "rank": 0, "type": "Normal", "name": "生长" },
+      { "rank": 0, "type": "Normal", "name": "綁紧" },
       { "rank": 1, "type": "Dark", "name": "咬住" },
       { "rank": 1, "type": "Grass", "name": "藤鞭" },
       { "rank": 2, "type": "Normal", "name": "噴出" },
@@ -3432,11 +3432,11 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Dark", "name": "出奇一擊" },
       { "rank": 2, "type": "Grass", "name": "青草攪拌器" },
       { "rank": 2, "type": "Grass", "name": "紮根" },
-      { "rank": 3, "type": "Normal", "name": "絞緊" },
+      { "rank": 3, "type": "Normal", "name": "絞紧" },
       { "rank": 3, "type": "Dark", "name": "咬碎" },
-      { "rank": 3, "type": "Grass", "name": "強力鞭打" },
+      { "rank": 3, "type": "Grass", "name": "强力鞭打" },
       { "rank": 4, "type": "Bug", "name": "憤怒粉" },
-      { "rank": 4, "type": "Grass", "name": "種子炸彈" },
+      { "rank": 4, "type": "Grass", "name": "种子炸彈" },
       { "rank": 4, "type": "Poison", "name": "胃液" }
     ]
   },
@@ -3470,21 +3470,21 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Normal", "name": "拍擊" },
       { "rank": 1, "type": "Normal", "name": "迷人" },
-      { "rank": 1, "type": "Water", "name": "水槍" },
+      { "rank": 1, "type": "Water", "name": "水枪" },
       { "rank": 2, "type": "Normal", "name": "神秘守護" },
       { "rank": 2, "type": "Normal", "name": "誘惑" },
       { "rank": 2, "type": "Flying", "name": "起風" },
       { "rank": 2, "type": "Water", "name": "潮旋" },
-      { "rank": 2, "type": "Water", "name": "水之波動" },
+      { "rank": 2, "type": "Water", "name": "水之波动" },
       { "rank": 2, "type": "Water", "name": "求雨" },
-      { "rank": 2, "type": "Water", "name": "水流環" },
+      { "rank": 2, "type": "Water", "name": "水流环" },
       { "rank": 3, "type": "Bug", "name": "銀色旋風" },
       { "rank": 3, "type": "Bug", "name": "急速折返" },
       { "rank": 3, "type": "Flying", "name": "彈跳" },
       { "rank": 3, "type": "Water", "name": "浸水" },
       { "rank": 4, "type": "Fairy", "name": "天使之吻" },
-      { "rank": 4, "type": "Ice", "name": "極光束" },
-      { "rank": 4, "type": "Psychic", "name": "高速移動" }
+      { "rank": 4, "type": "Ice", "name": "极光束" },
+      { "rank": 4, "type": "Psychic", "name": "高速移动" }
     ],
     "isNovice": true
   },
@@ -3517,20 +3517,20 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Normal", "name": "拍擊" },
       { "rank": 1, "type": "Normal", "name": "迷人" },
-      { "rank": 1, "type": "Water", "name": "水槍" },
+      { "rank": 1, "type": "Water", "name": "水枪" },
       { "rank": 2, "type": "Normal", "name": "神秘守護" },
       { "rank": 2, "type": "Normal", "name": "誘惑" },
       { "rank": 2, "type": "Flying", "name": "起風" },
       { "rank": 2, "type": "Water", "name": "潮旋" },
-      { "rank": 2, "type": "Water", "name": "水之波動" },
-      { "rank": 2, "type": "Water", "name": "水流環" },
+      { "rank": 2, "type": "Water", "name": "水之波动" },
+      { "rank": 2, "type": "Water", "name": "水流环" },
       { "rank": 2, "type": "Water", "name": "求雨" },
       { "rank": 3, "type": "Bug", "name": "銀色旋風" },
       { "rank": 3, "type": "Bug", "name": "急速折返" },
       { "rank": 3, "type": "Flying", "name": "彈跳" },
       { "rank": 3, "type": "Water", "name": "浸水" },
-      { "rank": 4, "type": "Ice", "name": "極光束" },
-      { "rank": 4, "type": "Psychic", "name": "高速移動" },
+      { "rank": 4, "type": "Ice", "name": "极光束" },
+      { "rank": 4, "type": "Psychic", "name": "高速移动" },
       { "rank": 4, "type": "Water", "name": "鹽水" }
     ]
   },
@@ -3549,7 +3549,7 @@ Array.prototype.push.apply(Pokedex, [
     },
     "evolution": {
       "stage": "final",
-      "with": "與鐵炮魚同行"
+      "with": "与鐵炮魚同行"
     },
     "baseHP": 3,
     "rank": 1,
@@ -3568,15 +3568,15 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Ghost", "name": "奇異之光" },
       { "rank": 1, "type": "Water", "name": "泡沫光線" },
       { "rank": 2, "type": "Normal", "name": "猛撞" },
-      { "rank": 2, "type": "Normal", "name": "頭鎚" },
+      { "rank": 2, "type": "Normal", "name": "头鎚" },
       { "rank": 2, "type": "Flying", "name": "翅膀攻擊" },
-      { "rank": 2, "type": "Psychic", "name": "高速移動" },
+      { "rank": 2, "type": "Psychic", "name": "高速移动" },
       { "rank": 2, "type": "Rock", "name": "廣域防守" },
-      { "rank": 2, "type": "Water", "name": "水之波動" },
+      { "rank": 2, "type": "Water", "name": "水之波动" },
       { "rank": 3, "type": "Flying", "name": "彈跳" },
       { "rank": 3, "type": "Flying", "name": "空氣斬" },
       { "rank": 3, "type": "Water", "name": "水砲" },
-      { "rank": 3, "type": "Water", "name": "水流環" },
+      { "rank": 3, "type": "Water", "name": "水流环" },
       { "rank": 4, "type": "Normal", "name": "幫助" },
       { "rank": 4, "type": "Dragon", "name": "龍捲風" },
       { "rank": 4, "type": "Flying", "name": "順風" }
@@ -3612,20 +3612,20 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "降雪" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "瞪眼" },
-      { "rank": 0, "type": "Ice", "name": "細雪" },
+      { "rank": 0, "type": "Ice", "name": "细雪" },
       { "rank": 1, "type": "Grass", "name": "飛葉快刀" },
       { "rank": 1, "type": "Ice", "name": "冰凍之風" },
-      { "rank": 2, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 2, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 2, "type": "Grass", "name": "紮根" },
       { "rank": 2, "type": "Grass", "name": "草笛" },
       { "rank": 2, "type": "Ice", "name": "冰礫" },
       { "rank": 2, "type": "Ice", "name": "白霧" },
       { "rank": 3, "type": "Grass", "name": "木槌" },
-      { "rank": 3, "type": "Ice", "name": "絕對零度" },
+      { "rank": 3, "type": "Ice", "name": "絕对零度" },
       { "rank": 3, "type": "Ice", "name": "暴風雪" },
-      { "rank": 4, "type": "Normal", "name": "生長" },
-      { "rank": 4, "type": "Grass", "name": "種子炸彈" },
-      { "rank": 4, "type": "Water", "name": "水之波動" }
+      { "rank": 4, "type": "Normal", "name": "生长" },
+      { "rank": 4, "type": "Grass", "name": "种子炸彈" },
+      { "rank": 4, "type": "Water", "name": "水之波动" }
     ],
     "isNovice": true
   },
@@ -3657,20 +3657,20 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "降雪" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "瞪眼" },
-      { "rank": 1, "type": "Ice", "name": "細雪" },
+      { "rank": 1, "type": "Ice", "name": "细雪" },
       { "rank": 1, "type": "Ice", "name": "冰凍之風" },
       { "rank": 1, "type": "Ice", "name": "冰凍拳" },
-      { "rank": 2, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 2, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 2, "type": "Grass", "name": "飛葉快刀" },
       { "rank": 2, "type": "Ice", "name": "冰礫" },
       { "rank": 3, "type": "Grass", "name": "紮根" },
       { "rank": 3, "type": "Grass", "name": "草笛" },
       { "rank": 3, "type": "Grass", "name": "木槌" },
       { "rank": 3, "type": "Ice", "name": "白霧" },
-      { "rank": 3, "type": "Ice", "name": "絕對零度" },
+      { "rank": 3, "type": "Ice", "name": "絕对零度" },
       { "rank": 4, "type": "Ice", "name": "暴風雪" },
       { "rank": 4, "type": "Ice", "name": "雪崩" },
-      { "rank": 5, "type": "Normal", "name": "生長" },
+      { "rank": 5, "type": "Normal", "name": "生长" },
       { "rank": 5, "type": "Dragon", "name": "逆鱗" }
     ]
   },
@@ -3702,20 +3702,20 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "降雪" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "瞪眼" },
-      { "rank": 1, "type": "Ice", "name": "細雪" },
+      { "rank": 1, "type": "Ice", "name": "细雪" },
       { "rank": 1, "type": "Ice", "name": "冰凍之風" },
       { "rank": 1, "type": "Ice", "name": "冰凍拳" },
-      { "rank": 2, "type": "Normal", "name": "虛張聲勢" },
+      { "rank": 2, "type": "Normal", "name": "虚张聲勢" },
       { "rank": 2, "type": "Grass", "name": "飛葉快刀" },
       { "rank": 2, "type": "Ice", "name": "冰礫" },
       { "rank": 3, "type": "Grass", "name": "紮根" },
       { "rank": 3, "type": "Grass", "name": "草笛" },
       { "rank": 3, "type": "Grass", "name": "木槌" },
       { "rank": 3, "type": "Ice", "name": "白霧" },
-      { "rank": 3, "type": "Ice", "name": "絕對零度" },
+      { "rank": 3, "type": "Ice", "name": "絕对零度" },
       { "rank": 4, "type": "Ice", "name": "暴風雪" },
       { "rank": 4, "type": "Ice", "name": "雪崩" },
-      { "rank": 5, "type": "Normal", "name": "生長" },
+      { "rank": 5, "type": "Normal", "name": "生长" },
       { "rank": 5, "type": "Dragon", "name": "逆鱗" }
     ]
   },
@@ -3749,7 +3749,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Normal", "name": "抓" },
       { "rank": 0, "type": "Normal", "name": "瞪眼" },
       { "rank": 0, "type": "Dark", "name": "挑釁" },
-      { "rank": 1, "type": "Normal", "name": "電光一閃" },
+      { "rank": 1, "type": "Normal", "name": "電光一闪" },
       { "rank": 1, "type": "Dark", "name": "出奇一擊" },
       { "rank": 1, "type": "Dark", "name": "查封" },
       { "rank": 2, "type": "Normal", "name": "亂抓" },
@@ -3758,12 +3758,12 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Dark", "name": "投掷" },
       { "rank": 2, "type": "Dark", "name": "磨爪" },
       { "rank": 2, "type": "Dark", "name": "詭计" },
-      { "rank": 2, "type": "Dark", "name": "惡意追擊" },
+      { "rank": 2, "type": "Dark", "name": "恶意追擊" },
       { "rank": 2, "type": "Fight", "name": "報復" },
       { "rank": 2, "type": "Ice", "name": "冰凍之風" },
-      { "rank": 2, "type": "Steel", "name": "金屬爪" },
-      { "rank": 3, "type": "Dark", "name": "懲罰" },
-      { "rank": 3, "type": "Dark", "name": "惡之波動" },
+      { "rank": 2, "type": "Steel", "name": "金属爪" },
+      { "rank": 3, "type": "Dark", "name": "惩罚" },
+      { "rank": 3, "type": "Dark", "name": "恶之波动" },
       { "rank": 3, "type": "Dark", "name": "搶奪" },
       { "rank": 4, "type": "Normal", "name": "擊掌奇襲" },
       { "rank": 4, "type": "Fight", "name": "踢倒" },
@@ -3795,7 +3795,7 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 3, "max": 7 },
       "ins": { "value": 2, "max": 5 }
     },
-    "ability": [ "磁力", "結實" ],
+    "ability": [ "磁力", "结实" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 0, "type": "Normal", "name": "音爆" },
@@ -3807,15 +3807,15 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Electric", "name": "電球" },
       { "rank": 2, "type": "Electric", "name": "電光" },
       { "rank": 2, "type": "Electric", "name": "電磁波" },
-      { "rank": 2, "type": "Steel", "name": "鏡光射擊" },
+      { "rank": 2, "type": "Steel", "name": "镜光射击" },
       { "rank": 2, "type": "Steel", "name": "磁鐵炸彈" },
-      { "rank": 2, "type": "Steel", "name": "金屬音" },
+      { "rank": 2, "type": "Steel", "name": "金属音" },
       { "rank": 2, "type": "Steel", "name": "加農光炮" },
-      { "rank": 3, "type": "Normal", "name": "鎖定" },
+      { "rank": 3, "type": "Normal", "name": "锁定" },
       { "rank": 3, "type": "Electric", "name": "電磁炮" },
       { "rank": 3, "type": "Electric", "name": "電磁飄浮" },
       { "rank": 3, "type": "Electric", "name": "放電" },
-      { "rank": 3, "type": "Psychic", "name": "鏡面反射" },
+      { "rank": 3, "type": "Psychic", "name": "镜面反射" },
       { "rank": 3, "type": "Psychic", "name": "屏障" },
       { "rank": 3, "type": "Steel", "name": "陀螺球" },
       { "rank": 4, "type": "Bug", "name": "信號光束" },
@@ -3859,12 +3859,12 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Normal", "name": "踩踏" },
       { "rank": 2, "type": "Normal", "name": "搶先一步" },
       { "rank": 2, "type": "Normal", "name": "定身法" },
-      { "rank": 2, "type": "Normal", "name": "緊束" },
+      { "rank": 2, "type": "Normal", "name": "紧束" },
       { "rank": 2, "type": "Dark", "name": "拍落" },
-      { "rank": 2, "type": "Rock", "name": "滾動" },
-      { "rank": 3, "type": "Normal", "name": "絞緊" },
+      { "rank": 2, "type": "Rock", "name": "滾动" },
+      { "rank": 3, "type": "Normal", "name": "絞紧" },
       { "rank": 3, "type": "Normal", "name": "刺耳聲" },
-      { "rank": 3, "type": "Grass", "name": "強力鞭打" },
+      { "rank": 3, "type": "Grass", "name": "强力鞭打" },
       { "rank": 3, "type": "Steel", "name": "陀螺球" },
       { "rank": 4, "type": "Normal", "name": "腹鼓" },
       { "rank": 4, "type": "Fight", "name": "臂錘" },
@@ -3910,13 +3910,13 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Poison", "name": "毒擊" },
       { "rank": 2, "type": "Rock", "name": "岩石爆擊" },
       { "rank": 3, "type": "Normal", "name": "角鑽" },
-      { "rank": 3, "type": "Bug", "name": "超級角擊" },
+      { "rank": 3, "type": "Bug", "name": "超级角擊" },
       { "rank": 3, "type": "Ground", "name": "地震" },
       { "rank": 3, "type": "Rock", "name": "岩石炮" },
       { "rank": 3, "type": "Rock", "name": "尖石攻擊" },
       { "rank": 4, "type": "Dragon", "name": "龍之俯衝" },
       { "rank": 4, "type": "Psychic", "name": "防守平分" },
-      { "rank": 4, "type": "Steel", "name": "修長之角" }
+      { "rank": 4, "type": "Steel", "name": "修长之角" }
     ]
   },
   {
@@ -3929,7 +3929,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/465.png",
       "height": "2.0",
       "weight": "256",
-      "category": "藤蔓狀寶可夢",
+      "category": "藤蔓状寶可夢",
       "text": "While it remains still, it appears to be a large shrub. Unsuspecting prey that wander near get ensnared by its vines. In the summer months, its vines grow so large that you can’t even see its eyes."
     },
     "evolution": {
@@ -3946,35 +3946,35 @@ Array.prototype.push.apply(Pokedex, [
     },
     "ability": [ "葉綠素", "葉子防守" ],
     "moves": [
-      { "rank": 0, "type": "Normal", "name": "纏繞" },
+      { "rank": 0, "type": "Normal", "name": "缠繞" },
       { "rank": 0, "type": "Normal", "name": "擋路" },
       { "rank": 0, "type": "Grass", "name": "紮根" },
       { "rank": 1, "type": "Grass", "name": "吸取" },
       { "rank": 1, "type": "Grass", "name": "催眠粉" },
       { "rank": 1, "type": "Grass", "name": "藤鞭" },
       { "rank": 2, "type": "Normal", "name": "摔打" },
-      { "rank": 2, "type": "Normal", "name": "綁緊" },
+      { "rank": 2, "type": "Normal", "name": "綁紧" },
       { "rank": 2, "type": "Normal", "name": "自然之恩" },
-      { "rank": 2, "type": "Normal", "name": "生長" },
+      { "rank": 2, "type": "Normal", "name": "生长" },
       { "rank": 2, "type": "Dark", "name": "拍落" },
       { "rank": 2, "type": "Grass", "name": "麻痺粉" },
-      { "rank": 2, "type": "Grass", "name": "超級吸取" },
+      { "rank": 2, "type": "Grass", "name": "超级吸取" },
       { "rank": 2, "type": "Poison", "name": "毒粉" },
       { "rank": 2, "type": "Rock", "name": "原始之力" },
-      { "rank": 3, "type": "Normal", "name": "絞緊" },
+      { "rank": 3, "type": "Normal", "name": "絞紧" },
       { "rank": 3, "type": "Normal", "name": "搔癢" },
-      { "rank": 3, "type": "Grass", "name": "強力鞭打" },
-      { "rank": 3, "type": "Grass", "name": "終極吸取" },
+      { "rank": 3, "type": "Grass", "name": "强力鞭打" },
+      { "rank": 3, "type": "Grass", "name": "終极吸取" },
       { "rank": 3, "type": "Grass", "name": "青草場地" },
       { "rank": 4, "type": "Normal", "name": "自然之力" },
       { "rank": 4, "type": "Psychic", "name": "念力" },
-      { "rank": 4, "type": "Psychic", "name": "瞬間失憶" }
+      { "rank": 4, "type": "Psychic", "name": "瞬间失憶" }
     ]
   },
   {
     "id": "466",
     "region": "sinnoh",
-    "name": "電擊魔獸",
+    "name": "電擊魔兽",
     "alias": "Electivire",
     "type": [ "Electric" ],
     "info": {
@@ -3999,7 +3999,7 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "電氣引擎" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "瞪眼" },
-      { "rank": 0, "type": "Normal", "name": "電光一閃" },
+      { "rank": 0, "type": "Normal", "name": "電光一闪" },
       { "rank": 0, "type": "Electric", "name": "等離子浴" },
       { "rank": 1, "type": "Electric", "name": "電擊" },
       { "rank": 1, "type": "Electric", "name": "電氣場地" },
@@ -4012,7 +4012,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Electric", "name": "電球" },
       { "rank": 2, "type": "Electric", "name": "電擊波" },
       { "rank": 2, "type": "Fire", "name": "火焰拳" },
-      { "rank": 3, "type": "Normal", "name": "終極衝擊" },
+      { "rank": 3, "type": "Normal", "name": "終极衝擊" },
       { "rank": 3, "type": "Normal", "name": "刺耳聲" },
       { "rank": 3, "type": "Electric", "name": "打雷" },
       { "rank": 3, "type": "Psychic", "name": "光牆" },
@@ -4024,7 +4024,7 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "467",
     "region": "sinnoh",
-    "name": "鴨嘴炎獸",
+    "name": "鴨嘴炎兽",
     "alias": "Magmortar",
     "type": [ "Fire" ],
     "info": {
@@ -4096,14 +4096,14 @@ Array.prototype.push.apply(Pokedex, [
     },
     "ability": [ "活力", "天恩" ],
     "moves": [
-      { "rank": 0, "type": "Normal", "name": "您先請" },
+      { "rank": 0, "type": "Normal", "name": "您先请" },
       { "rank": 1, "type": "Normal", "name": "神速" },
       { "rank": 2, "type": "Fight", "name": "波導彈" },
       { "rank": 2, "type": "Flying", "name": "空氣斬" },
       { "rank": 2, "type": "Flying", "name": "神鳥猛擊" },
-      { "rank": 4, "type": "Normal", "name": "幸運咒語" },
+      { "rank": 4, "type": "Normal", "name": "幸运咒语" },
       { "rank": 4, "type": "Psychic", "name": "神通力" },
-      { "rank": 4, "type": "Water", "name": "水之波動" }
+      { "rank": 4, "type": "Water", "name": "水之波动" }
     ]
   },
   {
@@ -4131,15 +4131,15 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 3, "max": 6 },
       "ins": { "value": 2, "max": 4 }
     },
-    "ability": [ "加速", "有色眼鏡" ],
+    "ability": [ "加速", "有色眼镜" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "識破" },
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Normal", "name": "影子分身" },
-      { "rank": 1, "type": "Normal", "name": "電光一閃" },
+      { "rank": 1, "type": "Normal", "name": "電光一闪" },
       { "rank": 1, "type": "Bug", "name": "蟲咬" },
       { "rank": 2, "type": "Normal", "name": "吵鬧" },
-      { "rank": 2, "type": "Normal", "name": "劈開" },
+      { "rank": 2, "type": "Normal", "name": "劈开" },
       { "rank": 2, "type": "Normal", "name": "佯攻" },
       { "rank": 2, "type": "Normal", "name": "超音波" },
       { "rank": 2, "type": "Normal", "name": "音爆" },
@@ -4153,7 +4153,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Flying", "name": "空氣斬" },
       { "rank": 4, "type": "Fight", "name": "起死回生" },
       { "rank": 4, "type": "Flying", "name": "順風" },
-      { "rank": 4, "type": "Grass", "name": "終極吸取" }
+      { "rank": 4, "type": "Grass", "name": "終极吸取" }
     ]
   },
   {
@@ -4189,18 +4189,18 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Grass", "name": "飛葉快刀" },
       { "rank": 1, "type": "Ground", "name": "潑沙" },
-      { "rank": 2, "type": "Normal", "name": "劍舞" },
-      { "rank": 2, "type": "Normal", "name": "電光一閃" },
+      { "rank": 2, "type": "Normal", "name": "剑舞" },
+      { "rank": 2, "type": "Normal", "name": "電光一闪" },
       { "rank": 2, "type": "Grass", "name": "魔法葉" },
       { "rank": 2, "type": "Grass", "name": "光合作用" },
-      { "rank": 2, "type": "Grass", "name": "終極吸取" },
+      { "rank": 2, "type": "Grass", "name": "終极吸取" },
       { "rank": 2, "type": "Grass", "name": "草笛" },
       { "rank": 3, "type": "Normal", "name": "珍藏" },
       { "rank": 3, "type": "Fire", "name": "大晴天" },
       { "rank": 3, "type": "Grass", "name": "葉刃" },
       { "rank": 4, "type": "Normal", "name": "抓狂" },
       { "rank": 4, "type": "Normal", "name": "祈願" },
-      { "rank": 4, "type": "Grass", "name": "種子炸彈" }
+      { "rank": 4, "type": "Grass", "name": "种子炸彈" }
     ]
   },
   {
@@ -4236,12 +4236,12 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Ground", "name": "潑沙" },
       { "rank": 1, "type": "Ice", "name": "冰凍之風" },
-      { "rank": 2, "type": "Normal", "name": "電光一閃" },
+      { "rank": 2, "type": "Normal", "name": "電光一闪" },
       { "rank": 2, "type": "Dark", "name": "咬住" },
       { "rank": 2, "type": "Ice", "name": "冰凍牙" },
       { "rank": 2, "type": "Ice", "name": "冰礫" },
       { "rank": 2, "type": "Psychic", "name": "屏障" },
-      { "rank": 2, "type": "Psychic", "name": "鏡面反射" },
+      { "rank": 2, "type": "Psychic", "name": "镜面反射" },
       { "rank": 3, "type": "Normal", "name": "珍藏" },
       { "rank": 3, "type": "Ice", "name": "暴風雪" },
       { "rank": 3, "type": "Ice", "name": "冰雹" },
@@ -4253,7 +4253,7 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "472",
     "region": "sinnoh",
-    "name": "天蠍王",
+    "name": "天蝎王",
     "alias": "Gliscor",
     "type": [ "Ground", "Flying" ],
     "info": {
@@ -4279,7 +4279,7 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Normal", "name": "變硬" },
       { "rank": 0, "type": "Ground", "name": "潑沙" },
-      { "rank": 1, "type": "Normal", "name": "電光一閃" },
+      { "rank": 1, "type": "Normal", "name": "電光一闪" },
       { "rank": 1, "type": "Dark", "name": "拍落" },
       { "rank": 2, "type": "Bug", "name": "急速折返" },
       { "rank": 2, "type": "Bug", "name": "連斬" },
@@ -4290,14 +4290,14 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Flying", "name": "雜技" },
       { "rank": 2, "type": "Ice", "name": "冰凍牙" },
       { "rank": 2, "type": "Poison", "name": "毒擊" },
-      { "rank": 3, "type": "Normal", "name": "斷頭鉗" },
+      { "rank": 3, "type": "Normal", "name": "斷头鉗" },
       { "rank": 3, "type": "Normal", "name": "刺耳聲" },
-      { "rank": 3, "type": "Normal", "name": "劍舞" },
+      { "rank": 3, "type": "Normal", "name": "剑舞" },
       { "rank": 3, "type": "Bug", "name": "十字剪" },
       { "rank": 3, "type": "Fight", "name": "沖天拳" },
       { "rank": 4, "type": "Poison", "name": "十字毒刃" },
-      { "rank": 4, "type": "Psychic", "name": "高速移動" },
-      { "rank": 4, "type": "Steel", "name": "金屬爪" }
+      { "rank": 4, "type": "Psychic", "name": "高速移动" },
+      { "rank": 4, "type": "Steel", "name": "金属爪" }
     ]
   },
   {
@@ -4310,7 +4310,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/473.png",
       "height": "2.5",
       "weight": "873",
-      "category": "雙牙寶可夢",
+      "category": "双牙寶可夢",
       "text": "It was everywhere during the ice age but its population declined afterwards. This Pokémon uses strong tusks to remove the soil and snow and dig up roots and plants to eat. It has a bad temper."
     },
     "evolution": {
@@ -4327,12 +4327,12 @@ Array.prototype.push.apply(Pokedex, [
     },
     "ability": [ "遲鈍", "雪隱" ],
     "moves": [
-      { "rank": 0, "type": "Normal", "name": "氣味偵測" },
+      { "rank": 0, "type": "Normal", "name": "氣味侦測" },
       { "rank": 0, "type": "Flying", "name": "啄" },
       { "rank": 0, "type": "Ground", "name": "玩泥巴" },
       { "rank": 1, "type": "Normal", "name": "鬼面" },
-      { "rank": 1, "type": "Ground", "name": "擲泥" },
-      { "rank": 1, "type": "Ice", "name": "細雪" },
+      { "rank": 1, "type": "Ground", "name": "掷泥" },
+      { "rank": 1, "type": "Ice", "name": "细雪" },
       { "rank": 2, "type": "Normal", "name": "猛撞" },
       { "rank": 2, "type": "Normal", "name": "挺住" },
       { "rank": 2, "type": "Normal", "name": "二連擊" },
@@ -4352,14 +4352,14 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "474",
     "region": "sinnoh",
-    "name": "多邊獸Ｚ",
+    "name": "多边兽Ｚ",
     "alias": "Porygon-z",
     "type": [ "Normal" ],
     "info": {
       "image": "images/pokedex/474.png",
       "height": "0.9",
       "weight": "34",
-      "category": "虛擬寶可夢",
+      "category": "虚拟寶可夢",
       "text": "A software to explore another dimension was installed on Porygon. However, it began acting oddly due to glitches in the code. Since then, it has a fondness for videos of  Meowth and Skitty on the internet. "
     },
     "evolution": {
@@ -4376,26 +4376,26 @@ Array.prototype.push.apply(Pokedex, [
     },
     "ability": [ "適應力", "下載" ],
     "moves": [
-      { "rank": 0, "type": "Normal", "name": "紋理" },
+      { "rank": 0, "type": "Normal", "name": "纹理" },
       { "rank": 0, "type": "Normal", "name": "撞擊" },
-      { "rank": 1, "type": "Normal", "name": "紋理2" },
+      { "rank": 1, "type": "Normal", "name": "纹理2" },
       { "rank": 1, "type": "Dark", "name": "詭计" },
       { "rank": 1, "type": "Psychic", "name": "幻象光線" },
       { "rank": 2, "type": "Normal", "name": "三重攻擊" },
       { "rank": 2, "type": "Normal", "name": "自我再生" },
-      { "rank": 2, "type": "Normal", "name": "鎖定" },
+      { "rank": 2, "type": "Normal", "name": "锁定" },
       { "rank": 2, "type": "Bug", "name": "信號光束" },
       { "rank": 2, "type": "Dark", "name": "查封" },
       { "rank": 2, "type": "Electric", "name": "放電" },
       { "rank": 2, "type": "Electric", "name": "電磁飄浮" },
-      { "rank": 2, "type": "Psychic", "name": "戲法空間" },
-      { "rank": 2, "type": "Psychic", "name": "高速移動" },
+      { "rank": 2, "type": "Psychic", "name": "戏法空间" },
+      { "rank": 2, "type": "Psychic", "name": "高速移动" },
       { "rank": 3, "type": "Normal", "name": "破壞光線" },
       { "rank": 3, "type": "Electric", "name": "電磁炮" },
       { "rank": 3, "type": "Psychic", "name": "魔法反射" },
       { "rank": 4, "type": "Normal", "name": "分擔痛楚" },
       { "rank": 4, "type": "Electric", "name": "電網" },
-      { "rank": 4, "type": "Psychic", "name": "戲法" }
+      { "rank": 4, "type": "Psychic", "name": "戏法" }
     ]
   },
   {
@@ -4430,15 +4430,15 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Psychic", "name": "念力" },
       { "rank": 1, "type": "Normal", "name": "影子分身" },
       { "rank": 1, "type": "Fight", "name": "快速防守" },
-      { "rank": 1, "type": "Psychic", "name": "瞬間移​​動" },
+      { "rank": 1, "type": "Psychic", "name": "瞬间移​​动" },
       { "rank": 2, "type": "Normal", "name": "幫助" },
-      { "rank": 2, "type": "Normal", "name": "劍舞" },
-      { "rank": 2, "type": "Normal", "name": "劈開" },
-      { "rank": 2, "type": "Normal", "name": "點到为止" },
+      { "rank": 2, "type": "Normal", "name": "剑舞" },
+      { "rank": 2, "type": "Normal", "name": "劈开" },
+      { "rank": 2, "type": "Normal", "name": "点到为止" },
       { "rank": 2, "type": "Normal", "name": "佯攻" },
       { "rank": 2, "type": "Bug", "name": "連斬" },
       { "rank": 2, "type": "Psychic", "name": "精神利刃" },
-      { "rank": 2, "type": "Psychic", "name": "治愈波動" },
+      { "rank": 2, "type": "Psychic", "name": "治愈波动" },
       { "rank": 2, "type": "Rock", "name": "廣域防守" },
       { "rank": 3, "type": "Normal", "name": "守住" },
       { "rank": 3, "type": "Dark", "name": "暗襲要害" },
@@ -4481,15 +4481,15 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Psychic", "name": "念力" },
       { "rank": 1, "type": "Normal", "name": "影子分身" },
       { "rank": 1, "type": "Fight", "name": "快速防守" },
-      { "rank": 1, "type": "Psychic", "name": "瞬間移​​動" },
+      { "rank": 1, "type": "Psychic", "name": "瞬间移​​动" },
       { "rank": 2, "type": "Normal", "name": "幫助" },
-      { "rank": 2, "type": "Normal", "name": "劍舞" },
-      { "rank": 2, "type": "Normal", "name": "劈開" },
-      { "rank": 2, "type": "Normal", "name": "點到为止" },
+      { "rank": 2, "type": "Normal", "name": "剑舞" },
+      { "rank": 2, "type": "Normal", "name": "劈开" },
+      { "rank": 2, "type": "Normal", "name": "点到为止" },
       { "rank": 2, "type": "Normal", "name": "佯攻" },
       { "rank": 2, "type": "Bug", "name": "連斬" },
       { "rank": 2, "type": "Psychic", "name": "精神利刃" },
-      { "rank": 2, "type": "Psychic", "name": "治愈波動" },
+      { "rank": 2, "type": "Psychic", "name": "治愈波动" },
       { "rank": 2, "type": "Rock", "name": "廣域防守" },
       { "rank": 3, "type": "Normal", "name": "守住" },
       { "rank": 3, "type": "Dark", "name": "暗襲要害" },
@@ -4526,7 +4526,7 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 5 },
       "ins": { "value": 4, "max": 8 }
     },
-    "ability": [ "結實", "磁力" ],
+    "ability": [ "结实", "磁力" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "擋路" },
       { "rank": 0, "type": "Normal", "name": "撞擊" },
@@ -4544,20 +4544,20 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Rock", "name": "力量寶石" },
       { "rank": 2, "type": "Rock", "name": "岩石爆擊" },
       { "rank": 2, "type": "Rock", "name": "廣域防守" },
-      { "rank": 3, "type": "Normal", "name": "鎖定" },
+      { "rank": 3, "type": "Normal", "name": "锁定" },
       { "rank": 3, "type": "Electric", "name": "電磁炮" },
       { "rank": 3, "type": "Electric", "name": "放電" },
       { "rank": 3, "type": "Ground", "name": "大地之力" },
       { "rank": 3, "type": "Rock", "name": "尖石攻擊" },
       { "rank": 4, "type": "Normal", "name": "挺住" },
       { "rank": 4, "type": "Rock", "name": "原始之力" },
-      { "rank": 4, "type": "Steel", "name": "鐵頭" }
+      { "rank": 4, "type": "Steel", "name": "鐵头" }
     ]
   },
   {
     "id": "477",
     "region": "sinnoh",
-    "name": "黑夜魔靈",
+    "name": "黑夜魔灵",
     "alias": "Dusknoir",
     "type": [ "Ghost" ],
     "info": {
@@ -4582,7 +4582,7 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "壓迫感" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "瞪眼" },
-      { "rank": 0, "type": "Normal", "name": "綁緊" },
+      { "rank": 0, "type": "Normal", "name": "綁紧" },
       { "rank": 1, "type": "Normal", "name": "定身法" },
       { "rank": 1, "type": "Normal", "name": "識破" },
       { "rank": 1, "type": "Ghost", "name": "黑夜魔影" },
@@ -4592,14 +4592,14 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Fire", "name": "火焰拳" },
       { "rank": 2, "type": "Ghost", "name": "詛咒" },
       { "rank": 2, "type": "Ghost", "name": "影子偷襲" },
-      { "rank": 2, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 2, "type": "Ghost", "name": "驚吓" },
       { "rank": 2, "type": "Ghost", "name": "暗影拳" },
       { "rank": 2, "type": "Ghost", "name": "奇異之光" },
       { "rank": 2, "type": "Ice", "name": "冰凍拳" },
       { "rank": 3, "type": "Normal", "name": "黑色目光" },
       { "rank": 3, "type": "Dark", "name": "以牙還牙" },
       { "rank": 3, "type": "Ghost", "name": "暗影球" },
-      { "rank": 3, "type": "Ghost", "name": "禍不單行" },
+      { "rank": 3, "type": "Ghost", "name": "禍不单行" },
       { "rank": 3, "type": "Psychic", "name": "重力" },
       { "rank": 3, "type": "Psychic", "name": "預知未來" },
       { "rank": 4, "type": "Dark", "name": "突襲" },
@@ -4637,9 +4637,9 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "雪隱" ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "瞪眼" },
-      { "rank": 0, "type": "Ice", "name": "細雪" },
+      { "rank": 0, "type": "Ice", "name": "细雪" },
       { "rank": 1, "type": "Normal", "name": "影子分身" },
-      { "rank": 1, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 1, "type": "Ghost", "name": "驚吓" },
       { "rank": 1, "type": "Ice", "name": "冰礫" },
       { "rank": 2, "type": "Normal", "name": "誘惑" },
       { "rank": 2, "type": "Fairy", "name": "吸取之吻" },
@@ -4653,7 +4653,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Ice", "name": "冰雹" },
       { "rank": 4, "type": "Normal", "name": "氣象球" },
       { "rank": 4, "type": "Ghost", "name": "怨恨" },
-      { "rank": 4, "type": "Ice", "name": "極光幕" }
+      { "rank": 4, "type": "Ice", "name": "极光幕" }
     ]
   },
   {
@@ -4684,7 +4684,7 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "飄浮" ],
     "moves": [
       { "rank": 0, "type": "Electric", "name": "電磁波" },
-      { "rank": 0, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 0, "type": "Ghost", "name": "驚吓" },
       { "rank": 1, "type": "Normal", "name": "吵鬧" },
       { "rank": 1, "type": "Electric", "name": "電擊" },
       { "rank": 1, "type": "Ghost", "name": "奇異之光" },
@@ -4693,10 +4693,10 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Electric", "name": "電擊波" },
       { "rank": 2, "type": "Electric", "name": "電球" },
       { "rank": 2, "type": "Ghost", "name": "奇異之風" },
-      { "rank": 2, "type": "Psychic", "name": "戲法" },
+      { "rank": 2, "type": "Psychic", "name": "戏法" },
       { "rank": 3, "type": "Electric", "name": "放電" },
       { "rank": 3, "type": "Electric", "name": "充電" },
-      { "rank": 3, "type": "Ghost", "name": "禍不單行" }
+      { "rank": 3, "type": "Ghost", "name": "禍不单行" }
     ]
   },
   {
@@ -4727,7 +4727,7 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "飄浮" ],
     "moves": [
       { "rank": 0, "type": "Electric", "name": "電磁波" },
-      { "rank": 0, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 0, "type": "Ghost", "name": "驚吓" },
       { "rank": 1, "type": "Normal", "name": "吵鬧" },
       { "rank": 1, "type": "Electric", "name": "電擊" },
       { "rank": 1, "type": "Ghost", "name": "奇異之光" },
@@ -4736,11 +4736,11 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Electric", "name": "電擊波" },
       { "rank": 2, "type": "Electric", "name": "電球" },
       { "rank": 2, "type": "Ghost", "name": "奇異之風" },
-      { "rank": 2, "type": "Psychic", "name": "戲法" },
+      { "rank": 2, "type": "Psychic", "name": "戏法" },
       { "rank": 3, "type": "Electric", "name": "放電" },
       { "rank": 3, "type": "Electric", "name": "充電" },
-      { "rank": 3, "type": "Ghost", "name": "禍不單行" },
-      { "rank": 4, "type": "Fire", "name": "過熱" }
+      { "rank": 3, "type": "Ghost", "name": "禍不单行" },
+      { "rank": 4, "type": "Fire", "name": "过熱" }
     ]
   },
   {
@@ -4771,7 +4771,7 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "飄浮" ],
     "moves": [
       { "rank": 0, "type": "Electric", "name": "電磁波" },
-      { "rank": 0, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 0, "type": "Ghost", "name": "驚吓" },
       { "rank": 1, "type": "Normal", "name": "吵鬧" },
       { "rank": 1, "type": "Electric", "name": "電擊" },
       { "rank": 1, "type": "Ghost", "name": "奇異之光" },
@@ -4780,10 +4780,10 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Electric", "name": "電擊波" },
       { "rank": 2, "type": "Electric", "name": "電球" },
       { "rank": 2, "type": "Ghost", "name": "奇異之風" },
-      { "rank": 2, "type": "Psychic", "name": "戲法" },
+      { "rank": 2, "type": "Psychic", "name": "戏法" },
       { "rank": 3, "type": "Electric", "name": "放電" },
       { "rank": 3, "type": "Electric", "name": "充電" },
-      { "rank": 3, "type": "Ghost", "name": "禍不單行" },
+      { "rank": 3, "type": "Ghost", "name": "禍不单行" },
       { "rank": 4, "type": "Flying", "name": "空氣斬" }
     ]
   },
@@ -4815,7 +4815,7 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "飄浮" ],
     "moves": [
       { "rank": 0, "type": "Electric", "name": "電磁波" },
-      { "rank": 0, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 0, "type": "Ghost", "name": "驚吓" },
       { "rank": 1, "type": "Normal", "name": "吵鬧" },
       { "rank": 1, "type": "Electric", "name": "電擊" },
       { "rank": 1, "type": "Ghost", "name": "奇異之光" },
@@ -4824,17 +4824,17 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Electric", "name": "電擊波" },
       { "rank": 2, "type": "Electric", "name": "電球" },
       { "rank": 2, "type": "Ghost", "name": "奇異之風" },
-      { "rank": 2, "type": "Psychic", "name": "戲法" },
+      { "rank": 2, "type": "Psychic", "name": "戏法" },
       { "rank": 3, "type": "Electric", "name": "放電" },
       { "rank": 3, "type": "Electric", "name": "充電" },
-      { "rank": 3, "type": "Ghost", "name": "禍不單行" },
+      { "rank": 3, "type": "Ghost", "name": "禍不单行" },
       { "rank": 4, "type": "Grass", "name": "飛葉風暴" }
     ]
   },
   {
     "id": "479-Frost",
     "region": "sinnoh",
-    "name": "結冰洛托姆",
+    "name": "结冰洛托姆",
     "alias": "Rotom-frost",
     "type": [ "Electric", "Ice" ],
     "info": {
@@ -4859,7 +4859,7 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "飄浮" ],
     "moves": [
       { "rank": 0, "type": "Electric", "name": "電磁波" },
-      { "rank": 0, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 0, "type": "Ghost", "name": "驚吓" },
       { "rank": 1, "type": "Normal", "name": "吵鬧" },
       { "rank": 1, "type": "Electric", "name": "電擊" },
       { "rank": 1, "type": "Ghost", "name": "奇異之光" },
@@ -4868,10 +4868,10 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Electric", "name": "電擊波" },
       { "rank": 2, "type": "Electric", "name": "電球" },
       { "rank": 2, "type": "Ghost", "name": "奇異之風" },
-      { "rank": 2, "type": "Psychic", "name": "戲法" },
+      { "rank": 2, "type": "Psychic", "name": "戏法" },
       { "rank": 3, "type": "Electric", "name": "放電" },
       { "rank": 3, "type": "Electric", "name": "充電" },
-      { "rank": 3, "type": "Ghost", "name": "禍不單行" },
+      { "rank": 3, "type": "Ghost", "name": "禍不单行" },
       { "rank": 4, "type": "Ice", "name": "暴風雪" }
     ]
   },
@@ -4903,7 +4903,7 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "飄浮" ],
     "moves": [
       { "rank": 0, "type": "Electric", "name": "電磁波" },
-      { "rank": 0, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 0, "type": "Ghost", "name": "驚吓" },
       { "rank": 1, "type": "Normal", "name": "吵鬧" },
       { "rank": 1, "type": "Electric", "name": "電擊" },
       { "rank": 1, "type": "Ghost", "name": "奇異之光" },
@@ -4912,10 +4912,10 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Electric", "name": "電擊波" },
       { "rank": 2, "type": "Electric", "name": "電球" },
       { "rank": 2, "type": "Ghost", "name": "奇異之風" },
-      { "rank": 2, "type": "Psychic", "name": "戲法" },
+      { "rank": 2, "type": "Psychic", "name": "戏法" },
       { "rank": 3, "type": "Electric", "name": "放電" },
       { "rank": 3, "type": "Electric", "name": "充電" },
-      { "rank": 3, "type": "Ghost", "name": "禍不單行" },
+      { "rank": 3, "type": "Ghost", "name": "禍不单行" },
       { "rank": 4, "type": "Water", "name": "水砲" }
     ]
   },
@@ -4947,7 +4947,7 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "飄浮" ],
     "moves": [
       { "rank": 0, "type": "Electric", "name": "電磁波" },
-      { "rank": 0, "type": "Ghost", "name": "驚嚇" },
+      { "rank": 0, "type": "Ghost", "name": "驚吓" },
       { "rank": 1, "type": "Normal", "name": "吵鬧" },
       { "rank": 1, "type": "Electric", "name": "電擊" },
       { "rank": 1, "type": "Ghost", "name": "奇異之光" },
@@ -4956,10 +4956,10 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Electric", "name": "電擊波" },
       { "rank": 2, "type": "Electric", "name": "電球" },
       { "rank": 2, "type": "Ghost", "name": "奇異之風" },
-      { "rank": 2, "type": "Psychic", "name": "戲法" },
+      { "rank": 2, "type": "Psychic", "name": "戏法" },
       { "rank": 3, "type": "Electric", "name": "放電" },
       { "rank": 3, "type": "Electric", "name": "充電" },
-      { "rank": 3, "type": "Ghost", "name": "禍不單行" },
+      { "rank": 3, "type": "Ghost", "name": "禍不单行" },
       { "rank": 4, "type": "Psychic", "name": "光牆" }
     ]
   },
@@ -4973,7 +4973,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/480.png",
       "height": "0.3",
       "weight": "0.3",
-      "category": "無資料",
+      "category": "无资料",
       "text": "In the myths of Sinnoh they talk about three beings that came out from the same egg, the yellow one was the being of knowledge. Together they shaped the human race to be complete."
     },
     "evolution": {
@@ -4999,14 +4999,14 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Normal", "name": "抓狂" },
       { "rank": 5, "type": "Dark", "name": "欺詐" },
       { "rank": 5, "type": "Dark", "name": "臨別禮物" },
-      { "rank": 5, "type": "Psychic", "name": "奇妙空間" },
-      { "rank": 5, "type": "Psychic", "name": "戲法空間" },
+      { "rank": 5, "type": "Psychic", "name": "奇妙空间" },
+      { "rank": 5, "type": "Psychic", "name": "戏法空间" },
       { "rank": 5, "type": "Psychic", "name": "神通力" },
       { "rank": 5, "type": "Psychic", "name": "預知未來" },
       { "rank": 5, "type": "Psychic", "name": "封印" },
       { "rank": 5, "type": "Psychic", "name": "睡覺" },
-      { "rank": 5, "type": "Psychic", "name": "魔法空間" },
-      { "rank": 5, "type": "Psychic", "name": "瞬間失憶" },
+      { "rank": 5, "type": "Psychic", "name": "魔法空间" },
+      { "rank": 5, "type": "Psychic", "name": "瞬间失憶" },
       { "rank": 5, "type": "Psychic", "name": "念力" }
     ],
     "isLegend": true
@@ -5021,7 +5021,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/481.png",
       "height": "0.3",
       "weight": "0.3",
-      "category": "無資料",
+      "category": "无资料",
       "text": "In the myths of Sinnoh they talk about three beings that came out from the same egg, the pink one was the being of emotion.Together they shaped the human race to be complete."
     },
     "evolution": {
@@ -5043,12 +5043,12 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Normal", "name": "自然之恩" },
       { "rank": 5, "type": "Normal", "name": "自我暗示" },
       { "rank": 5, "type": "Normal", "name": "幫助" },
-      { "rank": 5, "type": "Normal", "name": "幸運咒語" },
+      { "rank": 5, "type": "Normal", "name": "幸运咒语" },
       { "rank": 5, "type": "Normal", "name": "守住" },
       { "rank": 5, "type": "Normal", "name": "仿效" },
       { "rank": 5, "type": "Dark", "name": "拍落" },
-      { "rank": 5, "type": "Fairy", "name": "撒嬌" },
-      { "rank": 5, "type": "Psychic", "name": "戲法" },
+      { "rank": 5, "type": "Fairy", "name": "撒娇" },
+      { "rank": 5, "type": "Psychic", "name": "戏法" },
       { "rank": 5, "type": "Psychic", "name": "扮演" },
       { "rank": 5, "type": "Psychic", "name": "神通力" },
       { "rank": 5, "type": "Psychic", "name": "預知未來" },
@@ -5069,7 +5069,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/482.png",
       "height": "0.3",
       "weight": "0.3",
-      "category": "無資料",
+      "category": "无资料",
       "text": "In the myths of Sinnoh they talk about three beings that came out from the same egg, the blue one was the being of willpower.Together they shaped the human race to be complete."
     },
     "evolution": {
@@ -5089,14 +5089,14 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Normal", "name": "覺醒力量" },
       { "rank": 5, "type": "Normal", "name": "高速星星" },
       { "rank": 5, "type": "Normal", "name": "自然之恩" },
-      { "rank": 5, "type": "Normal", "name": "劍舞" },
+      { "rank": 5, "type": "Normal", "name": "剑舞" },
       { "rank": 5, "type": "Normal", "name": "大爆炸" },
       { "rank": 5, "type": "Normal", "name": "吵鬧" },
       { "rank": 5, "type": "Normal", "name": "抓狂" },
       { "rank": 5, "type": "Normal", "name": "珍藏" },
       { "rank": 5, "type": "Dark", "name": "詭计" },
       { "rank": 5, "type": "Fight", "name": "看穿" },
-      { "rank": 5, "type": "Psychic", "name": "意念頭鎚" },
+      { "rank": 5, "type": "Psychic", "name": "意念头鎚" },
       { "rank": 5, "type": "Psychic", "name": "神通力" },
       { "rank": 5, "type": "Psychic", "name": "預知未來" },
       { "rank": 5, "type": "Psychic", "name": "封印" },
@@ -5117,7 +5117,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/483.png",
       "height": "5.4",
       "weight": "683",
-      "category": "無資料",
+      "category": "无资料",
       "text": "In some religions there is a being called “The God of Time” whose first roar brought future, present and past."
     },
     "evolution": {
@@ -5132,26 +5132,26 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 8, "max": 8 },
       "ins": { "value": 6, "max": 6 }
     },
-    "ability": [ "壓迫感", "心靈感應" ],
+    "ability": [ "壓迫感", "心灵感應" ],
     "moves": [
       { "rank": 5, "type": "Normal", "name": "覺醒力量" },
       { "rank": 5, "type": "Normal", "name": "鬼面" },
       { "rank": 5, "type": "Normal", "name": "自我暗示" },
-      { "rank": 5, "type": "Normal", "name": "劈開" },
-      { "rank": 5, "type": "Dragon", "name": "時光咆哮" },
+      { "rank": 5, "type": "Normal", "name": "劈开" },
+      { "rank": 5, "type": "Dragon", "name": "时光咆哮" },
       { "rank": 5, "type": "Dragon", "name": "龍爪" },
-      { "rank": 5, "type": "Dragon", "name": "龍之波動" },
+      { "rank": 5, "type": "Dragon", "name": "龍之波动" },
       { "rank": 5, "type": "Dragon", "name": "龍息" },
       { "rank": 5, "type": "Fight", "name": "波導彈" },
       { "rank": 5, "type": "Ground", "name": "大地之力" },
-      { "rank": 5, "type": "Psychic", "name": "戲法空間" },
+      { "rank": 5, "type": "Psychic", "name": "戏法空间" },
       { "rank": 5, "type": "Rock", "name": "力量寶石" },
       { "rank": 5, "type": "Rock", "name": "原始之力" },
       { "rank": 5, "type": "Steel", "name": "鐵壁" },
       { "rank": 5, "type": "Steel", "name": "加農光炮" },
       { "rank": 5, "type": "Steel", "name": "鐵尾" },
-      { "rank": 5, "type": "Steel", "name": "金屬爆炸" },
-      { "rank": 5, "type": "Steel", "name": "金屬爪" }
+      { "rank": 5, "type": "Steel", "name": "金属爆炸" },
+      { "rank": 5, "type": "Steel", "name": "金属爪" }
     ],
     "isLegend": true
   },
@@ -5165,7 +5165,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/484.png",
       "height": "4.2",
       "weight": "336",
-      "category": "無資料",
+      "category": "无资料",
       "text": "A fantasy book describes a place where space bends in impossible ways and the master of that site was a Pokémon with a similar appearance."
     },
     "evolution": {
@@ -5180,16 +5180,16 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 8, "max": 8 },
       "ins": { "value": 7, "max": 7 }
     },
-    "ability": [ "壓迫感", "心靈感應" ],
+    "ability": [ "壓迫感", "心灵感應" ],
     "moves": [
       { "rank": 5, "type": "Normal", "name": "覺醒力量" },
       { "rank": 5, "type": "Normal", "name": "鬼面" },
       { "rank": 5, "type": "Normal", "name": "自我暗示" },
       { "rank": 5, "type": "Normal", "name": "巨聲" },
-      { "rank": 5, "type": "Normal", "name": "劈開" },
+      { "rank": 5, "type": "Normal", "name": "劈开" },
       { "rank": 5, "type": "Dragon", "name": "亞空裂斬" },
       { "rank": 5, "type": "Dragon", "name": "龍爪" },
-      { "rank": 5, "type": "Dragon", "name": "龍之波動" },
+      { "rank": 5, "type": "Dragon", "name": "龍之波动" },
       { "rank": 5, "type": "Dragon", "name": "龍息" },
       { "rank": 5, "type": "Fight", "name": "波導彈" },
       { "rank": 5, "type": "Ground", "name": "大地之力" },
@@ -5199,7 +5199,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Water", "name": "水流裂破" },
       { "rank": 5, "type": "Water", "name": "水砲" },
       { "rank": 5, "type": "Water", "name": "水流尾" },
-      { "rank": 5, "type": "Water", "name": "水之波動" }
+      { "rank": 5, "type": "Water", "name": "水之波动" }
     ],
     "isLegend": true
   },
@@ -5213,7 +5213,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/485.png",
       "height": "1.7",
       "weight": "430",
-      "category": "無資料",
+      "category": "无资料",
       "text": "An old painting showed a similar Pokémon standing atop of an erupting Volcano."
     },
     "evolution": {
@@ -5234,7 +5234,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Normal", "name": "鬼面" },
       { "rank": 5, "type": "Normal", "name": "瞪眼" },
       { "rank": 5, "type": "Dark", "name": "咬碎" },
-      { "rank": 5, "type": "Dragon", "name": "龍之波動" },
+      { "rank": 5, "type": "Dragon", "name": "龍之波动" },
       { "rank": 5, "type": "Fire", "name": "火焰旋渦" },
       { "rank": 5, "type": "Fire", "name": "大晴天" },
       { "rank": 5, "type": "Fire", "name": "熔岩風暴" },
@@ -5246,8 +5246,8 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Rock", "name": "尖石攻擊" },
       { "rank": 5, "type": "Rock", "name": "原始之力" },
       { "rank": 5, "type": "Steel", "name": "鐵壁" },
-      { "rank": 5, "type": "Steel", "name": "金屬音" },
-      { "rank": 5, "type": "Steel", "name": "鐵頭" }
+      { "rank": 5, "type": "Steel", "name": "金属音" },
+      { "rank": 5, "type": "Steel", "name": "鐵头" }
     ],
     "isLegend": true
   },
@@ -5261,7 +5261,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/486.png",
       "height": "3.7",
       "weight": "1t",
-      "category": "無資料",
+      "category": "无资料",
       "text": "A very old legend tells about the King of Giants, who could crush a mountain with its grip and mold living titans from the rubble."
     },
     "evolution": {
@@ -5276,11 +5276,11 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 5, "max": 5 },
       "ins": { "value": 6, "max": 6 }
     },
-    "ability": [ "慢啟動" ],
+    "ability": [ "慢啟动" ],
     "moves": [
       { "rank": 5, "type": "Normal", "name": "自然之力" },
       { "rank": 5, "type": "Normal", "name": "怪力" },
-      { "rank": 5, "type": "Normal", "name": "終極衝擊" },
+      { "rank": 5, "type": "Normal", "name": "終极衝擊" },
       { "rank": 5, "type": "Normal", "name": "覺醒力量" },
       { "rank": 5, "type": "Normal", "name": "迷昏拳" },
       { "rank": 5, "type": "Normal", "name": "捏碎" },
@@ -5295,7 +5295,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Fire", "name": "火焰拳" },
       { "rank": 5, "type": "Ghost", "name": "奇異之光" },
       { "rank": 5, "type": "Ice", "name": "冰凍拳" },
-      { "rank": 5, "type": "Psychic", "name": "意念頭鎚" },
+      { "rank": 5, "type": "Psychic", "name": "意念头鎚" },
       { "rank": 5, "type": "Rock", "name": "廣域防守" },
       { "rank": 5, "type": "Steel", "name": "重磅衝撞" }
     ],
@@ -5311,7 +5311,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/487.png",
       "height": "4.5",
       "weight": "750",
-      "category": "無資料",
+      "category": "无资料",
       "text": "劇情解析"
     },
     "evolution": {
@@ -5326,13 +5326,13 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 6, "max": 6 },
       "ins": { "value": 7, "max": 7 }
     },
-    "ability": [ "壓迫感", "心靈感應" ],
+    "ability": [ "壓迫感", "心灵感應" ],
     "moves": [
       { "rank": 5, "type": "Normal", "name": "覺醒力量" },
       { "rank": 5, "type": "Normal", "name": "鬼面" },
       { "rank": 5, "type": "Normal", "name": "分擔痛楚" },
       { "rank": 5, "type": "Normal", "name": "自我暗示" },
-      { "rank": 5, "type": "Normal", "name": "劈開" },
+      { "rank": 5, "type": "Normal", "name": "劈开" },
       { "rank": 5, "type": "Dragon", "name": "逆鱗" },
       { "rank": 5, "type": "Dragon", "name": "龍爪" },
       { "rank": 5, "type": "Dragon", "name": "流星群" },
@@ -5341,7 +5341,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Ghost", "name": "怨恨" },
       { "rank": 5, "type": "Ghost", "name": "暗影潛襲" },
       { "rank": 5, "type": "Ghost", "name": "影子偷襲" },
-      { "rank": 5, "type": "Ghost", "name": "禍不單行" },
+      { "rank": 5, "type": "Ghost", "name": "禍不单行" },
       { "rank": 5, "type": "Ghost", "name": "暗影爪" },
       { "rank": 5, "type": "Ghost", "name": "同命" },
       { "rank": 5, "type": "Ghost", "name": "奇異之風" },
@@ -5361,7 +5361,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/487-Origin.png",
       "height": "1.6",
       "weight": "56",
-      "category": "無資料",
+      "category": "无资料",
       "text": "劇情解析"
     },
     "evolution": {
@@ -5382,7 +5382,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Normal", "name": "鬼面" },
       { "rank": 5, "type": "Normal", "name": "分擔痛楚" },
       { "rank": 5, "type": "Normal", "name": "自我暗示" },
-      { "rank": 5, "type": "Normal", "name": "劈開" },
+      { "rank": 5, "type": "Normal", "name": "劈开" },
       { "rank": 5, "type": "Dragon", "name": "逆鱗" },
       { "rank": 5, "type": "Dragon", "name": "龍爪" },
       { "rank": 5, "type": "Dragon", "name": "流星群" },
@@ -5391,7 +5391,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Ghost", "name": "怨恨" },
       { "rank": 5, "type": "Ghost", "name": "暗影潛襲" },
       { "rank": 5, "type": "Ghost", "name": "影子偷襲" },
-      { "rank": 5, "type": "Ghost", "name": "禍不單行" },
+      { "rank": 5, "type": "Ghost", "name": "禍不单行" },
       { "rank": 5, "type": "Ghost", "name": "暗影爪" },
       { "rank": 5, "type": "Ghost", "name": "同命" },
       { "rank": 5, "type": "Ghost", "name": "奇異之風" },
@@ -5411,7 +5411,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/488.png",
       "height": "1.5",
       "weight": "85",
-      "category": "無資料",
+      "category": "无资料",
       "text": "The embodiment of dreams comes  to life during the crescent moon nights. You will be blessed with peaceful bedtimes If you keep one of its feathers. Or so they say."
     },
     "evolution": {
@@ -5431,17 +5431,17 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Normal", "name": "影子分身" },
       { "rank": 5, "type": "Normal", "name": "守住" },
       { "rank": 5, "type": "Normal", "name": "誘惑" },
-      { "rank": 5, "type": "Normal", "name": "劈開" },
+      { "rank": 5, "type": "Normal", "name": "劈开" },
       { "rank": 5, "type": "Normal", "name": "神秘守護" },
       { "rank": 5, "type": "Fairy", "name": "月光" },
       { "rank": 5, "type": "Fairy", "name": "月亮之力" },
       { "rank": 5, "type": "Ice", "name": "白霧" },
-      { "rank": 5, "type": "Ice", "name": "極光束" },
+      { "rank": 5, "type": "Ice", "name": "极光束" },
       { "rank": 5, "type": "Psychic", "name": "反射壁" },
       { "rank": 5, "type": "Psychic", "name": "魔法反射" },
       { "rank": 5, "type": "Psychic", "name": "冥想" },
       { "rank": 5, "type": "Psychic", "name": "睡覺" },
-      { "rank": 5, "type": "Psychic", "name": "精神強念" },
+      { "rank": 5, "type": "Psychic", "name": "精神强念" },
       { "rank": 5, "type": "Psychic", "name": "預知未來" },
       { "rank": 5, "type": "Psychic", "name": "精神转移" },
       { "rank": 5, "type": "Psychic", "name": "光牆" },
@@ -5461,7 +5461,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/489.png",
       "height": "0.4",
       "weight": "3",
-      "category": "無資料",
+      "category": "无资料",
       "text": "There have been sightings of small groups of similar Pokémon but its existance has never been confirmed. It is said to be the offspring of Manaphy."
     },
     "evolution": {
@@ -5476,20 +5476,20 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 2, "max": 5 },
       "ins": { "value": 2, "max": 5 }
     },
-    "ability": [ "濕潤之軀" ],
+    "ability": [ "湿潤之軀" ],
     "moves": [
       { "rank": 5, "type": "Normal", "name": "治愈鈴聲" },
       { "rank": 5, "type": "Normal", "name": "超音波" },
       { "rank": 5, "type": "Normal", "name": "珍藏" },
       { "rank": 5, "type": "Normal", "name": "幫助" },
-      { "rank": 5, "type": "Fairy", "name": "撒嬌" },
+      { "rank": 5, "type": "Fairy", "name": "撒娇" },
       { "rank": 5, "type": "Poison", "name": "溶化" },
       { "rank": 5, "type": "Water", "name": "衝浪" },
       { "rank": 5, "type": "Water", "name": "潛水" },
-      { "rank": 5, "type": "Water", "name": "水之波動" },
+      { "rank": 5, "type": "Water", "name": "水之波动" },
       { "rank": 5, "type": "Water", "name": "玩水" },
       { "rank": 5, "type": "Water", "name": "求雨" },
-      { "rank": 5, "type": "Water", "name": "水流環" },
+      { "rank": 5, "type": "Water", "name": "水流环" },
       { "rank": 5, "type": "Water", "name": "潮旋" },
       { "rank": 5, "type": "Water", "name": "泡沫光線" },
       { "rank": 5, "type": "Water", "name": "泡沫" }
@@ -5506,7 +5506,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/490.png",
       "height": "0.3",
       "weight": "1",
-      "category": "無資料",
+      "category": "无资料",
       "text": "It is said that after the war for land and sea was over, a tiny Pokémon  was born from the bottom of the ocean to bond with all the creatures as a sign of peace."
     },
     "evolution": {
@@ -5521,24 +5521,24 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 6, "max": 6 },
       "ins": { "value": 6, "max": 6 }
     },
-    "ability": [ "濕潤之軀" ],
+    "ability": [ "湿潤之軀" ],
     "moves": [
       { "rank": 5, "type": "Normal", "name": "超音波" },
       { "rank": 5, "type": "Bug", "name": "螢火" },
-      { "rank": 5, "type": "Fairy", "name": "撒嬌" },
+      { "rank": 5, "type": "Fairy", "name": "撒娇" },
       { "rank": 5, "type": "Flying", "name": "彈跳" },
       { "rank": 5, "type": "Ice", "name": "冰凍之風" },
       { "rank": 5, "type": "Poison", "name": "溶化" },
-      { "rank": 5, "type": "Psychic", "name": "心靈互換" },
+      { "rank": 5, "type": "Psychic", "name": "心灵互換" },
       { "rank": 5, "type": "Water", "name": "求雨" },
-      { "rank": 5, "type": "Water", "name": "水流環" },
+      { "rank": 5, "type": "Water", "name": "水流环" },
       { "rank": 5, "type": "Water", "name": "潮旋" },
       { "rank": 5, "type": "Water", "name": "泡沫光線" },
       { "rank": 5, "type": "Water", "name": "泡沫" },
       { "rank": 5, "type": "Water", "name": "水流裂破" },
       { "rank": 5, "type": "Water", "name": "衝浪" },
       { "rank": 5, "type": "Water", "name": "潛水" },
-      { "rank": 5, "type": "Water", "name": "水之波動" },
+      { "rank": 5, "type": "Water", "name": "水之波动" },
       { "rank": 5, "type": "Water", "name": "玩水" }
     ],
     "isLegend": true
@@ -5546,14 +5546,14 @@ Array.prototype.push.apply(Pokedex, [
   {
     "id": "491",
     "region": "sinnoh",
-    "name": "達克萊伊",
+    "name": "达克萊伊",
     "alias": "Darkrai",
     "type": [ "Dark" ],
     "info": {
       "image": "images/pokedex/491.png",
       "height": "1.5",
       "weight": "50",
-      "category": "無資料",
+      "category": "无资料",
       "text": "All around the world, young children  have depicted a similar figure in their drawings. They call it “The Boogeyman”. People say it will make all your nightmares come true."
     },
     "evolution": {
@@ -5572,19 +5572,19 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 5, "type": "Normal", "name": "定身法" },
       { "rank": 5, "type": "Normal", "name": "影子分身" },
-      { "rank": 5, "type": "Normal", "name": "電光一閃" },
-      { "rank": 5, "type": "Dark", "name": "惡之波動" },
+      { "rank": 5, "type": "Normal", "name": "電光一闪" },
+      { "rank": 5, "type": "Dark", "name": "恶之波动" },
       { "rank": 5, "type": "Dark", "name": "詭计" },
       { "rank": 5, "type": "Dark", "name": "欺詐" },
-      { "rank": 5, "type": "Dark", "name": "無理取鬧" },
+      { "rank": 5, "type": "Dark", "name": "无理取鬧" },
       { "rank": 5, "type": "Dark", "name": "暗黑洞" },
       { "rank": 5, "type": "Dark", "name": "出奇一擊" },
       { "rank": 5, "type": "Ghost", "name": "怨恨" },
-      { "rank": 5, "type": "Ghost", "name": "惡夢" },
+      { "rank": 5, "type": "Ghost", "name": "恶夢" },
       { "rank": 5, "type": "Ghost", "name": "奇異之風" },
       { "rank": 5, "type": "Ice", "name": "黑霧" },
-      { "rank": 5, "type": "Psychic", "name": "奇妙空間" },
-      { "rank": 5, "type": "Psychic", "name": "催眠術" },
+      { "rank": 5, "type": "Psychic", "name": "奇妙空间" },
+      { "rank": 5, "type": "Psychic", "name": "催眠术" },
       { "rank": 5, "type": "Psychic", "name": "食夢" }
     ],
     "isLegend": true
@@ -5599,7 +5599,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/492.png",
       "height": "0.8",
       "weight": "2",
-      "category": "無資料",
+      "category": "无资料",
       "text": "There are old traces of gigantic trees that once grew all over the earth. They were called the “Trees of Life” and their flowers granted the power of flight to the kind-hearted, or so the legend says."
     },
     "evolution": {
@@ -5619,18 +5619,18 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Normal", "name": "蠻幹" },
       { "rank": 5, "type": "Normal", "name": "自然之恩" },
       { "rank": 5, "type": "Normal", "name": "甜甜香氣" },
-      { "rank": 5, "type": "Normal", "name": "生長" },
+      { "rank": 5, "type": "Normal", "name": "生长" },
       { "rank": 5, "type": "Fairy", "name": "天使之吻" },
-      { "rank": 5, "type": "Grass", "name": "種子閃光" },
+      { "rank": 5, "type": "Grass", "name": "种子闪光" },
       { "rank": 5, "type": "Grass", "name": "芳香治療" },
       { "rank": 5, "type": "Grass", "name": "光合作用" },
       { "rank": 5, "type": "Grass", "name": "魔法葉" },
-      { "rank": 5, "type": "Grass", "name": "終極吸取" },
+      { "rank": 5, "type": "Grass", "name": "終极吸取" },
       { "rank": 5, "type": "Grass", "name": "能量球" },
-      { "rank": 5, "type": "Grass", "name": "煩惱種子" },
-      { "rank": 5, "type": "Grass", "name": "寄生種子" },
+      { "rank": 5, "type": "Grass", "name": "煩惱种子" },
+      { "rank": 5, "type": "Grass", "name": "寄生种子" },
       { "rank": 5, "type": "Ground", "name": "大地之力" },
-      { "rank": 5, "type": "Psychic", "name": "意念頭鎚" },
+      { "rank": 5, "type": "Psychic", "name": "意念头鎚" },
       { "rank": 5, "type": "Psychic", "name": "治愈之願" }
     ],
     "isLegend": true
@@ -5645,7 +5645,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/492-Sky.png",
       "height": "1.6",
       "weight": "56",
-      "category": "無資料",
+      "category": "无资料",
       "text": "There are old traces of gigantic trees that once grew all over the earth. They were called the “Trees of Life” and their flowers granted the power of flight to the kind-hearted, or so the legend says."
     },
     "evolution": {
@@ -5665,19 +5665,19 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Normal", "name": "自然之恩" },
       { "rank": 5, "type": "Normal", "name": "蠻幹" },
       { "rank": 5, "type": "Normal", "name": "甜甜香氣" },
-      { "rank": 5, "type": "Normal", "name": "生長" },
+      { "rank": 5, "type": "Normal", "name": "生长" },
       { "rank": 5, "type": "Fairy", "name": "天使之吻" },
       { "rank": 5, "type": "Flying", "name": "順風" },
       { "rank": 5, "type": "Flying", "name": "空氣斬" },
-      { "rank": 5, "type": "Grass", "name": "種子閃光" },
+      { "rank": 5, "type": "Grass", "name": "种子闪光" },
       { "rank": 5, "type": "Grass", "name": "光合作用" },
       { "rank": 5, "type": "Grass", "name": "魔法葉" },
-      { "rank": 5, "type": "Grass", "name": "終極吸取" },
+      { "rank": 5, "type": "Grass", "name": "終极吸取" },
       { "rank": 5, "type": "Grass", "name": "飛葉風暴" },
       { "rank": 5, "type": "Grass", "name": "能量球" },
-      { "rank": 5, "type": "Grass", "name": "煩惱種子" },
-      { "rank": 5, "type": "Grass", "name": "寄生種子" },
-      { "rank": 5, "type": "Psychic", "name": "意念頭鎚" }
+      { "rank": 5, "type": "Grass", "name": "煩惱种子" },
+      { "rank": 5, "type": "Grass", "name": "寄生种子" },
+      { "rank": 5, "type": "Psychic", "name": "意念头鎚" }
     ],
     "isLegend": true
   },
@@ -5691,7 +5691,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/493.png",
       "height": "3.2",
       "weight": "320",
-      "category": "無資料",
+      "category": "无资料",
       "text": "劇情解析"
     },
     "evolution": {
@@ -5706,7 +5706,7 @@ Array.prototype.push.apply(Pokedex, [
       "spe": { "value": 12, "max": 12 },
       "ins": { "value": 12, "max": 12 }
     },
-    "ability": [ "多屬性" ],
+    "ability": [ "多属性" ],
     "moves": [
       { "rank": 5, "type": "Normal", "name": "制裁光礫" },
       { "rank": 5, "type": "Normal", "name": "破壞光線" },
@@ -5716,8 +5716,8 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Normal", "name": "煥然一新" },
       { "rank": 5, "type": "Normal", "name": "巨聲" },
       { "rank": 5, "type": "Normal", "name": "自然之恩" },
-      { "rank": 5, "type": "Bug", "name": "死纏爛打" },
-      { "rank": 5, "type": "Dark", "name": "懲罰" },
+      { "rank": 5, "type": "Bug", "name": "死缠烂打" },
+      { "rank": 5, "type": "Dark", "name": "惩罚" },
       { "rank": 5, "type": "Dragon", "name": "流星群" },
       { "rank": 5, "type": "Electric", "name": "電磁炮" },
       { "rank": 5, "type": "Fairy", "name": "破滅之光" },
@@ -5725,17 +5725,17 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Fight", "name": "地球上投" },
       { "rank": 5, "type": "Fire", "name": "煉獄" },
       { "rank": 5, "type": "Flying", "name": "暴風" },
-      { "rank": 5, "type": "Ghost", "name": "潛靈奇襲" },
-      { "rank": 5, "type": "Grass", "name": "瘋狂植物" },
+      { "rank": 5, "type": "Ghost", "name": "潛灵奇襲" },
+      { "rank": 5, "type": "Grass", "name": "疯狂植物" },
       { "rank": 5, "type": "Ground", "name": "大地之力" },
-      { "rank": 5, "type": "Ice", "name": "絕對零度" },
+      { "rank": 5, "type": "Ice", "name": "絕对零度" },
       { "rank": 5, "type": "Poison", "name": "污泥波" },
       { "rank": 5, "type": "Psychic", "name": "預知未來" },
       { "rank": 5, "type": "Psychic", "name": "宇宙力量" },
       { "rank": 5, "type": "Psychic", "name": "重力" },
       { "rank": 5, "type": "Rock", "name": "原始之力" },
-      { "rank": 5, "type": "Steel", "name": "流星閃衝" },
-      { "rank": 5, "type": "Water", "name": "根源波動" }
+      { "rank": 5, "type": "Steel", "name": "流星闪衝" },
+      { "rank": 5, "type": "Water", "name": "根源波动" }
     ],
     "isLegend": true
   }

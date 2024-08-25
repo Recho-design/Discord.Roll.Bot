@@ -13,7 +13,7 @@ const gameType = function () {
 /*
  * 输入方式，
 攻方  VS 防方
-攻 (招式名，屬性)  VS  防 (POKEMON名，POKEMON NO，屬性1，屬性2)
+攻 (招式名，属性)  VS  防 (POKEMON名，POKEMON NO，属性1，属性2)
 用name, alias XX|YY  得出type 
 如用前者 输出相克及 accuracy ,damage ,effect,desc
 ----
@@ -32,13 +32,13 @@ const prefixs = function () {
 }
 const getHelpMessage = function () {
     return `【PokeRole】.poke
-這是一个Pokemon的資料庫，
-进行小精靈，招式的查詢以及 對戰的屬性相克結果，
+这是一个Pokemon的资料庫，
+进行小精灵，招式的查詢以及 对戰的属性相克结果，
 .poke 可以查看更多指令
-.poke mon (名稱/編號)  可以查看小精靈的資料
-.poke mon (名稱/編號) (--d)  可以查看小精靈的招式表
-.poke move (招式名稱)  可以查看招式的資料
-.poke vs 攻方(招式名稱/屬性) 防方(小精靈名稱/編號/屬性1,2)  可以进行對戰模擬
+.poke mon (名稱/編號)  可以查看小精灵的资料
+.poke mon (名稱/編號) (--d)  可以查看小精灵的招式表
+.poke move (招式名稱)  可以查看招式的资料
+.poke vs 攻方(招式名稱/属性) 防方(小精灵名稱/編號/属性1,2)  可以进行对戰模拟
 --------------------
 例子：
 .poke mon 超夢
@@ -48,9 +48,9 @@ const getHelpMessage = function () {
 .poke vs 火 100  
 .poke vs 火 超能力 水
 --------------------
-資料來源：
+资料來源：
 https://hazmole.github.io/PokeRole/
-及 免費開源TRPG中文化團隊
+及 免費开源TRPG中文化团隊
 `
 }
 const initialize = function () {
@@ -149,18 +149,18 @@ class Pokemon {
         try {
             rply += `#${pokemon.id} 【${pokemon.name}】 ${pokemon.alias} ${Pokemon.findTypeByEng(pokemon.type)} 
 ${pokemon.info.category} ${pokemon.info.height}m / ${pokemon.info.weight}kg
-建議等級：${pokemon.rank}  基礎HP：${pokemon.baseHP}  特性：${pokemon.ability} 
+建議等级：${pokemon.rank}  基礎HP：${pokemon.baseHP}  特性：${pokemon.ability} 
 力量 ${displayValue(pokemon.attr.str.value, pokemon.attr.str.max)}
-靈巧 ${displayValue(pokemon.attr.dex.value, pokemon.attr.dex.max)}
+灵巧 ${displayValue(pokemon.attr.dex.value, pokemon.attr.dex.max)}
 活力 ${displayValue(pokemon.attr.vit.value, pokemon.attr.vit.max)}
 特殊 ${displayValue(pokemon.attr.spe.value, pokemon.attr.spe.max)}
 洞察 ${displayValue(pokemon.attr.ins.value, pokemon.attr.ins.max)}
-${(pokemon.evolution.stage) ? `進化階段：${pokemon.evolution.stage}` : ''} ${(pokemon.evolution.time) ? `進化時間：${pokemon.evolution.time}` : ''}
+${(pokemon.evolution.stage) ? `進化階段：${pokemon.evolution.stage}` : ''} ${(pokemon.evolution.time) ? `進化时间：${pokemon.evolution.time}` : ''}
 `
             if (detail) {
                 rply += '------招式------\n'
                 for (let index = 0; index < pokemon.moves.length; index++) {
-                    rply += `等級：${pokemon.moves[index].rank} 【${pokemon.moves[index].name}】 ${Pokemon.findTypeByEng([pokemon.moves[index].type])}
+                    rply += `等级：${pokemon.moves[index].rank} 【${pokemon.moves[index].name}】 ${Pokemon.findTypeByEng([pokemon.moves[index].type])}
                     `
                 }
             }
@@ -175,12 +175,12 @@ ${(pokemon.evolution.stage) ? `進化階段：${pokemon.evolution.stage}` : ''} 
         try {
             let result = this.fuse.search(name, { limit: 12 });
             let rply = '';
-            if (result.length === 0) return '沒有找到相關資料';
+            if (result.length === 0) return '没有找到相关资料';
             if (result.length <= 2 || result[0].item.name === name) {
                 rply = Pokemon.showPokemon(result[0].item, detail);
             }
             else {
-                rply += '找到太多相關資料，請更精確的查詢\n\n';
+                rply += '找到太多相关资料，请更精確的查詢\n\n';
                 for (let i = 0; i < result.length; i++) {
                     rply += `${result[i].item.name}\n`;
                 }
@@ -189,7 +189,7 @@ ${(pokemon.evolution.stage) ? `進化階段：${pokemon.evolution.stage}` : ''} 
         }
         catch (error) {
             console.error('pokemon error #166' + error);
-            return '發生錯誤';
+            return '发生错误';
         }
     }
 }
@@ -256,7 +256,7 @@ class Moves {
         try {
             let result = this.fuse.search(name, { limit: 12 });
             let rply = '';
-            if (result.length === 0) return '沒有找到相關資料';
+            if (result.length === 0) return '没有找到相关资料';
             if (result[0].item.name === name) {
                 rply = Moves.showMove(result[0].item);
                 return rply;
@@ -268,7 +268,7 @@ class Moves {
                 }
             }
             else {
-                rply += '找到太多相關資料，請更精確的查詢\n\n';
+                rply += '找到太多相关资料，请更精確的查詢\n\n';
                 for (let i = 0; i < result.length; i++) {
                     rply += `${result[i].item.name}\n`;
                 }
@@ -277,21 +277,21 @@ class Moves {
         }
         catch (error) {
             console.error('pokemon error #241', error);
-            return '發生錯誤';
+            return '发生错误';
         }
     }
 }
 const pokeDex = Pokemon.init('pokedex-');
 const pokeMove = Moves.init('moves-');
 /**
- * 無效 = 0 = -999 
+ * 无效 = 0 = -999 
  * 弱效 = 1 = -1
  * 普通 = 2 = 0
  * 克制 = 3 = 1
  */
 
 const typeName = {
-    Normal: '一般', Fight: '格鬥', Flying: '飛行', Poison: '毒', Ground: '地面', Rock: '岩石', Bug: '蟲', Ghost: '幽靈', Steel: '鋼', Fire: '火', Water: '水', Grass: '草', Electric: '電', Psychic: '超能力', Ice: '冰', Dragon: '龍', Dark: '惡', Fairy: '妖精'
+    Normal: '一般', Fight: '格鬥', Flying: '飛行', Poison: '毒', Ground: '地面', Rock: '岩石', Bug: '蟲', Ghost: '幽灵', Steel: '鋼', Fire: '火', Water: '水', Grass: '草', Electric: '電', Psychic: '超能力', Ice: '冰', Dragon: '龍', Dark: '恶', Fairy: '妖精'
 }
 
 const typeChart = {
@@ -316,11 +316,11 @@ const typeChart = {
 };
 
 const effect = {
-    1: '效果絕佳，承受額外 1 點來自該攻擊的傷害',
-    2: '效果絕佳，承受額外 2 點來自該攻擊的傷害',
+    1: '效果絕佳，承受额外 1 点來自該攻擊的傷害',
+    2: '效果絕佳，承受额外 2 点來自該攻擊的傷害',
     0: '正常',
-    '-1': '效果不佳，減少 1 點受到的傷害',
-    '-2': '效果不佳，減少 2 點受到的傷害',
+    '-1': '效果不佳，減少 1 点受到的傷害',
+    '-2': '效果不佳，減少 2 点受到的傷害',
 
 }
 // 定義函式
@@ -328,8 +328,8 @@ function checkEffectiveness(moveType, enemyType) {
     try {
 
         /**
-         * @param {string} moveType - 技能的屬性
-         * @param {Array} enemyType - 敵人的两个屬性
+         * @param {string} moveType - 技能的属性
+         * @param {Array} enemyType - 敵人的两个属性
          * @return {number} effectiveness - 技能的威力
          * 
          * @example
@@ -354,7 +354,7 @@ function checkEffectiveness(moveType, enemyType) {
 
     } catch (error) {
         console.error(error)
-        return { value: -999, script: '出錯，請回報問題或以後再試' };
+        return { value: -999, script: '出错，请回報问题或以后再试' };
     }
 }
 
@@ -364,7 +364,7 @@ function commandVS(mainMsg) {
         let rply = {
             text: ''
         }
-        //招式名,屬性  VS  POKEMON名,POKEMON NO,屬性1,屬性2
+        //招式名,属性  VS  POKEMON名,POKEMON NO,属性1,属性2
         let attackerType = Moves.findTypeByCht(mainMsg[2]);
         let attacker = (attackerType) ? null : pokeMove.getVS(mainMsg[2]);
         if (attacker) {
@@ -381,31 +381,31 @@ function commandVS(mainMsg) {
             if (defenderType2) defenderType = defenderType.concat(defenderType2);
         }
         if (!defenderType.length || !attackerType) {
-            rply.text += (!attackerType) ? '找不到攻方屬性，請確認名稱，你可以输入完整招式名稱或屬性\n' : '';
-            rply.text += (!defenderType.length) ? '找不到防方屬性，請確認名稱，你可以输入小精靈名稱，編號或屬性\n' : '';
+            rply.text += (!attackerType) ? '找不到攻方属性，请確認名稱，你可以输入完整招式名稱或属性\n' : '';
+            rply.text += (!defenderType.length) ? '找不到防方属性，请確認名稱，你可以输入小精灵名稱，編號或属性\n' : '';
             return rply;
 
         }
         let typeEffect = checkEffectiveness(attackerType, defenderType);
         /**
-         * 攻方屬性：attackerType
-         * 防方屬性：defenderType
-         * 屬性效果：typeEffect.script
+         * 攻方属性：attackerType
+         * 防方属性：defenderType
+         * 属性效果：typeEffect.script
          * --------------------
          * 攻方招式：attacker.name
          * 攻方招式內容：attacker.effect desc
          * 攻方招式傷害：attacker.damage
          * --------------------
-         * 防方小精靈：defender.name
-         * 防方小精靈圖片：defender.info.image
+         * 防方小精灵：defender.name
+         * 防方小精灵圖片：defender.info.image
          */
 
         let attackerTypeChinese = Pokemon.findTypeByEng([attackerType]);
         let defenderTypeChinese = Pokemon.findTypeByEng(defenderType);
         rply.text +=
-            `攻方屬性：${attackerTypeChinese}
-防方屬性：${defenderTypeChinese}
-屬性效果：${typeEffect.script}
+            `攻方属性：${attackerTypeChinese}
+防方属性：${defenderTypeChinese}
+属性效果：${typeEffect.script}
 `
         rply.text += (attacker) ?
             `--------------------
@@ -417,12 +417,12 @@ function commandVS(mainMsg) {
 `: '';
         rply.text += (defender) ?
             `--------------------
-防方小精靈：${defender.name}
-防方小精靈圖片：https://github.com/hktrpg/TG.line.Discord.Roll.Bot/raw/master/assets/pokemon/${defender.info.image}
+防方小精灵：${defender.name}
+防方小精灵圖片：https://github.com/hktrpg/TG.line.Discord.Roll.Bot/raw/master/assets/pokemon/${defender.info.image}
 `: '';
         return rply;
     } catch (error) {
-        rply.text = `输入錯誤，請输入正確的招式名稱或小精靈名稱\n${getHelpMessage()}`
+        rply.text = `输入错误，请输入正確的招式名稱或小精灵名稱\n${getHelpMessage()}`
         return rply;
     }
 }

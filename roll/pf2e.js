@@ -11,9 +11,9 @@ const gameType = function () {
     return 'Dice:Pf2e:hktrpg'
 }
 const prefixs = function () {
-    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---這裡是一對  
-    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---這裡是一對
-    //如前面是 /^1$/ig, 後面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
+    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这裡是一对  
+    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这裡是一对
+    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
     ///^(?=.*he)(?!.*da).*$/ig
     return [{
         first: /^\.Pf2$/i,
@@ -22,10 +22,10 @@ const prefixs = function () {
 }
 const getHelpMessage = function () {
     return `【Pf2e】.pf2
-這是一个Pf2e的資料庫，只要输入 .pf2 查找的內容，
-就會顯示相關資料，如果沒有資料，就會顯示類似字眼
+这是一个Pf2e的资料庫，只要输入 .pf2 查找的內容，
+就會显示相关资料，如果没有资料，就會显示类似字眼
 
-資料來源自 https://www.goddessfantasy.net/bbs/index.php?topic=134913.0 #1 仙堂麻尋
+资料來源自 https://www.goddessfantasy.net/bbs/index.php?topic=134913.0 #1 仙堂麻尋
     `
 }
 const initialize = function () {
@@ -101,7 +101,7 @@ class Pf2e {
         try {
             let result = this.fuse.search(name);
             let rply = '';
-            if (result.length === 0) return '沒有找到相關資料';
+            if (result.length === 0) return '没有找到相关资料';
             if (result[0].item.name === name) {
                 return `【${result[0].item.name}】
         ${result[0].item.desc} \n
@@ -115,7 +115,7 @@ ${result[i].item.desc} \n
                 }
             }
             else {
-                rply += '找到太多相關資料，請更精確的查詢\n\n';
+                rply += '找到太多相关资料，请更精確的查詢\n\n';
                 for (let i = 0; i < result.length; i++) {
                     rply += `${result[i].item.name}\n`;
                 }
@@ -124,7 +124,7 @@ ${result[i].item.desc} \n
         }
         catch (error) {
             console.error(error);
-            return '發生錯誤';
+            return '发生错误';
         }
     }
 }

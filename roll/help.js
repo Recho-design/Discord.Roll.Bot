@@ -51,7 +51,7 @@ let variables = {};
 
 
 const gameName = function () {
-	return '骰子機器人HKTRPG說明';
+	return '骰子机器人HKTRPG说明';
 }
 
 const gameType = function () {
@@ -66,13 +66,13 @@ const prefixs = function () {
 }
 const getHelpMessage = async function () {
 	return `【暗骰功能】
-在指令前输入dr 結果會私訊你
+在指令前输入dr 结果會私訊你
 ddr dddr 可以私訊已設定的群組GM, 詳情可打.drgm查詢
 
 【基本掷骰】1d100(khN|klN|dhN|dlN)
 例如输入(2d6+1)*2 攻撃！
 會输出）(2d6+1)*2：攻撃！  (10[5+5]+1)2 = 22
-如上面一樣,在骰子数字後方隔空白位打字,可以进行發言。
+如上面一樣,在骰子数字后方隔空白位打字,可以进行发言。
 
 .5 3D6 ：	分別骰出5次3d6 最多30次
 ((2d6+1)*2)-5/2>=10 支援括號加減乘除及大於小於(>,<,>=,<=)计算
@@ -80,13 +80,13 @@ ddr dddr 可以私訊已設定的群組GM, 詳情可打.drgm查詢
 如3d6kh 保留最大的1粒骰，3d6dl2 放棄最小的2粒骰
 
 【RPG Dice Roller掷骰】.rr
-RPG Dice Roller 是英語系統常用掷骰功能
+RPG Dice Roller 是英语系統常用掷骰功能
 Foundry VTT也是使用它
 和基本掷骰不同
-有更多仔細的掷骰命令，如1d10r1 5d10!k2
+有更多仔细的掷骰命令，如1d10r1 5d10!k2
 
 
-掷骰指令請看
+掷骰指令请看
 https://dice-roller.github.io/documentation/guide/notation/
  
  `
@@ -110,29 +110,29 @@ const rollDiceCommand = async function ({
 		case !mainMsg[1]:
 			rply.text =
 				`【HKTRPG掷骰ROLLBOT🤖】(${await version.version()})
-HKTRPG是在Discord, Line, Telegram, Whatsapp和網頁上都可以使用的骰子機械人！
-功能：暗骰, 各類TRPG骰子掷骰, 自定義骰子, 頻道經驗值, 占卜, 先攻表, TRPG角色卡, 搜圖,
-翻譯, Discord 聊天紀錄匯出, 数学计算, 随机抽選, wiki查詢, 資料庫快速查詢功能
-定時發訊息
+HKTRPG是在Discord, Line, Telegram, Whatsapp和網頁上都可以使用的骰子机械人！
+功能：暗骰, 各类TRPG骰子掷骰, 自定義骰子, 频道经驗值, 占卜, 先攻表, TRPG角色卡, 搜圖,
+翻譯, Discord 聊天记录匯出, 数学计算, 随机抽选, wiki查詢, 资料庫快速查詢功能
+定时发訊息
 及其他
 -------
-請問有什麼可以幫助你?
-請输入你想查詢的項目名字.
-或到 (https://bothelp.hktrpg.com/) 觀看詳細使用說明.
+请问有什么可以幫助你?
+请输入你想查詢的项目名字.
+或到 (https://bothelp.hktrpg.com/) 观看詳细使用说明.
 -------
-bothelp ver		- 查詢詳細版本及公告
+bothelp ver		- 查詢詳细版本及公告
 bothelp Base	- 查詢trpg 基本掷骰指令🎲
 bothelp Dice	- 查詢trpg 不同系統掷骰指令💻
 bothelp Tool	- 查詢trpg 輔助工具🧰
 bothelp admin	- 查詢系統工具⚙️
 bothelp funny	- 查詢趣味功能😂
-bothelp link	- 查詢HKTRPG 不同平台連結🔗
-bothelp privacy	- 查詢HKTRPG 的隱私權條款🔒
-bothelp about	- 查詢HKTRPG 歷史📜
+bothelp link	- 查詢HKTRPG 不同平台連结🔗
+bothelp privacy	- 查詢HKTRPG 的隱私權条款🔒
+bothelp about	- 查詢HKTRPG 历史📜
 --------
 🗂️HKTRPG 作品集, (https://hktrpg.github.io/TG.line.Discord.Roll.Bot/PORTFOLIOP)
-ℹ️如果你需要幫助, 加入我們的支援頻道, (https://support.hktrpg.com)
-☕贊助伺服器運行及開放VIP資源, (https://www.patreon.com/HKTRPG)`
+ℹ️如果你需要幫助, 加入我們的支援频道, (https://support.hktrpg.com)
+☕贊助服务器运行及开放VIP資源, (https://www.patreon.com/HKTRPG)`
 			rply.buttonCreate = ['bothelp ver', 'bothelp Base', 'bothelp Dice', 'bothelp Tool', 'bothelp admin', 'bothelp funny', 'bothelp link', 'bothelp privacy', 'bothelp about']
 
 			return rply;
@@ -153,18 +153,18 @@ bothelp about	- 查詢HKTRPG 歷史📜
 			rply.buttonCreate = ['dr 1d100', '2d6+10 攻擊', '.5 3d6', '.5 4d6dl1', '.rr 5d10!k2']
 			return rply;
 		case /^about$/i.test(mainMsg[1]):
-			rply.text = `關於HKTRPG
+			rply.text = `关於HKTRPG
 
-HKTRPG來源自 機器鸭霸兽 https://docs.google.com/document/d/1dYnJqF2_QTp90ld4YXj6X8kgxvjUoHrB4E2seqlDlAk/edit	
-最早由LarryLo Retsnimle開發，
-是一个開放源碼骰子機器人计畫，供他人使用開發和使用。
+HKTRPG來源自 机器鸭霸兽 https://docs.google.com/document/d/1dYnJqF2_QTp90ld4YXj6X8kgxvjUoHrB4E2seqlDlAk/edit	
+最早由LarryLo Retsnimle开发，
+是一个开放源碼骰子机器人计畫，供他人使用开发和使用。
 
-現在的HKTRPG基礎是根據該计畫而開發，
-感謝當時源碼大量的注釋，讓當時第一次接觸JS的我，
-慢慢學到怎寫CODE。
+现在的HKTRPG基礎是根據該计畫而开发，
+感謝当时源碼大量的注釋，讓当时第一次接觸JS的我，
+慢慢学到怎寫CODE。
 
-現在HKTRPG 以GNU GENERAL PUBLIC LICENSE授權，
-是被廣泛使用的自由軟體授權條款，給予了終端使用者運行、學習、共享和修改軟體的自由。
+现在HKTRPG 以GNU GENERAL PUBLIC LICENSE授權，
+是被廣泛使用的自由軟体授權条款，給予了終端使用者运行、学习、共享和修改軟体的自由。
 `
 			return rply;
 		case /^Dice/i.test(mainMsg[1]):
@@ -253,15 +253,15 @@ HKTRPG來源自 機器鸭霸兽 https://docs.google.com/document/d/1dYnJqF2_QTp9
 			rply.text = `TRPG百科 https://www.hktrpg.com/
 Discord支援群 https://support.hktrpg.com
 			
-邀請HKTRPG 加入
-Line 邀請連結 http://bit.ly/HKTRPG_LINE
-Discord 邀請連結 https://discord.hktrpg.com
-Telegram 邀請連結 http://t.me/hktrpg_bot
-網頁版 邀請連結 https://rollbot.hktrpg.com/
+邀请HKTRPG 加入
+Line 邀请連结 http://bit.ly/HKTRPG_LINE
+Discord 邀请連结 https://discord.hktrpg.com
+Telegram 邀请連结 http://t.me/hktrpg_bot
+網頁版 邀请連结 https://rollbot.hktrpg.com/
 簡易網上掷骰網頁 https://roll.hktrpg.com/
 			
 HKTRPG 研究社 Facebook https://www.facebook.com/groups/HKTRPG
-解鎖功能及贊助 https://www.patreon.com/HKTRPG 
+解锁功能及贊助 https://www.patreon.com/HKTRPG 
 源代碼 http://bit.ly/HKTRPG_GITHUB
 `
 			return rply;
@@ -272,7 +272,7 @@ HKTRPG 研究社 Facebook https://www.facebook.com/groups/HKTRPG
 
 		 */
 		case /^req/i.test(mainMsg[1]):
-			rply.text = `請到以下問卷填寫意見，所有意見內容將改善RollBot
+			rply.text = `请到以下问卷填寫意見，所有意見內容將改善RollBot
 			https://forms.gle/uXq6taCPGJ2M99Gp9`
 			return rply;
 		default:
@@ -317,7 +317,7 @@ class Version {
 const version = new Version();
 /**
  * if (botname == "Line")
-				rply.text += "\n因为Line的機制, 如掷骰時並無顯示用家名字, 請到下列網址,和機器人任意說一句話,成为好友. \n https://line.me/R/ti/p/svMLqy9Mik\nP.S. Line 修改政策，免費帳號的Line Bot現在有每月500次的私訊限制，超過時DR等私訊功能會失效。(可以認为這功能在Line已失效，半天已400个DR私訊要求)"
+				rply.text += "\n因为Line的机制, 如掷骰时並无显示用家名字, 请到下列網址,和机器人任意说一句话,成为好友. \n https://line.me/R/ti/p/svMLqy9Mik\nP.S. Line 修改政策，免費帳號的Line Bot现在有每月500次的私訊限制，超过时DR等私訊功能會失效。(可以認为这功能在Line已失效，半天已400个DR私訊要求)"
  */
 module.exports = {
 	rollDiceCommand: rollDiceCommand,
@@ -335,15 +335,15 @@ module.exports = {
 /**
 bothelp
 
-請問有什麼可以幫你?
-請输入你想查詢的項目名字.
+请问有什么可以幫你?
+请输入你想查詢的项目名字.
 -------
-bothelp ver    - 查詢版本及公告(xxxx時間更新)
+bothelp ver    - 查詢版本及公告(xxxx时间更新)
 bothelp Dice   - 查詢trpg 不同系統掷骰指令
 bothelp Tool   - 查詢trpg 輔助工具
 bothelp admin  - 查詢系統工具
 bothelp funny  - 查詢趣味功能
-bothelp link   - 查詢hktrpg 不同平台連結
+bothelp link   - 查詢hktrpg 不同平台連结
 bothelp report - 意見提供
 -----
 输入 1 或 bothelp 公告 或 bothelp 版本
@@ -352,37 +352,37 @@ bothelp report - 意見提供
 ------
 输入 2 或 bothelp Dice
 0: 【进阶掷骰】 .ca (计算)|D66(sn)|5B10 Dx|5U10 x y|.int x y
-2: 【克蘇魯神話】 cc cc(n)1~2 ccb ccrt ccsu .dp .cc7build .cc6build .cc7bg
+2: 【克苏鲁神话】 cc cc(n)1~2 ccb ccrt ccsu .dp .cc7build .cc6build .cc7bg
 3: 【朱の孤塔】 .al (nALxp)
 4: 【神我狩】 .kk (ET RT NT KT MTx)
-5: 【迷宮王國】 .mk (nMK+m 及各種表)
+5: 【迷宮王國】 .mk (nMK+m 及各种表)
 6: 【亞俠必死的冒險】 .ss (nR>=x[y,z,c] SRx+y FumbleT)
-7: 【忍神】 .sg (ST FT ET等各種表)
+7: 【忍神】 .sg (ST FT ET等各种表)
 8: 【歌風】 .UK (nUK nUK@c or nUKc)
 9: 【魔女狩獵之夜】.wn xDn+-y
 10: 【DX2nd,3rd】 .dx (xDX+y@c ET)
-11: 【命運Fate】 .4df(m|-)(加值)
-12: 【永遠的後日談】 .nc (NM xNC+m xNA+m)
-13: 【劍世界2.5】.sw (Kx Gr FT TT)
+11: 【命运Fate】 .4df(m|-)(加值)
+12: 【永遠的后日談】 .nc (NM xNC+m xNA+m)
+13: 【剑世界2.5】.sw (Kx Gr FT TT)
 14: 【WOD黑暗世界】.xWDy
-15: 【貓貓鬼差】.kc xDy z
+15: 【猫猫鬼差】.kc xDy z
 ------
 输入 3 或 bothelp Tool
  (公測中)暗骰GM功能 .drgm (addgm del show) dr ddr dddr
  (公測中)角色卡功能 .char (add edit show delete use nonuse) .ch (set show showall)
- (公測中)儲存掷骰指令功能 .cmd (add del show 自定關鍵字)
+ (公測中)儲存掷骰指令功能 .cmd (add del show 自定关鍵字)
 ------
 输入 4 或 bothelp admin
 .admin state
 .admin
-22: (公測中)掷骰開關功能 .bk (add del show)
+22: (公測中)掷骰开关功能 .bk (add del show)
 ------
 输入 5 或 bothelp funny
-1: 【趣味掷骰】 排序(至少3个選項) choice/随机(至少2个選項) 每日塔罗 运势 立flag .me
-17: (公測中)經驗值功能 .level (show config LevelUpWord RankWord)
+1: 【趣味掷骰】 排序(至少3个选项) choice/随机(至少2个选项) 每日塔罗 运势 立flag .me
+17: (公測中)经驗值功能 .level (show config LevelUpWord RankWord)
 18: Wiki查詢/圖片搜索 .wiki .image
-20: (公測中)自定義回應功能 .ra(p)(次数) (add del show 自定關鍵字)
-23: (公測中)資料庫功能 .db(p) (add del show 自定關鍵字)
+20: (公測中)自定義回應功能 .ra(p)(次数) (add del show 自定关鍵字)
+23: (公測中)资料庫功能 .db(p) (add del show 自定关鍵字)
 ------
 输入 6 或 bothelp link
 DISCORD

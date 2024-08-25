@@ -41,7 +41,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="https://www.hktrpg.com/wiki/index.php/%E9%A6%96%E9%A0%81"><a
                 class="badge badge-pill badge-danger">
-                HKTRPG 帶團劇院平台<span class="iconify" data-icon="mdi:dice-multiple-outline" data-inline="false"
+                HKTRPG 帶团劇院平台<span class="iconify" data-icon="mdi:dice-multiple-outline" data-inline="false"
                     style="color: black;" data-width="32" data-height="32"></span></span>
                 <span class="iconify" data-icon="bi:chat-square-text" data-inline="false" style="color: black;"
                     data-width="32" data-height="32"></span>
@@ -61,13 +61,13 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">私人角色卡</a>
-                        <a class="dropdown-item" href="https://publiccard.hktrpg.com/">公開角色卡</a>
+                        <a class="dropdown-item" href="https://publiccard.hktrpg.com/">公开角色卡</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        跑團平台
+                        跑团平台
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="https://z01.hktrpg.com/">2.5D - 烏冬</a>
@@ -142,12 +142,12 @@
                     <span class="text-muted">
                         <button type="button" class="btn btn-danger" onclick="switchCard('#collapseFilter')"><span
                                 class="iconify" data-icon="ic:baseline-movie-filter"
-                                data-inline="false"></span>濾鏡</button>
+                                data-inline="false"></span>濾镜</button>
                         <button type="button" class="btn btn-warning" onclick="switchCard('#collapseEffect')"><span
                                 class="iconify" data-icon="cib:adobe-after-effects"
                                 data-inline="false"></span>特效</button>
                         <button type="button" class="btn btn-info" onclick="switchCard('#collapseDialogBox')"><span
-                                class="iconify" data-icon="jam:eye-close" data-inline="false"></span>對話框</button>
+                                class="iconify" data-icon="jam:eye-close" data-inline="false"></span>对话框</button>
                     </span>
 
                 </h4>
@@ -183,7 +183,7 @@
                 <div class="collapse multi-collapse" id="collapseBG">
                     <div class="card p-2">
                         <ul class="list-group mb-3">
-                            預設圖 3-5張
+                            預設圖 3-5张
                             <div class="dropzone" id="img-upload-BG">
                             </div>
                         </ul>
@@ -200,7 +200,7 @@
                                 拉伸
                             </button>
                             <button class="btn btn-secondary" onclick="bgEdit('center')">
-                                置中(不縮放)
+                                置中(不缩放)
                             </button>
 
                         </div>
@@ -217,7 +217,7 @@
                 <div class="collapse multi-collapse" id="collapseDialogBox">
                     <div class="card p-2">
                         <ul class="list-group mb-3">
-                            預設圖 2-3張
+                            預設圖 2-3张
                             <div class="dropzone" id="img-upload-DialogBox">
                             </div>
                         </ul>
@@ -236,13 +236,13 @@
                     <div class="card p-2">
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-secondary" onclick="filterON()">
-                                套用濾鏡
+                                套用濾镜
                             </button>
                             <button type="submit" class="btn btn-secondary" onclick="clearFilter()">
-                                移除濾鏡
+                                移除濾镜
                             </button>
                             <button type="submit" class="btn btn-secondary" onclick="selectAll()">
-                                選取全部圖層
+                                选取全部圖层
                             </button>
                         </div>
                         <div class="card p-2">
@@ -338,7 +338,7 @@
                                     data-toggle="collapse" data-target="#collapse05" aria-expanded="false"
                                     aria-controls="collapse05">
                                 <label class="form-check-label" for="filterCheck05">
-                                    點化 DotFilter
+                                    点化 DotFilter
                                 </label>
                             </div>
                             <div id="collapse05" class="collapse" aria-labelledby="heading05"
@@ -436,7 +436,7 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="filterCheck10">
                             <label class="form-check-label" for="filterCheck10">
-                                鏡像反转
+                                镜像反转
                             </label>
                         </div>
                         <div class="form-check">
@@ -448,7 +448,7 @@
                         <div class="form-check" onclick="unclickAll()">
                             <input class="form-check-input" type="checkbox" value="">
                             <label class="form-check-label" for="unfilterCheck10">
-                                取消勾選
+                                取消勾选
                             </label>
                         </div>
                     </div>
@@ -540,7 +540,7 @@
             'https://images.mihuashi.com/2017/10/26/03/mrantfdaxgbaycgueznm2dvbqmjrc6i3/mrantfdaxgbaycgueznm2dvbqmjrc6i3.jpg'
         );
         createDialogBox('https://i.imgur.com/maCqZFS.png');
-        createText('這是測試，左鍵連點两下是放大，加上Shift是縮小，Shift+右鍵两下是刪除')
+        createText('这是測试，左鍵連点两下是放大，加上Shift是缩小，Shift+右鍵两下是刪除')
         app.stage.sortChildren();
 
 
@@ -614,7 +614,7 @@
         function selectAll() {
             $('#v-model-select-dynamic').select2('destroy').find('option').prop('selected', 'selected').end().select2({
                 closeOnSelect: false,
-                placeholder: '選取目標圖層',
+                placeholder: '选取目标圖层',
                 allowClear: true,
                 scrollAfterSelect: true
             });
@@ -889,7 +889,7 @@
         $(document).ready(function () {
             $('.js-example-basic-multiple').select2({
                 closeOnSelect: false,
-                placeholder: '選取目標圖層',
+                placeholder: '选取目标圖层',
                 allowClear: true,
                 scrollAfterSelect: true
             });
@@ -942,8 +942,8 @@
             rollText.zIndex = 400;
             rollText.appType = "dice"
             rollText.anchor.set(0.5);
-            rollText.interactive = true; // 設定可以互動
-            rollText.buttonMode = true; // 當滑鼠滑過時顯示为手指圖示
+            rollText.interactive = true; // 設定可以互动
+            rollText.buttonMode = true; // 当滑鼠滑过时显示为手指圖示
             rollText.updateAnchor = true;
             rollText
                 .on('pointerdown', onDragStart)
@@ -982,7 +982,7 @@
                     $('#v-model-select-dynamic').select2('destroy').find('option').prop('selected',
                         false).end().select2({
                         closeOnSelect: false,
-                        placeholder: '選取目標圖層',
+                        placeholder: '选取目标圖层',
                         allowClear: true,
                         scrollAfterSelect: true
                     });
@@ -1008,18 +1008,18 @@
 </body>
 <!-- HKTRPG Sad -- 20201221-->
 <!-- 
-掷骰    -   可以进行最基本1D2 1D3…1D100，然後把結果像實骰一樣放上畫面。   缺掷骰結果圖像
-背景    -   更換背景圖片，可選根據濶度，高度等等，參考一些VIDEO PLAYER    DONE
-角色    -   可以放上数張不同的角色圖，刪除，有反转，DRAG及拉大縮少，改變顏色，灰化，黑化，模糊化等功能
-濾鏡    -   整个畫面的濾鏡
-特效    -   像一些! 笑 顏文字 雨 風 血 等等顯示在畫面
-文字    -   在畫面顯示文字
-關閉劇場    -   不顯示下方的對話框
+掷骰    -   可以进行最基本1D2 1D3…1D100，然后把结果像实骰一樣放上畫面。   缺掷骰结果圖像
+背景    -   更換背景圖片，可选根據濶度，高度等等，參考一些VIDEO PLAYER    DONE
+角色    -   可以放上数张不同的角色圖，刪除，有反转，DRAG及拉大缩少，改變顏色，灰化，黑化，模糊化等功能
+濾镜    -   整个畫面的濾镜
+特效    -   像一些! 笑 顏文字 雨 風 血 等等显示在畫面
+文字    -   在畫面显示文字
+关閉劇場    -   不显示下方的对话框
 傳送    -   
 
-最下    -   可以在對話框输入文字
+最下    -   可以在对话框输入文字
 
-右鍵可以DELETE 複製
+右鍵可以DELETE 复製
 
 https://www.html5gamedevs.com/topic/27159-make-a-context-menu-appear-upon-right-click-of-a-sprite/
 https://www.iwm-tuebingen.de/iwmbrowser/lib/pixi/popupmenu.html
@@ -1032,7 +1032,7 @@ app.stage.sortChildren();
 BG  背景    -100        Type02
 CHAR角色    0           Type01
 EFFECT特效    +100      Type01
-Dialog box劇場對話框  +200  Type02
+Dialog box劇場对话框  +200  Type02
 TEXT文字    +300        Type03
 ROLL骰子    +400        Type01
 

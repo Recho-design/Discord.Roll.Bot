@@ -51,12 +51,12 @@ TGclient.on('text', async (ctx) => {
     if (mainMsg && mainMsg[0]) {
         trigger = mainMsg[0].toString().toLowerCase();
     }
-    //指定啟動詞在第一个詞&把大階強制转成細階
+    //指定啟动詞在第一个詞&把大階强制转成细階
     let groupid = ((ctx.chat.type === 'group' || ctx.chat.type === 'supergroup') && userid && ctx.chat.id) ? ctx.chat.id : '';
     if ((trigger == ".me" || trigger == ".mee") && !z_stop(mainMsg, groupid)) {
         inputStr = inputStr.replace(/^\.mee\s*/i, ' ').replace(/^\.me\s*/i, ' ');
         if (inputStr.match(/^\s+$/)) {
-            inputStr = `.me 或 /mee 可以令HKTRPG機械人重覆你的說話\n請输入復述內容`
+            inputStr = `.me 或 /mee 可以令HKTRPG机械人重覆你的说话\n请输入復述內容`
         }
         SendToId(ctx.chat.id || userid, inputStr);
         return;
@@ -97,7 +97,7 @@ TGclient.on('text', async (ctx) => {
     //TRUE 即正常
     let displaynamecheck = true;
     let userrole = 1;
-    //頻道人数
+    //频道人数
     if (ctx.chat && ctx.chat.id) {
         membercount = await TGclient.getChatMemberCount(ctx.chat.id) - 1;
     }
@@ -109,8 +109,8 @@ TGclient.on('text', async (ctx) => {
     }
     let rplyVal = {};
 
-    // 訊息來到後, 會自動跳到analytics.js进行骰組分析
-    // 如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
+    // 訊息來到后, 會自动跳到analytics.js进行骰組分析
+    // 如希望增加修改骰組,只要修改analytics.js的条件式 和ROLL內的骰組檔案即可,然后在HELP.JS 增加说明.
     if (channelKeyword != '' && trigger == channelKeyword.toString().toLowerCase()) {
         mainMsg.shift();
         rplyVal = await exports.analytics.parseInput({
@@ -189,7 +189,7 @@ TGclient.on('text', async (ctx) => {
                 for (let i = 0; i < TargetGMTempID.length; i++) {
                     targetGMNameTemp = targetGMNameTemp + ", " + (TargetGMTempdiyName[i] || "@" + TargetGMTempdisplayname[i]);
                 }
-                SendToId(groupid, "@" + displayname + ' 暗骰进行中 \n目標: 自己 ' + targetGMNameTemp, options);
+                SendToId(groupid, "@" + displayname + ' 暗骰进行中 \n目标: 自己 ' + targetGMNameTemp, options);
             }
             rplyVal.text = "@" + displayname + " 的暗骰\n" + rplyVal.text;
             SendToId(userid, rplyVal.text);
@@ -205,7 +205,7 @@ TGclient.on('text', async (ctx) => {
                 for (let i = 0; i < TargetGMTempID.length; i++) {
                     targetGMNameTemp = targetGMNameTemp + " " + (TargetGMTempdiyName[i] || "@" + TargetGMTempdisplayname[i]);
                 }
-                SendToId(groupid, "@" + displayname + ' 暗骰进行中 \n目標: ' + targetGMNameTemp, options);
+                SendToId(groupid, "@" + displayname + ' 暗骰进行中 \n目标: ' + targetGMNameTemp, options);
             }
             rplyVal.text = "@" + displayname + " 的暗骰\n" + rplyVal.text;
             for (let i = 0; i < TargetGMTempID.length; i++) {
@@ -367,7 +367,7 @@ async function privateMsgFinder(groupid) {
 
 if (agenda && agenda.agenda) {
     agenda.agenda.define("scheduleAtMessageTelegram", async (job) => {
-        //指定時間一次
+        //指定时间一次
         let data = job.attrs.data;
         let text = await rollText(data.replyText);
         //SendToReply(ctx, text)
@@ -382,7 +382,7 @@ if (agenda && agenda.agenda) {
 
     });
     agenda.agenda.define("scheduleCronMessageTelegram", async (job) => {
-        //指定時間
+        //指定时间
         let data = job.attrs.data;
         let text = await rollText(data.replyText);
         //SendToReply(ctx, text)
@@ -393,7 +393,7 @@ if (agenda && agenda.agenda) {
             if ((new Date(Date.now()) - data.createAt) >= SIX_MONTH) {
                 await job.remove();
                 SendToId(
-                    data.groupid, "已運行六个月, 移除此定時訊息"
+                    data.groupid, "已运行六个月, 移除此定时訊息"
                 )
             }
         } catch (e) {

@@ -16,7 +16,7 @@ records.get('trpgDatabaseAllgroup', (msgs) => {
 const VIP = require('../modules/veryImportantPerson');
 const FUNCTION_LIMIT = [30, 200, 200, 300, 300, 300, 300, 300];
 const gameName = function () {
-    return '【資料庫功能】 .db(p) (add del show 自定關鍵字)'
+    return '【资料庫功能】 .db(p) (add del show 自定关鍵字)'
 }
 const gameType = function () {
     return 'funny:trpgDatabase:hktrpg'
@@ -28,31 +28,31 @@ const prefixs = function () {
     }]
 }
 const getHelpMessage = async function () {
-    return `【資料庫功能】
-這是根據關鍵字來顯示数據的,
-例如输入 .db add 九大陣營 守序善良 (...太長省略) 中立邪惡 混亂邪惡 
-再输入.db 九大陣營  守序善良 (...太長省略) 中立邪惡 混亂邪惡
-add 後面第一个是關鍵字, 可以是漢字,数字,英文及emoji
-P.S.如果沒立即生效 用.db show 刷新一下
-输入.db add (關鍵字) (內容)即可增加關鍵字
-输入.db show 顯示所有關鍵字
+    return `【资料庫功能】
+这是根據关鍵字來显示数據的,
+例如输入 .db add 九大陣營 守序善良 (...太长省略) 中立邪恶 混亂邪恶 
+再输入.db 九大陣營  守序善良 (...太长省略) 中立邪恶 混亂邪恶
+add 后面第一个是关鍵字, 可以是漢字,数字,英文及emoji
+P.S.如果没立即生效 用.db show 刷新一下
+输入.db add (关鍵字) (內容)即可增加关鍵字
+输入.db show 显示所有关鍵字
 输入.db del(編號)或all 即可刪除
-输入.db  (關鍵字) 即可顯示 
+输入.db  (关鍵字) 即可显示 
 如使用输入.dbp 會變成全服版,全服可看, 可用add show功能 
-新增指令 - 输入.dbp newType 可以觀看效果
+新增指令 - 输入.dbp newType 可以观看效果
 * {br}          <--隔一行
 * {ran:100}     <---随机1-100
 * {random:5-20} <---随机5-20
-* {server.member_count}  <---現在頻道中總人数 
-* {my.name}     <---顯示掷骰者名字
-以下需要開啓.level 功能
+* {server.member_count}  <---现在频道中总人数 
+* {my.name}     <---显示掷骰者名字
+以下需要开启.level 功能
 * {allgp.name}  <---随机全GP其中一人名字
-* {allgp.title}  <---随机全GP其中一種稱號
-* {my.RankingPer}  <---現在排名百分比 
-* {my.Ranking}  <---顯示掷骰者現在排名 
-* {my.exp}      <---顯示掷骰者經驗值
-* {my.title}    <---顯示掷骰者稱號
-* {my.level}    <---顯示掷骰者等級
+* {allgp.title}  <---随机全GP其中一种稱號
+* {my.RankingPer}  <---现在排名百分比 
+* {my.Ranking}  <---显示掷骰者现在排名 
+* {my.exp}      <---显示掷骰者经驗值
+* {my.title}    <---显示掷骰者稱號
+* {my.level}    <---显示掷骰者等级
 `
 }
 const initialize = function () {
@@ -89,10 +89,10 @@ const rollDiceCommand = async function ({
 
         // .DB(0) ADD(1) TOPIC(2) CONTACT(3)
         case /(^[.]db$)/i.test(mainMsg[0]) && /^add$/i.test(mainMsg[1]) && /^(?!(add|del|show)$)/ig.test(mainMsg[2]): {
-            //增加資料庫
-            //檢查有沒有重覆
-            if (!mainMsg[2]) rply.text += ' 沒有输入標題。\n\n'
-            if (!mainMsg[3]) rply.text += ' 沒有输入內容。\n\n'
+            //增加资料庫
+            //检查有没有重覆
+            if (!mainMsg[2]) rply.text += ' 没有输入标题。\n\n'
+            if (!mainMsg[3]) rply.text += ' 没有输入內容。\n\n'
             if (rply.text += checkTools.permissionErrMsg({
                 flag: checkTools.flag.ChkChannelManager,
                 gid: groupid,
@@ -109,7 +109,7 @@ const rollDiceCommand = async function ({
                     if (trpgDatabasefunction.trpgDatabasefunction[i].groupid == groupid) {
                         if (trpgDatabasefunction.trpgDatabasefunction[0] && trpgDatabasefunction.trpgDatabasefunction[0].trpgDatabasefunction[0]) {
                             if (trpgDatabasefunction.trpgDatabasefunction[i].trpgDatabasefunction.length >= limit) {
-                                rply.text = '關鍵字上限' + limit + '个\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                                rply.text = '关鍵字上限' + limit + '个\n支援及解锁上限 https://www.patreon.com/HKTRPG\n';
                                 return rply;
                             }
                             for (let a = 0; a < trpgDatabasefunction.trpgDatabasefunction[i].trpgDatabasefunction.length; a++) {
@@ -135,12 +135,12 @@ const rollDiceCommand = async function ({
 
                 })
                 rply.text = '新增成功: ' + mainMsg[2]
-            } else rply.text = '新增失敗. 重複標題'
+            } else rply.text = '新增失败. 重复标题'
 
             return rply;
         }
         case /(^[.]db$)/i.test(mainMsg[0]) && /^del$/i.test(mainMsg[1]) && /^all$/i.test(mainMsg[2]):
-            //刪除資料庫
+            //刪除资料庫
             if (rply.text = checkTools.permissionErrMsg({
                 flag: checkTools.flag.ChkChannelManager,
                 gid: groupid,
@@ -158,13 +158,13 @@ const rollDiceCommand = async function ({
                             trpgDatabasefunction.trpgDatabasefunction = msgs
                         })
                     })
-                    rply.text = '刪除所有關鍵字'
+                    rply.text = '刪除所有关鍵字'
                 }
             }
             return rply;
         case /(^[.]db$)/i.test(mainMsg[0]) && /^del$/i.test(mainMsg[1]) && /^\d+$/i.test(mainMsg[2]):
-            //刪除資料庫
-            if (!mainMsg[2]) rply.text += '沒有關鍵字. \n\n'
+            //刪除资料庫
+            if (!mainMsg[2]) rply.text += '没有关鍵字. \n\n'
             if (rply.text += checkTools.permissionErrMsg({
                 flag: checkTools.flag.ChkChannelManager,
                 gid: groupid,
@@ -189,7 +189,7 @@ const rollDiceCommand = async function ({
             return rply;
 
         case /(^[.]db$)/i.test(mainMsg[0]) && /^show$/i.test(mainMsg[1]):
-            //顯示
+            //显示
             records.get('trpgDatabase', (msgs) => {
                 trpgDatabasefunction.trpgDatabasefunction = msgs
             })
@@ -201,21 +201,21 @@ const rollDiceCommand = async function ({
             if (trpgDatabasefunction.trpgDatabasefunction)
                 for (let i = 0; i < trpgDatabasefunction.trpgDatabasefunction.length; i++) {
                     if (trpgDatabasefunction.trpgDatabasefunction[i].groupid == groupid) {
-                        rply.text += '資料庫列表:'
+                        rply.text += '资料庫列表:'
                         for (let a = 0; a < trpgDatabasefunction.trpgDatabasefunction[i].trpgDatabasefunction.length; a++) {
                             temp = 1;
                             rply.text += ((a % 2 && a != 1) || a == 0) ? ("\n") + a + ': ' + trpgDatabasefunction.trpgDatabasefunction[i].trpgDatabasefunction[a].topic : '       ' + a + ': ' + trpgDatabasefunction.trpgDatabasefunction[i].trpgDatabasefunction[a].topic;
                         }
 
                     }
-                    if (temp == 0) rply.text = '沒有已設定的關鍵字. '
+                    if (temp == 0) rply.text = '没有已設定的关鍵字. '
                 }
             rply.quotes = true;
-            //顯示資料庫
+            //显示资料庫
             rply.text = rply.text.replace(/^([^(,)\1]*?)\s*(,)\s*/mg, '$1: ').replace(/,/gm, ', ')
             return rply
         case /(^[.]db$)/i.test(mainMsg[0]) && /\S/i.test(mainMsg[1]) && /^(?!(add|del|show)$)/ig.test(mainMsg[1]): {
-            //顯示關鍵字
+            //显示关鍵字
             //let times = /^[.]db/.exec(mainMsg[0])[1] || 1
             //if (times > 30) times = 30;
             //if (times < 1) times = 1
@@ -227,7 +227,7 @@ const rollDiceCommand = async function ({
             if (trpgDatabasefunction.trpgDatabasefunction && mainMsg[1])
                 for (let i = 0; i < trpgDatabasefunction.trpgDatabasefunction.length; i++) {
                     if (trpgDatabasefunction.trpgDatabasefunction[i].groupid == groupid) {
-                        //rply.text += '資料庫列表:'
+                        //rply.text += '资料庫列表:'
                         for (let a = 0; a < trpgDatabasefunction.trpgDatabasefunction[i].trpgDatabasefunction.length; a++) {
                             if (trpgDatabasefunction.trpgDatabasefunction[i].trpgDatabasefunction[a].topic.toLowerCase() == mainMsg[1].toLowerCase()) {
                                 temp = 1
@@ -238,7 +238,7 @@ const rollDiceCommand = async function ({
                         }
                     }
                 }
-            if (temp == 0) rply.text = '沒有相關關鍵字. '
+            if (temp == 0) rply.text = '没有相关关鍵字. '
             rply.text = await replaceAsync(rply.text, /{(.*?)}/ig, replacer);
 
             // rply.text = rply.text.replace(/,/mg, ' ')
@@ -249,7 +249,7 @@ const rollDiceCommand = async function ({
             if (rply && trpgDatabasefunction.trpgDatabaseAllgroup && mainMsg[2])
                 if (rply && trpgDatabasefunction.trpgDatabaseAllgroup && trpgDatabasefunction.trpgDatabaseAllgroup[0] && trpgDatabasefunction.trpgDatabaseAllgroup[0].trpgDatabaseAllgroup[0]) {
                     if (trpgDatabasefunction.trpgDatabaseAllgroup[0].trpgDatabaseAllgroup.length > 100) {
-                        rply.text = '只可以有100个關鍵字啊'
+                        rply.text = '只可以有100个关鍵字啊'
                         return rply;
                     }
                     for (let i = 0; i < trpgDatabasefunction.trpgDatabaseAllgroup.length; i++) {
@@ -275,14 +275,14 @@ const rollDiceCommand = async function ({
                     })
                     rply.text = '新增成功: ' + mainMsg[2]
                 } else {
-                    rply.text = '新增失敗. 重複關鍵字'
+                    rply.text = '新增失败. 重复关鍵字'
                 }
             } else {
-                rply.text = '新增失敗.'
+                rply.text = '新增失败.'
                 if (!mainMsg[2])
-                    rply.text += ' 沒有關鍵字.'
+                    rply.text += ' 没有关鍵字.'
                 if (!mainMsg[3])
-                    rply.text += ' 沒有內容.'
+                    rply.text += ' 没有內容.'
             }
             return rply;
         case /(^[.]dbp$)/i.test(mainMsg[0]) && /^show$/i.test(mainMsg[1]):
@@ -291,15 +291,15 @@ const rollDiceCommand = async function ({
             })
             if (trpgDatabasefunction.trpgDatabaseAllgroup)
                 for (let i = 0; i < trpgDatabasefunction.trpgDatabaseAllgroup.length; i++) {
-                    rply.text += '資料庫列表:'
+                    rply.text += '资料庫列表:'
                     for (let a = 0; a < trpgDatabasefunction.trpgDatabaseAllgroup[i].trpgDatabaseAllgroup.length; a++) {
                         tempshow = 1;
                         rply.text += ((a % 2 && a != 1) || a == 0) ? ("\n") + a + ': ' + trpgDatabasefunction.trpgDatabaseAllgroup[i].trpgDatabaseAllgroup[a].topic : '      ' + a + ': ' + trpgDatabasefunction.trpgDatabaseAllgroup[i].trpgDatabaseAllgroup[a].topic;
 
                     }
                 }
-            if (tempshow == 0) rply.text = '沒有已設定的關鍵字. '
-            //顯示資料庫
+            if (tempshow == 0) rply.text = '没有已設定的关鍵字. '
+            //显示资料庫
             rply.text = rply.text.replace(/^([^(,)\1]*?)\s*(,)\s*/mg, '$1: ').replace(/,/gm, ', ')
             return rply;
         case /(^[.]dbp$)/i.test(mainMsg[0]) && /\S/i.test(mainMsg[0]) && /^(?!(add|del|show)$)/ig.test(mainMsg[1]):
@@ -318,7 +318,7 @@ ${trpgDatabasefunction.trpgDatabaseAllgroup[i].trpgDatabaseAllgroup[a].contact}`
                         }
                     }
                 }
-            if (temp2 == 0) rply.text = '沒有相關關鍵字. '
+            if (temp2 == 0) rply.text = '没有相关关鍵字. '
             rply.text = await replaceAsync(rply.text, /{(.*?)}/ig, replacer);
             return rply;
         default:
@@ -359,14 +359,14 @@ ${trpgDatabasefunction.trpgDatabaseAllgroup[i].trpgDatabaseAllgroup[a].contact}`
                 num = (num < 1) ? 0 : num;
                 temp = temp2[num]
                 return temp || ' ';
-            // * {allgp.title}<---随机全GP其中一種稱號
+            // * {allgp.title}<---随机全GP其中一种稱號
             case /^server.member_count$/i.test(second):
                 temp = await findGpMember(groupid);
                 num = (temp && temp.length) ? Math.max(membercount, temp.length) : membercount;
                 return num || ' ';
-            //  {server.member_count} 現在頻道中總人数 \
+            //  {server.member_count} 现在频道中总人数 \
             case /^my.RankingPer$/i.test(second): {
-                //* {my.RankingPer} 現在排名百分比 \
+                //* {my.RankingPer} 现在排名百分比 \
                 // let userRankingPer = Math.ceil(userRanking / usermember_count * 10000) / 100 + '%';
                 let gpMember = await findGpMember(groupid);
                 temp2 = await ranking(userid, gpMember)
@@ -377,28 +377,28 @@ ${trpgDatabasefunction.trpgDatabaseAllgroup[i].trpgDatabaseAllgroup[a].contact}`
             }
             case /^my.Ranking$/i.test(second): {
                 let gpMember = await findGpMember(groupid);
-                //* {my.Ranking} 顯示掷骰者現在排名 \
+                //* {my.Ranking} 显示掷骰者现在排名 \
                 if (!gpMember) return ' ';
                 return await ranking(userid, gpMember) || ' ';
             }
             case /^my.exp$/i.test(second):
-                //* {my.exp} 顯示掷骰者經驗值
+                //* {my.exp} 显示掷骰者经驗值
                 temp = await findGp(groupid, userid, displayname, displaynameDiscord, membercount);
                 temp2 = await findUser(groupid, userid);
                 if (!temp || !temp2 || !temp2.EXP) return ' ';
                 return temp2.EXP || ' ';
             case /^my.name$/i.test(second):
-                //* {my.name} <---顯示掷骰者名字
-                return displaynameDiscord || displayname || "無名";
+                //* {my.name} <---显示掷骰者名字
+                return displaynameDiscord || displayname || "无名";
             case /^my.title$/i.test(second):
-                // * {my.title}<---顯示掷骰者稱號
+                // * {my.title}<---显示掷骰者稱號
                 temp = await findGp(groupid, userid, displayname, displaynameDiscord, membercount);
                 temp2 = await findUser(groupid, userid);
                 if (!temp || !temp2 || !temp2.Level || !temp.Title) return ' ';
                 //   let userTitle = await this.checkTitle(userlevel, trpgLevelSystemfunction.trpgLevelSystemfunction[i].Title);
                 return await exports.z_Level_system.checkTitle(temp2.Level, temp.Title) || ' ';
             case /^my.level$/i.test(second):
-                //* {my.level}<---顯示掷骰者等級
+                //* {my.level}<---显示掷骰者等级
                 temp2 = await findUser(groupid, userid);
                 if (!temp2 || !temp2.Level) return ' ';
                 return temp2.Level || ' ';
@@ -415,12 +415,12 @@ async function findGp(groupid) {
     if (!process.env.mongoURL || !groupid) {
         return;
     }
-    //1. 檢查GROUP ID 有沒有開啓CONFIG 功能 1
+    //1. 检查GROUP ID 有没有开启CONFIG 功能 1
     let gpInfo = await schema.trpgLevelSystem.findOne({
         groupid: groupid
     }).catch(error => console.error('db #430 mongoDB error: ', error.name, error.reson));
     if (!gpInfo || gpInfo.SwitchV2 != 1) return;
-    // userInfo.name = displaynameDiscord || displayname || '無名'
+    // userInfo.name = displaynameDiscord || displayname || '无名'
     return gpInfo;
     //6 / 7 * LVL * (2 * LVL * LVL + 30 * LVL + 100)
 }
@@ -428,11 +428,11 @@ async function findGpMember(groupid) {
     if (!process.env.mongoURL || !groupid) {
         return;
     }
-    //1. 檢查GROUP ID 有沒有開啓CONFIG 功能 1
+    //1. 检查GROUP ID 有没有开启CONFIG 功能 1
     let gpInfo = await schema.trpgLevelSystemMember.find({
         groupid: groupid
     }).catch(error => console.error('db #443 mongoDB error: ', error.name, error.reson));
-    // userInfo.name = displaynameDiscord || displayname || '無名'
+    // userInfo.name = displaynameDiscord || displayname || '无名'
     return gpInfo;
     //6 / 7 * LVL * (2 * LVL * LVL + 30 * LVL + 100)
 }
@@ -443,7 +443,7 @@ async function findUser(groupid, userid) {
         groupid: groupid,
         userid: userid
     }).catch(error => console.error('db #454 mongoDB error: ', error.name, error.reson));
-    // userInfo.name = displaynameDiscord || displayname || '無名'
+    // userInfo.name = displaynameDiscord || displayname || '无名'
     return userInfo;
     //6 / 7 * LVL * (2 * LVL * LVL + 30 * LVL + 100)
 }

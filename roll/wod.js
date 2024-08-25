@@ -17,7 +17,7 @@ const prefixs = function () {
 }
 const getHelpMessage = async function () {
 	return `【WOD 黑暗世界掷骰】
-[.](骰数)Wd(加骰)(+成功数) (問題)
+[.](骰数)Wd(加骰)(+成功数) (问题)
 例子 .3wd8 .15wd9+2`
 }
 const initialize = function () {

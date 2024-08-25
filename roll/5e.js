@@ -10,9 +10,9 @@ const gameType = function () {
     return 'dnd5e:Dice:hktrpg'
 }
 const prefixs = function () {
-    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---這裡是一對  
-    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---這裡是一對
-    //如前面是 /^1$/ig, 後面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
+    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这裡是一对  
+    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这裡是一对
+    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
     ///^(?=.*he)(?!.*da).*$/ig
     return [{
         first: /^\.5ebuild$/i,
@@ -32,17 +32,17 @@ const initialize = function () {
 /**
  * 格式化输出	
  * 
- * 	5E角色屬性掷骰
+ * 	5E角色属性掷骰
  *  4d6dl1 * 6
  * ==================
- * 屬性1: [x] (+-y)
- * 屬性2: [x] (+-y)
- * 屬性3: [x] (+-y)
- * 屬性4: [x] (+-y)
- * 屬性5: [x] (+-y)
- * 屬性6: [x] (+-y)
+ * 属性1: [x] (+-y)
+ * 属性2: [x] (+-y)
+ * 属性3: [x] (+-y)
+ * 属性4: [x] (+-y)
+ * 属性5: [x] (+-y)
+ * 属性6: [x] (+-y)
  * ==================
- * 總合 [x] (+-y)
+ * 总合 [x] (+-y)
  * 
  * 
  * **/
@@ -86,12 +86,12 @@ const randomStats = function () {
             mod += Number(roll[i].mod);
         }
         roll.sort((b, a) => a.stats - b.stats);
-        output += '5e 屬性產生器(.6 4D6dl1)\n==================\n';
+        output += '5e 属性产生器(.6 4D6dl1)\n==================\n';
         for (let i = 0; i < 6; i++) {
-            output += `**屬性${i + 1}**: ${roll[i].result} (${roll[i].mod > 0 ? '+' : ''}${roll[i].mod})\n`;
+            output += `**属性${i + 1}**: ${roll[i].result} (${roll[i].mod > 0 ? '+' : ''}${roll[i].mod})\n`;
         }
         output += '==================\n';
-        output += `總合 \`[${total}] (${mod > 0 ? '+' : ''}${mod})\``;
+        output += `总合 \`[${total}] (${mod > 0 ? '+' : ''}${mod})\``;
         return output;
     } catch (error) {
         console.error('#5E工具 - .5ebuild - randomStats Error: ' + error);
@@ -102,7 +102,7 @@ const discordCommand = [
     {
         data: new SlashCommandBuilder()
             .setName('5ebuild')
-            .setDescription('5e屬性產生器')
+            .setDescription('5e属性产生器')
         ,
         async execute() {
             return `.5ebuild`

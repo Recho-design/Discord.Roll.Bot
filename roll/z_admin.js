@@ -36,17 +36,17 @@ const prefixs = function () {
 }
 const getHelpMessage = async function () {
     return `【Admin 工具】
-用來Debug 及調整VIP工具
-.admin state        取得Rollbot狀態
+用來Debug 及调整VIP工具
+.admin state        取得Rollbot状態
 
-.admin debug        用來取得群組資料
+.admin debug        用來取得群組资料
 
 .admin account (username) (password) 設定網頁版角色卡登入功能
 username 4-16字,中英文限定 
 password 6-16字,英文及以下符號限定 !@#$%^&*
 
-.admin news on      開啓取得HKTRPG更新資訊
-.admin news off     關閉取得HKTRPG更新資訊
+.admin news on      开启取得HKTRPG更新資訊
+.admin news off     关閉取得HKTRPG更新資訊
 
 `
 }
@@ -139,9 +139,9 @@ const rollDiceCommand = async function ({
                 return rply;
             }
             if (temp && temp2) {
-                rply.text = "已註冊這頻道。如果想使用角色卡，請到\nhttps://card.hktrpg.com/";
+                rply.text = "已註冊这频道。如果想使用角色卡，请到\nhttps://card.hktrpg.com/";
                 if (!await checkGpAllow(channelid || groupid)) {
-                    rply.text += '\n此頻道並未被Admin允許經網頁掷骰，請Admin先在此頻道输入\n.admin  allowrolling进行授權。';
+                    rply.text += '\n此频道並未被Admin允許经網頁掷骰，请Admin先在此频道输入\n.admin  allowrolling进行授權。';
                 }
                 return rply;
             }
@@ -152,9 +152,9 @@ const rollDiceCommand = async function ({
                     "titleName": titleName
                 })
                 await temp.save();
-                rply.text = "註冊成功，如果想使用角色卡，請到\nhttps://card.hktrpg.com/"
+                rply.text = "註冊成功，如果想使用角色卡，请到\nhttps://card.hktrpg.com/"
                 if (!await checkGpAllow(channelid || groupid)) {
-                    rply.text += '\n此頻道並未被Admin允許經網頁掷骰，請Admin在此頻道输入\n.admin  allowrolling';
+                    rply.text += '\n此频道並未被Admin允許经網頁掷骰，请Admin在此频道输入\n.admin  allowrolling';
                 }
                 return rply;
             }
@@ -170,9 +170,9 @@ const rollDiceCommand = async function ({
                     }
                 });
                 await temp.save().catch(error => console.error('admin #138 mongoDB error: ', error.name, error.reson));
-                rply.text = "註冊成功。如果想使用角色卡，請到\nhttps://card.hktrpg.com/";
+                rply.text = "註冊成功。如果想使用角色卡，请到\nhttps://card.hktrpg.com/";
                 if (!await checkGpAllow(channelid || groupid)) {
-                    rply.text += '\n此頻道並未被Admin允許經網頁掷骰，請Admin在此頻道输入\n.admin  allowrolling';
+                    rply.text += '\n此频道並未被Admin允許经網頁掷骰，请Admin在此频道输入\n.admin  allowrolling';
                 }
                 return rply;
             }
@@ -201,7 +201,7 @@ const rollDiceCommand = async function ({
                 rply.text += JSON.stringify(e);
                 return rply;
             }
-            rply.text = "已移除註冊!如果想檢查，請到\nhttps://card.hktrpg.com/"
+            rply.text = "已移除註冊!如果想检查，请到\nhttps://card.hktrpg.com/"
             return rply;
         case /^disallowrolling$/i.test(mainMsg[1]):
             if (rply.text = checkTools.permissionErrMsg({
@@ -221,7 +221,7 @@ const rollDiceCommand = async function ({
                 rply.text += JSON.stringify(e);
                 return rply;
             }
-            rply.text = "此頻道已被Admin取消使用網頁版角色卡掷骰的權限。\n如Admin希望允許網頁掷骰，可输入\n.admin allowrolling";
+            rply.text = "此频道已被Admin取消使用網頁版角色卡掷骰的權限。\n如Admin希望允許網頁掷骰，可输入\n.admin allowrolling";
             return rply;
         case /^allowrolling$/i.test(mainMsg[1]):
             if (rply.text = checkTools.permissionErrMsg({
@@ -250,19 +250,19 @@ const rollDiceCommand = async function ({
                 rply.text += JSON.stringify(e);
                 return rply;
             }
-            rply.text = "此頻道已被Admin允許使用網頁版角色卡掷骰，希望經網頁掷骰的玩家可在此頻道输入以下指令登記。\n.admin registerChannel\n\n如Admin希望取消本頻道的網頁掷骰許可，可输入\n.admin disallowrolling";
+            rply.text = "此频道已被Admin允許使用網頁版角色卡掷骰，希望经網頁掷骰的玩家可在此频道输入以下指令登記。\n.admin registerChannel\n\n如Admin希望取消本频道的網頁掷骰許可，可输入\n.admin disallowrolling";
             return rply;
         case /^account$/i.test(mainMsg[1]):
             if (groupid) {
-                rply.text = "設定帳號時，請直接和HKTRPG對話，禁止在群組中使用";
+                rply.text = "設定帳號时，请直接和HKTRPG对话，禁止在群組中使用";
                 return rply;
             }
             if (!mainMsg[2]) {
-                rply.text = "請設定使用者名稱，4-16字，中英文限定，大小階相同";
+                rply.text = "请設定使用者名稱，4-16字，中英文限定，大小階相同";
                 return rply;
             }
             if (!mainMsg[3]) {
-                rply.text = "請設定密碼，6-16字，英文及以下符號限定!@#$%^&*";
+                rply.text = "请設定密碼，6-16字，英文及以下符號限定!@#$%^&*";
                 return rply;
             }
             name = mainMsg[2].toLowerCase();
@@ -309,8 +309,8 @@ const rollDiceCommand = async function ({
                 rply.text += JSON.stringify(e);
                 return rply;
             }
-            rply.text += "現在你的帳號是: " + name + "\n" + "密碼: " + mainMsg[3];
-            rply.text += "\n登入位置: https://card.hktrpg.com/ \n如想經網頁掷骰，可以請Admin在頻道中输入\n.admin  allowrolling\n然後希望掷骰玩家可在該頻道输入以下指令登記。\n.admin registerChannel";
+            rply.text += "现在你的帳號是: " + name + "\n" + "密碼: " + mainMsg[3];
+            rply.text += "\n登入位置: https://card.hktrpg.com/ \n如想经網頁掷骰，可以请Admin在频道中输入\n.admin  allowrolling\n然后希望掷骰玩家可在該频道输入以下指令登記。\n.admin registerChannel";
             return rply;
         case /^debug$/i.test(mainMsg[1]):
             rply.text = "Debug function" + '\ngroupid: ' + groupid + "\nuserid: " + userid;
@@ -353,7 +353,7 @@ const rollDiceCommand = async function ({
                 //.admin addVipGroup -i  ID -l LV -n NAME -no NOTES -s SWITCH
             } catch (error) {
                 console.error('新增VIP GET ERROR: ', error)
-                rply.text = '新增VIP失敗\n因为 ' + error.message
+                rply.text = '新增VIP失败\n因为 ' + error.message
             }
             return rply;
         case /^respawn$/i.test(mainMsg[1]): {
@@ -390,7 +390,7 @@ const rollDiceCommand = async function ({
                 //.admin addVipGroup -i  ID -l LV -n NAME -no NOTES -s SWITCH
             } catch (error) {
                 console.error('新增VIP GET ERROR: ', error)
-                rply.text = '新增VIP失敗\n因为 ' + error.message
+                rply.text = '新增VIP失败\n因为 ' + error.message
             }
             return rply;
 
@@ -407,12 +407,12 @@ const rollDiceCommand = async function ({
                     switch: true
                 }, opt)
                 if (doc) {
-                    rply.text = "更新成功\n你已開啓更新通知功能";
+                    rply.text = "更新成功\n你已开启更新通知功能";
                 }
                 //.admin addVipGroup -i  ID -l LV -n NAME -no NOTES -s SWITCH
             } catch (error) {
                 console.error('新增VIP GET ERROR: ', error)
-                rply.text = '更新失敗\n因为 ' + error.message
+                rply.text = '更新失败\n因为 ' + error.message
             }
             return rply;
 
@@ -429,12 +429,12 @@ const rollDiceCommand = async function ({
                     switch: false
                 }, opt)
                 if (doc) {
-                    rply.text = "更新成功\n你已關閉更新通知功能";
+                    rply.text = "更新成功\n你已关閉更新通知功能";
                 }
                 //.admin addVipGroup -i  ID -l LV -n NAME -no NOTES -s SWITCH
             } catch (error) {
                 console.error('新增VIP GET ERROR: ', error)
-                rply.text = '更新失敗\n因为 ' + error.message
+                rply.text = '更新失败\n因为 ' + error.message
             }
             return rply;
         case /^send$/i.test(mainMsg[1]) && /^News$/i.test(mainMsg[2]): {
@@ -549,9 +549,9 @@ module.exports = {
                         userid: element.userid,
                         name: element.name,
                         EXP: element.EXP,
-                        //現在經驗值
+                        //现在经驗值
                         Level: Number(element.Level),
-                        //等級
+                        //等级
                         LastSpeakTime: element.LastSpeakTime
                     })
 
@@ -561,7 +561,7 @@ module.exports = {
             // await doc.save()
 
 
-            rply.text = doc.length + '項 DONE '
+            rply.text = doc.length + '项 DONE '
             return rply;
         }
 

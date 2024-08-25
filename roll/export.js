@@ -9,7 +9,7 @@ const sevenDay = (process.env.DEBUG) ? 1 : 60 * 24 * 7 * 60000;
 const checkTools = require('../modules/check.js');
 
 const gameName = function () {
-    return '【Discord 頻道输出工具】'
+    return '【Discord 频道输出工具】'
 }
 const opt = {
     upsert: true,
@@ -23,7 +23,7 @@ const FUNCTION_LIMIT = (process.env.DEBUG) ? [99, 99, 99, 40, 40, 99, 99, 99] : 
  * 每个ACC可以一星期一次
  * 
  *  
- * 升級的話, 个人一星期20次
+ * 升级的话, 个人一星期20次
  * 只有一分鐘限制
  * 
  */
@@ -42,23 +42,23 @@ const prefixs = function () {
     }]
 }
 const getHelpMessage = async function () {
-    return `測試进行中【聊天紀錄】
-.discord html 可以输出有分析功能的聊天紀錄
-.discord txt 可以输出純文字的聊天紀錄
-.discord txt -withouttime 可以输出【沒有時間標記的】純文字的聊天紀錄
-需要使用者及rollbot 都有閱讀頻道聊天紀錄的權限
-然後會私訊你紀錄
-注意 使用此功能，你需要有管理此頻道的權限或管理員權限。
-另外網頁版內容經過AES加密，後者是純文字檔案
-因为經過server處理，擔心个資外洩請勿使用。
+    return `測试进行中【聊天记录】
+.discord html 可以输出有分析功能的聊天记录
+.discord txt 可以输出純文字的聊天记录
+.discord txt -withouttime 可以输出【没有时间标記的】純文字的聊天记录
+需要使用者及rollbot 都有閱讀频道聊天记录的權限
+然后會私訊你记录
+注意 使用此功能，你需要有管理此频道的權限或管理员權限。
+另外網頁版內容经过AES加密，后者是純文字檔案
+因为经过server處理，擔心个資外洩请勿使用。
 
 因为資源限制，普通使用者 每个群組 每120分鐘可以使用一次,
 每个ACC可以一星期使用一次
 
-經patreon解鎖功能的話可以一星期使用20次以上，
+经patreon解锁功能的话可以一星期使用20次以上，
 及可以一分鐘使用一次。
 
-另外這是開發團錄功能的副產品，團錄功能敬請期待(?)`
+另外这是开发团錄功能的副产品，团錄功能敬请期待(?)`
 }
 const initialize = function () {
     return variables;
@@ -239,13 +239,13 @@ const rollDiceCommand = async function ({
             const userId = match.slice(2, -1); // 提取用戶 ID
             try {
                 let name = "";
-                // 嘗試獲取所有用戶
-                const member = members.find(member => member.id === userId); // 嘗試獲取用戶
+                // 嘗试獲取所有用戶
+                const member = members.find(member => member.id === userId); // 嘗试獲取用戶
                 if (member) name = member.nickname || member.displayName;
-                if (!member) name = await discordClient.users.fetch(userId).then(user => user.username).catch(() => ""); // 嘗試獲取用戶名
+                if (!member) name = await discordClient.users.fetch(userId).then(user => user.username).catch(() => ""); // 嘗试獲取用戶名
                 return name ? `@${name}` : match; // 如果用戶存在，返回用戶名
             } catch (error) {
-                return match; // 如果出現錯誤，返回原始的 match
+                return match; // 如果出现错误，返回原始的 match
             }
         }));
 
@@ -264,22 +264,22 @@ const rollDiceCommand = async function ({
             rply.quotes = true;
             return rply;
         case /^html$/i.test(mainMsg[1]):
-            rply.text = "功能暫停，請先使用TXT版 .discord txt"
+            rply.text = "功能暫停，请先使用TXT版 .discord txt"
             return rply;
             if (!channelid || !groupid) {
-                rply.text = "這是頻道功能，需要在頻道上使用。"
+                rply.text = "这是频道功能，需要在频道上使用。"
                 return rply;
             }
             if (!hasReadPermission) {
-                rply.text = "HKTRPG沒有相關權限，禁止使用這功能。\nHKTRPG需要有查看此頻道對話歷史的權限。"
+                rply.text = "HKTRPG没有相关權限，禁止使用这功能。\nHKTRPG需要有查看此频道对话历史的權限。"
                 return rply;
             }
             if (userrole < 2) {
-                rply.text = "你沒有相關權限，禁止使用這功能。\n你需要有管理此頻道的權限或管理員權限。"
+                rply.text = "你没有相关權限，禁止使用这功能。\n你需要有管理此频道的權限或管理员權限。"
                 return rply;
             }
             if (botname !== "Discord") {
-                rply.text = "這是Discord限定功能"
+                rply.text = "这是Discord限定功能"
                 return rply;
             }
             lv = await VIP.viplevelCheckUser(userid);
@@ -297,37 +297,37 @@ const rollDiceCommand = async function ({
                 C = await discordClient.channels.fetch(channelid);
             } catch (error) {
                 if (error) {
-                    rply.text = `出現錯誤(ERROR): 
+                    rply.text = `出现错误(ERROR): 
                      ${error}`;
                     return rply;
                 }
             }
-            //<0 = DC 未過
+            //<0 = DC 未过
             if (gpRemainingTime < 0) {
-                rply.text = `此群組的冷卻時間未過，冷卻剩餘 ${millisToMinutesAndSeconds(gpRemainingTime)} 時間`;
+                rply.text = `此群組的冷卻时间未过，冷卻剩餘 ${millisToMinutesAndSeconds(gpRemainingTime)} 时间`;
                 return rply;
             }
             if (userRemainingTime < 0 && checkUser && checkUser.times >= limit) {
-                rply.text = `你每星期完整下載聊天紀錄的上限为 ${limit} 次，
-                冷卻剩餘 ${millisToMinutesAndSeconds(userRemainingTime)} 時間，
-                現在正處於Demo模式，可以输出500條信息。
+                rply.text = `你每星期完整下載聊天记录的上限为 ${limit} 次，
+                冷卻剩餘 ${millisToMinutesAndSeconds(userRemainingTime)} 时间，
+                现在正處於Demo模式，可以输出500条信息。
 
-                支援及解鎖上限 https://www.patreon.com/HKTRPG`;
+                支援及解锁上限 https://www.patreon.com/HKTRPG`;
                 demoMode = true;
             }
             /**
-             * A. 檢查GP 資料, USER 資料 
+             * A. 检查GP 资料, USER 资料 
              * 
-             * B. 檢查 GP 5分鐘DC 時間 
-             * PASS-> 檢查 
+             * B. 检查 GP 5分鐘DC 时间 
+             * PASS-> 检查 
              * 
-             * C. USER > 檢查時間
-             * 超過一星期 -> 立即进行動作
-             * 更新最新使用時間
-             * 運行EXPORT
+             * C. USER > 检查时间
+             * 超过一星期 -> 立即进行动作
+             * 更新最新使用时间
+             * 运行EXPORT
              * 
              * 
-             * 檢查
+             * 检查
              */
             console.log('USE EXPORT HTML')
             if (!checkGP) {
@@ -342,7 +342,7 @@ const rollDiceCommand = async function ({
             }
 
 
-            discordMessage.channel.send("<@" + userid + '>\n' + ' 請等等，HKTRPG現在開始努力處理，需要一點時間');
+            discordMessage.channel.send("<@" + userid + '>\n' + ' 请等等，HKTRPG现在开始努力處理，需要一点时间');
             M = await lots_of_messages_getter_HTML(C, demoMode);
             if (M.length == 0) {
                 rply.text = "未能讀取信息";
@@ -388,15 +388,15 @@ const rollDiceCommand = async function ({
             let randomLink = makeid(7);
             let newAESDate = AES(key, key, JSON.stringify(newRawDate));
             //aesData = [];
-            newValue = data.replace(/aesData\s=\s\[\]/, 'aesData = ' + JSON.stringify(newAESDate.toString('base64'))).replace(/<h1>聊天紀錄<\/h1>/, '<h1>' + channelName + ' 的聊天紀錄</h1>');
+            newValue = data.replace(/aesData\s=\s\[\]/, 'aesData = ' + JSON.stringify(newAESDate.toString('base64'))).replace(/<h1>聊天记录<\/h1>/, '<h1>' + channelName + ' 的聊天记录</h1>');
             let tempB = key;
             await fs.writeFile(dir + channelid + '_' + hour + minutes + seconds + '_' + randomLink + '.html', newValue); // need to be in an async function
             rply.discordExportHtml = [
                 tempA + '_' + randomLink,
                 tempB
             ]
-            rply.text += `已私訊你 頻道 ${discordMessage.channel.name} 的聊天紀錄
-            你的channel 聊天紀錄 共有 ${totalSize} 項`
+            rply.text += `已私訊你 频道 ${discordMessage.channel.name} 的聊天记录
+            你的channel 聊天记录 共有 ${totalSize} 项`
             return rply;
         case /^txt$/i.test(mainMsg[1]): {
             if (rply.text = checkTools.permissionErrMsg({
@@ -409,8 +409,8 @@ const rollDiceCommand = async function ({
             }
 
             if (!hasReadPermission) {
-                rply.text = `HKTRPG沒有相關權限，禁止使用這功能。
-                    HKTRPG需要有查看此頻道對話歷史的權限。`
+                rply.text = `HKTRPG没有相关權限，禁止使用这功能。
+                    HKTRPG需要有查看此频道对话历史的權限。`
                 return rply;
             }
 
@@ -431,21 +431,21 @@ const rollDiceCommand = async function ({
                 C = await discordClient.channels.fetch(channelid);
             } catch (error) {
                 if (error) {
-                    rply.text = "出現錯誤(ERROR): " + '\n' + error;
+                    rply.text = "出现错误(ERROR): " + '\n' + error;
                     return rply;
                 }
             }
-            //<0 = DC 未過
+            //<0 = DC 未过
             if (gpRemainingTime < 0) {
-                rply.text = "此群組的冷卻時間未過，冷卻剩餘" + millisToMinutesAndSeconds(gpRemainingTime) + '時間';
+                rply.text = "此群組的冷卻时间未过，冷卻剩餘" + millisToMinutesAndSeconds(gpRemainingTime) + '时间';
                 return rply;
             }
             if (userRemainingTime < 0 && checkUser && checkUser.times >= limit) {
-                rply.text = `你每星期完整下載聊天紀錄的上限为 ${limit} 次，
-                    冷卻剩餘 ${millisToMinutesAndSeconds(userRemainingTime)} 時間，
-                    現在正處於Demo模式，可以输出500條信息，
+                rply.text = `你每星期完整下載聊天记录的上限为 ${limit} 次，
+                    冷卻剩餘 ${millisToMinutesAndSeconds(userRemainingTime)} 时间，
+                    现在正處於Demo模式，可以输出500条信息，
                     
-                    支援及解鎖上限 https://www.patreon.com/HKTRPG`;
+                    支援及解锁上限 https://www.patreon.com/HKTRPG`;
                 return rply;
             }
 
@@ -461,7 +461,7 @@ const rollDiceCommand = async function ({
             }
 
             console.log('USE EXPORT TXT')
-            discordMessage.channel.send("<@" + userid + '>\n' + ' 請等等，HKTRPG現在開始努力處理，需要一點時間');
+            discordMessage.channel.send("<@" + userid + '>\n' + ' 请等等，HKTRPG现在开始努力處理，需要一点时间');
             const members = discordMessage.guild.members.cache.map(member => member);
             M = await lots_of_messages_getter_TXT(C, demoMode, members);
             if (M.length == 0) {
@@ -500,7 +500,7 @@ const rollDiceCommand = async function ({
                 return a.timestamp - b.timestamp;
             });
             let withouttime = (/-withouttime/i).test(inputStr);
-            //加不加時間標記下去
+            //加不加时间标記下去
             for (let index = M.length - 1; index >= 0; index--) {
                 if (withouttime) {
                     if (M[index].isbot) {
@@ -518,7 +518,7 @@ const rollDiceCommand = async function ({
                     if (M[index].isbot) {
                         data += '(🤖)'
                     }
-                    //dateObj  決定有沒有時間
+                    //dateObj  決定有没有时间
                     data += M[index].userName + '	' + dateObj + '\n';
                     data += (M[index].contact) ? (M[index].contact) + '\n' : '';
                     data += (M[index].embeds.length) ? `${M[index].embeds.join('\n')}` : '';
@@ -534,8 +534,8 @@ const rollDiceCommand = async function ({
             }
             await fs.writeFile(dir + channelid + '_' + hour + minutes + seconds + '.txt', data); // need to be in an async function
             rply.discordExport = channelid + '_' + hour + minutes + seconds;
-            rply.text += `已私訊你 頻道  ${discordMessage.channel.name}  的聊天紀錄
-                你的channel聊天紀錄 共有  ${totalSize}  項`
+            rply.text += `已私訊你 频道  ${discordMessage.channel.name}  的聊天记录
+                你的channel聊天记录 共有  ${totalSize}  项`
             console.log('EXPORT TXT DONE')
             return rply;
         }
