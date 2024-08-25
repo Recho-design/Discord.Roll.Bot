@@ -135,7 +135,7 @@ const circleTokernMaker3 = async (discordMessage, inputStr, mainMsg, discordClie
         const token = await tokernMaker3(response, name);
         const circleToken = await maskImage(token, './assets/token/tokenCircleMask3.png');
 
-        const pattern = GeoPattern.generate((text.text || displaynameDiscord || 'HKTRPG')).toString().replace('width="188" height="70"', 'width="520" height="520"')
+        const pattern = GeoPattern.generate((text.text || displaynameDiscord || '骰娘爱你哦💖')).toString().replace('width="188" height="70"', 'width="520" height="520"')
         let url = Buffer.from(
             pattern
         )

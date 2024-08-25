@@ -137,7 +137,7 @@ client.on('guildCreate', async guild => {
 			.setColor('#0099ff')
 			//.setTitle(rplyVal.title)
 			//.setURL('https://discord.js.org/')
-			.setAuthor({ name: 'HKTRPG', url: 'https://www.patreon.com/HKTRPG', iconURL: 'https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png' })
+			.setAuthor({ name: '骰娘爱你哦💖', url: 'https://www.patreon.com/HKTRPG', iconURL: 'https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png' })
 			.setDescription(newMessage.joinMessage())
 		await channel.send({ embeds: [text] });
 	} catch (error) {
@@ -238,7 +238,7 @@ client.once('ready', async () => {
 			console.log(`Discord Heartbeat: ID: ${isAwake.length} - ${heartbeat}... `)
 		}
 		if (heartbeat > WARNING_THRESHOLD && adminSecret) {
-			SendToId(adminSecret, `HKTRPG ID: ${wakeup.join(', ')} 可能下線了 请盡快检查.`);
+			SendToId(adminSecret, `骰娘爱你哦💖 ID: ${wakeup.join(', ')} 可能下線了 请盡快检查.`);
 		}
 		if (heartbeat > CRITICAL_THRESHOLD) {
 			if (isAwake.length > 0)
@@ -324,7 +324,7 @@ async function convQuotes(text = "") {
 		.setColor('#0099ff')
 		//.setTitle(rplyVal.title)
 		//.setURL('https://discord.js.org/')
-		.setAuthor({ name: 'HKTRPG', url: 'https://www.patreon.com/HKTRPG', iconURL: 'https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png' })
+		.setAuthor({ name: '骰娘爱你哦💖', url: 'https://www.patreon.com/HKTRPG', iconURL: 'https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png' })
 	const imageMatch = text.match(imageUrl) || null;
 	if (imageMatch && imageMatch.length) {
 		for (let index = 0; (index < imageMatch.length) && index < 10; index++) {
@@ -703,7 +703,7 @@ async function manageWebhook(discord) {
 		//'Incoming'
 		if (!webhook) {
 			const hooks = isThread ? await client.channels.fetch(channel.parentId) : channel;
-			await hooks.createWebhook({ name: "HKTRPG .me Function", avatar: "https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png" })
+			await hooks.createWebhook({ name: "骰娘爱你哦💖 .me Function", avatar: "https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png" })
 			webhooks = await channel.fetchWebhooks();
 			webhook = webhooks.find(v => {
 				return (v.channelId == channel.parentId || v.channelId == channel.id) && v.token;
@@ -1255,7 +1255,7 @@ async function handlingEditMessage(message, rplyVal) {
 					content: editReply
 				});
 			} else
-				return message.reply({ content: '根據Discord的規则，只能修改此BOT(HKTRPG)和Webhook所发出的訊息，请重新检查' });
+				return message.reply({ content: '根據Discord的規则，只能修改此BOT和Webhook所发出的訊息，请重新检查' });
 	} catch (error) {
 		console.error();
 	}

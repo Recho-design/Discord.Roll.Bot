@@ -242,17 +242,7 @@ HKTRPG來源自 机器鸭霸兽 https://docs.google.com/document/d/1dYnJqF2_QTp9
 
 		case /^link/i.test(mainMsg[1]):
 			rply.text = `TRPG百科 https://www.hktrpg.com/
-Discord支援群 https://support.hktrpg.com
-			
-邀请HKTRPG 加入
-Line 邀请連结 http://bit.ly/HKTRPG_LINE
-Discord 邀请連结 https://discord.hktrpg.com
-Telegram 邀请連结 http://t.me/hktrpg_bot
-網頁版 邀请連结 https://rollbot.hktrpg.com/
-簡易網上掷骰網頁 https://roll.hktrpg.com/
-			
-HKTRPG 研究社 Facebook https://www.facebook.com/groups/HKTRPG
-解锁功能及贊助 https://www.patreon.com/HKTRPG 
+簡易網上掷骰網頁 https://roll.hktrpg.com/		
 源代碼 http://bit.ly/HKTRPG_GITHUB
 `
 			return rply;
