@@ -23,7 +23,7 @@ const getHelpMessage = function () {
 這是讓管理員用來修改由HKTRPG和webhook(角色扮演功能)所發出的信息的功能
 就像你自己只能修改自己的信息一樣，此功能不能修改其他人或其他BOT的信息。
 使用方法:  
-對想要修改的信息右擊點選reply 然後按以下格式輸入即可
+對想要修改的信息右擊點選reply 然後按以下格式输入即可
 .edit 信息第一行
 信息第二行
 信息第三行
@@ -73,7 +73,7 @@ const discordCommand = [
         data: new SlashCommandBuilder()
             .setName('edit')
             .setDescription('【修改舊信息】 請Reply想要修改的信息')
-            .addStringOption(option => option.setName('text').setDescription('輸入內容').setRequired(true)),
+            .addStringOption(option => option.setName('text').setDescription('输入內容').setRequired(true)),
         async execute(interaction) {
             const text = interaction.options.getString('text')
             return `.edit ${text}`

@@ -48,7 +48,7 @@ Array.prototype.push.apply(MoveList, [
 		"gmax-tags": ["target|l|allfoe", "frame|paralysis||always", "frame||異常狀態|always", "effect|l|block", "frame|self|傷害|plus|d1", "text|l|電系招式|Electric"],
 		"accuracy": "原招式命中 + 2",
 		"damage": "力量/特殊 + 原招式傷害 + 2",
-		"effect": "發動電氣場地的效果。持續 4 個戰鬥輪。",
+		"effect": "發動電氣場地的效果。持續 4 个戰鬥輪。",
 		"desc": "An extremely dangerous lightning storm flashes through the arena, a single use of this Max Move could energize a city for weeks if not months at a time."
 	},
 	{
@@ -60,7 +60,7 @@ Array.prototype.push.apply(MoveList, [
 		"gmax-tags": ["target|l|allfoe", "target|l|allally", "frame|heal||heal|2", "frame|confuse||always", "frame|love||always", "text|l|妖精招式|Fairy"],
 		"accuracy": "原招式命中 + 2",
 		"damage": "力量/特殊 + 原招式傷害 + 2",
-		"effect": "發動薄霧場地的效果。持續 4 個戰鬥輪。",
+		"effect": "發動薄霧場地的效果。持續 4 个戰鬥輪。",
 		"desc": "A shooting star in the night sky will make a wish come true. A thousand shooting stars in the battlefield must be a lot more efficient, right?"
 	},
 	{
@@ -84,7 +84,7 @@ Array.prototype.push.apply(MoveList, [
 		"gmax-tags": ["target|l|allfoe", "weather|l|sun2", "text|l|無視特性", "frame|burn3||number|d3", "effect|l|block", "text|l|火系招式|Fire"],
 		"accuracy": "原招式命中 + 2",
 		"damage": "力量/特殊 + 原招式傷害 + 2",
-		"effect": "發動大晴天天氣狀態的效果。持續 4 個戰鬥輪。",
+		"effect": "發動大晴天天氣狀態的效果。持續 4 个戰鬥輪。",
 		"desc": "Even at night, the fiery flames comming out of this Pokémon light up the sky. This Max Move is an onslaught of heat that is definitely not good for the environment."
 	},
 	{
@@ -120,7 +120,7 @@ Array.prototype.push.apply(MoveList, [
 		"gmax-tags": ["target|l|allfoe", "frame|target|靈巧|down|1", "text|l|無視特性", "frame|heal|治療狀態|always", "frame|target|閃避|down|1", "text|l|草系招式|Grass"],
 		"accuracy": "原招式命中 + 2",
 		"damage": "力量/特殊 + 原招式傷害 + 2",
-		"effect": "發動青草場地的效果。持續 4 個戰鬥輪。",
+		"effect": "發動青草場地的效果。持續 4 个戰鬥輪。",
 		"desc": "Nature becomes an entity of its own under this enormous Pokémon command, there is no stopping this burst of life coming violently from the ground."
 	},
 	{
@@ -144,7 +144,7 @@ Array.prototype.push.apply(MoveList, [
 		"gmax-tags": ["target|l|allfoe", "effect|l|lethal", "frame|frozen||number|d3", "pdice|l|2", "effect|l|block", "text|l|冰系招式|Ice"],
 		"accuracy": "原招式命中 + 2",
 		"damage": "力量/特殊 + 原招式傷害 + 2",
-		"effect": "發動冰雹天氣狀態的效果。持續 4 個戰鬥輪。",
+		"effect": "發動冰雹天氣狀態的效果。持續 4 个戰鬥輪。",
 		"desc": "A harsh blizzard is unleashed and the temperature drops below zero in the whole city. Revenge is a dish best served with this Max Move."
 	},
 	{
@@ -180,7 +180,7 @@ Array.prototype.push.apply(MoveList, [
 		"gmax-tags": ["target|l|allfoe", "text|l|無視特性", "frame|sleep||number|d3", "frame|confuse||always", "effect|l|neverfail", "text|l|超能招式|Psychic"],
 		"accuracy": "原招式命中 + 2",
 		"damage": "力量/特殊 + 原招式傷害 + 2",
-		"effect": "發動精神場地的效果。持續 4 個戰鬥輪。",
+		"effect": "發動精神場地的效果。持續 4 个戰鬥輪。",
 		"desc": "This Max Move targets the only place the foe cannot escape, through a psychic assault it can melt the mind of its enemies, leaving them in a catatonic state for weeks."
 	},
 	{
@@ -192,7 +192,7 @@ Array.prototype.push.apply(MoveList, [
 		"gmax-tags": ["target|l|allfoe", "effect|l|lethal", "frame|flinch||number|d3", "frame|self|傷害|plus|d2", "frame|target|特質|down|1", "text|l|岩石招式|Rock"],
 		"accuracy": "原招式命中 + 2",
 		"damage": "力量/特殊 + 原招式傷害 + 2",
-		"effect": "發動沙暴天氣狀態的效果。持續 4 個戰鬥輪。",
+		"effect": "發動沙暴天氣狀態的效果。持續 4 个戰鬥輪。",
 		"desc": "A tsunami of rubble falls towards the target. With no escape in sight, it is trapped between a rock and a hard place and more rocks. Oh! so many more rocks."
 	},
 	{
@@ -216,7 +216,7 @@ Array.prototype.push.apply(MoveList, [
 		"gmax-tags": ["target|l|allfoe", "weather|l|rain2", "text|l|無視特性", "frame|target|特質|down|1", "frame|burn1||number|d3", "text|l|水系招式|Water"],
 		"accuracy": "原招式命中 + 2",
 		"damage": "力量/特殊 + 原招式傷害 + 2",
-		"effect": "發動下雨天氣狀態的效果。持續 4 個戰鬥輪。",
+		"effect": "發動下雨天氣狀態的效果。持續 4 个戰鬥輪。",
 		"desc": "Boiling water spouts from a geyser right below the target, the water is shot so high up it comes down as rain for the next few days."
 	}
 ]);

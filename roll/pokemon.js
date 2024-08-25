@@ -11,11 +11,11 @@ const gameType = function () {
 }
 
 /*
- * 輸入方式，
+ * 输入方式，
 攻方  VS 防方
 攻 (招式名，屬性)  VS  防 (POKEMON名，POKEMON NO，屬性1，屬性2)
 用name, alias XX|YY  得出type 
-如用前者 輸出相克及 accuracy ,damage ,effect,desc
+如用前者 输出相克及 accuracy ,damage ,effect,desc
 ----
 POKEMON名=name |alias
 POKEMON NO = id
@@ -32,13 +32,13 @@ const prefixs = function () {
 }
 const getHelpMessage = function () {
     return `【PokeRole】.poke
-這是一個Pokemon的資料庫，
-進行小精靈，招式的查詢以及 對戰的屬性相克結果，
+這是一个Pokemon的資料庫，
+进行小精靈，招式的查詢以及 對戰的屬性相克結果，
 .poke 可以查看更多指令
 .poke mon (名稱/編號)  可以查看小精靈的資料
 .poke mon (名稱/編號) (--d)  可以查看小精靈的招式表
 .poke move (招式名稱)  可以查看招式的資料
-.poke vs 攻方(招式名稱/屬性) 防方(小精靈名稱/編號/屬性1,2)  可以進行對戰模擬
+.poke vs 攻方(招式名稱/屬性) 防方(小精靈名稱/編號/屬性1,2)  可以进行對戰模擬
 --------------------
 例子：
 .poke mon 超夢
@@ -329,14 +329,14 @@ function checkEffectiveness(moveType, enemyType) {
 
         /**
          * @param {string} moveType - 技能的屬性
-         * @param {Array} enemyType - 敵人的兩個屬性
+         * @param {Array} enemyType - 敵人的两个屬性
          * @return {number} effectiveness - 技能的威力
          * 
          * @example
-         * effectiveness = 0 表示技能的威力為 正常
-         * effectiveness = -999 表示技能的威力為 免疫
-         * effectiveness = 1,2 表示技能的威力為 效果絕佳
-         * effectiveness = -1,-2 表示技能的威力為 效果絕佳
+         * effectiveness = 0 表示技能的威力为 正常
+         * effectiveness = -999 表示技能的威力为 免疫
+         * effectiveness = 1,2 表示技能的威力为 效果絕佳
+         * effectiveness = -1,-2 表示技能的威力为 效果絕佳
          */
         let enemyType1 = enemyType[0];
         let enemyType2 = enemyType[1];
@@ -381,8 +381,8 @@ function commandVS(mainMsg) {
             if (defenderType2) defenderType = defenderType.concat(defenderType2);
         }
         if (!defenderType.length || !attackerType) {
-            rply.text += (!attackerType) ? '找不到攻方屬性，請確認名稱，你可以輸入完整招式名稱或屬性\n' : '';
-            rply.text += (!defenderType.length) ? '找不到防方屬性，請確認名稱，你可以輸入小精靈名稱，編號或屬性\n' : '';
+            rply.text += (!attackerType) ? '找不到攻方屬性，請確認名稱，你可以输入完整招式名稱或屬性\n' : '';
+            rply.text += (!defenderType.length) ? '找不到防方屬性，請確認名稱，你可以输入小精靈名稱，編號或屬性\n' : '';
             return rply;
 
         }
@@ -422,7 +422,7 @@ function commandVS(mainMsg) {
 `: '';
         return rply;
     } catch (error) {
-        rply.text = `輸入錯誤，請輸入正確的招式名稱或小精靈名稱\n${getHelpMessage()}`
+        rply.text = `输入錯誤，請输入正確的招式名稱或小精靈名稱\n${getHelpMessage()}`
         return rply;
     }
 }

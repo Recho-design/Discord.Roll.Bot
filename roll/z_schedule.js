@@ -30,28 +30,28 @@ const prefixs = function () {
 }
 const getHelpMessage = function () {
     return `【定時任務功能】
-    兩種模式
-    【at】  指定一個時間
+    两種模式
+    【at】  指定一个時間
     如 20220604 1900  (年月日 時間)
     .at 5mins  (五分鐘後)
     .at 5hours (五小時後)
-    會發佈指定一個信息
-    可以擲骰 使用[[]]包著指令就可
+    會發佈指定一个信息
+    可以掷骰 使用[[]]包著指令就可
     如.at 9mins [[CC 60]]
 
-    【cron】 每天指定一個時間可以發佈一個信息
+    【cron】 每天指定一个時間可以發佈一个信息
     如 1230  2200 (24小時制)
     或 1230-2 2200-Sun
-    可運行六個月, 然後會自動刪除
+    可運行六个月, 然後會自動刪除
     
     .cron 0831 每天八時三十一分 
     嚎叫吧!
 
     .cron 1921-2
-    我將會每隔兩天的晚上7時21分發一次訊息
+    我將會每隔两天的晚上7時21分發一次訊息
 
     .cron 1921-wed-mon
-    我將會每個星期一和三發一次訊息
+    我將會每个星期一和三發一次訊息
 
     .cron 1921-2-wed-sun
     我將會每隔二天，如果是星期三或星期日就發一次訊息
@@ -152,7 +152,7 @@ const rollDiceCommand = async function ({
                 return rply
             }
             if (!mainMsg[2] || !/\d+/i.test(mainMsg[2])) {
-                rply.text = '移除定時訊息指令為 .at delete (序號) \n 如 .at delete 1'
+                rply.text = '移除定時訊息指令为 .at delete (序號) \n 如 .at delete 1'
                 return rply
             }
             let check = {}
@@ -199,7 +199,7 @@ const rollDiceCommand = async function ({
                 check
             ).catch(error => console.error('schedule  #171 mongoDB error: ', error.name, error.reson));
             if (checkGroupid >= limit) {
-                rply.text = '.at 整個群組上限' + limit + '個\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                rply.text = '.at 整个群組上限' + limit + '个\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
                 return rply;
             }
             let roleName = getAndRemoveRoleNameAndLink(inputStr);
@@ -207,7 +207,7 @@ const rollDiceCommand = async function ({
 
             let checkTime = checkAtTime(mainMsg[1], mainMsg[2]);
             if (!checkTime || checkTime.time == "Invalid Date") {
-                rply.text = `輸入出錯\n ${this.getHelpMessage()}`;
+                rply.text = `输入出錯\n ${this.getHelpMessage()}`;
                 return rply;
             }
             let text = (checkTime.threeColum) ? inputStr.replace(/^\s?\S+\s+\S+\s+\S+\s+/, '') : inputStr.replace(/^\s?\S+\s+\S+\s+/, '');
@@ -219,7 +219,7 @@ const rollDiceCommand = async function ({
                 }
                 if (!roleName.roleName || !roleName.imageLink) {
                     rply.text = `請完整設定名字和圖片網址
-                    格式為
+                    格式为
                     .at 時間
                     name=名字
                     link=www.sample.com/sample.jpg
@@ -283,7 +283,7 @@ const rollDiceCommand = async function ({
             }
 
             if (!mainMsg[2] || !/\d+/i.test(mainMsg[2])) {
-                rply.text = '移除定時訊息指令為 .cron delete (序號) \n 如 .cron delete 1'
+                rply.text = '移除定時訊息指令为 .cron delete (序號) \n 如 .cron delete 1'
                 return rply
             }
             let check = {}
@@ -334,7 +334,7 @@ const rollDiceCommand = async function ({
                 check
             ).catch(error => console.error('schedule #278 mongoDB error: ', error.name, error.reson));
             if (checkGroupid >= limit) {
-                rply.text = '.cron 整個群組上限' + limit + '個\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                rply.text = '.cron 整个群組上限' + limit + '个\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
                 return rply;
             }
             let roleName = getAndRemoveRoleNameAndLink(inputStr);
@@ -342,7 +342,7 @@ const rollDiceCommand = async function ({
 
             let checkTime = checkCronTime(mainMsg[1]);
             if (!checkTime || !checkTime.min || !checkTime.hour) {
-                rply.text = `輸入出錯\n ${this.getHelpMessage()} `;
+                rply.text = `输入出錯\n ${this.getHelpMessage()} `;
                 return rply;
             }
             if (roleName.roleName || roleName.imageLink) {
@@ -352,7 +352,7 @@ const rollDiceCommand = async function ({
                 }
                 if (!roleName.roleName || !roleName.imageLink) {
                     rply.text = `請完整設定名字和圖片網址
-                    格式為
+                    格式为
                     .cron 時間
                     name=名字
                     link=www.sample.com/sample.jpg
@@ -377,7 +377,7 @@ const rollDiceCommand = async function ({
                 console.error("schedule #301 Error saving job to collection");
             }
 
-            rply.text = `已新增排定內容\n將於${checkTime.days ? `每隔${checkTime.days}天` : ''}  ${checkTime.weeks.length ? `每個星期的${checkTime.weeks}` : ''}${!checkTime.weeks && !checkTime.days ? `每天` : ''} ${checkTime.hour}:${checkTime.min} (24小時制)運行`
+            rply.text = `已新增排定內容\n將於${checkTime.days ? `每隔${checkTime.days}天` : ''}  ${checkTime.weeks.length ? `每个星期的${checkTime.weeks}` : ''}${!checkTime.weeks && !checkTime.days ? `每天` : ''} ${checkTime.hour}:${checkTime.min} (24小時制)運行`
             return rply;
         }
         default: {

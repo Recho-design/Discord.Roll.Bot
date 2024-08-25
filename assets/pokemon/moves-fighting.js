@@ -12,7 +12,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 1",
 		"effect": "連續行動。",
-		"desc": "使用者張開手掌迅速向敵人施展數次猛推攻擊。"
+		"desc": "使用者張開手掌迅速向敵人施展数次猛推攻擊。"
 	},
 	{
 		"name": "波導彈", "alias": "はどうだん|Aura Sphere",
@@ -43,7 +43,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 3*",
-		"effect": "如果敵方設有任何屏障（像是〈光牆〉、〈反射壁〉），摧毀屏障並使這個招式的傷害骰池額外增加 2 顆骰子。",
+		"effect": "如果敵方設有任何屏障（像是〈光牆〉、〈反射壁〉），摧毀屏障並使這个招式的傷害骰池額外增加 2 顆骰子。",
 		"desc": "寶可夢用牠的手掌或利爪來施展一次單臂劈斬，這一擊甚至能夠擊碎一些看不見的屏障。"
 	},
 	{
@@ -77,7 +77,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "力量 + 鬥毆",
 		"damage": "力量 + 5",
 		"effect": "在造成傷害後，降低使用者的防禦和特防。",
-		"desc": "使用者拉近距離攻擊以造成大量傷害。但敵人也將因此能進行近距離攻擊。"
+		"desc": "使用者拉近距離攻擊以造成大量傷害。但敵人也將因此能进行近距離攻擊。"
 	},
 	{
 		"name": "雙倍奉還", "alias": "カウンター|Counter",
@@ -87,7 +87,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "洞察 + 鬥毆",
 		"damage": "不定",
-		"effect": "如果敵人在這個戰鬥輪中已經對使用者造成了物理傷害，這個招式才能夠造成傷害。這個招式的傷害骰池等同於你敵人使用的傷害骰池再額外增加 2 顆骰子。無視敵人的防禦。",
+		"effect": "如果敵人在這个戰鬥輪中已經對使用者造成了物理傷害，這个招式才能夠造成傷害。這个招式的傷害骰池等同於你敵人使用的傷害骰池再額外增加 2 顆骰子。無視敵人的防禦。",
 		"desc": "使用者準備好承受傷害，並返還比原來更多的傷害。"
 	},
 	{
@@ -99,7 +99,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 4",
 		"effect": "容易擊中要害。",
-		"desc": "使用者交叉兩臂呈十字嘗試劈打對手的弱點。"
+		"desc": "使用者交叉两臂呈十字嘗試劈打對手的弱點。"
 	},
 	{
 		"name": "看穿", "alias": "みきり|Detect",
@@ -109,7 +109,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "frame|priority||up|5", "effect|l|shield"],
 		"accuracy": "洞察 + 警覺",
 		"damage": "-",
-		"effect": "先制招式。護盾。傷害類招式對使用者造成的傷害減少 3 點。無效任何以使用者為目標的變化類招式效果。會對使用者造成固定傷害的招式的傷害將被降低為 0 點。",
+		"effect": "先制招式。護盾。傷害類招式對使用者造成的傷害減少 3 點。無效任何以使用者为目標的變化類招式效果。會對使用者造成固定傷害的招式的傷害將被降低为 0 點。",
 		"desc": "使用者看穿了攻擊者的意圖，並採取行動將傷害降到最低。"
 	},
 	{
@@ -121,7 +121,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 2",
 		"effect": "雙重行動。",
-		"desc": "使用者使出兩次強力踢擊。"
+		"desc": "使用者使出两次強力踢擊。"
 	},
 	{
 		"name": "吸取拳", "alias": "ドレインパンチ|Drain Punch",
@@ -131,7 +131,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|fist"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 3",
-		"effect": "拳頭類招式。使用者回復等同於造成傷害一半的HP（尾數捨去）。",
+		"effect": "拳頭類招式。使用者回復等同於造成傷害一半的HP（尾数捨去）。",
 		"desc": "寶可夢用強力的拳擊攻擊。透過接觸，牠可以吸取一部分的生命能量。"
 	},
 	{
@@ -164,7 +164,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 3",
-		"effect": "當使用這個招式造成傷害時，這個招式將被同時視為格鬥屬性和飛行屬性。",
+		"effect": "當使用這个招式造成傷害時，這个招式將被同時視为格鬥屬性和飛行屬性。",
 		"desc": "使用者以純粹的自由式摔角風格從天空中飛身撲向敵人。"
 	},
 	{
@@ -186,7 +186,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|fist", "effect|l|charge"],
 		"accuracy": "力量 + 鬥毆",
 		"damage": "力量 + 6",
-		"effect": "拳頭類招式。蓄力招式。如果使用者在釋放這個攻擊之前被命中，那牠會因此陷入「畏縮」狀態。",
+		"effect": "拳頭類招式。蓄力招式。如果使用者在釋放這个攻擊之前被命中，那牠會因此陷入「畏縮」狀態。",
 		"desc": ""
 	},
 	{
@@ -252,7 +252,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 1*",
-		"effect": "敵人的體重每有 50公斤 ，這個招式的傷害骰池就能額外增加 1 顆骰子。你最多可以透過這個方式增加 4 顆骰子。",
+		"effect": "敵人的體重每有 50公斤 ，這个招式的傷害骰池就能額外增加 1 顆骰子。你最多可以透過這个方式增加 4 顆骰子。",
 		"desc": "使用者踢倒目標使其摔倒，敵人體型越大，摔得越重。"
 	},
 	{
@@ -285,8 +285,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allally", "effect|l|shield"],
 		"accuracy": "靈巧 + 運動",
 		"damage": "-",
-		"effect": "護盾。傷害類招式對使用者和隊友造成的傷害減少 3 點。這個招式只在該寶可夢進入戰鬥後的第一輪有效。",
-		"desc": "寶可夢使用榻榻米或類似的東西作為防禦。"
+		"effect": "護盾。傷害類招式對使用者和隊友造成的傷害減少 3 點。這个招式只在該寶可夢進入戰鬥後的第一輪有效。",
+		"desc": "寶可夢使用榻榻米或類似的東西作为防禦。"
 	},
 	{
 		"name": "流星突擊", "alias": "スターアサルト|Meteor Assault",
@@ -330,7 +330,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 2",
 		"effect": "拳頭類招式。提升使用者的力量。",
-		"desc": "寶可夢利用這一拳來測試物體表面的強度。使用者將為了造成更強的打擊而變得更結實。"
+		"desc": "寶可夢利用這一拳來測試物體表面的強度。使用者將为了造成更強的打擊而變得更結實。"
 	},
 	{
 		"name": "快速防守", "alias": "ファストガード|Quick Guard",
@@ -340,7 +340,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allally", "frame|priority||up|3", "effect|l|shield"],
 		"accuracy": "靈巧 + 運動",
 		"damage": "-",
-		"effect": "護盾。傷害類招式對使用者和隊友造成的傷害減少 3 點。無效任何以使用者和隊友為目標的變化類招式效果。這個招式只對先制招式有效。",
+		"effect": "護盾。傷害類招式對使用者和隊友造成的傷害減少 3 點。無效任何以使用者和隊友为目標的變化類招式效果。這个招式只對先制招式有效。",
 		"desc": "使用者本能地做出反應，保護自己以及同伴，抵禦哪怕是最快速的攻擊造成的影響。"
 	},
 	{
@@ -351,8 +351,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 2*",
-		"effect": "若使用者在這個戰鬥輪中已經受到過傷害，則傷害骰池額外增加 2 顆骰子。",
-		"desc": "寶可夢冷酷奮戰，並可能對傷害過使用者的敵人進行猛烈地報復。"
+		"effect": "若使用者在這个戰鬥輪中已經受到過傷害，則傷害骰池額外增加 2 顆骰子。",
+		"desc": "寶可夢冷酷奮戰，並可能對傷害過使用者的敵人进行猛烈地報復。"
 	},
 	{
 		"name": "起死回生", "alias": "きしかいせい|Reversal",
@@ -362,8 +362,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 1*",
-		"effect": "每 1 點使用者失去的HP都會使這個招式的傷害骰池額外增加 1 顆骰子。你最多可以透過這個方式增加 5 顆骰子。",
-		"desc": "使用者重振精神以止住痛楚，為了給予敵人更多傷害而集中注意力。"
+		"effect": "每 1 點使用者失去的HP都會使這个招式的傷害骰池額外增加 1 顆骰子。你最多可以透過這个方式增加 5 顆骰子。",
+		"desc": "使用者重振精神以止住痛楚，为了給予敵人更多傷害而集中注意力。"
 	},
 	{
 		"name": "碎岩", "alias": "いわくだき|Rock Smash",
@@ -385,7 +385,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 2",
 		"effect": "骰 2 顆機率骰以使敵人陷入「畏縮」狀態。",
-		"desc": "使用者在空中迴轉身體，並在落下時給了目標一記令人印象深刻的重踢，可能使目標眩暈。"
+		"desc": "使用者在空中迴转身體，並在落下時給了目標一記令人印象深刻的重踢，可能使目標眩暈。"
 	},
 	{
 		"name": "聖劍", "alias": "せいなるつるぎ|Sacred Sword",
@@ -406,7 +406,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "在抵抗這個招式的傷害時，使用敵人的防禦來取代敵人的特防。",
+		"effect": "在抵抗這个招式的傷害時，使用敵人的防禦來取代敵人的特防。",
 		"desc": "一道看不見的真氣波切穿了目標，你能感覺到鋒利的刀刃，但你看不見它。"
 	},
 	{
@@ -417,7 +417,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "力量 + 運動",
 		"damage": "不定",
-		"effect": "根據使用者的階級決定這個招式的傷害骰池：新手 1 顆、初學者 2 顆、業餘者 3 顆、菁英 4 顆、專家為 5 顆。這個招式無視敵人的防禦。",
+		"effect": "根據使用者的階級決定這个招式的傷害骰池：新手 1 顆、初學者 2 顆、業餘者 3 顆、菁英 4 顆、專家为 5 顆。這个招式無視敵人的防禦。",
 		"desc": "目標被拋上空中，然後面朝地摔落，使用者越強，敵人就會被扔得越高。"
 	},
 	{
@@ -428,7 +428,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|accuracy||down|1"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 3",
-		"desc": "使用者大力地將敵人頂起，用沖向天空的上勾拳進行攻擊。"
+		"desc": "使用者大力地將敵人頂起，用沖向天空的上勾拳进行攻擊。"
 	},
 	{
 		"name": "山嵐摔", "alias": "やまあらし|Storm Throw",
@@ -438,7 +438,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 2",
-		"effect": "如果命中判定成功，則這個招式視作擊中要害。",
+		"effect": "如果命中判定成功，則這个招式視作擊中要害。",
 		"desc": "使用者以一記強而有力的打擊命中弱點。"
 	},
 	{
@@ -504,7 +504,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 2*",
-		"effect": "如果敵人正處於「睡眠」狀態，則這個招式的傷害骰池額外增加 2 顆骰子。在這之後敵人將會解除「睡眠」狀態。",
+		"effect": "如果敵人正處於「睡眠」狀態，則這个招式的傷害骰池額外增加 2 顆骰子。在這之後敵人將會解除「睡眠」狀態。",
 		"desc": "一記強有力的耳光，就連最懶惰的寶可夢也會因此清醒過來。"
 	}
 ]);

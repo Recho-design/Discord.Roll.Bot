@@ -28,7 +28,7 @@ const prefixs = function () {
 }
 const getHelpMessage = function () {
     return `【身分組管理】Discord限定功能
-讓對指定訊息的Reaction Emoji(😀😃😄)進行點擊的用家
+讓對指定訊息的Reaction Emoji(😀😃😄)进行點擊的用家
 分配指定的身分組別
 
 示範
@@ -51,7 +51,7 @@ https://i.imgur.com/YCnCyET.mp4
 按🎨可得身分組-畫家
 按😁可得身分組-大笑
 
-然後按以下格式輸入指令
+然後按以下格式输入指令
 
 .roleReact add
 身份組ID Emoji
@@ -66,7 +66,7 @@ https://i.imgur.com/YCnCyET.mp4
 12312347889779233
 
 完成
-注意, 可以重覆輸入同樣ID來增加新emoji
+注意, 可以重覆输入同樣ID來增加新emoji
 
 2.顯示列表
 .roleReact show
@@ -119,7 +119,7 @@ const rollDiceCommand = async function ({
 
         case /^\.roleReact$/i.test(mainMsg[0]) && /^delete$/i.test(mainMsg[1]): {
             if (!mainMsg[2] || !/\d+/i.test(mainMsg[2])) {
-                rply.text = '移除指令為 .roleReact delete (序號) \n 如 .roleReact delete 1'
+                rply.text = '移除指令为 .roleReact delete (序號) \n 如 .roleReact delete 1'
                 return rply
             }
             try {
@@ -128,19 +128,19 @@ const rollDiceCommand = async function ({
                     rply.text = `移除成功，#${myNames.serial}\n${myNames.message}`
                     return rply
                 } else {
-                    rply.text = '移除出錯\n移除指令為 .roleReact delete (序號) \n 如 .roleReact delete 1 \n序號請使用.roleReact show 查詢'
+                    rply.text = '移除出錯\n移除指令为 .roleReact delete (序號) \n 如 .roleReact delete 1 \n序號請使用.roleReact show 查詢'
                     return rply
                 }
             } catch (error) {
                 console.error("移除失敗, inputStr: ", inputStr);
-                rply.text = '移除出錯\n移除指令為 .roleReact delete (序號) \n 如 .roleReact delete 1 \n序號請使用.roleReact show 查詢'
+                rply.text = '移除出錯\n移除指令为 .roleReact delete (序號) \n 如 .roleReact delete 1 \n序號請使用.roleReact show 查詢'
                 return rply
             }
         }
 
         case /^\.roleReact$/i.test(mainMsg[0]) && /^add$/i.test(mainMsg[1]): {
             if (!mainMsg[5]) {
-                rply.text = `輸入資料失敗，
+                rply.text = `输入資料失敗，
                 本功能已改版，需要自行新增信息，並把信息ID填在下面
 
                 範例
@@ -150,13 +150,13 @@ const rollDiceCommand = async function ({
                 [[messageID]]
                 946739512439073384
 
-                希望取得詳細使用說明請輸入.roleReact help 或到 https://bothelp.hktrpg.com`
+                希望取得詳細使用說明請输入.roleReact help 或到 https://bothelp.hktrpg.com`
                 rply.quotes = true;
                 return rply;
             }
             let checkName = checknewroleReact(inputStr);
             if (!checkName || !checkName.detail || !checkName.messageID || checkName.detail.length === 0) {
-                rply.text = `輸入資料失敗，
+                rply.text = `输入資料失敗，
                 本功能已改版，需要自行新增信息，並把信息ID填在下面
                 
                 範例
@@ -166,7 +166,7 @@ const rollDiceCommand = async function ({
                 [[messageID]]
                 946739512439073384
 
-                希望取得詳細使用說明請輸入.roleReact help 或到 https://bothelp.hktrpg.com`
+                希望取得詳細使用說明請输入.roleReact help 或到 https://bothelp.hktrpg.com`
                 rply.quotes = true;
                 return rply;
             }
@@ -189,7 +189,7 @@ const rollDiceCommand = async function ({
             let limit = FUNCTION_LIMIT[lv];
             let myNamesLength = await schema.roleReact.countDocuments({ groupid: groupid }).catch(error => console.error('role #141 mongoDB error: ', error.name, error.reson));
             if (myNamesLength >= limit) {
-                rply.text = '.roleReact 群組上限為' + limit + '個\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                rply.text = '.roleReact 群組上限为' + limit + '个\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
                 rply.quotes = true;
                 return rply;
             }
@@ -238,7 +238,7 @@ const rollDiceCommand = async function ({
 
         case /^\.roleReact$/i.test(mainMsg[0]) && /^delete$/i.test(mainMsg[1]): {
             if (!mainMsg[2] || !/\d+/i.test(mainMsg[2])) {
-                rply.text = '移除指令為 .roleReact delete (序號) \n 如 .roleReact delete 1'
+                rply.text = '移除指令为 .roleReact delete (序號) \n 如 .roleReact delete 1'
                 return rply
             }
             try {
@@ -247,26 +247,26 @@ const rollDiceCommand = async function ({
                     rply.text = `移除成功，#${myNames.serial}\n${myNames.message}`
                     return rply
                 } else {
-                    rply.text = '移除出錯\n移除指令為 .roleReact delete (序號) \n 如 .roleReact delete 1 \n序號請使用.roleReact show 查詢'
+                    rply.text = '移除出錯\n移除指令为 .roleReact delete (序號) \n 如 .roleReact delete 1 \n序號請使用.roleReact show 查詢'
                     return rply
                 }
             } catch (error) {
                 console.error("移除失敗, inputStr: ", inputStr);
-                rply.text = '移除出錯\n移除指令為 .roleReact delete (序號) \n 如 .roleReact delete 1 \n序號請使用.roleReact show 查詢'
+                rply.text = '移除出錯\n移除指令为 .roleReact delete (序號) \n 如 .roleReact delete 1 \n序號請使用.roleReact show 查詢'
                 return rply
             }
         }
 
         case /^\.roleReact$/i.test(mainMsg[0]) && /^add$/i.test(mainMsg[1]): {
             if (!mainMsg[5]) {
-                rply.text = `輸入資料失敗，範例
+                rply.text = `输入資料失敗，範例
                 .roleReact add
                 232312882291231263 🎨 
                 123123478897792323 😁 
                 [[message]]
                 按🎨可得身分組-畫家
                 按😁可得身分組-大笑
-                希望取得詳細使用說明請輸入.roleReact help`
+                希望取得詳細使用說明請输入.roleReact help`
                 rply.quotes = true;
                 return rply;
             }
@@ -274,20 +274,20 @@ const rollDiceCommand = async function ({
             let limit = FUNCTION_LIMIT[lv];
             let myNamesLength = await schema.roleReact.countDocuments({ groupid: groupid }).catch(error => console.error('role #141 mongoDB error: ', error.name, error.reson));
             if (myNamesLength >= limit) {
-                rply.text = '.roleReact 群組上限為' + limit + '個\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                rply.text = '.roleReact 群組上限为' + limit + '个\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
                 rply.quotes = true;
                 return rply;
             }
             let checkName = checkRoleReact(inputStr);
             if (!checkName || !checkName.message || !checkName.detail || checkName.detail.length === 0) {
-                rply.text = `輸入資料失敗，範例
+                rply.text = `输入資料失敗，範例
                 .roleReact add
                 232312882291231263 🎨 
                 123123478897792323 😁 
                 [[message]]
                 按🎨可得身分組-畫家
                 按😁可得身分組-大笑
-                希望取得詳細使用說明請輸入.roleReact help`
+                希望取得詳細使用說明請输入.roleReact help`
                 rply.quotes = true;
                 return rply;
             }
@@ -424,7 +424,7 @@ module.exports = {
  * const roleInvitesRegixMessage = /(\d+)\s+(\S+)/g;
 case /^\.roleInvites$/i.test(mainMsg[0]) && /^add$/i.test(mainMsg[1]): {
     if (!mainMsg[3]) {
-        rply.text = '輸入資料失敗，請仔細檢查說明及範例\n希望取得使用說明請輸入.roleInvites help'
+        rply.text = '输入資料失敗，請仔細檢查說明及範例\n希望取得使用說明請输入.roleInvites help'
         rply.quotes = true;
         return rply;
     }
@@ -432,22 +432,22 @@ case /^\.roleInvites$/i.test(mainMsg[0]) && /^add$/i.test(mainMsg[1]): {
     const limit = FUNCTION_LIMIT[lv];
     const myNamesLength = await schema.roleInvites.countDocuments({ groupid: groupid })
     if (myNamesLength >= limit) {
-        rply.text = '.roleInvites 群組上限為' + limit + '個\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+        rply.text = '.roleInvites 群組上限为' + limit + '个\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
         rply.quotes = true;
         return rply;
     }
 
     let checkName = checkroleInvites(inputStr);
     if (!checkName || checkName.length == 0) {
-        rply.text = `輸入資料失敗，請仔細檢查說明及範例
+        rply.text = `输入資料失敗，請仔細檢查說明及範例
 .roleInvites add
 (身份組) (邀請連結/邀請碼)
-希望取得使用說明請輸入.roleInvites help`;
+希望取得使用說明請输入.roleInvites help`;
         rply.quotes = true;
         return rply;
     }
     if (myNamesLength + checkName.length >= limit) {
-        rply.text = '.roleInvites 群組上限為' + limit + '個\n一條邀請連結使用一個限額\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+        rply.text = '.roleInvites 群組上限为' + limit + '个\n一條邀請連結使用一个限額\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
         rply.quotes = true;
         return rply;
     }
@@ -493,7 +493,7 @@ function checkroleInvites(inputStr) {
 
  case /^\.roleInvites$/i.test(mainMsg[0]) && /^delete$/i.test(mainMsg[1]): {
             if (!mainMsg[2] || !/\d+/i.test(mainMsg[2])) {
-                rply.text = '移除指令為 .roleInvites delete (序號) \n 如 .roleInvites delete 1'
+                rply.text = '移除指令为 .roleInvites delete (序號) \n 如 .roleInvites delete 1'
                 return rply
             }
             try {
@@ -502,12 +502,12 @@ function checkroleInvites(inputStr) {
                     rply.text = `移除成功，#${myNames.serial}\n${myNames.invitesLink}`
                     return rply
                 } else {
-                    rply.text = '移除出錯\n移除指令為 .roleInvites delete (序號) \n 如 .roleInvites delete 1 \n序號請使用.roleInvites show 查詢'
+                    rply.text = '移除出錯\n移除指令为 .roleInvites delete (序號) \n 如 .roleInvites delete 1 \n序號請使用.roleInvites show 查詢'
                     return rply
                 }
             } catch (error) {
                 console.error("移除失敗, inputStr: ", inputStr);
-                rply.text = '移除出錯\n移除指令為 .roleInvites delete (序號) \n 如 .roleInvites delete 1 \n序號請使用.roleInvites show 查詢'
+                rply.text = '移除出錯\n移除指令为 .roleInvites delete (序號) \n 如 .roleInvites delete 1 \n序號請使用.roleInvites show 查詢'
                 return rply
             }
         }

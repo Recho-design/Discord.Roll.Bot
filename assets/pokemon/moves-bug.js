@@ -45,7 +45,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "強壯 + 自然",
 		"damage": "-",
 		"effect": "使用者提升自己的防禦和特防。",
-		"desc": "一大群飛蟲環繞在使用者身邊，為這隻寶可夢創造出一個屏障以抵禦傷害。"
+		"desc": "一大群飛蟲環繞在使用者身邊，为這隻寶可夢創造出一个屏障以抵禦傷害。"
 	},
 	{
 		"name": "致命針刺", "alias": "とどめばり|Fell Stinger",
@@ -55,7 +55,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|self|力量|up|1"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 1",
-		"effect": "如果敵人因為這次攻擊的傷害而陷入瀕死狀態，則提高使用者的力量。",
+		"effect": "如果敵人因为這次攻擊的傷害而陷入瀕死狀態，則提高使用者的力量。",
 		"desc": "寶可夢刺擊目標，如果敵人虛弱到無法移動，牠將吸取敵人一部分的力量。"
 	},
 	{
@@ -66,7 +66,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|priority|優先度|up|2"],
 		"accuracy": "力量 + 威嚇",
 		"damage": "力量 + 3",
-		"effect": "先制招式。這個招式只在該寶可夢進入戰鬥後的第一輪有效。從第二輪開始，這個招式自動失敗。",
+		"effect": "先制招式。這个招式只在該寶可夢進入戰鬥後的第一輪有效。從第二輪開始，這个招式自動失敗。",
 		"desc": "寶可夢戲劇性地進入戰鬥場地，使牠的敵人驚訝於牠真正的對手究竟是誰。"
 	},
 	{
@@ -89,7 +89,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "強壯 + 自然",
 		"damage": "-",
 		"effect": "基礎治癒。",
-		"desc": "寶可夢命令牠的蜂群為牠帶來一些治癒蜂蜜。"
+		"desc": "寶可夢命令牠的蜂群为牠帶來一些治癒蜂蜜。"
 	},
 	{
 		"name": "死纏爛打", "alias": "まとわりつく|Infestation",
@@ -99,8 +99,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|block"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 1",
-		"effect": "阻擋。每個戰鬥輪結束時，骰 2 顆傷害骰以對敵人造成傷害。持續 4 輪。",
-		"desc": "寶可夢召喚大群蟲子來阻止敵人逃跑。有時蟲群能夠傷害到敵人。這個呼喚能擴及百碼之遠。"
+		"effect": "阻擋。每个戰鬥輪結束時，骰 2 顆傷害骰以對敵人造成傷害。持續 4 輪。",
+		"desc": "寶可夢召喚大群蟲子來阻止敵人逃跑。有時蟲群能夠傷害到敵人。這个呼喚能擴及百碼之遠。"
 	},
 	{
 		"name": "吸血", "alias": "きゅうけつ|Leech Life",
@@ -110,7 +110,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 3",
-		"effect": "使用者回復等同於造成傷害一半的HP（尾數捨去）。",
+		"effect": "使用者回復等同於造成傷害一半的HP（尾数捨去）。",
 		"desc": "使用者攻擊敵人的弱點並吸取牠的生命力。"
 	},
 	{
@@ -154,7 +154,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "target|l|ally", "frame|heal|治療|heal|1"],
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "*若對隊友使用這個招式，則改為回復 1 點HP，而非造成傷害。",
+		"effect": "*若對隊友使用這个招式，則改为回復 1 點HP，而非造成傷害。",
 		"desc": "寶可夢製造出一團花粉並丟到敵人臉上炸開，使對方陷入可怕的過敏反應。當吃下這團花粉時會發現它又甜又有營養。"
 	},
 	{
@@ -165,7 +165,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "洞察 + 自然",
 		"damage": "-",
-		"effect": "下一個命中該目標的火屬性招式，其傷害將會增加 3 顆傷害骰。",
+		"effect": "下一个命中該目標的火屬性招式，其傷害將會增加 3 顆傷害骰。",
 		"desc": "敵人被易燃的粉塵覆蓋全身，一小搓火源就會將其點燃並引發爆炸。"
 	},
 	{
@@ -187,8 +187,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "frame|priority|優先度|up|2"],
 		"accuracy": "洞察 + 威嚇",
 		"damage": "-",
-		"effect": "在這個戰鬥輪期間，所有敵人使用的傷害招式都必須以使用者為目標。",
-		"desc": "寶可夢釋放一種刺激性粉塵來惹惱並激怒敵人進行攻擊。"
+		"effect": "在這个戰鬥輪期間，所有敵人使用的傷害招式都必須以使用者为目標。",
+		"desc": "寶可夢釋放一種刺激性粉塵來惹惱並激怒敵人进行攻擊。"
 	},
 	{
 		"name": "信號光束", "alias": "シグナルビーム|Signal Beam",
@@ -242,8 +242,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|field", "frame|target|靈巧|down|1"],
 		"accuracy": "洞察 + 自然",
 		"damage": "-",
-		"effect": "入場危害。敵方寶可夢在進入戰場時會降低靈巧。具有漂浮特性或飛行屬性的寶可夢免疫這個效果。",
-		"desc": "寶可夢快速地用黏性蛛網覆蓋整個場地，新進場的敵人將會難以輕易動彈。"
+		"effect": "入場危害。敵方寶可夢在進入戰場時會降低靈巧。具有漂浮特性或飛行屬性的寶可夢免疫這个效果。",
+		"desc": "寶可夢快速地用黏性蛛網覆蓋整个場地，新進場的敵人將會難以輕易動彈。"
 	},
 	{
 		"name": "吐絲", "alias": "いとをはく|String Shot",
@@ -297,7 +297,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|switcher"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 3",
-		"effect": "替換招式。使用者在造成傷害之後被換下場，替換的寶可夢將在有所準備的狀況下上場，擲骰決定牠的先攻。",
+		"effect": "替換招式。使用者在造成傷害之後被換下場，替換的寶可夢將在有所準備的狀況下上場，掷骰決定牠的先攻。",
 		"desc": "使用者擊打敵人，然後快速撤退至安全區域，讓隊伍中的另一隻寶可夢頂替牠的位置。"
 	},
 	{

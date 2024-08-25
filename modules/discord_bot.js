@@ -285,14 +285,14 @@ async function replilyMessage(message, result) {
 //inviteDelete
 //messageDelete
 function handlingCountButton(message, mode) {
-	const modeString = (mode === "roll") ? '投擲' : '點擊';
+	const modeString = (mode === "roll") ? '投掷' : '點擊';
 	const content = message.message.content;
-	if (!/點擊了「|投擲了「|要求擲骰\/點擊/.test(content)) return;
+	if (!/點擊了「|投掷了「|要求掷骰\/點擊/.test(content)) return;
 	const user = `${(message.member?.nickname || message.user.displayName)}(${message.user.username})`
 	const button = `${modeString}了「${message.component.label}」`;
 	const regexpButton = convertRegex(`${button}`)
 	let newContent = content;
-	if (newContent.match(/要求擲骰\/點擊/)) newContent = '';
+	if (newContent.match(/要求掷骰\/點擊/)) newContent = '';
 	if (newContent.match(regexpButton)) {
 		let checkRepeat = checkRepeatName(content, button, user)
 		if (!checkRepeat)
@@ -494,7 +494,7 @@ async function count() {
 		.then(results => {
 			const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
 			const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
-			return (`正在運行HKTRPG的Discord 群組數量: ${totalGuilds}\nDiscord 會員數量: ${totalMembers}`);
+			return (`正在運行HKTRPG的Discord 群組数量: ${totalGuilds}\nDiscord 會員数量: ${totalMembers}`);
 		})
 		.catch(err => {
 			console.error(`disocrdbot #596 error ${err}`)
@@ -611,7 +611,7 @@ function respawnCluster2() {
 			if ((new Date(Date.now()) - data.createAt) >= SIX_MONTH) {
 				await job.remove();
 				SendToReplychannel(
-					{ replyText: "已運行六個月, 移除此定時訊息", channelid: data.channelid, quotes: true, groupid: data.groupid }
+					{ replyText: "已運行六个月, 移除此定時訊息", channelid: data.channelid, quotes: true, groupid: data.groupid }
 				)
 			}
 		} catch (e) {
@@ -660,7 +660,7 @@ async function repeatMessage(discord, message) {
 		let pair = (webhook && webhook.isThread) ? { threadId: discord.channelId } : {};
 		await webhook.webhook.send({ ...obj, ...pair });
 	} catch (error) {
-		await SendToReplychannel({ replyText: '不能成功發送扮演發言, 請檢查你有授權HKTRPG 管理Webhook的權限, \n此為本功能必須權限', channelid: discord.channel.id });
+		await SendToReplychannel({ replyText: '不能成功發送扮演發言, 請檢查你有授權HKTRPG 管理Webhook的權限, \n此为本功能必須權限', channelid: discord.channel.id });
 		return;
 	}
 
@@ -685,7 +685,7 @@ async function repeatMessages(discord, message) {
 		}
 
 	} catch (error) {
-		await SendToReplychannel({ replyText: '不能成功發送扮演發言, 請檢查你有授權HKTRPG 管理Webhook的權限, \n此為本功能必須權限', channelid: discord.channel.id });
+		await SendToReplychannel({ replyText: '不能成功發送扮演發言, 請檢查你有授權HKTRPG 管理Webhook的權限, \n此为本功能必須權限', channelid: discord.channel.id });
 		return;
 	}
 
@@ -712,7 +712,7 @@ async function manageWebhook(discord) {
 		return { webhook, isThread };
 	} catch (error) {
 		//	console.error(error)
-		await SendToReplychannel({ replyText: '不能新增Webhook.\n 請檢查你有授權HKTRPG 管理Webhook的權限, \n此為本功能必須權限', channelid: (discord.channel && discord.channel.id) || discord.channelId });
+		await SendToReplychannel({ replyText: '不能新增Webhook.\n 請檢查你有授權HKTRPG 管理Webhook的權限, \n此为本功能必須權限', channelid: (discord.channel && discord.channel.id) || discord.channelId });
 		return;
 	}
 }
@@ -728,7 +728,7 @@ async function roleReact(channelid, message) {
 		await schema.roleReact.findByIdAndUpdate(message.roleReactMongooseId, { messageID: sendMessage.id }).catch(error => console.error('discord_bot #786 mongoDB error: ', error.name, error.reson))
 
 	} catch (error) {
-		await SendToReplychannel({ replyText: '不能成功增加ReAction, 請檢查你有授權HKTRPG 新增ReAction的權限, \n此為本功能必須權限', channelid });
+		await SendToReplychannel({ replyText: '不能成功增加ReAction, 請檢查你有授權HKTRPG 新增ReAction的權限, \n此为本功能必須權限', channelid });
 		return;
 	}
 
@@ -746,7 +746,7 @@ async function newRoleReact(channel, message) {
 		}
 
 	} catch (error) {
-		await SendToReplychannel({ replyText: '不能成功增加ReAction, 請檢查你有授權HKTRPG 新增ReAction的權限, \n此為本功能必須權限' });
+		await SendToReplychannel({ replyText: '不能成功增加ReAction, 請檢查你有授權HKTRPG 新增ReAction的權限, \n此为本功能必須權限' });
 		return;
 	}
 
@@ -904,7 +904,7 @@ async function handlingRequestRolling(message, buttonsNames, displayname = '') {
 	const arrayRow = await splitArray(5, row)
 	for (let index = 0; index < arrayRow.length; index++) {
 		try {
-			await message.reply({ content: `${displayname}要求擲骰/點擊`, components: arrayRow[index] })
+			await message.reply({ content: `${displayname}要求掷骰/點擊`, components: arrayRow[index] })
 		} catch (error) {
 
 		}
@@ -953,7 +953,7 @@ async function handlingResponMessage(message, answer = '') {
 		let inputStr = message.content || '';
 		//DISCORD <@!USERID> <@!399923133368042763> <@!544563333488111636>
 		//LINE @名字
-		let mainMsg = inputStr.match(MESSAGE_SPLITOR); //定義輸入.字串
+		let mainMsg = inputStr.match(MESSAGE_SPLITOR); //定義输入.字串
 		let trigger = (mainMsg && mainMsg[0]) ? mainMsg[0].toString().toLowerCase() : '';
 		if (!trigger) return await nonDice(message)
 
@@ -975,14 +975,14 @@ async function handlingResponMessage(message, answer = '') {
 		const channelid = (message.channelId) ? message.channelId : '';
 		const userrole = __checkUserRole(groupid, message);
 
-		//得到暗骰的數據, GM的位置
+		//得到暗骰的数據, GM的位置
 
 		//檢查是不是有權限可以傳信訊
 		//是不是自己.ME 訊息
 		//TRUE 即正常
 
 		//設定私訊的模式 0-普通 1-自己 2-自己+GM 3-GM
-		//訊息來到後, 會自動跳到analytics.js進行骰組分析
+		//訊息來到後, 會自動跳到analytics.js进行骰組分析
 		//如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
 
 		rplyVal = await exports.analytics.parseInput({
@@ -1080,7 +1080,7 @@ async function handlingResponMessage(message, answer = '') {
 }
 const sendBufferImage = async (message, rplyVal, userid) => {
 	await message.channel.send({
-		content: `<@${userid}>\n你的Token已經送到，現在輸入 .token 為方型，.token2 為圓型 .token3 為按名字決定的隨機顏色`, files: [
+		content: `<@${userid}>\n你的Token已經送到，現在输入 .token 为方型，.token2 为圓型 .token3 为按名字決定的随机顏色`, files: [
 			new AttachmentBuilder(rplyVal.sendImage)
 		]
 	});
@@ -1136,7 +1136,7 @@ async function handlingSendMessage(input) {
 	}
 	switch (true) {
 		case privatemsg == 1:
-			// 輸入dr  (指令) 私訊自己
+			// 输入dr  (指令) 私訊自己
 			//
 			if (groupid) {
 				await SendToReplychannel(
@@ -1149,14 +1149,14 @@ async function handlingSendMessage(input) {
 			}
 			return;
 		case privatemsg == 2:
-			//輸入ddr(指令) 私訊GM及自己
+			//输入ddr(指令) 私訊GM及自己
 			if (groupid) {
 				let targetGMNameTemp = "";
 				for (let i = 0; i < TargetGMTempID.length; i++) {
 					targetGMNameTemp = targetGMNameTemp + ", " + (TargetGMTempdiyName[i] || "<@" + TargetGMTempID[i] + ">")
 				}
 				await SendToReplychannel(
-					{ replyText: "<@" + userid + '> 暗骰進行中 \n目標: 自己 ' + targetGMNameTemp, channelid });
+					{ replyText: "<@" + userid + '> 暗骰进行中 \n目標: 自己 ' + targetGMNameTemp, channelid });
 			}
 			if (userid) {
 				sendText = "<@" + userid + "> 的暗骰\n" + sendText;
@@ -1169,14 +1169,14 @@ async function handlingSendMessage(input) {
 			}
 			return;
 		case privatemsg == 3:
-			//輸入dddr(指令) 私訊GM
+			//输入dddr(指令) 私訊GM
 			if (groupid) {
 				let targetGMNameTemp = "";
 				for (let i = 0; i < TargetGMTempID.length; i++) {
 					targetGMNameTemp = targetGMNameTemp + " " + (TargetGMTempdiyName[i] || "<@" + TargetGMTempID[i] + ">")
 				}
 				await SendToReplychannel(
-					{ replyText: "<@" + userid + '> 暗骰進行中 \n目標:  ' + targetGMNameTemp, channelid })
+					{ replyText: "<@" + userid + '> 暗骰进行中 \n目標:  ' + targetGMNameTemp, channelid })
 			}
 			sendText = "<@" + userid + "> 的暗骰\n" + sendText
 			for (let i = 0; i < TargetGMTempID.length; i++) {
@@ -1239,7 +1239,7 @@ async function handlingEditMessage(message, rplyVal) {
 	try {
 		//type = reply
 		if (message.type !== 19) return message.reply({ content: '請Reply 你所想要修改的指定訊息' });
-		if (message.channelId !== message.reference.channelId) return message.reply({ content: '請只修改同一個頻道的訊息' });
+		if (message.channelId !== message.reference.channelId) return message.reply({ content: '請只修改同一个頻道的訊息' });
 		const editReply = rplyVal.discordEditMessage;
 		const channel = await client.channels.fetch(message.reference.channelId);
 		const editMessage = await channel.messages.fetch(message.reference.messageId)
@@ -1250,7 +1250,7 @@ async function handlingEditMessage(message, rplyVal) {
 				const messageid = editMessage.id;
 				const webhooks = await channel.fetchWebhooks();
 				const webhook = webhooks.find(wh => wh.id == editMessage.webhookId);
-				if (!webhook) return message.reply({ content: '找不到這個訊息的webhook，所以不能修改' });
+				if (!webhook) return message.reply({ content: '找不到這个訊息的webhook，所以不能修改' });
 				return await webhook.editMessage(messageid, {
 					content: editReply
 				});
@@ -1370,7 +1370,7 @@ async function __handlingInteractionMessage(message) {
 				const resultText = (result && result.text) || '';
 				if (/的角色卡$/.test(messageContent)) {
 					try {
-						if (resultText) { return await message.reply({ content: `${displayname}${messageContent.replace(/的角色卡$/, '')}進行擲骰 \n${resultText}`, ephemeral: false }).catch() }
+						if (resultText) { return await message.reply({ content: `${displayname}${messageContent.replace(/的角色卡$/, '')}进行掷骰 \n${resultText}`, ephemeral: false }).catch() }
 						else {
 							return await message.reply({ content: `${displayname}沒有反應，請檢查按鈕內容`, ephemeral: true }).catch()
 						}
@@ -1409,7 +1409,7 @@ async function __handlingInteractionMessage(message) {
 async function __sendMeMessage({ message, inputStr, groupid }) {
 	inputStr = inputStr.replace(/^\.mee\s*/i, ' ').replace(/^\.me\s*/i, ' ');
 	if (inputStr.match(/^\s+$/)) {
-		inputStr = `.me 或 /mee 可以令HKTRPG機械人重覆你的說話\n請輸入復述內容`
+		inputStr = `.me 或 /mee 可以令HKTRPG機械人重覆你的說話\n請输入復述內容`
 	}
 	if (groupid) {
 		await SendToReplychannel({ replyText: inputStr, channelid: message.channel.id });

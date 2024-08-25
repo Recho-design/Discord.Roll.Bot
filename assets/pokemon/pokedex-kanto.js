@@ -13,7 +13,7 @@ Array.prototype.push.apply(Pokedex, [
 		"height": "0.7",
 		"weight": "7",
 		"category": "種子寶可夢",
-		"text": "牠出生的時候背上就有一個奇怪的種子。這種子跟隨牠發芽成長。牠以做為乖巧且忠誠的寶可夢聞名，但在野外相當罕見。"
+		"text": "牠出生的時候背上就有一个奇怪的種子。這種子跟隨牠發芽成長。牠以做为乖巧且忠誠的寶可夢聞名，但在野外相當罕見。"
 	},
 	"evolution": {
 		"stage": "first",
@@ -60,7 +60,7 @@ Array.prototype.push.apply(Pokedex, [
 		"height": "1.0",
 		"weight": "25",
 		"category": "種子寶可夢",
-		"text": "這隻寶可夢的背上生長著花蕾，為了支撐它的重量，妙蛙草的下盤變得強韌。牠在進化後變得較為孤僻，且會遠離群體去做日光浴。"
+		"text": "這隻寶可夢的背上生長著花蕾，为了支撐它的重量，妙蛙草的下盤變得強韌。牠在進化後變得較为孤僻，且會遠離群體去做日光浴。"
 	},
 	"evolution": {
 		"stage": "second",
@@ -106,7 +106,7 @@ Array.prototype.push.apply(Pokedex, [
         "height": "2.0",
         "weight": "200",
         "category": "種子寶可夢",
-        "text": "據說妙蛙花的花朵會在充足的陽光下展現出鮮豔的顏色。花朵散發的香氣能夠療癒人心。如果你在野外遇到一隻妙蛙花，那牠一定是這個區域的守護者。"
+        "text": "據說妙蛙花的花朵會在充足的陽光下展現出鮮豔的顏色。花朵散發的香氣能夠療癒人心。如果你在野外遇到一隻妙蛙花，那牠一定是這个區域的守護者。"
     },
     "evolution": {
         "stage": "final"
@@ -153,7 +153,7 @@ Array.prototype.push.apply(Pokedex, [
         "height": "2.4",
         "weight": "300",
         "category": "種子寶可夢",
-        "text": "藉著超級石的力量，這隻寶可夢變得更高更重。牠的厚皮現在不會受到元素所傷，牠的行為舉止也變得更加嚴肅和堅定。"
+        "text": "藉著超級石的力量，這隻寶可夢變得更高更重。牠的厚皮現在不會受到元素所傷，牠的行为舉止也變得更加嚴肅和堅定。"
     },
     "evolution": {
         "stage": "mega"
@@ -292,7 +292,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.7",
       "weight": "125",
       "category": "火焰寶可夢",
-      "text": "噴火龍會為了尋找強大的對手而四處飛翔。牠會宛如能熔解一切的灼熱火焰。然而，牠絕對不會欺負弱小。很少有訓練家能夠應付牠的壞脾氣。"
+      "text": "噴火龍會为了尋找強大的對手而四處飛翔。牠會宛如能熔解一切的灼熱火焰。然而，牠絕對不會欺負弱小。很少有訓練家能夠應付牠的壞脾氣。"
     },
     "evolution": {
       "stage": "final"
@@ -342,7 +342,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.7",
       "weight": "100",
       "category": "火焰寶可夢",
-      "text": "藉著超級石的力量，牠變得更大膽而自信。飛行技巧也變得越來越好，並且擁有更快的速度和更強的機動性。當牠翱翔於天際時，你將無法再直視牠，因為牠身上的火焰燃燒得像太陽一樣明亮。"
+      "text": "藉著超級石的力量，牠變得更大膽而自信。飛行技巧也變得越來越好，並且擁有更快的速度和更強的機動性。當牠翱翔於天際時，你將無法再直視牠，因为牠身上的火焰燃燒得像太陽一樣明亮。"
     },
     "evolution": {
       "stage": "mega",
@@ -392,7 +392,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.7",
       "weight": "100",
       "category": "火焰寶可夢",
-      "text": "藉著超級石的力量，牠體內的火焰燃燒得如此灼熱，以至於牠的身體變得像煤一樣黑，且藍色的火焰不斷從口中逸出。牠的內心充滿了憤怒，行為舉止更是變得無法預測。"
+      "text": "藉著超級石的力量，牠體內的火焰燃燒得如此灼熱，以至於牠的身體變得像煤一樣黑，且藍色的火焰不斷從口中逸出。牠的內心充滿了憤怒，行为舉止更是變得無法預測。"
     },
     "evolution": {
       "stage": "mega",
@@ -464,7 +464,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Water", "name": "縮入殼中" },
       { "rank": 1, "type": "Water", "name": "水槍" },
       { "rank": 2, "type": "Normal", "name": "守住" },
-      { "rank": 2, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 2, "type": "Normal", "name": "高速旋转" },
       { "rank": 2, "type": "Dark", "name": "咬住" },
       { "rank": 2, "type": "Water", "name": "水流尾" },
       { "rank": 2, "type": "Water", "name": "水之波動" },
@@ -512,7 +512,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Water", "name": "縮入殼中" },
       { "rank": 1, "type": "Water", "name": "水槍" },
       { "rank": 2, "type": "Normal", "name": "守住" },
-      { "rank": 2, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 2, "type": "Normal", "name": "高速旋转" },
       { "rank": 2, "type": "Dark", "name": "咬住" },
       { "rank": 2, "type": "Water", "name": "水流尾" },
       { "rank": 2, "type": "Water", "name": "水之波動" },
@@ -558,7 +558,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Water", "name": "水槍" },
       { "rank": 1, "type": "Water", "name": "縮入殼中" },
       { "rank": 2, "type": "Normal", "name": "守住" },
-      { "rank": 2, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 2, "type": "Normal", "name": "高速旋转" },
       { "rank": 2, "type": "Dark", "name": "咬住" },
       { "rank": 2, "type": "Steel", "name": "加農光炮" },
       { "rank": 2, "type": "Water", "name": "水之波動" },
@@ -605,7 +605,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Water", "name": "水槍" },
       { "rank": 1, "type": "Water", "name": "縮入殼中" },
       { "rank": 2, "type": "Normal", "name": "守住" },
-      { "rank": 2, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 2, "type": "Normal", "name": "高速旋转" },
       { "rank": 2, "type": "Dark", "name": "咬住" },
       { "rank": 2, "type": "Steel", "name": "加農光炮" },
       { "rank": 2, "type": "Water", "name": "水之波動" },
@@ -631,7 +631,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.3",
       "weight": "3",
       "category": "蟲寶寶寶可夢",
-      "text": "這種寶可夢在森林中十分常見。牠的食慾很強，轉眼間就能吃掉比自己身體還要大的葉子。如果牠感受到威脅，就會從觸角釋放出強烈的臭氣。"
+      "text": "這種寶可夢在森林中十分常見。牠的食慾很強，转眼間就能吃掉比自己身體還要大的葉子。如果牠感受到威脅，就會從觸角釋放出強烈的臭氣。"
     },
     "evolution": {
       "stage": "first",
@@ -666,7 +666,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.7",
       "weight": "10",
       "category": "蛹寶可夢",
-      "text": "包裹身體的外殼像鐵板一般堅硬。鐵甲蛹之所以不怎麼動，是因為殼裡面的柔軟身體正在為進化做準備。牠以身為世界上進化最快的寶可夢之一而聞名。"
+      "text": "包裹身體的外殼像鐵板一般堅硬。鐵甲蛹之所以不怎麼動，是因为殼裡面的柔軟身體正在为進化做準備。牠以身为世界上進化最快的寶可夢之一而聞名。"
     },
     "evolution": {
       "stage": "second",
@@ -783,7 +783,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.6",
       "weight": "10",
       "category": "蛹寶可夢",
-      "text": "牠掛在樹上的期間幾乎一動也不動。在蛹的內部，牠會藉著提高蛹殼的溫度來為進化做準備。小心那些會牠們附近徘迴的大針蜂。"
+      "text": "牠掛在樹上的期間幾乎一動也不動。在蛹的內部，牠會藉著提高蛹殼的溫度來为進化做準備。小心那些會牠們附近徘迴的大針蜂。"
     },
     "evolution": {
       "stage": "second",
@@ -817,7 +817,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.0",
       "weight": "30",
       "category": "毒蜂寶可夢",
-      "text": "大大針蜂非常重視自己的地盤，為了安全起見，最好不要接近牠的住處。一旦生氣就會成群結隊襲擊而來。牠有著三根毒針，尾巴上針刺所分泌的毒性最為強大。"
+      "text": "大大針蜂非常重視自己的地盤，为了安全起見，最好不要接近牠的住處。一旦生氣就會成群結隊襲擊而來。牠有著三根毒針，尾巴上針刺所分泌的毒性最为強大。"
     },
     "evolution": {
       "stage": "final"
@@ -907,7 +907,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.3",
       "weight": "2",
       "category": "小鳥寶可夢",
-      "text": "牠在世界各地都相當常見，牠喜歡棲息在森林中，但在城市和平原中也能夠發現牠的蹤跡。牠的個性溫順，往往會主動避開麻煩。牠會用力拍打翅膀激起沙塵，誘使獵物離開藏身處。"
+      "text": "牠在世界各地都相當常見，牠喜歡棲息在森林中，但在城市和平原中也能夠發現牠的蹤跡。牠的个性溫順，往往會主動避開麻煩。牠會用力拍打翅膀激起沙塵，誘使獵物離開藏身處。"
     },
     "evolution": {
       "stage": "first",
@@ -955,7 +955,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.1",
       "weight": "30",
       "category": "鳥寶可夢",
-      "text": "每一隻比比鳥都會佔領一大片草原區域當作自己的領土。這種寶可夢會飛在空中巡視自己廣大的地盤，並用利爪狠狠教訓任何入侵者。牠會為了挑戰自己而試著每天飛得更高一些。"
+      "text": "每一隻比比鳥都會佔領一大片草原區域當作自己的領土。這種寶可夢會飛在空中巡視自己廣大的地盤，並用利爪狠狠教訓任何入侵者。牠會为了挑戰自己而試著每天飛得更高一些。"
     },
     "evolution": {
       "stage": "second",
@@ -1047,7 +1047,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "2.2",
       "weight": "100",
       "category": "鳥寶可夢",
-      "text": "藉著超級石的力量，大比鳥在飛行時將因為高速而化作天空中一道模糊的紅色軌跡。在這種狀態下，牠不會停止翱翔天際，且可以持續好幾天不眠不休而不會感到疲累。"
+      "text": "藉著超級石的力量，大比鳥在飛行時將因为高速而化作天空中一道模糊的紅色軌跡。在這種狀態下，牠不會停止翱翔天際，且可以持續好幾天不眠不休而不會感到疲累。"
     },
     "evolution": {
       "stage": "mega"
@@ -1139,7 +1139,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.7",
       "weight": "18",
       "category": "鼠寶可夢",
-      "text": "拉達堅硬的門牙長得很塊。為了磨平不斷生長的門牙，牠有著啃咬堅硬東西的習性。甚至連房屋的牆壁也會變成牠的啃咬對象。牠有著防水的皮毛和蹼足，且善於游泳。"
+      "text": "拉達堅硬的門牙長得很塊。为了磨平不斷生長的門牙，牠有著啃咬堅硬東西的習性。甚至連房屋的牆壁也會變成牠的啃咬對象。牠有著防水的皮毛和蹼足，且善於游泳。"
     },
     "evolution": {
       "stage": "final"
@@ -1625,7 +1625,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Poison", "name": "毒針" },
       { "rank": 1, "type": "Rock", "name": "滾動" },
       { "rank": 2, "type": "Normal", "name": "亂抓" },
-      { "rank": 2, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 2, "type": "Normal", "name": "高速旋转" },
       { "rank": 2, "type": "Normal", "name": "高速星星" },
       { "rank": 2, "type": "Bug", "name": "連斬" },
       { "rank": 2, "type": "Ground", "name": "挖洞" },
@@ -1675,7 +1675,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Poison", "name": "毒針" },
       { "rank": 1, "type": "Rock", "name": "滾動" },
       { "rank": 2, "type": "Normal", "name": "亂抓" },
-      { "rank": 2, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 2, "type": "Normal", "name": "高速旋转" },
       { "rank": 2, "type": "Normal", "name": "撕裂爪" },
       { "rank": 2, "type": "Normal", "name": "高速星星" },
       { "rank": 2, "type": "Bug", "name": "連斬" },
@@ -1725,7 +1725,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Normal", "name": "忍耐" },
       { "rank": 1, "type": "Ice", "name": "細雪" },
       { "rank": 2, "type": "Normal", "name": "亂抓" },
-      { "rank": 2, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 2, "type": "Normal", "name": "高速旋转" },
       { "rank": 2, "type": "Normal", "name": "高速星星" },
       { "rank": 2, "type": "Bug", "name": "連斬" },
       { "rank": 2, "type": "Ice", "name": "冰球" },
@@ -2226,7 +2226,7 @@ Array.prototype.push.apply(Pokedex, [
     "ability": [ "引火", "日照" ],
     "moves": [
       { "rank": 2, "type": "Normal", "name": "電光一閃" },
-      { "rank": 2, "type": "Dark", "name": "詭計" },
+      { "rank": 2, "type": "Dark", "name": "詭计" },
       { "rank": 2, "type": "Fire", "name": "噴射火焰" },
       { "rank": 2, "type": "Ghost", "name": "奇異之光" },
       { "rank": 2, "type": "Psychic", "name": "封印" },
@@ -2317,7 +2317,7 @@ Array.prototype.push.apply(Pokedex, [
     },
     "ability": [ "雪隱", "降雪" ],
     "moves": [
-      { "rank": 2, "type": "Dark", "name": "詭計" },
+      { "rank": 2, "type": "Dark", "name": "詭计" },
       { "rank": 2, "type": "Fairy", "name": "魔法閃耀" },
       { "rank": 2, "type": "Ghost", "name": "奇異之光" },
       { "rank": 2, "type": "Ice", "name": "冰凍光束" },
@@ -2464,7 +2464,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Ice", "name": "黑霧" },
       { "rank": 3, "type": "Poison", "name": "毒液衝擊" },
       { "rank": 4, "type": "Normal", "name": "憤怒門牙" },
-      { "rank": 4, "type": "Dark", "name": "詭計" },
+      { "rank": 4, "type": "Dark", "name": "詭计" },
       { "rank": 4, "type": "Poison", "name": "毒液陷阱" }
     ],
     "isNovice": true
@@ -2515,7 +2515,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Ice", "name": "黑霧" },
       { "rank": 3, "type": "Poison", "name": "毒液衝擊" },
       { "rank": 4, "type": "Normal", "name": "憤怒門牙" },
-      { "rank": 4, "type": "Dark", "name": "詭計" },
+      { "rank": 4, "type": "Dark", "name": "詭计" },
       { "rank": 4, "type": "Poison", "name": "毒液陷阱" }
     ]
   },
@@ -3083,7 +3083,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Normal", "name": "佯攻" },
       { "rank": 3, "type": "Dark", "name": "暗襲要害" },
       { "rank": 3, "type": "Dark", "name": "惡意追擊" },
-      { "rank": 3, "type": "Dark", "name": "詭計" },
+      { "rank": 3, "type": "Dark", "name": "詭计" },
       { "rank": 4, "type": "Normal", "name": "唱歌" },
       { "rank": 4, "type": "Dark", "name": "搶奪" },
       { "rank": 4, "type": "Fairy", "name": "撒嬌" }
@@ -3131,7 +3131,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Fairy", "name": "嬉鬧" },
       { "rank": 2, "type": "Rock", "name": "力量寶石" },
       { "rank": 3, "type": "Normal", "name": "佯攻" },
-      { "rank": 3, "type": "Dark", "name": "詭計" },
+      { "rank": 3, "type": "Dark", "name": "詭计" },
       { "rank": 3, "type": "Dark", "name": "掉包" },
       { "rank": 3, "type": "Dark", "name": "暗襲要害" },
       { "rank": 3, "type": "Dark", "name": "惡意追擊" },
@@ -3183,7 +3183,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Normal", "name": "佯攻" },
       { "rank": 3, "type": "Dark", "name": "暗襲要害" },
       { "rank": 3, "type": "Dark", "name": "惡意追擊" },
-      { "rank": 3, "type": "Dark", "name": "詭計" },
+      { "rank": 3, "type": "Dark", "name": "詭计" },
       { "rank": 4, "type": "Dark", "name": "吹捧" },
       { "rank": 4, "type": "Fairy", "name": "撒嬌" },
       { "rank": 4, "type": "Ghost", "name": "怨恨" }
@@ -3233,7 +3233,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Fairy", "name": "嬉鬧" },
       { "rank": 2, "type": "Rock", "name": "力量寶石" },
       { "rank": 3, "type": "Normal", "name": "佯攻" },
-      { "rank": 3, "type": "Dark", "name": "詭計" },
+      { "rank": 3, "type": "Dark", "name": "詭计" },
       { "rank": 3, "type": "Dark", "name": "延後" },
       { "rank": 3, "type": "Dark", "name": "暗襲要害" },
       { "rank": 3, "type": "Dark", "name": "惡意追擊" },
@@ -3424,7 +3424,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Normal", "name": "抓" },
       { "rank": 1, "type": "Normal", "name": "瞪眼" },
       { "rank": 1, "type": "Normal", "name": "聚氣" },
-      { "rank": 1, "type": "Dark", "name": "投擲" },
+      { "rank": 1, "type": "Dark", "name": "投掷" },
       { "rank": 2, "type": "Normal", "name": "憤怒" },
       { "rank": 2, "type": "Normal", "name": "刺耳聲" },
       { "rank": 2, "type": "Normal", "name": "亂抓" },
@@ -4395,7 +4395,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.4",
       "weight": "20",
       "category": "岩石寶可夢",
-      "text": "阿羅拉地區火特力山上的磁場讓小拳石的身體演化出了充電器。牠們往往會把自己偽裝成普通的岩石，最好多加小心，因為要是不小心踩到牠們，你就會因為觸電而大吃苦頭。"
+      "text": "阿羅拉地區火特力山上的磁場讓小拳石的身體演化出了充電器。牠們往往會把自己偽裝成普通的岩石，最好多加小心，因为要是不小心踩到牠們，你就會因为觸電而大吃苦頭。"
     },
     "evolution": {
       "stage": "first",
@@ -4445,7 +4445,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.0",
       "weight": "110",
       "category": "岩石寶可夢",
-      "text": "這些寶可夢透過滾動來給自己充電。兩隻阿羅拉隆隆石互相爭鬥時是相當危險的，會發出能從很遠的地方看到和聽到巨大的聲音和閃光。牠們以金色的電氣石為食。"
+      "text": "這些寶可夢透過滾動來給自己充電。两隻阿羅拉隆隆石互相爭鬥時是相當危險的，會發出能從很遠的地方看到和聽到巨大的聲音和閃光。牠們以金色的電氣石为食。"
     },
     "evolution": {
       "stage": "second",
@@ -4922,7 +4922,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Poison", "name": "毒擊" },
       { "rank": 2, "type": "Psychic", "name": "高速移動" },
       { "rank": 3, "type": "Normal", "name": "佯攻" },
-      { "rank": 3, "type": "Normal", "name": "點到為止" },
+      { "rank": 3, "type": "Normal", "name": "點到为止" },
       { "rank": 3, "type": "Dark", "name": "暗襲要害" },
       { "rank": 3, "type": "Flying", "name": "空氣斬" },
       { "rank": 3, "type": "Flying", "name": "勇鳥猛攻" },
@@ -4941,7 +4941,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/084.png",
       "height": "1.4",
       "weight": "40",
-      "category": "兩頭鳥寶可夢",
+      "category": "两頭鳥寶可夢",
       "text": "It can fly, but it prefers to run in the prairies. The two heads usually get along. While one is eating or sleeping,  the other one is alert for predators. It is known that they share a brain and their ideas are connected."
     },
     "evolution": {
@@ -5165,7 +5165,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Ground", "name": "擲泥" },
       { "rank": 2, "type": "Normal", "name": "刺耳聲" },
       { "rank": 2, "type": "Normal", "name": "變小" },
-      { "rank": 2, "type": "Dark", "name": "投擲" },
+      { "rank": 2, "type": "Dark", "name": "投掷" },
       { "rank": 2, "type": "Ground", "name": "泥巴炸彈" },
       { "rank": 2, "type": "Poison", "name": "污泥攻擊" },
       { "rank": 2, "type": "Poison", "name": "污泥炸彈" },
@@ -5216,7 +5216,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Poison", "name": "酸液炸彈" },
       { "rank": 2, "type": "Poison", "name": "劇毒牙" },
       { "rank": 2, "type": "Normal", "name": "變小" },
-      { "rank": 2, "type": "Dark", "name": "投擲" },
+      { "rank": 2, "type": "Dark", "name": "投掷" },
       { "rank": 2, "type": "Dark", "name": "拍落" },
       { "rank": 2, "type": "Dark", "name": "咬碎" },
       { "rank": 2, "type": "Normal", "name": "刺耳聲" },
@@ -5271,10 +5271,10 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Normal", "name": "變小" },
       { "rank": 2, "type": "Normal", "name": "刺耳聲" },
       { "rank": 2, "type": "Normal", "name": "變小" },
-      { "rank": 2, "type": "Dark", "name": "投擲" },
+      { "rank": 2, "type": "Dark", "name": "投掷" },
       { "rank": 2, "type": "Dark", "name": "拍落" },
       { "rank": 2, "type": "Dark", "name": "咬碎" },
-      { "rank": 2, "type": "Dark", "name": "投擲" },
+      { "rank": 2, "type": "Dark", "name": "投掷" },
       { "rank": 2, "type": "Ground", "name": "泥巴炸彈" },
       { "rank": 2, "type": "Poison", "name": "污泥炸彈" },
       { "rank": 2, "type": "Poison", "name": "污泥攻擊" },
@@ -5333,7 +5333,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Poison", "name": "酸液炸彈" },
       { "rank": 2, "type": "Poison", "name": "劇毒牙" },
       { "rank": 2, "type": "Normal", "name": "變小" },
-      { "rank": 2, "type": "Dark", "name": "投擲" },
+      { "rank": 2, "type": "Dark", "name": "投掷" },
       { "rank": 2, "type": "Dark", "name": "拍落" },
       { "rank": 2, "type": "Dark", "name": "咬碎" },
       { "rank": 2, "type": "Normal", "name": "刺耳聲" },
@@ -5392,7 +5392,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Ice", "name": "冰凍光束" },
       { "rank": 3, "type": "Steel", "name": "鐵壁" },
       { "rank": 3, "type": "Water", "name": "水砲" },
-      { "rank": 4, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 4, "type": "Normal", "name": "高速旋转" },
       { "rank": 4, "type": "Rock", "name": "岩石爆擊" },
       { "rank": 4, "type": "Water", "name": "水流環" }
     ],
@@ -5709,7 +5709,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Psychic", "name": "意念頭鎚" },
       { "rank": 2, "type": "Psychic", "name": "幻象光線" },
       { "rank": 2, "type": "Psychic", "name": "同步干擾" },
-      { "rank": 3, "type": "Dark", "name": "詭計" },
+      { "rank": 3, "type": "Dark", "name": "詭计" },
       { "rank": 3, "type": "Psychic", "name": "精神衝擊" },
       { "rank": 3, "type": "Psychic", "name": "精神強念" },
       { "rank": 3, "type": "Psychic", "name": "預知未來" },
@@ -5761,7 +5761,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Psychic", "name": "同步干擾" },
       { "rank": 2, "type": "Psychic", "name": "意念頭鎚" },
       { "rank": 2, "type": "Psychic", "name": "幻象光線" },
-      { "rank": 3, "type": "Dark", "name": "詭計" },
+      { "rank": 3, "type": "Dark", "name": "詭计" },
       { "rank": 3, "type": "Psychic", "name": "精神衝擊" },
       { "rank": 3, "type": "Psychic", "name": "預知未來" },
       { "rank": 3, "type": "Psychic", "name": "精神強念" },
@@ -6135,8 +6135,8 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Normal", "name": "蠻幹" },
       { "rank": 2, "type": "Normal", "name": "憤怒" },
       { "rank": 2, "type": "Normal", "name": "頭鎚" },
-      { "rank": 2, "type": "Normal", "name": "點到為止" },
-      { "rank": 2, "type": "Dark", "name": "投擲" },
+      { "rank": 2, "type": "Normal", "name": "點到为止" },
+      { "rank": 2, "type": "Dark", "name": "投掷" },
       { "rank": 2, "type": "Ground", "name": "骨頭迴力鏢" },
       { "rank": 3, "type": "Normal", "name": "報仇" },
       { "rank": 3, "type": "Normal", "name": "大鬧一番" },
@@ -6184,8 +6184,8 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Normal", "name": "蠻幹" },
       { "rank": 2, "type": "Normal", "name": "憤怒" },
       { "rank": 2, "type": "Normal", "name": "頭鎚" },
-      { "rank": 2, "type": "Normal", "name": "點到為止" },
-      { "rank": 2, "type": "Dark", "name": "投擲" },
+      { "rank": 2, "type": "Normal", "name": "點到为止" },
+      { "rank": 2, "type": "Dark", "name": "投掷" },
       { "rank": 2, "type": "Ground", "name": "骨頭迴力鏢" },
       { "rank": 3, "type": "Normal", "name": "報仇" },
       { "rank": 3, "type": "Normal", "name": "大鬧一番" },
@@ -6234,7 +6234,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Fire", "name": "鬼火" },
       { "rank": 2, "type": "Ghost", "name": "暗影之骨" },
       { "rank": 2, "type": "Normal", "name": "蠻幹" },
-      { "rank": 2, "type": "Dark", "name": "投擲" },
+      { "rank": 2, "type": "Dark", "name": "投掷" },
       { "rank": 3, "type": "Ground", "name": "跺腳" },
       { "rank": 3, "type": "Normal", "name": "大鬧一番" },
       { "rank": 3, "type": "Fire", "name": "閃焰衝鋒" },
@@ -6290,7 +6290,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Normal", "name": "百萬噸重踢" },
       { "rank": 3, "type": "Fight", "name": "近身戰" },
       { "rank": 3, "type": "Fight", "name": "起死回生" },
-      { "rank": 4, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 4, "type": "Normal", "name": "高速旋转" },
       { "rank": 4, "type": "Fight", "name": "音速拳" },
       { "rank": 4, "type": "Flying", "name": "彈跳" }
     ]
@@ -6341,7 +6341,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Fight", "name": "真氣拳" },
       { "rank": 3, "type": "Fight", "name": "雙倍奉還" },
       { "rank": 3, "type": "Fight", "name": "看穿" },
-      { "rank": 4, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 4, "type": "Normal", "name": "高速旋转" },
       { "rank": 4, "type": "Fight", "name": "吸取拳" },
       { "rank": 4, "type": "Fight", "name": "飛膝踢" }
     ]
@@ -6630,7 +6630,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Psychic", "name": "治愈波動" },
       { "rank": 3, "type": "Normal", "name": "炸蛋" },
       { "rank": 3, "type": "Normal", "name": "捨身衝撞" },
-      { "rank": 3, "type": "Dark", "name": "投擲" },
+      { "rank": 3, "type": "Dark", "name": "投掷" },
       { "rank": 3, "type": "Psychic", "name": "治愈之願" },
       { "rank": 3, "type": "Psychic", "name": "光牆" },
       { "rank": 4, "type": "Normal", "name": "禮物" },
@@ -6984,7 +6984,7 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Normal", "name": "變硬" },
       { "rank": 0, "type": "Normal", "name": "撞擊" },
-      { "rank": 1, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 1, "type": "Normal", "name": "高速旋转" },
       { "rank": 1, "type": "Normal", "name": "自我再生" },
       { "rank": 1, "type": "Water", "name": "水槍" },
       { "rank": 2, "type": "Normal", "name": "變小" },
@@ -7038,7 +7038,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Normal", "name": "自我再生" },
       { "rank": 1, "type": "Water", "name": "水槍" },
       { "rank": 2, "type": "Normal", "name": "高速星星" },
-      { "rank": 2, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 2, "type": "Normal", "name": "高速旋转" },
       { "rank": 3, "type": "Ghost", "name": "奇異之光" },
       { "rank": 3, "type": "Water", "name": "水砲" },
       { "rank": 4, "type": "Bug", "name": "信號光束" },
@@ -7098,7 +7098,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Psychic", "name": "扮演" },
       { "rank": 3, "type": "Psychic", "name": "精神強念" },
       { "rank": 4, "type": "Normal", "name": "擊掌奇襲" },
-      { "rank": 4, "type": "Dark", "name": "詭計" },
+      { "rank": 4, "type": "Dark", "name": "詭计" },
       { "rank": 4, "type": "Ghost", "name": "奇異之光" }
     ]
   },
@@ -7133,7 +7133,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Normal", "name": "瞪眼" },
       { "rank": 0, "type": "Normal", "name": "電光一閃" },
       { "rank": 1, "type": "Normal", "name": "聚氣" },
-      { "rank": 1, "type": "Normal", "name": "點到為止" },
+      { "rank": 1, "type": "Normal", "name": "點到为止" },
       { "rank": 1, "type": "Fight", "name": "真空波" },
       { "rank": 2, "type": "Normal", "name": "影子分身" },
       { "rank": 2, "type": "Normal", "name": "劈開" },
@@ -7198,7 +7198,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Ice", "name": "暴風雪" },
       { "rank": 3, "type": "Ice", "name": "雪崩" },
       { "rank": 4, "type": "Normal", "name": "擊掌奇襲" },
-      { "rank": 4, "type": "Dark", "name": "詭計" },
+      { "rank": 4, "type": "Dark", "name": "詭计" },
       { "rank": 4, "type": "Ice", "name": "極光幕" }
     ]
   },
@@ -8612,7 +8612,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Normal", "name": "揮指" },
       { "rank": 5, "type": "Normal", "name": "變身" },
       { "rank": 5, "type": "Normal", "name": "拍擊" },
-      { "rank": 5, "type": "Dark", "name": "詭計" },
+      { "rank": 5, "type": "Dark", "name": "詭计" },
       { "rank": 5, "type": "Fight", "name": "波導彈" },
       { "rank": 5, "type": "Psychic", "name": "精神強念" },
       { "rank": 5, "type": "Psychic", "name": "瞬間失憶" },

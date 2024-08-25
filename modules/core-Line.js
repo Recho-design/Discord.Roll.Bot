@@ -54,15 +54,15 @@ let handleEvent = async function (event) {
 
 	let trigger = "";
 	let roomorgroupid = event.source.groupId || event.source.roomId || '';
-	let mainMsg = (inputStr) ? inputStr.match(MESSAGE_SPLITOR) : {}; //定義輸入字串
+	let mainMsg = (inputStr) ? inputStr.match(MESSAGE_SPLITOR) : {}; //定義输入字串
 	if (mainMsg && mainMsg[0]) {
 		trigger = mainMsg[0].toString().toLowerCase();
 	}
-	//指定啟動詞在第一個詞&把大階強制轉成細階
+	//指定啟動詞在第一个詞&把大階強制转成細階
 	if ((trigger == ".me" || trigger == ".mee") && !z_stop(mainMsg, roomorgroupid)) {
 		inputStr = inputStr.replace(/^\.mee\s*/i, ' ').replace(/^\.me\s*/i, ' ');
 		if (inputStr.match(/^\s+$/)) {
-			inputStr = `.me 或 /mee 可以令HKTRPG機械人重覆你的說話\n請輸入復述內容`
+			inputStr = `.me 或 /mee 可以令HKTRPG機械人重覆你的說話\n請输入復述內容`
 		}
 		if (roomorgroupid) {
 			let temp = HandleMessage(inputStr);
@@ -195,7 +195,7 @@ let handleEvent = async function (event) {
 
 	switch (true) {
 		case privatemsg == 1:
-			// 輸入dr  (指令) 私訊自己
+			// 输入dr  (指令) 私訊自己
 			if (roomorgroupid && userid)
 				if (displayname)
 					replyMessagebyReplyToken(event, "@" + displayname + ' 暗骰給自己');
@@ -208,7 +208,7 @@ let handleEvent = async function (event) {
 					SendToId(userid, rplyVal.text);
 			break;
 		case privatemsg == 2:
-			//輸入ddr(指令) 私訊GM及自己
+			//输入ddr(指令) 私訊GM及自己
 			//房間訊息
 			if (roomorgroupid) {
 				let targetGMNameTemp = "";
@@ -216,9 +216,9 @@ let handleEvent = async function (event) {
 					targetGMNameTemp = targetGMNameTemp + ", " + (TargetGMTempdiyName[i] || "@" + TargetGMTempdisplayname[i]);
 				}
 				if (displayname) {
-					replyMessagebyReplyToken(event, "@" + displayname + ' 暗骰進行中 \n目標: 自己 ' + targetGMNameTemp);
+					replyMessagebyReplyToken(event, "@" + displayname + ' 暗骰进行中 \n目標: 自己 ' + targetGMNameTemp);
 				} else
-					replyMessagebyReplyToken(event, ' 暗骰進行中 \n目標: 自己 ' + targetGMNameTemp);
+					replyMessagebyReplyToken(event, ' 暗骰进行中 \n目標: 自己 ' + targetGMNameTemp);
 			}
 
 			//有名字就顯示
@@ -234,7 +234,7 @@ let handleEvent = async function (event) {
 			}
 			break;
 		case privatemsg == 3:
-			//輸入dddr(指令) 私訊GM
+			//输入dddr(指令) 私訊GM
 			//如在房中
 			if (roomorgroupid) {
 				let targetGMNameTemp = "";
@@ -242,9 +242,9 @@ let handleEvent = async function (event) {
 					targetGMNameTemp = targetGMNameTemp + " " + (TargetGMTempdiyName[i] || "@" + TargetGMTempdisplayname[i])
 				}
 				if (displayname) {
-					replyMessagebyReplyToken(event, "@" + displayname + ' 暗骰進行中 \n目標: ' + targetGMNameTemp)
+					replyMessagebyReplyToken(event, "@" + displayname + ' 暗骰进行中 \n目標: ' + targetGMNameTemp)
 				} else {
-					replyMessagebyReplyToken(event, ' 暗骰進行中 \n目標: ' + targetGMNameTemp)
+					replyMessagebyReplyToken(event, ' 暗骰进行中 \n目標: ' + targetGMNameTemp)
 				}
 			}
 			if (displayname)
@@ -410,7 +410,7 @@ if (agenda && agenda.agenda && lineAgenda) {
 			if ((new Date(Date.now()) - data.createAt) >= SIX_MONTH) {
 				await job.remove();
 				SendToId(
-					data.groupid, "已運行六個月, 移除此定時訊息"
+					data.groupid, "已運行六个月, 移除此定時訊息"
 				)
 			}
 		} catch (e) {

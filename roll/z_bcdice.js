@@ -27,14 +27,14 @@ const prefixs = function () {
     }]
 }
 const getHelpMessage = function () {
-    return `【BcDice】日系擲骰
-這是讓你可以使用Bcdice 那100種擲骰系統的功能
+    return `【BcDice】日系掷骰
+這是讓你可以使用Bcdice 那100種掷骰系統的功能
 
 使用方法
 首先，先在BCDICE官方的骰表ID中找出你所想的系統
-然後輸入.bc use (ID) 進行登記
-現在，你可以以.bc (骰子指令)來進行擲骰了。 
-想看骰子說明可輸入.bc dicehelp
+然後输入.bc use (ID) 进行登記
+現在，你可以以.bc (骰子指令)來进行掷骰了。 
+想看骰子說明可输入.bc dicehelp
 
 注: 登記需要Admin或頻道管理權限
 
@@ -92,7 +92,7 @@ const rollDiceCommand = async function ({
                 rply.text = await callHelp(doc.trpgId) || '';
                 return rply;
             } else {
-                rply.text = `沒有已設定的骰表ID\n\n請輸入ID，ID可以在下列網站找到\nhttps://bcdice.org/systems/ \n\n使用例子: .bc use CthulhuTech`;
+                rply.text = `沒有已設定的骰表ID\n\n請输入ID，ID可以在下列網站找到\nhttps://bcdice.org/systems/ \n\n使用例子: .bc use CthulhuTech`;
                 rply.quotes = true;
                 return rply;
             }
@@ -107,7 +107,7 @@ const rollDiceCommand = async function ({
                 return rply;
             }
             if (!mainMsg[2]) {
-                rply.text = `請輸入ID，ID可以在下列網站找到\nhttps://bcdice.org/systems/\n\n使用例子: .bc use CthulhuTech`
+                rply.text = `請输入ID，ID可以在下列網站找到\nhttps://bcdice.org/systems/\n\n使用例子: .bc use CthulhuTech`
                 return rply;
             }
             let help = await callHelp(mainMsg[2]);
@@ -144,7 +144,7 @@ const rollDiceCommand = async function ({
                 return rply;
             }
             else {
-                rply.text = '沒有已設定的BcDice 骰表ID\n請查找骰表ID 並輸入 .bc use (id)\nhttps://bcdice.org/systems/'
+                rply.text = '沒有已設定的BcDice 骰表ID\n請查找骰表ID 並输入 .bc use (id)\nhttps://bcdice.org/systems/'
                 return rply;
             }
         }
@@ -152,9 +152,9 @@ const rollDiceCommand = async function ({
             rply.text = `這骰組已經整合成BcDice
 使用方法
 首先，先在BcDice官方的骰表ID中找出你所想的系統
-然後輸入.bc use (ID) 進行登記
-現在，你可以以.bc (骰子指令)來進行擲骰了。 
-想看骰子說明可輸入.bc dicehelp
+然後输入.bc use (ID) 进行登記
+現在，你可以以.bc (骰子指令)來进行掷骰了。 
+想看骰子說明可输入.bc dicehelp
 
 注: 登記需要Admin或頻道管理權限
 
@@ -168,9 +168,9 @@ https://bcdice.org/systems/
 const discordCommand = [
     {
         data: new SlashCommandBuilder()
-            .setName('bcdice擲骰')
-            .setDescription('進行BcDice擲骰')
-            .addStringOption(option => option.setName('text').setDescription('擲骰內容').setRequired(true))
+            .setName('bcdice掷骰')
+            .setDescription('进行BcDice掷骰')
+            .addStringOption(option => option.setName('text').setDescription('掷骰內容').setRequired(true))
         ,
         async execute(interaction) {
             const text = interaction.options.getString('text')
@@ -180,10 +180,10 @@ const discordCommand = [
     {
         data: new SlashCommandBuilder()
             .setName('bcdice設定')
-            .setDescription('進行bcdice的設定(說明/登記/刪除)')
+            .setDescription('进行bcdice的設定(說明/登記/刪除)')
             .addStringOption(option =>
                 option.setName('指令')
-                    .setDescription('進行bcdice的設定')
+                    .setDescription('进行bcdice的設定')
                     .setRequired(true)
                     .addChoices({ name: '顯示使用說明', value: 'help' },
                         { name: '顯示BcDice骰組使用說明(登記後可使用)', value: 'dicehelp' },

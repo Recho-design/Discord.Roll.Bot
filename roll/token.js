@@ -28,19 +28,19 @@ const prefixs = function () {
 const getHelpMessage = function () {
     return `【製作Token】.token
 用來製作跑團Token的功能
-可以自定兩行名字和圖片內容
+可以自定两行名字和圖片內容
 
-分別有兩種製作外框樣式
-1. .token 為方形(相片型)
-2. .token2 為透底圓形
-3. .token3 為透底圓形，外框為根據你的Discord名字或輸入名字決定的顏色
+分別有两種製作外框樣式
+1. .token 为方形(相片型)
+2. .token2 为透底圓形
+3. .token3 为透底圓形，外框为根據你的Discord名字或输入名字決定的顏色
 
 使用方法:
-reply一個有圖片的訊息 或傳送一張圖片時，輸入.token 
-就可以產生一個token圖片
-如果沒有指定圖片，則自動使用你的頭像 作為token
+reply一个有圖片的訊息 或傳送一張圖片時，输入.token 
+就可以產生一个token圖片
+如果沒有指定圖片，則自動使用你的頭像 作为token
 
-同時可以輸入兩行內容，作為圖片上的文字
+同時可以输入两行內容，作为圖片上的文字
 如.token 
 Sad
 HKTRPG

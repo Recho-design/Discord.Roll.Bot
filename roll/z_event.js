@@ -76,49 +76,49 @@ const getHelpMessage = function () {
 .event show (事件名稱)   - 顯示你新增的指定事件詳情
 .event useExp           - 在群組中使用, 將會得到你賺取的EXP
 ---
-.evt random     - 進入隨機的事件, 消耗5EN
+.evt random     - 進入随机的事件, 消耗5EN
 .evt (系列名稱)  - 進入指定的系列事件, 消耗10EN
 .evt (事件名稱)  - 進入指定的事件, 消耗15EN
 ---
 EN上限 = 20+LV
 每10分鐘回複1點EN
-得知事件名稱的方法，別人告知 或 經隨機事件知道名字
-設計事件的好處
-能夠吸收對方消耗的en和經驗值 作為自己賺取到的經驗值
+得知事件名稱的方法，別人告知 或 經随机事件知道名字
+設计事件的好處
+能夠吸收對方消耗的en和經驗值 作为自己賺取到的經驗值
 ---
 新增事件的格式範例
 .event add
 name:Haha
 chain:開心系列
 exp:SAN
-0:你今天的運氣真好;你是個好人;我愛你
+0:你今天的運氣真好;你是个好人;我愛你
 -1:你中招了;你不好運要-SAN了
 1:你吃了好味的糖，加SAN
 ----
 name -> 事件標題
-chain-> 系列名稱，別人可以指定該系列來進行抽選
+chain-> 系列名稱，別人可以指定該系列來进行抽選
 exp  -> (可選)經驗值的名稱, 例如改成SAN, 會變成「你損失了X點SAN」
-0:你今天的運氣真好;你是個好人;我愛你 ->
+0:你今天的運氣真好;你是个好人;我愛你 ->
 (事件類型):(事件的描述);(事件的描述2);(事件的描述3)
-事件的描述 ->會從描述1,2,3選取其中一個.
+事件的描述 ->會從描述1,2,3選取其中一个.
 事件類型  -> 
 0. 沒有事發生
 1. 直接增加X點經驗
 2. 未來X次裡會得到 X 倍經驗值
 3. 贈送群組所有人1點經驗
 4. 贈送作者已賺取到的經驗給玩家
-5. 從整個CHANNEL 的X人吸收X點經驗
+5. 從整个CHANNEL 的X人吸收X點經驗
 -1. 直接減少X點經驗
 -2. 停止得到經驗(X次)
 -3. 被事件開發者吸收X點經驗
--4. 分發X經驗給整個CHANNEL中的X人
+-4. 分發X經驗給整个CHANNEL中的X人
 -5. 每次發言減少X經驗(X次內)
 ----
 限制
-A. 一個事件中，正面選項要比負面選項多
-B. 一個事件中，可以有3+(ROUNDDOWN 設計者LV/10)  項選項
-C. 一個事件中，不可以全部正面效果
-D. 一個事件可用的總EN 為(10+LV)，負面事件消耗X點EN
+A. 一个事件中，正面選項要比負面選項多
+B. 一个事件中，可以有3+(ROUNDDOWN 設计者LV/10)  項選項
+C. 一个事件中，不可以全部正面效果
+D. 一个事件可用的總EN 为(10+LV)，負面事件消耗X點EN
 `
 }
 
@@ -164,7 +164,7 @@ const rollDiceCommand = async function ({
      * .event add 
      * name:神奇事件
      * exp:SAN
-     * 0:你今天的運氣真好;你是個好人;我愛你
+     * 0:你今天的運氣真好;你是个好人;我愛你
      * -1:你中招了:你不好運要-SAN了
      * 1:你吃了好味的糖，加SAN人
      */
@@ -176,15 +176,15 @@ const rollDiceCommand = async function ({
             return rply;
         }
         case /(^[.]event$)/i.test(mainMsg[0]) && /^add$/i.test(mainMsg[1]) && /^\S+$/.test(mainMsg[2]): {
-            events = await analysicInputData(inputStr); //分析輸入的資料
+            events = await analysicInputData(inputStr); //分析输入的資料
 
             if (!events || !events.MainData || !events.eventName) {
-                rply.text = `沒有輸入事件或名字，請重新整理內容 格式為
+                rply.text = `沒有输入事件或名字，請重新整理內容 格式为
 .event add
 name:Haha
 chain:開心系列
 exp:SAN
-0:你今天的運氣真好;你是個好人;我愛你
+0:你今天的運氣真好;你是个好人;我愛你
 -1:你中招了;你不好運要-SAN了
 1:你吃了好味的糖，加SAN`
                 return rply;
@@ -207,10 +207,10 @@ exp:SAN
             //doc = await schema.event.findOne(filter);
             let mainSplit = await analysicDetail(events.MainData)
             if (mainSplit.length < 3 || mainSplit.length > Number(3 + levelLv)) {
-                rply.text = '新增事件失敗\n一個事件需要至少設定 3 個結果\n你現在的VIP LV最多同時可設定 ' + Number(3 + levelLv) + ' 個事件'
+                rply.text = '新增事件失敗\n一个事件需要至少設定 3 个結果\n你現在的VIP LV最多同時可設定 ' + Number(3 + levelLv) + ' 个事件'
                 return rply;
             }
-            //至少一個是正面
+            //至少一个是正面
             let positiveCheck = false;
             for (let index = 0; index < mainSplit.length; index++) {
                 (Number(mainSplit[index].result) > 0) ? positiveCheck = true : null;
@@ -218,11 +218,11 @@ exp:SAN
             }
 
             if (!positiveCheck) {
-                rply.text = '新增事件失敗\n需要至少設定一個正面事件'
+                rply.text = '新增事件失敗\n需要至少設定一个正面事件'
                 return rply;
             }
             if (levelLv < 0) {
-                rply.text = '新增事件失敗\n因為不可以過多負面事件\n事件種類加(使用者LV/10)必需高於0\n現在加起來是' + levelLv + ' 點'
+                rply.text = '新增事件失敗\n因为不可以過多負面事件\n事件種類加(使用者LV/10)必需高於0\n現在加起來是' + levelLv + ' 點'
                 return rply;
             }
 
@@ -246,11 +246,11 @@ exp:SAN
                 doc = await schema.eventList.updateOne(filter, listDatas, opt);
             } catch (error) {
                 console.error('新增事件 GET ERROR: ', error)
-                rply.text = '新增事件失敗\n因為 ' + error.message
+                rply.text = '新增事件失敗\n因为 ' + error.message
                 return rply;
             }
             if (!doc && check && check.length >= limit) {
-                rply.text = '你的事件上限為' + limit + '件' + '\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                rply.text = '你的事件上限为' + limit + '件' + '\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
                 return rply
             }
             tempMain = await schema.eventList.findOne(filter);
@@ -296,7 +296,7 @@ exp:SAN
 
             } catch (error) {
                 console.error('新增事件 GET ERROR: ', error)
-                rply.text = '新增事件失敗\n因為 ' + error.message
+                rply.text = '新增事件失敗\n因为 ' + error.message
                 return rply;
             }
             //增加資料庫
@@ -350,7 +350,7 @@ exp:SAN
             let gp = await schema.trpgLevelSystem.findOne({ groupid: groupid });
             if (!gp || !gp.SwitchV2) {
                 rply.text = '此群組並有沒有開啓LEVEL功能. \n.level config 11 代表啓動功能 \
-                \n 數字11代表等級升級時會進行通知，10代表不會自動通知，\
+                \n 数字11代表等級升級時會进行通知，10代表不會自動通知，\
                 \n 00的話代表不啓動功能\n'
                 return rply;
             }
@@ -382,7 +382,7 @@ exp:SAN
                 }
             }
             else {
-                rply.text = `你未有賺取到EXP。\n賺取條件為有人使用你所寫的事件，請更多使用吧!`
+                rply.text = `你未有賺取到EXP。\n賺取條件为有人使用你所寫的事件，請更多使用吧!`
                 return rply;
             }
         }
@@ -398,7 +398,7 @@ exp:SAN
 
                 let maxLv = await findMaxLv(userid);
                 /**
-                 * 檢查ENERGY，如果沒有則新增，數字為EN= 20+LV
+                 * 檢查ENERGY，如果沒有則新增，数字为EN= 20+LV
                  */
                 if (!eventMember) {
                     eventMember = new schema.eventMember({
@@ -453,12 +453,12 @@ EN: ${eventMember.energy} / ${maxLv + 20} ${ENemoji(Math.round(eventMember.energ
                 let gp = await schema.trpgLevelSystem.findOne({ groupid: groupid });
                 if (!gp || !gp.SwitchV2) {
                     rply.text = '此群組並有沒有開啓LEVEL功能. \n.level config 11 代表啓動功能 \
-                    \n 數字11代表等級升級時會進行通知，10代表不會自動通知，\
+                    \n 数字11代表等級升級時會进行通知，10代表不會自動通知，\
                     \n 00的話代表不啓動功能\n'
                     return rply;
                 }
                 //用來看EN還有多少, 沒有就RETURN
-                //沒有就新增一個
+                //沒有就新增一个
 
                 let eventMember = await schema.eventMember.findOne({
                     userID: userid
@@ -471,7 +471,7 @@ EN: ${eventMember.energy} / ${maxLv + 20} ${ENemoji(Math.round(eventMember.energ
                 }
                 let maxLv = await findMaxLv(userid);
                 /**
-                 * 檢查ENERGY，如果沒有則新增，數字為EN= 20+LV
+                 * 檢查ENERGY，如果沒有則新增，数字为EN= 20+LV
                  */
                 if (!eventMember) {
                     eventMember = new schema.eventMember({
@@ -496,7 +496,7 @@ EN: ${eventMember.energy} / ${maxLv + 20} ${ENemoji(Math.round(eventMember.energ
                 (debugMode) ? eventMember.energy = 99 : null;
 
 
-                //查看是什麼事件, 隨機, 系列, 指定
+                //查看是什麼事件, 随机, 系列, 指定
                 const targetEventName = convertRegex(mainMsg[1]);
                 let eventMode = '';
                 let eventList = [];
@@ -547,12 +547,12 @@ EN: ${eventMember.energy} / ${maxLv + 20} ${ENemoji(Math.round(eventMember.energ
                 switch (eventMode) {
                     case 'random':
                         if (eventMember.energy < 5) {
-                            rply.text = `隨機事件需要5EN, 你現在只有 ${eventMember.energy} EN`
+                            rply.text = `随机事件需要5EN, 你現在只有 ${eventMember.energy} EN`
                             return rply;
                         } else {
                             eventList = await schema.eventList.aggregate([{ $sample: { size: 1 } }]);
                             if (eventList.length == 0) {
-                                rply.text = '未有人新增事件，你可以成為第一個事件產生者!'
+                                rply.text = '未有人新增事件，你可以成为第一个事件產生者!'
                                 return rply;
                             }
                             eventMember.energy -= 5
@@ -644,75 +644,75 @@ module.exports = {
 
 /**
  * TODO:
- * 1. .evt (event)系統設計
+ * 1. .evt (event)系統設计
 經由新增的事件 可以增加減少EXP
-功能及設計列表
-1. 舉報不良項目, 有幾個個舉報, 自動隱藏
+功能及設计列表
+1. 舉報不良項目, 有幾个个舉報, 自動隱藏
 3. 
 進入事件的方法
-輸入 .evt event ->   即 進入 隨機事件, 消耗5EN
-輸入 .evt (事件名稱) ->   即 進入 指定事件, 消耗15EN
+输入 .evt event ->   即 進入 随机事件, 消耗5EN
+输入 .evt (事件名稱) ->   即 進入 指定事件, 消耗15EN
 
 EN= 20+LV
 每5分鐘回複1點EN
 
-得知事件名稱的方法，別人告知 或 經隨機事件知道名字
+得知事件名稱的方法，別人告知 或 經随机事件知道名字
 
 4. 
 事件效果
 -1. 直接減少X點經驗(X分鐘內)
 -2. 停止得到經驗(X分鐘內)
--3. 分發X經驗給整個CHANNEL中的X人
+-3. 分發X經驗給整个CHANNEL中的X人
 -4. 停止得到經驗(X分鐘內)並每次減少發言減少X經驗
 -5. 吸收對方X點經驗
 0. 沒有事發生
 1. 直接增加X點經驗(X分鐘內)
 2. 對方得到經驗值 X 倍(X分鐘內)
-3. 從整個CHANNEL 的X人吸收X點經驗
+3. 從整个CHANNEL 的X人吸收X點經驗
 
 5. 
-設計事件的好處
-能夠吸收對方消耗的en 作為自己的exp
+設计事件的好處
+能夠吸收對方消耗的en 作为自己的exp
 
 6.
-設計方式
-輸入 .evt add 天命
+設计方式
+输入 .evt add 天命
 你被雷打中 得到{exp}點真氣  2  (直接增加X點經驗)
 你掉下山中 頭破血流，損失{exp}點真氣  3  (直接減少X點經驗)
 今天風平浪靜 1 (無事發生)
 
-可以有3+(ROUNDDOWN 設計者LV/10)  項結果
-由設計者自己設定
-一個事件由以下三項組成
+可以有3+(ROUNDDOWN 設计者LV/10)  項結果
+由設计者自己設定
+一个事件由以下三項組成
 事件名稱，事件內容及設定事件結果 
 
 7. 
 限制
-A. 一個事件中，正面選項要比負面選項多
-B. 事件效果隨著設計者LV 而開發
+A. 一个事件中，正面選項要比負面選項多
+B. 事件效果隨著設计者LV 而開發
 如: 效果1-3 LV0-10 可用
 4 需要LV11-20LV
 5 需要LV21-30
-C. 一個事件中，不可以全部正面效果
-D. 一個事件可用的總EN 為(10+LV)，負面事件消耗X點EN
+C. 一个事件中，不可以全部正面效果
+D. 一个事件可用的總EN 为(10+LV)，負面事件消耗X點EN
 
 8.
-變數X 普通為
-設計者LV , 
+變数X 普通为
+設计者LV , 
 使用者LV, 
-設計者LV 與使用者LV 的相差,
-負面效果的程度(即如果一個事件中有負面效果，那正面效果會增加)
+設计者LV 與使用者LV 的相差,
+負面效果的程度(即如果一个事件中有負面效果，那正面效果會增加)
  * 
  * 
  * A) .evt event / .evt 指定名字   - roll/event.js  (檢查有沒有開EXP功能)
  * B) 沒有則RETURN，
  *      有->傳送GP ID, USER ID, 名字 到 MODULES/EVENT.JS
- *      取得MONGOOSE資料 ->進行  (randomEvent)
- *       i)   抽選整個列表      
+ *      取得MONGOOSE資料 ->进行  (randomEvent)
+ *       i)   抽選整个列表      
  *      ii)   抽選指定列表
- * C)   從該列表中抽選一個結果 (randomEvent)
- * D)   得到結果後，進行 該運算 (event)
- *      1/8個結果   -> (expChange)
+ * C)   從該列表中抽選一个結果 (randomEvent)
+ * D)   得到結果後，进行 該運算 (event)
+ *      1/8个結果   -> (expChange)
  * E)   得到結果，修改MONGOOSE (editExp)
  * F)   翻回文字結果到使用者(roll/event.js)
  * 
@@ -777,7 +777,7 @@ async function eventProcessExp({ randomDetail, groupid, eventList, thisMember })
                 /**
                  , $push: {
                                         date: Date.now(),
-                                        activityDetail: `因為${thisMember.name} 你增加 1 點${expName} `
+                                        activityDetail: `因为${thisMember.name} 你增加 1 點${expName} `
                                     }
                  */
                 await schema.eventMember.updateOne({ userID: thisMember.userid }, {
@@ -851,7 +851,7 @@ async function eventProcessExp({ randomDetail, groupid, eventList, thisMember })
                 return `你已被 ${eventList.userName} 贈送了 ${exp} 點${expName} `;
             }
         case 5:
-            //  9. 從整個CHANNEL 的X人吸收X點經驗
+            //  9. 從整个CHANNEL 的X人吸收X點經驗
             {
                 let times = await calXP(eventList, thisMember.Level, "times");
                 let targetMember = await schema.trpgLevelSystemMember.aggregate([{
@@ -924,7 +924,7 @@ async function eventProcessExp({ randomDetail, groupid, eventList, thisMember })
             }
         case -1:
             // -1. 直接減少X點經驗
-            //100之一 ->50之一 * 1.0X ( 相差LV)% *1.0X(負面級數)^(幾個負面) 
+            //100之一 ->50之一 * 1.0X ( 相差LV)% *1.0X(負面級数)^(幾个負面) 
             {
                 let exp = await calXP(eventList, thisMember.Level, "expNeg")
                 //防止變成0以下
@@ -1017,7 +1017,7 @@ async function eventProcessExp({ randomDetail, groupid, eventList, thisMember })
                 return `你已被 ${eventList.userName} 吸收了 ${exp} 點${expName} `;
             }
         case -4:
-            //  5. 分發X經驗給整個CHANNEL中的X人
+            //  5. 分發X經驗給整个CHANNEL中的X人
             {
                 let times = await calXP(eventList, thisMember.Level, "times");
                 let targetMember = await schema.trpgLevelSystemMember.aggregate([{
@@ -1127,7 +1127,7 @@ async function calXP(eventList, thisMemberLV, type) {
     let typeNumber = 1;
     switch (type) {
         case "exp": {
-            //正面事件  把負面的數字相加
+            //正面事件  把負面的数字相加
             let eventPosit = eventList.detail.map(item => {
                 if (item.result < 0 && !isNaN(item.result)) {
                     return item.result;
@@ -1150,7 +1150,7 @@ async function calXP(eventList, thisMemberLV, type) {
             return Math.round(typeNumber);
         }
         case "expNeg": {
-            //負面事件  把正面的數字相加
+            //負面事件  把正面的数字相加
             let eventNeg = eventList.detail.map(item => {
                 if (item.result > 0 && !isNaN(item.result)) {
                     return item.result;
@@ -1190,7 +1190,7 @@ async function calXP(eventList, thisMemberLV, type) {
             return typeNumber;
     }
     //   1. 直接增加X點經驗
-    //100之一 ->50之一 * 1.0X ( 相差LV)% *1.0X(負面級數)^(幾個事件) 
+    //100之一 ->50之一 * 1.0X ( 相差LV)% *1.0X(負面級数)^(幾个事件) 
 
 }
 async function findMaxLv(userid) {
@@ -1214,8 +1214,8 @@ async function findCreater(userid) {
 (##TODO##)
 
 [X]1. 10分鐘回複一點EN.
-[X]2. 隨機事件 5EN, 系列事件10EN, 指定事件15EN
-[X]3. 吸收的經驗值根據 (被吸收者和吸收者LV+20 隨機) 來決定
+[X]2. 随机事件 5EN, 系列事件10EN, 指定事件15EN
+[X]3. 吸收的經驗值根據 (被吸收者和吸收者LV+20 随机) 來決定
 
 
 
@@ -1225,7 +1225,7 @@ B) 每次發言增加Ｘ經驗
 [X]C) 群組所有人增加1點經驗
 
 [X]5. 能否不骰到別群的事件
-增加 參數: 系列,chain of events
+增加 參数: 系列,chain of events
 可以指定該系列的事件
 如 修真 系列
 
@@ -1235,7 +1235,7 @@ B) 每次發言增加Ｘ經驗
 
 [ ]6.是否能指定某人觸發事件 <---
 在.evt XXX  @XXXX 後, 會嘗試根據對方的名字,
-但LINE的話, 需要對方和HKTRPG成為朋友, 才可能成功.
+但LINE的話, 需要對方和HKTRPG成为朋友, 才可能成功.
 不會搜尋無名
 
 

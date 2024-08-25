@@ -14,7 +14,7 @@ const BASIC_ROLL_REGEX = /(\d+)d(\d+)(kh|kl|dh|dl|k|)(\d+|)/i;
 const variables = {};
 
 const gameName = function () {
-  return '【基本擲骰】.z xDy kl dh'
+  return '【基本掷骰】.z xDy kl dh'
 }
 
 const gameType = function () {
@@ -41,12 +41,12 @@ const prefixs = function () {
 
 ///^(?=.*he)(?!.*da).*$/ig
 const getHelpMessage = function () {
-  return `【基本擲骰】1d100(khN|klN|dhN|dlN)
-例如輸入(2d6+1)*2  攻撃！
-會輸出）(2d6+1)*2：攻撃！  (10[5+5]+1)2 = 22
-如上面一樣,在骰子數字後方隔空白位打字,可以進行發言。
+  return `【基本掷骰】1d100(khN|klN|dhN|dlN)
+例如输入(2d6+1)*2  攻撃！
+會输出）(2d6+1)*2：攻撃！  (10[5+5]+1)2 = 22
+如上面一樣,在骰子数字後方隔空白位打字,可以进行發言。
 5 3D6 ：	分別骰出5次3d6 最多30次
-((2d6+1)*2)-5/2>=10 支援括號加減乘除及大於小於(>,<,>=,<=)計算
+((2d6+1)*2)-5/2>=10 支援括號加減乘除及大於小於(>,<,>=,<=)计算
 支援kh|kl|dh|dl，k keep保留，d drop 放棄，h highest最高，l lowest最低
 如3d6kh 保留最大的1粒骰，3d6dl2 放棄最小的2粒骰
 
@@ -73,7 +73,7 @@ const rollDiceCommand = function ({
           rply.text = roll.output;
         } catch (err) {
           rply.text += `${err.name}  \n ${err.message}`;
-          rply.text += `\n 擲骰說明 https://dice-roller.github.io/documentation/guide/notation/dice.html#standard-d-n`
+          rply.text += `\n 掷骰說明 https://dice-roller.github.io/documentation/guide/notation/dice.html#standard-d-n`
         }
 
         return rply;
@@ -93,8 +93,8 @@ const rollDiceCommand = function ({
 
 
 /**
- * 擲骰子運算
- * @param {純數字, 10即骰出1D100} diceSided 
+ * 掷骰子運算
+ * @param {純数字, 10即骰出1D100} diceSided 
  */
 
 const Dice = function (diceSided) {
@@ -118,7 +118,7 @@ const sortNumber = function (a, b) {
 }
 
 const RollDice = function (inputStr) {
-  // 先把inputStr變成字串（不知道為什麼非這樣不可）
+  // 先把inputStr變成字串（不知道为什麼非這樣不可）
   //kh kl dh dl
   //kh or khN Keeps highest N
   //kl or klN Keeps lowest N
@@ -197,11 +197,11 @@ const FunnyDice = function (diceSided) {
 const BuildDiceCal = function (inputStr) {
   // 首先判斷是否是誤啟動（檢查是否有符合骰子格式）
   if (inputStr.toLowerCase().match(/\d+d\d+/i) == null) return undefined
-  // 排除小數點
+  // 排除小数點
   if (inputStr.toString().match(/\./) != null) return undefined
-  // 先定義要輸出的Str
+  // 先定義要输出的Str
   let finalStr = ''
-  // 一般單次擲骰
+  // 一般單次掷骰
   let DiceToRoll = inputStr.toString().toLowerCase()
   if (DiceToRoll.match('d') == null) return undefined
   // 寫出算式
@@ -209,13 +209,13 @@ const BuildDiceCal = function (inputStr) {
   while (equation.match(/\d+d\d+/i) != null) {
     let tempMatch = equation.match(/\d+d\d+/i)
     if (tempMatch.toString().split('d')[0] > 200) return
-    //不支援200D以上擲骰
+    //不支援200D以上掷骰
 
     if (tempMatch.toString().split('d')[1] == 1 || tempMatch.toString().split('d')[1] > 500) return;
     equation = equation.replace(/\d+d\d+/i, BuildRollDice(tempMatch))
   }
 
-  // 計算算式
+  // 计算算式
   let answer = math.evaluate(equation.toString()).toString().replace(/true/i, "成功").replace(/false/i, "失敗")
   finalStr = equation + ' = ' + answer
 
@@ -227,7 +227,7 @@ const shuffleTarget = function (target) {
 }
 
 const BuildRollDice = function (inputStr) {
-  // 先把inputStr變成字串（不知道為什麼非這樣不可）
+  // 先把inputStr變成字串（不知道为什麼非這樣不可）
   let comStr = inputStr.toString().toLowerCase()
   let finalStr = '('
 
@@ -247,11 +247,11 @@ const BuildRollDice = function (inputStr) {
 const nomalDiceRoller = function (text0, text1, text2) {
   // 首先判斷是否是誤啟動（檢查是否有符合骰子格式）
   // if (inputStr.toLowerCase().match(/\d+d\d+/) == null) return undefined
-  // 再來先把第一個分段拆出來，待會判斷是否是複數擲骰
+  // 再來先把第一个分段拆出來，待會判斷是否是複数掷骰
   let mutiOrNot = text0.toLowerCase()
-  // 排除小數點
+  // 排除小数點
   if (mutiOrNot.toString().match(/\./) != null) return
-  // 先定義要輸出的Str
+  // 先定義要输出的Str
   let finalStr = ''
   let test1 = text0.match(/[(]/g) || '';
   let test2 = text0.match(/[)]/g) || '';
@@ -260,7 +260,7 @@ const nomalDiceRoller = function (text0, text1, text2) {
   //for (i = 0; i < mutiOrNot; i++) {
   if (mutiOrNot.toString().match(/\D/i) == null && text1) {
     if (text1.replace(/\d|[+]|[-]|[*]|[/]|[(]|[)]|[d]|[>]|[<]|[=]|[k]|[h]|[l]/ig, '')) return;
-    finalStr = text0 + '次擲骰：\n' + text1 + ' ' + (text2 || '') + '\n'
+    finalStr = text0 + '次掷骰：\n' + text1 + ' ' + (text2 || '') + '\n'
     for (let i = 0; i < mutiOrNot; i++) {
       let answer = onetimeroll(text1)
       if (answer)
@@ -279,7 +279,7 @@ const nomalDiceRoller = function (text0, text1, text2) {
   return finalStr.replace(/[*]/g, ' * ');
 }
 
-// 單次擲骰
+// 單次掷骰
 function onetimeroll(text0) {
   try {
     let Str = ''
@@ -292,12 +292,12 @@ function onetimeroll(text0) {
       if (tempMatch[2] < 1 || tempMatch[2] > 9000000000000000) return '不支援一以下及九千兆以上'
       equation = equation.replace(BASIC_ROLL_REGEX, RollDice(tempMatch))
     }
-    // 計算算式
+    // 计算算式
     let aaa = equation
     aaa = aaa.replace(/\[.+?\]/ig, '')
     let answer = math.evaluate(aaa.toString()).toString().replace(/true/i, "成功").replace(/false/i, "失敗");
     if (equation.match(/[\s\S]{1,250}/g).length > 1) {
-      Str = answer + '（計算過程太長，僅顯示結果）';
+      Str = answer + '（计算過程太長，僅顯示結果）';
     } else {
       Str = equation + ' = ' + answer
     }
@@ -312,7 +312,7 @@ const discordCommand = [
     data: new SlashCommandBuilder()
       .setName('hk')
       .setDescription('最基本指令模式')
-      .addStringOption(option => option.setName('text').setDescription('輸入平日的HKTRPG文字指令').setRequired(true)),
+      .addStringOption(option => option.setName('text').setDescription('输入平日的HKTRPG文字指令').setRequired(true)),
     async execute(interaction) {
       const text = interaction.options.getString('text')
       return `${text}`

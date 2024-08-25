@@ -23,16 +23,16 @@ const prefixs = function () {
 const getHelpMessage = async function () {
     return `【先攻表功能】 .in (remove clear reroll) .init
 這是讓你快速自定義先攻表的功能
-它可以儲存你的擲骰方法，然後直接重新投擲，而不需要再輸入。
-.in (擲骰或數字) (名字)  - 樣式
+它可以儲存你的掷骰方法，然後直接重新投掷，而不需要再输入。
+.in (掷骰或数字) (名字)  - 樣式
 .in 1d20+3 (名字)  
-.in 1d3 (如沒有輸入, 會用聊天軟件中的名字)
+.in 1d3 (如沒有输入, 會用聊天軟件中的名字)
 .in 80          - 直接取代先攻值
 .in -3+6*3/2.1  - 加減
 ------------
 .in remove (名字) - 移除該角色
 .in reroll - 根據算式重擲先攻表
-.in clear  - 清除整個先攻表
+.in clear  - 清除整个先攻表
 .init      - 顯示先攻表，由大到小
 .initn     - 顯示先攻表，由小到大
 `
@@ -63,7 +63,7 @@ const rollDiceCommand = async function ({
         rply.text = await this.getHelpMessage();
         rply.quotes = true;
         if (botname == "Line")
-            rply.text += "\n因為Line的機制, 如擲骰時並無顯示用家名字, 請到下列網址,和機器人任意說一句話,成為好友. \n https://line.me/R/ti/p/svMLqy9Mik"
+            rply.text += "\n因为Line的機制, 如掷骰時並無顯示用家名字, 請到下列網址,和機器人任意說一句話,成为好友. \n https://line.me/R/ti/p/svMLqy9Mik"
         return rply;
     }
     if (!groupid && mainMsg[1]) {
@@ -98,7 +98,7 @@ const rollDiceCommand = async function ({
                 "groupID": channelid || groupid
             });
             if (!temp) {
-                rply.text = "找不到先攻表, 如有疑問, 可以輸入.init help 觀看說明"
+                rply.text = "找不到先攻表, 如有疑問, 可以输入.init help 觀看說明"
                 return rply;
             }
             for (let i = 0; i < temp.list.length; i++) {
@@ -117,7 +117,7 @@ const rollDiceCommand = async function ({
                 "groupID": channelid || groupid
             });
             if (!temp) {
-                rply.text = "找不到先攻表, 如有疑問, 可以輸入.init help 觀看說明"
+                rply.text = "找不到先攻表, 如有疑問, 可以输入.init help 觀看說明"
                 return rply;
             }
             objIndex = temp.list.findIndex((obj => obj.name.toLowerCase() == name.toLowerCase()));
@@ -180,7 +180,7 @@ const rollDiceCommand = async function ({
                 "groupID": channelid || groupid
             });
             if (!temp) {
-                rply.text = "找不到先攻表, 如有疑問, 可以輸入.init help 觀看說明"
+                rply.text = "找不到先攻表, 如有疑問, 可以输入.init help 觀看說明"
                 return rply;
             }
             rply.text = await showInit(temp)
@@ -190,7 +190,7 @@ const rollDiceCommand = async function ({
                 "groupID": channelid || groupid
             });
             if (!temp) {
-                rply.text = "找不到先攻表, 如有疑問, 可以輸入.init help 觀看說明"
+                rply.text = "找不到先攻表, 如有疑問, 可以输入.init help 觀看說明"
                 return rply;
             }
             rply.text = await showInitn(temp)

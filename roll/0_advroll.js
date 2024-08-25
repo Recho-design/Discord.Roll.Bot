@@ -6,7 +6,7 @@ const variables = {};
 const regexxBy = /^((\d+)(b)(\d+))(S?)/i
 const regexxUy = /^(\d+)(u)(\d+)/i
 const gameName = function () {
-	return '【進階擲骰】 .ca (計算)|D66(sn)|5B10 Dx|5U10 x y|.int x y'
+	return '【进阶掷骰】 .ca (计算)|D66(sn)|5B10 Dx|5U10 x y|.int x y'
 }
 
 const gameType = function () {
@@ -36,24 +36,24 @@ const prefixs = function () {
 	]
 }
 const getHelpMessage = function () {
-	return `【進階擲骰】
+	return `【进阶掷骰】
 
-【數學計算】.ca： (不支援擲骰) 
-例如: .ca 1.2 * (2 + 4.5) ， 12.7 米 to inch 
-sin(45 deg) ^ 2  5磅轉斤 10米轉呎 10米=吋
+【数学计算】.ca：(不支持掷骰)
+例如: .ca 1.2 * (2 + 4.5) ， 12.7 米 to inch
+sin(45 deg) ^ 2  5磅转斤 10米转英尺 10米=英寸
 
-D66 D66s D66n：	骰出D66 s數字小在前 n大在前
+D66 D66s D66n： 掷出D66 s数字小在前 n大在前
 
-5B10：	不加總的擲骰 
-5B10S：	不加總的擲骰，並按大至小排序 
-5B10<>=x ：	如上,另外計算其中有多少粒大於小於X 
-5B10 (D)x ：	如上,用空格取代, 即大於, 使用D即小於
-即 5B10 5 相當於 5B10>=5 5B10 D5 相當於 5B10<=5  
+5B10： 不加总的掷骰
+5B10S： 不加总的掷骰，并按大至小排序
+5B10<>=x ： 如上,另外计算其中有多少粒大于小于X
+5B10 (D)x ： 如上,用空格取代, 即大于, 使用D即小于
+即 5B10 5 相当于 5B10>=5 5B10 D5 相当于 5B10<=5
 
-5U10 8：	進行5D10 每骰出一粒8會有一粒獎勵骰 
-5U10 8 9：	如上,另外計算其中有多少粒大於9 
+5U10 8： 进行5D10 每掷出一粒8会有一粒奖励骰
+5U10 8 9： 如上,另外计算其中有多少粒大于9
 
-.int 20 50: 立即骰出20-50
+.int 20 50: 立即掷出20-50
 `
 }
 
@@ -79,19 +79,19 @@ const rollDiceCommand = async function ({
 			rply.quotes = true;
 			return rply;
 		case /^[.][c][a]$/i.test(mainMsg[0]):
-			//為了令= 轉TO 功能正常, 又不會影響常規計數如 1*5+4>=5
+			//为了令= 转TO 功能正常, 又不會影響常規计数如 1*5+4>=5
 			if (inputStr.match(/[=]/ig))
 				if (inputStr.match(/^((?!(>=|<=|=>|=<|\d=|[)]=)).)*$/ig)) {
 					inputStr = inputStr.replace(/[=]/g, ' to ');
 				}
 			try {
-				rply.text = mathjs.evaluate(inputStr.toLowerCase().replace(/\.ca/i, '').replace(/磅/g, 'lb').replace(/公斤/g, 'kg').replace(/盎司/g, 'oz').replace(/英吋/g, 'inch').replace(/公分/g, 'cm').replace(/公釐/g, 'mm').replace(/克/g, 'g').replace(/公尺/g, 'm').replace(/碼/g, 'yd').replace(/桿/g, 'rd').replace(/英里/g, 'mi').replace(/千米/g, 'km').replace(/厘米/g, 'cm').replace(/毫米/g, 'mm').replace(/微米/g, 'µm').replace(/毫克/g, 'mg').replace(/公克/g, 'hg').replace(/斤/g, 'kg').replace(/米/g, 'm').replace(/英尺/g, 'ft').replace(/尺/g, 'ft').replace(/角度/g, 'deg').replace(/度/g, 'deg').replace(/呎/g, 'ft').replace(/吋/g, 'inch').replace(/轉換/g, ' to ').replace(/轉/g, ' to ').replace(/換/g, ' to ').replace(/√/g, 'sqrt').replace(/π/g, 'pi'));
+				rply.text = mathjs.evaluate(inputStr.toLowerCase().replace(/\.ca/i, '').replace(/磅/g, 'lb').replace(/公斤/g, 'kg').replace(/盎司/g, 'oz').replace(/英吋/g, 'inch').replace(/公分/g, 'cm').replace(/公釐/g, 'mm').replace(/克/g, 'g').replace(/公尺/g, 'm').replace(/碼/g, 'yd').replace(/桿/g, 'rd').replace(/英里/g, 'mi').replace(/千米/g, 'km').replace(/厘米/g, 'cm').replace(/毫米/g, 'mm').replace(/微米/g, 'µm').replace(/毫克/g, 'mg').replace(/公克/g, 'hg').replace(/斤/g, 'kg').replace(/米/g, 'm').replace(/英尺/g, 'ft').replace(/尺/g, 'ft').replace(/角度/g, 'deg').replace(/度/g, 'deg').replace(/呎/g, 'ft').replace(/吋/g, 'inch').replace(/转換/g, ' to ').replace(/转/g, ' to ').replace(/換/g, ' to ').replace(/√/g, 'sqrt').replace(/π/g, 'pi'));
 			} catch (error) {
 				//console.error('.ca ERROR FUNCTION', inputStr, error.message);
 				rply.text = inputStr.replace(/\.ca\s+/i, '') + '\n→ ' + error.message;
-				rply.text += `\n注: 本功能只為進行數學計算,不支援擲骰。
+				rply.text += `\n注: 本功能只为进行数学计算,不支援掷骰。
 				例如: .ca 1.2 * (2 + 4.5) ， 12.7 米 to inch 
-				sin(45 deg) ^ 2  5磅轉斤 10米轉呎 10米=吋
+				sin(45 deg) ^ 2  5磅转斤 10米转英尺 10米=英寸
 				5.08 cm + 2 inch   √(9)`
 				return rply;
 			}
@@ -121,7 +121,7 @@ const rollDiceCommand = async function ({
 			}
 			return rply;
 		case /^[.][i][n][t]$/i.test(mainMsg[0]) && mainMsg[1] <= 100000 && mainMsg[2] <= 100000:
-			rply.text = '投擲 ' + mainMsg[1] + ' - ' + mainMsg[2] + '：\n→ ' + rollbase.DiceINT(mainMsg[1], mainMsg[2]);
+			rply.text = '投掷 ' + mainMsg[1] + ' - ' + mainMsg[2] + '：\n→ ' + rollbase.DiceINT(mainMsg[1], mainMsg[2]);
 			return rply
 		default:
 			break;
@@ -132,14 +132,14 @@ const discordCommand = [
 	{
 		data: new SlashCommandBuilder()
 			.setName('ca')
-			.setDescription('【數學計算】 (不支援擲骰) ')
-			.addStringOption(option => option.setName('text').setDescription('輸入內容').setRequired(true)),
+			.setDescription('【数学计算】 (不支援掷骰) ')
+			.addStringOption(option => option.setName('text').setDescription('输入內容').setRequired(true)),
 		async execute(interaction) {
 			const text = interaction.options.getString('text')
 			if (text !== null)
 				return `.ca ${text}`
-			else return `需要輸入內容\n 如 .ca 1.2 * (2 + 4.5) ， 12.7 米 to inch 
-			sin(45 deg) ^ 2  5磅轉斤 10米轉呎 10米=吋`
+			else return `需要输入內容\n 如 .ca 1.2 * (2 + 4.5) ， 12.7 米 to inch 
+			sin(45 deg) ^ 2  5磅转斤 10米转英尺 10米=英寸`
 
 		}
 	},
@@ -147,15 +147,15 @@ const discordCommand = [
 		data: new SlashCommandBuilder()
 			.setName('int')
 			.setDescription('int 20 50: 立即骰出20-50')
-			.addStringOption(option => option.setName('minnum').setDescription('輸入第一個數字').setRequired(true))
-			.addStringOption(option => option.setName('maxnum').setDescription('輸入第二個數字').setRequired(true))
+			.addStringOption(option => option.setName('minnum').setDescription('输入第一个数字').setRequired(true))
+			.addStringOption(option => option.setName('maxnum').setDescription('输入第二个数字').setRequired(true))
 		,
 		async execute(interaction) {
 			const minNum = interaction.options.getString('minnum')
 			const maxNum = interaction.options.getString('maxnum');
 			if (minNum !== null && maxNum !== null)
 				return `.int ${minNum} ${maxNum}`
-			else return `需要輸入兩個數字\n 如 .int 20 50`
+			else return `需要输入两个数字\n 如 .int 20 50`
 
 		}
 	}
@@ -172,10 +172,10 @@ module.exports = {
 };
 /*
  \n D66 D66s：	骰出D66 s小者固定在前\
-  \n 5B10：	不加總的擲骰 會進行小至大排序 \
-  \n 5B10 9：	如上,另外計算其中有多少粒大於9 \
-  \n 5U10 8：	進行5D10 每骰出一粒8會有一粒獎勵骰 \
-  \n 5U10 8 9：	如上,另外計算其中有多少粒大於9 \  
+  \n 5B10：	不加總的掷骰 會进行小至大排序 \
+  \n 5B10 9：	如上,另外计算其中有多少粒大於9 \
+  \n 5U10 8：	进行5D10 每骰出一粒8會有一粒獎勵骰 \
+  \n 5U10 8 9：	如上,另外计算其中有多少粒大於9 \  
   */
 
 /**
@@ -223,8 +223,8 @@ function d66n(text) {
 }
 /***
  *	xBy 
- *  xBy<>=z  成功數1
- *  xBy Dz   成功數1
+ *  xBy<>=z  成功数1
+ *  xBy Dz   成功数1
  */
 function xBy(triggermsg, text01, text02, sortMode, botname) {
 	let regex2 = /(([<]|[>])(|[=]))(\d+.*)/i;
@@ -331,7 +331,7 @@ function xBy(triggermsg, text01, text02, sortMode, botname) {
 		}
 	}
 	returnStr += ' → ' + varcou.join(', ');
-	if (match[5]) returnStr += ' \n→ 成功數' + mathjs.evaluate(Number(varsu) + (temptriggermsg || 0));
+	if (match[5]) returnStr += ' \n→ 成功数' + mathjs.evaluate(Number(varsu) + (temptriggermsg || 0));
 	if (text) returnStr += ' ；　' + text;
 	return returnStr;
 }
@@ -342,8 +342,8 @@ function xBy(triggermsg, text01, text02, sortMode, botname) {
  * @param {*} text02 
  * @param {*} text03
  * xUy
- * (5U10[8]) → 17[10,7],4,5,7,4 → 17/37(最大/合計)
- * (5U10[8]>8) → 1,30[9,8,8,5],1,3,4 → 成功數1 
+ * (5U10[8]) → 17[10,7],4,5,7,4 → 17/37(最大/合计)
+ * (5U10[8]>8) → 1,30[9,8,8,5],1,3,4 → 成功数1 
  */
 
 function xUy(triggermsg, text01, text02, text03) {
@@ -387,19 +387,19 @@ function xUy(triggermsg, text01, text02, text03) {
 	if (Number(text02) <= Number(match[3])) {
 		let suc = 0;
 
-		// (5U10[8]>8) → 1,30[9,8,8,5],1,3,4 → 成功數1
+		// (5U10[8]>8) → 1,30[9,8,8,5],1,3,4 → 成功数1
 		for (let i = 0; i < varcou.length; i++) {
 			if (Number(varcou[i]) >= Number(text02)) suc++;
 		}
-		returnStr += ' → 成功數' + suc;
+		returnStr += ' → 成功数' + suc;
 	} else
-	//  (5U10[8]) → 17[10,7],4,5,7,4 → 17/37(最大/合計)
+	//  (5U10[8]) → 17[10,7],4,5,7,4 → 17/37(最大/合计)
 
 	{
 		returnStr += '\n → ' + Math.max.apply(null, varcou);
 		returnStr += '/' + varcou.reduce(function (previousValue, currentValue) {
 			return previousValue + currentValue;
-		}) + '(最大/合計)';
+		}) + '(最大/合计)';
 	}
 	return returnStr;
 }

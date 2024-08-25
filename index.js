@@ -26,12 +26,12 @@ process.stdout.on('error', function (err) {
 /*
 流程解釋
 
-首先這裡會call modules/中的Discord line Telegram 三個檔案
-如果在Heroku 有輸入它們各自的TOKEN 的話
+首先這裡會call modules/中的Discord line Telegram 三个檔案
+如果在Heroku 有输入它們各自的TOKEN 的話
 服務就會各自啓動
 
 Discord line Telegram三套BOT 都會統一呼叫analytics.js
-再由analytics.js 呼叫roll/ 中各個的骰檔
+再由analytics.js 呼叫roll/ 中各个的骰檔
 
 所以基本上,要增加骰組
 參考/roll中的DEMO骰組就好

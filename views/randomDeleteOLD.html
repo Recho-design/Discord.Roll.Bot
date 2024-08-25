@@ -30,7 +30,7 @@
         pinyin('汉语拼音'); // 'hàn yǔ pīn yīn'
     </script>
 
-    <title>文字轉換器 @ HKTRPG</title>
+    <title>文字转換器 @ HKTRPG</title>
     <link rel="icon" href="https://avatars2.githubusercontent.com/u/48795428?s=280&v=4" />
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
 
@@ -42,7 +42,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand">
                     <span class="badge bg-danger">
-                        文字轉換器
+                        文字转換器
                         <span class="iconify" data-icon="mdi:dice-multiple-outline" data-inline="false"
                             style="color: black;" data-width="32" data-height="32"></span>
                         <span class="iconify" data-icon="bi:chat-square-text" data-inline="false" style="color: black;"
@@ -91,11 +91,11 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                擲骰
+                                掷骰
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                <li><a class="dropdown-item" href="https://rollbot.hktrpg.com/">聊天室擲骰</a></li>
-                                <li><a class="dropdown-item" href="https://roll.hktrpg.com/">簡易擲骰平台</a></li>
+                                <li><a class="dropdown-item" href="https://rollbot.hktrpg.com/">聊天室掷骰</a></li>
+                                <li><a class="dropdown-item" href="https://roll.hktrpg.com/">簡易掷骰平台</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -131,8 +131,8 @@
         <div class="row">
             <div class="col-8  h-75">
                 <div class="input-group">
-                    <span class="input-group-text  btn-sm">輸入文字</span>
-                    <textarea class="form-control" aria-label="輸入文字" id="inputText">
+                    <span class="input-group-text  btn-sm">输入文字</span>
+                    <textarea class="form-control" aria-label="输入文字" id="inputText">
 人生若只如初見，何事秋風悲畫扇。
 等閒變卻故人心，卻道故人心易變。
 驪山語罷清宵半，淚雨霖鈴終不怨。
@@ -145,15 +145,15 @@ That struts and frets his hour upon the stage</textarea>
                 </div>
                 <div class="col-12">
                     <div class="input-group">
-                        <textarea class="form-control" aria-label="輸出文字" id="outputText"></textarea>
+                        <textarea class="form-control" aria-label="输出文字" id="outputText"></textarea>
                         <button class="btn  btn-primary  btn-sm" type="button" id="button-addon2"
-                            onclick="copyToClipBoard()">複製輸出文字</button>
+                            onclick="copyToClipBoard()">複製输出文字</button>
                     </div>
 
                 </div>
                 <div class="col-8">
                     <button class="btn btn-success" type="button" id="inputGroupFileAddon01"
-                        onclick="blockText()">轉換</button>
+                        onclick="blockText()">转換</button>
                     <button class="btn btn-warning" type="button" id="inputGroupFileAddon02"
                         onclick="plusBlock(1)">增加</button>
                     <button class="btn btn-dark" type="button" id="inputGroupFileAddon03" onclick="reset()">重置</button>
@@ -255,10 +255,10 @@ That struts and frets his hour upon the stage</textarea>
                     </div>
                     <div class="modal-body">
                         文章亂碼產生器<br>
-                        原理是自動抽選一些英文字母作為亂碼<br>
-                        附有把文字轉換成拼音的功能<br>
+                        原理是自動抽選一些英文字母作为亂碼<br>
+                        附有把文字转換成拼音的功能<br>
                         所以如果中文文字的拼音也符合亂碼值<br>
-                        也會被轉換<br>
+                        也會被转換<br>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
@@ -309,9 +309,9 @@ That struts and frets his hour upon the stage</textarea>
              * 1.讀取Block英文  有沒有點
              * 
              * 2.讀取inputText 
-             *      3. 把inputText 的每個字轉成拼音
+             *      3. 把inputText 的每个字转成拼音
              *      4. 每當字符合block 就變成亂破 !@#$%^&*
-             *  5. 把字輸出到Output
+             *  5. 把字输出到Output
              */
             let outputTextString = "";
             const blockAtoZ = getBlock();

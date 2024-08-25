@@ -34,7 +34,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 6",
 		"effect": "骰 2 顆機率骰以使敵人陷入「灼傷 3 級」狀態。",
-		"desc": "伴隨著驚天動地的爆炸，萊希拉姆釋放出巨大的藍色火焰纏繞自身，直接被這個攻擊命中將可能使完全被火焰給吞沒。"
+		"desc": "伴隨著驚天動地的爆炸，萊希拉姆釋放出巨大的藍色火焰纏繞自身，直接被這个攻擊命中將可能使完全被火焰給吞沒。"
 	},
 	{
 		"name": "燃盡", "alias": "もえつきる|Burn Up",
@@ -44,8 +44,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|lethal"],
 		"accuracy": "意志 + 導引",
 		"damage": "特殊 + 7",
-		"effect": "致命傷害。在造成傷害之後，使用者在當日期間將不再被視為火屬性（如果牠原本就只有火屬性，那牠將被視為無屬性）。在當日期間，該寶可夢所使用的火屬性招式將無法把招式的威力加到傷害骰池中。",
-		"desc": "使用者透過燃盡自身的火焰以釋放出牠所有的力量。儘管這個傷害是毀滅性的，但牠在至少一天之內都將無法再生成任何火焰。"
+		"effect": "致命傷害。在造成傷害之後，使用者在當日期間將不再被視为火屬性（如果牠原本就只有火屬性，那牠將被視为無屬性）。在當日期間，該寶可夢所使用的火屬性招式將無法把招式的威力加到傷害骰池中。",
+		"desc": "使用者透過燃盡自身的火焰以釋放出牠所有的力量。儘管這个傷害是毀滅性的，但牠在至少一天之內都將無法再生成任何火焰。"
 	},
 	{
 		"name": "火花", "alias": "ひのこ|Ember",
@@ -66,7 +66,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe", "effect|l|lethal"],
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 6*",
-		"effect": "致命傷害。以所有範圍內的敵人為目標。使用者每失去 1 點HP，這個招式的傷害骰池就會減少 1 顆骰子。這個方式最多會減少 5 顆骰子。",
+		"effect": "致命傷害。以所有範圍內的敵人为目標。使用者每失去 1 點HP，這个招式的傷害骰池就會減少 1 顆骰子。這个方式最多會減少 5 顆骰子。",
 		"desc": "使用者猛烈噴發出熔岩來燒盡任何它所接觸的東西。"
 	},
 	{
@@ -89,7 +89,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 5",
 		"effect": "致命傷害。骰 3 顆機率骰以使目標陷入「灼傷 3 級」狀態。",
-		"desc": "寶可夢噴出一個巨大的火球並在接觸到敵人時爆炸，爆炸的火焰將呈現大字形狀。"
+		"desc": "寶可夢噴出一个巨大的火球並在接觸到敵人時爆炸，爆炸的火焰將呈現大字形狀。"
 	},
 	{
 		"name": "火焰牙", "alias": "ほのおのキバ|Fire Fang",
@@ -121,7 +121,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|area", "target|l|field"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "範圍攻擊。所有戰場上的可燃植物和物體都將化為熊熊火海。每個戰鬥輪結束時，骰 1 顆傷害骰以對戰場上的所有人造成傷害。",
+		"effect": "範圍攻擊。所有戰場上的可燃植物和物體都將化为熊熊火海。每个戰鬥輪結束時，骰 1 顆傷害骰以對戰場上的所有人造成傷害。",
 		"desc": "寶可夢吟唱召喚火之力量的咒語。牠的誓言得到回應，火焰吞噬了周圍的一切。"
 	},
 	{
@@ -143,8 +143,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|accuracy||down|2", "effect|l|block"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "阻擋。每個戰鬥輪結束時，骰 2 顆傷害骰以對敵人造成傷害。持續 4 輪。",
-		"desc": "使用者在場上創造出漩渦狀的旋轉火焰，將敵人困在裡面。"
+		"effect": "阻擋。每个戰鬥輪結束時，骰 2 顆傷害骰以對敵人造成傷害。持續 4 輪。",
+		"desc": "使用者在場上創造出漩渦狀的旋转火焰，將敵人困在裡面。"
 	},
 	{
 		"name": "烈焰濺射", "alias": "はじけるほのお|Flame Burst",
@@ -154,7 +154,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "在造成傷害之後，使用者可以再骰 1 顆傷害骰以對另外二個目標造成傷害。",
+		"effect": "在造成傷害之後，使用者可以再骰 1 顆傷害骰以對另外二个目標造成傷害。",
 		"desc": "一種聚合濃縮的火球，會在接觸到敵人時爆開，讓小型烈焰紛飛四散。"
 	},
 	{
@@ -166,7 +166,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 2",
 		"effect": "提升使用者的靈巧。",
-		"desc": "寶可夢利用自己的火焰作為推進力以衝撞對手。"
+		"desc": "寶可夢利用自己的火焰作为推進力以衝撞對手。"
 	},
 	{
 		"name": "火焰輪", "alias": "かえんぐるま|Flame Wheel",
@@ -209,8 +209,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|lethal"],
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 4*",
-		"effect": "致命傷害。如果這個戰鬥輪中已經有任何人使用了〈交錯閃電〉招式，則這個招式的傷害骰池將額外增加 4 顆骰子。",
-		"desc": "寶可夢將目標困在一道旋轉的火焰柱中，傳說如果附近存在一種特殊的電流的話，火焰柱就會旋轉得更快更高。"
+		"effect": "致命傷害。如果這个戰鬥輪中已經有任何人使用了〈交錯閃電〉招式，則這个招式的傷害骰池將額外增加 4 顆骰子。",
+		"desc": "寶可夢將目標困在一道旋转的火焰柱中，傳說如果附近存在一種特殊的電流的話，火焰柱就會旋转得更快更高。"
 	},
 	{
 		"name": "高溫重壓", "alias": "ヒートスタンプ|Heat Crash",
@@ -220,7 +220,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "力量 + 鬥毆",
 		"damage": "力量 + 2*",
-		"effect": "使用者的體重每超過目標 50 公斤，這個招式的傷害骰池就可以額外增加 1 顆骰子。你最多可以透過這個方式增加 4 顆骰子。",
+		"effect": "使用者的體重每超過目標 50 公斤，這个招式的傷害骰池就可以額外增加 1 顆骰子。你最多可以透過這个方式增加 4 顆骰子。",
 		"desc": "使用者用牠被火包裹的身體重壓目標。"
 	},
 	{
@@ -231,7 +231,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe", "frame|accuracy||down|1", "frame|burn1||number|d1"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "以所有範圍內的敵人為目標。骰 1 顆機率骰以使目標陷入「灼傷 1 級」狀態。",
+		"effect": "以所有範圍內的敵人为目標。骰 1 顆機率骰以使目標陷入「灼傷 1 級」狀態。",
 		"desc": "使用者噴出一股巨大的熾熱氣浪，能點燃任何它所接觸到的東西。"
 	},
 	{
@@ -242,7 +242,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "以所有範圍內的敵人為目標。摧毀目標持有的任何樹果。",
+		"effect": "以所有範圍內的敵人为目標。摧毀目標持有的任何樹果。",
 		"desc": "寶可夢釋放出一股火焰，能在瞬間燒掉任何小型的可燃物品。"
 	},
 	{
@@ -275,7 +275,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|accuracy||down|2", "effect|l|block"],
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 4",
-		"effect": "阻擋。每個戰鬥輪結束時，骰 3 顆傷害骰以對敵人造成傷害。持續 4 輪。",
+		"effect": "阻擋。每个戰鬥輪結束時，骰 3 顆傷害骰以對敵人造成傷害。持續 4 輪。",
 		"desc": "寶可夢朝牠的敵人放射出熾熱的熔岩之力。由於無法逃脫且被難以忍受的高溫環繞，敵人可得冒很大的風險才能倖存。"
 	},
 	{
@@ -287,7 +287,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "洞察 + 導引",
 		"damage": "特殊 + 6",
 		"effect": "範圍攻擊。反作用力傷害。",
-		"desc": "寶可夢度過了糟糕透頂的一天且頭痛得厲害，儘量不要打擾牠，因為牠的頭感覺隨時會爆炸。"
+		"desc": "寶可夢度過了糟糕透頂的一天且頭痛得厲害，儘量不要打擾牠，因为牠的頭感覺隨時會爆炸。"
 	},
 	{
 		"name": "魔法火焰", "alias": "マジカルフレイム|Mystical Fire",
@@ -331,7 +331,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 導引",
 		"damage": "力量 + 4",
 		"effect": "致命傷害。骰 5 顆機率骰以使目標陷入「灼傷 3 級」狀態。",
-		"desc": "一道彩虹色澤的柱狀烈焰席捲敵人，它能燃燒並淨化敵人內心的邪惡。心地純潔的人不應該為此害怕，因為他們不會因此受到傷害。"
+		"desc": "一道彩虹色澤的柱狀烈焰席捲敵人，它能燃燒並淨化敵人內心的邪惡。心地純潔的人不應該为此害怕，因为他們不會因此受到傷害。"
 	},
 	{
 		"name": "火焰彈", "alias": "かえんだん|Searing Shot",
@@ -341,8 +341,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe", "effect|l|lethal", "frame|burn2||number|d3"],
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 5",
-		"effect": "致命傷害。以所有範圍內的敵人為目標。骰 3 顆機率骰以使目標陷入「灼傷 2 級」狀態。",
-		"desc": "使用者的身邊突然迸發出猩紅色的烈焰並將周圍的一切點燃。所有東西都會在幾秒鐘內化為烏有。"
+		"effect": "致命傷害。以所有範圍內的敵人为目標。骰 3 顆機率骰以使目標陷入「灼傷 2 級」狀態。",
+		"desc": "使用者的身邊突然迸發出猩紅色的烈焰並將周圍的一切點燃。所有東西都會在幾秒鐘內化为烏有。"
 	},
 	{
 		"name": "陷阱甲殼", "alias": "トラップシェル|Shell Trap",
@@ -352,7 +352,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|priority||down|3", "effect|l|lethal"],
 		"accuracy": "靈巧 + 隱匿",
 		"damage": "特殊 + 6",
-		"effect": "後制招式。致命傷害。這個招式會在下一次使用者被非遠程攻擊的物理攻擊命中時發動。",
+		"effect": "後制招式。致命傷害。這个招式會在下一次使用者被非遠程攻擊的物理攻擊命中時發動。",
 		"desc": "表面上寶可夢只是把自己埋在地下，但牠其實悄悄的準備好引爆牠的外殼：任何不幸踩到牠的可憐蟲都會被炸成碎片。"
 	},
 	{
@@ -363,7 +363,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|burn1||always"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 3",
-		"effect": "使敵人陷入「灼傷 1 級」狀態。如果這個招式的使用者處於最終進化階段，則這個招式自動失敗。",
+		"effect": "使敵人陷入「灼傷 1 級」狀態。如果這个招式的使用者處於最終進化階段，則這个招式自動失敗。",
 		"desc": "使用者在地面上如同滑冰一樣四處滑行，只不過牠溜的不是冰，而是熊熊燃燒的大火。"
 	},
 	{
@@ -374,7 +374,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|field", "weather|l|sun"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "讓天氣狀態在接下來 4 輪期間變為大晴天。",
+		"effect": "讓天氣狀態在接下來 4 輪期間變为大晴天。",
 		"desc": "寶可夢會伴隨著太陽提高環境的溫度，但這在夜晚、室內、地下或水中都無法生效。"
 	},
 	{

@@ -29,30 +29,30 @@ const prefixs = function () {
 }
 const getHelpMessage = async function () {
     return `【資料庫功能】
-這是根據關鍵字來顯示數據的,
-例如輸入 .db add 九大陣營 守序善良 (...太長省略) 中立邪惡 混亂邪惡 
-再輸入.db 九大陣營  守序善良 (...太長省略) 中立邪惡 混亂邪惡
-add 後面第一個是關鍵字, 可以是漢字,數字,英文及emoji
+這是根據關鍵字來顯示数據的,
+例如输入 .db add 九大陣營 守序善良 (...太長省略) 中立邪惡 混亂邪惡 
+再输入.db 九大陣營  守序善良 (...太長省略) 中立邪惡 混亂邪惡
+add 後面第一个是關鍵字, 可以是漢字,数字,英文及emoji
 P.S.如果沒立即生效 用.db show 刷新一下
-輸入.db add (關鍵字) (內容)即可增加關鍵字
-輸入.db show 顯示所有關鍵字
-輸入.db del(編號)或all 即可刪除
-輸入.db  (關鍵字) 即可顯示 
-如使用輸入.dbp 會變成全服版,全服可看, 可用add show功能 
-新增指令 - 輸入.dbp newType 可以觀看效果
+输入.db add (關鍵字) (內容)即可增加關鍵字
+输入.db show 顯示所有關鍵字
+输入.db del(編號)或all 即可刪除
+输入.db  (關鍵字) 即可顯示 
+如使用输入.dbp 會變成全服版,全服可看, 可用add show功能 
+新增指令 - 输入.dbp newType 可以觀看效果
 * {br}          <--隔一行
-* {ran:100}     <---隨機1-100
-* {random:5-20} <---隨機5-20
-* {server.member_count}  <---現在頻道中總人數 
-* {my.name}     <---顯示擲骰者名字
+* {ran:100}     <---随机1-100
+* {random:5-20} <---随机5-20
+* {server.member_count}  <---現在頻道中總人数 
+* {my.name}     <---顯示掷骰者名字
 以下需要開啓.level 功能
-* {allgp.name}  <---隨機全GP其中一人名字
-* {allgp.title}  <---隨機全GP其中一種稱號
+* {allgp.name}  <---随机全GP其中一人名字
+* {allgp.title}  <---随机全GP其中一種稱號
 * {my.RankingPer}  <---現在排名百分比 
-* {my.Ranking}  <---顯示擲骰者現在排名 
-* {my.exp}      <---顯示擲骰者經驗值
-* {my.title}    <---顯示擲骰者稱號
-* {my.level}    <---顯示擲骰者等級
+* {my.Ranking}  <---顯示掷骰者現在排名 
+* {my.exp}      <---顯示掷骰者經驗值
+* {my.title}    <---顯示掷骰者稱號
+* {my.level}    <---顯示掷骰者等級
 `
 }
 const initialize = function () {
@@ -91,8 +91,8 @@ const rollDiceCommand = async function ({
         case /(^[.]db$)/i.test(mainMsg[0]) && /^add$/i.test(mainMsg[1]) && /^(?!(add|del|show)$)/ig.test(mainMsg[2]): {
             //增加資料庫
             //檢查有沒有重覆
-            if (!mainMsg[2]) rply.text += ' 沒有輸入標題。\n\n'
-            if (!mainMsg[3]) rply.text += ' 沒有輸入內容。\n\n'
+            if (!mainMsg[2]) rply.text += ' 沒有输入標題。\n\n'
+            if (!mainMsg[3]) rply.text += ' 沒有输入內容。\n\n'
             if (rply.text += checkTools.permissionErrMsg({
                 flag: checkTools.flag.ChkChannelManager,
                 gid: groupid,
@@ -109,7 +109,7 @@ const rollDiceCommand = async function ({
                     if (trpgDatabasefunction.trpgDatabasefunction[i].groupid == groupid) {
                         if (trpgDatabasefunction.trpgDatabasefunction[0] && trpgDatabasefunction.trpgDatabasefunction[0].trpgDatabasefunction[0]) {
                             if (trpgDatabasefunction.trpgDatabasefunction[i].trpgDatabasefunction.length >= limit) {
-                                rply.text = '關鍵字上限' + limit + '個\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                                rply.text = '關鍵字上限' + limit + '个\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
                                 return rply;
                             }
                             for (let a = 0; a < trpgDatabasefunction.trpgDatabasefunction[i].trpgDatabasefunction.length; a++) {
@@ -249,7 +249,7 @@ const rollDiceCommand = async function ({
             if (rply && trpgDatabasefunction.trpgDatabaseAllgroup && mainMsg[2])
                 if (rply && trpgDatabasefunction.trpgDatabaseAllgroup && trpgDatabasefunction.trpgDatabaseAllgroup[0] && trpgDatabasefunction.trpgDatabaseAllgroup[0].trpgDatabaseAllgroup[0]) {
                     if (trpgDatabasefunction.trpgDatabaseAllgroup[0].trpgDatabaseAllgroup.length > 100) {
-                        rply.text = '只可以有100個關鍵字啊'
+                        rply.text = '只可以有100个關鍵字啊'
                         return rply;
                     }
                     for (let i = 0; i < trpgDatabasefunction.trpgDatabaseAllgroup.length; i++) {
@@ -345,7 +345,7 @@ ${trpgDatabasefunction.trpgDatabaseAllgroup[i].trpgDatabaseAllgroup[a].contact}`
                 num = (num < 1) ? 0 : num;
                 temp = temp[num].name
                 return temp || ' ';
-            // * {allgp.name} <---隨機全GP其中一人名字
+            // * {allgp.name} <---随机全GP其中一人名字
             case /^allgp.title$/i.test(second):
                 temp = await findGp(groupid, userid, displayname, displaynameDiscord, membercount);
                 if (!temp) return ' ';
@@ -359,12 +359,12 @@ ${trpgDatabasefunction.trpgDatabaseAllgroup[i].trpgDatabaseAllgroup[a].contact}`
                 num = (num < 1) ? 0 : num;
                 temp = temp2[num]
                 return temp || ' ';
-            // * {allgp.title}<---隨機全GP其中一種稱號
+            // * {allgp.title}<---随机全GP其中一種稱號
             case /^server.member_count$/i.test(second):
                 temp = await findGpMember(groupid);
                 num = (temp && temp.length) ? Math.max(membercount, temp.length) : membercount;
                 return num || ' ';
-            //  {server.member_count} 現在頻道中總人數 \
+            //  {server.member_count} 現在頻道中總人数 \
             case /^my.RankingPer$/i.test(second): {
                 //* {my.RankingPer} 現在排名百分比 \
                 // let userRankingPer = Math.ceil(userRanking / usermember_count * 10000) / 100 + '%';
@@ -377,28 +377,28 @@ ${trpgDatabasefunction.trpgDatabaseAllgroup[i].trpgDatabaseAllgroup[a].contact}`
             }
             case /^my.Ranking$/i.test(second): {
                 let gpMember = await findGpMember(groupid);
-                //* {my.Ranking} 顯示擲骰者現在排名 \
+                //* {my.Ranking} 顯示掷骰者現在排名 \
                 if (!gpMember) return ' ';
                 return await ranking(userid, gpMember) || ' ';
             }
             case /^my.exp$/i.test(second):
-                //* {my.exp} 顯示擲骰者經驗值
+                //* {my.exp} 顯示掷骰者經驗值
                 temp = await findGp(groupid, userid, displayname, displaynameDiscord, membercount);
                 temp2 = await findUser(groupid, userid);
                 if (!temp || !temp2 || !temp2.EXP) return ' ';
                 return temp2.EXP || ' ';
             case /^my.name$/i.test(second):
-                //* {my.name} <---顯示擲骰者名字
+                //* {my.name} <---顯示掷骰者名字
                 return displaynameDiscord || displayname || "無名";
             case /^my.title$/i.test(second):
-                // * {my.title}<---顯示擲骰者稱號
+                // * {my.title}<---顯示掷骰者稱號
                 temp = await findGp(groupid, userid, displayname, displaynameDiscord, membercount);
                 temp2 = await findUser(groupid, userid);
                 if (!temp || !temp2 || !temp2.Level || !temp.Title) return ' ';
                 //   let userTitle = await this.checkTitle(userlevel, trpgLevelSystemfunction.trpgLevelSystemfunction[i].Title);
                 return await exports.z_Level_system.checkTitle(temp2.Level, temp.Title) || ' ';
             case /^my.level$/i.test(second):
-                //* {my.level}<---顯示擲骰者等級
+                //* {my.level}<---顯示掷骰者等級
                 temp2 = await findUser(groupid, userid);
                 if (!temp2 || !temp2.Level) return ' ';
                 return temp2.Level || ' ';

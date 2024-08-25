@@ -62,7 +62,7 @@ Array.prototype.push.apply(Pokedex, [
     "height": "0.7",
     "weight": "29",
     "category": "刺鎧寶可夢",
-    "text": "牠透過碰撞堅固的東西來鍛鍊下盤。牠是個性溫和的寶可夢，靠著覆蓋身體的結實外殼和尖銳的刺來反彈敵人的攻擊。牠們絕不會主動挑起戰鬥。"
+    "text": "牠透過碰撞堅固的東西來鍛鍊下盤。牠是个性溫和的寶可夢，靠著覆蓋身體的結實外殼和尖銳的刺來反彈敵人的攻擊。牠們絕不會主動挑起戰鬥。"
   },
   "evolution": {
     "stage": "second",
@@ -339,7 +339,7 @@ Array.prototype.push.apply(Pokedex, [
     { "rank": 2, "type": "Normal", "name": "輪唱" },
     { "rank": 2, "type": "Normal", "name": "替身" },
     { "rank": 2, "type": "Normal", "name": "煙幕" },
-    { "rank": 2, "type": "Dark", "name": "投擲" },
+    { "rank": 2, "type": "Dark", "name": "投掷" },
     { "rank": 2, "type": "Rock", "name": "擊落" },
     { "rank": 2, "type": "Water", "name": "水之波動" },
     { "rank": 3, "type": "Normal", "name": "影子分身" },
@@ -386,7 +386,7 @@ Array.prototype.push.apply(Pokedex, [
     { "rank": 1, "type": "Water", "name": "泡沫" },
     { "rank": 2, "type": "Normal", "name": "輪唱" },
     { "rank": 2, "type": "Normal", "name": "煙幕" },
-    { "rank": 2, "type": "Dark", "name": "投擲" },
+    { "rank": 2, "type": "Dark", "name": "投掷" },
     { "rank": 2, "type": "Rock", "name": "擊落" },
     { "rank": 2, "type": "Water", "name": "水之波動" },
     { "rank": 3, "type": "Normal", "name": "影子分身" },
@@ -616,7 +616,7 @@ Array.prototype.push.apply(Pokedex, [
     "height": "0.3",
     "weight": "1",
     "category": "知更鳥寶可夢",
-    "text": "這些可愛的寶可夢會用婉轉美麗的叫聲和揮動尾羽的動作向夥伴發送信號。儘管叫聲美麗，但牠對於入侵領地的對手會毫不留情地粗暴對待。"
+    "text": "這些可愛的寶可夢會用婉转美麗的叫聲和揮動尾羽的動作向夥伴發送信號。儘管叫聲美麗，但牠對於入侵領地的對手會毫不留情地粗暴對待。"
   },
   "evolution": {
     "stage": "first",
@@ -669,7 +669,7 @@ Array.prototype.push.apply(Pokedex, [
     "height": "0.7",
     "weight": "16",
     "category": "火花寶可夢",
-    "text": "牠會從鳥嘴裡噴出火花來燒焦草叢，接著撲向因為受到驚嚇而逃出來的獵物。牠的身體會在開始戰鬥的時候被火焰纏繞，是隻性情好戰的寶可夢。"
+    "text": "牠會從鳥嘴裡噴出火花來燒焦草叢，接著撲向因为受到驚嚇而逃出來的獵物。牠的身體會在開始戰鬥的時候被火焰纏繞，是隻性情好戰的寶可夢。"
   },
   "evolution": {
     "stage": "second",
@@ -817,7 +817,7 @@ Array.prototype.push.apply(Pokedex, [
     "height": "0.3",
     "weight": "8",
     "category": "噴粉寶可夢",
-    "text": "牠躲藏在老舊原木裏頭。當被獵食者襲擊時，牠就會將體毛尖尖豎起威嚇敵人。牠為了防守而釋放的粉塵，讓鳥寶可夢很難吃掉牠們。"
+    "text": "牠躲藏在老舊原木裏頭。當被獵食者襲擊時，牠就會將體毛尖尖豎起威嚇敵人。牠为了防守而釋放的粉塵，讓鳥寶可夢很難吃掉牠們。"
   },
   "evolution": {
     "stage": "second",
@@ -1871,7 +1871,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/686.png",
       "height": "0.4",
       "weight": "3",
-      "category": "迴轉寶可夢",
+      "category": "迴转寶可夢",
       "text": "It lives at the darkest parts of the sea. The spots on its body flash to  confuse predators and give it the opportunity to scuttle away. From time to time it likes to float upside down, it means it’s close to evolving."
     },
     "evolution": {
@@ -1923,7 +1923,7 @@ Array.prototype.push.apply(Pokedex, [
       "image": "images/pokedex/687.png",
       "height": "1.5",
       "weight": "47",
-      "category": "倒轉寶可夢",
+      "category": "倒转寶可夢",
       "text": "It lures prey close with hypnotic motions, then wraps its tentacles around it before finishing it off to eat it. This Pokémon are difficult to handle as they use their psychic abilities to do evil. "
     },
     "evolution": {
@@ -2299,7 +2299,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Ground", "name": "重踏" },
       { "rank": 2, "type": "Ground", "name": "擲泥" },
       { "rank": 3, "type": "Electric", "name": "十萬伏特" },
-      { "rank": 3, "type": "Electric", "name": "輸電" },
+      { "rank": 3, "type": "Electric", "name": "输電" },
       { "rank": 3, "type": "Electric", "name": "伏特替換" },
       { "rank": 4, "type": "Electric", "name": "電磁飄浮" },
       { "rank": 4, "type": "Electric", "name": "電網" },
@@ -2340,7 +2340,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Electric", "name": "拋物面充電" },
       { "rank": 2, "type": "Electric", "name": "怪異電波" },
       { "rank": 3, "type": "Electric", "name": "打雷" },
-      { "rank": 3, "type": "Electric", "name": "輸電" },
+      { "rank": 3, "type": "Electric", "name": "输電" },
       { "rank": 4, "type": "Normal", "name": "巨聲" },
       { "rank": 4, "type": "Fire", "name": "火焰拳" },
       { "rank": 4, "type": "Psychic", "name": "高速移動" }
@@ -2617,7 +2617,7 @@ Array.prototype.push.apply(Pokedex, [
     "height": "0.8",
     "weight": "21",
     "category": "摔角寶可夢",
-    "text": "牠的體型雖小，但卻是個能與怪力或鐵掌力士等大型寶可夢打得不相上下的技術高手。利用翅膀從高處攻擊讓牠能在戰鬥中大大取得優勢。"
+    "text": "牠的體型雖小，但卻是个能與怪力或鐵掌力士等大型寶可夢打得不相上下的技術高手。利用翅膀從高處攻擊讓牠能在戰鬥中大大取得優勢。"
   },
   "evolution": {
     "stage": "final"
@@ -2644,7 +2644,7 @@ Array.prototype.push.apply(Pokedex, [
     { "rank": 2, "type": "Flying", "name": "羽棲" },
     { "rank": 2, "type": "Flying", "name": "燕返" },
     { "rank": 2, "type": "Normal", "name": "再來一次" },
-    { "rank": 2, "type": "Dark", "name": "投擲" },
+    { "rank": 2, "type": "Dark", "name": "投掷" },
     { "rank": 2, "type": "Fight", "name": "飛身重壓" },
     { "rank": 2, "type": "Flying", "name": "彈跳" },
     { "rank": 2, "type": "Normal", "name": "蠻幹" },
@@ -3161,7 +3161,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Normal", "name": "猛撞" },
       { "rank": 1, "type": "Dark", "name": "咬住" },
       { "rank": 1, "type": "Ice", "name": "冰凍之風" },
-      { "rank": 2, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 2, "type": "Normal", "name": "高速旋转" },
       { "rank": 2, "type": "Normal", "name": "棱角化" },
       { "rank": 2, "type": "Ghost", "name": "詛咒" },
       { "rank": 2, "type": "Ice", "name": "雪崩" },
@@ -3209,7 +3209,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Normal", "name": "猛撞" },
       { "rank": 1, "type": "Dark", "name": "咬住" },
       { "rank": 1, "type": "Ice", "name": "冰凍之風" },
-      { "rank": 2, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 2, "type": "Normal", "name": "高速旋转" },
       { "rank": 2, "type": "Normal", "name": "棱角化" },
       { "rank": 2, "type": "Normal", "name": "泰山壓頂" },
       { "rank": 2, "type": "Dark", "name": "咬碎" },
@@ -3764,7 +3764,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Psychic", "name": "奇妙空間" },
       { "rank": 5, "type": "Psychic", "name": "戲法空間" },
       { "rank": 5, "type": "Ghost", "name": "暗影球" },
-      { "rank": 5, "type": "Dark", "name": "詭計" },
+      { "rank": 5, "type": "Dark", "name": "詭计" },
       { "rank": 5, "type": "Psychic", "name": "精神強念" },
       { "rank": 5, "type": "Psychic", "name": "意念移物" },
       { "rank": 5, "type": "Psychic", "name": "魔法空間" },
@@ -3816,7 +3816,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 5, "type": "Psychic", "name": "奇妙空間" },
       { "rank": 5, "type": "Psychic", "name": "戲法空間" },
       { "rank": 5, "type": "Dark", "name": "惡之波動" },
-      { "rank": 5, "type": "Dark", "name": "詭計" },
+      { "rank": 5, "type": "Dark", "name": "詭计" },
       { "rank": 5, "type": "Psychic", "name": "精神強念" },
       { "rank": 5, "type": "Psychic", "name": "意念移物" },
       { "rank": 5, "type": "Psychic", "name": "魔法空間" },

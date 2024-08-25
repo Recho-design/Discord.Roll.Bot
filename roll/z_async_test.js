@@ -1,6 +1,6 @@
 "use strict";
 //heroku labs:enable runtime-dyno-metadata -a <app name>
-let chineseConv = require('chinese-conv'); //繁簡轉換
+let chineseConv = require('chinese-conv'); //繁簡转換
 const duckImage = require("@zetetic/duckduckgo-images-api")
 const wiki = require('wikijs').default;
 const rollbase = require('./rollbase.js');
@@ -35,8 +35,8 @@ Wiki功能		： .wiki (條目)
 EG: .wiki BATMAN  
 
 圖片搜尋功能	： .Image (內容)  
-從Google 得到相關隨機圖片Link
-隨機YES NO: 如.image yesno 會得到yes 或NO 結果
+從Google 得到相關随机圖片Link
+随机YES NO: 如.image yesno 會得到yes 或NO 結果
 
 即時翻譯功能	： .tran (內容)  
 預設翻譯成正體中文 
@@ -117,7 +117,7 @@ const rollDiceCommand = async function ({
 			let gpLv = await VIP.viplevelCheckGroup(groupid);
 			let limit = FUNCTION_LIMIT[gpLv];
 			if (check.length >= limit) {
-				rply.text = '此群組翻譯上限為' + limit + '條頻道' + '\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+				rply.text = '此群組翻譯上限为' + limit + '條頻道' + '\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
 				return rply
 			}
 			await schema.translateChannel.findOneAndUpdate({
@@ -142,7 +142,7 @@ const rollDiceCommand = async function ({
 			return rply
 		}
 
-		rply.text = '沒有正確指令，需要輸入.translate on 或.translate off 去啓動/關閉翻譯功能'
+		rply.text = '沒有正確指令，需要输入.translate on 或.translate off 去啓動/關閉翻譯功能'
 
 		return rply
 	}
@@ -188,7 +188,7 @@ async function searchImage(inputStr, mainMsg, safe) {
 	let keyword = inputStr.replace(mainMsg[0] + " ", "")
 	//let page = Math.floor((Math.random() * (10)) * 10) + 1;
 	if (mainMsg[1].match(/^yesno$/i)) {
-		//隨機YES NO
+		//随机YES NO
 		let A = ['yes', 'no']
 		keyword = A[rollbase.Dice(A.length) - 1] + " GIF";
 	}

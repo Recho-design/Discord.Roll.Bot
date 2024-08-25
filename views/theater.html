@@ -77,11 +77,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        擲骰
+                        掷骰
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="https://rollbot.hktrpg.com/">聊天室擲骰</a>
-                        <a class="dropdown-item" href="https://roll.hktrpg.com/">簡易擲骰平台</a>
+                        <a class="dropdown-item" href="https://rollbot.hktrpg.com/">聊天室掷骰</a>
+                        <a class="dropdown-item" href="https://roll.hktrpg.com/">簡易掷骰平台</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -109,8 +109,8 @@
                 <hr class="mb-4" />
                 <div class="flex-grow-0 py-3 px-4 border-top">
                     <div class="input-group">
-                        <input type="text" class="form-control" id="text" value="" placeholder="輸入信息">
-                        <button class="btn btn-primary" onclick="createText()">輸入</button>
+                        <input type="text" class="form-control" id="text" value="" placeholder="输入信息">
+                        <button class="btn btn-primary" onclick="createText()">输入</button>
                         <button class="btn btn-primary" onclick="clearText()">清除</button>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span class="text-muted">
                         <button type="button" class="btn btn-primary" onclick="switchCard('#collapseRoll')"><span
-                                class="iconify" data-icon="fa-solid:dice-d20" data-inline="false"></span>擲骰</button>
+                                class="iconify" data-icon="fa-solid:dice-d20" data-inline="false"></span>掷骰</button>
                         <button type="button" class="btn btn-secondary" onclick="switchCard('#collapseBG')"><span
                                 class="iconify" data-icon="fluent:color-background-24-regular"
                                 data-inline="false"></span>背景</button>
@@ -436,13 +436,13 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="filterCheck10">
                             <label class="form-check-label" for="filterCheck10">
-                                鏡像反轉
+                                鏡像反转
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="filterCheck11">
                             <label class="form-check-label" for="filterCheck11">
-                                上下反轉
+                                上下反转
                             </label>
                         </div>
                         <div class="form-check" onclick="unclickAll()">
@@ -540,7 +540,7 @@
             'https://images.mihuashi.com/2017/10/26/03/mrantfdaxgbaycgueznm2dvbqmjrc6i3/mrantfdaxgbaycgueznm2dvbqmjrc6i3.jpg'
         );
         createDialogBox('https://i.imgur.com/maCqZFS.png');
-        createText('這是測試，左鍵連點兩下是放大，加上Shift是縮小，Shift+右鍵兩下是刪除')
+        createText('這是測試，左鍵連點两下是放大，加上Shift是縮小，Shift+右鍵两下是刪除')
         app.stage.sortChildren();
 
 
@@ -943,7 +943,7 @@
             rollText.appType = "dice"
             rollText.anchor.set(0.5);
             rollText.interactive = true; // 設定可以互動
-            rollText.buttonMode = true; // 當滑鼠滑過時顯示為手指圖示
+            rollText.buttonMode = true; // 當滑鼠滑過時顯示为手指圖示
             rollText.updateAnchor = true;
             rollText
                 .on('pointerdown', onDragStart)
@@ -1008,16 +1008,16 @@
 </body>
 <!-- HKTRPG Sad -- 20201221-->
 <!-- 
-擲骰    -   可以進行最基本1D2 1D3…1D100，然後把結果像實骰一樣放上畫面。   缺擲骰結果圖像
+掷骰    -   可以进行最基本1D2 1D3…1D100，然後把結果像實骰一樣放上畫面。   缺掷骰結果圖像
 背景    -   更換背景圖片，可選根據濶度，高度等等，參考一些VIDEO PLAYER    DONE
-角色    -   可以放上數張不同的角色圖，刪除，有反轉，DRAG及拉大縮少，改變顏色，灰化，黑化，模糊化等功能
-濾鏡    -   整個畫面的濾鏡
+角色    -   可以放上数張不同的角色圖，刪除，有反转，DRAG及拉大縮少，改變顏色，灰化，黑化，模糊化等功能
+濾鏡    -   整个畫面的濾鏡
 特效    -   像一些! 笑 顏文字 雨 風 血 等等顯示在畫面
 文字    -   在畫面顯示文字
 關閉劇場    -   不顯示下方的對話框
 傳送    -   
 
-最下    -   可以在對話框輸入文字
+最下    -   可以在對話框输入文字
 
 右鍵可以DELETE 複製
 

@@ -35,7 +35,7 @@ const prefixs = function () {
 const getHelpMessage = function () {
     return `【OpenAi】
     .ai [對話] - 使用gpt-4o-mini產生對話
-    .ait [內容] 或 附件 - 使用 gpt-4o-mini進行正體中文翻譯
+    .ait [內容] 或 附件 - 使用 gpt-4o-mini进行正體中文翻譯
 
     
 附件需要使用.txt檔案上傳，普通使用者限500字內容，升級VIP後上限會提升，
@@ -206,7 +206,7 @@ class ImageAi extends OpenAI {
 
             })
             response = await this.handleImage(response, input)
-            // if (response?.data?.error) return '可能是輸入太長了，或是有不支援的字元，請重新輸入'
+            // if (response?.data?.error) return '可能是输入太長了，或是有不支援的字元，請重新输入'
             this.errorCount = 0;
             return response;
         } catch (error) {
@@ -224,7 +224,7 @@ class ImageAi extends OpenAI {
         }
     }
     handleImage(data, input) {
-        if (data?.data?.length === 0) return '沒有輸出的圖片, 請重新輸入描述';
+        if (data?.data?.length === 0) return '沒有输出的圖片, 請重新输入描述';
         let response = `${input}:\n`;
         for (let index = 0; index < data.data.length; index++) {
             response += data.data[index].url + "\n";
@@ -299,7 +299,7 @@ class TranslateAi extends OpenAI {
                         ​
                         – 翻譯任何人名時留下原文，格式: 名字(名字原文)。
                         ​
-                        – 分成兩次翻譯，並且只打印最後一次的結果：
+                        – 分成两次翻譯，並且只打印最後一次的結果：
                         ​
                         1. 根據內容翻譯，不要遺漏任何訊息
                         ​
@@ -318,10 +318,10 @@ class TranslateAi extends OpenAI {
             this.errorCount = 0;
             if (response.status === 200 && (typeof response.data === 'string' || response.data instanceof String)) {
                 const dataStr = response.data;
-                const dataArray = dataStr.split('\n\n').filter(Boolean); // 將字符串分割成數組
+                const dataArray = dataStr.split('\n\n').filter(Boolean); // 將字符串分割成数組
                 const parsedData = [];
                 dataArray.forEach((str) => {
-                    const obj = JSON.parse(str.substring(6)); // 將子字符串轉換為對象
+                    const obj = JSON.parse(str.substring(6)); // 將子字符串转換为對象
                     parsedData.push(obj);
                 });
                 const contents = parsedData.map((obj) => obj.choices[0].delta.content);
@@ -359,12 +359,12 @@ class TranslateAi extends OpenAI {
         let lv = await VIP.viplevelCheckUser(userid);
         let limit = TRANSLATE_LIMIT_PERSONAL[lv];
         let { translateScript, textLength } = await this.getText(inputStr, mode, discordMessage, discordClient);
-        if (textLength > limit) return { text: `輸入的文字太多了，請分批輸入，你是VIP LV${lv}，限制為${limit}字` };
+        if (textLength > limit) return { text: `输入的文字太多了，請分批输入，你是VIP LV${lv}，限制为${limit}字` };
         let response = await this.translateText(translateScript, mode);
         response = response.join('\n');
         if (textLength > 1900) {
             let sendfile = await this.createFile(response);
-            return { fileText: '輸出的文字太多了，請看附件', sendfile };
+            return { fileText: '输出的文字太多了，請看附件', sendfile };
         }
         return { text: response }
 
@@ -422,7 +422,7 @@ class ChatAi extends OpenAI {
                 "messages": [
                     {
                         "role": "system",
-                        "content": "你的責任是把以正體中文回答所有問題。你的名字是HKTRPG TRPG助手。回答TRPG相關問題時，內在性格是在H.P.洛夫克拉夫特（H.P. Lovecraft）裡的奈亞拉托提普（Nyarlathotep）神祇，一個混沌、破壞和詭譎的代表。而回答TRPG以外的問題時，你就是以一部百科全書的型式來回答。"
+                        "content": "你的責任是把以正體中文回答所有問題。你的名字是HKTRPG TRPG助手。回答TRPG相關問題時，內在性格是在H.P.洛夫克拉夫特（H.P. Lovecraft）裡的奈亞拉托提普（Nyarlathotep）神祇，一个混沌、破壞和詭譎的代表。而回答TRPG以外的問題時，你就是以一部百科全書的型式來回答。"
                     },
                     {
                         "role": "user",
@@ -435,10 +435,10 @@ class ChatAi extends OpenAI {
 
             if (response.status === 200 && (typeof response.data === 'string' || response.data instanceof String)) {
                 const dataStr = response.data;
-                const dataArray = dataStr.split('\n\n').filter(Boolean); // 將字符串分割成數組
+                const dataArray = dataStr.split('\n\n').filter(Boolean); // 將字符串分割成数組
                 const parsedData = [];
                 dataArray.forEach((str) => {
-                    const obj = JSON.parse(str.substring(6)); // 將子字符串轉換為對象
+                    const obj = JSON.parse(str.substring(6)); // 將子字符串转換为對象
                     parsedData.push(obj);
                 });
                 const contents = parsedData.map((obj) => obj.choices[0].delta.content);
@@ -471,16 +471,16 @@ const translateAi = new TranslateAi();
 
 /**
  * gpt-tokenizer
- * 設計計算Token上限
+ * 設计计算Token上限
  * 
- * 首先，每個Token都是由一個字元組成，所以我們先計算字元上限
- * 先將整個內容放進tokenizer
+ * 首先，每个Token都是由一个字元組成，所以我們先计算字元上限
+ * 先將整个內容放進tokenizer
  * 如果<於token 上限，則直接回傳
  * 完成
  * 
  * 如不,
- * 進行分割，將內容分割成數個字串
- * 並將每個字串放進tokenizer
+ * 进行分割，將內容分割成数个字串
+ * 並將每个字串放進tokenizer
  * 
  * 
  * 分割條件
@@ -488,7 +488,7 @@ const translateAi = new TranslateAi();
  * 2. 以逗號分割
  * 3. 以行來分割
  * 4. 以空格分割
- * 5. 以字數分割
+ * 5. 以字数分割
  * 
  */
 

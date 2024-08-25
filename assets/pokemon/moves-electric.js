@@ -11,7 +11,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|self|靈巧|up|1"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 4",
-		"effect": "若成功，提升使用者的靈巧。若使用者處於「空腹」花紋型態，則這個招式將會被視作惡屬性。",
+		"effect": "若成功，提升使用者的靈巧。若使用者處於「空腹」花紋型態，則這个招式將會被視作惡屬性。",
 		"desc": "寶可夢開心地用電氣纏饒而成的跑滾輪來攻擊敵人。如果使用者餓了，則滾輪的能量將會被黑暗氣場所取代。"
 	},
 	{
@@ -22,7 +22,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 2*",
-		"effect": "若目標在這個戰鬥輪中還沒有進行過牠的回合，則這個招式的傷害骰池額外增加 2 顆骰子。",
+		"effect": "若目標在這个戰鬥輪中還沒有进行過牠的回合，則這个招式的傷害骰池額外增加 2 顆骰子。",
 		"desc": "寶可夢給牠的喙充電並啄向牠的敵人，如果敵人速度不夠快，那牠將會被強烈的電流給衝擊。"
 	},
 	{
@@ -34,7 +34,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "力量 + 鬥毆",
 		"damage": "力量 + 6",
 		"effect": "骰 2 顆機率骰以使敵人陷入「麻痺」狀態。",
-		"desc": "捷克羅姆讓強大的電流覆蓋全身並猛撞敵人。無論是因為電流還是撞擊，敵人都將因此難以移動。"
+		"desc": "捷克羅姆讓強大的電流覆蓋全身並猛撞敵人。無論是因为電流還是撞擊，敵人都將因此難以移動。"
 	},
 	{
 		"name": "麻麻電擊", "alias": "びりびりエレキ|Buzzy Buzz",
@@ -44,7 +44,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|paralysis||always"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "使敵人陷入「麻痺」狀態。如果這個招式的使用者處於最終進化階段，則這個招式自動失敗。",
+		"effect": "使敵人陷入「麻痺」狀態。如果這个招式的使用者處於最終進化階段，則這个招式自動失敗。",
 		"desc": "寶可夢的毛皮釋放出一股靜電，發出一種可愛的哢嚓聲。這一切都是如此愉快有趣，直到有人因此滋滋麻痹。"
 	},
 	{
@@ -100,10 +100,10 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "洞察 + 自然",
 		"damage": "-",
 		"effect": "在接下來 4 輪中，所有電屬性攻擊的傷害骰池都將額外增加 1 顆骰子。任何站在戰場上的生物的「睡眠」狀態都將被解除。",
-		"desc": "使用者給場地充電，你根本不可能躺在上面睡個好覺。"
+		"desc": "使用者給場地充電，你根本不可能躺在上面睡个好覺。"
 	},
 	{
-		"name": "輸電", "alias": "そうでん|Electrify",
+		"name": "输電", "alias": "そうでん|Electrify",
 		"power": "-",
 		"category": "support",
 		"type": "Electric",
@@ -111,7 +111,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "洞察 + 自然",
 		"damage": "-",
 		"effect": "目標下一次攻擊造成的傷害將變成電屬性。",
-		"desc": "使用者向目標射出電氣彈，敵人會因此充滿電力，直到牠進行下一次攻擊將其釋放為止。"
+		"desc": "使用者向目標射出電氣彈，敵人會因此充滿電力，直到牠进行下一次攻擊將其釋放为止。"
 	},
 	{
 		"name": "電球", "alias": "エレキボール|Electro Ball",
@@ -121,8 +121,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2*",
-		"effect": "使用者的靈巧每超過目標一點，這個招式的傷害骰池就可以額外增加 1 顆骰子。你最多可以透過這個方式增加 4 顆骰子。",
-		"desc": "寶可夢創造出一個小型的帶電球體並擲向目標，使用者速度越快，衝擊力越大。"
+		"effect": "使用者的靈巧每超過目標一點，這个招式的傷害骰池就可以額外增加 1 顆骰子。你最多可以透過這个方式增加 4 顆骰子。",
+		"desc": "寶可夢創造出一个小型的帶電球體並擲向目標，使用者速度越快，衝擊力越大。"
 	},
 	{
 		"name": "電網", "alias": "エレキネット|Electroweb",
@@ -132,7 +132,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe", "frame|target|靈巧|down|1"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "以所有範圍內的敵人為目標。降低目標的靈巧。",
+		"effect": "以所有範圍內的敵人为目標。降低目標的靈巧。",
 		"desc": "朝著所有敵人射出電網來限制牠們的移動。想走出這張電網可痛苦的呢。"
 	},
 	{
@@ -143,7 +143,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|lethal"],
 		"accuracy": "力量 + 導引",
 		"damage": "力量 + 4*",
-		"effect": "致命傷害。如果這個戰鬥輪中已經有任何人使用了〈交錯火焰〉招式，則這個招式的傷害骰池將額外增加 4 顆骰子。",
+		"effect": "致命傷害。如果這个戰鬥輪中已經有任何人使用了〈交錯火焰〉招式，則這个招式的傷害骰池將額外增加 4 顆骰子。",
 		"desc": "寶可夢使出極具毀滅性的電能衝擊，傳說如果附近存在一種特殊的火焰的話，它的威力會變得更強。"
 	},
 	{
@@ -154,7 +154,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|field"],
 		"accuracy": "洞察 + 自然",
 		"damage": "-",
-		"effect": "在這個場景期間，一般屬性的招式將如同它是電屬性的招式一樣造成傷害。",
+		"effect": "在這个場景期間，一般屬性的招式將如同它是電屬性的招式一樣造成傷害。",
 		"desc": "使用者增強環境中帶電粒子的能量，結果會讓人不只一「電」震驚！"
 	},
 	{
@@ -198,8 +198,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe", "effect|l|sound"],
 		"accuracy": "靈巧 + 表演",
 		"damage": "特殊 + 3",
-		"effect": "以所有範圍內的敵人為目標。聲音類招式。",
-		"desc": "寶可夢用自己的身體作為擴音器，發出充滿能量的電音。"
+		"effect": "以所有範圍內的敵人为目標。聲音類招式。",
+		"desc": "寶可夢用自己的身體作为擴音器，發出充滿能量的電音。"
 	},
 	{
 		"name": "抛物面充電", "alias": "パラボラチャージ|Parabolic Charge",
@@ -209,7 +209,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|area"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "範圍攻擊。使用者回復等同於造成傷害一半的HP（尾數捨去）。",
+		"effect": "範圍攻擊。使用者回復等同於造成傷害一半的HP（尾数捨去）。",
 		"desc": "寶可夢從體內釋放出大量的電荷，並回收變得更多的電荷。"
 	},
 	{
@@ -220,8 +220,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 0*(最多+5)",
-		"effect": "使用者的每 1 點幸福度都會使這個招式的傷害骰池額外增加 1 顆骰子。如果這個招式的使用者處於最終進化階段，則這個招式自動失敗。",
-		"desc": "使用者以落雷的形式釋放能量，使用者越幸福，這個招式的能量就會越大。"
+		"effect": "使用者的每 1 點幸福度都會使這个招式的傷害骰池額外增加 1 顆骰子。如果這个招式的使用者處於最終進化階段，則這个招式自動失敗。",
+		"desc": "使用者以落雷的形式釋放能量，使用者越幸福，這个招式的能量就會越大。"
 	},
 	{
 		"name": "等離子閃電拳", "alias": "プラズマフィスト|Plasma Fists",
@@ -231,7 +231,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|fist"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 4",
-		"effect": "拳頭類招式。若成功，則直到這個場景結束之前，使用者的所有一般屬性招式都將變為電屬性。",
+		"effect": "拳頭類招式。若成功，則直到這个場景結束之前，使用者的所有一般屬性招式都將變为電屬性。",
 		"desc": "使用者讓牠的拳頭纏繞電流，隨著衝擊，這些電荷將變成等離子，使牠的所有一般屬性招式附帶電屬性。"
 	},
 	{
@@ -264,8 +264,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|accuracy||down|2", "effect|l|lethal", "frame|paralysis||number|d3"],
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 5",
-		"effect": "致命傷害。骰 3 顆機率骰以使敵人陷入「麻痺」狀態。如果當前天氣狀態為大晴天，則這個招式的命中率降低效果將改為 -3；如果當前天氣狀態為下雨，則無視這個招式的命中率降低效果。",
-		"desc": "寶可夢命令一道巨大的閃電劈中地面上的某個特定點。這實在太危險了。"
+		"effect": "致命傷害。骰 3 顆機率骰以使敵人陷入「麻痺」狀態。如果當前天氣狀態为大晴天，則這个招式的命中率降低效果將改为 -3；如果當前天氣狀態为下雨，則無視這个招式的命中率降低效果。",
+		"desc": "寶可夢命令一道巨大的閃電劈中地面上的某个特定點。這實在太危險了。"
 	},
 	{
 		"name": "雷電牙", "alias": "かみなりのキバ|Thunder Fang",
@@ -298,7 +298,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
 		"effect": "骰 1 顆機率骰以使敵人陷入「麻痺」狀態。",
-		"desc": "這一股輕微的電擊能使敵人觸電並讓牠肌肉抽搐。一些被這個招式命中的電子設備可能會因此短路故障。"
+		"desc": "這一股輕微的電擊能使敵人觸電並讓牠肌肉抽搐。一些被這个招式命中的電子設備可能會因此短路故障。"
 	},
 	{
 		"name": "電磁波", "alias": "でんじは|Thunder Wave",
@@ -309,7 +309,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "洞察 + 自然",
 		"damage": "-",
 		"effect": "使敵人陷入「麻痺」狀態。",
-		"desc": "一道波紋般的明亮電流從地面竄向敵人，目標的身體將會痙攣數小時。"
+		"desc": "一道波紋般的明亮電流從地面竄向敵人，目標的身體將會痙攣数小時。"
 	},
 	{
 		"name": "十萬伏特", "alias": "10まんボルト|Thunderbolt",
@@ -330,7 +330,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|switcher"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "替換招式。使用者在造成傷害之後被換下場，替換的寶可夢將在有所準備的狀況下上場，擲骰決定牠的先攻。",
+		"effect": "替換招式。使用者在造成傷害之後被換下場，替換的寶可夢將在有所準備的狀況下上場，掷骰決定牠的先攻。",
 		"desc": ""
 	},
 	{
@@ -375,7 +375,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 3",
 		"effect": "骰 3 顆機率骰以使敵人陷入「畏縮」狀態。",
-		"desc": "使用者蜷縮成一個之字型迅速滾動的帶電滾球，並在撞上目標後爆炸，這將使敵人在幾秒鐘內無法動彈。"
+		"desc": "使用者蜷縮成一个之字型迅速滾動的帶電滾球，並在撞上目標後爆炸，這將使敵人在幾秒鐘內無法動彈。"
 	},
 	{
 		"name": "電電加速", "alias": "ばちばちアクセル|Zippy Zap",
@@ -385,7 +385,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|priority||up|2"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 2",
-		"effect": "先制招式。這個招式永遠會擊中要害，並獲得相應的獎勵傷害骰。如果這個招式的使用者處於最終進化階段，則這個招式自動失敗。",
+		"effect": "先制招式。這个招式永遠會擊中要害，並獲得相應的獎勵傷害骰。如果這个招式的使用者處於最終進化階段，則這个招式自動失敗。",
 		"desc": "使用者迅速地左右四竄以攻擊敵人，速度之快彷彿瞬間移動，敵人幾乎沒有任何時間作出反應。"
 	}
 ]);

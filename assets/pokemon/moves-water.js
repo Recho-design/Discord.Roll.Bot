@@ -22,7 +22,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "frame|heal||heal|1"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "若成功，則消耗 1 點意志點以使其生效。使用者將在每個戰鬥輪結束時回復 1 點HP。持續 4 輪。",
+		"effect": "若成功，則消耗 1 點意志點以使其生效。使用者將在每个戰鬥輪結束時回復 1 點HP。持續 4 輪。",
 		"desc": "使用者以一種特殊的流水環包裹自身，減輕疼痛。"
 	},
 	{
@@ -44,7 +44,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "使用者回復等同於造成傷害一半的HP（尾數捨去）。如果這個招式的使用者處於最終進化階段，則這個招式自動失敗。",
+		"effect": "使用者回復等同於造成傷害一半的HP（尾数捨去）。如果這个招式的使用者處於最終進化階段，則這个招式自動失敗。",
 		"desc": "使用者向牠的目標射出泡泡，這些充滿清水的泡泡會反彈到使用者面前。你應該喝下泡泡裡的水嗎？誰在乎？好玩就好！"
 	},
 	{
@@ -55,7 +55,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "如果敵人的HP只剩下一半或以下，則這個招式的傷害骰池額外增加 3 顆骰子。",
+		"effect": "如果敵人的HP只剩下一半或以下，則這个招式的傷害骰池額外增加 3 顆骰子。",
 		"desc": "使用者以高密度的鹽水噴射重擊敵人，如果目標感到疲倦，那麼牠們可能會更容易被水壓給輕易擊倒。"
 	},
 	{
@@ -66,7 +66,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe", "dice|l|1", "frame|target|靈巧|down|1"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "以所有範圍內的敵人為目標。骰 1 顆機率骰以降低目標的靈巧。",
+		"effect": "以所有範圍內的敵人为目標。骰 1 顆機率骰以降低目標的靈巧。",
 		"desc": "一堆泡泡飛行圍繞在敵人周圍，其中一些泡泡會沾黏牠們的身體以阻礙其行動。"
 	},
 	{
@@ -88,8 +88,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "effect|l|block"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 2",
-		"effect": "阻擋。每個戰鬥輪結束時，骰 2 顆傷害骰以對敵人造成傷害。持續 4 輪。",
-		"desc": "使用者使用他堅硬厚重的甲殼夾困並擠壓對手進行攻擊。"
+		"effect": "阻擋。每个戰鬥輪結束時，骰 2 顆傷害骰以對敵人造成傷害。持續 4 輪。",
+		"desc": "使用者使用他堅硬厚重的甲殼夾困並擠壓對手进行攻擊。"
 	},
 	{
 		"name": "蟹鉗錘", "alias": "クラブハンマー|Crabhammer",
@@ -110,7 +110,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|charge"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 2",
-		"effect": "蓄力招式。當這個招式在蓄力時，使用者將脫離所有招式的影響範圍。這個招式能讓這隻寶可夢潛到深海之中。",
+		"effect": "蓄力招式。當這个招式在蓄力時，使用者將脫離所有招式的影響範圍。這个招式能讓這隻寶可夢潛到深海之中。",
 		"desc": "使用者潛入水中，並以驚人速度持續俯衝下潛。"
 	},
 	{
@@ -121,7 +121,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 3*",
-		"effect": "若目標在這個戰鬥輪中還沒有進行過牠的回合，則這個招式的傷害骰池額外增加 2 顆骰子。",
+		"effect": "若目標在這个戰鬥輪中還沒有进行過牠的回合，則這个招式的傷害骰池額外增加 2 顆骰子。",
 		"desc": "寶可夢使用牠的腮顎朝著牠的目標咬下，即使牠們沒有牙齒，這一擊仍然具有能粉碎敵人的強度。"
 	},
 	{
@@ -143,7 +143,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|accuracy||down|1"],
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 5",
-		"desc": "使用者在體內積蓄水壓，然後向目標釋放巨量並強力的水壓進行攻擊。"
+		"desc": "使用者在體內積蓄水壓，然後向目標釋放巨量並強力的水壓进行攻擊。"
 	},
 	{
 		"name": "生命水滴", "alias": "いのちのしずく|Life Dew",
@@ -153,7 +153,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allally", "frame|heal||c_heal|1"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "若成功，則消耗 1 點意志點以使其生效。使用者以及範圍內的友方將在每個戰鬥輪結束時回復 1 點HP。持續 4 輪。",
+		"effect": "若成功，則消耗 1 點意志點以使其生效。使用者以及範圍內的友方將在每个戰鬥輪結束時回復 1 點HP。持續 4 輪。",
 		"desc": "使用者創造出能讓自己和同伴充滿能量的清新露水。"
 	},
 	{
@@ -175,7 +175,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe", "frame|accuracy||down|2", "dice|l|3", "frame|target|命中|down|1"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "以所有範圍內的敵人為目標。骰 3 顆機率骰以降低目標的命中。",
+		"effect": "以所有範圍內的敵人为目標。骰 3 顆機率骰以降低目標的命中。",
 		"desc": "使用者將泥土塞滿嘴巴，並朝著敵人噴吐出一道泥濘激流。 這些泥漿可能噴濺到敵人的雙眼之中。"
 	},
 	{
@@ -208,7 +208,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|field", "weather|l|rain"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "讓天氣狀態在接下來 4 輪期間變為下雨。",
+		"effect": "讓天氣狀態在接下來 4 輪期間變为下雨。",
 		"desc": "使用者表演一種古怪神秘的舞蹈以呼喚大雨。"
 	},
 	{
@@ -231,7 +231,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 3",
 		"effect": "骰 3 顆機率骰以使敵人陷入「灼傷 1 級」狀態。",
-		"desc": "使用者噴射出滾燙的沸水進行攻擊，這可能會使對手在被浸濕的同時灼傷。"
+		"desc": "使用者噴射出滾燙的沸水进行攻擊，這可能會使對手在被浸濕的同時灼傷。"
 	},
 	{
 		"name": "狙擊", "alias": "ねらいうち|Snipe Shot",
@@ -252,7 +252,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
-		"effect": "將目標的屬性變更為水屬性。",
+		"effect": "將目標的屬性變更为水屬性。",
 		"desc": "使用者噴射出大量的水流和濕氣，如同外衣一般包裹著敵人的身體。"
 	},
 	{
@@ -263,7 +263,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|area", "effect|l|sound"],
 		"accuracy": "特殊 + 表演",
 		"damage": "特殊 + 3",
-		"effect": "範圍攻擊。如果目標寶可夢身上有任何「灼傷」狀態，則牠不會受到傷害，而是改為治療「灼傷」狀態。",
+		"effect": "範圍攻擊。如果目標寶可夢身上有任何「灼傷」狀態，則牠不會受到傷害，而是改为治療「灼傷」狀態。",
 		"desc": "寶可夢唱出優美的旋律，歌聲幻成一座閃閃發光的噴泉，並在撞擊的瞬間爆開，熄滅任何路徑上的火焰。"
 	},
 	{
@@ -274,7 +274,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|paralysis||number|d3"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "骰 3 顆機率骰以使敵人陷入「麻痺」狀態。如果這個招式的使用者處於最終進化階段，則這個招式自動失敗。",
+		"effect": "骰 3 顆機率骰以使敵人陷入「麻痺」狀態。如果這个招式的使用者處於最終進化階段，則這个招式自動失敗。",
 		"desc": "寶可夢彷彿衝浪一般騎在電流巨浪上。這看起來相當刺激，但也相當危險，畢竟電流可沒有跟水一樣能讓你安全衝浪的性質。"
 	},
 	{
@@ -297,7 +297,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 3",
 		"effect": "範圍攻擊。",
-		"desc": "一道大浪橫掃整個區域，而使用者在同時於巨浪之上悠閒游泳。"
+		"desc": "一道大浪橫掃整个區域，而使用者在同時於巨浪之上悠閒游泳。"
 	},
 	{
 		"name": "水槍", "alias": "みずでっぽう|Water Gun",
@@ -317,8 +317,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|area", "target|l|field", "pdice|l|2"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "範圍攻擊。創造出一道彩紅，能使所有機率骰判定都增加 2 顆骰子。這個效果將持續 4 個戰鬥輪。",
-		"desc": "寶可夢吟唱召喚水之力量的咒語。空氣中水氣將使光線折射，創造出鼓舞人心的彩虹，戰場上的所有人都會為之一振。"
+		"effect": "範圍攻擊。創造出一道彩紅，能使所有機率骰判定都增加 2 顆骰子。這个效果將持續 4 个戰鬥輪。",
+		"desc": "寶可夢吟唱召喚水之力量的咒語。空氣中水氣將使光線折射，創造出鼓舞人心的彩虹，戰場上的所有人都會为之一振。"
 	},
 	{
 		"name": "水之波動", "alias": "みずのはどう|Water Pulse",
@@ -340,7 +340,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 1",
 		"effect": "遠程攻擊。先制招式。連續行動。",
-		"desc": "寶可夢快速地投擲出手裡劍形狀的鋒利水流。"
+		"desc": "寶可夢快速地投掷出手裡劍形狀的鋒利水流。"
 	},
 	{
 		"name": "玩水", "alias": "みずあそび|Water Sport",
@@ -350,8 +350,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|field"],
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
-		"effect": "在接下來 4 個戰鬥輪期間，火屬性攻擊的傷害骰池將無法獲得其招式威力的加值。",
-		"desc": "使用者讓施氣浸透整個戰場，使火屬性攻擊更難以點燃。"
+		"effect": "在接下來 4 个戰鬥輪期間，火屬性攻擊的傷害骰池將無法獲得其招式威力的加值。",
+		"desc": "使用者讓施氣浸透整个戰場，使火屬性攻擊更難以點燃。"
 	},
 	{
 		"name": "噴水", "alias": "しおふき|Water Spout",
@@ -361,7 +361,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 6*",
-		"effect": "以所有範圍內的敵人為目標。使用者每失去 1 點HP，這個招式的傷害骰池就會減少 1 顆骰子。這個方式最多會減少 5 顆骰子。",
+		"effect": "以所有範圍內的敵人为目標。使用者每失去 1 點HP，這个招式的傷害骰池就會減少 1 顆骰子。這个方式最多會減少 5 顆骰子。",
 		"desc": "寶可夢製造出驚人的水壓並釋放出巨大的圓柱狀渦流，其高度甚至可以觸及雲層。"
 	},
 	{
@@ -383,8 +383,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|accuracy||down|2", "effect|l|block"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "阻擋。每個戰鬥輪結束時，骰 2 顆傷害骰以對敵人造成傷害。持續 4 輪。",
-		"desc": "將敵人困在劇烈旋轉的漩渦中，使敵人無法從戰鬥中逃脫。"
+		"effect": "阻擋。每个戰鬥輪結束時，骰 2 顆傷害骰以對敵人造成傷害。持續 4 輪。",
+		"desc": "將敵人困在劇烈旋转的漩渦中，使敵人無法從戰鬥中逃脫。"
 	},
 	{
 		"name": "縮入殼中", "alias": "からにこもる|Withdraw",

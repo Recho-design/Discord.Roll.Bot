@@ -25,33 +25,33 @@ const prefixs = function () {
 const getHelpMessage = async function () {
     return `【經驗值功能】
 這是根據開源Discord bot Mee6開發的功能
-按發言次數增加經驗，提升等級，實現服務器內排名等歡樂功能
+按發言次数增加經驗，提升等級，實現服務器內排名等歡樂功能
 當經驗達到要求，就會彈出通知，提示你已提升等級。
-預設並不開啓，需要輸入.level config 11 啓動功能 
-數字11代表等級升級時會進行通知，10代表不會通知，
+預設並不開啓，需要输入.level config 11 啓動功能 
+数字11代表等級升級時會进行通知，10代表不會通知，
 00的話代表關閉功能，
 -------------
 預設回應是「{user.displayName}《{user.title}》，你的克蘇魯神話知識現在是 {user.level}點！
 現在排名是{server.member_count}人中的第{user.Ranking}名！{user.RankingPer}！
 調查經驗是{user.exp}點。」
 -------------
-輸入.level LevelUpWord (內容) 修改在這群組升級時彈出的升級語
-輸入.level RankWord (內容) 修改在這群組查詢等級時的回應
-輸入.level TitleWord -(LV) (內容)，修改稱號，大於等級即會套用
-建議由-0開始，可一次輸入多個，如 .level TitleWord -0 幼童 -5 學徒 -10 武士 
-輸入.level RankWord/LevelUpWord/TitleWord del 即使用預設字句
-輸入.level RankWord/LevelUpWord/TitleWord show 即顯示現在設定
-輸入.level show 可以查詢你現在的等級
-輸入.level showMe (數字) 可以查詢這群組排名 預設頭5名
-輸入.level showMeTheworld (數字) 可以查詢世界排名 預設頭6名
-輸入.level showMeAtTheworld 可以查詢自己的世界排名
+输入.level LevelUpWord (內容) 修改在這群組升級時彈出的升級語
+输入.level RankWord (內容) 修改在這群組查詢等級時的回應
+输入.level TitleWord -(LV) (內容)，修改稱號，大於等級即會套用
+建議由-0開始，可一次输入多个，如 .level TitleWord -0 幼童 -5 學徒 -10 武士 
+输入.level RankWord/LevelUpWord/TitleWord del 即使用預設字句
+输入.level RankWord/LevelUpWord/TitleWord show 即顯示現在設定
+输入.level show 可以查詢你現在的等級
+输入.level showMe (数字) 可以查詢這群組排名 預設頭5名
+输入.level showMeTheworld (数字) 可以查詢世界排名 預設頭6名
+输入.level showMeAtTheworld 可以查詢自己的世界排名
 -------------
 升級語及RankWord可使用不同代碼
 {user.name} 名字  {user.displayName} Discord裡的Server昵稱
 {user.level} 等級 {user.title} 稱號 
 {user.exp} 經驗值 {user.Ranking} 現在排名 
 {user.RankingPer} 現在排名百分比 
-{server.member_count} 現在頻道中總人數 
+{server.member_count} 現在頻道中總人数 
 `
 }
 const initialize = function () {
@@ -148,7 +148,7 @@ const rollDiceCommand = async function ({
             rply.text = await this.getHelpMessage();
             rply.quotes = true;
             if (botname == "Line")
-                rply.text += "\n因為Line的機制, 如擲骰時並無顯示用家名字, 請到下列網址,和機器人任意說一句話,成為好友. \n https://line.me/R/ti/p/svMLqy9Mik"
+                rply.text += "\n因为Line的機制, 如掷骰時並無顯示用家名字, 請到下列網址,和機器人任意說一句話,成为好友. \n https://line.me/R/ti/p/svMLqy9Mik"
             return rply;
         // .level(0) LevelUpWord(1) TOPIC(2) CONTACT(3)
 
@@ -216,7 +216,7 @@ const rollDiceCommand = async function ({
             let temprply = setNew(inputStr, doc.Title)
 
             if (temprply.length < 1) {
-                rply.text = '新增失敗。 未有稱號輸入，格式為 \n.level TitleWord -(等級) (稱號).'
+                rply.text = '新增失敗。 未有稱號输入，格式为 \n.level TitleWord -(等級) (稱號).'
                 return rply
             }
             await schema.trpgLevelSystem.updateOne({
@@ -360,7 +360,7 @@ const rollDiceCommand = async function ({
             if (!mainMsg[2]) {
                 rply.text = '修改失敗。沒有設定onoff\n';
                 rply.text += '\nconfig 11 代表啓動功能 \
-                \n 數字11代表等級升級時會進行升級通知，10代表不會自動進行升級通知，\
+                \n 数字11代表等級升級時會进行升級通知，10代表不會自動进行升級通知，\
                 \n 00的話代表不啓動功能\n'
                 return rply
             }
@@ -416,7 +416,7 @@ const rollDiceCommand = async function ({
                 default:
                     rply.text = '修改失敗。沒有設定onoff\n';
                     rply.text += '\nconfig 11 代表啓動功能 \
-                    \n 數字11代表等級升級時會進行通知，10代表不會自動通知，\
+                    \n 数字11代表等級升級時會进行通知，10代表不會自動通知，\
                     \n 00的話代表不啓動功能\n'
                     return rply
             }
@@ -445,7 +445,7 @@ const rollDiceCommand = async function ({
             });
             if (!doc || !doc.SwitchV2) {
                 rply.text = '此群組並有沒有開啓LEVEL功能. \n.level config 11 代表啓動功能 \
-                    \n 數字11代表等級升級時會進行通知，10代表不會自動通知，\
+                    \n 数字11代表等級升級時會进行通知，10代表不會自動通知，\
                     \n 00的話代表不啓動功能'
                 return rply
             }
@@ -467,7 +467,7 @@ const rollDiceCommand = async function ({
             //{user.title} 稱號
             // {user.exp} 經驗值 {user.Ranking} 現在排名 \
             // {user.RankingPer} 現在排名百分比 \
-            // {server.member_count} 現在頻道中總人數 \
+            // {server.member_count} 現在頻道中總人数 \
 
             //rply.text += '資料庫列表:'
             //1.    讀取 群組有沒有開啓功能
@@ -485,14 +485,14 @@ const rollDiceCommand = async function ({
             let userRanking = myselfIndex + 1;
             let userRankingPer = Math.ceil(userRanking / usermember_count * 10000) / 100 + '%';
             let userTitle = await this.checkTitle(userlevel, doc.Title || []);
-            //Title 首先檢查  trpgLevelSystemfunction.trpgLevelSystemfunction[i].trpgLevelSystemfunction[a].Title[0].Lvl 有沒有那個LV的TITLE
+            //Title 首先檢查  trpgLevelSystemfunction.trpgLevelSystemfunction[i].trpgLevelSystemfunction[a].Title[0].Lvl 有沒有那个LV的TITLE
             //沒有  則使用預設
 
             //{user.name} 名字 {user.level} 等級 \
             ////{user.title} 稱號
             // { user.exp } 經驗值 { user.Ranking } 現在排名 \
             // { user.RankingPer} 現在排名百分比 \
-            // { server.member_count } 現在頻道中總人數 \
+            // { server.member_count } 現在頻道中總人数 \
 
             rply.text = rankWord.replace(/{user.name}/ig, username).replace(/{user.level}/ig, userlevel).replace(/{user.exp}/ig, userexp).replace(/{user.Ranking}/ig, userRanking).replace(/{user.RankingPer}/ig, userRankingPer).replace(/{server.member_count}/ig, usermember_count).replace(/{user.title}/ig, userTitle)
             if (rply.text.match(/{user.displayName}/ig)) {
@@ -520,7 +520,7 @@ const rollDiceCommand = async function ({
             }).catch(error => console.error('level_system #514 mongoDB error: ', error.name, error.reson));
             if (!doc || !doc.SwitchV2) {
                 rply.text = '此群組並有沒有開啓LEVEL功能. \n.level config 11 代表啓動功能 \
-                    \n 數字11代表等級升級時會進行通知，10代表不會自動通知，\
+                    \n 数字11代表等級升級時會进行通知，10代表不會自動通知，\
                     \n 00的話代表不啓動功能\n'
                 return rply;
             }
@@ -640,7 +640,7 @@ const rollDiceCommand = async function ({
 
     }
 
-    //將千位以上變成約數
+    //將千位以上變成約数
     async function kMGTPE(num, fixed) {
         if (num === null) {
             return null;

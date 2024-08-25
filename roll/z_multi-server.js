@@ -84,7 +84,7 @@ const rollDiceCommand = async function ({
                 });
                 await multiServer.getRecords();
                 rply.text = `已把${channel.guild.name} - ${channel.name}新增到聊天室`
-                //，想把其他頻道加入，請輸入\n .chatroom join ${multiId} (其他頻道的ID)
+                //，想把其他頻道加入，請输入\n .chatroom join ${multiId} (其他頻道的ID)
                 return rply;
             } catch (error) {
                 console.error('error', error)
@@ -114,7 +114,7 @@ const rollDiceCommand = async function ({
                     return
                 });
                 await multiServer.getRecords();
-                rply.text = `已把${channel.guild.name} - ${channel.name}新增到聊天室，想把其他頻道加入，請輸入 .join ${mainMsg[2]} (其他頻道的ID)`
+                rply.text = `已把${channel.guild.name} - ${channel.name}新增到聊天室，想把其他頻道加入，請输入 .join ${mainMsg[2]} (其他頻道的ID)`
                 return rply;
             } catch (error) {
                 console.error('error', error)

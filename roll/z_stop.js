@@ -11,7 +11,7 @@ const checkTools = require('../modules/check.js');
 const VIP = require('../modules/veryImportantPerson');
 const FUNCTION_LIMIT = [30, 200, 200, 300, 300, 300, 300, 300];
 const gameName = function () {
-    return '【擲骰開關功能】 .bk (add del show)'
+    return '【掷骰開關功能】 .bk (add del show)'
 }
 
 const gameType = function () {
@@ -24,15 +24,15 @@ const prefixs = function () {
     }]
 }
 const getHelpMessage = async function () {
-    return `【擲骰開關功能】
+    return `【掷骰開關功能】
 這是根據關鍵字來開關功能,只要符合內容,
-例如運勢,那麼只要字句中包括,就不會讓Bot有反應
+例如运势,那麼只要字句中包括,就不會讓Bot有反應
 所以注意如果用了D, 那麼1D100, .1WD 都會全部沒反應.
-另外不可擋b,k,bk, 只可以擋漢字,數字和英文
+另外不可擋b,k,bk, 只可以擋漢字,数字和英文
 P.S.如果沒立即生效 用.bk show 刷新一下
-輸入.bk add xxxxx 即可增加關鍵字 每次一個
-輸入.bk show 顯示關鍵字
-輸入.bk del (編號)或all 即可刪除`
+输入.bk add xxxxx 即可增加關鍵字 每次一个
+输入.bk show 顯示關鍵字
+输入.bk del (編號)或all 即可刪除`
 }
 const initialize = function () {
     return save;
@@ -68,7 +68,7 @@ const rollDiceCommand = async function ({
             }
 
             if (mainMsg[2].length <= 1 || /bk/ig.test(mainMsg[2])) {
-                rply.text = '至少兩個字，及不可以阻擋bk'
+                rply.text = '至少两个字，及不可以阻擋bk'
                 return rply;
             }
             lv = await VIP.viplevelCheckGroup(groupid);
@@ -78,7 +78,7 @@ const rollDiceCommand = async function ({
             });
             if (findVIP)
                 if (findVIP._doc.blockfunction.length >= limit) {
-                    rply.text = '關鍵字上限' + limit + '個\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                    rply.text = '關鍵字上限' + limit + '个\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
                     return rply;
                 }
 

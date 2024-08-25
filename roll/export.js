@@ -9,7 +9,7 @@ const sevenDay = (process.env.DEBUG) ? 1 : 60 * 24 * 7 * 60000;
 const checkTools = require('../modules/check.js');
 
 const gameName = function () {
-    return '【Discord 頻道輸出工具】'
+    return '【Discord 頻道输出工具】'
 }
 const opt = {
     upsert: true,
@@ -18,12 +18,12 @@ const opt = {
 const VIP = require('../modules/veryImportantPerson');
 const FUNCTION_LIMIT = (process.env.DEBUG) ? [99, 99, 99, 40, 40, 99, 99, 99] : [1, 20, 40, 40, 40, 99, 99, 99];
 /**
- * 因為資源限制，
- * 每個guild 5分鐘可以使用一次,
- * 每個ACC可以一星期一次
+ * 因为資源限制，
+ * 每个guild 5分鐘可以使用一次,
+ * 每个ACC可以一星期一次
  * 
  *  
- * 升級的話, 個人一星期20次
+ * 升級的話, 个人一星期20次
  * 只有一分鐘限制
  * 
  */
@@ -42,18 +42,18 @@ const prefixs = function () {
     }]
 }
 const getHelpMessage = async function () {
-    return `測試進行中【聊天紀錄】
-.discord html 可以輸出有分析功能的聊天紀錄
-.discord txt 可以輸出純文字的聊天紀錄
-.discord txt -withouttime 可以輸出【沒有時間標記的】純文字的聊天紀錄
+    return `測試进行中【聊天紀錄】
+.discord html 可以输出有分析功能的聊天紀錄
+.discord txt 可以输出純文字的聊天紀錄
+.discord txt -withouttime 可以输出【沒有時間標記的】純文字的聊天紀錄
 需要使用者及rollbot 都有閱讀頻道聊天紀錄的權限
 然後會私訊你紀錄
 注意 使用此功能，你需要有管理此頻道的權限或管理員權限。
 另外網頁版內容經過AES加密，後者是純文字檔案
-因為經過server處理，擔心個資外洩請勿使用。
+因为經過server處理，擔心个資外洩請勿使用。
 
-因為資源限制，普通使用者 每個群組 每120分鐘可以使用一次,
-每個ACC可以一星期使用一次
+因为資源限制，普通使用者 每个群組 每120分鐘可以使用一次,
+每个ACC可以一星期使用一次
 
 經patreon解鎖功能的話可以一星期使用20次以上，
 及可以一分鐘使用一次。
@@ -308,9 +308,9 @@ const rollDiceCommand = async function ({
                 return rply;
             }
             if (userRemainingTime < 0 && checkUser && checkUser.times >= limit) {
-                rply.text = `你每星期完整下載聊天紀錄的上限為 ${limit} 次，
+                rply.text = `你每星期完整下載聊天紀錄的上限为 ${limit} 次，
                 冷卻剩餘 ${millisToMinutesAndSeconds(userRemainingTime)} 時間，
-                現在正處於Demo模式，可以輸出500條信息。
+                現在正處於Demo模式，可以输出500條信息。
 
                 支援及解鎖上限 https://www.patreon.com/HKTRPG`;
                 demoMode = true;
@@ -322,7 +322,7 @@ const rollDiceCommand = async function ({
              * PASS-> 檢查 
              * 
              * C. USER > 檢查時間
-             * 超過一星期 -> 立即進行動作
+             * 超過一星期 -> 立即进行動作
              * 更新最新使用時間
              * 運行EXPORT
              * 
@@ -441,9 +441,9 @@ const rollDiceCommand = async function ({
                 return rply;
             }
             if (userRemainingTime < 0 && checkUser && checkUser.times >= limit) {
-                rply.text = `你每星期完整下載聊天紀錄的上限為 ${limit} 次，
+                rply.text = `你每星期完整下載聊天紀錄的上限为 ${limit} 次，
                     冷卻剩餘 ${millisToMinutesAndSeconds(userRemainingTime)} 時間，
-                    現在正處於Demo模式，可以輸出500條信息，
+                    現在正處於Demo模式，可以输出500條信息，
                     
                     支援及解鎖上限 https://www.patreon.com/HKTRPG`;
                 return rply;

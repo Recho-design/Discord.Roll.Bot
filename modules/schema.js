@@ -99,7 +99,7 @@ const trpgLevelSystem = mongoose.model('trpgLevelSystem', {
     HiddenV2: {
         type: Boolean
     },
-    //大於此Lvl即為稱號.
+    //大於此Lvl即为稱號.
     Title: Array,
     //是否顯示升級語 config X1 則1
     trpgLevelSystemfunction: [{
@@ -153,8 +153,8 @@ const trpgDarkRolling = mongoose.model('trpgDarkRolling', {
     }]
 });
 //
-//目的: 記錄發言數量及擲骰數量
-//紀錄擲骰結果
+//目的: 記錄發言数量及掷骰数量
+//紀錄掷骰結果
 //每日上傳一次
 //同時每500次顯示一次
 //
@@ -333,7 +333,7 @@ const init = mongoose.model('init', new mongoose.Schema({
     }]
 }));
 
-//個人新增event 時的紀錄。eventList會使用ID 來紀錄
+//个人新增event 時的紀錄。eventList會使用ID 來紀錄
 const eventMember = mongoose.model('eventMember', new mongoose.Schema({
     userID: String,
     userName: String,
@@ -351,7 +351,7 @@ const eventMember = mongoose.model('eventMember', new mongoose.Schema({
     }]
 }));
 
-//整個event 列表，會從這裡進行抽取
+//整个event 列表，會從這裡进行抽取
 const eventList = mongoose.model('eventList', new mongoose.Schema({
     title: String,
     chainTitle: String,
@@ -371,7 +371,7 @@ const developmentConductor = mongoose.model('developmentConductor', new mongoose
     switch: Boolean
 }));
 
-//成長的每一個擲骰結果
+//成長的每一个掷骰結果
 const developmentRollingRecord = mongoose.model('developmentRollingRecord', new mongoose.Schema({
     userID: String,
     groupID: String,

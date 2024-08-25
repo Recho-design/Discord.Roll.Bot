@@ -5,7 +5,7 @@ if (!process.env.DISCORD_CHANNEL_SECRET) {
 const variables = {};
 const { SlashCommandBuilder } = require('discord.js');
 const gameName = function () {
-    return '【要求擲骰/點擊功能】'
+    return '【要求掷骰/點擊功能】'
 }
 
 const gameType = function () {
@@ -22,9 +22,9 @@ const prefixs = function () {
     }]
 }
 const getHelpMessage = function () {
-    return `【要求擲骰/點擊功能】
+    return `【要求掷骰/點擊功能】
     Discord 專用功能
-    .re 要求擲骰/點擊功能
+    .re 要求掷骰/點擊功能
     範例 .re 1d100 哈哈, 1d3 SC成功, 1d10 SC失敗, 簽到`
 }
 const initialize = function () {
@@ -78,12 +78,12 @@ const discordCommand = [
     {
         data: new SlashCommandBuilder()
             .setName('re')
-            .setDescription('要求擲骰/點擊功能')
-            .addStringOption(option => option.setName('text1').setDescription('輸入第一個擲骰內容').setRequired(true))
-            .addStringOption(option => option.setName('text2').setDescription('輸入第二個擲骰內容'))
-            .addStringOption(option => option.setName('text3').setDescription('輸入第三個擲骰內容'))
-            .addStringOption(option => option.setName('text4').setDescription('輸入第四個擲骰內容'))
-            .addStringOption(option => option.setName('text5').setDescription('輸入第五個擲骰內容')),
+            .setDescription('要求掷骰/點擊功能')
+            .addStringOption(option => option.setName('text1').setDescription('输入第一个掷骰內容').setRequired(true))
+            .addStringOption(option => option.setName('text2').setDescription('输入第二个掷骰內容'))
+            .addStringOption(option => option.setName('text3').setDescription('输入第三个掷骰內容'))
+            .addStringOption(option => option.setName('text4').setDescription('输入第四个掷骰內容'))
+            .addStringOption(option => option.setName('text5').setDescription('输入第五个掷骰內容')),
         async execute(interaction) {
             const text1 = interaction.options.getString('text1');
             const text2 = (interaction.options.getString('text2')) ? `,${interaction.options.getString('text2')}` : '';

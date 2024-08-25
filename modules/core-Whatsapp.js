@@ -154,12 +154,12 @@ if (retry > maxRetry) {
 			groupid = getChatDetail.id._serialized;
 			membercount = getChatDetail.participants.length - 1;
 		}
-		let mainMsg = inputStr.match(MESSAGE_SPLITOR); //定義輸入字串
+		let mainMsg = inputStr.match(MESSAGE_SPLITOR); //定義输入字串
 		if (mainMsg && mainMsg[0]) {
 			trigger = mainMsg[0].toString().toLowerCase();
 
 		}
-		//指定啟動詞在第一個詞&把大階強制轉成細階
+		//指定啟動詞在第一个詞&把大階強制转成細階
 		if ((trigger == ".me" || trigger == ".mee") && !z_stop(mainMsg, groupid)) {
 			displaynamecheck = false;
 		}
@@ -189,7 +189,7 @@ if (retry > maxRetry) {
 		let target = exports.analytics.findRollList(inputStr.match(MESSAGE_SPLITOR));
 		if (!target && privatemsg == 0) return null;
 		let userid, displayname, channelid, channelKeyword = '';
-		//得到暗骰的數據, GM的位置
+		//得到暗骰的数據, GM的位置
 		//是不是自己.ME 訊息
 		//TRUE 即正常
 
@@ -203,11 +203,11 @@ if (retry > maxRetry) {
 		displayname = (getContact && getContact.pushname) || '';
 		let rplyVal = {};
 		if (mainMsg && mainMsg[0])
-			trigger = mainMsg[0].toString().toLowerCase(); // 指定啟動詞在第一個詞&把大階強制轉成細階
+			trigger = mainMsg[0].toString().toLowerCase(); // 指定啟動詞在第一个詞&把大階強制转成細階
 		if (trigger == ".me" || trigger == ".mee") {
 			displaynamecheck = false;
 		}
-		// 訊息來到後, 會自動跳到analytics.js進行骰組分析
+		// 訊息來到後, 會自動跳到analytics.js进行骰組分析
 		// 如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
 
 		//設定私訊的模式 0-普通 1-自己 2-自己+GM 3-GM
@@ -259,7 +259,7 @@ if (retry > maxRetry) {
 		}
 		switch (true) {
 			case privatemsg == 1:
-				// 輸入dr  (指令) 私訊自己
+				// 输入dr  (指令) 私訊自己
 				if (groupid) {
 					SendDR(msg, "@" + displayname + '暗骰給自己');
 				}
@@ -267,13 +267,13 @@ if (retry > maxRetry) {
 				await SendToId(userid, rplyVal, client);
 				break;
 			case privatemsg == 2:
-				//輸入ddr(指令) 私訊GM及自己
+				//输入ddr(指令) 私訊GM及自己
 				if (groupid) {
 					let targetGMNameTemp = "";
 					for (let i = 0; i < TargetGMTempID.length; i++) {
 						targetGMNameTemp = targetGMNameTemp + ", " + (TargetGMTempdiyName[i] || "@" + TargetGMTempdisplayname[i]);
 					}
-					SendDR(msg, "@" + displayname + '暗骰進行中 \n目標: 自己 ' + targetGMNameTemp);
+					SendDR(msg, "@" + displayname + '暗骰进行中 \n目標: 自己 ' + targetGMNameTemp);
 				}
 				rplyVal.text = "@" + displayname + " 的暗骰\n" + rplyVal.text;
 				await SendToId(msg.from, rplyVal, client);
@@ -283,13 +283,13 @@ if (retry > maxRetry) {
 				}
 				break;
 			case privatemsg == 3:
-				//輸入dddr(指令) 私訊GM
+				//输入dddr(指令) 私訊GM
 				if (groupid) {
 					let targetGMNameTemp = "";
 					for (let i = 0; i < TargetGMTempID.length; i++) {
 						targetGMNameTemp = targetGMNameTemp + " " + (TargetGMTempdiyName[i] || "@" + TargetGMTempdisplayname[i]);
 					}
-					SendDR(msg, "@" + displayname + '暗骰進行中 \n目標: ' + targetGMNameTemp);
+					SendDR(msg, "@" + displayname + '暗骰进行中 \n目標: ' + targetGMNameTemp);
 				}
 				rplyVal.text = "@" + displayname + " 的暗骰\n" + rplyVal.text;
 				for (let i = 0; i < TargetGMTempID.length; i++) {
@@ -351,7 +351,7 @@ if (retry > maxRetry) {
 				if ((new Date(Date.now()) - data.createAt) >= SIX_MONTH) {
 					await job.remove();
 					await SendToId(
-						data.groupid, { text: "已運行六個月, 移除此定時訊息" }, client
+						data.groupid, { text: "已運行六个月, 移除此定時訊息" }, client
 					)
 				}
 			} catch (e) {

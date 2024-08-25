@@ -89,7 +89,7 @@ const server = createWebServer(options, www);
 const io = require('socket.io')(server);
 
 
-// 加入線上人數計數
+// 加入線上人数计数
 let onlineCount = 0;
 
 www.get('/', (req, res) => {
@@ -112,11 +112,11 @@ www.get('/api', async (req, res) => {
     if (ip && await limitRaterApi(ip)) return;
     let rplyVal = {}
     let trigger = '';
-    let mainMsg = req.query.msg.match(MESSAGE_SPLITOR); // 定義輸入字串
+    let mainMsg = req.query.msg.match(MESSAGE_SPLITOR); // 定義输入字串
     if (mainMsg && mainMsg[0])
-        trigger = mainMsg[0].toString().toLowerCase(); // 指定啟動詞在第一個詞&把大階強制轉成細階
+        trigger = mainMsg[0].toString().toLowerCase(); // 指定啟動詞在第一个詞&把大階強制转成細階
 
-    // 訊息來到後, 會自動跳到analytics.js進行骰組分析
+    // 訊息來到後, 會自動跳到analytics.js进行骰組分析
     // 如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
     if (channelKeyword != '' && trigger == channelKeyword.toString().toLowerCase()) {
         rplyVal = await exports.analytics.parseInput({
@@ -141,10 +141,10 @@ www.get('/api', async (req, res) => {
 
 });
 
-// 將/publiccard/css/設置為靜態資源的路徑
+// 將/publiccard/css/設置为靜態資源的路徑
 www.use('/:path/css/', express.static(process.cwd() + '/views/css/'));
 www.use('/css/', express.static(process.cwd() + '/views/css/'));
-// 將/publiccard/includes/設置為靜態資源的路徑
+// 將/publiccard/includes/設置为靜態資源的路徑
 www.use('/:path/includes/', express.static(process.cwd() + '/views/includes/'));
 www.use('/:path/scripts/', express.static(process.cwd() + '/views/scripts/'));
 www.use('/includes/', express.static(process.cwd() + '/views/includes/'));
@@ -226,7 +226,7 @@ io.on('connection', async (socket) => {
             })
         }
 
-        // 訊息來到後, 會自動跳到analytics.js進行骰組分析
+        // 訊息來到後, 會自動跳到analytics.js进行骰組分析
         // 如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
         if (rplyVal && rplyVal.text) {
             socket.emit('publicRolling', result.characterReRollName + '：\n' + rplyVal.text)
@@ -244,7 +244,7 @@ io.on('connection', async (socket) => {
             })
         }
 
-        // 訊息來到後, 會自動跳到analytics.js進行骰組分析
+        // 訊息來到後, 會自動跳到analytics.js进行骰組分析
         // 如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
         if (rplyVal && rplyVal.text) {
             socket.emit('rolling', result.characterReRollName + '：\n' + rplyVal.text + candle.checker())
@@ -335,9 +335,9 @@ io.on('connection', async (socket) => {
 
 
 
-    // 有連線發生時增加人數
+    // 有連線發生時增加人数
     onlineCount++;
-    // 發送人數給網頁
+    // 發送人数給網頁
     io.emit("online", onlineCount);
     // 發送紀錄最大值
     socket.emit("maxRecord", records.chatRoomGetMax());
@@ -389,11 +389,11 @@ records.on("new_message", async (message) => {
     io.emit(message.roomNumber, message);
     let rplyVal = {}
     let trigger = '';
-    let mainMsg = message.msg.match(MESSAGE_SPLITOR); // 定義輸入字串
+    let mainMsg = message.msg.match(MESSAGE_SPLITOR); // 定義输入字串
     if (mainMsg && mainMsg[0])
-        trigger = mainMsg[0].toString().toLowerCase(); // 指定啟動詞在第一個詞&把大階強制轉成細階
+        trigger = mainMsg[0].toString().toLowerCase(); // 指定啟動詞在第一个詞&把大階強制转成細階
 
-    // 訊息來到後, 會自動跳到analytics.js進行骰組分析
+    // 訊息來到後, 會自動跳到analytics.js进行骰組分析
     // 如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
     if (channelKeyword != '' && trigger == channelKeyword.toString().toLowerCase()) {
         rplyVal = await exports.analytics.parseInput({

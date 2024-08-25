@@ -23,23 +23,23 @@ const prefixs = function () {
 const getHelpMessage = async function () {
     return `【暗骰GM功能】.drgm(addgm del show) dr ddr dddr
 這是讓你可以私骰GM的功能
-輸入.drgm addgm 讓自己成為GM
-輸入.drgm show 顯示GM列表
-輸入.drgm del(編號)或all 即可刪除
-輸入dr  (指令) 私訊自己 
-輸入ddr (指令) 私訊GM及自己
-輸入dddr(指令) 私訊GM
+输入.drgm addgm 讓自己成为GM
+输入.drgm show 顯示GM列表
+输入.drgm del(編號)或all 即可刪除
+输入dr  (指令) 私訊自己 
+输入ddr (指令) 私訊GM及自己
+输入dddr(指令) 私訊GM
 -------
-想成為GM的人先輸入.drgm addgm
+想成为GM的人先输入.drgm addgm
 然後別人DDR 或DDDR (指令)即可以私訊給這位GM
-例如輸入 ddr cc 80 鬥毆 
+例如输入 ddr cc 80 鬥毆 
 就會把結果私訊GM及自己
-例如輸入 dddr cc 80 鬥毆 
+例如输入 dddr cc 80 鬥毆 
 就會把結果只私訊GM
 
-輸入.drgm addgm (代名) 即可成為GM,如果想化名一下,
-可以在addgm 後輸入一個名字, 暗骰時就會顯示
-不輸入就會顯示原名
+输入.drgm addgm (代名) 即可成为GM,如果想化名一下,
+可以在addgm 後输入一个名字, 暗骰時就會顯示
+不输入就會顯示原名
 `
 }
 const initialize = function () {
@@ -58,7 +58,7 @@ const rollDiceCommand = async function ({ mainMsg, groupid, userid, userrole, bo
             rply.text = await this.getHelpMessage();
             rply.quotes = true;
             if (botname == "Line")
-                rply.text += "\n因為Line的機制, 如擲骰時並無顯示用家名字, 請到下列網址,和機器人任意說一句話,成為好友. \n https://line.me/R/ti/p/svMLqy9Mik"
+                rply.text += "\n因为Line的機制, 如掷骰時並無顯示用家名字, 請到下列網址,和機器人任意說一句話,成为好友. \n https://line.me/R/ti/p/svMLqy9Mik"
             return rply;
         case /(^[.]drgm$)/i.test(mainMsg[0]) && /^addgm$/i.test(mainMsg[1]): {
             //
@@ -75,7 +75,7 @@ const rollDiceCommand = async function ({ mainMsg, groupid, userid, userrole, bo
             checkifsamename = 0
             if (channelid)
                 groupid = channelid
-            //因為在DISCROD以頻道作單位
+            //因为在DISCROD以頻道作單位
             if (trpgDarkRollingfunction.trpgDarkRollingfunction)
                 for (let i = 0; i < trpgDarkRollingfunction.trpgDarkRollingfunction.length; i++) {
                     if (trpgDarkRollingfunction.trpgDarkRollingfunction[i].groupid == groupid) {

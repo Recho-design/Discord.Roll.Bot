@@ -65,14 +65,14 @@
             <br>
             <h4 class="bg-color3 p-1">
                 <span class="iconify" data-icon="grommet-icons:channel" data-inline="false" data-width="20px"
-                    data-height="20px"></span>擲骰頻道
+                    data-height="20px"></span>掷骰頻道
             </h4>
             <button type="button" class="btn btn-warning float-right" v-on:click="config()">
                 設定
             </button>
             <label>
                 <input type="radio" name="gpListRadio" value="null" checked />
-                不進行群組擲骰
+                不进行群組掷骰
             </label>
             <div v-for="(gp, i) in gpList">
                 <label>
@@ -122,7 +122,7 @@
         <br>
         <h4 class=" bg-color3 p-1">
             <span class="iconify" data-icon="fa-solid:dice-d20" data-inline="false" data-width="20px"
-                data-height="20px"></span>擲骰
+                data-height="20px"></span>掷骰
         </h4>
         <button type="button" class="btn btn-warning float-right" v-if="name" onclick="newItem(1)">
             +
@@ -179,7 +179,7 @@
                         <div class="form-group">
                             <label for="userName_id">使用者名稱</label>
                             <input type="email" class="form-control" id="userName_id" autocomplete="current-username"
-                                aria-describedby="emailHelp" placeholder="輸入名稱">
+                                aria-describedby="emailHelp" placeholder="输入名稱">
                             <small id="emailHelp" class="form-text text-muted"></small>
                         </div>
                         <div class="form-group">
@@ -236,47 +236,47 @@
                 </div>
                 <div class="modal-body">
                     使用前，首先要與HKTRPG骰子機器人對話，<br>
-                    新增一張角色卡及一個管理用的ACC。<br>
+                    新增一張角色卡及一个管理用的ACC。<br>
                     方法如下:<br>
                     <strong> 1. 新增角色卡</strong><br>
                     <img src="https://github.com/hktrpg/TG.line.Discord.Roll.Bot/raw/master/views/image/d01.jpg"
                         alt="01" class="img-thumbnail">
-                    對HKTRPG(在discord之類的平台) 輸入 .char add name[Sad]~ state[HP:15/15;mp:10/10;con:60;]~ roll[鬥毆: cc 50;心理學:
+                    對HKTRPG(在discord之類的平台) 输入 .char add name[Sad]~ state[HP:15/15;mp:10/10;con:60;]~ roll[鬥毆: cc 50;心理學:
                     cc 60;]~
-                    notes[筆記:這是測試,請試試在群組輸入 .char use Sad;]~<br>
+                    notes[筆記:這是測試,請試試在群組输入 .char use Sad;]~<br>
                     Sad 是角色的名字，可以改成其他，也可以在這步直接設定能力值，<br>
-                    詳細說明請輸入.char<br><br>
+                    詳細說明請输入.char<br><br>
                     <strong> 2. 新增管理用的ACC</strong><br>
                     <img src="https://github.com/hktrpg/TG.line.Discord.Roll.Bot/raw/master/views/image/d02.jpg"
                         alt="02" class="img-thumbnail">
-                    對HKTRPG輸入.admin account (帳號) (密碼)<br>
-                    成功後，在這網頁 輸入帳號密碼，<br>
+                    對HKTRPG输入.admin account (帳號) (密碼)<br>
+                    成功後，在這網頁 输入帳號密碼，<br>
                     就可以管理角色卡，在網頁上 修改角色卡能力。<br><br>
                     <strong>3.在頻道中使用角卡</strong><br>
                     詳細可看 <a href="https://github.com/hktrpg/TG.line.Discord.Roll.Bot/wiki/Character-Card"
                         class="tooltip-Character" title="Tooltip">HKTRPG WIKI</a> <br>
                     <img src="https://github.com/hktrpg/TG.line.Discord.Roll.Bot/raw/master/views/image/d03.jpg"
                         alt="03" class="img-thumbnail">
-                    但簡單來說，在你想使用這張角色卡的聊天軟件頻道輸入<br>
+                    但簡單來說，在你想使用這張角色卡的聊天軟件頻道输入<br>
                     .char use Sad 或你角色名字，就可以使用角卡<br>
                     <img src="https://github.com/hktrpg/TG.line.Discord.Roll.Bot/raw/master/views/image/d04.jpg"
                         alt="04" class="img-thumbnail">
-                    例如你在擲骰欄有一招名叫 鬥毆 內容是 cc 80<br>
-                    那你在登記了的頻道輸入 .ch 鬥毆 就可以使出 cc 80<br>
-                    又或你在 基本屬性 中加入一個 HP 18<br>
-                    那你輸入 .ch hp -6 就可以扣減HP<br>
+                    例如你在掷骰欄有一招名叫 鬥毆 內容是 cc 80<br>
+                    那你在登記了的頻道输入 .ch 鬥毆 就可以使出 cc 80<br>
+                    又或你在 基本屬性 中加入一个 HP 18<br>
+                    那你输入 .ch hp -6 就可以扣減HP<br>
                     <br>
-                    <strong>4.把擲骰結果傳送到已登記的Discord，TG，LINE上的聊天群組上: </strong><br>
+                    <strong>4.把掷骰結果傳送到已登記的Discord，TG，LINE上的聊天群組上: </strong><br>
                     <img src="https://github.com/hktrpg/TG.line.Discord.Roll.Bot/raw/master/views/image/d05.jpg"
                         alt="05" class="img-thumbnail">
-                    讓你可以在使用網頁,直接在聊天軟件擲骰，不用再打指令，<br>
-                    輸入後你的網站角色卡就會顯示該平台名稱，讓你可以選擇<br>
-                    A) 由該群組的Admin授權允許 輸入 .admin allowrolling <br>
-                    B) 登記該群組到自己的名單中 輸入 .admin registerChannel <br>
+                    讓你可以在使用網頁,直接在聊天軟件掷骰，不用再打指令，<br>
+                    输入後你的網站角色卡就會顯示該平台名稱，讓你可以選擇<br>
+                    A) 由該群組的Admin授權允許 输入 .admin allowrolling <br>
+                    B) 登記該群組到自己的名單中 输入 .admin registerChannel <br>
                     <br>
                     取消方法<br>
-                    A) 由該群組的Admin取消授權 輸入 .admin disallowrolling <br>
-                    B) 取消登記該群組到名單 輸入 .admin unregisterChannel <br>
+                    A) 由該群組的Admin取消授權 输入 .admin disallowrolling <br>
+                    B) 取消登記該群組到名單 输入 .admin unregisterChannel <br>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -582,10 +582,10 @@
 <!-- HKTRPG Sad -- 20201221-->
 <!--
 
-輸入 .char online
+输入 .char online
 
 -> 產生 和 顯示一組ID 和 PASSWORD.
--> 產生一個DB -> 這組ID, 對應一個ACC.
+-> 產生一个DB -> 這組ID, 對應一个ACC.
 
 
 

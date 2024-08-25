@@ -162,7 +162,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.3",
       "weight": "4.5",
       "category": "兔子寶可夢",
-      "text": "炎兔兒體型小巧且充滿活力，牠們喜歡從寬廣場地的其中一邊跑到另一邊，持續好幾個小時並樂此不疲。牠腳底和鼻頭上的肉球會在牠戰鬥或奔跑的時後散發出極度的高溫。"
+      "text": "炎兔兒體型小巧且充滿活力，牠們喜歡從寬廣場地的其中一邊跑到另一邊，持續好幾个小時並樂此不疲。牠腳底和鼻頭上的肉球會在牠戰鬥或奔跑的時後散發出極度的高溫。"
     },
     "evolution": {
       "stage": "first",
@@ -209,7 +209,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.6",
       "weight": "9",
       "category": "兔子寶可夢",
-      "text": "這隻寶可夢熱愛踢東西，並會每天訓練來鍛鍊自己的腳法。牠的體毛變得相當蓬鬆，有些人認為這是為了幫助牠抵禦寒冷氣候，也有人說這是為了讓牠產生出溫度更高的火焰。"
+      "text": "這隻寶可夢熱愛踢東西，並會每天訓練來鍛鍊自己的腳法。牠的體毛變得相當蓬鬆，有些人認为這是为了幫助牠抵禦寒冷氣候，也有人說這是为了讓牠產生出溫度更高的火焰。"
     },
     "evolution": {
       "stage": "second",
@@ -491,7 +491,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.6",
       "weight": "6",
       "category": "貪慾寶可夢",
-      "text": "牠們有點遲鈍，因為牠們腦中只想著吃。藏飽栗鼠會在尾巴裡囤積樹果，但許多樹果會從中掉落，並在隔年長成新的果樹。牠們的大牙相當強力。"
+      "text": "牠們有點遲鈍，因为牠們腦中只想著吃。藏飽栗鼠會在尾巴裡囤積樹果，但許多樹果會從中掉落，並在隔年長成新的果樹。牠們的大牙相當強力。"
     },
     "evolution": {
       "stage": "final"
@@ -734,7 +734,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.4",
       "weight": "19",
       "category": "天線罩寶可夢",
-      "text": "牠在堅硬的殼裡成長著做好進化的準備。牠幾乎從來不動，且在這段期間完全不吃不喝，因此很多人會誤以為牠已經死亡，直到牠的超能力覺醒並開始與他人做精神感應溝通。"
+      "text": "牠在堅硬的殼裡成長著做好進化的準備。牠幾乎從來不動，且在這段期間完全不吃不喝，因此很多人會誤以为牠已經死亡，直到牠的超能力覺醒並開始與他人做精神感應溝通。"
     },
     "evolution": {
       "stage": "second",
@@ -777,7 +777,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.4",
       "weight": "41",
       "category": "七星寶可夢",
-      "text": "牠以頭腦聰慧以及大大的腦袋而聞名。牠有著出眾的精神力量。牠們會像漂浮的哨兵一樣在自己的領地上巡邏，用光線照射任何入侵者，即使他們在數英哩外的範圍也一樣。"
+      "text": "牠以頭腦聰慧以及大大的腦袋而聞名。牠有著出眾的精神力量。牠們會像漂浮的哨兵一樣在自己的領地上巡邏，用光線照射任何入侵者，即使他們在数英哩外的範圍也一樣。"
     },
     "evolution": {
       "stage": "final"
@@ -830,7 +830,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.6",
       "weight": "9",
       "category": "狐狸寶可夢",
-      "text": "性情謹慎且狡猾，偷兒狐靠偷盜食物為生。牠會用尾巴擦掉自己的足跡，這讓牠的行蹤非常難以追蹤。牠們活躍在城市中，並會在夜晚偷走商店的東西。"
+      "text": "性情謹慎且狡猾，偷兒狐靠偷盜食物为生。牠會用尾巴擦掉自己的足跡，這讓牠的行蹤非常難以追蹤。牠們活躍在城市中，並會在夜晚偷走商店的東西。"
     },
     "evolution": {
       "stage": "first",
@@ -856,7 +856,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Dark", "name": "磨爪" },
       { "rank": 2, "type": "Dark", "name": "大聲咆哮" },
       { "rank": 2, "type": "Dark", "name": "惡意追擊" },
-      { "rank": 2, "type": "Dark", "name": "詭計" },
+      { "rank": 2, "type": "Dark", "name": "詭计" },
       { "rank": 2, "type": "Dark", "name": "突襲" },
       { "rank": 3, "type": "Dark", "name": "暗襲要害" },
       { "rank": 3, "type": "Normal", "name": "掃尾拍打" },
@@ -880,7 +880,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.2",
       "weight": "20",
       "category": "狐狸寶可夢",
-      "text": "牠們因為長期以來對人類聚落帶來的麻煩而被逐電犬群給追獵。牠們是偷盜食物和寶可夢蛋的專家，永遠不會留下自己的蹤跡。"
+      "text": "牠們因为長期以來對人類聚落帶來的麻煩而被逐電犬群給追獵。牠們是偷盜食物和寶可夢蛋的專家，永遠不會留下自己的蹤跡。"
     },
     "evolution": {
       "stage": "final"
@@ -906,7 +906,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Dark", "name": "圍攻" },
       { "rank": 2, "type": "Dark", "name": "大聲咆哮" },
       { "rank": 2, "type": "Dark", "name": "惡意追擊" },
-      { "rank": 2, "type": "Dark", "name": "詭計" },
+      { "rank": 2, "type": "Dark", "name": "詭计" },
       { "rank": 2, "type": "Dark", "name": "突襲" },
       { "rank": 3, "type": "Dark", "name": "暗襲要害" },
       { "rank": 3, "type": "Normal", "name": "掃尾拍打" },
@@ -930,7 +930,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.4",
       "weight": "2.2",
       "category": "花飾寶可夢",
-      "text": "你能在野外發現牠們沐浴在陽光下，隨著微風一邊轉圈圈一邊愉快地歌唱。牠們的花朵將在這之後成長綻放。這討人喜歡的表現讓牠在訓練家之中相當受歡迎。"
+      "text": "你能在野外發現牠們沐浴在陽光下，隨著微風一邊转圈圈一邊愉快地歌唱。牠們的花朵將在這之後成長綻放。這討人喜歡的表現讓牠在訓練家之中相當受歡迎。"
     },
     "evolution": {
       "stage": "first",
@@ -951,7 +951,7 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Grass", "name": "樹葉" },
       { "rank": 0, "type": "Normal", "name": "唱歌" },
-      { "rank": 1, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 1, "type": "Normal", "name": "高速旋转" },
       { "rank": 1, "type": "Normal", "name": "甜甜香氣" },
       { "rank": 2, "type": "Grass", "name": "飛葉快刀" },
       { "rank": 2, "type": "Normal", "name": "輪唱" },
@@ -1000,7 +1000,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Grass", "name": "樹葉" },
       { "rank": 1, "type": "Grass", "name": "棉孢子" },
       { "rank": 1, "type": "Normal", "name": "唱歌" },
-      { "rank": 1, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 1, "type": "Normal", "name": "高速旋转" },
       { "rank": 2, "type": "Normal", "name": "甜甜香氣" },
       { "rank": 2, "type": "Grass", "name": "飛葉快刀" },
       { "rank": 2, "type": "Normal", "name": "輪唱" },
@@ -1028,7 +1028,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.6",
       "weight": "6",
       "category": "綿羊寶可夢",
-      "text": "毛辮羊的體毛彈性十足，就算從懸崖上掉下去也可以做為緩衝墊讓自己不會受傷。牠們必須定期剃毛，不然牠們會因為毛長太重而不能動彈。用這些羊毛織成的毛衣結實到能夠陪伴你一輩子。"
+      "text": "毛辮羊的體毛彈性十足，就算從懸崖上掉下去也可以做为緩衝墊讓自己不會受傷。牠們必須定期剃毛，不然牠們會因为毛長太重而不能動彈。用這些羊毛織成的毛衣結實到能夠陪伴你一輩子。"
     },
     "evolution": {
       "stage": "first",
@@ -1129,7 +1129,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.3",
       "weight": "8.5",
       "category": "咬住寶可夢",
-      "text": "牠用牠頭上的角做為主要武器，但什麼都咬的特性卻更為知名。很顯然這是因為牠的牙齦在長門牙的關係會癢的緣故，且只有咬東西能夠緩解。儘管牠個性有些古怪，但相對無害。"
+      "text": "牠用牠頭上的角做为主要武器，但什麼都咬的特性卻更为知名。很顯然這是因为牠的牙齦在長門牙的關係會癢的緣故，且只有咬東西能夠緩解。儘管牠个性有些古怪，但相對無害。"
     },
     "evolution": {
       "stage": "first",
@@ -1228,7 +1228,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.3",
       "weight": "13.5",
       "category": "小狗寶可夢",
-      "text": "牠的活力和大大的笑容讓這隻寶可夢成為了相當受歡迎的牧羊犬。牠在奔跑的時候會從尾巴的根部製造出電能。牠熱愛接球，且如果你餵給牠一些零食的話牠就會愛你一輩子。"
+      "text": "牠的活力和大大的笑容讓這隻寶可夢成为了相當受歡迎的牧羊犬。牠在奔跑的時候會從尾巴的根部製造出電能。牠熱愛接球，且如果你餵給牠一些零食的話牠就會愛你一輩子。"
     },
     "evolution": {
       "stage": "first",
@@ -1295,7 +1295,7 @@ Array.prototype.push.apply(Pokedex, [
       "強壯之顎", "好勝"
     ],
     "moves": [
-      { "rank": 0, "type": "Electric", "name": "輸電" },
+      { "rank": 0, "type": "Electric", "name": "输電" },
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 1, "type": "Normal", "name": "搖尾巴" },
       { "rank": 1, "type": "Electric", "name": "蹭蹭臉頰" },
@@ -1348,7 +1348,7 @@ Array.prototype.push.apply(Pokedex, [
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 0, "type": "Normal", "name": "煙幕" },
-      { "rank": 1, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 1, "type": "Normal", "name": "高速旋转" },
       { "rank": 1, "type": "Rock", "name": "擊落" },
       { "rank": 2, "type": "Rock", "name": "岩石打磨" },
       { "rank": 2, "type": "Rock", "name": "原始之力" },
@@ -1376,7 +1376,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.1",
       "weight": "78",
       "category": "煤炭寶可夢",
-      "text": "牠能旋轉自己的腳，讓牠的重量製造出能讓牠在洞穴和隧道中高速移動的軌跡。在過去，人們會使用大炭車的煤炭當作燃料，因為這些煤炭的火焰可以維持很長的時間。"
+      "text": "牠能旋转自己的腳，讓牠的重量製造出能讓牠在洞穴和隧道中高速移動的軌跡。在過去，人們會使用大炭車的煤炭當作燃料，因为這些煤炭的火焰可以維持很長的時間。"
     },
     "evolution": {
       "stage": "second",
@@ -1399,7 +1399,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
       { "rank": 0, "type": "Normal", "name": "煙幕" },
       { "rank": 1, "type": "Fire", "name": "蓄能焰襲" },
-      { "rank": 1, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 1, "type": "Normal", "name": "高速旋转" },
       { "rank": 2, "type": "Rock", "name": "擊落" },
       { "rank": 2, "type": "Rock", "name": "岩石打磨" },
       { "rank": 2, "type": "Rock", "name": "原始之力" },
@@ -1427,7 +1427,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "2.8",
       "weight": "310",
       "category": "煤炭寶可夢",
-      "text": "牠們平時性情溫和，如果牠們認為你是好人，那牠們就會跟你分享溫暖。但如果你激怒牠們，你就會面對被燒成灰燼的危險。牠們噴出的瀝青狀物質相當容易燃燒。"
+      "text": "牠們平時性情溫和，如果牠們認为你是好人，那牠們就會跟你分享溫暖。但如果你激怒牠們，你就會面對被燒成灰燼的危險。牠們噴出的瀝青狀物質相當容易燃燒。"
     },
     "evolution": {
       "stage": "final"
@@ -1450,7 +1450,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 1, "type": "Normal", "name": "煙幕" },
       { "rank": 1, "type": "Fire", "name": "蓄能焰襲" },
       { "rank": 2, "type": "Rock", "name": "瀝青射擊" },
-      { "rank": 2, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 2, "type": "Normal", "name": "高速旋转" },
       { "rank": 2, "type": "Rock", "name": "擊落" },
       { "rank": 2, "type": "Rock", "name": "岩石打磨" },
       { "rank": 2, "type": "Rock", "name": "原始之力" },
@@ -1520,7 +1520,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.3",
       "weight": "1",
       "category": "蘋果翅寶可夢",
-      "text": "牠在酸蘋果中成長，並因此能夠吐出足以造成灼傷的強酸性液體。牠能用切開的蘋果皮的翅膀飛翔、或用來偽裝成發臭的蘋果。他們生性孤僻，因為很少人會喜歡牠們的長相和味道。"
+      "text": "牠在酸蘋果中成長，並因此能夠吐出足以造成灼傷的強酸性液體。牠能用切開的蘋果皮的翅膀飛翔、或用來偽裝成發臭的蘋果。他們生性孤僻，因为很少人會喜歡牠們的長相和味道。"
     },
     "evolution": {
       "stage": "final",
@@ -1576,7 +1576,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.4",
       "weight": "13",
       "category": "蘋果汁寶可夢",
-      "text": "吃了甜蘋果會使牠進化成這個樣子。牠會從體內發出甜甜的香味，引誘牠狩獵的蟲寶可夢上鉤，但這也會吸引其他想吃掉牠背部皮的寶可夢。"
+      "text": "吃了甜蘋果會使牠進化成這个樣子。牠會從體內發出甜甜的香味，引誘牠狩獵的蟲寶可夢上鉤，但這也會吸引其他想吃掉牠背部皮的寶可夢。"
     },
     "evolution": {
       "stage": "final",
@@ -1782,7 +1782,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.5",
       "weight": "1",
       "category": "突擊寶可夢",
-      "text": "牠們會推進自己向前，以超高速度狩獵牠們的獵物。吃飽了之後動作會變得極度遲緩，且很容易讓自己被吃掉。牠們以自己尖銳的下巴為傲。"
+      "text": "牠們會推進自己向前，以超高速度狩獵牠們的獵物。吃飽了之後動作會變得極度遲緩，且很容易讓自己被吃掉。牠們以自己尖銳的下巴为傲。"
     },
     "evolution": {
       "stage": "first",
@@ -1880,7 +1880,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.4",
       "weight": "11",
       "category": "嬰兒寶可夢",
-      "text": "毒電嬰會從皮膚分泌出毒素，牠越接近進化，牠皮膚的顏色就會變得更亮。牠們需要大量的照護，但因為牠們的壞脾氣和沒禮貌，所以沒有多少人會願意接下這個任務。"
+      "text": "毒電嬰會從皮膚分泌出毒素，牠越接近進化，牠皮膚的顏色就會變得更亮。牠們需要大量的照護，但因为牠們的壞脾氣和沒禮貌，所以沒有多少人會願意接下這个任務。"
     },
     "evolution": {
       "stage": "first",
@@ -1990,7 +1990,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.6",
       "weight": "40",
       "category": "龐克寶可夢",
-      "text": "通常被稱作「低調型態」，牠的性格會決定牠的進化方向。如果毒電嬰是內向的性格，牠就會進化成個性冷淡的顫弦蠑螈。牠們會釋放出低音頻的聲音，並會看不起那些嘗試激怒牠的人們。"
+      "text": "通常被稱作「低調型態」，牠的性格會決定牠的進化方向。如果毒電嬰是內向的性格，牠就會進化成个性冷淡的顫弦蠑螈。牠們會釋放出低音頻的聲音，並會看不起那些嘗試激怒牠的人們。"
     },
     "evolution": {
       "stage": "final",
@@ -2157,7 +2157,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.6",
       "weight": "4",
       "category": "纏人寶可夢",
-      "text": "牠像兒童一樣，且擁有旺盛的好奇心，但牠調查東西的方式是試著用觸手打一打再說。儘管如此，這些觸手經常斷掉，但不用太擔心，因為它們在幾天內就會重新長回來。"
+      "text": "牠像兒童一樣，且擁有旺盛的好奇心，但牠調查東西的方式是試著用觸手打一打再說。儘管如此，這些觸手經常斷掉，但不用太擔心，因为它們在幾天內就會重新長回來。"
     },
     "evolution": {
       "stage": "first",
@@ -2258,7 +2258,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.1",
       "weight": "0.2",
       "category": "紅茶寶可夢",
-      "text": "據說這隻寶可夢是因為孤單寂寞的靈魂住進了涼透的喝剩紅茶而誕生的。它會吸走飲用者的精氣，但大家都會因為牠太難喝而馬上把牠吐出來。"
+      "text": "據說這隻寶可夢是因为孤單寂寞的靈魂住進了涼透的喝剩紅茶而誕生的。它會吸走飲用者的精氣，但大家都會因为牠太難喝而馬上把牠吐出來。"
     },
     "evolution": {
       "stage": "first",
@@ -2287,7 +2287,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Grass", "name": "芳香治療" },
       { "rank": 2, "type": "Grass", "name": "終極吸取" },
       { "rank": 2, "type": "Ghost", "name": "暗影球" },
-      { "rank": 3, "type": "Dark", "name": "詭計" },
+      { "rank": 3, "type": "Dark", "name": "詭计" },
       { "rank": 3, "type": "Dark", "name": "臨別禮物" },
       { "rank": 3, "type": "Normal", "name": "破殼" },
       { "rank": 4, "type": "Normal", "name": "替身" },
@@ -2309,7 +2309,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.1",
       "weight": "0.2",
       "category": "紅茶寶可夢",
-      "text": "這個物種住在古董茶壺裡。牠們很難找到真貨，因為現在大多數茶具都是贗品。永遠別把你的茶放著不管，否則怖思壺很有可能會來把自己倒進去。"
+      "text": "這个物種住在古董茶壺裡。牠們很難找到真貨，因为現在大多数茶具都是贗品。永遠別把你的茶放著不管，否則怖思壺很有可能會來把自己倒進去。"
     },
     "evolution": {
       "stage": "final"
@@ -2338,7 +2338,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Grass", "name": "芳香治療" },
       { "rank": 2, "type": "Grass", "name": "終極吸取" },
       { "rank": 2, "type": "Ghost", "name": "暗影球" },
-      { "rank": 3, "type": "Dark", "name": "詭計" },
+      { "rank": 3, "type": "Dark", "name": "詭计" },
       { "rank": 3, "type": "Dark", "name": "臨別禮物" },
       { "rank": 3, "type": "Normal", "name": "破殼" },
       { "rank": 3, "type": "Grass", "name": "吸取力量" },
@@ -2461,7 +2461,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "2.1",
       "weight": "5.1",
       "category": "寂靜寶可夢",
-      "text": "如果你在牠附近大吵大鬧，那麼你就是在冒著被牠用觸手上的爪子撕碎的風險。這隻寶可夢又被稱為森林魔女。牠對於他人的情緒相當敏感，如果牠感受到敵意、恐懼、或憤怒，那牠就會立即攻擊你。"
+      "text": "如果你在牠附近大吵大鬧，那麼你就是在冒著被牠用觸手上的爪子撕碎的風險。這隻寶可夢又被稱为森林魔女。牠對於他人的情緒相當敏感，如果牠感受到敵意、恐懼、或憤怒，那牠就會立即攻擊你。"
     },
     "evolution": {
       "stage": "final"
@@ -2603,7 +2603,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Dark", "name": "突襲" },
       { "rank": 2, "type": "Dark", "name": "無理取鬧" },
       { "rank": 2, "type": "Dark", "name": "惡之波動" },
-      { "rank": 3, "type": "Dark", "name": "詭計" },
+      { "rank": 3, "type": "Dark", "name": "詭计" },
       { "rank": 3, "type": "Fairy", "name": "嬉鬧" },
       { "rank": 3, "type": "Dark", "name": "欺詐" },
       { "rank": 4, "type": "Bug", "name": "吸血" },
@@ -2657,7 +2657,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Dark", "name": "無理取鬧" },
       { "rank": 2, "type": "Dark", "name": "假跪真撞" },
       { "rank": 2, "type": "Dark", "name": "惡之波動" },
-      { "rank": 3, "type": "Dark", "name": "詭計" },
+      { "rank": 3, "type": "Dark", "name": "詭计" },
       { "rank": 3, "type": "Dark", "name": "欺詐" },
       { "rank": 3, "type": "Fairy", "name": "嬉鬧" },
       { "rank": 4, "type": "Bug", "name": "吸血" },
@@ -2712,7 +2712,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 2, "type": "Fairy", "name": "靈魂衝擊" },
       { "rank": 2, "type": "Fight", "name": "增強拳" },
       { "rank": 2, "type": "Fight", "name": "健美" },
-      { "rank": 3, "type": "Dark", "name": "詭計" },
+      { "rank": 3, "type": "Dark", "name": "詭计" },
       { "rank": 3, "type": "Dark", "name": "欺詐" },
       { "rank": 3, "type": "Fairy", "name": "嬉鬧" },
       { "rank": 3, "type": "Fight", "name": "臂錘" },
@@ -2903,7 +2903,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.4",
       "weight": "4",
       "category": "妖怪貓寶可夢",
-      "text": "額頭上的硬幣已經生鏽。喵喵被帶上了維京船在海上長途旅行，在這嚴酷的環境下生活了這個長的時間使牠變得更加勇猛，以至於牠身體的各個地方都變成了黑鐵。"
+      "text": "額頭上的硬幣已經生鏽。喵喵被帶上了維京船在海上長途旅行，在這嚴酷的環境下生活了這个長的時間使牠變得更加勇猛，以至於牠身體的各个地方都變成了黑鐵。"
     },
     "evolution": {
       "stage": "first",
@@ -3008,7 +3008,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.6",
       "weight": "5",
       "category": "珊瑚寶可夢",
-      "text": "當你行走在淺海海灘時，注意的你的腳步，因為這隻寶可夢看起來就跟石頭一樣，且如果你踢到牠的話就會遭到牠的詛咒。劇烈的溫度變化滅絕了這種遠古太陽珊瑚。"
+      "text": "當你行走在淺海海灘時，注意的你的腳步，因为這隻寶可夢看起來就跟石頭一樣，且如果你踢到牠的話就會遭到牠的詛咒。劇烈的溫度變化滅絕了這種遠古太陽珊瑚。"
     },
     "evolution": {
       "stage": "first",
@@ -3160,7 +3160,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.8",
       "weight": "117",
       "category": "黃嘴鴨寶可夢",
-      "text": "只有歷經過無數戰鬥的大蔥鴨才能進化成這個樣子。牠們對自己的蔥槍和葉盾感到驕傲，當這隻寶可夢的大蔥枯萎了，牠就會退出戰場。"
+      "text": "只有歷經過無数戰鬥的大蔥鴨才能進化成這个樣子。牠們對自己的蔥槍和葉盾感到驕傲，當這隻寶可夢的大蔥枯萎了，牠就會退出戰場。"
     },
     "evolution": {
       "stage": "final",
@@ -3269,7 +3269,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.4",
       "weight": "57",
       "category": "舞蹈寶可夢",
-      "text": "熬過伽勒爾地區嚴寒氣候的魔尼尼將能夠創造出瞬間變成冰的隱形牆，而當牠們進化，牠們將能夠製造出冰之地板來讓牠們跳踢踏舞，而這也是牠們最為熱衷的活動。"
+      "text": "熬過伽勒爾地區嚴寒氣候的魔尼尼將能夠創造出瞬間變成冰的隱形牆，而當牠們進化，牠們將能夠製造出冰之地板來讓牠們跳踢踏舞，而這也是牠們最为熱衷的活動。"
     },
     "evolution": {
       "stage": "second",
@@ -3290,7 +3290,7 @@ Array.prototype.push.apply(Pokedex, [
     ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "拍擊" },
-      { "rank": 0, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 0, "type": "Normal", "name": "高速旋转" },
       { "rank": 1, "type": "Normal", "name": "接棒" },
       { "rank": 1, "type": "Ice", "name": "冰礫" },
       { "rank": 1, "type": "Psychic", "name": "念力" },
@@ -3355,7 +3355,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 0, "type": "Normal", "name": "偷懶" },
       { "rank": 0, "type": "Normal", "name": "您先請" },
       { "rank": 0, "type": "Normal", "name": "擋路" },
-      { "rank": 0, "type": "Normal", "name": "高速旋轉" },
+      { "rank": 0, "type": "Normal", "name": "高速旋转" },
       { "rank": 1, "type": "Normal", "name": "接棒" },
       { "rank": 1, "type": "Ice", "name": "冰礫" },
       { "rank": 1, "type": "Psychic", "name": "念力" },
@@ -3395,7 +3395,7 @@ Array.prototype.push.apply(Pokedex, [
     "height": "0.7",
     "weight": "40",
     "category": "不倒翁寶可夢",
-    "text": "因為居住在積雪深厚的地域，火囊也因此冷卻而改為製造冷氣。火紅不倒翁利用低溫當作能量，這讓牠在冬天時特別有活力。牠愛玩且喜歡丟雪球。"
+    "text": "因为居住在積雪深厚的地域，火囊也因此冷卻而改为製造冷氣。火紅不倒翁利用低溫當作能量，這讓牠在冬天時特別有活力。牠愛玩且喜歡丟雪球。"
   },
   "evolution": {
     "stage": "first",
@@ -3429,7 +3429,7 @@ Array.prototype.push.apply(Pokedex, [
     { "rank": 3, "type": "Ice", "name": "暴風雪" },
     { "rank": 3, "type": "Normal", "name": "大鬧一番" },
     { "rank": 3, "type": "Fight", "name": "蠻力" },
-    { "rank": 4, "type": "Dark", "name": "投擲" },
+    { "rank": 4, "type": "Dark", "name": "投掷" },
     { "rank": 4, "type": "Normal", "name": "替身" },
     { "rank": 4, "type": "Fire", "name": "熱風" }
   ],
@@ -3696,7 +3696,7 @@ Array.prototype.push.apply(Pokedex, [
       { "rank": 3, "type": "Normal", "name": "找夥伴" },
       { "rank": 4, "type": "Fairy", "name": "撒嬌" },
       { "rank": 4, "type": "Normal", "name": "幫助" },
-      { "rank": 4, "type": "Dark", "name": "投擲" }
+      { "rank": 4, "type": "Dark", "name": "投掷" }
     ],
     "isNovice": true
   },
@@ -3713,7 +3713,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.3",
       "weight": "0.5",
       "category": "鮮奶油寶可夢",
-      "text": "有相當多數量的食譜能讓小仙奶進化成霜奶仙，並影響牠們的顏色和口味。有些甜美、有些酸爽，但牠們全都相當美味。在牠們幫助下製作的蛋糕可以賣到相當高的價錢。"
+      "text": "有相當多数量的食譜能讓小仙奶進化成霜奶仙，並影響牠們的顏色和口味。有些甜美、有些酸爽，但牠們全都相當美味。在牠們幫助下製作的蛋糕可以賣到相當高的價錢。"
     },
     "evolution": {
       "stage": "final"
@@ -3866,7 +3866,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "3",
       "weight": "62",
       "category": "陣形寶可夢",
-      "text": "六隻為一體的寶可夢，由一個頭頭和五個跟班組成。頭頭的命令不可違抗，牠們是完美的團隊，並能夠變換陣形來更好地適應戰鬥。"
+      "text": "六隻为一體的寶可夢，由一个頭頭和五个跟班組成。頭頭的命令不可違抗，牠們是完美的團隊，並能夠變換陣形來更好地適應戰鬥。"
     },
     "evolution": {
       "stage": "final"
@@ -3882,7 +3882,7 @@ Array.prototype.push.apply(Pokedex, [
     },
     "ability": [
       "戰鬥盔甲",
-      "不服輸"
+      "不服输"
     ],
     "moves": [
       { "rank": 0, "type": "Normal", "name": "撞擊" },
@@ -3917,7 +3917,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.3",
       "weight": "1",
       "category": "海膽寶可夢",
-      "text": "這隻安靜的寶可夢以海藻為食，會用銳利的牙齒將海藻刮取下來。牠的每根刺裡都儲存著電力。即使是折斷的刺也能夠持續放電好幾個小時。"
+      "text": "這隻安靜的寶可夢以海藻为食，會用銳利的牙齒將海藻刮取下來。牠的每根刺裡都儲存著電力。即使是折斷的刺也能夠持續放電好幾个小時。"
     },
     "evolution": {
       "stage": "final"
@@ -4066,7 +4066,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "2.5",
       "weight": "520",
       "category": "巨石寶可夢",
-      "text": "牠們幾乎終其一生都保持不動，看起來就像是顆不顯眼的石頭，但每年會有一次，牠們會聚集在一起排成一個圈，維持好幾天之後，然後在一夜之間消失不見。"
+      "text": "牠們幾乎終其一生都保持不動，看起來就像是顆不顯眼的石頭，但每年會有一次，牠們會聚集在一起排成一个圈，維持好幾天之後，然後在一夜之間消失不見。"
     },
     "evolution": {
       "stage": "final"
@@ -4163,7 +4163,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.4",
       "weight": "89",
       "category": "企鵝寶可夢",
-      "text": "冰砌鵝的「解凍」型態實際上才是牠原本的型態。沒有了冰塊的保護，你可以看見牠一臉惆悵的表情，而這也讓人為之著迷。牠現在能夠更怪地移動，但你可以看出到牠變得更焦躁。"
+      "text": "冰砌鵝的「解凍」型態實際上才是牠原本的型態。沒有了冰塊的保護，你可以看見牠一臉惆悵的表情，而這也讓人为之著迷。牠現在能夠更怪地移動，但你可以看出到牠變得更焦躁。"
     },
     "evolution": {
       "stage": "final"
@@ -4212,7 +4212,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.9",
       "weight": "28",
       "category": "感情寶可夢",
-      "text": "這些高度智能的寶可夢能透過夥伴間角與角的互碰來彼此交換訊息。牠們喜歡協助並為人們服務，這是因為牠們能收集感謝之情來獲得能量。"
+      "text": "這些高度智能的寶可夢能透過夥伴間角與角的互碰來彼此交換訊息。牠們喜歡協助並为人們服務，這是因为牠們能收集感謝之情來獲得能量。"
     },
     "evolution": {
       "stage": "final"
@@ -4267,7 +4267,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.3",
       "weight": "3",
       "category": "雙面寶可夢",
-      "text": "牠的滿腹花紋模式相當友善且愛玩，喜歡收集食物和零嘴。但肚子餓扁時的飢餓感會使牠變得極端凶暴，且牠頰囊中的電能轉化成了惡屬性的能量。"
+      "text": "牠的滿腹花紋模式相當友善且愛玩，喜歡收集食物和零嘴。但肚子餓扁時的飢餓感會使牠變得極端凶暴，且牠頰囊中的電能转化成了惡屬性的能量。"
     },
     "evolution": {
       "stage": "final"
@@ -4317,7 +4317,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.2",
       "weight": "100",
       "category": "像銅寶可夢",
-      "text": "如果有需要力量的工作時，這隻寶可夢能夠表現出色。牠銅質的身體會因雨水而生鏽，轉變成鮮豔的綠色。牠的鼻子特別善於挖地，在野外牠們會用來挖出樹根來吃。"
+      "text": "如果有需要力量的工作時，這隻寶可夢能夠表現出色。牠銅質的身體會因雨水而生鏽，转變成鮮豔的綠色。牠的鼻子特別善於挖地，在野外牠們會用來挖出樹根來吃。"
     },
     "evolution": {
       "stage": "first",
@@ -4421,7 +4421,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.8",
       "weight": "190",
       "category": "化石寶可夢",
-      "text": "在復活過程中混合的DNA導致了這個生物的誕生。構成牠下半部身體的超強壯生物很有可能會捕食構成上半部身體的小型生物。有時候牠會嘗試逃離自己。"
+      "text": "在復活過程中混合的DNA導致了這个生物的誕生。構成牠下半部身體的超強壯生物很有可能會捕食構成上半部身體的小型生物。有時候牠會嘗試逃離自己。"
     },
     "evolution": {
       "stage": "final"
@@ -4523,7 +4523,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "2.3",
       "weight": "215",
       "category": "化石寶可夢",
-      "text": "結合了兩種頂級掠食者的DNA，牠能以驚人的高速奔跑並用尖銳的下顎撕碎幾乎任何東西。然而難過的是，這隻寶可夢只能在水中呼吸，且游泳能力很爛。"
+      "text": "結合了两種頂級掠食者的DNA，牠能以驚人的高速奔跑並用尖銳的下顎撕碎幾乎任何東西。然而難過的是，這隻寶可夢只能在水中呼吸，且游泳能力很爛。"
     },
     "evolution": {
       "stage": "final"
@@ -4574,7 +4574,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "2",
       "weight": "175",
       "category": "化石寶可夢",
-      "text": "DNA的混合讓這隻穩固的生物能夠在寒冷水域中移動、呼吸、並抵抗寒冷。唯一的問題是牠的頭上下顛倒了。那牠沒辦法自己狩獵，因此如果沒有被餵養的話，牠會在幾天內因為飢餓而死掉。"
+      "text": "DNA的混合讓這隻穩固的生物能夠在寒冷水域中移動、呼吸、並抵抗寒冷。唯一的問題是牠的頭上下顛倒了。那牠沒辦法自己狩獵，因此如果沒有被餵養的話，牠會在幾天內因为飢餓而死掉。"
     },
     "evolution": {
       "stage": "final"
@@ -4624,7 +4624,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.8",
       "weight": "40",
       "category": "合金寶可夢",
-      "text": "牠的身體猶如打磨過的閃亮金屬，雖然輕而堅硬，卻有著容易生鏽的弱點。牠居住在氣候乾燥的洞穴深處，因為下雨和濕氣會使牠變得暴躁。"
+      "text": "牠的身體猶如打磨過的閃亮金屬，雖然輕而堅硬，卻有著容易生鏽的弱點。牠居住在氣候乾燥的洞穴深處，因为下雨和濕氣會使牠變得暴躁。"
     },
     "evolution": {
       "stage": "final"
@@ -4675,7 +4675,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "0.5",
       "weight": "2",
       "category": "哀怨寶可夢",
-      "text": "在重生為幽靈寶可夢後，多龍梅西亞仍然會在生前於古代大海棲息的住處徘徊。儘管單獨一隻無法構成什麼威脅，但如果牠們聚集起來，那你就麻煩大了。"
+      "text": "在重生为幽靈寶可夢後，多龍梅西亞仍然會在生前於古代大海棲息的住處徘徊。儘管單獨一隻無法構成什麼威脅，但如果牠們聚集起來，那你就麻煩大了。"
     },
     "evolution": {
       "stage": "first",
@@ -4719,7 +4719,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "1.4",
       "weight": "11",
       "category": "保母寶可夢",
-      "text": "牠會與多龍梅西亞一起戰鬥，且直到牠們進化為止都會細心照顧。如果沒讓自己在照顧的多龍梅西亞乘在自己頭上的話就靜不下心來，牠甚至會因此試圖把別的寶可夢放到頭上。"
+      "text": "牠會與多龍梅西亞一起戰鬥，且直到牠們進化为止都會細心照顧。如果沒讓自己在照顧的多龍梅西亞乘在自己頭上的話就靜不下心來，牠甚至會因此試圖把別的寶可夢放到頭上。"
     },
     "evolution": {
       "stage": "second",
@@ -4825,7 +4825,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "2.8",
       "weight": "110",
       "category": "無資料",
-      "text": "被稱為傳說中的英雄，祂透過純粹的力量揮舞著英雄之劍，擊敗了巨大的邪惡。"
+      "text": "被稱为傳說中的英雄，祂透過純粹的力量揮舞著英雄之劍，擊敗了巨大的邪惡。"
     },
     "evolution": {
       "stage": "unknown"
@@ -4877,7 +4877,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "2.8",
       "weight": "110",
       "category": "無資料",
-      "text": "傳說中能斬斷世間萬物的聖劍，也被稱為妖精王之劍，讓敵友都對牠敬畏不已。"
+      "text": "傳說中能斬斷世間萬物的聖劍，也被稱为妖精王之劍，讓敵友都對牠敬畏不已。"
     },
     "evolution": {
       "stage": "unknown"
@@ -4930,7 +4930,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "2.9",
       "weight": "210",
       "category": "無資料",
-      "text": "被稱為傳說中的英雄，祂透過純粹的力量高舉著英雄之盾，保護人們不受巨大的邪惡侵害。"
+      "text": "被稱为傳說中的英雄，祂透過純粹的力量高舉著英雄之盾，保護人們不受巨大的邪惡侵害。"
     },
     "evolution": {
       "stage": "unknown"
@@ -4982,7 +4982,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "2.9",
       "weight": "210",
       "category": "無資料",
-      "text": "傳說中能反彈一切攻擊的聖盾，也被稱為格鬥王之盾，哪怕是最最龐大的巨獸也無法越雷池一步。"
+      "text": "傳說中能反彈一切攻擊的聖盾，也被稱为格鬥王之盾，哪怕是最最龐大的巨獸也無法越雷池一步。"
     },
     "evolution": {
       "stage": "unknown"
@@ -5036,7 +5036,7 @@ Array.prototype.push.apply(Pokedex, [
       "height": "20",
       "weight": "950",
       "category": "無資料",
-      "text": "在二萬年前一顆巨大的隕石墜落到伽勒爾地區，從那時候起大地就時不時會湧現出能使寶可夢極巨化的能量，這個現象在近幾年變得越來越頻繁。"
+      "text": "在二萬年前一顆巨大的隕石墜落到伽勒爾地區，從那時候起大地就時不時會湧現出能使寶可夢極巨化的能量，這个現象在近幾年變得越來越頻繁。"
     },
     "evolution": {
       "stage": "unknown"

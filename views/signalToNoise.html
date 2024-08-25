@@ -18,16 +18,16 @@
     </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" />
-    <meta property="og:title" content="文字轉換器 Signal to Noise @ HKTRPG">
+    <meta property="og:title" content="文字转換器 Signal to Noise @ HKTRPG">
     <meta property="og:url" content="https://www.hktrpg.com/tool/randomDelete.html">
-    <meta property="og:description" content="Signal to Noise 可用 文字轉換器">
+    <meta property="og:description" content="Signal to Noise 可用 文字转換器">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cnchar-all/cnchar.all.min.js"></script>
 
-    <title>文字轉換器 Signal to Noise @ HKTRPG</title>
+    <title>文字转換器 Signal to Noise @ HKTRPG</title>
     <link rel="icon" href="https://avatars2.githubusercontent.com/u/48795428?s=280&v=4" />
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
 
@@ -40,8 +40,8 @@
         <div class="row">
             <div class="col-8  h-75">
                 <div class="input-group">
-                    <span class="input-group-text  btn-sm">輸入文字</span>
-                    <textarea class="form-control" aria-label="輸入文字" id="inputText">
+                    <span class="input-group-text  btn-sm">输入文字</span>
+                    <textarea class="form-control" aria-label="输入文字" id="inputText">
 人生若只如初見，何事秋風悲畫扇。
 等閒變卻故人心，卻道故人心易變。
 驪山語罷清宵半，淚雨霖鈴終不怨。
@@ -54,15 +54,15 @@ That struts and frets his hour upon the stage</textarea>
                 </div>
                 <div class="col-12">
                     <div class="input-group">
-                        <textarea class="form-control" aria-label="輸出文字" id="outputText"></textarea>
+                        <textarea class="form-control" aria-label="输出文字" id="outputText"></textarea>
                         <button class="btn  btn-primary  btn-sm" type="button" id="button-addon2"
-                            onclick="copyToClipBoard()">複製輸出文字</button>
+                            onclick="copyToClipBoard()">複製输出文字</button>
                     </div>
 
                 </div>
                 <div class="col-8">
                     <button class="btn btn-success" type="button" id="inputGroupFileAddon01"
-                        onclick="blockText()">轉換</button>
+                        onclick="blockText()">转換</button>
                     <button class="btn btn-dark" type="button" id="inputGroupFileAddon03" onclick="reset()">重置</button>
                     <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <span class="iconify" data-icon="gg:readme" data-inline="false"></span>說明
@@ -124,12 +124,12 @@ That struts and frets his hour upon the stage</textarea>
                     <div class="modal-body">
                         Signal to Noise TRPG專用 文章亂碼產生器<br>
                         這是一款由2名玩家的在星際間傳送書信TRPG遊戲。<br>
-                        期間兩人的書信會被星際間的雜訊干擾，導致信息出現亂碼<br><br>
+                        期間两人的書信會被星際間的雜訊干擾，導致信息出現亂碼<br><br>
 
-                        這個亂碼產生器的原理是自動抽選一些英文字母作為亂碼<br>
+                        這个亂碼產生器的原理是自動抽選一些英文字母作为亂碼<br>
                         附有把中文>拼音>中文的功能<br>
                         所以如果中文文字的拼音也符合亂碼值<br>
-                        也會被轉換<br>
+                        也會被转換<br>
                         原規則請參考<a href="https://preview.drivethrurpg.com/en/product/367142/Signal-to-Noise">DriveThruRPG Signal to Noise</a>  <br>
                     </div>
                     <div class="modal-footer">
@@ -188,9 +188,9 @@ That struts and frets his hour upon the stage</textarea>
              * 1.讀取Block英文  有沒有點
              * 
              * 2.讀取inputText 
-             *      3. 把inputText 的每個字轉成拼音
+             *      3. 把inputText 的每个字转成拼音
              *      4. 每當字符合block 就變成亂破 !@#$%^&*
-             *  5. 把字輸出到Output
+             *  5. 把字输出到Output
              */
             let outputTextString = "";
             getBlock();
@@ -374,7 +374,7 @@ That struts and frets his hour upon the stage</textarea>
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
         </script>
     <script>
-        const TITLE = "文字轉換器 @ Signal to Noise 可用";
+        const TITLE = "文字转換器 @ Signal to Noise 可用";
         $(function () {
             $("#header").load("includes/header.html", function () {
                 $("#title").text(TITLE);

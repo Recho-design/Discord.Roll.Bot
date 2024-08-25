@@ -20,13 +20,13 @@ const getHelpMessage = async function () {
 .wn xDDn+-y  x骰池 n罪業值 y調整值 
 .wn 3 骰3次D6,大於等於4成功 
 .wn 5D4+3 骰5次D6,大於等於5成功然後+3
-.wn 3DD6+2 有第二個D，會使用成功數減去失敗數得出結果(可負數)
+.wn 3DD6+2 有第二个D，會使用成功数減去失敗数得出結果(可負数)
 預設值>3
 
 .wn x@Dn+-yD 魔改版 x骰池 n罪業值 y調整值
-魔改版 少於等於罪業值為失敗
+魔改版 少於等於罪業值为失敗
 .wn 3@3+3 骰3次D6,大於3成功 
-.wn 3@D3+2 有第二個D，會使用成功數減去失敗數得出結果(可負數)`
+.wn 3@D3+2 有第二个D，會使用成功数減去失敗数得出結果(可負数)`
 }
 const initialize = function () {
     return variables;
@@ -120,14 +120,14 @@ async function WN2(key, message) {
     }
     if (method && method.toString().toLowerCase() == "d") {
         if (theSins >= 6)
-            return "罪業超過6點時扣除6點罪業，轉化為一點代價"
+            return "罪業超過6點時扣除6點罪業，转化为一點代價"
         else
             if (theSins > 3)
                 betterthan = (key[3])
     }
     let Adjustment = key[4] || "";
 
-    if (time > 200) time = 200 //限制次數
+    if (time > 200) time = 200 //限制次数
     for (let i = 0; i < time; i++) {
         result[i] = rollbase.Dice(6);
         if (result[i] > betterthan)

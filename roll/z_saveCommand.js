@@ -11,7 +11,7 @@ records.get('trpgCommand', (msgs) => {
 const VIP = require('../modules/veryImportantPerson');
 const FUNCTION_LIMIT = [30, 200, 200, 300, 300, 300, 300, 300];
 const gameName = function () {
-    return '【儲存擲骰指令功能】 .cmd (add del show 自定關鍵字)'
+    return '【儲存掷骰指令功能】 .cmd (add del show 自定關鍵字)'
 }
 const gameType = function () {
     return 'Tool:trpgCommand:hktrpg'
@@ -23,17 +23,17 @@ const prefixs = function () {
     }]
 }
 const getHelpMessage = async function () {
-    return `【儲存擲骰指令功能】
-這是根據關鍵字來再現擲骰指令
+    return `【儲存掷骰指令功能】
+這是根據關鍵字來再現掷骰指令
 
-輸入.cmd add (關鍵字) (指令)即可增加關鍵字
-輸入.cmd show 顯示所有關鍵字
-輸入.cmd del(編號)或all 即可刪除
-輸入.cmd  (關鍵字) 即可執行 
+输入.cmd add (關鍵字) (指令)即可增加關鍵字
+输入.cmd show 顯示所有關鍵字
+输入.cmd del(編號)或all 即可刪除
+输入.cmd  (關鍵字) 即可執行 
 
-例如輸入 .cmd add  pc1鬥毆 cc 80 鬥毆 
-再輸入.cmd pc1鬥毆  就會執行後方的指令
-add 後面第一個是關鍵字, 可以是符號或任何字
+例如输入 .cmd add  pc1鬥毆 cc 80 鬥毆 
+再输入.cmd pc1鬥毆  就會執行後方的指令
+add 後面第一个是關鍵字, 可以是符號或任何字
 P.S.如果沒立即生效 用.cmd show 刷新一下
 
 
@@ -69,7 +69,7 @@ const rollDiceCommand = async function ({
             //增加資料庫
             //檢查有沒有重覆
             if (!mainMsg[2]) rply.text += ' 沒有標題.\n\n'
-            if (!mainMsg[3]) rply.text += ' 沒有擲骰指令\n\n'
+            if (!mainMsg[3]) rply.text += ' 沒有掷骰指令\n\n'
             if (mainMsg[3] && mainMsg[3].toLowerCase() == ".cmd") rply.text += '指令不可以儲存.cmd\n\n'
             if (rply.text += checkTools.permissionErrMsg({
                 flag: checkTools.flag.ChkChannelManager,
@@ -86,7 +86,7 @@ const rollDiceCommand = async function ({
                 for (let i = 0; i < trpgCommandfunction.trpgCommandfunction.length; i++) {
                     if (trpgCommandfunction.trpgCommandfunction[i].groupid == groupid) {
                         if (trpgCommandfunction.trpgCommandfunction[i].trpgCommandfunction.length >= limit) {
-                            rply.text = '關鍵字上限' + limit + '個\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
+                            rply.text = '關鍵字上限' + limit + '个\n支援及解鎖上限 https://www.patreon.com/HKTRPG\n';
                             return rply;
                         }
                         if (trpgCommandfunction.trpgCommandfunction[0] && trpgCommandfunction.trpgCommandfunction[0].trpgCommandfunction[0])

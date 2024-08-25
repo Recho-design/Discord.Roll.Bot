@@ -594,7 +594,7 @@ class Records extends EventEmitter {
                 "RealTimeRollingLogfunction.WWWCountText": msg.WWWCountText
                 //中途紀錄資料 使用PUSH 每天紀錄一次
                 // RollingLogfunction: msg,
-                //擲骰的結果紀錄
+                //掷骰的結果紀錄
                 //Sided: msg
             }
         }, {
@@ -636,7 +636,7 @@ class Records extends EventEmitter {
                 "RollingLogfunction.WWWCountText": msg.WWWCountText
                 //中途紀錄資料 使用PUSH 每天紀錄一次
                 // RollingLogfunction: msg,
-                //擲骰的結果紀錄
+                //掷骰的結果紀錄
                 //Sided: msg
             }
         }, {
@@ -665,9 +665,9 @@ class Records extends EventEmitter {
             'roomNumber': msg.roomNumber
         });
         /**
-         * 計算有多少個
-         * 比較超出了多少個
-         * 找出那個的日子
+         * 计算有多少个
+         * 比較超出了多少个
+         * 找出那个的日子
          * 之前的全部刪除
          */
         if (count < MAX) return;

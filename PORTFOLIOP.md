@@ -5,8 +5,8 @@
 HKTRPG 興趣使然地創作及維護 TRPG工具，包括
 
 - 網上角色卡 - [Discord連動角色卡](#網上角色卡)，[無限恐怖TRPG角色卡](#網上角色卡)，[分享其他角色卡](#網上角色卡)
-- 擲骰BOT - [HKTRPG](#hktrpg-擲骰bot)，[HKTRPG官方使用教學](https://bothelp.hktrpg.com)
-- 擲骰平台 - [TRPG擲骰聊天室](#擲骰平台)，[手機擲骰](#擲骰平台)
+- 掷骰BOT - [HKTRPG](#hktrpg-掷骰bot)，[HKTRPG官方使用教學](https://bothelp.hktrpg.com)
+- 掷骰平台 - [TRPG掷骰聊天室](#掷骰平台)，[手機掷骰](#掷骰平台)
 - 跑團平台 - [烏冬](#跑團平台)，[冰丼](#跑團平台)
 - 跑團工具 - [跑團工具](#跑團工具)
 - TRPG API - [HKTRPG API](https://api.hktrpg.com)
@@ -18,7 +18,7 @@ HKTRPG 興趣使然地創作及維護 TRPG工具，包括
 - [TRPG語音教學](#trpg教學影片)
 - [TRPG語音跑團紀錄](#trpg跑團紀錄)
 - [HKTRPG 研究社 Facebook](#trpg-wiki-百科)
-- [Zzzzz教 Discord群](https://discord.com/invite/vx4kcm7) 為了跑團而創的地方
+- [Zzzzz教 Discord群](https://discord.com/invite/vx4kcm7) 为了跑團而創的地方
 - [HKTRPG Patreon空間](https://www.patreon.com/HKTRPG)
 
 ---
@@ -27,7 +27,7 @@ HKTRPG 興趣使然地創作及維護 TRPG工具，包括
 
 [Discord連動角色卡](https://card.hktrpg.com/)
 
-除了可以在Discord，Telegram，Line上操作外，還可以在網站上使用，並把擲骰結果傳送到該聊天平台。
+除了可以在Discord，Telegram，Line上操作外，還可以在網站上使用，並把掷骰結果傳送到該聊天平台。
 
 ![角色卡](https://github.com/hktrpg/TG.line.Discord.Roll.Bot/blob/master/views/image/demo%20-%20charcard.jpg?raw=true)
 
@@ -39,14 +39,14 @@ HKTRPG 興趣使然地創作及維護 TRPG工具，包括
 
 ![角色卡](https://github.com/hktrpg/TG.line.Discord.Roll.Bot/blob/master/views/image/demo%20-%20othercard.jpg?raw=true)
 
-## HKTRPG 擲骰BOT
+## HKTRPG 掷骰BOT
 
-已經開發四年的骰子機械人，因為一個[教學](https://docs.google.com/document/d/1dYnJqF2_QTp90ld4YXj6X8kgxvjUoHrB4E2seqlDlAk/edit#heading=h.91v9osx4fxtt)而誕生出來。
+已經開發四年的骰子機械人，因为一个[教學](https://docs.google.com/document/d/1dYnJqF2_QTp90ld4YXj6X8kgxvjUoHrB4E2seqlDlAk/edit#heading=h.91v9osx4fxtt)而誕生出來。
 
 [29種功能詳情](https://bothelp.hktrpg.com/)，包括
-> 暗骰, 各類TRPG骰子擲骰, 自定義骰子, 頻道經驗值, 頻道遊戲, 占卜, 先攻表, TRPG網上角色卡, 搜圖,
+> 暗骰, 各類TRPG骰子掷骰, 自定義骰子, 頻道經驗值, 頻道遊戲, 占卜, 先攻表, TRPG網上角色卡, 搜圖,
 >
-> 翻譯, Discord 聊天紀錄匯出, 數學計算, 做筆記, 隨機抽選, wiki查詢, 資料庫快速查詢功能
+> 翻譯, Discord 聊天紀錄匯出, 数学计算, 做筆記, 随机抽選, wiki查詢, 資料庫快速查詢功能
 
 支援
 
@@ -58,20 +58,20 @@ HKTRPG 興趣使然地創作及維護 TRPG工具，包括
 
 ![HKTRPG](https://github.com/hktrpg/TG.line.Discord.Roll.Bot/blob/master/views/image/demo%20-%20hktrpg.jpg?raw=true)
 
-## 擲骰平台
+## 掷骰平台
 
-- [手機擲骰](https://roll.hktrpg.com/) - 為了可以不動腦擲骰而寫出來的
+- [手機掷骰](https://roll.hktrpg.com/) - 为了可以不動腦掷骰而寫出來的
 
-![手機擲骰](https://github.com/hktrpg/TG.line.Discord.Roll.Bot/blob/master/views/image/demo%20-%20roll.jpg?raw=true)
+![手機掷骰](https://github.com/hktrpg/TG.line.Discord.Roll.Bot/blob/master/views/image/demo%20-%20roll.jpg?raw=true)
 
-- [TRPG擲骰聊天室](https://rollbot.hktrpg.com/) - 可以擲骰的聊天室
+- [TRPG掷骰聊天室](https://rollbot.hktrpg.com/) - 可以掷骰的聊天室
 
-![手機擲骰](https://github.com/hktrpg/TG.line.Discord.Roll.Bot/blob/master/views/image/demo%20-%20chatroom.jpg?raw=true)
+![手機掷骰](https://github.com/hktrpg/TG.line.Discord.Roll.Bot/blob/master/views/image/demo%20-%20chatroom.jpg?raw=true)
 
 ## 跑團平台
 
 - [烏冬](https://z01.hktrpg.com)
-2.5D的平台，FVTT以外我最愛的跑團平台，因為開發容易，所以我加了一些功能進去，也翻譯成中文。
+2.5D的平台，FVTT以外我最愛的跑團平台，因为開發容易，所以我加了一些功能進去，也翻譯成中文。
 
 ![烏冬](https://github.com/hktrpg/TG.line.Discord.Roll.Bot/blob/master/views/image/demo%20-%20udo.png?raw=true)
 
@@ -87,7 +87,7 @@ HKTRPG 興趣使然地創作及維護 TRPG工具，包括
 - [Roll20 忍神角色卡](https://github.com/Roll20/roll20-character-sheets/tree/master/Shinobi_Gami_Chinese_Traditional) - Shinobi Gami
 - [Roll20 無限恐怖角色卡](https://github.com/Roll20/roll20-character-sheets/tree/master/Terror%20Infinity) - Terror Infinity
 - [Roll20 無限恐怖角色卡FX](https://github.com/Roll20/roll20-character-sheets/tree/master/Terror%20Infinity%20-%20(FX)) - Terror Infinity FX
-- [Game Timer](https://github.com/Roll20/roll20-api-scripts/tree/master/Game%20Timer) - Roll20 API 可以計算玩家的總遊戲時數
+- [Game Timer](https://github.com/Roll20/roll20-api-scripts/tree/master/Game%20Timer) - Roll20 API 可以计算玩家的總遊戲時数
 
 ## FoundryVTT
 
@@ -120,7 +120,7 @@ WIKI
 
 ## 代托管骰子機械人及Foundry VTT
 
-不懂程式，但又想有一個穩定而獨立的跑團工具?
+不懂程式，但又想有一个穩定而獨立的跑團工具?
 [可以找HKTRPG代勞](https://www.patreon.com/HKTRPG)
 
 >FoundryVTT (2GB容量)代托管服務及技術支援(不包括FoundryVTT本體)。
@@ -138,7 +138,7 @@ WIKI
 
 >任何人都可以增加修改的TRPG百科全書
 >
->TRPG就像即興的舞台劇，一大班人共創一個故事，沒有預定，沒有綵排，每次都是屬於你的獨一無二結局。
+>TRPG就像即興的舞台劇，一大班人共創一个故事，沒有預定，沒有綵排，每次都是屬於你的獨一無二結局。
 
 ## TRPG文章
 
@@ -171,7 +171,7 @@ WIKI
 
 ## HKTRPG 研究社 Facebook
 
-[為了找玩伴而開的頁面，認識了很多人](https://www.facebook.com/groups/HKTRPG)
+[为了找玩伴而開的頁面，認識了很多人](https://www.facebook.com/groups/HKTRPG)
 
 ## HKTRPG 名人堂Hall of Fame
 

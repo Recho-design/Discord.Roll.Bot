@@ -6,8 +6,8 @@
  *          const candle = require('../modules/candleDays.js'); 
  *          candle.checker();
  * @example 以上設定會在每年的 6 月 4 日顯示蠟燭，2 月 14 日顯示🌷，12 月 25 日顯示🕯️
- * @example 日期格式為：月,日,顯示的字串，月和日必須為數字，顯示的字串可以不填，預設為🕯️
- * @example 日期之間以空白隔開，可以設定多個日期，例如：CANDLE_DATES=2,14,🌷 12,25,🕯️
+ * @example 日期格式为：月,日,顯示的字串，月和日必須为数字，顯示的字串可以不填，預設为🕯️
+ * @example 日期之間以空白隔開，可以設定多个日期，例如：CANDLE_DATES=2,14,🌷 12,25,🕯️
  * 
  */
 const _DEFAULT_CANDLE = '🕯️';
@@ -49,11 +49,11 @@ class CandleChecker {
     #scheduleFunction() {
         const now = new Date(); // 當前日期和時間
         const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1); // 明天日期
-        const msUntilMidnight = tomorrow.getTime() - now.getTime() + 5000; // 距離明天 00:00 +1000 的毫秒數
+        const msUntilMidnight = tomorrow.getTime() - now.getTime() + 5000; // 距離明天 00:00 +1000 的毫秒数
         setTimeout(() => {
             this.#scheduleFunction(); // 設定下一次定時任務
             this.#updateToday(); // 更新今天的日期
-            this.#checkForCandle();// 檢查是否是指定日期，如果是的話，設定 this.isCandleDay 為 true
+            this.#checkForCandle();// 檢查是否是指定日期，如果是的話，設定 this.isCandleDay 为 true
         }, msUntilMidnight); // 設定定時器等待到明天 00:00+5秒 後執行
     }
     #updateToday() {

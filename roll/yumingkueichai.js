@@ -24,12 +24,12 @@ const prefixs = function () {
 const getHelpMessage = async function () {
     return `【貓貓鬼差】
 .kc xDy z 
-x 投擲多少粒六面骰 留空為4, 只可輸入4,5或留空 
+x 投掷多少粒六面骰 留空为4, 只可输入4,5或留空 
 y 修正值 1-20
 z 目標值 1-20
-十八啦玩法, 只要出現一個對子就成功, 達成值視為另外兩顆骰子加總
-若出現兩對子, 則選較高者
-另外, 若達成值為3, 視為戲劇性失敗.`
+十八啦玩法, 只要出現一个對子就成功, 達成值視为另外两顆骰子加總
+若出現两對子, 則選較高者
+另外, 若達成值为3, 視为戲劇性失敗.`
 }
 const initialize = function () {
     return variables;
@@ -72,7 +72,7 @@ async function compareAllValues(triggermsg, msg) {
         rollresult[i] = rollbase.Dice(6)
     }
     result += "[ " + rollresult + " ] → "
-    //找到一樣->report  剩下最大兩粒
+    //找到一樣->report  剩下最大两粒
     //目標值 ≧ 12：
     //[1, 3, 5, 3, 3] → 達成值 6 [5,1] → 成功
     //[1, 3, 5, 3, 3] → 達成值 6 [5,1] → 失敗
@@ -89,7 +89,7 @@ async function compareAllValues(triggermsg, msg) {
     let first = true;
     for (let i = 0; i < temp.length; i++) {
         for (let j = 0; j < i; j++) {
-            //如果有對子, 輸出達成值
+            //如果有對子, 输出達成值
             if (temp[j] == temp[i] && first == true) {
                 first = false
                 result += "達成值 "

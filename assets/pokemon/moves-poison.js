@@ -11,8 +11,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe", "dice|l|1", "frame|target|特防|down|1"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "以所有範圍內的敵人為目標。骰 1 顆機率骰以降低目標的特防。",
-		"desc": "寶可夢將腐蝕性酸液潑向敵人，灼燒感可能會為其他攻擊製造出破綻。"
+		"effect": "以所有範圍內的敵人为目標。骰 1 顆機率骰以降低目標的特防。",
+		"desc": "寶可夢將腐蝕性酸液潑向敵人，灼燒感可能會为其他攻擊製造出破綻。"
 	},
 	{
 		"name": "溶化", "alias": "とける|Acid Armor",
@@ -23,7 +23,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
 		"effect": "提升使用者的防禦。",
-		"desc": "酸液流過寶可夢的身體，將其轉變成液體一般的型態，這些酸液將能夠防止敵人對寶可夢進行全力攻擊。"
+		"desc": "酸液流過寶可夢的身體，將其转變成液體一般的型態，這些酸液將能夠防止敵人對寶可夢进行全力攻擊。"
 	},
 	{
 		"name": "酸液炸彈", "alias": "アシッドボム|Acid Spray",
@@ -55,8 +55,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|accuracy||down|1"],
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 5",
-		"effect": "使用者必須在使用這個招式之前先吃點東西。",
-		"desc": "使用者對目標打一個可怕的大嗝，空氣中瀰漫著的毒氣將造成嚴重的傷害。"
+		"effect": "使用者必須在使用這个招式之前先吃點東西。",
+		"desc": "使用者對目標打一个可怕的大嗝，空氣中瀰漫著的毒氣將造成嚴重的傷害。"
 	},
 	{
 		"name": "清除之煙", "alias": "クリアスモッグ|Clear Smog",
@@ -99,7 +99,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
-		"effect": "無效任何敵人的特性會產生的效果。這個效果將持續直到該場景結束。",
+		"effect": "無效任何敵人的特性會產生的效果。這个效果將持續直到該場景結束。",
 		"desc": "使用者吐出自己一部分的胃液，這種酸液將阻止對手使用自己的特殊能力。"
 	},
 	{
@@ -132,7 +132,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe", "frame|accuracy||down|1", "frame|poison||always"],
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
-		"effect": "以所有範圍內的敵人為目標。使目標陷入「中毒」狀態。",
+		"effect": "以所有範圍內的敵人为目標。使目標陷入「中毒」狀態。",
 		"desc": "寶可夢釋放出龐大的毒氣雲霧，任何吸入的人都會開始劇烈咳嗽並且需要立即尋求醫療協助。"
 	},
 	{
@@ -177,7 +177,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 2",
 		"effect": "容易擊中要害。骰 1 顆機率骰以使敵人陷入「中毒」狀態。",
-		"desc": "寶可夢的尾巴鋒利有如刀刃，牠劈砍進行攻擊，並能夠透過尾巴釋放毒素。"
+		"desc": "寶可夢的尾巴鋒利有如刀刃，牠劈砍进行攻擊，並能夠透過尾巴釋放毒素。"
 	},
 	{
 		"name": "淨化", "alias": "じょうか|Purify",
@@ -243,7 +243,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
 		"effect": "使敵人陷入「劇毒」狀態。",
-		"desc": "透過噁心的飲食與鍛鍊，使用者學會如何將自己的體液轉變成劇毒。"
+		"desc": "透過噁心的飲食與鍛鍊，使用者學會如何將自己的體液转變成劇毒。"
 	},
 	{
 		"name": "毒菱", "alias": "どくびし|Toxic Spikes",
@@ -275,8 +275,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe", "frame|target|力量|down|1", "frame|target|特殊|down|1", "frame|target|靈巧|down|1"],
 		"accuracy": "特殊 + 導引",
 		"damage": "-",
-		"effect": "以所有範圍內的敵人為目標。如果目標已經處於「中毒」或「劇毒」狀態，則降低目標的力量、特殊、和靈巧。",
-		"desc": "敵人被詭異的毒液給浸染，這種毒液會以牠們已經虛弱無力的免疫系統為目標。"
+		"effect": "以所有範圍內的敵人为目標。如果目標已經處於「中毒」或「劇毒」狀態，則降低目標的力量、特殊、和靈巧。",
+		"desc": "敵人被詭異的毒液給浸染，這種毒液會以牠們已經虛弱無力的免疫系統为目標。"
 	},
 	{
 		"name": "毒液衝擊", "alias": "ベノムショック|Venoshock",
@@ -286,7 +286,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2*",
-		"effect": "如果敵人已經處於「中毒」或「劇毒」狀態，則這個招式的傷害骰池額外增加 2 顆骰子。",
-		"desc": "寶可夢射出一種特殊的毒液，如果敵人已經因為毒素而虛弱，則這種毒液將會產生更加劇烈的反應。"
+		"effect": "如果敵人已經處於「中毒」或「劇毒」狀態，則這个招式的傷害骰池額外增加 2 顆骰子。",
+		"desc": "寶可夢射出一種特殊的毒液，如果敵人已經因为毒素而虛弱，則這種毒液將會產生更加劇烈的反應。"
 	}
 ]);

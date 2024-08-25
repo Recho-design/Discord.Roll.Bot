@@ -94,7 +94,7 @@ async function saveLog() {
         console.error('log #90 mongoDB error: ', error.name, error.reson)
         checkMongodb.dbErrOccurs();
     })
-    //把擲骰的次數還原 為0
+    //把掷骰的次数還原 为0
     resetLog();
 
     //假如過了一小時則上載中途紀錄RollingLog

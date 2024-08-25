@@ -11,7 +11,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 1",
-		"effect": "使用者回復等同於造成傷害一半的HP（尾數捨去）。",
+		"effect": "使用者回復等同於造成傷害一半的HP（尾数捨去）。",
 		"desc": "使用者從敵人身上吸取其生命能量。"
 	},
 	{
@@ -88,7 +88,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 表演",
 		"damage": "力量 + 3",
 		"effect": "降低敵人的靈巧。",
-		"desc": "寶可夢擁有一面很棒的鼓，你或許以為牠會拿它來打鼓。但牠沒這麼做，而是把敵人當鼓敲。"
+		"desc": "寶可夢擁有一面很棒的鼓，你或許以为牠會拿它來打鼓。但牠沒這麼做，而是把敵人當鼓敲。"
 	},
 	{
 		"name": "能量球", "alias": "エナジーボール|Energy Ball",
@@ -109,8 +109,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "意志 + 自然",
 		"damage": "-",
-		"effect": "使目標的屬性追加草屬性（例如：尼多蘭的屬性將變為「毒/草」；赫拉克羅斯的屬性將變為「蟲/格鬥/草」）。如果該寶可夢已經擁有第三個屬性，則將該屬性取代為草屬性。",
-		"desc": "使用者呼求森林對目標施放詛咒，使牠身體周圍長出藤蔓和植被。這個詛咒在沒有靈媒的協助下無法被輕易解除。"
+		"effect": "使目標的屬性追加草屬性（例如：尼多蘭的屬性將變为「毒/草」；赫拉克羅斯的屬性將變为「蟲/格鬥/草」）。如果該寶可夢已經擁有第三个屬性，則將該屬性取代为草屬性。",
+		"desc": "使用者呼求森林對目標施放詛咒，使牠身體周圍長出藤蔓和植被。這个詛咒在沒有靈媒的協助下無法被輕易解除。"
 	},
 	{
 		"name": "瘋狂植物", "alias": "ハードプラント|Frenzy Plant",
@@ -131,7 +131,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 3",
-		"effect": "使用者回復等同於造成傷害一半的HP（尾數捨去）。",
+		"effect": "使用者回復等同於造成傷害一半的HP（尾数捨去）。",
 		"desc": "寶可夢從敵人的體內汲取出巨量的生命能量。"
 	},
 	{
@@ -142,7 +142,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 1*",
-		"effect": "敵人的體重每有 50公斤 ，這個招式的傷害骰池就能額外增加 1 顆骰子。你最多可以透過這個方式增加 4 顆骰子。",
+		"effect": "敵人的體重每有 50公斤 ，這个招式的傷害骰池就能額外增加 1 顆骰子。你最多可以透過這个方式增加 4 顆骰子。",
 		"desc": "使用者用一根草繩纏住目標的腳，將牠絆倒。敵人的體型越大，摔得越重。"
 	},
 	{
@@ -197,7 +197,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 3",
-		"effect": "使用者回復等同於造成傷害一半的HP（尾數捨去）。",
+		"effect": "使用者回復等同於造成傷害一半的HP（尾数捨去）。",
 		"desc": "使用者用牠的角撞擊敵人並透過犄角吸取一些生命能量。"
 	},
 	{
@@ -208,7 +208,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "frame|heal||heal|1", "effect|l|block"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "若成功，則消耗 1 點意志點以使其生效。使用者在每個戰鬥輪結束回復 1 點HP。使用者將因此被阻擋。",
+		"effect": "若成功，則消耗 1 點意志點以使其生效。使用者在每个戰鬥輪結束回復 1 點HP。使用者將因此被阻擋。",
 		"desc": "寶可夢將自己扎根在地，吸取營養並回復體力。"
 	},
 	{
@@ -231,7 +231,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 6",
 		"effect": "降低使用者的特殊。",
-		"desc": "大量鋒利葉片旋轉形成的狂猛風暴將把目標切成碎片，也會讓使用者精疲力盡。"
+		"desc": "大量鋒利葉片旋转形成的狂猛風暴將把目標切成碎片，也會讓使用者精疲力盡。"
 	},
 	{
 		"name": "青草攪拌器", "alias": "グラスミキサー|Leaf Tornado",
@@ -242,7 +242,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
 		"effect": "骰 5 顆機率骰以降低敵人的命中。",
-		"desc": "一叢叢鋒利的尖葉圍繞著敵人旋轉，使牠難以瞄準並攻擊。"
+		"desc": "一叢叢鋒利的尖葉圍繞著敵人旋转，使牠難以瞄準並攻擊。"
 	},
 	{
 		"name": "樹葉", "alias": "このは|Leafage",
@@ -253,7 +253,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 導引",
 		"damage": "力量 + 2",
 		"effect": "遠程攻擊。",
-		"desc": "使用者向敵人投擲飛鏢一般的樹葉。"
+		"desc": "使用者向敵人投掷飛鏢一般的樹葉。"
 	},
 	{
 		"name": "寄生種子", "alias": "やどりぎのタネ|Leech Seed",
@@ -263,7 +263,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|accuracy||down|1", "frame|heal||heal|1"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "若成功，則消耗 1 點意志點以使其生效。每個戰鬥輪結束時，骰 1 顆傷害骰以對敵人造成傷害，且使用者將為每一點用這種方式造成的傷害而回復 1 點HP。草屬性的寶可夢免疫於這個招式。",
+		"effect": "若成功，則消耗 1 點意志點以使其生效。每个戰鬥輪結束時，骰 1 顆傷害骰以對敵人造成傷害，且使用者將为每一點用這種方式造成的傷害而回復 1 點HP。草屬性的寶可夢免疫於這个招式。",
 		"desc": "使用者在目標身上植入一些種子。種子發芽後，將會吸收敵人的能量來恢復使用者的體力。"
 	},
 	{
@@ -285,7 +285,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "特殊 + 2",
-		"effect": "使用者回復等同於造成傷害一半的HP（尾數捨去）。",
+		"effect": "使用者回復等同於造成傷害一半的HP（尾数捨去）。",
 		"desc": "寶可夢從敵人的身體中汲取出大量的生命能量。"
 	},
 	{
@@ -308,7 +308,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 3",
 		"effect": "範圍攻擊。",
-		"desc": "寶可夢用漫天飛舞的花瓣和樹葉籠罩整個場地，任何接近使用者的人都會受到攻擊。"
+		"desc": "寶可夢用漫天飛舞的花瓣和樹葉籠罩整个場地，任何接近使用者的人都會受到攻擊。"
 	},
 	{
 		"name": "花瓣舞", "alias": "はなびらのまい|Petal Dance",
@@ -318,7 +318,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|rfoe", "effect|l|rampage"],
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 5",
-		"effect": "狂暴。以隨機敵人為目標。",
+		"effect": "狂暴。以随机敵人为目標。",
 		"desc": "寶可夢開始讓花瓣環繞在身邊，展示大自然真正的力量，花瓣會隨著狂風攻擊敵人。"
 	},
 	{
@@ -339,7 +339,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|allfoe", "effect|l|crit"],
 		"accuracy": "靈巧 + 導引",
 		"damage": "力量 + 2",
-		"effect": "以所有範圍內的敵人為目標。遠程攻擊。容易擊中要害。",
+		"effect": "以所有範圍內的敵人为目標。遠程攻擊。容易擊中要害。",
 		"desc": "寶可夢射出一片或更多的鋒利葉片，彷彿飛刀一樣把所有的目標都切開。"
 	},
 	{
@@ -350,7 +350,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|accuracy||down|1"],
 		"accuracy": "特殊 + 鬥毆",
 		"damage": "力量 + 3",
-		"effect": "每個戰鬥輪結束時，骰 1 顆傷害骰以對敵人造成傷害，且使用者將為每一點用這種方式造成的傷害而回復 1 點HP。如果這個招式的使用者處於最終進化階段，則這個招式自動失敗。",
+		"effect": "每个戰鬥輪結束時，骰 1 顆傷害骰以對敵人造成傷害，且使用者將为每一點用這種方式造成的傷害而回復 1 點HP。如果這个招式的使用者處於最終進化階段，則這个招式自動失敗。",
 		"desc": "使用者讓一顆魔法種子長出可愛的嫩莖並附在距離牠最近的目標上。一旦它紮根，它就會長啊長啊長啊，直到衝破天際。"
 	},
 	{
@@ -394,7 +394,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|block"],
 		"accuracy": "靈巧 + 隱匿",
 		"damage": "力量 + 2",
-		"effect": "目標在接下來 4 個戰鬥輪期間將被阻擋。",
+		"effect": "目標在接下來 4 个戰鬥輪期間將被阻擋。",
 		"desc": "使用者實在太扁平了，以至於你在高草叢中難以發現牠的存在。牠只是靜靜等待牠的敵人靠近，然後將自己的身體如同捕獸夾一樣夾住對方。"
 	},
 	{
@@ -405,7 +405,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|charge"],
 		"accuracy": "特殊 + 導引",
 		"damage": "特殊 + 5",
-		"effect": "蓄力招式。如果當前天氣狀態為大晴天，則跳過這個招式的蓄力行動。如果當前天氣狀態為下雨、沙暴、或冰雹，則這個招式需要花費兩個蓄力行動。",
+		"effect": "蓄力招式。如果當前天氣狀態为大晴天，則跳過這个招式的蓄力行動。如果當前天氣狀態为下雨、沙暴、或冰雹，則這个招式需要花費两个蓄力行動。",
 		"desc": "使用者將牠吸收的陽光匯聚成一束強大且具有毀滅性的光束。"
 	},
 	{
@@ -416,7 +416,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "effect|l|charge"],
 		"accuracy": "力量 + 鬥毆",
 		"damage": "力量 + 5",
-		"effect": "蓄力招式。如果當前天氣狀態為大晴天，則跳過這個招式的蓄力行動。如果當前天氣狀態為下雨、沙暴、或冰雹，則這個招式需要花費兩個蓄力行動。",
+		"effect": "蓄力招式。如果當前天氣狀態为大晴天，則跳過這个招式的蓄力行動。如果當前天氣狀態为下雨、沙暴、或冰雹，則這个招式需要花費两个蓄力行動。",
 		"desc": "使用者將陽光匯聚在其鋒利的葉片上，然後釋放出一道具有毀滅性的能量飛刃。"
 	},
 	{
@@ -449,7 +449,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe", "frame|target|力量|down|1", "frame|heal||heal|?"],
 		"accuracy": "洞察 + 自然",
 		"damage": "-",
-		"effect": "降低敵人的力量。使用者將回復等同於敵人當前力量數值的HP。在戰鬥中治療的限制仍會如常適用。",
+		"effect": "降低敵人的力量。使用者將回復等同於敵人當前力量数值的HP。在戰鬥中治療的限制仍會如常適用。",
 		"desc": "寶可夢尋找牠敵人身上的弱點，然後吸取牠的生命能量，讓敵人感到虛弱。"
 	},
 	{
@@ -471,8 +471,8 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|self", "effect|l|heal"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "基礎治癒。若成功，則消耗 1 點意志點以使其生效。如果當前天氣狀態為大晴天，則這個招式變為 強效治癒。如果當前天氣狀態為下雨或沙暴，則這個招式只會回復 1 點HP。",
-		"desc": "寶可夢將陽光轉化為能量來恢復自己的活力。"
+		"effect": "基礎治癒。若成功，則消耗 1 點意志點以使其生效。如果當前天氣狀態为大晴天，則這个招式變为 強效治癒。如果當前天氣狀態为下雨或沙暴，則這个招式只會回復 1 點HP。",
+		"desc": "寶可夢將陽光转化为能量來恢復自己的活力。"
 	},
 	{
 		"name": "熱帶踢", "alias": "トロピカルキック|Trop Kick",
@@ -493,7 +493,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "靈巧 + 鬥毆",
 		"damage": "力量 + 2",
-		"desc": "寶可夢用牠細長的藤蔓作為鞭子來對付敵人。這些藤蔓可以長達20英尺。"
+		"desc": "寶可夢用牠細長的藤蔓作为鞭子來對付敵人。這些藤蔓可以長達20英尺。"
 	},
 	{
 		"name": "木槌", "alias": "ウッドハンマー|Wood Hammer",
@@ -504,7 +504,7 @@ Array.prototype.push.apply(MoveList, [
 		"accuracy": "力量 + 鬥毆",
 		"damage": "力量 + 5",
 		"effect": "反作用力傷害。",
-		"desc": "寶可夢不顧一切地用其堅硬軀體的一部分猛擊敵人，使用者也會在這個過程中受到傷害。"
+		"desc": "寶可夢不顧一切地用其堅硬軀體的一部分猛擊敵人，使用者也會在這个過程中受到傷害。"
 	},
 	{
 		"name": "煩惱種子", "alias": "なやみのタネ|Worry Seed",
@@ -514,7 +514,7 @@ Array.prototype.push.apply(MoveList, [
 		"tags": ["target|l|foe"],
 		"accuracy": "特殊 + 自然",
 		"damage": "-",
-		"effect": "直到這個場景結束前，目標的特性將變為「不眠」。",
+		"effect": "直到這个場景結束前，目標的特性將變为「不眠」。",
 		"desc": "使用者在敵人身上種下一粒種子，使其感到不安和焦慮，讓目標在晚上睡不著覺。"
 	}
 ]);

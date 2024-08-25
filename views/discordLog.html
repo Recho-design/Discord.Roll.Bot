@@ -182,11 +182,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        擲骰
+                        掷骰
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="https://rollbot.hktrpg.com/">聊天室擲骰</a>
-                        <a class="dropdown-item" href="https://roll.hktrpg.com/">手機簡易擲骰</a>
+                        <a class="dropdown-item" href="https://rollbot.hktrpg.com/">聊天室掷骰</a>
+                        <a class="dropdown-item" href="https://roll.hktrpg.com/">手機簡易掷骰</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="https://discord.hktrpg.com">Discord 骰子機械人</a>
                         <a class="dropdown-item" href="http://t.me/hktrpg_bot">Telegram 骰子機械人</a>
@@ -224,7 +224,7 @@
                 <div class="col-md-4 color-01"> <br>
                     <div id="totallyDate">
                         <br>
-                        總共聊天天數 <br>
+                        總共聊天天数 <br>
                         <span class="iconify" data-icon="ic:outline-calendar-today" data-inline="false"
                             data-width="30px" data-height="30px"></span>{{ message }}<br><br>
                     </div>
@@ -242,7 +242,7 @@
                 </div>
                 <div class="col-md-4 color-01"> <br>
                     <div id="averageMessage"><br>
-                        每日平均訊息數量<br><span class="iconify" data-icon="grommet-icons:mail-option" data-inline="false"
+                        每日平均訊息数量<br><span class="iconify" data-icon="grommet-icons:mail-option" data-inline="false"
                             data-width="30px" data-height="30px"></span>
                         {{ message }}<br>
                     </div>
@@ -285,7 +285,7 @@
                 <div class="form-group col-md-3 mx-auto">
                     <div class="input-group mb-3">
                         <input type="password" class="form-control" aria-describedby="passwordHelpBlock"
-                            placeholder="請輸入密碼" id="passw0rd">
+                            placeholder="請输入密碼" id="passw0rd">
                         <button class="btn btn-warning" v-on:click="reNew">開始解密</button>
                     </div>
                 </div>
@@ -351,12 +351,12 @@
                     用來分析Discord 頻道的聊天紀錄。<br><br>
                     使用方法：<br>
                     首先把HKTRPG骰子機械人新增到自己的頻道，給它閱讀過往聊天歷史的權限，<br>
-                    然後在想分析的頻道中輸入<br>
+                    然後在想分析的頻道中输入<br>
                     .discord html 或.discord txt<br>
-                    那它就會私訊你輸出分析，前者為網頁版內容經過AES加密，後者是純文字檔案<br>
-                    但因為經過server處理，擔心個資外洩請勿使用。<br>
+                    那它就會私訊你输出分析，前者为網頁版內容經過AES加密，後者是純文字檔案<br>
+                    但因为經過server處理，擔心个資外洩請勿使用。<br>
                     <a href="https://discord.hktrpg.com"> \HKTRPG骰子機械人/</a><br>
-                    P.S. 這是為了寫TRPG團錄功能而開發出來的副產品，有時間可以到YT搜索TRPG，<br>
+                    P.S. 這是为了寫TRPG團錄功能而開發出來的副產品，有時間可以到YT搜索TRPG，<br>
                     會有很多有趣的REPLAY。
                     <img class="img-fluid" src="https://i.imgur.com/zuLQzmB.jpg">
                     <img class="img-fluid" src="https://i.imgur.com/JM7UdU5.jpg">
@@ -391,14 +391,14 @@
         // Object.keys(list);
         /**
          * 1. 
-         * 總共聊天天數 - 由什麼時候開始
+         * 總共聊天天数 - 由什麼時候開始
          * 總共傳了多少訊息 - BOT 及非BOT
          * 
          * 2.
-         * 群友的頭六名的訊息數(不包括BOT) (棒型圖)
+         * 群友的頭六名的訊息数(不包括BOT) (棒型圖)
          * 
          * 3.
-         * 每日平均訊息數量
+         * 每日平均訊息数量
          * 最多說話的一天
          * 
          * 4.群友各自占聊天的比例 (圓型圖)  
@@ -406,7 +406,7 @@
          * 5. 
          * 最常講的字 (文字雲) 
          * 
-         * 6. 每日訊息數(拆線圖)
+         * 6. 每日訊息数(拆線圖)
          * 
          */
         /* let rawData = [{
@@ -450,7 +450,7 @@
             isbot: true,
         }, {
             timestamp: 1567584546000,
-            contact: '「報告校長 我地接到錯誤通知 有啲人接到兩份通知 到底我地班要做小紅帽定白雪公主」 「…一於溝埋做白雪帽啦，結局自定！」',
+            contact: '「報告校長 我地接到錯誤通知 有啲人接到两份通知 到底我地班要做小紅帽定白雪公主」 「…一於溝埋做白雪帽啦，結局自定！」',
             userName: 'Zzzzz',
             isbot: false,
         }, {
@@ -465,7 +465,7 @@
             isbot: false,
         }, {
             timestamp: 1567238949000,
-            contact: '忍者的歷史 就是戰爭的歷史 亦是忍神的歷史 忍神 代表無限的可能性 少年忍者 與 下任宗主小 伙伴旅遊時被困於霧之村中 只有 三天後 濃霧消除 才可離開 百無聊賴 的 他們 遇上村中的 小忍者 ,被請求 於那時 帶 她 離 開 可是 這計劃已被 村中守衛 所 發現 。',
+            contact: '忍者的歷史 就是戰爭的歷史 亦是忍神的歷史 忍神 代表無限的可能性 少年忍者 與 下任宗主小 伙伴旅遊時被困於霧之村中 只有 三天後 濃霧消除 才可離開 百無聊賴 的 他們 遇上村中的 小忍者 ,被請求 於那時 帶 她 離 開 可是 這计劃已被 村中守衛 所 發現 。',
             userName: 'Zetetic',
             isbot: false,
         }, {
@@ -477,7 +477,7 @@
         let rawData = [];
 
 
-        //總共聊天天數 - 由什麼時候開始
+        //總共聊天天数 - 由什麼時候開始
         let totallydate = totallyDay(rawData) || "";
         let totallyDate = new Vue({
             el: '#totallyDate',
@@ -593,7 +593,7 @@
         let averageMessage = new Vue({
             el: '#averageMessage',
             data: {
-                message: (Math.ceil(totallymessage[0] / newTotallyDay * 100) / 100).toFixed(2) + '個'
+                message: (Math.ceil(totallymessage[0] / newTotallyDay * 100) / 100).toFixed(2) + '个'
             },
             methods: {
                 reNewAaverageMessage: function (input) {
@@ -601,7 +601,7 @@
                     if (newTotallyDay < 1) newTotallyDay = 1;
                     totallymessage = analysicTotallymessage(input);
                     this.message = (Math.ceil(totallymessage[0] / newTotallyDay * 100) / 100).toFixed(2) +
-                        '個';
+                        '个';
                 }
             },
             updated() {
@@ -613,7 +613,7 @@
 
 
 
-        //最多訊息數日子頭三，訊息數 O   
+        //最多訊息数日子頭三，訊息数 O   
         let analysicdate = analysicDate(rawData)
         let allDateforChart3 = JSON.parse(JSON.stringify(analysicdate));
         analysicdate.sort(function (b, a) {
@@ -655,7 +655,7 @@
                 console.log('analysicDate updated')
             }
         })
-        // 群友的頭六名的訊息數(不包括BOT) (棒型圖)
+        // 群友的頭六名的訊息数(不包括BOT) (棒型圖)
 
 
 
@@ -663,7 +663,7 @@
         //群友各自占聊天的比例   
 
 
-        //每日平均訊息數量
+        //每日平均訊息数量
         //totallymessage/totallydate
 
         //最多說話的一天 
@@ -681,7 +681,7 @@
 
 
 
-        //最多訊息數日子頭三， 訊息數 O
+        //最多訊息数日子頭三， 訊息数 O
         function analysicDate(result) {
             let reNewResult = result.filter(message => {
                 return message.isbot == false
@@ -715,7 +715,7 @@
             }
             return tempresult
         }
-        //群友的頭六名的訊息數(不包括BOT) (棒型圖)
+        //群友的頭六名的訊息数(不包括BOT) (棒型圖)
         function analysicPeopleTalk(messages) {
             let tempData = [];
             messages.forEach(message => {
@@ -830,7 +830,7 @@
     </script>
     <script>
         function drawWordCloud(newData) {
-            //文字雲/關鍵字，及字型大小（這邊只放三個）
+            //文字雲/關鍵字，及字型大小（這邊只放三个）
             let fill = d3.scaleOrdinal(d3.schemeCategory10);
             //取得呈現處的寬、高
             let cloudw = parseInt(d3.select("#tag").style("width"), 10);
@@ -1076,7 +1076,7 @@
             chart3cfg = {
                 data: {
                     datasets: [{
-                        label: '每日訊息數',
+                        label: '每日訊息数',
                         backgroundColor: 'rgba(255, 99, 132, 1)',
                         borderColor: 'rgba(255,99,132,1)',
                         data: dataCFG,
