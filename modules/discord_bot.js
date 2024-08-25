@@ -137,7 +137,7 @@ client.on('guildCreate', async guild => {
 			.setColor('#0099ff')
 			//.setTitle(rplyVal.title)
 			//.setURL('https://discord.js.org/')
-			.setAuthor({ name: 'HKTRPG', url: 'https://www.patreon.com/HKTRPG', iconURL: 'https://user-images.githubusercontent.com/23254376/113255717-bd47a300-92fa-11eb-90f2-7ebd00cd372f.png' })
+			.setAuthor({ name: 'HKTRPG', url: 'https://www.patreon.com/HKTRPG', iconURL: 'https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png' })
 			.setDescription(newMessage.joinMessage())
 		await channel.send({ embeds: [text] });
 	} catch (error) {
@@ -324,7 +324,7 @@ async function convQuotes(text = "") {
 		.setColor('#0099ff')
 		//.setTitle(rplyVal.title)
 		//.setURL('https://discord.js.org/')
-		.setAuthor({ name: 'HKTRPG', url: 'https://www.patreon.com/HKTRPG', iconURL: 'https://user-images.githubusercontent.com/23254376/113255717-bd47a300-92fa-11eb-90f2-7ebd00cd372f.png' })
+		.setAuthor({ name: 'HKTRPG', url: 'https://www.patreon.com/HKTRPG', iconURL: 'https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png' })
 	const imageMatch = text.match(imageUrl) || null;
 	if (imageMatch && imageMatch.length) {
 		for (let index = 0; (index < imageMatch.length) && index < 10; index++) {
@@ -703,7 +703,7 @@ async function manageWebhook(discord) {
 		//'Incoming'
 		if (!webhook) {
 			const hooks = isThread ? await client.channels.fetch(channel.parentId) : channel;
-			await hooks.createWebhook({ name: "HKTRPG .me Function", avatar: "https://user-images.githubusercontent.com/23254376/113255717-bd47a300-92fa-11eb-90f2-7ebd00cd372f.png" })
+			await hooks.createWebhook({ name: "HKTRPG .me Function", avatar: "https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png" })
 			webhooks = await channel.fetchWebhooks();
 			webhook = webhooks.find(v => {
 				return (v.channelId == channel.parentId || v.channelId == channel.id) && v.token;

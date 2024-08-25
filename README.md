@@ -346,4 +346,4 @@ Choice：启动语choice/随机/选项/选1
 20: (公測中)掷骰开关功能 .bk (add del show)  
 21: (公測中)资料庫功能 .db(p) (add del show 自定关鍵字)
 
-![image](https://user-images.githubusercontent.com/23254376/113255717-bd47a300-92fa-11eb-90f2-7ebd00cd372f.png)
+![image](https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png)

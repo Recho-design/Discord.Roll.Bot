@@ -109,30 +109,21 @@ const rollDiceCommand = async function ({
 	switch (true) {
 		case !mainMsg[1]:
 			rply.text =
-				`【HKTRPG掷骰ROLLBOT🤖】(${await version.version()})
-HKTRPG是在Discord, Line, Telegram, Whatsapp和網頁上都可以使用的骰子机械人！
-功能：暗骰, 各类TRPG骰子掷骰, 自定義骰子, 频道经驗值, 占卜, 先攻表, TRPG角色卡, 搜圖,
-翻譯, Discord 聊天记录匯出, 数学计算, 随机抽选, wiki查詢, 资料庫快速查詢功能
-定时发訊息
-及其他
+				`【骰娘爱你哦💖】(${await version.version()})
+请问有什么可以帮助你?
+请输入你想查询的项目名字.
+或到 (https://bothelp.hktrpg.com/) 观看详细使用说明.
 -------
-请问有什么可以幫助你?
-请输入你想查詢的项目名字.
-或到 (https://bothelp.hktrpg.com/) 观看詳细使用说明.
--------
-bothelp ver		- 查詢詳细版本及公告
-bothelp Base	- 查詢trpg 基本掷骰指令🎲
-bothelp Dice	- 查詢trpg 不同系統掷骰指令💻
-bothelp Tool	- 查詢trpg 輔助工具🧰
-bothelp admin	- 查詢系統工具⚙️
-bothelp funny	- 查詢趣味功能😂
-bothelp link	- 查詢HKTRPG 不同平台連结🔗
-bothelp privacy	- 查詢HKTRPG 的隱私權条款🔒
-bothelp about	- 查詢HKTRPG 历史📜
---------
-🗂️HKTRPG 作品集, (https://hktrpg.github.io/TG.line.Discord.Roll.Bot/PORTFOLIOP)
-ℹ️如果你需要幫助, 加入我們的支援频道, (https://support.hktrpg.com)
-☕贊助服务器运行及开放VIP資源, (https://www.patreon.com/HKTRPG)`
+bothelp ver		- 查询详细版本及公告
+bothelp Base	- 查询trpg 基本掷骰指令🎲
+bothelp Dice	- 查询trpg 不同系统掷骰指令💻
+bothelp Tool	- 查询trpg 辅助工具🧰
+bothelp admin	- 查询系统工具⚙️
+bothelp funny	- 查询趣味功能😂
+bothelp link	- 查询HKTRPG 不同平台连结🔗
+bothelp privacy	- 查询HKTRPG 的隐私权条款🔒
+bothelp about	- 查询HKTRPG 历史📜
+`
 			rply.buttonCreate = ['bothelp ver', 'bothelp Base', 'bothelp Dice', 'bothelp Tool', 'bothelp admin', 'bothelp funny', 'bothelp link', 'bothelp privacy', 'bothelp about']
 
 			return rply;

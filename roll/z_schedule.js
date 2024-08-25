@@ -73,7 +73,7 @@ const getHelpMessage = function () {
     範例
     .cron 2258 
     name=Sad
-    link=https://user-images.githubusercontent.com/23254376/113255717-bd47a300-92fa-11eb-90f2-7ebd00cd372f.png
+    link=https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png
     wwwww
     [[2d3]]
     hello world
