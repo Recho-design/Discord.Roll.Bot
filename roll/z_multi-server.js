@@ -19,9 +19,9 @@ const gameType = function () {
     return 'Demo:Demo:hktrpg'
 }
 const prefixs = function () {
-    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这裡是一对  
-    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这裡是一对
-    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
+    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这里是一对  
+    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这里是一对
+    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 变成 1 1D100 
     ///^(?=.*he)(?!.*da).*$/ig
     return [{
         first: /^\.chatroom$/i,

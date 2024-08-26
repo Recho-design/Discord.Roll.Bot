@@ -6,7 +6,7 @@ const { combine, timestamp, printf, json } = format;
 const schema = require('./schema.js');
 const MAX_ERR_RETRY = 3;
 const RETRY_TIME = 15 * 1000;// 每15秒更新;
-const mongod_RETRY_TIME = 10 * 60 * 1000;// 每10分鐘更新;
+const mongod_RETRY_TIME = 10 * 60 * 1000;// 每10分钟更新;
 const MAX_ERR_RESPAWN = 10;
 let dbConnErr = {
     timeStamp: Date.now(),

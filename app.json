@@ -1,6 +1,6 @@
 {
 	"name": "RoboYabaso 六合一 Trpg RollBot @ HKTRPG",
-	"description": "簡单的、模組化的Trpg Bot, Telegram Discord Line Whatsapp plurk, 網頁版 六合一",
+	"description": "簡单的、模组化的Trpg Bot, Telegram Discord Line Whatsapp plurk, 网页版 六合一",
 	"repository": "https://github.com/hktrpg/TG.line.Discord.Roll.Bot.git",
 	"keywords": [
 		"RoboYabaso",

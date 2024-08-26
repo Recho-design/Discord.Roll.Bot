@@ -42,9 +42,9 @@
                 <div class="input-group">
                     <span class="input-group-text  btn-sm">输入文字</span>
                     <textarea class="form-control" aria-label="输入文字" id="inputText">
-人生若只如初見，何事秋風悲畫扇。
-等閒變卻故人心，卻道故人心易變。
-驪山语罷清宵半，淚雨霖鈴終不怨。
+人生若只如初见，何事秋風悲畫扇。
+等閒变却故人心，却道故人心易变。
+驪山语罷清宵半，淚雨霖鈴终不怨。
 何如薄倖錦衣郎，比翼連枝当日願。
 
 The way to dusty death. 
@@ -56,7 +56,7 @@ That struts and frets his hour upon the stage</textarea>
                     <div class="input-group">
                         <textarea class="form-control" aria-label="输出文字" id="outputText"></textarea>
                         <button class="btn  btn-primary  btn-sm" type="button" id="button-addon2"
-                            onclick="copyToClipBoard()">复製输出文字</button>
+                            onclick="copyToClipBoard()">复制输出文字</button>
                     </div>
 
                 </div>
@@ -106,7 +106,7 @@ That struts and frets his hour upon the stage</textarea>
                 <div class="alert alert-primary align-items-center"
                     style="z-index:-100;position: relative; display: none;" id="alertCopied2" role="alert">
                     <div>
-                        已复製
+                        已复制
                     </div>
                 </div>
             </div>
@@ -122,18 +122,18 @@ That struts and frets his hour upon the stage</textarea>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        Signal to Noise TRPG專用 文章亂碼产生器<br>
-                        这是一款由2名玩家的在星際间傳送書信TRPG游戏。<br>
-                        期间两人的書信會被星際间的雜訊干擾，導致信息出现亂碼<br><br>
+                        Signal to Noise TRPG专用 文章亂码产生器<br>
+                        这是一款由2名玩家的在星際间傳送书信TRPG游戏。<br>
+                        期间两人的书信会被星際间的雜讯干擾，導致信息出现亂码<br><br>
 
-                        这个亂碼产生器的原理是自动抽选一些英文字母作为亂碼<br>
+                        这个亂码产生器的原理是自动抽选一些英文字母作为亂码<br>
                         附有把中文>拼音>中文的功能<br>
-                        所以如果中文文字的拼音也符合亂碼值<br>
-                        也會被转換<br>
+                        所以如果中文文字的拼音也符合亂码值<br>
+                        也会被转換<br>
                         原規则请參考<a href="https://preview.drivethrurpg.com/en/product/367142/Signal-to-Noise">DriveThruRPG Signal to Noise</a>  <br>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关閉</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
 
                     </div>
                 </div>
@@ -185,11 +185,11 @@ That struts and frets his hour upon the stage</textarea>
 
         function blockText() {
             /**
-             * 1.讀取Block英文  有没有点
+             * 1.读取Block英文  有没有点
              * 
-             * 2.讀取inputText 
+             * 2.读取inputText 
              *      3. 把inputText 的每个字转成拼音
-             *      4. 每当字符合block 就變成亂破 !@#$%^&*
+             *      4. 每当字符合block 就变成亂破 !@#$%^&*
              *  5. 把字输出到Output
              */
             let outputTextString = "";

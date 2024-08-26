@@ -22,16 +22,16 @@ const prefixs = function () {
 }
 const getHelpMessage = async function () {
     return `【先攻表功能】 .in (remove clear reroll) .init
-这是讓你快速自定義先攻表的功能
-它可以儲存你的掷骰方法，然后直接重新投掷，而不需要再输入。
-.in (掷骰或数字) (名字)  - 樣式
-.in 1d20+3 (名字)  
-.in 1d3 (如没有输入, 會用聊天軟件中的名字)
+这是让你快速自定义先攻表的功能
+它可以储存你的掷骰方法，然后直接重新投掷，而不需要再输入。
+.in (掷骰或数字) (名字)  - 样式
+.in 1d20 3 (名字)  
+.in 1d3 (如没有输入, 会用聊天软件中的名字)
 .in 80          - 直接取代先攻值
-.in -3+6*3/2.1  - 加減
+.in -3 6*3/2.1  - 加减
 ------------
-.in remove (名字) - 移除該角色
-.in reroll - 根據算式重掷先攻表
+.in remove (名字) - 移除该角色
+.in reroll - 根据算式重掷先攻表
 .in clear  - 清除整个先攻表
 .init      - 显示先攻表，由大到小
 .initn     - 显示先攻表，由小到大
@@ -63,11 +63,11 @@ const rollDiceCommand = async function ({
         rply.text = await this.getHelpMessage();
         rply.quotes = true;
         if (botname == "Line")
-            rply.text += "\n因为Line的机制, 如掷骰时並无显示用家名字, 请到下列網址,和机器人任意说一句话,成为好友. \n https://line.me/R/ti/p/svMLqy9Mik"
+            rply.text += "\n因为Line的机制, 如掷骰时并无显示用家名字, 请到下列网址,和机器人任意说一句话,成为好友. \n https://line.me/R/ti/p/svMLqy9Mik"
         return rply;
     }
     if (!groupid && mainMsg[1]) {
-        rply.text = "这是群組功能，请於群組使用。"
+        rply.text = "这是社区功能，请于社区使用。"
         return rply;
     }
     switch (true) {
@@ -91,7 +91,7 @@ const rollDiceCommand = async function ({
             temp = await schema.init.deleteOne({
                 "groupID": channelid || groupid
             })
-            rply.text = (temp) ? '已移除这群組的先攻值' : '找不到这群組的先攻表';
+            rply.text = (temp) ? '已移除这社区的先攻值' : '找不到这社区的先攻表';
             return rply;
         case /(^[.]in$)/i.test(mainMsg[0]) && /^reroll$/i.test(mainMsg[1]):
             temp = await schema.init.findOne({
@@ -122,7 +122,7 @@ const rollDiceCommand = async function ({
             }
             objIndex = temp.list.findIndex((obj => obj.name.toLowerCase() == name.toLowerCase()));
             if (objIndex == -1) {
-                rply.text = "找不到該角色"
+                rply.text = "找不到该角色"
                 return rply;
             }
             temp.list[objIndex].result = math.evaluate(temp.list[objIndex].result + mainMsg[1])

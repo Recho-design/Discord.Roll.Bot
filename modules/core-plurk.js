@@ -12,7 +12,7 @@ const Plurk_Client = new PlurkClient(process.env.PLURK_APPKEY, process.env.PLURK
 exports.analytics = require('./analytics');
 Plurk_Client.request('Users/me')
     .then(profile => {
-        console.log(`Plurk 名稱: ${profile.full_name}`);
+        console.log(`Plurk 名称: ${profile.full_name}`);
         plurkID = profile.id;
     })
     .catch(err => console.error('plurk error: ', err.error_text));
@@ -50,15 +50,15 @@ Plurk_Client.on('new_plurk', async response => {
     }
 
     if (!message) return;
-    let mainMsg = message.match(MESSAGE_SPLITOR); // 定義输入字串
+    let mainMsg = message.match(MESSAGE_SPLITOR); // 定义输入字串
     if (mainMsg && mainMsg.length > 1) {
         if (!mainMsg[0].match(/@HKTRPG/i)) return;
         mainMsg.shift();
     }
     else return;
 
-    // 訊息來到后, 會自动跳到analytics.js进行骰組分析
-    // 如希望增加修改骰組,只要修改analytics.js的条件式 和ROLL內的骰組檔案即可,然后在HELP.JS 增加说明.
+    // 讯息来到后, 会自动跳到analytics.js进行骰组分析
+    // 如希望增加修改骰组,只要修改analytics.js的条件式 和ROLL內的骰组檔案即可,然后在HELP.JS 增加说明.
     let rplyVal = await exports.analytics.parseInput({
         inputStr: message.replace(/^\s*@hktrpg\s+/i, ''),
         groupid: groupid,
@@ -82,7 +82,7 @@ Plurk_Client.on('new_plurk', async response => {
 });
 
 Plurk_Client.on('new_response', async response => {
-    //防止自己回應自己
+    //防止自己回应自己
     if (response.user[plurkID]) return;
     if (response.type != 'new_response') return;
     //   if (response.limited_to && response.limited_to.length == 1 && response.limited_to[0] == 0) return;
@@ -102,7 +102,7 @@ Plurk_Client.on('new_response', async response => {
         return null
     }
     if (!message) return;
-    let mainMsg = message.match(MESSAGE_SPLITOR); // 定義输入字串
+    let mainMsg = message.match(MESSAGE_SPLITOR); // 定义输入字串
 
 
     if (mainMsg && mainMsg.length > 1) {
@@ -112,8 +112,8 @@ Plurk_Client.on('new_response', async response => {
     else return;
 
 
-    // 訊息來到后, 會自动跳到analytics.js进行骰組分析
-    // 如希望增加修改骰組,只要修改analytics.js的条件式 和ROLL內的骰組檔案即可,然后在HELP.JS 增加说明.
+    // 讯息来到后, 会自动跳到analytics.js进行骰组分析
+    // 如希望增加修改骰组,只要修改analytics.js的条件式 和ROLL內的骰组檔案即可,然后在HELP.JS 增加说明.
     let rplyVal = await exports.analytics.parseInput({
         inputStr: inputStr,
         groupid: groupid,

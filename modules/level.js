@@ -1,6 +1,6 @@
 if (!process.env.mongoURL) return;
 const oneMinuts = (process.env.DEBUG) ? 1 : 60000;
-//60000 一分鐘多久可以升级及增加经驗
+//60000 一分钟多久可以升级及增加经验
 const checkMongodb = require('./dbWatchdog.js');
 exports.rollbase = require('../roll/rollbase');
 const THIRTY_MINUTES = (process.env.DEBUG) ? 1 : 60000 * 30;
@@ -73,7 +73,7 @@ async function EXPUP(groupid, userid, displayname, displaynameDiscord, membercou
     (userInfo.decreaseEXPTimes > 0) ? reply.statue += "🧟‍♂️🧟‍♀️" : null;
     (userInfo.multiEXPTimes > 0) ? reply.statue += "🧙‍♂️🧙‍♀️" : null;
     (userInfo.stopExp > 0) ? reply.statue += "☢️☣️" : null;
-    //4. 有-> 检查上次记录的时间 超过60000 (1分鐘) 即增加15+(1-9) 经驗值
+    //4. 有-> 检查上次记录的时间 超过60000 (1分钟) 即增加15+(1-9) 经验值
     if ((new Date(Date.now()) - userInfo.LastSpeakTime) < oneMinuts) {
         return reply;
     }
@@ -124,7 +124,7 @@ async function EXPUP(groupid, userid, displayname, displaynameDiscord, membercou
 
     //6. 需要 -> 检查有没有开启通知
     if (gpInfo.HiddenV2 == false || levelUP == false) return reply;
-    //1. 讀取LEVELUP语
+    //1. 读取LEVELUP语
     reply.text = await returnTheLevelWord(gpInfo, userInfo, membercount, groupid, discordMessage);
     return reply;
     //6 / 7 * LVL * (2 * LVL * LVL + 30 * LVL + 100)
@@ -152,7 +152,7 @@ async function returnTheLevelWord(gpInfo, userInfo, membercount, groupid, discor
     let userRanking = myselfIndex + 1;
     let userRankingPer = Math.ceil(userRanking / usermember_count * 10000) / 100 + '%';
     let userTitle = await checkTitle(userlevel, gpInfo.Title);
-    let tempUPWord = gpInfo.LevelUpWord || "恭喜 {user.displayName}《{user.title}》，你的克苏鲁神话知識现在是 {user.level}点了！\n现在排名是{server.member_count}人中的第{user.Ranking}名！";
+    let tempUPWord = gpInfo.LevelUpWord || "恭喜 {user.displayName}《{user.title}》，你的克苏鲁神话知识现在是 {user.level}点了！\n现在排名是{server.member_count}人中的第{user.Ranking}名！";
     if (tempUPWord.match(/{user.displayName}/ig)) {
         let userDisplayName = await getDisplayName(discordMessage) || username || "无名";
         tempUPWord = tempUPWord.replace(/{user.displayName}/ig, userDisplayName)
@@ -192,7 +192,7 @@ const Title = function () {
     Title[0] = "无名调查员";
     Title[3] = "雀";
     Title[4] = "调查员";
-    Title[8] = "記者";
+    Title[8] = "记者";
     Title[11] = "侦探";
     Title[13] = "小熊";
     Title[14] = "考古家";
@@ -203,8 +203,8 @@ const Title = function () {
     Title[31] = "眷族首领";
     Title[33] = "南";
     Title[34] = "化身";
-    Title[38] = "舊神";
-    Title[41] = "舊日支配者";
+    Title[38] = "旧神";
+    Title[41] = "旧日支配者";
     Title[43] = "門";
     Title[44] = "外神";
     Title[48] = "KP";

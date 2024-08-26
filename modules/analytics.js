@@ -24,8 +24,8 @@ const courtMessage = require('./logs').courtMessage || function () { };
 const getState = require('./logs').getState || function () { };
 const EXPUP = require('./level').EXPUP || function () { };
 
-//用來呼叫骰組,新增骰組的话,要寫条件式到下面呼叫
-//格式是 exports.骰組檔案名字.function名
+//用来呼叫骰组,新增骰组的话,要写条件式到下面呼叫
+//格式是 exports.骰组檔案名字.function名
 const parseInput = async ({
 	inputStr = "",
 	groupid = null,
@@ -50,7 +50,7 @@ const parseInput = async ({
 
 	let mainMsg = [];
 	inputStr = inputStr.replace(/^\s/g, '')
-	mainMsg = inputStr.match(MESSAGE_SPLITOR); //定義输入字串
+	mainMsg = inputStr.match(MESSAGE_SPLITOR); //定义输入字串
 	//EXPUP 功能 + LevelUP 功能
 	if (groupid) {
 		let tempEXPUP = await EXPUP(groupid, userid, displayname, displaynameDiscord, membercount, tgDisplayname, discordMessage);
@@ -259,17 +259,17 @@ async function stateText() {
 	let state = await getState() || '';
 	if (!Object.keys(state).length || !state.LogTime) return;
 	let text = "";
-	text = '系統开始记录时间: ' + state.StartTime.replace(' GMT+0800 (Hong Kong Standard Time)', '');
+	text = '系统开始记录时间: ' + state.StartTime.replace(' GMT+0800 (Hong Kong Standard Time)', '');
 	text += '\n 现在时间: ' + state.LogTime.replace(' GMT+0800 (GMT+08:00)', '');
 	text += '\n Line总掷骰次数: ' + state.LineCountRoll;
 	text += '\n Discord总掷骰次数: ' + state.DiscordCountRoll;
 	text += '\n Telegram总掷骰次数: ' + state.TelegramCountRoll;
 	text += '\n Whatsapp总掷骰次数: ' + state.WhatsappCountRoll;
-	text += '\n 網頁版总掷骰次数: ' + state.WWWCountRoll;
-	text += '\n 使用经驗值功能的群組: ' + await schema.trpgLevelSystem.countDocuments({ Switch: '1' }).catch(error => console.error('analytics #266 mongoDB error: ', error.name, error.reson));
+	text += '\n 网页版总掷骰次数: ' + state.WWWCountRoll;
+	text += '\n 使用经验值功能的社区: ' + await schema.trpgLevelSystem.countDocuments({ Switch: '1' }).catch(error => console.error('analytics #266 mongoDB error: ', error.name, error.reson));
 	text += '\n 已新增的角色卡: ' + await schema.characterCard.countDocuments({}).catch(error => console.error('analytics #267 mongoDB error: ', error.name, error.reson));
 	text += '\n HKTRPG使用者数量: ' + await schema.firstTimeMessage.countDocuments({}).catch(error => console.error('analytics #268 mongoDB error: ', error.name, error.reson));
-	text += '\n 掷骰系統使用的随机方式: random-js nodeCrypto';
+	text += '\n 掷骰系统使用的随机方式: random-js nodeCrypto';
 	return text;
 }
 
@@ -289,7 +289,7 @@ async function cmdfunction({
 	tgDisplayname
 }) {
 	let newInputStr = result.characterReRollItem || result.text;
-	let mainMsg = newInputStr.match(MESSAGE_SPLITOR); //定義输入字串
+	let mainMsg = newInputStr.match(MESSAGE_SPLITOR); //定义输入字串
 	//检查是不是要停止
 	let tempResut = {};
 	try {

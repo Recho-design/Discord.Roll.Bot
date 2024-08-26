@@ -82,9 +82,9 @@ const trpgCommand = mongoose.model('trpgCommand', {
 const trpgLevelSystem = mongoose.model('trpgLevelSystem', {
     groupid: String,
     LevelUpWord: String,
-    //在这群組升级时的升级语
+    //在这社区升级时的升级语
     RankWord: String,
-    //在这群組查詢等级时的回應
+    //在这社区查询等级时的回应
     Switch: {
         type: String
     },
@@ -99,20 +99,20 @@ const trpgLevelSystem = mongoose.model('trpgLevelSystem', {
     HiddenV2: {
         type: Boolean
     },
-    //大於此Lvl即为稱號.
+    //大于此Lvl即为称号.
     Title: Array,
     //是否显示升级语 config X1 则1
     trpgLevelSystemfunction: [{
         userid: String,
         name: String,
         EXP: Number,
-        //现在经驗值
+        //现在经验值
         Level: String,
         //等级
         LastSpeakTime: {
             type: Date,
             default: Date.now
-            //最后说话时间, 间隔一分鐘才提升经驗
+            //最后说话时间, 间隔一分钟才提升经验
         }
     }]
 });
@@ -122,7 +122,7 @@ const trpgLevelSystemMember = mongoose.model('trpgLevelSystemMember', {
     name: String,
     EXP: Number,
     TitleName: String,
-    //现在经驗值
+    //现在经验值
     Level: Number,
     //等级
     multiEXPTimes: Number,
@@ -132,16 +132,16 @@ const trpgLevelSystemMember = mongoose.model('trpgLevelSystemMember', {
     decreaseEXPTimes: Number,
     //EVENT事件
     /**
-     * 4. 停止得到经驗(X分鐘內)
-     * 5. 发言经驗減少X(X分鐘內)
-     * 6. 发言经驗增加X(X分鐘內)
-    7. 吸收对方经驗(X分鐘內)
-    8. 对方得到经驗值 X 倍(X分鐘內)
+     * 4. 停止得到经验(X分钟內)
+     * 5. 发言经验减少X(X分钟內)
+     * 6. 发言经验增加X(X分钟內)
+    7. 吸收对方经验(X分钟內)
+    8. 对方得到经验值 X 倍(X分钟內)
      */
     LastSpeakTime: {
         type: Date,
         default: Date.now
-        //最后说话时间, 间隔一分鐘才提升经驗
+        //最后说话时间, 间隔一分钟才提升经验
     }
 });
 const trpgDarkRolling = mongoose.model('trpgDarkRolling', {
@@ -153,7 +153,7 @@ const trpgDarkRolling = mongoose.model('trpgDarkRolling', {
     }]
 });
 //
-//目的: 記錄发言数量及掷骰数量
+//目的: 记錄发言数量及掷骰数量
 //记录掷骰结果
 //每日上傳一次
 //同时每500次显示一次
@@ -250,9 +250,9 @@ const allowRolling = mongoose.model('allowRolling', new mongoose.Schema({
 
 
 const chatRoom = mongoose.model('chatRoom', new mongoose.Schema({
-    name: { // 欄位名稱
+    name: { // 欄位名称
         type: String, // 欄位资料型別
-        required: true, // 必須要有值
+        required: true, // 必须要有值
         maxlength: 50
     },
     msg: {
@@ -333,7 +333,7 @@ const init = mongoose.model('init', new mongoose.Schema({
     }]
 }));
 
-//个人新增event 时的记录。eventList會使用ID 來记录
+//个人新增event 时的记录。eventList会使用ID 来记录
 const eventMember = mongoose.model('eventMember', new mongoose.Schema({
     userID: String,
     userName: String,
@@ -351,7 +351,7 @@ const eventMember = mongoose.model('eventMember', new mongoose.Schema({
     }]
 }));
 
-//整个event 列表，會從这裡进行抽取
+//整个event 列表，会从这里进行抽取
 const eventList = mongoose.model('eventList', new mongoose.Schema({
     title: String,
     chainTitle: String,

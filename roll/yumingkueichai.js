@@ -9,9 +9,9 @@ const gameType = function () {
     return 'Dice:yumingkueichai:hktrpg'
 }
 const prefixs = function () {
-    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这裡是一对  
-    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这裡是一对
-    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
+    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这里是一对  
+    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这里是一对
+    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 变成 1 1D100 
     ///^(?=.*he)(?!.*da).*$/ig
     return [{
         first: /^[.]KC$/i,
@@ -27,9 +27,9 @@ const getHelpMessage = async function () {
 x 投掷多少粒六面骰 留空为4, 只可输入4,5或留空 
 y 修正值 1-20
 z 目标值 1-20
-十八啦玩法, 只要出现一个对子就成功, 达成值視为另外两顆骰子加总
+十八啦玩法, 只要出现一个对子就成功, 达成值视为另外两颗骰子加总
 若出现两对子, 则选较高者
-另外, 若达成值为3, 視为戏劇性失败.`
+另外, 若达成值为3, 视为戏剧性失败.`
 }
 const initialize = function () {
     return variables;
@@ -72,7 +72,7 @@ async function compareAllValues(triggermsg, msg) {
         rollresult[i] = rollbase.Dice(6)
     }
     result += "[ " + rollresult + " ] → "
-    //找到一樣->report  剩下最大两粒
+    //找到一样->report  剩下最大两粒
     //目标值 ≧ 12：
     //[1, 3, 5, 3, 3] → 达成值 6 [5,1] → 成功
     //[1, 3, 5, 3, 3] → 达成值 6 [5,1] → 失败
@@ -109,7 +109,7 @@ async function compareAllValues(triggermsg, msg) {
                         }
                     }
                 }
-                //如果5D 11112 會變成大失败, 修正變成 达成值11
+                //如果5D 11112 会变成大失败, 修正变成 达成值11
                 if (x == 5 && tempa == 2 && tempb == 1 && temp[0] == 1 && temp[1] == 1 && temp[2] == 1 && temp[3] == 1 && temp[4] == 2) {
                     tempa = 1;
                     tempb = 1
@@ -121,7 +121,7 @@ async function compareAllValues(triggermsg, msg) {
                 result += tempresult + " [" + tempa + "," + tempb + "]"
                 if (y > 0) result += " +" + y
                 if (tempa == 2 && tempb == 1) {
-                    result += " → 戏劇性失败"
+                    result += " → 戏剧性失败"
                 } else if (z >= 1) {
                     result += " → "
                     if (z > tempresult)

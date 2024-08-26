@@ -46,12 +46,12 @@ TGclient.on('text', async (ctx) => {
             inputStr = inputStr
                 .replace(new RegExp('@' + robotName + '$', 'i'), '')
                 .replace(new RegExp('^/', 'i'), '');
-        mainMsg = inputStr.match(MESSAGE_SPLITOR); // 定義输入字串
+        mainMsg = inputStr.match(MESSAGE_SPLITOR); // 定义输入字串
     }
     if (mainMsg && mainMsg[0]) {
         trigger = mainMsg[0].toString().toLowerCase();
     }
-    //指定啟动詞在第一个詞&把大階强制转成细階
+    //指定啟动詞在第一个詞&把大阶强制转成细阶
     let groupid = ((ctx.chat.type === 'group' || ctx.chat.type === 'supergroup') && userid && ctx.chat.id) ? ctx.chat.id : '';
     if ((trigger == ".me" || trigger == ".mee") && !z_stop(mainMsg, groupid)) {
         inputStr = inputStr.replace(/^\.mee\s*/i, ' ').replace(/^\.me\s*/i, ' ');
@@ -93,7 +93,7 @@ TGclient.on('text', async (ctx) => {
     let tgDisplayname = (ctx.from.first_name) ? ctx.from.first_name : '';
     //得到暗骰的数據, GM的位置
     if (ctx.from.username) displayname = ctx.from.username;
-    //是不是自己.ME 訊息
+    //是不是自己.ME 讯息
     //TRUE 即正常
     let displaynamecheck = true;
     let userrole = 1;
@@ -109,8 +109,8 @@ TGclient.on('text', async (ctx) => {
     }
     let rplyVal = {};
 
-    // 訊息來到后, 會自动跳到analytics.js进行骰組分析
-    // 如希望增加修改骰組,只要修改analytics.js的条件式 和ROLL內的骰組檔案即可,然后在HELP.JS 增加说明.
+    // 讯息来到后, 会自动跳到analytics.js进行骰组分析
+    // 如希望增加修改骰组,只要修改analytics.js的条件式 和ROLL內的骰组檔案即可,然后在HELP.JS 增加说明.
     if (channelKeyword != '' && trigger == channelKeyword.toString().toLowerCase()) {
         mainMsg.shift();
         rplyVal = await exports.analytics.parseInput({
@@ -174,16 +174,16 @@ TGclient.on('text', async (ctx) => {
     }
     switch (true) {
         case privatemsg == 1:
-            // 输入dr  (指令) 私訊自己
+            // 输入dr  (指令) 私信自己
             //
             if (ctx.chat.type != 'private') {
-                SendToId(groupid, "@" + displayname + ' 暗骰給自己', options);
+                SendToId(groupid, "@" + displayname + ' 暗骰给自己', options);
             }
             rplyVal.text = "@" + displayname + " 的暗骰\n" + rplyVal.text
             SendToId(userid, rplyVal.text, options);
             break;
         case privatemsg == 2:
-            //输入ddr(指令) 私訊GM及自己
+            //输入ddr(指令) 私信GM及自己
             if (ctx.chat.type != 'private') {
                 let targetGMNameTemp = "";
                 for (let i = 0; i < TargetGMTempID.length; i++) {
@@ -199,7 +199,7 @@ TGclient.on('text', async (ctx) => {
             }
             break;
         case privatemsg == 3:
-            //输入dddr(指令) 私訊GM
+            //输入dddr(指令) 私信GM
             if (ctx.chat.type != 'private') {
                 let targetGMNameTemp = "";
                 for (let i = 0; i < TargetGMTempID.length; i++) {
@@ -393,7 +393,7 @@ if (agenda && agenda.agenda) {
             if ((new Date(Date.now()) - data.createAt) >= SIX_MONTH) {
                 await job.remove();
                 SendToId(
-                    data.groupid, "已运行六个月, 移除此定时訊息"
+                    data.groupid, "已运行六个月, 移除此定时讯息"
                 )
             }
         } catch (e) {

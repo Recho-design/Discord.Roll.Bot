@@ -3,7 +3,7 @@ const rollbase = require('./rollbase.js');
 let variables = {};
 const mathjs = require('mathjs')
 const gameName = function () {
-    return '【魔女狩獵之夜】.wn xDn+-y'
+    return '【魔女狩猎之夜】.wn xDn+-y'
 }
 
 const gameType = function () {
@@ -16,17 +16,17 @@ const prefixs = function () {
     }]
 }
 const getHelpMessage = async function () {
-    return `【魔女狩獵之夜】
-.wn xDDn+-y  x骰池 n罪業值 y调整值 
-.wn 3 骰3次D6,大於等於4成功 
-.wn 5D4+3 骰5次D6,大於等於5成功然后+3
-.wn 3DD6+2 有第二个D，會使用成功数減去失败数得出结果(可負数)
-預設值>3
+    return `【魔女狩猎之夜】
+.wn xDDn -y  x骰池 n罪业值 y调整值 
+.wn 3 骰3次D6,大于等于4成功 
+.wn 5D4 3 骰5次D6,大于等于5成功然后 3
+.wn 3DD6 2 有第二个D，会使用成功数减去失败数得出结果(可负数)
+默认值>3
 
-.wn x@Dn+-yD 魔改版 x骰池 n罪業值 y调整值
-魔改版 少於等於罪業值为失败
-.wn 3@3+3 骰3次D6,大於3成功 
-.wn 3@D3+2 有第二个D，會使用成功数減去失败数得出结果(可負数)`
+.wn x@Dn -yD 魔改版 x骰池 n罪业值 y调整值
+魔改版 少于等于罪业值为失败
+.wn 3@3 3 骰3次D6,大于3成功 
+.wn 3@D3 2 有第二个D，会使用成功数减去失败数得出结果(可负数)`
 }
 const initialize = function () {
     return variables;
@@ -116,11 +116,11 @@ async function WN2(key, message) {
     if (method == "@") {
         betterthan = (key[3]) || 4
         if (betterthan >= 6)
-            return "罪業6以上扣除5点罪業，增加一点代價"
+            return "罪业6以上扣除5点罪业，增加一点代价"
     }
     if (method && method.toString().toLowerCase() == "d") {
         if (theSins >= 6)
-            return "罪業超过6点时扣除6点罪業，转化为一点代價"
+            return "罪业超过6点时扣除6点罪业，转化为一点代价"
         else
             if (theSins > 3)
                 betterthan = (key[3])

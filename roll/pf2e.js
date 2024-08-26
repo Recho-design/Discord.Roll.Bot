@@ -11,9 +11,9 @@ const gameType = function () {
     return 'Dice:Pf2e:hktrpg'
 }
 const prefixs = function () {
-    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这裡是一对  
-    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这裡是一对
-    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 變成 1 1D100 
+    //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这里是一对  
+    //mainMSG[0]的prefixs,mainMSG[1]的prefixs  ]  <---这里是一对
+    //如前面是 /^1$/ig, 后面是/^1D100$/ig, 即 prefixs 变成 1 1D100 
     ///^(?=.*he)(?!.*da).*$/ig
     return [{
         first: /^\.Pf2$/i,
@@ -22,10 +22,10 @@ const prefixs = function () {
 }
 const getHelpMessage = function () {
     return `【Pf2e】.pf2
-这是一个Pf2e的资料庫，只要输入 .pf2 查找的內容，
-就會显示相关资料，如果没有资料，就會显示类似字眼
+这是一个Pf2e的数据库，只要输入 .pf2 查找的内容，
+就会显示相关资料，如果没有资料，就会显示类似字眼
 
-资料來源自 https://www.goddessfantasy.net/bbs/index.php?topic=134913.0 #1 仙堂麻尋
+资料来源自 https://www.goddessfantasy.net/bbs/index.php?topic=134913.0 #1 仙堂麻尋
     `
 }
 const initialize = function () {
@@ -115,7 +115,7 @@ ${result[i].item.desc} \n
                 }
             }
             else {
-                rply += '找到太多相关资料，请更精確的查詢\n\n';
+                rply += '找到太多相关资料，请更精确的查询\n\n';
                 for (let i = 0; i < result.length; i++) {
                     rply += `${result[i].item.name}\n`;
                 }

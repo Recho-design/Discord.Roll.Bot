@@ -1,385 +1,473 @@
 "use strict";
 if (!process.env.DISCORD_CHANNEL_SECRET) {
-    return;
+  return;
 }
 const variables = {};
-const jimp = require('jimp');
-const sharp = require('sharp');
-const { SlashCommandBuilder } = require('discord.js');
-const axios = require('axios');
-const fs = require('fs');
-const getColors = require('get-image-colors')
-const generate = require('@ant-design/colors').generate
-const GeoPattern = require('geopattern');
+const jimp = require("jimp");
+const sharp = require("sharp");
+const { SlashCommandBuilder } = require("discord.js");
+const axios = require("axios");
+const fs = require("fs");
+const getColors = require("get-image-colors");
+const generate = require("@ant-design/colors").generate;
+const GeoPattern = require("geopattern");
 
 const gameName = function () {
-    return '【製作Token】.token'
-}
+  return "【制作Token】.token";
+};
 
 const gameType = function () {
-    return 'Tool:Token:hktrpg'
-}
+  return "Tool:Token:hktrpg";
+};
 const prefixs = function () {
-    return [{
-        first: /^\.token$|^\.token2$|^\.token3$/i,
-        second: null
-    }]
-}
+  return [
+    {
+      first: /^\.token$|^\.token2$|^\.token3$/i,
+      second: null,
+    },
+  ];
+};
 const getHelpMessage = function () {
-    return `【製作Token】.token
-用來製作跑团Token的功能
-可以自定两行名字和圖片內容
+  return `【制作Token】.token
+用来制作跑团Token的功能
+可以自定两行名字和图片內容
 
-分別有两种製作外框樣式
+分别有两种制作外框样式
 1. .token 为方形(相片型)
-2. .token2 为透底圓形
-3. .token3 为透底圓形，外框为根據你的Discord名字或输入名字決定的顏色
+2. .token2 为透底圆形
+3. .token3 为透底圆形，外框为根据你的Discord名字或输入名字决定的颜色
 
 使用方法:
-reply一个有圖片的訊息 或傳送一张圖片时，输入.token 
-就可以产生一个token圖片
-如果没有指定圖片，则自动使用你的头像 作为token
+reply一个有图片的信息 或传送一张图片时，输入.token 
+就可以产生一个token图片
+如果没有指定图片，则自动使用你的头像 作为token
 
-同时可以输入两行內容，作为圖片上的文字
+同时可以输入两行内容，作为图片上的文字
 如.token 
-Sad
-HKTRPG
+骰
+娘
 
-`
-}
+`;
+};
 const initialize = function () {
-    return variables;
-}
+  return variables;
+};
 
 const rollDiceCommand = async function ({
-    inputStr,
-    mainMsg,
-    discordClient,
-    discordMessage,
-    displaynameDiscord
+  inputStr,
+  mainMsg,
+  discordClient,
+  discordMessage,
+  displaynameDiscord,
 }) {
-    let rply = {
-        default: 'on',
-        type: 'text',
-        text: ''
-    };
-    switch (true) {
-        case /^help$/i.test(mainMsg[1]): {
-            rply.text = getHelpMessage();
-            rply.quotes = true;
-            return rply;
-        }
-        case /^\.token2/.test(mainMsg[0]): {
-            //get avatar  or reply message image
-            return await circleTokernMaker(discordMessage, inputStr, mainMsg, discordClient);
-        }
-        case /^\.token3/.test(mainMsg[0]): {
-            //get avatar  or reply message image
-            return await circleTokernMaker3(discordMessage, inputStr, mainMsg, discordClient, displaynameDiscord);
-        }
-        case /^\S/.test(mainMsg[1]) || !mainMsg[1]: {
-            //get avatar  or reply message image
-            return await polaroidTokernMaker(discordMessage, inputStr, mainMsg, discordClient);
-        }
-        default: {
-            break;
-        }
+  let rply = {
+    default: "on",
+    type: "text",
+    text: "",
+  };
+  switch (true) {
+    case /^help$/i.test(mainMsg[1]): {
+      rply.text = getHelpMessage();
+      rply.quotes = true;
+      return rply;
     }
-}
-
-const circleTokernMaker = async (discordMessage, inputStr, mainMsg, discordClient) => {
-    try {
-        let rply = { text: '', sendImage: '' };
-        const text = await getName(discordMessage, inputStr, mainMsg)
-        const avatar = await getAvatar(discordMessage, discordClient)
-        if (!avatar) {
-            rply.text = `没有找到reply 的圖示, 请再次检查 \n\n${getHelpMessage()}`;
-            return rply;
-        }
-        const response = await getImage(avatar);
-
-        const d = new Date();
-        let time = d.getTime();
-        let name = `temp_${time}_${text.text}.png`
-
-        const token = await tokernMaker2(response, name);
-        const circleToken = await maskImage(token, './assets/token/tokenCircleMask.png');
-        let newImage = await addTextOnImage2(circleToken, text.text, text.secondLine, name)
-        if (!newImage) {
-            rply.text = `製作失败，可能出现某些错误。 \n\n${getHelpMessage()}`
-            return rply;
-        }
-
-        rply.sendImage = `./temp/finally_${name}`;
-        return rply;
-    } catch (error) {
-        console.error('error', error)
+    case /^\.token2/.test(mainMsg[0]): {
+      //get avatar  or reply message image
+      return await circleTokernMaker(
+        discordMessage,
+        inputStr,
+        mainMsg,
+        discordClient
+      );
     }
+    case /^\.token3/.test(mainMsg[0]): {
+      //get avatar  or reply message image
+      return await circleTokernMaker3(
+        discordMessage,
+        inputStr,
+        mainMsg,
+        discordClient,
+        displaynameDiscord
+      );
+    }
+    case /^\S/.test(mainMsg[1]) || !mainMsg[1]: {
+      //get avatar  or reply message image
+      return await polaroidTokernMaker(
+        discordMessage,
+        inputStr,
+        mainMsg,
+        discordClient
+      );
+    }
+    default: {
+      break;
+    }
+  }
+};
+
+const circleTokernMaker = async (
+  discordMessage,
+  inputStr,
+  mainMsg,
+  discordClient
+) => {
+  try {
+    let rply = { text: "", sendImage: "" };
+    const text = await getName(discordMessage, inputStr, mainMsg);
+    const avatar = await getAvatar(discordMessage, discordClient);
+    if (!avatar) {
+      rply.text = `没有找到reply 的图示, 请再次检查 \n\n${getHelpMessage()}`;
+      return rply;
+    }
+    const response = await getImage(avatar);
+
+    const d = new Date();
+    let time = d.getTime();
+    let name = `temp_${time}_${text.text}.png`;
+
+    const token = await tokernMaker2(response, name);
+    const circleToken = await maskImage(
+      token,
+      "./assets/token/tokenCircleMask.png"
+    );
+    let newImage = await addTextOnImage2(
+      circleToken,
+      text.text,
+      text.secondLine,
+      name
+    );
+    if (!newImage) {
+      rply.text = `制作失败，可能出现某些错误。 \n\n${getHelpMessage()}`;
+      return rply;
+    }
+
+    rply.sendImage = `./temp/finally_${name}`;
     return rply;
-}
-const circleTokernMaker3 = async (discordMessage, inputStr, mainMsg, discordClient, displaynameDiscord) => {
-    try {
-        let rply = { text: '', sendImage: '' };
-        const text = await getName(discordMessage, inputStr, mainMsg)
-        const avatar = await getAvatar(discordMessage, discordClient)
-        if (!avatar) {
-            rply.text = `没有找到reply 的圖示, 请再次检查 \n\n${getHelpMessage()}`;
-            return rply;
-        }
-        const response = await getImage(avatar);
-        // `colors` is an array of color objects
-        const d = new Date();
-        let time = d.getTime();
-        let name = `temp_${time}_${text.text}.png`
-
-        const token = await tokernMaker3(response, name);
-        const circleToken = await maskImage(token, './assets/token/tokenCircleMask3.png');
-
-        const pattern = GeoPattern.generate((text.text || displaynameDiscord || '骰娘爱你哦💖')).toString().replace('width="188" height="70"', 'width="520" height="520"')
-        let url = Buffer.from(
-            pattern
-        )
-        let coloredBase = await sharp(url)
-            .resize(520, 520)
-            .toBuffer();
-        //https://github.com/oliver-moran/jimp/issues/231
-
-        coloredBase = await maskImage(coloredBase, './assets/token/ONLINE_TOKEN_BACKGROUND_COLOR3.png');
-        const circleToken2 = await sharp(coloredBase)
-            .composite(
-                [
-                    { input: circleToken, top: 0, left: 0 },
-                ])
-            .toBuffer()
-        let newImage = await addTextOnImage2(circleToken2, text.text, text.secondLine, name)
-        if (!newImage) {
-            rply.text = `製作失败，可能出现某些错误。 \n\n${getHelpMessage()}`
-            return rply;
-        }
-        rply.sendImage = `./temp/finally_${name}`;
-        return rply;
-    } catch (error) {
-        console.error('error', error)
+  } catch (error) {
+    console.error("error", error);
+  }
+  return rply;
+};
+const circleTokernMaker3 = async (
+  discordMessage,
+  inputStr,
+  mainMsg,
+  discordClient,
+  displaynameDiscord
+) => {
+  try {
+    let rply = { text: "", sendImage: "" };
+    const text = await getName(discordMessage, inputStr, mainMsg);
+    const avatar = await getAvatar(discordMessage, discordClient);
+    if (!avatar) {
+      rply.text = `没有找到reply 的图示, 请再次检查 \n\n${getHelpMessage()}`;
+      return rply;
     }
+    const response = await getImage(avatar);
+    // `colors` is an array of color objects
+    const d = new Date();
+    let time = d.getTime();
+    let name = `temp_${time}_${text.text}.png`;
+
+    const token = await tokernMaker3(response, name);
+    const circleToken = await maskImage(
+      token,
+      "./assets/token/tokenCircleMask3.png"
+    );
+
+    const pattern = GeoPattern.generate(
+      text.text || displaynameDiscord || "骰娘爱你哦💖"
+    )
+      .toString()
+      .replace('width="188" height="70"', 'width="520" height="520"');
+    let url = Buffer.from(pattern);
+    let coloredBase = await sharp(url).resize(520, 520).toBuffer();
+    //https://github.com/oliver-moran/jimp/issues/231
+
+    coloredBase = await maskImage(
+      coloredBase,
+      "./assets/token/ONLINE_TOKEN_BACKGROUND_COLOR3.png"
+    );
+    const circleToken2 = await sharp(coloredBase)
+      .composite([{ input: circleToken, top: 0, left: 0 }])
+      .toBuffer();
+    let newImage = await addTextOnImage2(
+      circleToken2,
+      text.text,
+      text.secondLine,
+      name
+    );
+    if (!newImage) {
+      rply.text = `制作失败，可能出现某些错误。 \n\n${getHelpMessage()}`;
+      return rply;
+    }
+    rply.sendImage = `./temp/finally_${name}`;
     return rply;
-}
+  } catch (error) {
+    console.error("error", error);
+  }
+  return rply;
+};
 
 async function maskImage(path, maskPath) {
-    const image = await jimp.read(path);
-    const mask = await jimp.read(maskPath);
-    image.mask(mask, 0, 0)
-    return await image.getBufferAsync(jimp.MIME_PNG);
-    //    return await image.writeAsync('./assets/token/test2345.png'); // Returns Promise
+  const image = await jimp.read(path);
+  const mask = await jimp.read(maskPath);
+  image.mask(mask, 0, 0);
+  return await image.getBufferAsync(jimp.MIME_PNG);
+  //    return await image.writeAsync('./assets/token/test2345.png'); // Returns Promise
 }
 
-const polaroidTokernMaker = async (discordMessage, inputStr, mainMsg, discordClient) => {
-    try {
-        let rply = { text: '', sendImage: '' };
-        const text = await getName(discordMessage, inputStr, mainMsg)
-        const avatar = await getAvatar(discordMessage, discordClient)
-        if (!avatar) {
-            rply.text = `没有找到reply 的圖示, 请再次检查 \n\n${getHelpMessage()}`;
-            return rply;
-        }
-
-        const response = await getImage(avatar);
-
-        const d = new Date();
-        let time = d.getTime();
-        let name = `temp_${time}_${text.text}.png`
-
-        const token = await tokernMaker(response, name);
-
-        let newImage = await addTextOnImage(token, text.text, text.secondLine, name)
-        if (!newImage) {
-            rply.text = `製作失败，可能出现某些错误。 \n\n${getHelpMessage()}`;
-            return rply;
-        }
-        rply.sendImage = `./temp/finally_${name}`;
-        return rply;
-    } catch (error) {
-        console.error('error', error)
+const polaroidTokernMaker = async (
+  discordMessage,
+  inputStr,
+  mainMsg,
+  discordClient
+) => {
+  try {
+    let rply = { text: "", sendImage: "" };
+    const text = await getName(discordMessage, inputStr, mainMsg);
+    const avatar = await getAvatar(discordMessage, discordClient);
+    if (!avatar) {
+      rply.text = `没有找到reply 的图示, 请再次检查 \n\n${getHelpMessage()}`;
+      return rply;
     }
+
+    const response = await getImage(avatar);
+
+    const d = new Date();
+    let time = d.getTime();
+    let name = `temp_${time}_${text.text}.png`;
+
+    const token = await tokernMaker(response, name);
+
+    let newImage = await addTextOnImage(
+      token,
+      text.text,
+      text.secondLine,
+      name
+    );
+    if (!newImage) {
+      rply.text = `制作失败，可能出现某些错误。 \n\n${getHelpMessage()}`;
+      return rply;
+    }
+    rply.sendImage = `./temp/finally_${name}`;
     return rply;
-}
+  } catch (error) {
+    console.error("error", error);
+  }
+  return rply;
+};
 
 const getAvatar = async (discordMessage, discordClient) => {
-    if (discordMessage.type === 0 && discordMessage.attachments.size === 0) {
-        const member = (discordMessage.guild && await discordMessage.guild.members.fetch(discordMessage.author) || discordMessage.author)
-        return member.displayAvatarURL();
-    }
-    if (discordMessage.type === 0 && discordMessage.attachments.size > 0) {
-        const url = discordMessage.attachments.find(data => data.contentType.match(/image/i))
-        return (url && url.url) || null;
-    }
-    //19 = reply
-    if (discordMessage.type === 19) {
-        const channel = await discordClient.channels.fetch(discordMessage.reference.channelId);
-        const referenceMessage = await channel.messages.fetch(discordMessage.reference.messageId)
-        const url = referenceMessage.attachments.find(data => data.contentType.match(/image/i))
-        return (url && url.url) || null;
-    }
-}
+  if (discordMessage.type === 0 && discordMessage.attachments.size === 0) {
+    const member =
+      (discordMessage.guild &&
+        (await discordMessage.guild.members.fetch(discordMessage.author))) ||
+      discordMessage.author;
+    return member.displayAvatarURL();
+  }
+  if (discordMessage.type === 0 && discordMessage.attachments.size > 0) {
+    const url = discordMessage.attachments.find((data) =>
+      data.contentType.match(/image/i)
+    );
+    return (url && url.url) || null;
+  }
+  //19 = reply
+  if (discordMessage.type === 19) {
+    const channel = await discordClient.channels.fetch(
+      discordMessage.reference.channelId
+    );
+    const referenceMessage = await channel.messages.fetch(
+      discordMessage.reference.messageId
+    );
+    const url = referenceMessage.attachments.find((data) =>
+      data.contentType.match(/image/i)
+    );
+    return (url && url.url) || null;
+  }
+};
 
 const getName = async (discordMessage, inputStr) => {
-    /**  if (!mainMsg[1]) {
+  /**  if (!mainMsg[1]) {
           const member = await discordMessage.guild.members.fetch(discordMessage.author)
           let nickname = member ? member.displayName : discordMessage.author.username;
           return { text: nickname, secondLine: '' }
       }
       else */
-    {
-        let line = inputStr.replace(/^\s?\S+\s?/, '').split("\n");
-        if (line[2]) line.shift();
-        return { text: line[0], secondLine: line[1] || '' }
-    }
+  {
+    let line = inputStr.replace(/^\s?\S+\s?/, "").split("\n");
+    if (line[2]) line.shift();
+    return { text: line[0], secondLine: line[1] || "" };
+  }
+};
 
-}
-
-
-const getImage = async url => {
-    //	const response = await axios(url, { responseType: 'arraybuffer' })
-    //	const buffer64 = Buffer.from(response.data, 'binary').toString('base64')
-    //	return buffer64
-    return (await axios({ url, responseType: "arraybuffer" })).data;
-}
+const getImage = async (url) => {
+  //	const response = await axios(url, { responseType: 'arraybuffer' })
+  //	const buffer64 = Buffer.from(response.data, 'binary').toString('base64')
+  //	return buffer64
+  return (await axios({ url, responseType: "arraybuffer" })).data;
+};
 const tokernMaker = async (imageLocation, name) => {
-    try {
-
-        let image = await sharp(imageLocation).resize({ height: 387, width: 375, fit: 'outside' })
-        await image.toFile(`./temp/new_${name}`)
-        let newImage = await sharp((`./temp/new_${name}`))
-        let metadata = await newImage.metadata();
-        const width = (metadata.width < 375) ? metadata.width : 375;
-        const height = (metadata.height < 387) ? metadata.height : 387;
-        const left = ((metadata.width - 375) / 2) < 0 ? sharp.gravity.center : parseInt((metadata.width - 375) / 2);
-        const top = ((metadata.height - 387) / 2) < 0 ? sharp.gravity.center : parseInt((metadata.height - 387) / 2);
-        newImage = await newImage.extract({ left, top, width, height }).toBuffer()
-        newImage = await sharp('./views/image/ONLINE_TOKEN.png')
-            .composite(
-                [{ input: newImage, blend: 'saturate', top: 28, left: 73 }
-                ]
-            )
-            .toBuffer()
-        fs.unlinkSync(`./temp/new_${name}`);
-        return newImage;
-    } catch (error) {
-        console.error('#token 142 error', error)
-    }
-}
-
+  try {
+    let image = await sharp(imageLocation).resize({
+      height: 387,
+      width: 375,
+      fit: "outside",
+    });
+    await image.toFile(`./temp/new_${name}`);
+    let newImage = await sharp(`./temp/new_${name}`);
+    let metadata = await newImage.metadata();
+    const width = metadata.width < 375 ? metadata.width : 375;
+    const height = metadata.height < 387 ? metadata.height : 387;
+    const left =
+      (metadata.width - 375) / 2 < 0
+        ? sharp.gravity.center
+        : parseInt((metadata.width - 375) / 2);
+    const top =
+      (metadata.height - 387) / 2 < 0
+        ? sharp.gravity.center
+        : parseInt((metadata.height - 387) / 2);
+    newImage = await newImage.extract({ left, top, width, height }).toBuffer();
+    newImage = await sharp("./views/image/ONLINE_TOKEN.png")
+      .composite([{ input: newImage, blend: "saturate", top: 28, left: 73 }])
+      .toBuffer();
+    fs.unlinkSync(`./temp/new_${name}`);
+    return newImage;
+  } catch (error) {
+    console.error("#token 142 error", error);
+  }
+};
 
 const tokernMaker2 = async (imageLocation, name) => {
-    try {
-
-        let image = await sharp(imageLocation).resize({ height: 520, width: 520, fit: 'outside' })
-        await image.toFile(`./temp/new_${name}`)
-        let newImage = await sharp((`./temp/new_${name}`))
-        let metadata = await newImage.metadata();
-        const width = (metadata.width < 520) ? metadata.width : 520;
-        const height = (metadata.height < 520) ? metadata.height : 520;
-        const left = ((metadata.width - 520) / 2) < 0 ? sharp.gravity.center : parseInt((metadata.width - 520) / 2);
-        const top = ((metadata.height - 520) / 2) < 0 ? sharp.gravity.center : parseInt((metadata.height - 520) / 2);
-        newImage = await newImage.extract({ left, top, width, height }).toBuffer()
-        newImage = await sharp('./views/image/ONLINE TOKEN_BASE.png')
-            .composite(
-                [{ input: newImage, blend: 'saturate', top: 0, left: 0 }
-                ]
-            )
-            .toBuffer()
-        fs.unlinkSync(`./temp/new_${name}`);
-        return newImage;
-    } catch (error) {
-        console.error('#token 142 error', error)
-    }
-}
+  try {
+    let image = await sharp(imageLocation).resize({
+      height: 520,
+      width: 520,
+      fit: "outside",
+    });
+    await image.toFile(`./temp/new_${name}`);
+    let newImage = await sharp(`./temp/new_${name}`);
+    let metadata = await newImage.metadata();
+    const width = metadata.width < 520 ? metadata.width : 520;
+    const height = metadata.height < 520 ? metadata.height : 520;
+    const left =
+      (metadata.width - 520) / 2 < 0
+        ? sharp.gravity.center
+        : parseInt((metadata.width - 520) / 2);
+    const top =
+      (metadata.height - 520) / 2 < 0
+        ? sharp.gravity.center
+        : parseInt((metadata.height - 520) / 2);
+    newImage = await newImage.extract({ left, top, width, height }).toBuffer();
+    newImage = await sharp("./views/image/ONLINE TOKEN_BASE.png")
+      .composite([{ input: newImage, blend: "saturate", top: 0, left: 0 }])
+      .toBuffer();
+    fs.unlinkSync(`./temp/new_${name}`);
+    return newImage;
+  } catch (error) {
+    console.error("#token 142 error", error);
+  }
+};
 
 const tokernMaker3 = async (imageLocation, name) => {
-    try {
+  try {
+    let image = await sharp(imageLocation).resize({
+      height: 520,
+      width: 520,
+      fit: "outside",
+    });
+    await image.toFile(`./temp/new_${name}`);
+    let newImage = await sharp(`./temp/new_${name}`);
+    let metadata = await newImage.metadata();
+    const width = metadata.width < 520 ? metadata.width : 520;
+    const height = metadata.height < 520 ? metadata.height : 520;
+    const left =
+      (metadata.width - 520) / 2 < 0
+        ? sharp.gravity.center
+        : parseInt((metadata.width - 520) / 2);
+    const top =
+      (metadata.height - 520) / 2 < 0
+        ? sharp.gravity.center
+        : parseInt((metadata.height - 520) / 2);
+    newImage = await newImage.extract({ left, top, width, height }).toBuffer();
+    newImage = await sharp("./views/image/ONLINE TOKEN_BASE.png")
+      .composite([{ input: newImage, blend: "saturate", top: 0, left: 0 }])
+      .toBuffer();
+    fs.unlinkSync(`./temp/new_${name}`);
+    return newImage;
+  } catch (error) {
+    console.error("#token 142 error", error);
+  }
+};
 
-        let image = await sharp(imageLocation).resize({ height: 520, width: 520, fit: 'outside' })
-        await image.toFile(`./temp/new_${name}`)
-        let newImage = await sharp((`./temp/new_${name}`))
-        let metadata = await newImage.metadata();
-        const width = (metadata.width < 520) ? metadata.width : 520;
-        const height = (metadata.height < 520) ? metadata.height : 520;
-        const left = ((metadata.width - 520) / 2) < 0 ? sharp.gravity.center : parseInt((metadata.width - 520) / 2);
-        const top = ((metadata.height - 520) / 2) < 0 ? sharp.gravity.center : parseInt((metadata.height - 520) / 2);
-        newImage = await newImage.extract({ left, top, width, height }).toBuffer()
-        newImage = await sharp('./views/image/ONLINE TOKEN_BASE.png')
-            .composite(
-                [
-                    { input: newImage, blend: 'saturate', top: 0, left: 0 },
-                ])
-            .toBuffer()
-        fs.unlinkSync(`./temp/new_${name}`);
-        return newImage;
-    } catch (error) {
-        console.error('#token 142 error', error)
-    }
+async function addTextOnImage(token, text = "", text2 = "", name) {
+  try {
+    const svgBuffer = colorTextBuilder({
+      text,
+      text2,
+      size: [92, 61],
+      position: 96,
+    });
+    let image = await sharp(token).composite([
+      {
+        input: svgBuffer,
+        top: 0,
+        left: 0,
+      },
+    ]);
+    await image.toFile(`./temp/finally_${name}`);
+    return true;
+  } catch (error) {
+    return null;
+  }
 }
 
-async function addTextOnImage(token, text = '', text2 = '', name) {
-    try {
-        const svgBuffer = colorTextBuilder({ text, text2, size: [92, 61], position: 96 });
-        let image = await sharp(token)
-            .composite([
-                {
-                    input: svgBuffer,
-                    top: 0,
-                    left: 0,
-                },
-            ])
-        await image.toFile(`./temp/finally_${name}`)
-        return true;
-    } catch (error) {
-        return null;
-    }
-}
-
-async function addTextOnImage2(token, text = ' ', text2 = ' ', name) {
-    try {
-        const svgBuffer = colorTextBuilder({ text, text2, size: [96, 66], position: 96 });
-        let image = await sharp(token)
-            .composite([
-                {
-                    input: svgBuffer,
-                    top: 0,
-                    left: 0,
-                },
-            ])
-        await image.toFile(`./temp/finally_${name}`)
-        return true;
-    } catch (error) {
-        return null;
-    }
+async function addTextOnImage2(token, text = " ", text2 = " ", name) {
+  try {
+    const svgBuffer = colorTextBuilder({
+      text,
+      text2,
+      size: [96, 66],
+      position: 96,
+    });
+    let image = await sharp(token).composite([
+      {
+        input: svgBuffer,
+        top: 0,
+        left: 0,
+      },
+    ]);
+    await image.toFile(`./temp/finally_${name}`);
+    return true;
+  } catch (error) {
+    return null;
+  }
 }
 
 function hexToRgb(hex) {
-    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result
+    ? {
         r: parseInt(result[1], 16),
         g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-    } : null;
+        b: parseInt(result[3], 16),
+      }
+    : null;
 }
 
 function rgbToHex(r, g, b) {
-    return (valueToHex(r) + valueToHex(g) + valueToHex(b));
+  return valueToHex(r) + valueToHex(g) + valueToHex(b);
 }
 function valueToHex(c) {
-    let hex = c.toString(16);
-    return hex
+  let hex = c.toString(16);
+  return hex;
 }
-const discordCommand = [
-
-];
-
+const discordCommand = [];
 
 function colorTextBuilder({ size, text, text2, position }) {
-    const singleLine = text2 ? false : true;
-    const textSize = singleLine ? size[0] : size[1];
-    let svgScript = `
+  const singleLine = text2 ? false : true;
+  const textSize = singleLine ? size[0] : size[1];
+  let svgScript = `
     <svg width="520" height="520">
       <style>
       .outline {     paint-order: stroke;     stroke: black;     stroke-width: 5px; }
@@ -391,22 +479,22 @@ function colorTextBuilder({ size, text, text2, position }) {
         }
       </style>
     `;
-    svgScript += singleLine ? `<text x="50%" y="${position}%" text-anchor="middle" class="title shadow outline">${text}</text></svg>` :
-        `<text x="50%" y="84%" text-anchor="middle" class="title shadow outline">${text}</text>
+  svgScript += singleLine
+    ? `<text x="50%" y="${position}%" text-anchor="middle" class="title shadow outline">${text}</text></svg>`
+    : `<text x="50%" y="84%" text-anchor="middle" class="title shadow outline">${text}</text>
   <text x="50%" y="97%" text-anchor="middle" class="title shadow outline">${text2}</text></svg>`;
 
-    return singleLine ? Buffer.from(svgScript) : Buffer.from(svgScript);
+  return singleLine ? Buffer.from(svgScript) : Buffer.from(svgScript);
 }
 
-
 module.exports = {
-    rollDiceCommand,
-    initialize,
-    getHelpMessage,
-    prefixs,
-    gameType,
-    gameName,
-    discordCommand
+  rollDiceCommand,
+  initialize,
+  getHelpMessage,
+  prefixs,
+  gameType,
+  gameName,
+  discordCommand,
 };
 
 /**

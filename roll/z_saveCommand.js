@@ -11,7 +11,7 @@ records.get('trpgCommand', (msgs) => {
 const VIP = require('../modules/veryImportantPerson');
 const FUNCTION_LIMIT = [30, 200, 200, 300, 300, 300, 300, 300];
 const gameName = function () {
-    return '【儲存掷骰指令功能】 .cmd (add del show 自定关鍵字)'
+    return '【储存掷骰指令功能】 .cmd (add del show 自定关鍵字)'
 }
 const gameType = function () {
     return 'Tool:trpgCommand:hktrpg'
@@ -23,17 +23,17 @@ const prefixs = function () {
     }]
 }
 const getHelpMessage = async function () {
-    return `【儲存掷骰指令功能】
-这是根據关鍵字來再现掷骰指令
+    return `【储存掷骰指令功能】
+这是根据关键词来再现掷骰指令
 
-输入.cmd add (关鍵字) (指令)即可增加关鍵字
-输入.cmd show 显示所有关鍵字
-输入.cmd del(編號)或all 即可刪除
-输入.cmd  (关鍵字) 即可執行 
+输入.cmd add (关键词) (指令)即可增加关键词
+输入.cmd show 显示所有关键词
+输入.cmd del(编号)或all 即可删除
+输入.cmd  (关键词) 即可执行 
 
 例如输入 .cmd add  pc1斗殴 cc 80 斗殴 
-再输入.cmd pc1斗殴  就會執行后方的指令
-add 后面第一个是关鍵字, 可以是符號或任何字
+再输入.cmd pc1斗殴  就会执行后方的指令
+add 后面第一个是关键词, 可以是符号或任何字
 P.S.如果没立即生效 用.cmd show 刷新一下
 
 
@@ -66,11 +66,11 @@ const rollDiceCommand = async function ({
             return rply;
         // .cmd(0) ADD(1) TOPIC(2) CONTACT(3)
         case /(^[.]cmd$)/i.test(mainMsg[0]) && /^add$/i.test(mainMsg[1]) && /^(?!(add|del|show)$)/ig.test(mainMsg[2]):
-            //增加资料庫
+            //增加资料库
             //检查有没有重覆
             if (!mainMsg[2]) rply.text += ' 没有标题.\n\n'
             if (!mainMsg[3]) rply.text += ' 没有掷骰指令\n\n'
-            if (mainMsg[3] && mainMsg[3].toLowerCase() == ".cmd") rply.text += '指令不可以儲存.cmd\n\n'
+            if (mainMsg[3] && mainMsg[3].toLowerCase() == ".cmd") rply.text += '指令不可以储存.cmd\n\n'
             if (rply.text += checkTools.permissionErrMsg({
                 flag: checkTools.flag.ChkChannelManager,
                 gid: groupid,
@@ -86,7 +86,7 @@ const rollDiceCommand = async function ({
                 for (let i = 0; i < trpgCommandfunction.trpgCommandfunction.length; i++) {
                     if (trpgCommandfunction.trpgCommandfunction[i].groupid == groupid) {
                         if (trpgCommandfunction.trpgCommandfunction[i].trpgCommandfunction.length >= limit) {
-                            rply.text = '关鍵字上限' + limit + '个\n支援及解锁上限 https://www.patreon.com/HKTRPG\n';
+                            rply.text = '关鍵字上限' + limit + '个';
                             return rply;
                         }
                         if (trpgCommandfunction.trpgCommandfunction[0] && trpgCommandfunction.trpgCommandfunction[0].trpgCommandfunction[0])
@@ -117,7 +117,7 @@ const rollDiceCommand = async function ({
             return rply;
 
         case /(^[.]cmd$)/i.test(mainMsg[0]) && /^del$/i.test(mainMsg[1]) && /^all$/i.test(mainMsg[2]):
-            //刪除资料庫
+            //刪除资料库
             if (rply.text = checkTools.permissionErrMsg({
                 flag: checkTools.flag.ChkChannelManager,
                 gid: groupid,
@@ -140,7 +140,7 @@ const rollDiceCommand = async function ({
             }
             return rply;
         case /(^[.]cmd$)/i.test(mainMsg[0]) && /^del$/i.test(mainMsg[1]) && /^\d+$/i.test(mainMsg[2]):
-            //刪除资料庫
+            //刪除资料库
             if (!mainMsg[2]) rply.text += '没有关鍵字. '
             if (rply.text += checkTools.permissionErrMsg({
                 flag: checkTools.flag.ChkChannelManager,
@@ -170,33 +170,33 @@ const rollDiceCommand = async function ({
                 trpgCommandfunction.trpgCommandfunction = msgs
             })
             if (!groupid) {
-                rply.text = '此功能必須在群組中使用. ';
+                rply.text = '此功能必须在社区中使用. ';
                 return rply
             }
             if (trpgCommandfunction.trpgCommandfunction)
                 for (let i = 0; i < trpgCommandfunction.trpgCommandfunction.length; i++) {
                     if (trpgCommandfunction.trpgCommandfunction[i].groupid == groupid) {
-                        rply.text += '资料庫列表:'
+                        rply.text += '资料库列表:'
                         for (let a = 0; a < trpgCommandfunction.trpgCommandfunction[i].trpgCommandfunction.length; a++) {
                             temp = 1
                             rply.text += ("\n") + a + ": " + trpgCommandfunction.trpgCommandfunction[i].trpgCommandfunction[a].topic + '\n' + trpgCommandfunction.trpgCommandfunction[i].trpgCommandfunction[a].contact + '\n'
                         }
                     }
                 }
-            if (temp == 0) rply.text = '没有已設定的关鍵字. '
-            //显示资料庫
+            if (temp == 0) rply.text = '没有已设定的关鍵字. '
+            //显示资料库
             rply.text = rply.text.replace(/^([^(,)\1]*?)\s*(,)\s*/mg, '$1: ').replace(/,/gm, ', ')
             return rply
         case /(^[.]cmd$)/i.test(mainMsg[0]) && /\S/i.test(mainMsg[1]) && /^(?!(add|del|show)$)/ig.test(mainMsg[1]):
             //显示关鍵字
             if (!groupid) {
-                rply.text = '此功能必須在群組中使用. ';
+                rply.text = '此功能必须在社区中使用. ';
                 return rply
             }
             if (trpgCommandfunction.trpgCommandfunction && mainMsg[1])
                 for (let i = 0; i < trpgCommandfunction.trpgCommandfunction.length; i++) {
                     if (trpgCommandfunction.trpgCommandfunction[i].groupid == groupid) {
-                        //rply.text += '资料庫列表:'
+                        //rply.text += '资料库列表:'
                         for (let a = 0; a < trpgCommandfunction.trpgCommandfunction[i].trpgCommandfunction.length; a++) {
                             if (trpgCommandfunction.trpgCommandfunction[i].trpgCommandfunction[a].topic.toLowerCase() == mainMsg[1].toLowerCase()) {
                                 temp = 1

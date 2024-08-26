@@ -2,9 +2,9 @@
 
 const chk = require('../modules/check');
 
-const NOT_CHANNEL = "这裡不是群組，这是频道功能，需要在频道上使用。\n\n";
-const NOT_ADMIN = "你没有相关權限，禁止使用这功能，\n你需要有群組管理员權限。\n\n";
-const NOT_MANAGER = "你没有相关權限，禁止使用这功能，\n你需要有管理此频道的權限或群組管理员權限。\n\n";
+const NOT_CHANNEL = "这里不是社区，这是频道功能，需要在频道上使用。\n\n";
+const NOT_ADMIN = "你没有相关权限，禁止使用这功能，\n你需要有社区管理员权限。\n\n";
+const NOT_MANAGER = "你没有相关权限，禁止使用这功能，\n你需要有管理此频道的权限或社区管理员权限。\n\n";
 const NOT_DISCORD = "这是Discord限定功能。\n\n"
 
 test('Test permissionErrMsg ChkGuild is not channel not admin', () => {

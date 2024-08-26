@@ -2,7 +2,7 @@
 
 ## 2022/01/27
 
-增加 【身分組管理】 功能
+增加 【身份组管理】 功能
 
 .rolereact help
 
@@ -10,13 +10,13 @@
 
 ## 2022/01/05
 
-TRPG API @HKTRPG 服務
+TRPG API @HKTRPG 服务
 
 回覆格式为JSON，请求方式为GET
 请求的位置:
 <https://api.hktrpg.com/>
 
-示範:
+示范:
 <https://api.hktrpg.com?msg=1d100>
 
 [api](views/image/api.png)
@@ -43,8 +43,8 @@ TRPG API @HKTRPG 服務
 ## 2021/11/29
 
 更新HKTRPG骰子机械人的结構
-先載入mongoose 再載入chatbot 部份
-(然后代碼又變得更丑了.....)
+先载入mongoose 再载入chatbot 部份
+(然后代码又变得更丑了.....)
 
 修正
 Discord shardids
@@ -54,30 +54,30 @@ Discord shardids
 感謝 rixinsc
 
 更新
-whatsapp 对登入碼的使用
-heroku 上應該也可以有实用性了?
+whatsapp 对登入码的使用
+heroku 上应该也可以有实用性了?
 
 ## 2021/11/08
 
 * TRPG扮演发言功能
-* 你可以設定一个角色的名字及头像，
-* 然后你只要输入指令和说话，就會幫你使用該角色发言。
+* 你可以设定一个角色的名字及头像，
+* 然后你只要输入指令和说话，就会帮你使用该角色发言。
 * .me .me1 .myname
 
 ## 2021/11/01
 
 * 增加 .x 多重掷骰 如.5 cc 80
-* 增加定时发訊功能 .at / .cron
+* 增加定时发讯功能 .at / .cron
   
 ## 2021-10-20
 
-* 增加 5B10S：不加总的掷骰，並按大至小排序 - Krymino Lin的意見
+* 增加 5B10S：不加总的掷骰，并按大至小排序 - Krymino Lin的意见
 
 ## 2021-10-09
 
-* 更新topgg-autoposter，舊版时常CRASH，令HKTRPG出错
+* 更新topgg-autoposter，旧版时常CRASH，令HKTRPG出错
 * 更新了PLURK，令速度提升
-* 改良CODE，移除了没用的AWAIT ASYNC，令程式反應更快
+* 改良CODE，移除了没用的AWAIT ASYNC，令程式反应更快
 * 部份使用了IIFE
 
 ## 2021-09-30

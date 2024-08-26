@@ -52,7 +52,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="https://www.hktrpg.com/wiki/index.php/%E9%A6%96%E9%A0%81">主頁
+                <a class="nav-item nav-link active" href="https://www.hktrpg.com/wiki/index.php/%E9%A6%96%E9%A0%81">主页
                 </a>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -99,7 +99,7 @@
         <div class="row">
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">
-                    圖片
+                    图片
                 </h4>
                 <div class="row">
                     <div class="col-md-12 mb-12" id="canvasDIV">
@@ -116,7 +116,7 @@
                 </div>
                 <hr class="mb-4" />
                 <button class="btn btn-primary btn-lg" onclick="takeScreenshot()" type="submit">
-                    儲存圖片
+                    储存图片
                 </button>
                 <button class="btn btn-primary btn-lg" type="submit">
                     傳送到聊天平台
@@ -183,7 +183,7 @@
                 <div class="collapse multi-collapse" id="collapseBG">
                     <div class="card p-2">
                         <ul class="list-group mb-3">
-                            預設圖 3-5张
+                            预设图 3-5张
                             <div class="dropzone" id="img-upload-BG">
                             </div>
                         </ul>
@@ -217,7 +217,7 @@
                 <div class="collapse multi-collapse" id="collapseDialogBox">
                     <div class="card p-2">
                         <ul class="list-group mb-3">
-                            預設圖 2-3张
+                            预设图 2-3张
                             <div class="dropzone" id="img-upload-DialogBox">
                             </div>
                         </ul>
@@ -242,7 +242,7 @@
                                 移除濾镜
                             </button>
                             <button type="submit" class="btn btn-secondary" onclick="selectAll()">
-                                选取全部圖层
+                                选取全部图层
                             </button>
                         </div>
                         <div class="card p-2">
@@ -540,7 +540,7 @@
             'https://images.mihuashi.com/2017/10/26/03/mrantfdaxgbaycgueznm2dvbqmjrc6i3/mrantfdaxgbaycgueznm2dvbqmjrc6i3.jpg'
         );
         createDialogBox('https://i.imgur.com/maCqZFS.png');
-        createText('这是測试，左鍵連点两下是放大，加上Shift是缩小，Shift+右鍵两下是刪除')
+        createText('这是测试，左鍵連点两下是放大，加上Shift是缩小，Shift+右鍵两下是刪除')
         app.stage.sortChildren();
 
 
@@ -614,7 +614,7 @@
         function selectAll() {
             $('#v-model-select-dynamic').select2('destroy').find('option').prop('selected', 'selected').end().select2({
                 closeOnSelect: false,
-                placeholder: '选取目标圖层',
+                placeholder: '选取目标图层',
                 allowClear: true,
                 scrollAfterSelect: true
             });
@@ -889,7 +889,7 @@
         $(document).ready(function () {
             $('.js-example-basic-multiple').select2({
                 closeOnSelect: false,
-                placeholder: '选取目标圖层',
+                placeholder: '选取目标图层',
                 allowClear: true,
                 scrollAfterSelect: true
             });
@@ -942,8 +942,8 @@
             rollText.zIndex = 400;
             rollText.appType = "dice"
             rollText.anchor.set(0.5);
-            rollText.interactive = true; // 設定可以互动
-            rollText.buttonMode = true; // 当滑鼠滑过时显示为手指圖示
+            rollText.interactive = true; // 设定可以互动
+            rollText.buttonMode = true; // 当滑鼠滑过时显示为手指图示
             rollText.updateAnchor = true;
             rollText
                 .on('pointerdown', onDragStart)
@@ -982,7 +982,7 @@
                     $('#v-model-select-dynamic').select2('destroy').find('option').prop('selected',
                         false).end().select2({
                         closeOnSelect: false,
-                        placeholder: '选取目标圖层',
+                        placeholder: '选取目标图层',
                         allowClear: true,
                         scrollAfterSelect: true
                     });
@@ -1008,18 +1008,18 @@
 </body>
 <!-- HKTRPG Sad -- 20201221-->
 <!-- 
-掷骰    -   可以进行最基本1D2 1D3…1D100，然后把结果像实骰一樣放上畫面。   缺掷骰结果圖像
-背景    -   更換背景圖片，可选根據濶度，高度等等，參考一些VIDEO PLAYER    DONE
-角色    -   可以放上数张不同的角色圖，刪除，有反转，DRAG及拉大缩少，改變顏色，灰化，黑化，模糊化等功能
+掷骰    -   可以进行最基本1D2 1D3…1D100，然后把结果像实骰一样放上畫面。   缺掷骰结果图像
+背景    -   更換背景图片，可选根據濶度，高度等等，參考一些VIDEO PLAYER    DONE
+角色    -   可以放上数张不同的角色图，刪除，有反转，DRAG及拉大缩少，改变顏色，灰化，黑化，模糊化等功能
 濾镜    -   整个畫面的濾镜
 特效    -   像一些! 笑 顏文字 雨 風 血 等等显示在畫面
 文字    -   在畫面显示文字
-关閉劇場    -   不显示下方的对话框
+关闭劇場    -   不显示下方的对话框
 傳送    -   
 
 最下    -   可以在对话框输入文字
 
-右鍵可以DELETE 复製
+右鍵可以DELETE 复制
 
 https://www.html5gamedevs.com/topic/27159-make-a-context-menu-appear-upon-right-click-of-a-sprite/
 https://www.iwm-tuebingen.de/iwmbrowser/lib/pixi/popupmenu.html

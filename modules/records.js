@@ -35,7 +35,7 @@ class Records extends EventEmitter {
         /*
             提醒:
             $push 加入新的
-            $set  重置舊的
+            $set  重置旧的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -59,7 +59,7 @@ class Records extends EventEmitter {
         /*
             提醒:
             $push 加入新的
-            $set  重置舊的
+            $set  重置旧的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -99,7 +99,7 @@ class Records extends EventEmitter {
         /*
             提醒:
             $push 加入新的
-            $set  重置舊的
+            $set  重置旧的
          */
         schema[dbbase].findOneAndUpdate({}, {
             $push: {
@@ -146,7 +146,7 @@ class Records extends EventEmitter {
         /*
             提醒:
             $push 加入新的
-            $set  重置舊的
+            $set  重置旧的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -186,7 +186,7 @@ class Records extends EventEmitter {
         /*
             提醒:
             $push 加入新的
-            $set  重置舊的
+            $set  重置旧的
          */
         schema[dbbase].findOneAndUpdate({}, {
             $push: {
@@ -226,7 +226,7 @@ class Records extends EventEmitter {
         /*
             提醒:
             $push 加入新的
-            $set  重置舊的
+            $set  重置旧的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -270,7 +270,7 @@ class Records extends EventEmitter {
         /*
             提醒:
             $push 加入新的
-            $set  重置舊的
+            $set  重置旧的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -315,7 +315,7 @@ class Records extends EventEmitter {
         /*
             提醒:
             $push 加入新的
-            $set  重置舊的
+            $set  重置旧的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -357,7 +357,7 @@ class Records extends EventEmitter {
         /*
             提醒:
             $push 加入新的
-            $set  重置舊的
+            $set  重置旧的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -381,9 +381,9 @@ class Records extends EventEmitter {
         }, {
             $set: {
                 LevelUpWord: msg.LevelUpWord
-                //在这群組升级时的升级语
+                //在这社区升级时的升级语
                 //RankWord: msg.RankWord,
-                //在这群組查詢等级时的回應
+                //在这社区查询等级时的回应
                 //Switch: msg.Switch,
                 //是否启动功能 config 1X 则1
                 //Hidden: msg.Hidden,
@@ -407,9 +407,9 @@ class Records extends EventEmitter {
         }, {
             $set: {
                 //LevelUpWord: msg.LevelUpWord
-                //在这群組升级时的升级语
+                //在这社区升级时的升级语
                 RankWord: msg.RankWord
-                //在这群組查詢等级时的回應
+                //在这社区查询等级时的回应
                 //Switch: msg.Switch,
                 //是否启动功能 config 1X 则1
                 //Hidden: msg.Hidden,
@@ -433,9 +433,9 @@ class Records extends EventEmitter {
         }, {
             $set: {
                 //LevelUpWord: msg.LevelUpWord
-                //在这群組升级时的升级语
+                //在这社区升级时的升级语
                 //RankWord: msg.RankWord
-                //在这群組查詢等级时的回應
+                //在这社区查询等级时的回应
                 Switch: msg.Switch,
                 //是否启动功能 config 1X 则1
                 Hidden: msg.Hidden
@@ -459,9 +459,9 @@ class Records extends EventEmitter {
         }, {
             $push: {
                 //LevelUpWord: msg.LevelUpWord
-                //在这群組升级时的升级语
+                //在这社区升级时的升级语
                 //RankWord: msg.RankWord
-                //在这群組查詢等级时的回應
+                //在这社区查询等级时的回应
                 //Switch: msg.Switch,
                 //是否启动功能 config 1X 则1
                 //Hidden: msg.Hidden,
@@ -485,12 +485,12 @@ class Records extends EventEmitter {
             groupid: msg.groupid
         }, {
             $set: {
-                //在这群的稱號
+                //在这群的称号
                 Title: msg.Title
                 //LevelUpWord: msg.LevelUpWord
-                //在这群組升级时的升级语
+                //在这社区升级时的升级语
                 //RankWord: msg.RankWord
-                //在这群組查詢等级时的回應
+                //在这社区查询等级时的回应
                 //Switch: msg.Switch,
                 //是否启动功能 config 1X 则1
                 //Hidden: msg.Hidden,
@@ -515,9 +515,9 @@ class Records extends EventEmitter {
         }, {
             $set: {
                 //LevelUpWord: msg.LevelUpWord
-                //在这群組升级时的升级语
+                //在这社区升级时的升级语
                 //RankWord: msg.RankWord
-                //在这群組查詢等级时的回應
+                //在这社区查询等级时的回应
                 //Switch: msg.Switch,
                 //是否启动功能 config 1X 则1
                 //Hidden: msg.Hidden,
@@ -544,9 +544,9 @@ class Records extends EventEmitter {
         }, {
             $max: {
                 //LevelUpWord: msg.LevelUpWord
-                //在这群組升级时的升级语
+                //在这社区升级时的升级语
                 //RankWord: msg.RankWord
-                //在这群組查詢等级时的回應
+                //在这社区查询等级时的回应
                 //Switch: msg.Switch,
                 //是否启动功能 config 1X 则1
                 //Hidden: msg.Hidden,
@@ -623,7 +623,7 @@ class Records extends EventEmitter {
                 "RollingLogfunction.LogTime": msg.LogTime,
             },
             $max: {
-                //大於则更新
+                //大于则更新
                 "RollingLogfunction.DiscordCountRoll": msg.DiscordCountRoll,
                 "RollingLogfunction.DiscordCountText": msg.DiscordCountText,
                 "RollingLogfunction.LineCountRoll": msg.LineCountRoll,
