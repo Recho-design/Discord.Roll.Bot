@@ -12,7 +12,7 @@ const gameName = function () {
     return '【角色卡功能】 .char (add edit show delete use nonuse button) .ch (set show showall button)'
 }
 const gameType = function () {
-    return 'Tool:trpgcharacter:hktrpg'
+    return 'Tool:trpgcharacter:骰娘爱你哦💖'
 }
 const prefixs = function () {
     return [{

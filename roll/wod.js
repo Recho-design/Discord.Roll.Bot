@@ -7,7 +7,7 @@ const gameName = function () {
 }
 
 const gameType = function () {
-	return 'Dice:WOD:hktrpg'
+	return 'Dice:WOD:骰娘爱你哦💖'
 }
 const prefixs = function () {
 	return [{

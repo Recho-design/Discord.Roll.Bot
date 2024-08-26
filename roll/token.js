@@ -17,7 +17,7 @@ const gameName = function () {
 };
 
 const gameType = function () {
-  return "Tool:Token:hktrpg";
+  return "Tool:Token:骰娘爱你哦💖";
 };
 const prefixs = function () {
   return [

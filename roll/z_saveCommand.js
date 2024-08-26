@@ -14,7 +14,7 @@ const gameName = function () {
     return '【储存掷骰指令功能】 .cmd (add del show 自定关鍵字)'
 }
 const gameType = function () {
-    return 'Tool:trpgCommand:hktrpg'
+    return 'Tool:trpgCommand:骰娘爱你哦💖'
 }
 const prefixs = function () {
     return [{

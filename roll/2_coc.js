@@ -9,7 +9,7 @@ const gameName = function () {
 };
 const { SlashCommandBuilder } = require("discord.js");
 const gameType = function () {
-  return "Dice:CoC";
+  return "Dice:CoC:骰娘爱你哦💖";
 };
 const prefixs = function () {
   return [

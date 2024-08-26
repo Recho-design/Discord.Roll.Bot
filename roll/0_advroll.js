@@ -10,7 +10,7 @@ const gameName = function () {
 }
 
 const gameType = function () {
-	return 'Dice:advRoll'
+	return 'Dice:advRoll:骰娘爱你哦💖'
 }
 const prefixs = function () {
 	return [{

@@ -12,7 +12,7 @@ const gameName = function () {
     return '【先攻表功能】 .in (remove clear reroll) .init'
 }
 const gameType = function () {
-    return 'Tool:trpgInit:hktrpg'
+    return 'Tool:trpgInit:骰娘爱你哦💖'
 }
 const prefixs = function () {
     return [{

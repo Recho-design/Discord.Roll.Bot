@@ -23,7 +23,7 @@ const gameName = function () {
 };
 
 const gameType = function () {
-  return "Tool:role:hktrpg";
+  return "Tool:role:骰娘爱你哦💖";
 };
 const prefixs = function () {
   return [

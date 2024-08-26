@@ -8,7 +8,7 @@ const gameName = function () {
 
 const datalink = ['../assets/pf2e/pf2_action.json', '../assets/pf2e/pf2_feat.json', '../assets/pf2e/pf2_item.json', '../assets/pf2e/pf2_monster.json', '../assets/pf2e/pf2state&spells.json']
 const gameType = function () {
-    return 'Dice:Pf2e:hktrpg'
+    return 'Dice:Pf2e:骰娘爱你哦💖'
 }
 const prefixs = function () {
     //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这里是一对  

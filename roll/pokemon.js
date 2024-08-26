@@ -7,7 +7,7 @@ const gameName = function () {
   return "【PokeRole】.poke ";
 };
 const gameType = function () {
-  return "Dice:pokerole:hktrpg";
+  return "Dice:pokerole:骰娘爱你哦💖";
 };
 
 /*

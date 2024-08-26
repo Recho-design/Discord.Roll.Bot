@@ -19,7 +19,7 @@ const gameName = function () {
 };
 
 const gameType = function () {
-  return "funny:Wiki:hktrpg";
+  return "funny:Wiki:骰娘爱你哦💖";
 };
 const prefixs = function () {
   return [

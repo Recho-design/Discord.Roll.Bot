@@ -14,7 +14,7 @@ const gameName = function () {
   return "【事件功能】 .event (add edit show delete) .evt (event 任何名字)";
 };
 const gameType = function () {
-  return "Funny:trpgevent:hktrpg";
+  return "Funny:trpgevent:骰娘爱你哦💖";
 };
 const prefixs = function () {
   return [

@@ -15,7 +15,7 @@ const gameName = function () {
   return "【经验值功能】 .level (show config LevelUpWord RankWord)";
 };
 const gameType = function () {
-  return "funny:trpgLevelSystem:hktrpg";
+  return "funny:trpgLevelSystem:骰娘爱你哦💖";
 };
 const prefixs = function () {
   return [

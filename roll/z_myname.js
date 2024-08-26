@@ -17,7 +17,7 @@ const convertRegex = function (str) {
   return str.toString().replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
 };
 const gameType = function () {
-  return "Tool:myname:hktrpg";
+  return "Tool:myname:骰娘爱你哦💖";
 };
 const prefixs = function () {
   return [

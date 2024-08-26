@@ -15,7 +15,7 @@ const gameName = function () {
 }
 
 const gameType = function () {
-    return 'admin:Block:hktrpg'
+    return 'admin:Block:骰娘爱你哦💖'
 }
 const prefixs = function () {
     return [{

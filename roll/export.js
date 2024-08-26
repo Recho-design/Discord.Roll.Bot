@@ -34,7 +34,7 @@ const fs = require("fs").promises;
 const moment = require("moment-timezone");
 const CryptoJS = require("crypto-js");
 const gameType = function () {
-  return "Tool:Export:hktrpg";
+  return "Tool:Export:骰娘爱你哦💖";
 };
 const dir = __dirname + "/../tmp/";
 const prefixs = function () {

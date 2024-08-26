@@ -15,7 +15,7 @@ const gameName = function () {
 
 axiosRetry(axios, { retries: 3 });
 const gameType = function () {
-  return "funny:funny:hktrpg";
+  return "funny:funny:骰娘爱你哦💖";
 };
 const prefixs = function () {
   return [

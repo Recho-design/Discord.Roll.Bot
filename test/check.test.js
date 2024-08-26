@@ -136,7 +136,7 @@ test('Test permissionErrMsg ChkBot is not channel and not manager and not bot', 
         flag: chk.flag.ChkBot,
         gid: 0,
         role: chk.role.user,
-        name: 'hktrpg',
+        name: '骰娘爱你哦💖',
     };
     expect(chk.permissionErrMsg(arg)).toBe(NOT_CHANNEL + NOT_MANAGER + NOT_DISCORD);
 });
@@ -156,7 +156,7 @@ test('Test permissionErrMsg ChkBot is channel and not manager and not bot', () =
         flag: chk.flag.ChkBot,
         gid: 1,
         role: chk.role.user,
-        name: 'hktrpg',
+        name: '骰娘爱你哦💖',
     };
     expect(chk.permissionErrMsg(arg)).toBe(NOT_MANAGER + NOT_DISCORD);
 });
@@ -166,7 +166,7 @@ test('Test permissionErrMsg ChkBot is channel and manager but not bot', () => {
         flag: chk.flag.ChkBot,
         gid: 1,
         role: chk.role.dm,
-        name: 'hktrpg',
+        name: '骰娘爱你哦💖',
     };
     expect(chk.permissionErrMsg(arg)).toBe(NOT_DISCORD);
 });
@@ -206,7 +206,7 @@ test('Test permissionErrMsg ChkBot is manager but not channel and bot', () => {
         flag: chk.flag.ChkBot,
         gid: 0,
         role: chk.role.dm,
-        name: 'hktrpg',
+        name: '骰娘爱你哦💖',
     };
     expect(chk.permissionErrMsg(arg)).toBe(NOT_CHANNEL + NOT_DISCORD);
 });

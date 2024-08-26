@@ -7,7 +7,7 @@ const gameName = function () {
 };
 
 const gameType = function () {
-  return "Dice:fate";
+  return "Dice:fate:骰娘爱你哦💖";
 };
 const prefixs = function () {
   //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这里是一对

@@ -20,7 +20,7 @@ const gameName = function () {
   return "【自定义骰子/回应功能】 .ra(p)(s)(次数) (add del show 自定骰子名称)";
 };
 const gameType = function () {
-  return "funny:randomAns:hktrpg";
+  return "funny:randomAns:骰娘爱你哦💖";
 };
 const prefixs = function () {
   return [

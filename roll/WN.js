@@ -7,7 +7,7 @@ const gameName = function () {
 }
 
 const gameType = function () {
-    return 'Dice:witch-hunting-night:hktrpg'
+    return 'Dice:witch-hunting-night:骰娘爱你哦💖'
 }
 const prefixs = function () {
     return [{

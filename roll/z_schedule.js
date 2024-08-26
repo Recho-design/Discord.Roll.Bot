@@ -19,7 +19,7 @@ const gameName = function () {
 };
 
 const gameType = function () {
-  return "funny:schedule:hktrpg";
+  return "funny:schedule:骰娘爱你哦💖";
 };
 const prefixs = function () {
   return [

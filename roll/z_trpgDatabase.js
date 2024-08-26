@@ -19,7 +19,7 @@ const gameName = function () {
   return "【资料库功能】 .db(p) (add del show 自定关鍵字)";
 };
 const gameType = function () {
-  return "funny:trpgDatabase:hktrpg";
+  return "funny:trpgDatabase:骰娘爱你哦💖";
 };
 const prefixs = function () {
   return [

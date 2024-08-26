@@ -12,7 +12,7 @@ const gameName = function () {
   return "【暗骰GM功能】 .drgm (addgm del show) dr ddr dddr";
 };
 const gameType = function () {
-  return "Tool:trpgDarkRolling:hktrpg";
+  return "Tool:trpgDarkRolling:骰娘爱你哦💖";
 };
 const prefixs = function () {
   return [

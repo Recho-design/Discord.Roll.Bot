@@ -6,7 +6,7 @@ const gameName = function () {
     return '【.code [语言] [指令]】'
 }
 const gameType = function () {
-    return 'funny:code:hktrpg'
+    return 'funny:code:骰娘爱你哦💖'
 }
 const prefixs = function () {
     //[mainMSG[0]的prefixs,mainMSG[1]的prefixs,   <---这里是一对  

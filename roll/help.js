@@ -55,7 +55,7 @@ const gameName = function () {
 };
 
 const gameType = function () {
-  return "bothelp:骰子机器人";
+  return "bothelp:骰娘爱你哦💖";
 };
 const prefixs = function () {
   return [
@@ -106,7 +106,7 @@ const rollDiceCommand = async function ({ mainMsg }) {
   //let result = {};
   switch (true) {
     case !mainMsg[1]:
-      rply.text = `【骰娘爱你哦💖】(${await version.version()})
+      rply.text = `【骰娘爱你哦💖】
 请问有什么可以帮助你?
 请输入你想查询的项目名字.
 或到 (https://bothelp.hktrpg.com/) 观看详细使用说明.
@@ -225,7 +225,6 @@ module.exports = {
   prefixs: prefixs,
   gameType: gameType,
   gameName: gameName,
-  Version: Version,
 };
 
 /**

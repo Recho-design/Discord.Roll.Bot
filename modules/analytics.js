@@ -268,7 +268,7 @@ async function stateText() {
 	text += '\n 网页版总掷骰次数: ' + state.WWWCountRoll;
 	text += '\n 使用经验值功能的社区: ' + await schema.trpgLevelSystem.countDocuments({ Switch: '1' }).catch(error => console.error('analytics #266 mongoDB error: ', error.name, error.reson));
 	text += '\n 已新增的角色卡: ' + await schema.characterCard.countDocuments({}).catch(error => console.error('analytics #267 mongoDB error: ', error.name, error.reson));
-	text += '\n HKTRPG使用者数量: ' + await schema.firstTimeMessage.countDocuments({}).catch(error => console.error('analytics #268 mongoDB error: ', error.name, error.reson));
+	text += '\n 使用者数量: ' + await schema.firstTimeMessage.countDocuments({}).catch(error => console.error('analytics #268 mongoDB error: ', error.name, error.reson));
 	text += '\n 掷骰系统使用的随机方式: random-js nodeCrypto';
 	return text;
 }
