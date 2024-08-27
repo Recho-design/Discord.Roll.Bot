@@ -35,7 +35,7 @@ async function renew() {
     });
 }
 
-//每10分钟更新;
+//每10分鐘更新;
 setInterval(renew, 10 * 60 * 1000);
 
 module.exports = {

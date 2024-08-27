@@ -35,7 +35,7 @@ class Records extends EventEmitter {
         /*
             提醒:
             $push 加入新的
-            $set  重置旧的
+            $set  重置舊的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -54,12 +54,12 @@ class Records extends EventEmitter {
         });
     }
 
-    //randomAns开始
+    //randomAns開始
     pushrandomAnsfunction(dbbase, msg, callback) {
         /*
             提醒:
             $push 加入新的
-            $set  重置旧的
+            $set  重置舊的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -99,7 +99,7 @@ class Records extends EventEmitter {
         /*
             提醒:
             $push 加入新的
-            $set  重置旧的
+            $set  重置舊的
          */
         schema[dbbase].findOneAndUpdate({}, {
             $push: {
@@ -132,7 +132,7 @@ class Records extends EventEmitter {
     }
 
     get(target, callback) {
-        // 取出所有资料
+        // 取出所有資料
         if (schema[target])
             schema[target].find({}, (err, msgs) => {
                 callback(msgs);
@@ -140,13 +140,13 @@ class Records extends EventEmitter {
     }
 
     /*
-        trpgDatabase开始
+        trpgDatabase開始
     */
     pushtrpgDatabasefunction(dbbase, msg, callback) {
         /*
             提醒:
             $push 加入新的
-            $set  重置旧的
+            $set  重置舊的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -186,7 +186,7 @@ class Records extends EventEmitter {
         /*
             提醒:
             $push 加入新的
-            $set  重置旧的
+            $set  重置舊的
          */
         schema[dbbase].findOneAndUpdate({}, {
             $push: {
@@ -220,13 +220,13 @@ class Records extends EventEmitter {
 
 
     /*
-          setGroupSetting开始
+          setGroupSetting開始
       */
     pushGroupSettingfunction(dbbase, msg, callback) {
         /*
             提醒:
             $push 加入新的
-            $set  重置旧的
+            $set  重置舊的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -264,13 +264,13 @@ class Records extends EventEmitter {
 
 
     /*
-        trpgsaveCommand开始
+        trpgsaveCommand開始
     */
     pushtrpgCommandfunction(dbbase, msg, callback) {
         /*
             提醒:
             $push 加入新的
-            $set  重置旧的
+            $set  重置舊的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -308,14 +308,14 @@ class Records extends EventEmitter {
 
 
     /*
-            trpgDarkRollingfunction开始
+            trpgDarkRollingfunction開始
         */
 
     pushtrpgDarkRollingfunction(dbbase, msg, callback) {
         /*
             提醒:
             $push 加入新的
-            $set  重置旧的
+            $set  重置舊的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -351,13 +351,13 @@ class Records extends EventEmitter {
         });
     }
     /*
-            trpgLevelSystem开始
+            trpgLevelSystem開始
         */
     pushtrpgLevelSystemfunction(dbbase, msg, callback) {
         /*
             提醒:
             $push 加入新的
-            $set  重置旧的
+            $set  重置舊的
          */
         schema[dbbase].findOneAndUpdate({
             groupid: msg.groupid
@@ -381,13 +381,13 @@ class Records extends EventEmitter {
         }, {
             $set: {
                 LevelUpWord: msg.LevelUpWord
-                //在这社区升级时的升级语
+                //在這群組升級時的升級語
                 //RankWord: msg.RankWord,
-                //在这社区查询等级时的回应
+                //在這群組查詢等級時的回應
                 //Switch: msg.Switch,
-                //是否启动功能 config 1X 则1
+                //是否啓動功能 config 1X 則1
                 //Hidden: msg.Hidden,
-                //是否显示升级语 config X1 则1
+                //是否顯示升級語 config X1 則1
                 //trpgLevelSystemfunction: msg.trpgLevelSystemfunction
             }
         }, {
@@ -407,13 +407,13 @@ class Records extends EventEmitter {
         }, {
             $set: {
                 //LevelUpWord: msg.LevelUpWord
-                //在这社区升级时的升级语
+                //在這群組升級時的升級語
                 RankWord: msg.RankWord
-                //在这社区查询等级时的回应
+                //在這群組查詢等級時的回應
                 //Switch: msg.Switch,
-                //是否启动功能 config 1X 则1
+                //是否啓動功能 config 1X 則1
                 //Hidden: msg.Hidden,
-                //是否显示升级语 config X1 则1
+                //是否顯示升級語 config X1 則1
                 //trpgLevelSystemfunction: msg.trpgLevelSystemfunction
             }
         }, {
@@ -433,13 +433,13 @@ class Records extends EventEmitter {
         }, {
             $set: {
                 //LevelUpWord: msg.LevelUpWord
-                //在这社区升级时的升级语
+                //在這群組升級時的升級語
                 //RankWord: msg.RankWord
-                //在这社区查询等级时的回应
+                //在這群組查詢等級時的回應
                 Switch: msg.Switch,
-                //是否启动功能 config 1X 则1
+                //是否啓動功能 config 1X 則1
                 Hidden: msg.Hidden
-                //是否显示升级语 config X1 则1
+                //是否顯示升級語 config X1 則1
                 //trpgLevelSystemfunction: msg.trpgLevelSystemfunction
             }
         }, {
@@ -459,13 +459,13 @@ class Records extends EventEmitter {
         }, {
             $push: {
                 //LevelUpWord: msg.LevelUpWord
-                //在这社区升级时的升级语
+                //在這群組升級時的升級語
                 //RankWord: msg.RankWord
-                //在这社区查询等级时的回应
+                //在這群組查詢等級時的回應
                 //Switch: msg.Switch,
-                //是否启动功能 config 1X 则1
+                //是否啓動功能 config 1X 則1
                 //Hidden: msg.Hidden,
-                //是否显示升级语 config X1 则1
+                //是否顯示升級語 config X1 則1
                 trpgLevelSystemfunction: msg.trpgLevelSystemfunction
             }
         }, {
@@ -485,16 +485,16 @@ class Records extends EventEmitter {
             groupid: msg.groupid
         }, {
             $set: {
-                //在这群的称号
+                //在這群的稱號
                 Title: msg.Title
                 //LevelUpWord: msg.LevelUpWord
-                //在这社区升级时的升级语
+                //在這群組升級時的升級語
                 //RankWord: msg.RankWord
-                //在这社区查询等级时的回应
+                //在這群組查詢等級時的回應
                 //Switch: msg.Switch,
-                //是否启动功能 config 1X 则1
+                //是否啓動功能 config 1X 則1
                 //Hidden: msg.Hidden,
-                //是否显示升级语 config X1 则1
+                //是否顯示升級語 config X1 則1
                 //trpgLevelSystemfunction: msg.trpgLevelSystemfunction
             }
         }, {
@@ -515,13 +515,13 @@ class Records extends EventEmitter {
         }, {
             $set: {
                 //LevelUpWord: msg.LevelUpWord
-                //在这社区升级时的升级语
+                //在這群組升級時的升級語
                 //RankWord: msg.RankWord
-                //在这社区查询等级时的回应
+                //在這群組查詢等級時的回應
                 //Switch: msg.Switch,
-                //是否启动功能 config 1X 则1
+                //是否啓動功能 config 1X 則1
                 //Hidden: msg.Hidden,
-                //是否显示升级语 config X1 则1
+                //是否顯示升級語 config X1 則1
                 trpgLevelSystemfunction: msg
             }
         }, {
@@ -544,13 +544,13 @@ class Records extends EventEmitter {
         }, {
             $max: {
                 //LevelUpWord: msg.LevelUpWord
-                //在这社区升级时的升级语
+                //在這群組升級時的升級語
                 //RankWord: msg.RankWord
-                //在这社区查询等级时的回应
+                //在這群組查詢等級時的回應
                 //Switch: msg.Switch,
-                //是否启动功能 config 1X 则1
+                //是否啓動功能 config 1X 則1
                 //Hidden: msg.Hidden,
-                //是否显示升级语 config X1 则1
+                //是否顯示升級語 config X1 則1
                 'trpgLevelSystemfunction.$.EXP': exp,
                 'trpgLevelSystemfunction.$.Level': lv
             }
@@ -581,7 +581,7 @@ class Records extends EventEmitter {
                 "RealTimeRollingLogfunction.LastTimeLog": msg.LastTimeLog
             },
             $max: {
-                //实时资料 使用SET
+                //實時資料 使用SET
                 "RealTimeRollingLogfunction.DiscordCountRoll": msg.DiscordCountRoll,
                 "RealTimeRollingLogfunction.DiscordCountText": msg.DiscordCountText,
                 "RealTimeRollingLogfunction.LineCountRoll": msg.LineCountRoll,
@@ -592,9 +592,9 @@ class Records extends EventEmitter {
                 "RealTimeRollingLogfunction.WhatsappCountText": msg.WhatsappCountText,
                 "RealTimeRollingLogfunction.WWWCountRoll": msg.WWWCountRoll,
                 "RealTimeRollingLogfunction.WWWCountText": msg.WWWCountText
-                //中途记录资料 使用PUSH 每天记录一次
+                //中途紀錄資料 使用PUSH 每天紀錄一次
                 // RollingLogfunction: msg,
-                //掷骰的结果记录
+                //擲骰的結果紀錄
                 //Sided: msg
             }
         }, {
@@ -623,7 +623,7 @@ class Records extends EventEmitter {
                 "RollingLogfunction.LogTime": msg.LogTime,
             },
             $max: {
-                //大于则更新
+                //大於則更新
                 "RollingLogfunction.DiscordCountRoll": msg.DiscordCountRoll,
                 "RollingLogfunction.DiscordCountText": msg.DiscordCountText,
                 "RollingLogfunction.LineCountRoll": msg.LineCountRoll,
@@ -634,9 +634,9 @@ class Records extends EventEmitter {
                 "RollingLogfunction.WhatsappCountText": msg.WhatsappCountText,
                 "RollingLogfunction.WWWCountRoll": msg.WWWCountRoll,
                 "RollingLogfunction.WWWCountText": msg.WWWCountText
-                //中途记录资料 使用PUSH 每天记录一次
+                //中途紀錄資料 使用PUSH 每天紀錄一次
                 // RollingLogfunction: msg,
-                //掷骰的结果记录
+                //擲骰的結果紀錄
                 //Sided: msg
             }
         }, {
@@ -665,9 +665,9 @@ class Records extends EventEmitter {
             'roomNumber': msg.roomNumber
         });
         /**
-         * 计算有多少个
-         * 比较超出了多少个
-         * 找出那个的日子
+         * 計算有多少個
+         * 比較超出了多少個
+         * 找出那個的日子
          * 之前的全部刪除
          */
         if (count < MAX) return;

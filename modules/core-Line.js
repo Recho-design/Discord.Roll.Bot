@@ -54,15 +54,15 @@ let handleEvent = async function (event) {
 
 	let trigger = "";
 	let roomorgroupid = event.source.groupId || event.source.roomId || '';
-	let mainMsg = (inputStr) ? inputStr.match(MESSAGE_SPLITOR) : {}; //定义输入字串
+	let mainMsg = (inputStr) ? inputStr.match(MESSAGE_SPLITOR) : {}; //定義輸入字串
 	if (mainMsg && mainMsg[0]) {
 		trigger = mainMsg[0].toString().toLowerCase();
 	}
-	//指定啟动詞在第一个詞&把大阶强制转成细阶
+	//指定啟動詞在第一個詞&把大階強制轉成細階
 	if ((trigger == ".me" || trigger == ".mee") && !z_stop(mainMsg, roomorgroupid)) {
 		inputStr = inputStr.replace(/^\.mee\s*/i, ' ').replace(/^\.me\s*/i, ' ');
 		if (inputStr.match(/^\s+$/)) {
-			inputStr = `.me 或 /mee 可以令HKTRPG机械人重覆你的说话\n请输入復述內容`
+			inputStr = `.me 或 /mee 可以令HKTRPG機械人重覆你的說話\n請輸入復述內容`
 		}
 		if (roomorgroupid) {
 			let temp = HandleMessage(inputStr);
@@ -92,7 +92,7 @@ let handleEvent = async function (event) {
 	})();
 	if (event.type !== 'message' || event.message.type !== 'text') {
 		if (event.type == "join" && roomorgroupid) {
-			// 新加入社区时, 傳送MESSAGE
+			// 新加入群組時, 傳送MESSAGE
 			console.log("Line joined");
 			replyMessagebyReplyToken(event, newMessage.joinMessage());
 		}
@@ -190,17 +190,17 @@ let handleEvent = async function (event) {
 			TargetGMTempdiyName.push(item.diyName);
 			TargetGMTempdisplayname.push(item.displayname);
 		})
-		//当是私信模式1-3时
+		//當是私訊模式1-3時
 	}
 
 	switch (true) {
 		case privatemsg == 1:
-			// 输入dr  (指令) 私信自己
+			// 輸入dr  (指令) 私訊自己
 			if (roomorgroupid && userid)
 				if (displayname)
-					replyMessagebyReplyToken(event, "@" + displayname + ' 暗骰给自己');
+					replyMessagebyReplyToken(event, "@" + displayname + ' 暗骰給自己');
 				else
-					replyMessagebyReplyToken(event, '正在暗骰给自己');
+					replyMessagebyReplyToken(event, '正在暗骰給自己');
 			if (userid)
 				if (displayname)
 					SendToId(userid, "@" + displayname + '的暗骰\n' + rplyVal.text);
@@ -208,24 +208,24 @@ let handleEvent = async function (event) {
 					SendToId(userid, rplyVal.text);
 			break;
 		case privatemsg == 2:
-			//输入ddr(指令) 私信GM及自己
-			//房间讯息
+			//輸入ddr(指令) 私訊GM及自己
+			//房間訊息
 			if (roomorgroupid) {
 				let targetGMNameTemp = "";
 				for (let i = 0; i < TargetGMTempID.length; i++) {
 					targetGMNameTemp = targetGMNameTemp + ", " + (TargetGMTempdiyName[i] || "@" + TargetGMTempdisplayname[i]);
 				}
 				if (displayname) {
-					replyMessagebyReplyToken(event, "@" + displayname + ' 暗骰进行中 \n目标: 自己 ' + targetGMNameTemp);
+					replyMessagebyReplyToken(event, "@" + displayname + ' 暗骰進行中 \n目標: 自己 ' + targetGMNameTemp);
 				} else
-					replyMessagebyReplyToken(event, ' 暗骰进行中 \n目标: 自己 ' + targetGMNameTemp);
+					replyMessagebyReplyToken(event, ' 暗骰進行中 \n目標: 自己 ' + targetGMNameTemp);
 			}
 
-			//有名字就显示
+			//有名字就顯示
 			if (displayname) {
 				rplyVal.text = "@" + displayname + " 的暗骰\n" + rplyVal.text;
 			}
-			//傳给自己
+			//傳給自己
 			SendToId(userid, rplyVal.text);
 			for (let i = 0; i < TargetGMTempID.length; i++) {
 				if (userid != TargetGMTempID[i]) {
@@ -234,7 +234,7 @@ let handleEvent = async function (event) {
 			}
 			break;
 		case privatemsg == 3:
-			//输入dddr(指令) 私信GM
+			//輸入dddr(指令) 私訊GM
 			//如在房中
 			if (roomorgroupid) {
 				let targetGMNameTemp = "";
@@ -242,9 +242,9 @@ let handleEvent = async function (event) {
 					targetGMNameTemp = targetGMNameTemp + " " + (TargetGMTempdiyName[i] || "@" + TargetGMTempdisplayname[i])
 				}
 				if (displayname) {
-					replyMessagebyReplyToken(event, "@" + displayname + ' 暗骰进行中 \n目标: ' + targetGMNameTemp)
+					replyMessagebyReplyToken(event, "@" + displayname + ' 暗骰進行中 \n目標: ' + targetGMNameTemp)
 				} else {
-					replyMessagebyReplyToken(event, ' 暗骰进行中 \n目标: ' + targetGMNameTemp)
+					replyMessagebyReplyToken(event, ' 暗骰進行中 \n目標: ' + targetGMNameTemp)
 				}
 			}
 			if (displayname)
@@ -384,7 +384,7 @@ async function sendNewstoAll(rply) {
 }
 if (agenda && agenda.agenda && lineAgenda) {
 	agenda.agenda.define("scheduleAtMessageLine", async (job) => {
-		//指定时间一次	
+		//指定時間一次	
 		let data = job.attrs.data;
 		let text = await rollText(data.replyText);
 		//SendToReply(ctx, text)
@@ -399,7 +399,7 @@ if (agenda && agenda.agenda && lineAgenda) {
 	});
 
 	agenda.agenda.define("scheduleCronMessageLine", async (job) => {
-		//指定时间一次	
+		//指定時間一次	
 		let data = job.attrs.data;
 		let text = await rollText(data.replyText);
 		//SendToReply(ctx, text)
@@ -410,7 +410,7 @@ if (agenda && agenda.agenda && lineAgenda) {
 			if ((new Date(Date.now()) - data.createAt) >= SIX_MONTH) {
 				await job.remove();
 				SendToId(
-					data.groupid, "已运行六个月, 移除此定时讯息"
+					data.groupid, "已運行六個月, 移除此定時訊息"
 				)
 			}
 		} catch (e) {
@@ -452,7 +452,7 @@ async function nonDice(event) {
 	if (!roomorgroupid || !userid) return;
 	let profile = await client.getProfile(userid);
 
-	//	在GP 而有加好友的话,得到名字
+	//	在GP 而有加好友的話,得到名字
 	if (profile && profile.displayName) {
 		displayname = profile.displayName;
 	}
@@ -460,7 +460,7 @@ async function nonDice(event) {
 	if (roomorgroupid && LevelUp && LevelUp.text) {
 		return replyMessagebyReplyToken(event, LevelUp.text);
 	}
-	//如果对方没加朋友,会出现 UnhandledPromiseRejectionWarning, 就跳到这里
+	//如果對方沒加朋友,會出現 UnhandledPromiseRejectionWarning, 就跳到這裡
 
 	return null;
 }

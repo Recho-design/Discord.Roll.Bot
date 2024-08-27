@@ -24,8 +24,8 @@ const courtMessage = require('./logs').courtMessage || function () { };
 const getState = require('./logs').getState || function () { };
 const EXPUP = require('./level').EXPUP || function () { };
 
-//用来呼叫骰组,新增骰组的话,要写条件式到下面呼叫
-//格式是 exports.骰组檔案名字.function名
+//用來呼叫骰組,新增骰組的話,要寫條件式到下面呼叫
+//格式是 exports.骰組檔案名字.function名
 const parseInput = async ({
 	inputStr = "",
 	groupid = null,
@@ -50,7 +50,7 @@ const parseInput = async ({
 
 	let mainMsg = [];
 	inputStr = inputStr.replace(/^\s/g, '')
-	mainMsg = inputStr.match(MESSAGE_SPLITOR); //定义输入字串
+	mainMsg = inputStr.match(MESSAGE_SPLITOR); //定義輸入字串
 	//EXPUP 功能 + LevelUP 功能
 	if (groupid) {
 		let tempEXPUP = await EXPUP(groupid, userid, displayname, displaynameDiscord, membercount, tgDisplayname, discordMessage);
@@ -58,12 +58,12 @@ const parseInput = async ({
 		result.statue = (tempEXPUP && tempEXPUP.statue) ? tempEXPUP.statue : '';
 	}
 
-	//检查是不是要停止  z_stop功能
+	//檢查是不是要停止  z_stop功能
 	if (groupid && mainMsg[0] && z_stop(mainMsg, groupid)) {
 		return result;
 	}
 
-	//rolldice 掷骰功能
+	//rolldice 擲骰功能
 	let rollDiceResult = {};
 
 	try {
@@ -132,7 +132,7 @@ const parseInput = async ({
 			tgDisplayname: tgDisplayname
 		});
 		if (result.text && characterReRoll.text) {
-			result.text = result.text = `${result.characterName}  投掷  ${result.characterReRollName} 
+			result.text = result.text = `${result.characterName}  投擲  ${result.characterReRollName} 
 			${characterReRoll.text} 
 			======
 			${result.text}`;
@@ -169,7 +169,7 @@ const rolldice = async ({
 	titleName,
 	tgDisplayname
 }) => {
-	//在下面位置开始分析trigger
+	//在下面位置開始分析trigger
 	if (!groupid) {
 		groupid = '';
 	}
@@ -259,17 +259,17 @@ async function stateText() {
 	let state = await getState() || '';
 	if (!Object.keys(state).length || !state.LogTime) return;
 	let text = "";
-	text = '系统开始记录时间: ' + state.StartTime.replace(' GMT+0800 (Hong Kong Standard Time)', '');
-	text += '\n 现在时间: ' + state.LogTime.replace(' GMT+0800 (GMT+08:00)', '');
-	text += '\n Line总掷骰次数: ' + state.LineCountRoll;
-	text += '\n Discord总掷骰次数: ' + state.DiscordCountRoll;
-	text += '\n Telegram总掷骰次数: ' + state.TelegramCountRoll;
-	text += '\n Whatsapp总掷骰次数: ' + state.WhatsappCountRoll;
-	text += '\n 网页版总掷骰次数: ' + state.WWWCountRoll;
-	text += '\n 使用经验值功能的社区: ' + await schema.trpgLevelSystem.countDocuments({ Switch: '1' }).catch(error => console.error('analytics #266 mongoDB error: ', error.name, error.reson));
+	text = '系統開始紀錄時間: ' + state.StartTime.replace(' GMT+0800 (Hong Kong Standard Time)', '');
+	text += '\n 現在時間: ' + state.LogTime.replace(' GMT+0800 (GMT+08:00)', '');
+	text += '\n Line總擲骰次數: ' + state.LineCountRoll;
+	text += '\n Discord總擲骰次數: ' + state.DiscordCountRoll;
+	text += '\n Telegram總擲骰次數: ' + state.TelegramCountRoll;
+	text += '\n Whatsapp總擲骰次數: ' + state.WhatsappCountRoll;
+	text += '\n 網頁版總擲骰次數: ' + state.WWWCountRoll;
+	text += '\n 使用經驗值功能的群組: ' + await schema.trpgLevelSystem.countDocuments({ Switch: '1' }).catch(error => console.error('analytics #266 mongoDB error: ', error.name, error.reson));
 	text += '\n 已新增的角色卡: ' + await schema.characterCard.countDocuments({}).catch(error => console.error('analytics #267 mongoDB error: ', error.name, error.reson));
-	text += '\n 使用者数量: ' + await schema.firstTimeMessage.countDocuments({}).catch(error => console.error('analytics #268 mongoDB error: ', error.name, error.reson));
-	text += '\n 掷骰系统使用的随机方式: random-js nodeCrypto';
+	text += '\n HKTRPG使用者數量: ' + await schema.firstTimeMessage.countDocuments({}).catch(error => console.error('analytics #268 mongoDB error: ', error.name, error.reson));
+	text += '\n 擲骰系統使用的隨機方式: random-js nodeCrypto';
 	return text;
 }
 
@@ -289,8 +289,8 @@ async function cmdfunction({
 	tgDisplayname
 }) {
 	let newInputStr = result.characterReRollItem || result.text;
-	let mainMsg = newInputStr.match(MESSAGE_SPLITOR); //定义输入字串
-	//检查是不是要停止
+	let mainMsg = newInputStr.match(MESSAGE_SPLITOR); //定義輸入字串
+	//檢查是不是要停止
 	let tempResut = {};
 	try {
 		tempResut = await rolldice({
@@ -312,7 +312,7 @@ async function cmdfunction({
 	}
 	(debugMode) ? console.log('            inputStr2: ', newInputStr) : '';
 	if (typeof tempResut === 'object' && tempResut !== null) {
-		if (result.characterName) tempResut.text = `${result.characterName} 进行 ${result.characterReRollName} 掷骰\n ${tempResut.text}`
+		if (result.characterName) tempResut.text = `${result.characterName} 進行 ${result.characterReRollName} 擲骰\n ${tempResut.text}`
 		return tempResut;
 	}
 	return;
