@@ -31,17 +31,6 @@ async function registeredGlobalSlashCommands() {
             return "Error Global registered application commands." + err;
         });
 }
-async function unregisterGlobalSlashCommands() {
-    return rest.put(Routes.applicationCommands(clientId), { body: [] })
-        .then(() => {
-            console.log('Successfully unregistered all global application commands.');
-            return 'Successfully unregistered all global application commands.';
-        })
-        .catch(err => {
-            console.error('Error in unregistering global application commands.', err);
-            return 'Error in unregistering global application commands.' + err;
-        });
-}
 async function testRegisteredSlashCommands(guildId) {
     return rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
         .then(() => {
@@ -87,7 +76,6 @@ function removeSlashCommands(guildId) {
 
 module.exports = {
     registeredGlobalSlashCommands,
-    unregisterGlobalSlashCommands,
     testRegisteredSlashCommands,
     removeSlashCommands
 };

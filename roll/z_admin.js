@@ -2,7 +2,7 @@
 let variables = {};
 const opt = {
   upsert: true,
-  runValidators: true,
+  runValidators: true
 };
 const salt = process.env.SALT;
 const crypto = require("crypto");
@@ -11,15 +11,15 @@ const password = process.env.CRYPTO_SECRET,
 //32bit ASCII
 const adminSecret = process.env.ADMIN_SECRET;
 //admin id
-const schema = require("../modules/schema.js");
-const checkTools = require("../modules/check.js");
-const pattId = /\s+-i\s+(\S+)/gi;
-const pattGP = /\s+-g\s+(\S+)/gi;
-const pattLv = /\s+-l\s+(\S+)/gi;
-const pattName = /\s+-n\s+(\S+)/gi;
-const pattNotes = /\s+-no\s+(\S+)/gi;
-const pattSwitch = /\s+-s\s+(\S+)/gi;
-const deploy = require("../modules/ds-deploy-commands.js");
+const schema = require('../modules/schema.js');
+const checkTools = require('../modules/check.js');
+const pattId = /\s+-i\s+(\S+)/ig;
+const pattGP = /\s+-g\s+(\S+)/ig;
+const pattLv = /\s+-l\s+(\S+)/ig;
+const pattName = /\s+-n\s+(\S+)/ig;
+const pattNotes = /\s+-no\s+(\S+)/ig;
+const pattSwitch = /\s+-s\s+(\S+)/ig;
+const deploy = require('../modules/ds-deploy-commands.js');
 //const VIP = require('../modules/veryImportantPerson');
 const gameName = function () {
   return "【Admin Tool】.admin debug state account news on";
@@ -50,7 +50,7 @@ const discordCommand = [];
 
 const initialize = function () {
   return variables;
-};
+}
 const rollDiceCommand = async function ({
   inputStr,
   mainMsg,
@@ -63,7 +63,7 @@ const rollDiceCommand = async function ({
   displaynameDiscord,
   membercount,
   titleName,
-  discordClient,
+  discordClient
 }) {
   let rply = {
     default: "on",
@@ -73,7 +73,7 @@ const rollDiceCommand = async function ({
   let filter = {};
   let doc = {};
   let temp;
-  let hash = "";
+  let hash = ""
   let name;
   let temp2;
   switch (true) {
@@ -81,87 +81,18 @@ const rollDiceCommand = async function ({
       rply.text = await this.getHelpMessage();
       rply.quotes = true;
       return rply;
-    case /^registeredGlobal$/i.test(mainMsg[1]): {
-      console.log("registeredGlobal command initiated");
-      if (!adminSecret) {
-        rply.text = "adminSecret not set";
-        return rply;
-      }
-      if (userid !== adminSecret) {
-        rply.text = "Unauthorized user";
-        return rply;
-      }
-      try {
+      case /^registeredGlobal$/i.test(mainMsg[1]): {
+        if (!adminSecret) return rply;
+        if (userid !== adminSecret) return rply;
         rply.text = await deploy.registeredGlobalSlashCommands();
-      } catch (error) {
-        console.error("Error executing registeredGlobalSlashCommands:", error);
-        rply.text = "Error executing registeredGlobalSlashCommands";
-      }
-      return rply;
-    }
-    case /^unregisterGlobal$/i.test(mainMsg[1]): {
-      console.log("unregisterGlobal command initiated");
-      if (!adminSecret) {
-        rply.text = "adminSecret not set";
         return rply;
-      }
-      if (userid !== adminSecret) {
-        rply.text = "Unauthorized user";
-        return rply;
-      }
-      try {
-        rply.text = await deploy.unregisterGlobalSlashCommands();
-      } catch (error) {
-        console.error("Error executing unregisterGlobalSlashCommands:", error);
-        rply.text = "Error executing unregisterGlobalSlashCommands";
-      }
-      return rply;
     }
     case /^testRegistered$/i.test(mainMsg[1]): {
-      console.log("testRegistered command initiated");
-      if (!adminSecret) {
-        rply.text = "adminSecret not set";
-        return rply;
-      }
-      if (userid !== adminSecret) {
-        rply.text = "Unauthorized user";
-        return rply;
-      }
-      if (!mainMsg[2]) {
-        rply.text = "Missing argument for testRegistered";
-        return rply;
-      }
-      try {
+        if (!adminSecret) return rply;
+        if (userid !== adminSecret) return rply;
+        if (!mainMsg[2]) return rply;
         rply.text = await deploy.testRegisteredSlashCommands(mainMsg[2]);
-      } catch (error) {
-        console.error("Error executing testRegisteredSlashCommands:", error);
-        rply.text = "Error executing testRegisteredSlashCommands";
-      }
-      return rply;
-    }
-    case /^removeCommands$/i.test(mainMsg[1]): {
-      console.log("removeCommands command initiated");
-      if (!adminSecret) {
-        rply.text = "adminSecret not set";
         return rply;
-      }
-      if (userid !== adminSecret) {
-        rply.text = "Unauthorized user";
-        return rply;
-      }
-      if (!mainMsg[2]) {
-        rply.text = "Missing argument for removeCommands";
-        return rply;
-      }
-      try {
-        // 调用 removeSlashCommands 并将 guildId 传递进去
-        await deploy.removeSlashCommands(mainMsg[2]);
-        rply.text = "Successfully removed commands";
-      } catch (error) {
-        console.error("Error executing removeSlashCommands:", error);
-        rply.text = "Error executing removeSlashCommands";
-      }
-      return rply;
     }
     case /^state$/i.test(mainMsg[1]):
       rply.state = true;
@@ -176,32 +107,30 @@ const rollDiceCommand = async function ({
       return rply;
     }
     case /^registerChannel$/i.test(mainMsg[1]):
-      if (
-        (rply.text = checkTools.permissionErrMsg({
+      if (rply.text = checkTools.permissionErrMsg({
           flag: checkTools.flag.ChkChannel,
-          gid: groupid,
-        }))
-      ) {
-        return rply;
+          gid: groupid
+      })) {
+          return rply;
       }
       try {
-        temp = await schema.accountPW.findOne({
-          id: userid,
-        });
+          temp = await schema.accountPW.findOne({
+              "id": userid
+          });
       } catch (e) {
-        console.error("registerChannel ERROR:", e);
-        rply.text += JSON.stringify(e);
-        return rply;
+          console.error('registerChannel ERROR:', e);
+          rply.text += JSON.stringify(e);
+          return rply;
       }
       try {
-        temp2 = await schema.accountPW.findOne({
-          id: userid,
-          "channel.id": channelid || groupid,
-        });
+          temp2 = await schema.accountPW.findOne({
+              "id": userid,
+              "channel.id": channelid || groupid
+          });
       } catch (e) {
-        console.error("registerChannel ERROR:", e);
-        rply.text += JSON.stringify(e);
-        return rply;
+          console.error('registerChannel ERROR:', e);
+          rply.text += JSON.stringify(e);
+          return rply;
       }
       if (temp && temp2) {
         rply.text =
@@ -214,10 +143,10 @@ const rollDiceCommand = async function ({
       }
       if (temp && !temp2) {
         temp.channel.push({
-          id: channelid || groupid,
-          botname: botname,
-          titleName: titleName,
-        });
+          "id": channelid || groupid,
+          "botname": botname,
+          "titleName": titleName
+      })
         await temp.save();
         rply.text =
           "注册成功，如果想使用角色卡，请到\nhttps://card.hktrpg.com/";
@@ -233,16 +162,12 @@ const rollDiceCommand = async function ({
         temp = new schema.accountPW({
           id: userid,
           channel: {
-            id: channelid || groupid,
-            botname: botname,
-            titleName: titleName,
-          },
-        });
-        await temp
-          .save()
-          .catch((error) =>
-            console.error("admin #138 mongoDB error: ", error.name, error.reson)
-          );
+              "id": channelid || groupid,
+              "botname": botname,
+              "titleName": titleName
+          }
+      });
+      await temp.save().catch(error => console.error('admin #138 mongoDB error: ', error.name, error.reson));
         rply.text =
           "注册成功。如果想使用角色卡，请到\nhttps://card.hktrpg.com/";
         if (!(await checkGpAllow(channelid || groupid))) {
@@ -254,90 +179,78 @@ const rollDiceCommand = async function ({
 
       return rply;
 
-    case /^unregisterChannel$/i.test(mainMsg[1]):
-      if (
-        (rply.text = checkTools.permissionErrMsg({
-          flag: checkTools.flag.ChkChannel,
-          gid: groupid,
-        }))
-      ) {
-        return rply;
-      }
-      try {
-        await schema.accountPW.updateOne(
-          {
-            id: userid,
-          },
-          {
-            $pull: {
-              channel: {
-                id: channelid || groupid,
-              },
-            },
-          }
-        );
-      } catch (e) {
-        console.error("unregisterChannel ERROR:", e);
-        rply.text += JSON.stringify(e);
-        return rply;
-      }
+      case /^unregisterChannel$/i.test(mainMsg[1]):
+        if (rply.text = checkTools.permissionErrMsg({
+            flag: checkTools.flag.ChkChannel,
+            gid: groupid
+        })) {
+            return rply;
+        }
+        try {
+            await schema.accountPW.updateOne({
+                "id": userid
+            }, {
+                $pull: {
+                    channel: {
+                        "id": channelid || groupid
+                    }
+                }
+            });
+        } catch (e) {
+            console.error('unregisterChannel ERROR:', e);
+            rply.text += JSON.stringify(e);
+            return rply;
+        }
       rply.text = "已移除注册!如果想检查，请到\nhttps://card.hktrpg.com/";
       return rply;
-    case /^disallowrolling$/i.test(mainMsg[1]):
-      if (
-        (rply.text = checkTools.permissionErrMsg({
-          flag: checkTools.flag.ChkChannelAdmin,
-          gid: groupid,
-          role: userrole,
-        }))
-      ) {
-        return rply;
-      }
+      case /^disallowrolling$/i.test(mainMsg[1]):
+        if (rply.text = checkTools.permissionErrMsg({
+            flag: checkTools.flag.ChkChannelAdmin,
+            gid: groupid,
+            role: userrole
+        })) {
+            return rply;
+        }
 
-      try {
-        doc = await schema.allowRolling.findOneAndRemove({
-          id: channelid || groupid,
-        });
-      } catch (e) {
-        console.error("disAllowrolling ERROR:", e);
-        rply.text += JSON.stringify(e);
-        return rply;
-      }
+        try {
+            doc = await schema.allowRolling.findOneAndRemove({
+                "id": channelid || groupid
+            });
+        } catch (e) {
+            console.error('disAllowrolling ERROR:', e);
+            rply.text += JSON.stringify(e);
+            return rply;
+        }
       rply.text =
         "此频道已被Admin取消使用网页版角色卡掷骰的权限。\n如Admin希望允许网页掷骰，可输入\n.admin allowrolling";
       return rply;
-    case /^allowrolling$/i.test(mainMsg[1]):
-      if (
-        (rply.text = checkTools.permissionErrMsg({
-          flag: checkTools.flag.ChkChannelAdmin,
-          gid: groupid,
-          role: userrole,
-        }))
-      ) {
-        return rply;
-      }
+      case /^allowrolling$/i.test(mainMsg[1]):
+        if (rply.text = checkTools.permissionErrMsg({
+            flag: checkTools.flag.ChkChannelAdmin,
+            gid: groupid,
+            role: userrole
+        })) {
+            return rply;
+        }
 
-      try {
-        doc = await schema.allowRolling.findOneAndUpdate(
-          {
-            id: channelid || groupid,
-          },
-          {
-            $set: {
-              id: channelid || groupid,
-              botname: botname,
-            },
-          },
-          {
-            upsert: true,
-            returnNewDocument: true,
-          }
-        );
-      } catch (e) {
-        console.error("Allowrolling ERROR:", e);
-        rply.text += JSON.stringify(e);
-        return rply;
-      }
+        try {
+            doc = await schema.allowRolling.findOneAndUpdate({
+                "id": channelid || groupid
+            }, {
+                $set: {
+                    "id": channelid || groupid,
+                    "botname": botname
+                }
+            }, {
+                upsert: true,
+                returnNewDocument: true
+            });
+
+        } catch (e) {
+            console.error('Allowrolling ERROR:', e);
+            rply.text += JSON.stringify(e);
+            return rply;
+        }
       rply.text =
         "此频道已被Admin允许使用网页版角色卡掷骰，希望经网页掷骰的玩家可在此频道输入以下指令登记。\n.admin registerChannel\n\n如Admin希望取消本频道的网页掷骰许可，可输入\n.admin disallowrolling";
       return rply;
@@ -367,38 +280,35 @@ const rollDiceCommand = async function ({
       hash = crypto.createHmac("sha256", mainMsg[3]).update(salt).digest("hex");
       try {
         temp = await schema.accountPW.findOne({
-          userName: name,
+            "userName": name
         });
-      } catch (e) {
-        console.error("ACCOUNT ERROR:", e);
+    } catch (e) {
+        console.error('ACCOUNT ERROR:', e);
         rply.text += JSON.stringify(e);
         return rply;
-      }
+    }
       if (temp && temp.id != userid) {
         rply.text += "重复用户名称";
         return rply;
       }
       try {
-        await schema.accountPW.findOneAndUpdate(
-          {
-            id: userid,
-          },
-          {
+        await schema.accountPW.findOneAndUpdate({
+            "id": userid
+        }, {
             $set: {
-              userName: name,
-              password: hash,
-            },
-          },
-          {
+                "userName": name,
+                "password": hash
+            }
+        }, {
             upsert: true,
-            returnNewDocument: true,
-          }
-        );
-      } catch (e) {
-        console.error("ACCOUNT ERROR:", e);
+            returnNewDocument: true
+        });
+
+    } catch (e) {
+        console.error('ACCOUNT ERROR:', e);
         rply.text += JSON.stringify(e);
         return rply;
-      }
+    }
       rply.text += "现在你的账号是: " + name + "\n" + "密码: " + mainMsg[3];
       rply.text +=
         "\n登入位置: https://card.hktrpg.com/ \n如想经网页掷骰，可以请Admin在频道中输入\n.admin  allowrolling\n然后希望掷骰玩家可在该频道输入以下指令登记。\n.admin registerChannel";
@@ -427,116 +337,126 @@ const rollDiceCommand = async function ({
       return rply;
     //.admin addVipGroup -i userID（可以无） -g gpid -l LV -n NAME -no NOTES -s SWITCH
     case /^addVipGroup$/i.test(mainMsg[1]):
-      console.log("addVipGroup command initiated");
-      if (!adminSecret) {
-        rply.text = "adminSecret not set";
-        return rply;
-      }
-      if (userid !== adminSecret) {
-        rply.text = "Unauthorized user";
-        return rply;
-      }
+      if (!adminSecret) return rply;
+      if (userid !== adminSecret) return rply;
+      filter = await store(inputStr, 'gp');
+      if (!filter.gpid) return rply;
       try {
-        filter = await store(inputStr, "gp");
-        if (!filter.gpid) {
-          rply.text = "Missing gpid argument";
-          return rply;
-        }
-        doc = await schema.veryImportantPerson.updateOne(
-          {
-            gpid: filter.gpid,
-          },
-          {
-            $set: filter,
-            $setOnInsert: {
-              startDate: new Date(),
-            },
-          },
-          opt
-        );
-        if (doc) {
-          rply.text = "更新成功\n";
-          rply.text += JSON.stringify(filter);
-        }
+          doc = await schema.veryImportantPerson.updateOne({
+              gpid: filter.gpid
+          }, {
+              $set: filter,
+              $setOnInsert: {
+                  startDate: new Date()
+              }
+          }, opt)
+          if (doc) {
+              rply.text = "更新成功\n";
+              rply.text += JSON.stringify(filter);
+
+          }
+          //.admin addVipGroup -i  ID -l LV -n NAME -no NOTES -s SWITCH
       } catch (error) {
-        console.error("新增VIP GET ERROR: ", error);
-        rply.text = "新增VIP失败\n因为 " + error.message;
+          console.error('新增VIP GET ERROR: ', error)
+          rply.text = '新增VIP失敗\n因為 ' + error.message
       }
       return rply;
-
-    case /^respawn$/i.test(mainMsg[1]): {
-      console.log("respawn command initiated");
-      if (!adminSecret) {
-        rply.text = "adminSecret not set";
-        return rply;
-      }
-      if (userid !== adminSecret) {
-        rply.text = "Unauthorized user";
-        return rply;
-      }
-      if (mainMsg[2] === null) {
-        rply.text = "Missing argument for respawn";
-        return rply;
-      }
+  case /^respawn$/i.test(mainMsg[1]): {
+      if (!adminSecret) return rply;
+      if (userid !== adminSecret) return rply;
+      if (mainMsg[2] === null) return rply;
       discordClient.cluster.send({ respawn: true, id: mainMsg[2] });
       return rply;
-    }
-
-    case /^respawnall$/i.test(mainMsg[1]): {
-      console.log("respawnall command initiated");
-      if (!adminSecret) {
-        rply.text = "adminSecret not set";
-        return rply;
-      }
-      if (userid !== adminSecret) {
-        rply.text = "Unauthorized user";
-        return rply;
-      }
+  }
+  case /^respawnall$/i.test(mainMsg[1]): {
+      if (!adminSecret) return rply;
+      if (userid !== adminSecret) return rply;
       discordClient.cluster.send({ respawnall: true });
       return rply;
-    }
-    //.admin addVipUser -i userID -g gpid(可以无) -l LV -n NAME -no NOTES -s SWITCH
-    case /^addVipUser$/i.test(mainMsg[1]):
-      console.log("addVipUser command initiated");
-      if (!adminSecret) {
-        rply.text = "adminSecret not set";
-        return rply;
-      }
-      if (userid !== adminSecret) {
-        rply.text = "Unauthorized user";
-        return rply;
-      }
+  }
+  case /^addVipUser$/i.test(mainMsg[1]):
+      if (!adminSecret) return rply;
+      if (userid !== adminSecret) return rply;
+      filter = await store(inputStr, 'id');
+      if (!filter.id) return rply;
       try {
-        filter = await store(inputStr, "id");
-        if (!filter.id) {
-          rply.text = "Missing id argument";
-          return rply;
-        }
-        doc = await schema.veryImportantPerson.updateOne(
-          {
-            id: filter.id,
-          },
-          {
-            $set: filter,
-            $setOnInsert: {
-              startDate: new Date(),
-            },
-          },
-          opt
-        );
-        if (doc) {
-          rply.text = "更新成功\n";
-          rply.text += JSON.stringify(filter);
-        }
+          doc = await schema.veryImportantPerson.updateOne({
+              id: filter.id
+          }, {
+              $set: filter,
+              $setOnInsert: {
+                  startDate: new Date()
+              }
+          }, opt)
+          if (doc) {
+              rply.text = "更新成功\n";
+              rply.text += JSON.stringify(filter);
+          }
+          //.admin addVipGroup -i  ID -l LV -n NAME -no NOTES -s SWITCH
       } catch (error) {
-        console.error("新增VIP GET ERROR: ", error);
-        rply.text = "新增VIP失败\n因为 " + error.message;
+          console.error('新增VIP GET ERROR: ', error)
+          rply.text = '新增VIP失敗\n因為 ' + error.message
       }
       return rply;
-    default:
-      break;
+
+
+  case /^news$/i.test(mainMsg[1]) && /^on$/i.test(mainMsg[2]):
+      if (!userid) return rply;
+      try {
+          doc = await schema.theNewsMessage.updateOne({
+              userID: userid,
+              botname: botname
+          }, {
+              userID: userid,
+              botname: botname,
+              switch: true
+          }, opt)
+          if (doc) {
+              rply.text = "更新成功\n你已開啓更新通知功能";
+          }
+          //.admin addVipGroup -i  ID -l LV -n NAME -no NOTES -s SWITCH
+      } catch (error) {
+          console.error('新增VIP GET ERROR: ', error)
+          rply.text = '更新失敗\n因為 ' + error.message
+      }
+      return rply;
+
+  case /^news$/i.test(mainMsg[1]) && /^off$/i.test(mainMsg[2]):
+      if (!userid) return rply;
+
+      try {
+          doc = await schema.theNewsMessage.updateOne({
+              userID: userid,
+              botname: botname
+          }, {
+              userID: userid,
+              botname: botname,
+              switch: false
+          }, opt)
+          if (doc) {
+              rply.text = "更新成功\n你已關閉更新通知功能";
+          }
+          //.admin addVipGroup -i  ID -l LV -n NAME -no NOTES -s SWITCH
+      } catch (error) {
+          console.error('新增VIP GET ERROR: ', error)
+          rply.text = '更新失敗\n因為 ' + error.message
+      }
+      return rply;
+  case /^send$/i.test(mainMsg[1]) && /^News$/i.test(mainMsg[2]): {
+      if (!adminSecret) return;
+      if (!mainMsg[2]) return;
+      if (userid !== adminSecret) return;
+      let target = await schema.theNewsMessage.find({ botname: botname, switch: true });
+      //   let alluser = await schema.firstTimeMessage.find({ botname: botname });
+      rply.sendNews = inputStr.replace(/\s?\S+\s+\S+\s+/, '');
+      rply.target = target;
+      // rply.alluser = alluser;
+      return rply;
   }
-};
+  default:
+      break;
+}
+}
 
 function checkUserName(text) {
   //True 即成功
@@ -546,11 +466,12 @@ function checkUserName(text) {
 async function checkGpAllow(target) {
   let doc;
   try {
-    doc = await schema.allowRolling.findOne({
-      id: target,
-    });
+      doc = await schema.allowRolling.findOne({
+          "id": target
+      })
   } catch (e) {
-    console.error("Allowrolling ERROR:", e);
+      console.error('Allowrolling ERROR:', e);
+
   }
   return doc;
 }
@@ -567,43 +488,35 @@ async function store(mainMsg, mode) {
   const resultName = pattName.exec(mainMsg);
   const resultNotes = pattNotes.exec(mainMsg);
   const resultSwitch = pattSwitch.exec(mainMsg);
-  //  console.log('resultLv,', resultId, resultGP, resultLv, resultName, resultNotes, resultSwitch)
+//  console.log('resultLv,', resultId, resultGP, resultLv, resultName, resultNotes, resultSwitch)
   let reply = {};
-  resultId && mode == "id" ? (reply.id = resultId[1]) : null;
-  resultGP && mode == "gp" ? (reply.gpid = resultGP[1]) : null;
-  resultLv ? (reply.level = Number(resultLv[1])) : null;
-  resultName ? (reply.name = resultName[1]) : null;
-  resultNotes ? (reply.notes = resultNotes[1]) : null;
-  resultSwitch && resultSwitch[1].toLowerCase() == "true"
-    ? (reply.switch = true)
-    : null;
-  resultSwitch && resultSwitch[1].toLowerCase() == "false"
-    ? (reply.switch = false)
-    : null;
+  (resultId && mode == 'id') ? reply.id = resultId[1] : null;
+  (resultGP && mode == 'gp') ? reply.gpid = resultGP[1] : null;
+  (resultLv) ? reply.level = Number(resultLv[1]) : null;
+  (resultName) ? reply.name = resultName[1] : null;
+  (resultNotes) ? reply.notes = resultNotes[1] : null;
+  (resultSwitch && resultSwitch[1].toLowerCase() == 'true') ? reply.switch = true : null;
+  (resultSwitch && resultSwitch[1].toLowerCase() == 'false') ? reply.switch = false : null;
   return reply;
 }
 
+
+
 function encrypt(text) {
   let iv = crypto.randomBytes(16);
-  let cipher = crypto.createCipheriv(
-    algorithm,
-    Buffer.from(password, "utf-8"),
-    iv
-  );
+  let cipher = crypto.createCipheriv(algorithm, Buffer.from(password, 'utf-8'), iv);
   let encrypted = cipher.update(text);
   encrypted = Buffer.concat([encrypted, cipher.final()]);
-  return iv.toString("hex") + ":" + encrypted.toString("hex");
+  return iv.toString('hex') + ':' + encrypted.toString('hex');
 }
 
+
+
 function decrypt(text) {
-  let textParts = text.split(":");
-  let iv = Buffer.from(textParts.shift(), "hex");
-  let encryptedText = Buffer.from(textParts.join(":"), "hex");
-  let decipher = crypto.createDecipheriv(
-    algorithm,
-    Buffer.from(password, "utf-8"),
-    iv
-  );
+  let textParts = text.split(':');
+  let iv = Buffer.from(textParts.shift(), 'hex');
+  let encryptedText = Buffer.from(textParts.join(':'), 'hex');
+  let decipher = crypto.createDecipheriv(algorithm, Buffer.from(password, 'utf-8'), iv);
   let decrypted = decipher.update(encryptedText);
   decrypted = Buffer.concat([decrypted, decipher.final()]);
   return decrypted.toString();
@@ -616,7 +529,7 @@ module.exports = {
   prefixs: prefixs,
   gameType: gameType,
   gameName: gameName,
-  discordCommand: discordCommand,
+  discordCommand: discordCommand
 };
 /**
 

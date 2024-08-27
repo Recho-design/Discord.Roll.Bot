@@ -137,7 +137,7 @@ client.on('guildCreate', async guild => {
 			.setColor('#0099ff')
 			//.setTitle(rplyVal.title)
 			//.setURL('https://discord.js.org/')
-			.setAuthor({ name: '骰娘爱你哦💖', url: '', iconURL: 'https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png' })
+			.setAuthor({ name: '骰娘爱你哦💖', url: 'https://www.kakaa.win', iconURL: 'https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png' })
 			.setDescription(newMessage.joinMessage())
 		await channel.send({ embeds: [text] });
 	} catch (error) {
