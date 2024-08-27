@@ -62,7 +62,7 @@ let handleEvent = async function (event) {
 	if ((trigger == ".me" || trigger == ".mee") && !z_stop(mainMsg, roomorgroupid)) {
 		inputStr = inputStr.replace(/^\.mee\s*/i, ' ').replace(/^\.me\s*/i, ' ');
 		if (inputStr.match(/^\s+$/)) {
-			inputStr = `.me 或 /mee 可以令HKTRPG機械人重覆你的說話\n請輸入復述內容`
+			inputStr = `.me 或 /mee 可以令骰娘重覆你的說話\n請輸入復述內容`
 		}
 		if (roomorgroupid) {
 			let temp = HandleMessage(inputStr);

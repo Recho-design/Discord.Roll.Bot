@@ -137,7 +137,7 @@ client.on('guildCreate', async guild => {
 			.setColor('#0099ff')
 			//.setTitle(rplyVal.title)
 			//.setURL('https://discord.js.org/')
-			.setAuthor({ name: 'HKTRPG', url: 'https://www.patreon.com/HKTRPG', iconURL: 'https://user-images.githubusercontent.com/23254376/113255717-bd47a300-92fa-11eb-90f2-7ebd00cd372f.png' })
+			.setAuthor({ name: '骰娘爱你哦💖', url: 'https://www.kakka.win', iconURL: 'https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png' })
 			.setDescription(newMessage.joinMessage())
 		await channel.send({ embeds: [text] });
 	} catch (error) {
@@ -214,7 +214,7 @@ client.once('ready', async () => {
 	initInteractionCommands();
 	if (process.env.BROADCAST) connect();
 	//	if (shardid === 0) getSchedule();
-	client.user.setActivity(`${candle.checker() || '🌼'}bothelp | hktrpg.com🍎`);
+	client.user.setActivity(`${candle.checker() || '🌼'}骰娘摸鱼中`);
 	console.log(`Discord: Logged in as ${client.user.tag}!`);
 	let switchSetActivity = 0;
 	// eslint-disable-next-line no-unused-vars
@@ -238,7 +238,7 @@ client.once('ready', async () => {
 			console.log(`Discord Heartbeat: ID: ${isAwake.length} - ${heartbeat}... `)
 		}
 		if (heartbeat > WARNING_THRESHOLD && adminSecret) {
-			SendToId(adminSecret, `HKTRPG ID: ${wakeup.join(', ')} 可能下線了 請盡快檢查.`);
+			SendToId(adminSecret, `骰娘 ID: ${wakeup.join(', ')} 可能下線了 請盡快檢查.`);
 		}
 		if (heartbeat > CRITICAL_THRESHOLD) {
 			if (isAwake.length > 0)
@@ -255,7 +255,7 @@ client.once('ready', async () => {
 	const refreshId2 = setInterval(async () => {
 		switch (switchSetActivity % 2) {
 			case 1:
-				client.user.setActivity(`${candle.checker() || '🌼'}bothelp | hktrpg.com🍎`);
+				client.user.setActivity(`${candle.checker() || '🌼'}骰娘摸鱼中`);
 				break;
 			default:
 				client.user.setActivity(await count2());
@@ -324,14 +324,14 @@ async function convQuotes(text = "") {
 		.setColor('#0099ff')
 		//.setTitle(rplyVal.title)
 		//.setURL('https://discord.js.org/')
-		.setAuthor({ name: 'HKTRPG', url: 'https://www.patreon.com/HKTRPG', iconURL: 'https://user-images.githubusercontent.com/23254376/113255717-bd47a300-92fa-11eb-90f2-7ebd00cd372f.png' })
+		.setAuthor({ name: '骰娘爱你哦💖', url: 'https://www.kakaa.win', iconURL: 'https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png' })
 	const imageMatch = text.match(imageUrl) || null;
 	if (imageMatch && imageMatch.length) {
 		for (let index = 0; (index < imageMatch.length) && index < 10; index++) {
 			imageMatch[index] = imageMatch[index].replace(/\s?$/, '');
 			let imageVaild = await isImageURL(imageMatch[index]);
 			if (imageVaild) {
-				let imageEmbed = new EmbedBuilder().setURL('https://www.patreon.com/HKTRPG').setImage(imageMatch[index]);
+				let imageEmbed = new EmbedBuilder().setURL('https://www.kakaa.win').setImage(imageMatch[index]);
 				if (imageMatch.length === 1) embed.setImage(imageMatch[index]);
 				else embeds.push(imageEmbed);
 				text = text.replace(imageMatch[index], '')
@@ -494,7 +494,7 @@ async function count() {
 		.then(results => {
 			const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
 			const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
-			return (`正在運行HKTRPG的Discord 群組數量: ${totalGuilds}\nDiscord 會員數量: ${totalMembers}`);
+			return (`正在運行的Discord 群組數量: ${totalGuilds}\nDiscord 會員數量: ${totalMembers}`);
 		})
 		.catch(err => {
 			console.error(`disocrdbot #596 error ${err}`)
@@ -502,7 +502,7 @@ async function count() {
 
 }
 async function count2() {
-	if (!client.cluster) return '🌼bothelp | hktrpg.com🍎';
+	if (!client.cluster) return '🌼骰娘摸鱼中';
 	const promises = [
 		client.cluster.fetchClientValues('guilds.cache.size'),
 		client.cluster
@@ -518,7 +518,7 @@ async function count2() {
 		.catch((err) => {
 			console.error(`disocrdbot #617 error ${err}`)
 			respawnCluster(err);
-			return '🌼bothelp | hktrpg.com🍎';
+			return '🌼骰娘摸鱼中';
 		});
 }
 
@@ -660,7 +660,7 @@ async function repeatMessage(discord, message) {
 		let pair = (webhook && webhook.isThread) ? { threadId: discord.channelId } : {};
 		await webhook.webhook.send({ ...obj, ...pair });
 	} catch (error) {
-		await SendToReplychannel({ replyText: '不能成功發送扮演發言, 請檢查你有授權HKTRPG 管理Webhook的權限, \n此為本功能必須權限', channelid: discord.channel.id });
+		await SendToReplychannel({ replyText: '不能成功發送扮演發言, 請檢查你有授權骰娘 管理Webhook的權限, \n此為本功能必須權限', channelid: discord.channel.id });
 		return;
 	}
 
@@ -685,7 +685,7 @@ async function repeatMessages(discord, message) {
 		}
 
 	} catch (error) {
-		await SendToReplychannel({ replyText: '不能成功發送扮演發言, 請檢查你有授權HKTRPG 管理Webhook的權限, \n此為本功能必須權限', channelid: discord.channel.id });
+		await SendToReplychannel({ replyText: '不能成功發送扮演發言, 請檢查你有授權骰娘 管理Webhook的權限, \n此為本功能必須權限', channelid: discord.channel.id });
 		return;
 	}
 
@@ -703,7 +703,7 @@ async function manageWebhook(discord) {
 		//'Incoming'
 		if (!webhook) {
 			const hooks = isThread ? await client.channels.fetch(channel.parentId) : channel;
-			await hooks.createWebhook({ name: "HKTRPG .me Function", avatar: "https://user-images.githubusercontent.com/23254376/113255717-bd47a300-92fa-11eb-90f2-7ebd00cd372f.png" })
+			await hooks.createWebhook({ name: "KKTRPG .me Function", avatar: "https://user-images.githubusercontent.com/23254376/113255717-bd47a300-92fa-11eb-90f2-7ebd00cd372f.png" })
 			webhooks = await channel.fetchWebhooks();
 			webhook = webhooks.find(v => {
 				return (v.channelId == channel.parentId || v.channelId == channel.id) && v.token;
@@ -712,7 +712,7 @@ async function manageWebhook(discord) {
 		return { webhook, isThread };
 	} catch (error) {
 		//	console.error(error)
-		await SendToReplychannel({ replyText: '不能新增Webhook.\n 請檢查你有授權HKTRPG 管理Webhook的權限, \n此為本功能必須權限', channelid: (discord.channel && discord.channel.id) || discord.channelId });
+		await SendToReplychannel({ replyText: '不能新增Webhook.\n 請檢查你有授權骰娘 管理Webhook的權限, \n此為本功能必須權限', channelid: (discord.channel && discord.channel.id) || discord.channelId });
 		return;
 	}
 }
@@ -728,7 +728,7 @@ async function roleReact(channelid, message) {
 		await schema.roleReact.findByIdAndUpdate(message.roleReactMongooseId, { messageID: sendMessage.id }).catch(error => console.error('discord_bot #786 mongoDB error: ', error.name, error.reson))
 
 	} catch (error) {
-		await SendToReplychannel({ replyText: '不能成功增加ReAction, 請檢查你有授權HKTRPG 新增ReAction的權限, \n此為本功能必須權限', channelid });
+		await SendToReplychannel({ replyText: '不能成功增加ReAction, 請檢查你有授權骰娘 新增ReAction的權限, \n此為本功能必須權限', channelid });
 		return;
 	}
 
@@ -746,7 +746,7 @@ async function newRoleReact(channel, message) {
 		}
 
 	} catch (error) {
-		await SendToReplychannel({ replyText: '不能成功增加ReAction, 請檢查你有授權HKTRPG 新增ReAction的權限, \n此為本功能必須權限' });
+		await SendToReplychannel({ replyText: '不能成功增加ReAction, 請檢查你有授權骰娘 新增ReAction的權限, \n此為本功能必須權限' });
 		return;
 	}
 
@@ -1255,7 +1255,7 @@ async function handlingEditMessage(message, rplyVal) {
 					content: editReply
 				});
 			} else
-				return message.reply({ content: '根據Discord的規則，只能修改此BOT(HKTRPG)和Webhook所發出的訊息，請重新檢查' });
+				return message.reply({ content: '根據Discord的規則，只能修改此BOT(骰娘)和Webhook所發出的訊息，請重新檢查' });
 	} catch (error) {
 		console.error();
 	}
@@ -1409,7 +1409,7 @@ async function __handlingInteractionMessage(message) {
 async function __sendMeMessage({ message, inputStr, groupid }) {
 	inputStr = inputStr.replace(/^\.mee\s*/i, ' ').replace(/^\.me\s*/i, ' ');
 	if (inputStr.match(/^\s+$/)) {
-		inputStr = `.me 或 /mee 可以令HKTRPG機械人重覆你的說話\n請輸入復述內容`
+		inputStr = `.me 或 /mee 可以令骰娘重覆你的說話\n請輸入復述內容`
 	}
 	if (groupid) {
 		await SendToReplychannel({ replyText: inputStr, channelid: message.channel.id });
