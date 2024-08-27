@@ -99,6 +99,24 @@ const rollDiceCommand = async function ({
       }
       return rply;
     }
+    case /^unregisterGlobal$/i.test(mainMsg[1]): {
+      console.log("unregisterGlobal command initiated");
+      if (!adminSecret) {
+        rply.text = "adminSecret not set";
+        return rply;
+      }
+      if (userid !== adminSecret) {
+        rply.text = "Unauthorized user";
+        return rply;
+      }
+      try {
+        rply.text = await deploy.unregisterGlobalSlashCommands();
+      } catch (error) {
+        console.error("Error executing unregisterGlobalSlashCommands:", error);
+        rply.text = "Error executing unregisterGlobalSlashCommands";
+      }
+      return rply;
+    }
     case /^testRegistered$/i.test(mainMsg[1]): {
       console.log("testRegistered command initiated");
       if (!adminSecret) {
@@ -118,6 +136,30 @@ const rollDiceCommand = async function ({
       } catch (error) {
         console.error("Error executing testRegisteredSlashCommands:", error);
         rply.text = "Error executing testRegisteredSlashCommands";
+      }
+      return rply;
+    }
+    case /^removeCommands$/i.test(mainMsg[1]): {
+      console.log("removeCommands command initiated");
+      if (!adminSecret) {
+        rply.text = "adminSecret not set";
+        return rply;
+      }
+      if (userid !== adminSecret) {
+        rply.text = "Unauthorized user";
+        return rply;
+      }
+      if (!mainMsg[2]) {
+        rply.text = "Missing argument for removeCommands";
+        return rply;
+      }
+      try {
+        // 调用 removeSlashCommands 并将 guildId 传递进去
+        await deploy.removeSlashCommands(mainMsg[2]);
+        rply.text = "Successfully removed commands";
+      } catch (error) {
+        console.error("Error executing removeSlashCommands:", error);
+        rply.text = "Error executing removeSlashCommands";
       }
       return rply;
     }
@@ -383,6 +425,7 @@ const rollDiceCommand = async function ({
       if (userid !== adminSecret) return rply;
       rply.text = decrypt(mainMsg[2]);
       return rply;
+    //.admin addVipGroup -i userID（可以无） -g gpid -l LV -n NAME -no NOTES -s SWITCH
     case /^addVipGroup$/i.test(mainMsg[1]):
       console.log("addVipGroup command initiated");
       if (!adminSecret) {
@@ -452,7 +495,7 @@ const rollDiceCommand = async function ({
       discordClient.cluster.send({ respawnall: true });
       return rply;
     }
-
+    //.admin addVipUser -i userID -g gpid(可以无) -l LV -n NAME -no NOTES -s SWITCH
     case /^addVipUser$/i.test(mainMsg[1]):
       console.log("addVipUser command initiated");
       if (!adminSecret) {

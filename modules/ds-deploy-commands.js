@@ -1,7 +1,7 @@
 "use strict";
 const { REST, Routes } = require('discord.js');
 const fs = require('node:fs');
-const clientId = process.env.DISCORD_CHANNEL_CLIENTID || "544561773488111636";
+const clientId = process.env.DISCORD_CHANNEL_CLIENTID;
 const channelSecret = process.env.DISCORD_CHANNEL_SECRET;
 const commands = []
     .map(command => command.toJSON());
@@ -31,7 +31,17 @@ async function registeredGlobalSlashCommands() {
             return "Error Global registered application commands." + err;
         });
 }
-
+async function unregisterGlobalSlashCommands() {
+    return rest.put(Routes.applicationCommands(clientId), { body: [] })
+        .then(() => {
+            console.log('Successfully unregistered all global application commands.');
+            return 'Successfully unregistered all global application commands.';
+        })
+        .catch(err => {
+            console.error('Error in unregistering global application commands.', err);
+            return 'Error in unregistering global application commands.' + err;
+        });
+}
 async function testRegisteredSlashCommands(guildId) {
     return rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
         .then(() => {
@@ -43,10 +53,6 @@ async function testRegisteredSlashCommands(guildId) {
             return "Error Global registered application commands." + err;
         });
 }
-
-
-
-
 
 function loadingSlashCommands() {
     const commandFiles = fs.readdirSync('./roll/').filter(file => file.endsWith('.js'));
@@ -81,6 +87,7 @@ function removeSlashCommands(guildId) {
 
 module.exports = {
     registeredGlobalSlashCommands,
+    unregisterGlobalSlashCommands,
     testRegisteredSlashCommands,
     removeSlashCommands
 };
