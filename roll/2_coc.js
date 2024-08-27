@@ -1469,7 +1469,7 @@ const TraitsArr = [
 ];
 
 /**
- * COC恐懼表
+ * COC恐惧表
  */
 const cocmadnessrt = [
   [
