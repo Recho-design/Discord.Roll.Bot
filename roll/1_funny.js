@@ -1238,7 +1238,7 @@ const TarotList2 = [
   "权杖国王 － 冲动和专横；压抑情感；滥用权力；决策失误。",
   "权杖骑士 － 鲁莽和冒失；行动草率；缺乏考虑；冲突和矛盾。",
   "权杖侍者 － 焦虑和疑惑；前景不明；缺乏激情；畏缩不前。",
-  "权杖皇后 － 热情淡退；缺乏灵感；脾气暴躁；情绪不稳。"
+  "权杖皇后 － 热情淡退；缺乏灵感；脾气暴躁；情绪不稳。",
 ];
 
 /**
@@ -1515,6 +1515,16 @@ const discordCommand = [
               .setName("name")
               .setDescription("可选: 对像的名字，留白则使用你的名字")
           )
+      )
+      .addSubcommand((subcommand) =>
+        subcommand
+          .setName("解答")
+          .setDescription("让骰娘给你答案吧")
+          .addStringOption((option) =>
+            option
+             .setName("question")
+             .setDescription("可选: 想要询问的问题")
+          )
       ),
 
     async execute(interaction) {
@@ -1523,8 +1533,13 @@ const discordCommand = [
       const name = interaction.options.getString("name") || "";
       const subcommand = interaction.options.getSubcommand();
       const star = interaction.options.getString("star");
+      const question = interaction.options.getString("question") || "";
       if (star !== null) return `${star}`;
-      if (subcommand !== null) return `每日${subcommand} ${name}`;
+      if (subcommand === "解答") {
+        return `每日解答 ${question}`;
+      } else if (subcommand !== null) {
+        return `每日${subcommand} ${name}`;
+      };
       if (category !== null) return `${category}`;
       return;
     },
