@@ -7,7 +7,8 @@ const checkMongodb = require("../modules/dbWatchdog.js");
 const FUNCTION_AT_LIMIT = [5, 25, 50, 200, 200, 200, 200, 200];
 const schema = require("../modules/schema");
 const FUNCTION_CRON_LIMIT = [2, 15, 30, 45, 99, 99, 99, 99];
-const moment = require("moment");
+const moment = require("moment-timezone");
+moment.tz.setDefault("Asia/Shanghai");
 const agenda = require("../modules/schedule");
 const CRON_REGEX =
   /^(\d\d)(\d\d)((?:-([1-9]?[1-9]|((mon|tues|wed(nes)?|thur(s)?|fri|sat(ur)?|sun)(day)?))){0,1})/i;
@@ -250,7 +251,7 @@ const rollDiceCommand = async function ({
 
       let callBotname = differentPeformAt(botname);
       await agenda.agenda
-        .schedule(date, callBotname, {
+        .schedule(moment(date).tz("Asia/Shanghai").toDate(), callBotname, {
           imageLink: roleName.imageLink,
           roleName: roleName.roleName,
           replyText: text,
@@ -263,9 +264,9 @@ const rollDiceCommand = async function ({
         .catch((error) =>
           console.error("agenda error: ", error.name, error.reson)
         );
-      rply.text = `已新增排定內容\n将于${date
-        .toString()
-        .replace(/:\d+\s.*/, "")}运行`;
+      rply.text = `已新增排定內容\n将于${moment(date)
+        .tz("Asia/Shanghai")
+        .format("YYYY-MM-DD HH:mm")}运行`;
       return rply;
     }
     case /^\.cron+$/i.test(mainMsg[0]) && /^show$/i.test(mainMsg[1]): {
@@ -428,9 +429,11 @@ const rollDiceCommand = async function ({
         groupid: groupid,
         botname: botname,
         userid: userid,
-        createAt: new Date(Date.now()),
+        createAt: moment(new Date(Date.now())).tz("Asia/Shanghai").toDate(),
       });
-      job.repeatEvery(date);
+      job.repeatEvery(date, {
+        timezone: "Asia/Shanghai"
+      });
 
       try {
         await job.save();
@@ -505,25 +508,27 @@ function checkAtTime(first, second) {
       let time = first.match(/^(\d+)mins$/i)[1];
       if (time > 44640) time = 44640;
       if (time < 1) time = 1;
-      time = moment().add(time, "minute").toDate();
+      time = moment().add(time, "minute").tz("Asia/Shanghai").toDate();
       return { time: time, threeColum: false };
     }
     case /^\d+hours$/i.test(first): {
       let time = first.match(/^(\d+)hours$/i)[1];
       if (time > 744) time = 744;
       if (time < 1) time = 1;
-      time = moment().add(time, "hour").toDate();
+      time = moment().add(time, "hour").tz("Asia/Shanghai").toDate();
       return { time: time, threeColum: false };
     }
     case /^\d+days$/i.test(first): {
       let time = first.match(/^(\d+)days$/i)[1];
       if (time > 31) time = 31;
       if (time < 1) time = 1;
-      time = moment().add(time, "day").toDate();
+      time = moment().add(time, "day").tz("Asia/Shanghai").toDate();
       return { time: time, threeColum: false };
     }
     case /^\d{8}$/i.test(first) && /^\d{4}$/i.test(second): {
-      let time = moment(`${first} ${second}`, "YYYYMMDD hhmm").toDate();
+      let time = moment
+        .tz(`${first} ${second}`, "YYYYMMDD hhmm", "Asia/Shanghai")
+        .toDate();
       return { time: time, threeColum: true };
     }
     default:
@@ -564,9 +569,12 @@ function showJobs(jobs) {
   if (jobs && jobs.length > 0) {
     for (let index = 0; index < jobs.length; index++) {
       let job = jobs[index];
-      reply += `序号#${index + 1} 下次运行时间 ${job.attrs.nextRunAt
-        .toString()
-        .replace(/:\d+\s.*/, "")}\n${job.attrs.data.replyText}\n`;
+      let localTime = moment(job.attrs.nextRunAt)
+        .tz("Asia/Shanghai")
+        .format("YYYY-MM-DD HH:mm");
+      reply += `序号#${index + 1} 下次运行时间 ${localTime}\n${
+        job.attrs.data.replyText
+      }\n`;
     }
   } else reply = "没有找到定时任务";
   return reply;
@@ -577,10 +585,11 @@ function showCronJobs(jobs) {
     for (let index = 0; index < jobs.length; index++) {
       let job = jobs[index];
       let createAt = job.attrs.data.createAt;
+      let localCreateAt = moment(createAt)
+        .tz("Asia/Shanghai")
+        .format("YYYY-MM-DD HH:mm");
       let time = job.attrs.repeatInterval.match(/^(\d+) (\d+)/);
-      reply += `序号#${index + 1} 创建时间 ${createAt
-        .toString()
-        .replace(/:\d+\s.*/, "")}\n每天运行时间 ${
+      reply += `序号#${index + 1} 创建时间 ${localCreateAt}\n每天运行时间 ${
         (time && time[2]) || "error"
       } ${(time && time[1]) || "error"}\n${job.attrs.data.replyText}\n`;
     }
