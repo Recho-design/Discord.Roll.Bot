@@ -490,7 +490,7 @@ ${Almanac.content}
   async updateAlmanac() {
     let date = this.getDate();
     let res = await axios.get(
-      encodeURI(`https://tw.18dao.net/每日黄历/${date}`)
+      encodeURI(`https://tw.18dao.net/每日黃曆/${date}`)
     );
     const $ = cheerio.load(res.data);
     this.Almanac = new Almanac($, date);
@@ -986,7 +986,7 @@ const TarotList = [
   "钱币二 ＋\nhttps://raw.githubusercontent.com/hktrpg/TG.line.Discord.Roll.Bot/master/assets/tarot/PANTA_02.jpg\n1. 平衡：钱币二象征在多方面保持平衡。\n2. 多元化：同时处理多重任务或保持财务多元化。\n3. 灵活性：展现出灵活应对变化的能力。\n4. 调整：不断进行调整以应对新的挑战。",
   "钱币三 ＋\nhttps://raw.githubusercontent.com/hktrpg/TG.line.Discord.Roll.Bot/master/assets/tarot/PANTA_03.jpg\n1. 合作：钱币三象征团队合作和共同努力。\n2. 手艺：强调技能和专业能力的运用。\n3. 认可：获得他人的认可和赞赏。\n4. 成长：通过合作与学习取得成长和进步。",
   "钱币四 ＋\nhttps://raw.githubusercontent.com/hktrpg/TG.line.Discord.Roll.Bot/master/assets/tarot/PANTA_04.jpg\n1. 安全：钱币四象征追求财务和物质上的安全。\n2. 控制：对资源和财务的控制和管理。\n3. 保守：采取保守的态度以维护现状。\n4. 稳定：追求稳定和持续的增长。",
-  "钱币五 ＋\nhttps://raw.githubusercontent.com/hktrpg/TG.line.Discord.Roll.Bot/master/assets/tarot/PANTA_05.jpg\n1. 困难：钱币五象征财务困境和挑战。\n2. 损失：面临物质或财务上的损失。\n3. 困惑：感到孤立和��惑，寻求帮助。\n4. 挑战：需要面对并克服当前的挑战。",
+  "钱币五 ＋\nhttps://raw.githubusercontent.com/hktrpg/TG.line.Discord.Roll.Bot/master/assets/tarot/PANTA_05.jpg\n1. 困难：钱币五象征财务困境和挑战。\n2. 损失：面临物质或财务上的损失。\n3. 困惑：感到孤立和困惑，寻求帮助。\n4. 挑战：需要面对并克服当前的挑战。",
   "钱币六 ＋\nhttps://raw.githubusercontent.com/hktrpg/TG.line.Discord.Roll.Bot/master/assets/tarot/PANTA_06.jpg\n1. 慈善：钱币六象征给予和接收，慈善和慷慨。\n2. 平衡：保持给予和接受之间的平衡。\n3. 支持：获得他人的支持或提供支持。\n4. 公平：在资源分配上保持公平。",
   "钱币七 ＋\nhttps://raw.githubusercontent.com/hktrpg/TG.line.Discord.Roll.Bot/master/assets/tarot/PANTA_07.jpg\n1. 耐心：钱币七象征耐心等待和评估结果。\n2. 规划：进行长期规划和策略。\n3. 努力：持续投入努力，期待回报。\n4. 回顾：对过去的努力进行回顾和反思。",
   "钱币八 ＋\nhttps://raw.githubusercontent.com/hktrpg/TG.line.Discord.Roll.Bot/master/assets/tarot/PANTA_08.jpg\n1. 勤奋：钱币八象征勤奋工作和不断进步。\n2. 技能：提升技能和专业能力。\n3. 专注：在工作和学习中保持专注。\n4. 成果：通过努力工作获得成果和回报。",
