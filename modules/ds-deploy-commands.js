@@ -1,7 +1,7 @@
 "use strict";
 const { REST, Routes } = require('discord.js');
 const fs = require('node:fs');
-const clientId = process.env.DISCORD_CHANNEL_CLIENTID || "544561773488111636";
+const clientId = process.env.DISCORD_CHANNEL_CLIENTID;
 const channelSecret = process.env.DISCORD_CHANNEL_SECRET;
 const commands = []
     .map(command => command.toJSON());
