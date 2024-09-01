@@ -21,7 +21,7 @@ const {
   ChannelType,
 } = Discord;
 
-const { rollDiceCommand } = require('../roll/z_character.js');
+const { discordCommand } = require("../roll/z_character.js");
 
 const multiServer = require("../modules/multi-server");
 const checkMongodb = require("../modules/dbWatchdog.js");
@@ -280,50 +280,157 @@ client.on("messageReactionRemove", async (reaction, user) => {
     );
   }
 });
+
 //处理新建角色模态框
 client.on("interactionCreate", async (interaction) => {
-  if (interaction.isCommand()) {
-    const command = client.commands.get(interaction.commandName);
-
-    if (!command) return;
-
-    try {
-      await command.execute(interaction);
-    } catch (error) {
-      console.error(error);
-      await interaction.reply({
-        content: "在执行命令时发生错误！",
-        ephemeral: true,
-      });
-    }
-  }
-//识别modalID
-  else if (interaction.isModalSubmit()) {
+  if (interaction.isModalSubmit()) {
     if (interaction.customId === "createRoleModal") {
-      const roleName = interaction.fields.getTextInputValue("roleName").trim();
-      const roleAttributes = interaction.fields
-        .getTextInputValue("roleAttributes")
-        .trim();
-      const roleDice = interaction.fields.getTextInputValue("roleDice").trim();
-      const remark = interaction.fields.getTextInputValue("remark").trim();
+      try {
+        // 获取用户输入的数据
+        let roleName = interaction.fields.getTextInputValue("roleName").trim();
+        let roleAttributes = interaction.fields
+          .getTextInputValue("roleAttributes")
+          .trim();
+        let roleDice = interaction.fields.getTextInputValue("roleDice").trim();
+        const remark = interaction.fields.getTextInputValue("remark").trim();
 
-      const charAddCommand = `.char add name[${
-        roleName || "角色名称"
-      }]~ state[${roleAttributes}]~ roll[${roleDice}]~ notes[${remark}]~`;
+        // 将属性、骰点、备注从换行符转换为分号，以便后续解析
+        roleAttributes = roleAttributes.replace(/\n/g, ";");
+        roleDice = roleDice.replace(/\n/g, ";");
+        const remarks = remark.replace(/\n/g, ";");
 
-	  const mainMsg = charAddCommand.split(' ');
-	  const botResponse = await rollDiceCommand({
-		  inputStr: charAddCommand,
-		  mainMsg: mainMsg,
-		  groupid: interaction.guildId,
-		  botname: interaction.client.user.username,
-		  userid: interaction.user.id,
-		  channelid: interaction.channelId
-	  });
+        // 将属性、骰点、备注从字符串转换为对象数组
+        const stateArray = roleAttributes.split(";").map((attr) => {
+          const [name, itemA, itemB] = attr.split(":").map((str) => str.trim());
+          return { name, itemA, itemB };
+        });
 
-	  await interaction.reply({
-		  content: botResponse.text,
-	  });
+        const rollArray = roleDice.split(";").map((dice) => {
+          const [name, itemA] = dice.split(":").map((str) => str.trim());
+          return { name, itemA };
+        });
+
+        const notesArray = remarks.split(";").map((note) => {
+          const [name, itemA] = note.split(":").map((str) => str.trim());
+          return { name, itemA };
+        });
+
+        const card = {
+          id: interaction.user.id,
+          name: roleName,
+          state: stateArray,
+          roll: rollArray,
+          notes: notesArray,
+        };
+
+        // 检查同名角色卡是否存在
+        const filter = {
+          id: interaction.user.id,
+          name: { $regex: new RegExp(roleName, "i") },
+        };
+
+        //此处开始修改
+        const existingCard = await schema.characterCard.findOne(filter);
+
+        if (existingCard) {
+          // 已存在同名角色卡，显示错误信息
+          await interaction.reply({
+            content: `已存在同名角色卡：${roleName}`,
+            ephemeral: true,
+          });
+          return;
+        }
+
+        // 使用 create 方法插入新角色卡
+        await schema.characterCard.create(card);
+        //此处结束修改
+
+        await interaction.reply({
+          content: `角色卡 "${roleName}" 已成功创建！`,
+        });
+      } catch (error) {
+        console.error("新增角色卡失败: ", error);
+        await interaction.reply({
+          content: `新增角色卡失败，因为: ${error.message}`,
+          ephemeral: true,
+        });
+      }
+    }
+    //处理修改角色模态框
+    else if (interaction.isModalSubmit()) {
+      if (interaction.customId === "editCharacter") {
+        const userId = interaction.user.id; // 
+        const newName = interaction.fields.getTextInputValue("roleName").trim(); 
+
+        let roleAttributes = interaction.fields
+          .getTextInputValue("roleAttributes")
+          .trim();
+        let roleDice = interaction.fields.getTextInputValue("roleDice").trim();
+        let remark = interaction.fields.getTextInputValue("remark").trim();
+
+        roleAttributes = roleAttributes.replace(/\n/g, ";");
+        roleDice = roleDice.replace(/\n/g, ";");
+        const remarks = remark.replace(/\n/g, ";");
+
+        const stateArray = roleAttributes.split(";").map((attr) => {
+          const [name, itemA] = attr.split(":").map((str) => str.trim());
+          return { name, itemA: itemA || "" }; 
+        });
+
+        const rollArray = roleDice.split(";").map((dice) => {
+          const [name, itemA] = dice.split(":").map((str) => str.trim());
+          return { name, itemA: itemA || "" }; 
+        });
+
+        const notesArray = remarks.split(";").map((note) => {
+          const [name, itemA] = note.split(":").map((str) => str.trim());
+          return { name, itemA: itemA || "" }; 
+        });
+
+        try {
+          // 查找是否有相同name的角色
+          const filter = { id: userId, name: newName };
+          const existingCharacter = await schema.characterCard.findOne(filter);
+
+          if (existingCharacter) {
+            // 如果有相同name的角色，更新数据
+            await schema.characterCard.updateOne(filter, {
+              $set: {
+                state: stateArray,
+                roll: rollArray,
+                notes: notesArray,
+              },
+            });
+
+            await interaction.reply({
+              content: `角色 ${newName} 已更新！`,
+              ephemeral: false,
+            });
+          } else {
+            // 如果没有相同name的角色，创建新角色
+            const newCharacter = new schema.characterCard({
+              id: userId,
+              name: newName,
+              state: stateArray,
+              roll: rollArray,
+              notes: notesArray,
+            });
+
+            await newCharacter.save();
+   
+            await interaction.reply({
+              content: `新的角色 ${newName} 已创建！`,
+              ephemeral: false,
+            });
+          }
+        } catch (error) {
+          console.error("处理角色卡出错: ", error);
+          await interaction.reply({
+            content: `处理角色卡失败\n因为 ${error.message}`,
+            ephemeral: false,
+          });
+        }
+      }
     }
   }
 });

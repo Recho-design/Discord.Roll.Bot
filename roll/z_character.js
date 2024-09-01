@@ -13,6 +13,8 @@ const {
   TextInputBuilder,
   TextInputStyle,
   ActionRowBuilder,
+  StringSelectMenuBuilder,
+  StringSelectMenuOptionBuilder,
 } = Discord;
 const VIP = require("../modules/veryImportantPerson");
 const FUNCTION_LIMIT = [4, 20, 20, 30, 30, 99, 99, 99];
@@ -1070,13 +1072,13 @@ async function countNum(num) {
   }
   return result;
 }
-//新建角色-表单
+//模态框
 const discordCommand = [
+  // 新建角色
   {
     data: new SlashCommandBuilder()
       .setName("新建角色")
       .setDescription("创建一个新角色"),
-
     async execute(interaction) {
       const modal = new ModalBuilder()
         .setCustomId("createRoleModal")
@@ -1092,25 +1094,21 @@ const discordCommand = [
       const roleAttributesInput = new TextInputBuilder()
         .setCustomId("roleAttributes")
         .setLabel("角色属性")
-        .setPlaceholder(
-          "请输入角色属性，多个属性之间用分号隔开，示例：HP:15/15;MP:6/6;"
-        )
+        .setPlaceholder("请输入角色属性，多个属性之间用换行隔开。示例：\nHP: 5/5\nMP: 3/3\nSAN: 50/90")
         .setStyle(TextInputStyle.Paragraph)
         .setRequired(false);
 
       const roleDiceInput = new TextInputBuilder()
         .setCustomId("roleDice")
         .setLabel("角色骰点")
-        .setPlaceholder(
-          "请输入角色将会用于骰点的属性，多个属性之间用分号隔开，变量使用大括号表示，示例：斗殴: cc 50;sc:cc {san};"
-        )
+        .setPlaceholder("请输入角色将会用于骰点的属性，多个属性之间用换行隔开，变量放在大括号中。示例：\n投掷: cc 80\nSC: cc {SAN}")
         .setStyle(TextInputStyle.Paragraph)
         .setRequired(false);
 
       const remarkInput = new TextInputBuilder()
         .setCustomId("remark")
         .setLabel("备注")
-        .setPlaceholder("请填写其他备注信息")
+        .setPlaceholder("请填写其他备注信息，多个备注之间用换行隔开")
         .setStyle(TextInputStyle.Paragraph)
         .setRequired(false);
 
@@ -1124,6 +1122,152 @@ const discordCommand = [
       modal.addComponents(actionRow1, actionRow2, actionRow3, actionRow4);
 
       await interaction.showModal(modal);
+    },
+  },
+  //修改角色
+  {
+    data: new SlashCommandBuilder()
+      .setName("修改角色")
+      .setDescription("修改一个现有的角色"),
+
+    async execute(interaction) {
+      try {
+        const userId = interaction.user.id;
+        const characters = await schema.characterCard.find({ id: userId });
+
+        const selectMenu = new StringSelectMenuBuilder()
+          .setCustomId("selectCharacter")
+          .setPlaceholder("请选择一个角色");
+
+        if (characters.length === 0) {
+          return interaction.reply({
+            content: "你没有任何可用角色。",
+            ephemeral: true,
+          });
+        }
+
+        characters.forEach((character) => {
+          selectMenu.addOptions(
+            new StringSelectMenuOptionBuilder()
+              .setLabel(character.name)
+              .setValue(character._id.toString()) 
+          );
+        });
+
+        const actionRow = new ActionRowBuilder().addComponents(selectMenu);
+
+        await interaction.reply({
+          content: "请选择你想要修改的角色：",
+          components: [actionRow],
+        });
+
+        // 监听选择菜单的交互
+        const filter = (i) =>
+          i.customId === "selectCharacter" && i.user.id === userId;
+        const collector = interaction.channel.createMessageComponentCollector({
+          filter,
+          time: 60000,
+        });
+
+        collector.on("collect", async (i) => {
+          if (i.customId === "selectCharacter") {
+            const selectedCharacterId = i.values[0]; 
+
+                        const character = await schema.characterCard.findById(
+              selectedCharacterId
+            );
+
+            if (!character) {
+              return i.update({
+                content: "未找到该角色，请重新尝试。",
+                components: [],
+              });
+            }
+
+                    const roleName = character.name;
+            const roleAttributes =
+              character.state
+                ?.map((attr) => `${attr.name}:${attr.itemA}`)
+                .join("\n") || "";
+            const roleDice =
+              character.roll
+                ?.map((dice) => `${dice.name}:${dice.itemA}`)
+                .join("\n") || "";
+            const remarks =
+              character.notes
+                ?.map((note) => `${note.name}:${note.itemA}`)
+                .join("\n") || "";
+
+            const modal = new ModalBuilder()
+              .setCustomId("editCharacter") 
+              .setTitle("修改角色信息");
+
+            const roleNameInput = new TextInputBuilder()
+              .setCustomId("roleName")
+              .setLabel("角色名称")
+              .setPlaceholder("请输入角色名称")
+              .setStyle(TextInputStyle.Short)
+              .setValue(roleName) 
+              .setRequired(true);
+
+            const roleAttributesInput = new TextInputBuilder()
+              .setCustomId("roleAttributes")
+              .setLabel("角色属性")
+              .setPlaceholder("请输入角色属性，多个属性之间用换行隔开。示例：\nHP: 5/5\nMP: 3/3\nSAN: 50/90")
+              .setStyle(TextInputStyle.Paragraph)
+              .setValue(roleAttributes) 
+              .setRequired(false);
+
+            const roleDiceInput = new TextInputBuilder()
+              .setCustomId("roleDice")
+              .setLabel("角色骰点")
+              .setPlaceholder("请输入角色将会用于骰点的属性，多个属性之间用换行隔开，变量放在大括号中。示例：\n投掷: cc 80\nSC: cc {SAN}")
+              .setStyle(TextInputStyle.Paragraph)
+              .setValue(roleDice) 
+              .setRequired(false);
+
+            const remarkInput = new TextInputBuilder()
+              .setCustomId("remark")
+              .setLabel("备注")
+              .setPlaceholder("请填写其他备注信息，多个备注之间用换行隔开")
+              .setStyle(TextInputStyle.Paragraph)
+              .setValue(remarks) 
+              .setRequired(false);
+
+            const actionRow1 = new ActionRowBuilder().addComponents(
+              roleNameInput
+            );
+            const actionRow2 = new ActionRowBuilder().addComponents(
+              roleAttributesInput
+            );
+            const actionRow3 = new ActionRowBuilder().addComponents(
+              roleDiceInput
+            );
+            const actionRow4 = new ActionRowBuilder().addComponents(
+              remarkInput
+            );
+
+            modal.addComponents(actionRow1, actionRow2, actionRow3, actionRow4);
+
+            await i.showModal(modal);
+          }
+        });
+
+        collector.on("end", (collected) => {
+          if (collected.size === 0) {
+            interaction.editReply({
+              content: "超时未选择角色。",
+              components: [],
+            });
+          }
+        });
+      } catch (error) {
+        console.error(error);
+        await interaction.reply({
+          content: "在获取角色信息时发生错误。",
+          ephemeral: true,
+        });
+      }
     },
   },
 ];
