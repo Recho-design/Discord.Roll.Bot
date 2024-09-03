@@ -281,12 +281,12 @@ client.on("messageReactionRemove", async (reaction, user) => {
   }
 });
 
-//处理新建角色模态框
+//处理交互事件
 client.on("interactionCreate", async (interaction) => {
+  //新建角色模态框
   if (interaction.isModalSubmit()) {
     if (interaction.customId === "createRoleModal") {
       try {
-        // 获取用户输入的数据
         let roleName = interaction.fields.getTextInputValue("roleName").trim();
         let roleAttributes = interaction.fields
           .getTextInputValue("roleAttributes")
@@ -294,12 +294,10 @@ client.on("interactionCreate", async (interaction) => {
         let roleDice = interaction.fields.getTextInputValue("roleDice").trim();
         const remark = interaction.fields.getTextInputValue("remark").trim();
 
-        // 将属性、骰点、备注从换行符转换为分号，以便后续解析
         roleAttributes = roleAttributes.replace(/\n/g, ";");
         roleDice = roleDice.replace(/\n/g, ";");
         const remarks = remark.replace(/\n/g, ";");
 
-        // 将属性、骰点、备注从字符串转换为对象数组
         const stateArray = roleAttributes.split(";").map((attr) => {
           const [name, itemA, itemB] = attr.split(":").map((str) => str.trim());
           return { name, itemA, itemB };
@@ -323,27 +321,22 @@ client.on("interactionCreate", async (interaction) => {
           notes: notesArray,
         };
 
-        // 检查同名角色卡是否存在
         const filter = {
           id: interaction.user.id,
           name: { $regex: new RegExp(roleName, "i") },
         };
 
-        //此处开始修改
         const existingCard = await schema.characterCard.findOne(filter);
 
         if (existingCard) {
-          // 已存在同名角色卡，显示错误信息
           await interaction.reply({
-            content: `已存在同名角色卡：${roleName}`,
+            content: `已存在同名角色卡："${roleName}"`,
             ephemeral: true,
           });
           return;
         }
 
-        // 使用 create 方法插入新角色卡
         await schema.characterCard.create(card);
-        //此处结束修改
 
         await interaction.reply({
           content: `角色卡 "${roleName}" 已成功创建！`,
@@ -359,8 +352,8 @@ client.on("interactionCreate", async (interaction) => {
     //处理修改角色模态框
     else if (interaction.isModalSubmit()) {
       if (interaction.customId === "editCharacter") {
-        const userId = interaction.user.id; // 
-        const newName = interaction.fields.getTextInputValue("roleName").trim(); 
+        const userId = interaction.user.id; //
+        const newName = interaction.fields.getTextInputValue("roleName").trim();
 
         let roleAttributes = interaction.fields
           .getTextInputValue("roleAttributes")
@@ -374,26 +367,24 @@ client.on("interactionCreate", async (interaction) => {
 
         const stateArray = roleAttributes.split(";").map((attr) => {
           const [name, itemA] = attr.split(":").map((str) => str.trim());
-          return { name, itemA: itemA || "" }; 
+          return { name, itemA: itemA || "" };
         });
 
         const rollArray = roleDice.split(";").map((dice) => {
           const [name, itemA] = dice.split(":").map((str) => str.trim());
-          return { name, itemA: itemA || "" }; 
+          return { name, itemA: itemA || "" };
         });
 
         const notesArray = remarks.split(";").map((note) => {
           const [name, itemA] = note.split(":").map((str) => str.trim());
-          return { name, itemA: itemA || "" }; 
+          return { name, itemA: itemA || "" };
         });
 
         try {
-          // 查找是否有相同name的角色
           const filter = { id: userId, name: newName };
           const existingCharacter = await schema.characterCard.findOne(filter);
 
           if (existingCharacter) {
-            // 如果有相同name的角色，更新数据
             await schema.characterCard.updateOne(filter, {
               $set: {
                 state: stateArray,
@@ -403,11 +394,10 @@ client.on("interactionCreate", async (interaction) => {
             });
 
             await interaction.reply({
-              content: `角色 ${newName} 已更新！`,
+              content: `角色 "${newName}" 已更新！`,
               ephemeral: false,
             });
           } else {
-            // 如果没有相同name的角色，创建新角色
             const newCharacter = new schema.characterCard({
               id: userId,
               name: newName,
@@ -417,9 +407,9 @@ client.on("interactionCreate", async (interaction) => {
             });
 
             await newCharacter.save();
-   
+
             await interaction.reply({
-              content: `新的角色 ${newName} 已创建！`,
+              content: `角色名称不一致，新的角色 "${newName}" 已创建！`,
               ephemeral: false,
             });
           }
@@ -430,6 +420,53 @@ client.on("interactionCreate", async (interaction) => {
             ephemeral: false,
           });
         }
+      }
+    }
+  }
+  //处理删除角色，报错discord bot #192  error:  DiscordAPIError[10062] undefined但是能用
+  if (interaction.customId === "deleteCharacter") {
+    const selectedCharacterNames = interaction.values;
+
+    try {
+      await interaction.update({
+        content: `你选择了以下角色：${selectedCharacterNames.join(
+          ", "
+        )}\n请点击确认删除按钮以删除这些角色。`,
+        components: interaction.message.components,
+      });
+    } catch (error) {
+      console.error(`更新交互时发生错误: ${error.message}`);
+    }
+  } else if (interaction.customId === "confirmDelete") {
+    try {
+      await interaction.deferUpdate();
+
+      const selectedCharacterNames = interaction.message.content
+        .match(/(?<=选择了以下角色：).*/)[0]
+        .split(", ");
+
+      const userId = interaction.user.id;
+
+      for (const characterName of selectedCharacterNames) {
+        await schema.characterCard.deleteOne({
+          id: userId,
+          name: characterName,
+        });
+      }
+
+      await interaction.editReply({
+        content: `成功删除角色: ${selectedCharacterNames.join(", ")}`,
+        components: [],
+      });
+    } catch (error) {
+      console.error(`删除角色时发生错误: ${error.message}`);
+      try {
+        await interaction.editReply({
+          content: "删除角色时发生错误，请稍后再试。",
+          components: [],
+        });
+      } catch (editError) {
+        console.error(`更新交互消息时发生错误: ${editError.message}`);
       }
     }
   }

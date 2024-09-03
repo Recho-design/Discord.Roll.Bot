@@ -15,6 +15,8 @@ const {
   ActionRowBuilder,
   StringSelectMenuBuilder,
   StringSelectMenuOptionBuilder,
+  ButtonBuilder,
+  ButtonStyle,
 } = Discord;
 const VIP = require("../modules/veryImportantPerson");
 const FUNCTION_LIMIT = [4, 20, 20, 30, 30, 99, 99, 99];
@@ -476,7 +478,7 @@ const rollDiceCommand = async function ({
       /**
        * 流程
        * .ch 功能需要在charactergpswitches 中, 找出现在在使用那张角色卡
-       * 再用charactergpswitches 中的名字, 到charactercard 使用那张咭的资料
+       * 再用charactergpswitches 中的名字, 到charactercard 使用那张卡的资料
        *
        *
        * SET 直接改变数據
@@ -678,7 +680,7 @@ function handleRequestRollingChMode(doc) {
   let text = [];
   for (let index = 0; index < rolls.length; index++) {
     const roll = rolls[index];
-    text[index] = `.ch ${roll.name}`;
+    text[index] = roll.name;
     text[index] = text[index].substring(0, 80);
   }
   return text;
@@ -1094,14 +1096,18 @@ const discordCommand = [
       const roleAttributesInput = new TextInputBuilder()
         .setCustomId("roleAttributes")
         .setLabel("角色属性")
-        .setPlaceholder("请输入角色属性，多个属性之间用换行隔开。示例：\nHP: 5/5\nMP: 3/3\nSAN: 50/90")
+        .setPlaceholder(
+          "请输入角色属性，多个属性之间用换行隔开。示例：\nHP: 5/5\nMP: 3/3\nSAN: 50/90"
+        )
         .setStyle(TextInputStyle.Paragraph)
         .setRequired(false);
 
       const roleDiceInput = new TextInputBuilder()
         .setCustomId("roleDice")
         .setLabel("角色骰点")
-        .setPlaceholder("请输入角色将会用于骰点的属性，多个属性之间用换行隔开，变量放在大括号中。示例：\n投掷: cc 80\nSC: cc {SAN}")
+        .setPlaceholder(
+          "请输入角色将会用于骰点的属性，多个属性之间用换行隔开，变量放在大括号中。示例：\n投掷: cc 80\nSC: cc {SAN}"
+        )
         .setStyle(TextInputStyle.Paragraph)
         .setRequired(false);
 
@@ -1150,7 +1156,7 @@ const discordCommand = [
           selectMenu.addOptions(
             new StringSelectMenuOptionBuilder()
               .setLabel(character.name)
-              .setValue(character._id.toString()) 
+              .setValue(character._id.toString())
           );
         });
 
@@ -1171,9 +1177,9 @@ const discordCommand = [
 
         collector.on("collect", async (i) => {
           if (i.customId === "selectCharacter") {
-            const selectedCharacterId = i.values[0]; 
+            const selectedCharacterId = i.values[0];
 
-                        const character = await schema.characterCard.findById(
+            const character = await schema.characterCard.findById(
               selectedCharacterId
             );
 
@@ -1184,22 +1190,30 @@ const discordCommand = [
               });
             }
 
-                    const roleName = character.name;
+            const roleName = character.name;
             const roleAttributes =
               character.state
-                ?.map((attr) => `${attr.name}:${attr.itemA}`)
+                ?.map((attr) =>
+                  attr.itemA ? `${attr.name}:${attr.itemA}` : attr.name
+                )
                 .join("\n") || "";
+
             const roleDice =
               character.roll
-                ?.map((dice) => `${dice.name}:${dice.itemA}`)
+                ?.map((dice) =>
+                  dice.itemA ? `${dice.name}:${dice.itemA}` : dice.name
+                )
                 .join("\n") || "";
+
             const remarks =
               character.notes
-                ?.map((note) => `${note.name}:${note.itemA}`)
+                ?.map((note) =>
+                  note.itemA ? `${note.name}:${note.itemA}` : note.name
+                )
                 .join("\n") || "";
 
             const modal = new ModalBuilder()
-              .setCustomId("editCharacter") 
+              .setCustomId("editCharacter")
               .setTitle("修改角色信息");
 
             const roleNameInput = new TextInputBuilder()
@@ -1207,23 +1221,27 @@ const discordCommand = [
               .setLabel("角色名称")
               .setPlaceholder("请输入角色名称")
               .setStyle(TextInputStyle.Short)
-              .setValue(roleName) 
+              .setValue(roleName)
               .setRequired(true);
 
             const roleAttributesInput = new TextInputBuilder()
               .setCustomId("roleAttributes")
               .setLabel("角色属性")
-              .setPlaceholder("请输入角色属性，多个属性之间用换行隔开。示例：\nHP: 5/5\nMP: 3/3\nSAN: 50/90")
+              .setPlaceholder(
+                "请输入角色属性，多个属性之间用换行隔开。示例：\nHP: 5/5\nMP: 3/3\nSAN: 50/90"
+              )
               .setStyle(TextInputStyle.Paragraph)
-              .setValue(roleAttributes) 
+              .setValue(roleAttributes)
               .setRequired(false);
 
             const roleDiceInput = new TextInputBuilder()
               .setCustomId("roleDice")
               .setLabel("角色骰点")
-              .setPlaceholder("请输入角色将会用于骰点的属性，多个属性之间用换行隔开，变量放在大括号中。示例：\n投掷: cc 80\nSC: cc {SAN}")
+              .setPlaceholder(
+                "请输入角色将会用于骰点的属性，多个属性之间用换行隔开，变量放在大括号中。示例：\n投掷: cc 80\nSC: cc {SAN}"
+              )
               .setStyle(TextInputStyle.Paragraph)
-              .setValue(roleDice) 
+              .setValue(roleDice)
               .setRequired(false);
 
             const remarkInput = new TextInputBuilder()
@@ -1231,7 +1249,7 @@ const discordCommand = [
               .setLabel("备注")
               .setPlaceholder("请填写其他备注信息，多个备注之间用换行隔开")
               .setStyle(TextInputStyle.Paragraph)
-              .setValue(remarks) 
+              .setValue(remarks)
               .setRequired(false);
 
             const actionRow1 = new ActionRowBuilder().addComponents(
@@ -1270,6 +1288,58 @@ const discordCommand = [
       }
     },
   },
+  //删除角色
+  {
+    data: new SlashCommandBuilder()
+      .setName("删除角色")
+      .setDescription("删除已有角色"),
+    async execute(interaction) {
+      try {
+        const userId = interaction.user.id;
+        const characters = await schema.characterCard.find({ id: userId });
+
+        const selectMenu = new StringSelectMenuBuilder()
+          .setCustomId("deleteCharacter")
+          .setPlaceholder("请选择一个或多个角色")
+          .setMinValues(1)
+          .setMaxValues(characters.length); // 最大选择数量，需要与角色数量一致
+
+        if (characters.length === 0) {
+          return interaction.reply({
+            content: "你没有任何可用角色。",
+            ephemeral: true,
+          });
+        }
+
+        characters.forEach((character) => {
+          selectMenu.addOptions(
+            new StringSelectMenuOptionBuilder()
+              .setLabel(character.name)
+              .setValue(character.name)
+          );
+        });
+
+        const confirmButton = new ButtonBuilder()
+          .setCustomId("confirmDelete")
+          .setLabel("确认删除")
+          .setStyle(ButtonStyle.Danger);
+
+        const actionRow = new ActionRowBuilder().addComponents(selectMenu);
+        const actionRow2 = new ActionRowBuilder().addComponents(confirmButton);
+
+        await interaction.reply({
+          content: "请选择你想要删除的一个或多个角色，然后点击确认删除：",
+          components: [actionRow, actionRow2],
+        });
+      } catch (error) {
+        console.error(`发生错误: ${error.message}`);
+        await interaction.reply({
+          content: "查询角色时发生错误，请稍后再试。",
+          ephemeral: true,
+        });
+      }
+    },
+  },
 ];
 
 module.exports = {
@@ -1284,7 +1354,7 @@ module.exports = {
 };
 
 /*
-以个人为单位, 一张咭可以在不同的社区使用
+以个人为单位, 一张卡可以在不同的社区使用
 .char add 的输入格式,用来增建角色卡
 .char add name[Sad]~
 state[HP:5/5;MP:3/3;SAN:50/99;護甲:6]~

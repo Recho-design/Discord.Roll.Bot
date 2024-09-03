@@ -78,3 +78,5 @@ temp/
 dist/
 
 *.dev.js
+# .gitattributes example
+* text=auto
