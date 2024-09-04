@@ -21,8 +21,6 @@ const {
   ChannelType,
 } = Discord;
 
-const { discordCommand } = require("../roll/z_character.js");
-
 const multiServer = require("../modules/multi-server");
 const checkMongodb = require("../modules/dbWatchdog.js");
 const fs = require("node:fs");
@@ -136,7 +134,7 @@ let ws;
 
 client.on("messageCreate", async (message) => {
   try {
-    if (message.author.bot) return;
+    //if (message.author.bot) return;
     if (!checkMongodb.isDbOnline() && checkMongodb.isDbRespawn()) {
       //checkMongodb.discordClientRespawn(client, shardid)
       respawnCluster2();
