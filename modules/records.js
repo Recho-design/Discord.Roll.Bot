@@ -385,7 +385,7 @@ class Records extends EventEmitter {
                 //RankWord: msg.RankWord,
                 //在這群組查詢等級時的回應
                 //Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 則1
                 //Hidden: msg.Hidden,
                 //是否顯示升級語 config X1 則1
                 //trpgLevelSystemfunction: msg.trpgLevelSystemfunction
@@ -411,7 +411,7 @@ class Records extends EventEmitter {
                 RankWord: msg.RankWord
                 //在這群組查詢等級時的回應
                 //Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 則1
                 //Hidden: msg.Hidden,
                 //是否顯示升級語 config X1 則1
                 //trpgLevelSystemfunction: msg.trpgLevelSystemfunction
@@ -437,7 +437,7 @@ class Records extends EventEmitter {
                 //RankWord: msg.RankWord
                 //在這群組查詢等級時的回應
                 Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 則1
                 Hidden: msg.Hidden
                 //是否顯示升級語 config X1 則1
                 //trpgLevelSystemfunction: msg.trpgLevelSystemfunction
@@ -463,7 +463,7 @@ class Records extends EventEmitter {
                 //RankWord: msg.RankWord
                 //在這群組查詢等級時的回應
                 //Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 則1
                 //Hidden: msg.Hidden,
                 //是否顯示升級語 config X1 則1
                 trpgLevelSystemfunction: msg.trpgLevelSystemfunction
@@ -492,7 +492,7 @@ class Records extends EventEmitter {
                 //RankWord: msg.RankWord
                 //在這群組查詢等級時的回應
                 //Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 則1
                 //Hidden: msg.Hidden,
                 //是否顯示升級語 config X1 則1
                 //trpgLevelSystemfunction: msg.trpgLevelSystemfunction
@@ -519,7 +519,7 @@ class Records extends EventEmitter {
                 //RankWord: msg.RankWord
                 //在這群組查詢等級時的回應
                 //Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 則1
                 //Hidden: msg.Hidden,
                 //是否顯示升級語 config X1 則1
                 trpgLevelSystemfunction: msg
@@ -548,7 +548,7 @@ class Records extends EventEmitter {
                 //RankWord: msg.RankWord
                 //在這群組查詢等級時的回應
                 //Switch: msg.Switch,
-                //是否啓動功能 config 1X 則1
+                //是否启动功能 config 1X 則1
                 //Hidden: msg.Hidden,
                 //是否顯示升級語 config X1 則1
                 'trpgLevelSystemfunction.$.EXP': exp,
@@ -594,7 +594,7 @@ class Records extends EventEmitter {
                 "RealTimeRollingLogfunction.WWWCountText": msg.WWWCountText
                 //中途紀錄資料 使用PUSH 每天紀錄一次
                 // RollingLogfunction: msg,
-                //擲骰的結果紀錄
+                //掷骰的結果紀錄
                 //Sided: msg
             }
         }, {
@@ -636,7 +636,7 @@ class Records extends EventEmitter {
                 "RollingLogfunction.WWWCountText": msg.WWWCountText
                 //中途紀錄資料 使用PUSH 每天紀錄一次
                 // RollingLogfunction: msg,
-                //擲骰的結果紀錄
+                //掷骰的結果紀錄
                 //Sided: msg
             }
         }, {

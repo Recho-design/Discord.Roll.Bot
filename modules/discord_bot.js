@@ -563,16 +563,16 @@ async function replilyMessage(message, result) {
 //inviteDelete
 //messageDelete
 function handlingCountButton(message, mode) {
-  const modeString = mode === "roll" ? "投擲" : "點擊";
+  const modeString = mode === "roll" ? "投掷" : "点击";
   const content = message.message.content;
-  if (!/點擊了「|投擲了「|要求擲骰\/點擊/.test(content)) return;
+  if (!/点击了「|投掷了「|要求掷骰\/点击/.test(content)) return;
   const user = `${message.member?.nickname || message.user.displayName}(${
     message.user.username
   })`;
   const button = `${modeString}了「${message.component.label}」`;
   const regexpButton = convertRegex(`${button}`);
   let newContent = content;
-  if (newContent.match(/要求擲骰\/點擊/)) newContent = "";
+  if (newContent.match(/要求掷骰\/点击/)) newContent = "";
   if (newContent.match(regexpButton)) {
     let checkRepeat = checkRepeatName(content, button, user);
     if (!checkRepeat)
@@ -1250,12 +1250,12 @@ async function getAllshardIds() {
   return Promise.all(promises)
     .then((results) => {
       return `\n現在的shard ID: ${results[3]}
-			所有啓動中的shard ID:   ${results[0].join(", ")} 
-			所有啓動中的shard online:   ${results[1]
+			所有启动中的shard ID:   ${results[0].join(", ")} 
+			所有启动中的shard online:   ${results[1]
         .map((ele) => discordPresenceStatus[ele])
         .join(", ")
         .replace(/online/g, "在線")} 
-			所有啓動中的shard ping:   ${results[2]
+			所有启动中的shard ping:   ${results[2]
         .map((ele) => ele.toFixed(0))
         .join(", ")}`;
     })
@@ -1316,7 +1316,7 @@ async function handlingRequestRollingCharacter(message, input) {
   for (let index = 0; index < arrayRow.length; index++) {
     if (arrayRow[0][0].components.length == 0) {
       await message.reply({
-        content: `${characterName}的角色卡 沒有技能 \n不能產生Button`,
+        content: `${characterName}的角色卡 没有技能 \n不能产生Button`,
       });
       continue;
     }
@@ -1361,7 +1361,7 @@ async function handlingRequestRolling(message, buttonsNames, displayname = "") {
   for (let index = 0; index < arrayRow.length; index++) {
     try {
       await message.reply({
-        content: `${displayname}要求擲骰/點擊`,
+        content: `${displayname}要求掷骰/点击`,
         components: arrayRow[index],
       });
     } catch (error) {}
@@ -1943,7 +1943,7 @@ async function __handlingInteractionMessage(message) {
                 content: `${displayname}${messageContent.replace(
                   /的角色卡$/,
                   ""
-                )}進行擲骰 \n${resultText}`,
+                )}進行掷骰 \n${resultText}`,
                 ephemeral: false,
               })
               .catch();

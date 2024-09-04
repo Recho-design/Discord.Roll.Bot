@@ -88,14 +88,14 @@ const trpgLevelSystem = mongoose.model('trpgLevelSystem', {
     Switch: {
         type: String
     },
-    //是否啓動功能 config 1X 則1
+    //是否启动功能 config 1X 則1
     Hidden: {
         type: String
     },
     SwitchV2: {
         type: Boolean
     },
-    //是否啓動功能 config 1X 則1
+    //是否启动功能 config 1X 則1
     HiddenV2: {
         type: Boolean
     },
@@ -153,8 +153,8 @@ const trpgDarkRolling = mongoose.model('trpgDarkRolling', {
     }]
 });
 //
-//目的: 記錄發言數量及擲骰數量
-//紀錄擲骰結果
+//目的: 記錄發言數量及掷骰數量
+//紀錄掷骰結果
 //每日上傳一次
 //同時每500次顯示一次
 //
@@ -371,7 +371,7 @@ const developmentConductor = mongoose.model('developmentConductor', new mongoose
     switch: Boolean
 }));
 
-//成長的每一個擲骰結果
+//成長的每一個掷骰結果
 const developmentRollingRecord = mongoose.model('developmentRollingRecord', new mongoose.Schema({
     userID: String,
     groupID: String,

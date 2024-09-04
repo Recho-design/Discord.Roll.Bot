@@ -680,7 +680,7 @@ function handleRequestRollingChMode(doc) {
   let text = [];
   for (let index = 0; index < rolls.length; index++) {
     const roll = rolls[index];
-    text[index] = roll.name;
+    text[index] = `${roll.itemA} [${roll.name}]`;
     text[index] = text[index].substring(0, 80);
   }
   return text;
@@ -1106,7 +1106,7 @@ const discordCommand = [
         .setCustomId("roleDice")
         .setLabel("角色骰点")
         .setPlaceholder(
-          "请输入角色将会用于骰点的属性，多个属性之间用换行隔开，变量放在大括号中。示例：\n投掷: cc 80\nSC: cc {SAN}"
+          "请输入角色将会用于骰点的属性，多个属性之间用换行隔开，在冒号后指明使用的骰点方法，变量放在大括号中。示例：\n投掷: cc 80\nSC: cc {SAN}"
         )
         .setStyle(TextInputStyle.Paragraph)
         .setRequired(false);
