@@ -1,7 +1,7 @@
 "use strict";
 exports.analytics = require("./analytics");
 const debugMode = !!process.env.DEBUG;
-const schema = require("../modules/schema.js");
+const schema = require("./schema.js");
 const isImageURL = require("image-url-validator").default;
 const imageUrl = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)(\s?)$/gim;
 const channelSecret = process.env.DISCORD_CHANNEL_SECRET;
@@ -134,23 +134,66 @@ let ws;
 
 client.on("messageCreate", async (message) => {
   try {
-    //if (message.author.bot) return;
     if (!checkMongodb.isDbOnline() && checkMongodb.isDbRespawn()) {
-      //checkMongodb.discordClientRespawn(client, shardid)
-      respawnCluster2();
+      respawnCluster2();  // 数据库离线时重新连接
     }
+
+    // 处理消息响应逻辑
     const result = await handlingResponMessage(message);
     await handlingMultiServerMessage(message);
-    if (result && result.text) return handlingSendMessage(result);
-    return;
-  } catch (error) {
-    console.error(
-      "discord bot messageCreate #91 error",
-      error,
-      (error && error.name && error.message) & error.stack
+
+    // 确保消息响应逻辑不会中断后续的消息计数逻辑
+    if (result && result.text) handlingSendMessage(result);
+
+    // 检查是否是机器人消息 或者 消息是否为空
+    if (message.author.bot) {
+      return;  // 如果消息来自机器人，直接跳过
+    }
+    if (!message.content.trim()) {
+      return;  // 如果消息内容为空，直接跳过
+    }
+
+    const groupid = message.guild.id;
+    const userId = message.author.id;
+    const channelId = message.channel.id;
+
+    // 过滤条件检查: 只有一个中文字
+    if (/^[\u4e00-\u9fa5]$/.test(message.content.trim())) {
+      return;  // 如果消息只有一个中文字，跳过
+    }
+
+    // 过滤条件检查: 纯表情消息
+    if (/^<a?:\w+:\d+>$/.test(message.content.trim())) {
+      return;  // 如果是纯表情消息，跳过
+    }
+
+    // 检查频道是否在过滤列表中
+    const filtered = await schema.filteredChannels.findOne({
+      groupid,
+    });
+
+    // 如果找到该组的过滤频道列表且不为空，检查是否包含当前频道
+    if (filtered && filtered.channelList.length > 0) {
+      const isFiltered = filtered.channelList.some(
+        (channel) => channel.channelid === channelId
+      );
+      if (isFiltered) {
+        return;  // 如果频道在过滤列表中，跳过
+      }
+    }
+
+    // 记录消息的时间戳
+    const updateResult = await schema.messageLog.findOneAndUpdate(
+      { groupid, userId, channelId },
+      { $push: { messages: { timestamp: new Date() } } },
+      { upsert: true, new: true }
     );
+
+  } catch (error) {
+    console.error("discord bot messageCreate error:", error);  // 仅保留报错日志
   }
 });
+
 client.on("guildCreate", async (guild) => {
   try {
     const channels = await guild.channels.fetch();

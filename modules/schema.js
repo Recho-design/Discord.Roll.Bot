@@ -6,6 +6,46 @@ const mongoose = require('./db-connector.js').mongoose;
 //const Schema = mongoose.Schema;
 //const Message = mongoose.model('Message', schema);
 
+//存放消息数
+const messageLog = mongoose.model('messageLog', new mongoose.Schema({
+    groupid: {
+        type: String,
+        required: true
+    },
+    userId: {
+        type: String,
+        required: true
+    },
+    channelId: {
+        type: String,
+        required: true
+    },
+    messages: [
+        {
+            timestamp: {  // 每条消息的时间戳
+                type: Date,
+                default: Date.now,
+            },
+        },
+    ]
+}, {
+    // TTL索引，自动删除一月之前的消息
+    indexes: [
+        { fields: { "messages.timestamp": 1 }, options: { expireAfterSeconds: 2592000 } }  // TTL索引（1个月）
+    ]
+}));
+
+//过滤频道ID
+const filteredChannels = mongoose.model('filteredChannels', new mongoose.Schema({
+    groupid: {  
+        type: String,
+        required: true
+    },
+    channelList: [{  
+        channelid: { type: String, required: true }  
+    }]
+}));
+
 const chattest = mongoose.model('chattest', {
     default: String,
     text: String,
@@ -510,6 +550,8 @@ module.exports = {
     randomAnsPersonal,
     translateChannel,
     bcdiceRegedit,
+    messageLog,
+    filteredChannels,
     mongodbState
 }
 //const Cat = mongoose.model('Cat', { name: String });
