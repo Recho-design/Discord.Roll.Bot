@@ -134,6 +134,7 @@ let ws;
 
 client.on("messageCreate", async (message) => {
   try {
+    // 检查数据库是否在线并重新连接（假设你有这个逻辑）
     if (!checkMongodb.isDbOnline() && checkMongodb.isDbRespawn()) {
       respawnCluster2();  // 数据库离线时重新连接
     }
@@ -155,7 +156,8 @@ client.on("messageCreate", async (message) => {
 
     const groupid = message.guild.id;
     const userId = message.author.id;
-    const channelId = message.channel.id;
+    const channelId = message.channel.id;  // 当前消息的频道ID
+    const parentChannelId = message.channel.parentId;  // 获取父频道ID（如果有）
 
     // 过滤条件检查: 只有一个中文字
     if (/^[\u4e00-\u9fa5]$/.test(message.content.trim())) {
@@ -167,30 +169,77 @@ client.on("messageCreate", async (message) => {
       return;  // 如果是纯表情消息，跳过
     }
 
-    // 检查频道是否在过滤列表中
+    // 检查该群组的过滤频道
     const filtered = await schema.filteredChannels.findOne({
       groupid,
     });
 
-    // 如果找到该组的过滤频道列表且不为空，检查是否包含当前频道
-    if (filtered && filtered.channelList.length > 0) {
-      const isFiltered = filtered.channelList.some(
-        (channel) => channel.channelid === channelId
-      );
+    // 如果找到该组的过滤频道列表
+    if (filtered && filtered.categories.length > 0) {
+      let isFiltered = false;
+
+      // 1. 先检查子区（子线程）
+      for (const category of filtered.categories) {
+        for (const channel of category.channels) {
+          for (const thread of channel.threads) {
+            if (thread.threadid === channelId) {
+              isFiltered = true;
+              break;
+            }
+          }
+          if (isFiltered) break;
+        }
+        if (isFiltered) break;
+      }
+
+      // 2. 如果子区没有被过滤，检查子频道
+      if (!isFiltered) {
+        for (const category of filtered.categories) {
+          for (const channel of category.channels) {
+            if (channel.channelid === channelId) {
+              isFiltered = true;
+              break;
+            }
+          }
+          if (isFiltered) break;
+        }
+      }
+
+      // 3. 如果子区和子频道都没有被过滤，再检查父频道（类别）
+      if (!isFiltered && parentChannelId) {
+        for (const category of filtered.categories) {
+          if (category.categoryid === parentChannelId) {
+            // 这里虽然父频道被过滤，但需要检查子频道或子区是否被单独移除
+            const parentCategory = filtered.categories.find(cat => cat.categoryid === parentChannelId);
+
+            if (parentCategory) {
+              const childChannel = parentCategory.channels.find(ch => ch.channelid === channelId);
+              const childThread = childChannel ? childChannel.threads.find(th => th.threadid === channelId) : null;
+
+              // 如果子频道或子区被手动移除，则不屏蔽
+              if (!childChannel && !childThread) {
+                isFiltered = true;
+              }
+            }
+          }
+        }
+      }
+
+      // 如果频道在过滤列表中，跳过
       if (isFiltered) {
-        return;  // 如果频道在过滤列表中，跳过
+        return;
       }
     }
 
     // 记录消息的时间戳
-    const updateResult = await schema.messageLog.findOneAndUpdate(
+    await schema.messageLog.findOneAndUpdate(
       { groupid, userId, channelId },
       { $push: { messages: { timestamp: new Date() } } },
       { upsert: true, new: true }
     );
 
   } catch (error) {
-    console.error("discord bot messageCreate error:", error);  // 仅保留报错日志
+    console.error("discord bot messageCreate error:", error);
   }
 });
 
@@ -1446,13 +1495,16 @@ async function handlingResponMessage(message, answer = "") {
 					hasSendPermission = (message.channel && message.channel.permissionsFor(message.guild.me)) ? message.channel.permissionsFor(message.guild.me).has(PermissionsBitField.Flags.SEND_MESSAGES) : false;
 				}
 				 */
+// 如果 answer 不为空，将其设为 message.content
     if (answer) message.content = answer;
-    let inputStr = message.content || "";
-    //DISCORD <@!USERID> <@!399923133368042763> <@!544563333488111636>
-    //LINE @名字
-    let mainMsg = inputStr.match(MESSAGE_SPLITOR); //定義輸入.字串
-    let trigger =
-      mainMsg && mainMsg[0] ? mainMsg[0].toString().toLowerCase() : "";
+
+    // 确保 inputStr 永远是一个字符串
+    let inputStr = message.content ? String(message.content) : ""; // 使用 String() 保证 inputStr 是字符串
+
+    // 定义输入字符串
+    let mainMsg = inputStr.match(MESSAGE_SPLITOR);
+    let trigger = mainMsg && mainMsg[0] ? mainMsg[0].toString().toLowerCase() : "";
+
     if (!trigger) return await nonDice(message);
 
     const groupid = message.guildId ? message.guildId : "";
@@ -1461,10 +1513,11 @@ async function handlingResponMessage(message, answer = "") {
 
     let rplyVal = {};
     const checkPrivateMsg = __privateMsg({ trigger, mainMsg, inputStr });
-    inputStr = checkPrivateMsg.inputStr;
+    inputStr = checkPrivateMsg.inputStr; // 再次确保 inputStr 是字符串
     let target = await exports.analytics.findRollList(
       inputStr.match(MESSAGE_SPLITOR)
     );
+
     if (!target) return await nonDice(message);
     if (!hasSendPermission) return;
 
@@ -1487,18 +1540,8 @@ async function handlingResponMessage(message, answer = "") {
     const channelid = message.channelId ? message.channelId : "";
     const userrole = __checkUserRole(groupid, message);
 
-    //得到暗骰的數據, GM的位置
-
-    //檢查是不是有權限可以傳信訊
-    //是不是自己.ME 訊息
-    //TRUE 即正常
-
-    //設定私訊的模式 0-普通 1-自己 2-自己+GM 3-GM
-    //訊息來到後, 會自動跳到analytics.js進行骰組分析
-    //如希望增加修改骰組,只要修改analytics.js的條件式 和ROLL內的骰組檔案即可,然後在HELP.JS 增加說明.
-
     rplyVal = await exports.analytics.parseInput({
-      inputStr: inputStr,
+      inputStr: inputStr, // 再次确保 inputStr 是字符串
       groupid: groupid,
       userid: userid,
       userrole: userrole,
@@ -1511,6 +1554,7 @@ async function handlingResponMessage(message, answer = "") {
       discordMessage: message,
       titleName: titleName,
     });
+
     if (rplyVal.requestRollingCharacter)
       await handlingRequestRollingCharacter(
         message,
