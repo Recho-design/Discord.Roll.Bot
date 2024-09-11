@@ -1,196 +1,235 @@
 "use strict";
 if (!process.env.mongoURL) {
-    return;
+  return;
 }
-const mongoose = require('./db-connector.js').mongoose;
+const mongoose = require("./db-connector.js").mongoose;
 //const Schema = mongoose.Schema;
 //const Message = mongoose.model('Message', schema);
 
 //存放消息数
-const messageLog = mongoose.model('messageLog', new mongoose.Schema({
-    groupid: {
+const messageLog = mongoose.model(
+  "messageLog",
+  new mongoose.Schema(
+    {
+      groupid: {
         type: String,
-        required: true
-    },
-    userId: {
+        required: true,
+      },
+      userId: {
         type: String,
-        required: true
-    },
-    channelId: {
+        required: true,
+      },
+      channelId: {
         type: String,
-        required: true
-    },
-    messages: [
+        required: true,
+      },
+      messages: [
         {
-            timestamp: {  // 每条消息的时间戳
-                type: Date,
-                default: Date.now,
-            },
+          timestamp: {
+            // 每条消息的时间戳
+            type: Date,
+            default: Date.now,
+          },
         },
-    ]
-}, {
-    // TTL索引，自动删除一月之前的消息
-    indexes: [
-        { fields: { "messages.timestamp": 1 }, options: { expireAfterSeconds: 2592000 } }  // TTL索引（1个月）
-    ]
-}));
+      ],
+    },
+    {
+      // TTL索引，自动删除一月之前的消息
+      indexes: [
+        {
+          fields: { "messages.timestamp": 1 },
+          options: { expireAfterSeconds: 2592000 },
+        }, // TTL索引（1个月）
+      ],
+    }
+  )
+);
 
 //过滤频道ID
-const filteredChannels = mongoose.model('filteredChannels', new mongoose.Schema({
-    groupid: {  
-        type: String,
-        required: true
+const filteredChannels = mongoose.model(
+  "filteredChannels",
+  new mongoose.Schema({
+    groupid: {
+      type: String,
+      required: true,
     },
-    channelList: [{  
-        channelid: { type: String, required: true }  
-    }]
-}));
+    categories: [
+      // 父频道（类别）
+      {
+        categoryid: { type: String, required: true }, // 父频道ID
+        channels: [
+          // 子频道
+          {
+            channelid: { type: String, required: true }, // 子频道ID
+            threads: [
+              // 子区（子线程）
+              {
+                threadid: { type: String, required: true }, // 子区ID
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  })
+);
 
-const chattest = mongoose.model('chattest', {
-    default: String,
-    text: String,
-    type: String
+const chattest = mongoose.model("chattest", {
+  default: String,
+  text: String,
+  type: String,
 });
-const block = mongoose.model('block', {
-    groupid: String,
-    blockfunction: Array
-});
-
-const randomAns = mongoose.model('randomAns', {
-    groupid: String,
-    randomAnsfunction: Array
+const block = mongoose.model("block", {
+  groupid: String,
+  blockfunction: Array,
 });
 
-const randomAnsPersonal = mongoose.model('randomAnsPersonal', {
-    userid: String,
-    title: String,
-    answer: Array,
-    serial: Number
+const randomAns = mongoose.model("randomAns", {
+  groupid: String,
+  randomAnsfunction: Array,
+});
+
+const randomAnsPersonal = mongoose.model("randomAnsPersonal", {
+  userid: String,
+  title: String,
+  answer: Array,
+  serial: Number,
 });
 
 //cancel
-const randomAnsAllgroup = mongoose.model('randomAnsAllgroup', {
-    randomAnsAllgroup: Array
+const randomAnsAllgroup = mongoose.model("randomAnsAllgroup", {
+  randomAnsAllgroup: Array,
 });
 
-const randomAnsServer = mongoose.model('randomAnsServer', {
-    title: String,
-    answer: Array,
-    serial: Number
+const randomAnsServer = mongoose.model("randomAnsServer", {
+  title: String,
+  answer: Array,
+  serial: Number,
 });
 
+const trpgDatabase = mongoose.model("trpgDatabase", {
+  groupid: String,
+  trpgDatabasefunction: [
+    {
+      topic: String,
+      contact: String,
+    },
+  ],
+});
 
-const trpgDatabase = mongoose.model('trpgDatabase', {
-    groupid: String,
-    trpgDatabasefunction: [{
-        topic: String,
-        contact: String
-    }]
-});
-
-const trpgDatabaseAllgroup = mongoose.model('trpgDatabaseAllgroup', {
-    trpgDatabaseAllgroup: [{
-        topic: String,
-        contact: String
-    }]
-});
-const GroupSetting = mongoose.model('GroupSetting', {
-    groupid: String,
-    togm: Array,
-    user: [{
-        userid: {
-            type: String,
-            required: true
-        },
-        name: String,
-        date: {
-            type: Date,
-            default: Date.now
-        },
-        limit: Number,
-        Permission: String,
-        Abiliy: Array
-    }]
-});
-const trpgCommand = mongoose.model('trpgCommand', {
-    groupid: String,
-    trpgCommandfunction: [{
-        topic: String,
-        contact: String
-    }]
-});
-const trpgLevelSystem = mongoose.model('trpgLevelSystem', {
-    groupid: String,
-    LevelUpWord: String,
-    //在這群組升級時的升級語
-    RankWord: String,
-    //在這群組查詢等級時的回應
-    Switch: {
-        type: String
+const trpgDatabaseAllgroup = mongoose.model("trpgDatabaseAllgroup", {
+  trpgDatabaseAllgroup: [
+    {
+      topic: String,
+      contact: String,
     },
-    //是否启动功能 config 1X 則1
-    Hidden: {
-        type: String
-    },
-    SwitchV2: {
-        type: Boolean
-    },
-    //是否启动功能 config 1X 則1
-    HiddenV2: {
-        type: Boolean
-    },
-    //大於此Lvl即為稱號.
-    Title: Array,
-    //是否顯示升級語 config X1 則1
-    trpgLevelSystemfunction: [{
-        userid: String,
-        name: String,
-        EXP: Number,
-        //現在經驗值
-        Level: String,
-        //等級
-        LastSpeakTime: {
-            type: Date,
-            default: Date.now
-            //最後說話時間, 間隔一分鐘才提升經驗
-        }
-    }]
+  ],
 });
-const trpgLevelSystemMember = mongoose.model('trpgLevelSystemMember', {
-    groupid: String,
-    userid: String,
-    name: String,
-    EXP: Number,
-    TitleName: String,
-    //現在經驗值
-    Level: Number,
-    //等級
-    multiEXPTimes: Number,
-    multiEXP: Number,
-    stopExp: Number,
-    decreaseEXP: Number,
-    decreaseEXPTimes: Number,
-    //EVENT事件
-    /**
+const GroupSetting = mongoose.model("GroupSetting", {
+  groupid: String,
+  togm: Array,
+  user: [
+    {
+      userid: {
+        type: String,
+        required: true,
+      },
+      name: String,
+      date: {
+        type: Date,
+        default: Date.now,
+      },
+      limit: Number,
+      Permission: String,
+      Abiliy: Array,
+    },
+  ],
+});
+const trpgCommand = mongoose.model("trpgCommand", {
+  groupid: String,
+  trpgCommandfunction: [
+    {
+      topic: String,
+      contact: String,
+    },
+  ],
+});
+const trpgLevelSystem = mongoose.model("trpgLevelSystem", {
+  groupid: String,
+  LevelUpWord: String,
+  //在這群組升級時的升級語
+  RankWord: String,
+  //在這群組查詢等級時的回應
+  Switch: {
+    type: String,
+  },
+  //是否启动功能 config 1X 則1
+  Hidden: {
+    type: String,
+  },
+  SwitchV2: {
+    type: Boolean,
+  },
+  //是否启动功能 config 1X 則1
+  HiddenV2: {
+    type: Boolean,
+  },
+  //大於此Lvl即為稱號.
+  Title: Array,
+  //是否顯示升級語 config X1 則1
+  trpgLevelSystemfunction: [
+    {
+      userid: String,
+      name: String,
+      EXP: Number,
+      //現在經驗值
+      Level: String,
+      //等級
+      LastSpeakTime: {
+        type: Date,
+        default: Date.now,
+        //最後說話時間, 間隔一分鐘才提升經驗
+      },
+    },
+  ],
+});
+const trpgLevelSystemMember = mongoose.model("trpgLevelSystemMember", {
+  groupid: String,
+  userid: String,
+  name: String,
+  EXP: Number,
+  TitleName: String,
+  //現在經驗值
+  Level: Number,
+  //等級
+  multiEXPTimes: Number,
+  multiEXP: Number,
+  stopExp: Number,
+  decreaseEXP: Number,
+  decreaseEXPTimes: Number,
+  //EVENT事件
+  /**
      * 4. 停止得到經驗(X分鐘內)
      * 5. 發言經驗減少X(X分鐘內)
      * 6. 發言經驗增加X(X分鐘內)
     7. 吸收對方經驗(X分鐘內)
     8. 對方得到經驗值 X 倍(X分鐘內)
      */
-    LastSpeakTime: {
-        type: Date,
-        default: Date.now
-        //最後說話時間, 間隔一分鐘才提升經驗
-    }
+  LastSpeakTime: {
+    type: Date,
+    default: Date.now,
+    //最後說話時間, 間隔一分鐘才提升經驗
+  },
 });
-const trpgDarkRolling = mongoose.model('trpgDarkRolling', {
-    groupid: String,
-    trpgDarkRollingfunction: [{
-        userid: String,
-        diyName: String,
-        displayname: String
-    }]
+const trpgDarkRolling = mongoose.model("trpgDarkRolling", {
+  groupid: String,
+  trpgDarkRollingfunction: [
+    {
+      userid: String,
+      diyName: String,
+      displayname: String,
+    },
+  ],
 });
 //
 //目的: 記錄發言數量及掷骰數量
@@ -198,49 +237,51 @@ const trpgDarkRolling = mongoose.model('trpgDarkRolling', {
 //每日上傳一次
 //同時每500次顯示一次
 //
-const RealTimeRollingLog = mongoose.model('RealTimeRollingLog', {
-    RealTimeRollingLogfunction: {
-        //第一次運行紀錄RollingLogfunction的時間
-        StartTime: String,
-        //一小時一次
-        LastTimeLog: Date,
-        //RealTimeLog
-        LogTime: String,
-        DiscordCountRoll: Number,
-        DiscordCountText: Number,
-        LineCountRoll: Number,
-        LineCountText: Number,
-        TelegramCountRoll: Number,
-        TelegramCountText: Number,
-        WWWCountRoll: Number,
-        WWWCountText: Number,
-        WhatsappCountRoll: Number,
-        WhatsappCountText: Number,
-        PlurkCountRoll: Number,
-        PlurkCountText: Number,
-        ApiCountRoll: Number,
-        ApiCountText: Number
-    }
+const RealTimeRollingLog = mongoose.model("RealTimeRollingLog", {
+  RealTimeRollingLogfunction: {
+    //第一次運行紀錄RollingLogfunction的時間
+    StartTime: String,
+    //一小時一次
+    LastTimeLog: Date,
+    //RealTimeLog
+    LogTime: String,
+    DiscordCountRoll: Number,
+    DiscordCountText: Number,
+    LineCountRoll: Number,
+    LineCountText: Number,
+    TelegramCountRoll: Number,
+    TelegramCountText: Number,
+    WWWCountRoll: Number,
+    WWWCountText: Number,
+    WhatsappCountRoll: Number,
+    WhatsappCountText: Number,
+    PlurkCountRoll: Number,
+    PlurkCountText: Number,
+    ApiCountRoll: Number,
+    ApiCountText: Number,
+  },
 });
 
-const RollingLog = mongoose.model('RollingLog', {
-    RollingLogfunction: {
-        LogTime: String,
-        DiscordCountRoll: Number,
-        DiscordCountText: Number,
-        LineCountRoll: Number,
-        LineCountText: Number,
-        TelegramCountRoll: Number,
-        TelegramCountText: Number,
-        WWWCountRoll: Number,
-        WWWCountText: Number,
-        WhatsappCountRoll: Number,
-        WhatsappCountText: Number,
-        PlurkCountRoll: Number,
-        PlurkCountText: Number
-    }
+const RollingLog = mongoose.model("RollingLog", {
+  RollingLogfunction: {
+    LogTime: String,
+    DiscordCountRoll: Number,
+    DiscordCountText: Number,
+    LineCountRoll: Number,
+    LineCountText: Number,
+    TelegramCountRoll: Number,
+    TelegramCountText: Number,
+    WWWCountRoll: Number,
+    WWWCountText: Number,
+    WhatsappCountRoll: Number,
+    WhatsappCountText: Number,
+    PlurkCountRoll: Number,
+    PlurkCountText: Number,
+  },
 });
-const veryImportantPerson = mongoose.model('veryImportantPerson', new mongoose.Schema({
+const veryImportantPerson = mongoose.model(
+  "veryImportantPerson",
+  new mongoose.Schema({
     gpid: String,
     id: String,
     level: Number,
@@ -249,9 +290,12 @@ const veryImportantPerson = mongoose.model('veryImportantPerson', new mongoose.S
     name: String,
     notes: String,
     code: String,
-    switch: Boolean
-}));
-const codelist = mongoose.model('codelist', new mongoose.Schema({
+    switch: Boolean,
+  })
+);
+const codelist = mongoose.model(
+  "codelist",
+  new mongoose.Schema({
     code: String,
     level: Number,
     endDate: Date,
@@ -262,157 +306,207 @@ const codelist = mongoose.model('codelist', new mongoose.Schema({
     usedId: Array,
     name: String,
     notes: String,
-}));
+  })
+);
 
-
-const characterGpSwitch = mongoose.model('characterGpSwitch', new mongoose.Schema({
+const characterGpSwitch = mongoose.model(
+  "characterGpSwitch",
+  new mongoose.Schema({
     gpid: Array,
     id: String,
     name: String,
-    cardId: String
-}));
-const accountPW = mongoose.model('accountPW', new mongoose.Schema({
+    cardId: String,
+  })
+);
+const accountPW = mongoose.model(
+  "accountPW",
+  new mongoose.Schema({
     id: String,
     userName: String,
     password: String,
-    channel: [{
+    channel: [
+      {
         id: String,
         botname: String,
-        titleName: String
-    }]
-}));
+        titleName: String,
+      },
+    ],
+  })
+);
 
-const allowRolling = mongoose.model('allowRolling', new mongoose.Schema({
+const allowRolling = mongoose.model(
+  "allowRolling",
+  new mongoose.Schema({
     id: String,
     botname: String,
-    titleName: String
-}));
+    titleName: String,
+  })
+);
 
-
-const chatRoom = mongoose.model('chatRoom', new mongoose.Schema({
-    name: { // 欄位名稱
-        type: String, // 欄位資料型別
-        required: true, // 必須要有值
-        maxlength: 50
+const chatRoom = mongoose.model(
+  "chatRoom",
+  new mongoose.Schema({
+    name: {
+      // 欄位名稱
+      type: String, // 欄位資料型別
+      required: true, // 必須要有值
+      maxlength: 50,
     },
     msg: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     time: {
-        type: Date,
-        required: true
+      type: Date,
+      required: true,
     },
     roomNumber: {
-        type: String,
-        required: true,
-        maxlength: 50
-    }
-}));
+      type: String,
+      required: true,
+      maxlength: 50,
+    },
+  })
+);
 
-const characterCard = mongoose.model('characterCard', new mongoose.Schema({
+const characterCard = mongoose.model(
+  "characterCard",
+  new mongoose.Schema({
     id: String,
     public: Boolean,
     name: {
-        type: String,
-        maxlength: 50
+      type: String,
+      maxlength: 50,
     },
     nameShow: Boolean,
-    state: [{
+    state: [
+      {
         name: {
-            type: String,
-            maxlength: 50
+          type: String,
+          maxlength: 50,
         },
         itemA: {
-            type: String,
-            maxlength: 50
+          type: String,
+          maxlength: 50,
         },
         itemB: {
-            type: String,
-            maxlength: 50
-        }
-    }],
-    roll: [{
+          type: String,
+          maxlength: 50,
+        },
+      },
+    ],
+    roll: [
+      {
         name: {
-            type: String,
-            maxlength: 50
+          type: String,
+          maxlength: 50,
         },
         itemA: {
-            type: String,
-            maxlength: 150
-        }
-    }],
-    notes: [{
+          type: String,
+          maxlength: 150,
+        },
+      },
+    ],
+    notes: [
+      {
         name: {
-            type: String,
-            maxlength: 50
+          type: String,
+          maxlength: 50,
         },
         itemA: {
-            type: String,
-            maxlength: 1500
-        }
-    }]
-}));
+          type: String,
+          maxlength: 1500,
+        },
+      },
+    ],
+  })
+);
 
-const exportGp = mongoose.model('exportGp', new mongoose.Schema({
+const exportGp = mongoose.model(
+  "exportGp",
+  new mongoose.Schema({
     groupID: String,
-    lastActiveAt: Date
-}));
+    lastActiveAt: Date,
+  })
+);
 
-const exportUser = mongoose.model('exportUser', new mongoose.Schema({
+const exportUser = mongoose.model(
+  "exportUser",
+  new mongoose.Schema({
     userID: String,
     lastActiveAt: Date,
-    times: Number
-}));
-const init = mongoose.model('init', new mongoose.Schema({
+    times: Number,
+  })
+);
+const init = mongoose.model(
+  "init",
+  new mongoose.Schema({
     groupID: String,
-    list: [{
+    list: [
+      {
         name: String,
         result: Number,
-        formula: String
-    }]
-}));
+        formula: String,
+      },
+    ],
+  })
+);
 
 //個人新增event 時的紀錄。eventList會使用ID 來紀錄
-const eventMember = mongoose.model('eventMember', new mongoose.Schema({
+const eventMember = mongoose.model(
+  "eventMember",
+  new mongoose.Schema({
     userID: String,
     userName: String,
     earnedEXP: Number,
     totailEarnedEXP: Number,
     energy: Number,
     lastActiveAt: Date,
-    eventList: [{
+    eventList: [
+      {
         title: String,
-        eventID: String
-    }],
-    activityList: [{
+        eventID: String,
+      },
+    ],
+    activityList: [
+      {
         date: Date,
-        activityDetail: String
-    }]
-}));
+        activityDetail: String,
+      },
+    ],
+  })
+);
 
 //整個event 列表，會從這裡進行抽取
-const eventList = mongoose.model('eventList', new mongoose.Schema({
+const eventList = mongoose.model(
+  "eventList",
+  new mongoose.Schema({
     title: String,
     chainTitle: String,
     userID: String,
     userName: String,
     expName: String,
-    detail: [{
+    detail: [
+      {
         event: String,
-        result: Number
-    }]
-}));
-
+        result: Number,
+      },
+    ],
+  })
+);
 
 //成長的開關控制
-const developmentConductor = mongoose.model('developmentConductor', new mongoose.Schema({
+const developmentConductor = mongoose.model(
+  "developmentConductor",
+  new mongoose.Schema({
     groupID: String,
-    switch: Boolean
-}));
+    switch: Boolean,
+  })
+);
 
 //成長的每一個掷骰結果
-const developmentRollingRecord = mongoose.model('developmentRollingRecord', new mongoose.Schema({
+const developmentRollingRecord = mongoose.model(
+  "developmentRollingRecord",
+  new mongoose.Schema({
     userID: String,
     groupID: String,
     date: Date,
@@ -420,140 +514,171 @@ const developmentRollingRecord = mongoose.model('developmentRollingRecord', new 
     skillPer: Number,
     skillResult: Number,
     skillPerStyle: String,
-    userName: String
+    userName: String,
     //成功,失敗,大成功,大失敗
-}));
+  })
+);
 
 //.schedule Cron
 //限制30次?
-const agendaAtHKTRPG = mongoose.model('agendaAtHKTRPG', new mongoose.Schema({
-    name: String,
-    data: Object,
-    priority: Number,
-    type: String,
-    nextRunAt: Date,
-    lastModifiedBy: String,
-    roleName: String,
-    imageLink: String
-
-}, { collection: "agendaAtHKTRPG" }));
-const firstTimeMessage = mongoose.model('firstTimeMessage', new mongoose.Schema({
-    userID: String,
-    botname: String
-}));
-
-const theNewsMessage = mongoose.model('theNewsMessage', new mongoose.Schema({
+const agendaAtHKTRPG = mongoose.model(
+  "agendaAtHKTRPG",
+  new mongoose.Schema(
+    {
+      name: String,
+      data: Object,
+      priority: Number,
+      type: String,
+      nextRunAt: Date,
+      lastModifiedBy: String,
+      roleName: String,
+      imageLink: String,
+    },
+    { collection: "agendaAtHKTRPG" }
+  )
+);
+const firstTimeMessage = mongoose.model(
+  "firstTimeMessage",
+  new mongoose.Schema({
     userID: String,
     botname: String,
-    switch: Boolean
-}));
+  })
+);
 
-const myName = mongoose.model('myName', new mongoose.Schema({
+const theNewsMessage = mongoose.model(
+  "theNewsMessage",
+  new mongoose.Schema({
+    userID: String,
+    botname: String,
+    switch: Boolean,
+  })
+);
+
+const myName = mongoose.model(
+  "myName",
+  new mongoose.Schema({
     userID: String,
     name: String,
     shortName: String,
-    imageLink: String
-}));
+    imageLink: String,
+  })
+);
 
-const whatsapp = mongoose.model('whatsapp', new mongoose.Schema({
-    sessionData: String
-}));
+const whatsapp = mongoose.model(
+  "whatsapp",
+  new mongoose.Schema({
+    sessionData: String,
+  })
+);
 
-const roleReact = mongoose.model('roleReact', new mongoose.Schema({
+const roleReact = mongoose.model(
+  "roleReact",
+  new mongoose.Schema({
     message: String,
     messageID: String,
     groupid: String,
     serial: Number,
-    detail: [{
+    detail: [
+      {
         roleID: String,
         emoji: String,
-    }]
+      },
+    ],
+  })
+);
 
-}));
-
-const roleInvites = mongoose.model('roleInvites', new mongoose.Schema({
+const roleInvites = mongoose.model(
+  "roleInvites",
+  new mongoose.Schema({
     roleID: String,
     invitesLink: String,
     groupid: String,
-    serial: Number
-}));
+    serial: Number,
+  })
+);
 
-const translateChannel = mongoose.model('translateChannel', new mongoose.Schema({
+const translateChannel = mongoose.model(
+  "translateChannel",
+  new mongoose.Schema({
     groupid: String,
     channelid: String,
-    switch: Boolean
-}));
+    switch: Boolean,
+  })
+);
 
-const bcdiceRegedit = mongoose.model('bcdiceRegedit', new mongoose.Schema({
+const bcdiceRegedit = mongoose.model(
+  "bcdiceRegedit",
+  new mongoose.Schema({
     botname: String,
     channelid: String,
-    trpgId: String
-}));
+    trpgId: String,
+  })
+);
 
-const multiServer = mongoose.model('multiServer', new mongoose.Schema({
+const multiServer = mongoose.model(
+  "multiServer",
+  new mongoose.Schema({
     channelid: String,
     multiId: String,
     guildName: String,
     channelName: String,
     guildID: String,
-    botname: String
-}));
-
-
+    botname: String,
+  })
+);
 
 const mongodbState = async () => {
-    try {
-        let ans = await mongoose.connection.db.command({ serverStatus: 1 });
-        return ans;
-    } catch (error) { }
-}
-
+  try {
+    let ans = await mongoose.connection.db.command({ serverStatus: 1 });
+    return ans;
+  } catch (error) {}
+};
 
 module.exports = {
-    mongodbState,
-    randomAns,
-    multiServer,
-    block,
-    chattest,
-    randomAnsAllgroup,
-    GroupSetting,
-    trpgDatabaseAllgroup,
-    trpgDatabase,
-    trpgCommand,
-    trpgLevelSystem,
-    trpgLevelSystemMember,
-    trpgDarkRolling,
-    RealTimeRollingLog,
-    RollingLog,
-    characterCard,
-    veryImportantPerson,
-    characterGpSwitch,
-    codelist,
-    chatRoom,
-    exportGp,
-    exportUser,
-    accountPW,
-    allowRolling,
-    init,
-    eventMember,
-    eventList,
-    developmentConductor,
-    developmentRollingRecord,
-    agendaAtHKTRPG,
-    firstTimeMessage,
-    theNewsMessage,
-    myName,
-    whatsapp,
-    roleInvites,
-    roleReact,
-    randomAnsServer,
-    randomAnsPersonal,
-    translateChannel,
-    bcdiceRegedit,
-    messageLog,
-    filteredChannels,
-    mongodbState
-}
+  mongodbState,
+  randomAns,
+  multiServer,
+  block,
+  chattest,
+  randomAnsAllgroup,
+  GroupSetting,
+  trpgDatabaseAllgroup,
+  trpgDatabase,
+  trpgCommand,
+  trpgLevelSystem,
+  trpgLevelSystemMember,
+  trpgDarkRolling,
+  RealTimeRollingLog,
+  RollingLog,
+  characterCard,
+  veryImportantPerson,
+  characterGpSwitch,
+  codelist,
+  chatRoom,
+  exportGp,
+  exportUser,
+  accountPW,
+  allowRolling,
+  init,
+  eventMember,
+  eventList,
+  developmentConductor,
+  developmentRollingRecord,
+  agendaAtHKTRPG,
+  firstTimeMessage,
+  theNewsMessage,
+  myName,
+  whatsapp,
+  roleInvites,
+  roleReact,
+  randomAnsServer,
+  randomAnsPersonal,
+  translateChannel,
+  bcdiceRegedit,
+  messageLog,
+  filteredChannels,
+  mongodbState,
+};
 //const Cat = mongoose.model('Cat', { name: String });
 //const kitty = new Cat({ name: 'Zildjian' });
 /*
