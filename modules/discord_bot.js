@@ -2,26 +2,29 @@
 exports.analytics = require("./analytics");
 const debugMode = !!process.env.DEBUG;
 const schema = require("./schema.js");
-const isImageURL = require("image-url-validator").default;
-const imageUrl = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)(\s?)$/gim;
-const channelSecret = process.env.DISCORD_CHANNEL_SECRET;
 const adminSecret = process.env.ADMIN_SECRET || "";
 const candle = require("../modules/candleDays.js");
-const { ClusterClient, getInfo } = require("discord-hybrid-sharding");
+const { client, shardid } = require('./client.js');
 const Discord = require("discord.js");
-const { Client, GatewayIntentBits, Partials, Options } = Discord;
 const {
   Collection,
-  ActionRowBuilder,
-  ButtonBuilder,
-  ButtonStyle,
   EmbedBuilder,
   PermissionsBitField,
   AttachmentBuilder,
   ChannelType,
 } = Discord;
 
-const multiServer = require("../modules/multi-server");
+const {
+  handleMessageCreate,
+} = require('./handlers-message-receive');
+const {
+  SendToReplychannel,
+  SendToReply,
+  SendToId 
+} = require('./handlers-message-response');
+
+const { handlingInteractionMessage } = require('./handlers-interaction');
+
 const checkMongodb = require("../modules/dbWatchdog.js");
 const fs = require("node:fs");
 const errorCount = [];
@@ -29,217 +32,25 @@ const { rollText } = require("./getRoll");
 const agenda =
   require("../modules/schedule") && require("../modules/schedule").agenda;
 exports.z_stop = require("../roll/z_stop");
-const buttonStyles = [
-  ButtonStyle.Danger,
-  ButtonStyle.Primary,
-  ButtonStyle.Secondary,
-  ButtonStyle.Success,
-  ButtonStyle.Danger,
-];
-const SIX_MONTH = 30 * 24 * 60 * 60 * 1000 * 6;
-const channelFilter = (channel) =>
-  !channel.lastMessageId ||
-  Discord.SnowflakeUtil.deconstruct(channel.lastMessageId).timestamp <
-    Date.now() - 36000;
-const client = new Client({
-  sweepers: {
-    ...Options.DefaultSweeperSettings,
-    messages: {
-      interval: 1800, // Every hour...
-      lifetime: 900, // Remove messages older than 30 minutes.
-    },
-    users: {
-      interval: 1800, // Every hour...
-      lifetime: 900, // Remove messages older than 30 minutes.
-      filter: () => null,
-    },
-    threads: {
-      interval: 1800, // Every hour...
-      lifetime: 900, // Remove messages older than 30 minutes.
-    },
-  },
-  makeCache: Options.cacheWithLimits({
-    ApplicationCommandManager: 0, // guild.commands
-    BaseGuildEmojiManager: 0, // guild.emojis
-    GuildBanManager: 0, // guild.bans
-    GuildInviteManager: 0, // guild.invites
-    GuildMemberManager: {
-      maxSize: 200,
-      keepOverLimit: (member) => member.id === client.user.id,
-    }, // guild.members
-    GuildStickerManager: 0, // guild.stickers
-    MessageManager: 200, // channel.messages
-    //PermissionOverwriteManager: 200, // channel.permissionOverwrites
-    PresenceManager: 0, // guild.presences
-    ReactionManager: 0, // message.reactions
-    ReactionUserManager: 0, // reaction.users
-    StageInstanceManager: 0, // guild.stageInstances
-    ThreadManager: 0, // channel.threads
-    ThreadMemberManager: 0, // threadchannel.members
-    UserManager: 200, // client.users
-    VoiceStateManager: 0, // guild.voiceStates
 
-    //GuildManager: 200, // roles require guilds
-    //RoleManager: 200, // cache all roles
-    PermissionOverwrites: 0, // cache all PermissionOverwrites. It only costs memory if the channel it belongs to is cached
-    ChannelManager: {
-      maxSize: Infinity, // prevent automatic caching
-      sweepFilter: () => channelFilter, // remove manually cached channels according to the filter
-      sweepInterval: 3600,
-    },
-    GuildChannelManager: {
-      maxSize: Infinity, // prevent automatic caching
-      sweepFilter: () => channelFilter, // remove manually cached channels according to the filter
-      sweepInterval: 3600,
-    },
-  }),
-  shards: getInfo().SHARD_LIST, // An array of shards that will get spawned
-  shardCount: getInfo().TOTAL_SHARDS, // Total number of shards
-  restRequestTimeout: 45000, // Timeout for REST requests
-  /**
-		  cacheGuilds: true,
-		cacheChannels: true,
-		cacheOverwrites: false,
-		cacheRoles: true,
-		cacheEmojis: false,
-		cachePresences: false
-	 */
-  intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.DirectMessages,
-    GatewayIntentBits.GuildMessageReactions,
-    GatewayIntentBits.MessageContent,
-  ],
-  partials: [Partials.Message, Partials.Channel, Partials.Reaction],
-});
-client.cluster = new ClusterClient(client);
-client.login(channelSecret);
-const MESSAGE_SPLITOR = /\S+/gi;
+const SIX_MONTH = 30 * 24 * 60 * 60 * 1000 * 6;
+
 const link = process.env.WEB_LINK;
 const port = process.env.PORT || 20721;
 const mongo = process.env.mongoURL;
 let TargetGM = process.env.mongoURL
   ? require("../roll/z_DDR_darkRollingToGM").initialize()
   : "";
-const EXPUP = require("./level").EXPUP || function () {};
-const courtMessage = require("./logs").courtMessage || function () {};
-
-const newMessage = require("./message");
 
 const RECONNECT_INTERVAL = 1 * 1000 * 60;
-const shardid = client.cluster.id;
 const WebSocket = require("ws");
 let ws;
 
-client.on("messageCreate", async (message) => {
+client.on('messageCreate', async (message) => {
   try {
-    // 检查数据库是否在线并重新连接（假设你有这个逻辑）
-    if (!checkMongodb.isDbOnline() && checkMongodb.isDbRespawn()) {
-      respawnCluster2();  // 数据库离线时重新连接
-    }
-
-    // 处理消息响应逻辑
-    const result = await handlingResponMessage(message);
-    await handlingMultiServerMessage(message);
-
-    // 确保消息响应逻辑不会中断后续的消息计数逻辑
-    if (result && result.text) handlingSendMessage(result);
-
-    // 检查是否是机器人消息 或者 消息是否为空
-    if (message.author.bot) {
-      return;  // 如果消息来自机器人，直接跳过
-    }
-    if (!message.content.trim()) {
-      return;  // 如果消息内容为空，直接跳过
-    }
-
-    const groupid = message.guild.id;
-    const userId = message.author.id;
-    const channelId = message.channel.id;  // 当前消息的频道ID
-    const parentChannelId = message.channel.parentId;  // 获取父频道ID（如果有）
-
-    // 过滤条件检查: 只有一个中文字
-    if (/^[\u4e00-\u9fa5]$/.test(message.content.trim())) {
-      return;  // 如果消息只有一个中文字，跳过
-    }
-
-    // 过滤条件检查: 纯表情消息
-    if (/^<a?:\w+:\d+>$/.test(message.content.trim())) {
-      return;  // 如果是纯表情消息，跳过
-    }
-
-    // 检查该群组的过滤频道
-    const filtered = await schema.filteredChannels.findOne({
-      groupid,
-    });
-
-    // 如果找到该组的过滤频道列表
-    if (filtered && filtered.categories.length > 0) {
-      let isFiltered = false;
-
-      // 1. 先检查子区（子线程）
-      for (const category of filtered.categories) {
-        for (const channel of category.channels) {
-          for (const thread of channel.threads) {
-            if (thread.threadid === channelId) {
-              isFiltered = true;
-              break;
-            }
-          }
-          if (isFiltered) break;
-        }
-        if (isFiltered) break;
-      }
-
-      // 2. 如果子区没有被过滤，检查子频道
-      if (!isFiltered) {
-        for (const category of filtered.categories) {
-          for (const channel of category.channels) {
-            if (channel.channelid === channelId) {
-              isFiltered = true;
-              break;
-            }
-          }
-          if (isFiltered) break;
-        }
-      }
-
-      // 3. 如果子区和子频道都没有被过滤，再检查父频道（类别）
-      if (!isFiltered && parentChannelId) {
-        for (const category of filtered.categories) {
-          if (category.categoryid === parentChannelId) {
-            // 这里虽然父频道被过滤，但需要检查子频道或子区是否被单独移除
-            const parentCategory = filtered.categories.find(cat => cat.categoryid === parentChannelId);
-
-            if (parentCategory) {
-              const childChannel = parentCategory.channels.find(ch => ch.channelid === channelId);
-              const childThread = childChannel ? childChannel.threads.find(th => th.threadid === channelId) : null;
-
-              // 如果子频道或子区被手动移除，则不屏蔽
-              if (!childChannel && !childThread) {
-                isFiltered = true;
-              }
-            }
-          }
-        }
-      }
-
-      // 如果频道在过滤列表中，跳过
-      if (isFiltered) {
-        return;
-      }
-    }
-
-    // 记录消息的时间戳
-    await schema.messageLog.findOneAndUpdate(
-      { groupid, userId, channelId },
-      { $push: { messages: { timestamp: new Date() } } },
-      { upsert: true, new: true }
-    );
-
+    await handleMessageCreate(message);
   } catch (error) {
-    console.error("discord bot messageCreate error:", error);
+    console.error("Error handling messageCreate:", error);
   }
 });
 
@@ -281,17 +92,87 @@ client.on("guildCreate", async (guild) => {
   }
 });
 
-client.on("interactionCreate", async (message) => {
+// 交互事件处理器
+client.on("interactionCreate", async (interaction) => {
   try {
-    if (message.user && message.user.bot) return;
-    return __handlingInteractionMessage(message);
+    if (interaction.user && interaction.user.bot) return;  // 忽略机器人消息
+    await handlingInteractionMessage(interaction);  
   } catch (error) {
     console.error(
-      "discord bot interactionCreate #123 error",
+      "discord bot interactionCreate error",
       error && error.name,
       error && error.message,
-      error && error.reson
+      error && error.reason
     );
+  }
+});
+
+// 监听频道创建事件
+client.on('channelCreate', async (channel) => {
+  try {
+    // 确保是有效的频道
+    if (channel.guild) {
+      // 获取所属类别ID，如果没有父类别则是 null
+      const parentid = channel.parentId || null;
+
+      // 插入到数据库中
+      await schema.updateOne(
+        { groupid: channel.guild.id, "categories.categoryid": parentid },
+        {
+          $push: {
+            "categories.$.channels": {
+              channelid: channel.id,
+              isFiltered: false, // 默认不被过滤
+              threads: [],
+            },
+          },
+        },
+        { upsert: true } // 如果类别不存在则创建
+      );
+      console.log(`频道 ${channel.id} 已创建并同步到数据库`);
+    }
+  } catch (error) {
+    console.error('处理频道创建事件时出错', error);
+  }
+});
+
+// 监听频道删除事件
+client.on('channelDelete', async (channel) => {
+  try {
+    if (channel.guild) {
+      // 从数据库中删除该频道
+      await schema.updateOne(
+        { groupid: channel.guild.id },
+        { $pull: { "categories.$[].channels": { channelid: channel.id } } }
+      );
+      console.log(`频道 ${channel.id} 已删除并从数据库中移除`);
+    }
+  } catch (error) {
+    console.error('处理频道删除事件时出错', error);
+  }
+});
+
+// 监听频道更新事件
+client.on('channelUpdate', async (oldChannel, newChannel) => {
+  try {
+    if (newChannel.guild) {
+      // 更新数据库中的频道结构
+      await schema.updateOne(
+        { groupid: newChannel.guild.id, "categories.channels.channelid": oldChannel.id },
+        {
+          $set: {
+            "categories.$.channels.$[elem].channelid": newChannel.id,
+          },
+        },
+        {
+          arrayFilters: [{ "elem.channelid": oldChannel.id }],
+          new: true,
+        }
+      );
+      console.log(`频道 ${oldChannel.id} 已更新为 ${newChannel.id}`);
+    }
+  } catch (error) {
+    console.error('处理频道更新事件时出错', error);
   }
 });
 
@@ -371,197 +252,6 @@ client.on("messageReactionRemove", async (reaction, user) => {
   }
 });
 
-//处理交互事件
-client.on("interactionCreate", async (interaction) => {
-  //新建角色模态框
-  if (interaction.isModalSubmit()) {
-    if (interaction.customId === "createRoleModal") {
-      try {
-        let roleName = interaction.fields.getTextInputValue("roleName").trim();
-        let roleAttributes = interaction.fields
-          .getTextInputValue("roleAttributes")
-          .trim();
-        let roleDice = interaction.fields.getTextInputValue("roleDice").trim();
-        const remark = interaction.fields.getTextInputValue("remark").trim();
-
-        roleAttributes = roleAttributes.replace(/\n/g, ";");
-        roleDice = roleDice.replace(/\n/g, ";");
-        const remarks = remark.replace(/\n/g, ";");
-
-        const stateArray = roleAttributes.split(";").map((attr) => {
-          const [name, itemA, itemB] = attr.split(":").map((str) => str.trim());
-          return { name, itemA, itemB };
-        });
-
-        const rollArray = roleDice.split(";").map((dice) => {
-          const [name, itemA] = dice.split(":").map((str) => str.trim());
-          return { name, itemA };
-        });
-
-        const notesArray = remarks.split(";").map((note) => {
-          const [name, itemA] = note.split(":").map((str) => str.trim());
-          return { name, itemA };
-        });
-
-        const card = {
-          id: interaction.user.id,
-          name: roleName,
-          state: stateArray,
-          roll: rollArray,
-          notes: notesArray,
-        };
-
-        const filter = {
-          id: interaction.user.id,
-          name: { $regex: new RegExp(roleName, "i") },
-        };
-
-        const existingCard = await schema.characterCard.findOne(filter);
-
-        if (existingCard) {
-          await interaction.reply({
-            content: `已存在同名角色卡："${roleName}"`,
-            ephemeral: true,
-          });
-          return;
-        }
-
-        await schema.characterCard.create(card);
-
-        await interaction.reply({
-          content: `角色卡 "${roleName}" 已成功创建！`,
-        });
-      } catch (error) {
-        console.error("新增角色卡失败: ", error);
-        await interaction.reply({
-          content: `新增角色卡失败，因为: ${error.message}`,
-          ephemeral: true,
-        });
-      }
-    }
-    //处理修改角色模态框
-    else if (interaction.isModalSubmit()) {
-      if (interaction.customId === "editCharacter") {
-        const userId = interaction.user.id; //
-        const newName = interaction.fields.getTextInputValue("roleName").trim();
-
-        let roleAttributes = interaction.fields
-          .getTextInputValue("roleAttributes")
-          .trim();
-        let roleDice = interaction.fields.getTextInputValue("roleDice").trim();
-        let remark = interaction.fields.getTextInputValue("remark").trim();
-
-        roleAttributes = roleAttributes.replace(/\n/g, ";");
-        roleDice = roleDice.replace(/\n/g, ";");
-        const remarks = remark.replace(/\n/g, ";");
-
-        const stateArray = roleAttributes.split(";").map((attr) => {
-          const [name, itemA] = attr.split(":").map((str) => str.trim());
-          return { name, itemA: itemA || "" };
-        });
-
-        const rollArray = roleDice.split(";").map((dice) => {
-          const [name, itemA] = dice.split(":").map((str) => str.trim());
-          return { name, itemA: itemA || "" };
-        });
-
-        const notesArray = remarks.split(";").map((note) => {
-          const [name, itemA] = note.split(":").map((str) => str.trim());
-          return { name, itemA: itemA || "" };
-        });
-
-        try {
-          const filter = { id: userId, name: newName };
-          const existingCharacter = await schema.characterCard.findOne(filter);
-
-          if (existingCharacter) {
-            await schema.characterCard.updateOne(filter, {
-              $set: {
-                state: stateArray,
-                roll: rollArray,
-                notes: notesArray,
-              },
-            });
-
-            await interaction.reply({
-              content: `角色 "${newName}" 已更新！`,
-              ephemeral: false,
-            });
-          } else {
-            const newCharacter = new schema.characterCard({
-              id: userId,
-              name: newName,
-              state: stateArray,
-              roll: rollArray,
-              notes: notesArray,
-            });
-
-            await newCharacter.save();
-
-            await interaction.reply({
-              content: `角色名称不一致，新的角色 "${newName}" 已创建！`,
-              ephemeral: false,
-            });
-          }
-        } catch (error) {
-          console.error("处理角色卡出错: ", error);
-          await interaction.reply({
-            content: `处理角色卡失败\n因为 ${error.message}`,
-            ephemeral: false,
-          });
-        }
-      }
-    }
-  }
-  //处理删除角色，报错discord bot #192  error:  DiscordAPIError[10062] undefined但是能用
-  if (interaction.customId === "deleteCharacter") {
-    const selectedCharacterNames = interaction.values;
-
-    try {
-      await interaction.update({
-        content: `你选择了以下角色：${selectedCharacterNames.join(
-          ", "
-        )}\n请点击确认删除按钮以删除这些角色。`,
-        components: interaction.message.components,
-      });
-    } catch (error) {
-      console.error(`更新交互时发生错误: ${error.message}`);
-    }
-  } else if (interaction.customId === "confirmDelete") {
-    try {
-      await interaction.deferUpdate();
-
-      const selectedCharacterNames = interaction.message.content
-        .match(/(?<=选择了以下角色：).*/)[0]
-        .split(", ");
-
-      const userId = interaction.user.id;
-
-      for (const characterName of selectedCharacterNames) {
-        await schema.characterCard.deleteOne({
-          id: userId,
-          name: characterName,
-        });
-      }
-
-      await interaction.editReply({
-        content: `成功删除角色: ${selectedCharacterNames.join(", ")}`,
-        components: [],
-      });
-    } catch (error) {
-      console.error(`删除角色时发生错误: ${error.message}`);
-      try {
-        await interaction.editReply({
-          content: "删除角色时发生错误，请稍后再试。",
-          components: [],
-        });
-      } catch (editError) {
-        console.error(`更新交互消息时发生错误: ${editError.message}`);
-      }
-    }
-  }
-});
-
 const sleep = async (minutes) => {
   await new Promise((resolve) => {
     return setTimeout(resolve, minutes * 1000 * 60);
@@ -630,97 +320,9 @@ client.once("ready", async () => {
   }, 180000);
 });
 
-async function replilyMessage(message, result) {
-  const displayname =
-    message.member && message.member.id
-      ? `<@${message.member.id}>${candle.checker()}\n`
-      : "";
-  if (result && result.text) {
-    result.text = `${displayname}${result.text}`;
-    await __handlingReplyMessage(message, result);
-  } else {
-    try {
-      return await message.reply({
-        content: `${displayname}指令沒有得到回應，請檢查內容`,
-        ephemeral: true,
-      });
-    } catch (error) {
-      return;
-    }
-  }
-}
-
 //inviteDelete
 //messageDelete
-function handlingCountButton(message, mode) {
-  const modeString = mode === "roll" ? "投掷" : "点击";
-  const content = message.message.content;
-  if (!/点击了「|投掷了「|要求掷骰\/点击/.test(content)) return;
-  const user = `${message.member?.nickname || message.user.displayName}(${
-    message.user.username
-  })`;
-  const button = `${modeString}了「${message.component.label}」`;
-  const regexpButton = convertRegex(`${button}`);
-  let newContent = content;
-  if (newContent.match(/要求掷骰\/点击/)) newContent = "";
-  if (newContent.match(regexpButton)) {
-    let checkRepeat = checkRepeatName(content, button, user);
-    if (!checkRepeat)
-      newContent = newContent.replace(regexpButton, `、${user} ${button}`);
-  } else {
-    newContent += `\n${user} ${button}`;
-  }
-  return newContent.slice(0, 1000);
-}
-function checkRepeatName(content, button, user) {
-  let flag = false;
-  const everylines = content.split(/\n/);
-  for (const line of everylines) {
-    if (line.match(convertRegex(button))) {
-      let splitNames = line.split("、");
-      for (const name of splitNames) {
-        if (
-          name.match(convertRegex(user)) ||
-          name.match(convertRegex(`${user} ${button}`))
-        ) {
-          flag = true;
-        }
-      }
-    }
-  }
-  return flag;
-}
-async function convQuotes(text = "") {
-  let embeds = [];
-  let embed = new EmbedBuilder()
-    .setColor("#0099ff")
-    //.setTitle(rplyVal.title)
-    //.setURL('https://discord.js.org/')
-    .setAuthor({
-      name: "骰娘爱你哦💖",
-      url: "https://www.kakaa.win",
-      iconURL:
-        "https://cdn.midjourney.com/12db0d9b-1b9d-4707-a803-e06bfe9a8e3f/0_0.png",
-    });
-  const imageMatch = text.match(imageUrl) || null;
-  if (imageMatch && imageMatch.length) {
-    for (let index = 0; index < imageMatch.length && index < 10; index++) {
-      imageMatch[index] = imageMatch[index].replace(/\s?$/, "");
-      let imageVaild = await isImageURL(imageMatch[index]);
-      if (imageVaild) {
-        let imageEmbed = new EmbedBuilder()
-          .setURL("https://www.kakaa.win")
-          .setImage(imageMatch[index]);
-        if (imageMatch.length === 1) embed.setImage(imageMatch[index]);
-        else embeds.push(imageEmbed);
-        text = text.replace(imageMatch[index], "");
-      }
-    }
-  }
-  embed.setDescription(text);
-  embeds.unshift(embed);
-  return embeds;
-}
+
 
 async function privateMsgFinder(channelid) {
   if (!TargetGM || !TargetGM.trpgDarkRollingfunction) return;
@@ -731,197 +333,8 @@ async function privateMsgFinder(channelid) {
     return groupInfo.trpgDarkRollingfunction;
   else return [];
 }
-async function SendToId(targetid, replyText, quotes) {
-  let user = await client.users.fetch(targetid);
-  if (typeof replyText === "string") {
-    let sendText = replyText.toString().match(/[\s\S]{1,2000}/g);
-    for (let i = 0; i < sendText.length; i++) {
-      if (
-        i == 0 ||
-        i == 1 ||
-        i == sendText.length - 1 ||
-        i == sendText.length - 2
-      )
-        try {
-          if (quotes) {
-            user.send({ embeds: await convQuotes(sendText[i]) });
-          } else {
-            user.send(sendText[i]);
-          }
-        } catch (e) {
-          console.error("Discord GET ERROR:  SendtoID: ", e.message, replyText);
-        }
-    }
-  } else {
-    user.send(replyText);
-  }
-}
-
-async function SendToReply({ replyText = "", message, quotes = false }) {
-  let sendText = replyText.toString().match(/[\s\S]{1,2000}/g);
-  for (let i = 0; i < sendText.length; i++) {
-    if (
-      i == 0 ||
-      i == 1 ||
-      i == sendText.length - 1 ||
-      i == sendText.length - 2
-    )
-      try {
-        if (quotes) {
-          message.author &&
-            message.author.send({ embeds: await convQuotes(sendText[i]) });
-        } else message.author && message.author.send(sendText[i]);
-      } catch (e) {
-        if (e.message !== "Cannot send messages to this user") {
-          console.error(
-            "Discord  GET ERROR:  SendToReply: ",
-            e.message,
-            "e",
-            message,
-            replyText
-          );
-        }
-      }
-  }
-
-  return;
-}
-async function SendToReplychannel({
-  replyText = "",
-  channelid = "",
-  quotes = false,
-  groupid = "",
-  buttonCreate = "",
-}) {
-  if (!channelid) return;
-  let channel;
-  try {
-    channel = await client.channels.fetch(channelid);
-  } catch (error) {
-    null;
-  }
-  if (!channel && groupid) {
-    try {
-      let guild = await client.guilds.fetch(groupid);
-      channel = await guild.channels.fetch(channelid);
-    } catch (error) {
-      null;
-    }
-  }
-  if (!channel) return;
-  //	console.error(`discord bot cant find channel #443 ${replyText}`)
-  const sendText = replyText.toString().match(/[\s\S]{1,2000}/g);
-  for (let i = 0; i < sendText.length; i++) {
-    if (
-      i == 0 ||
-      i == 1 ||
-      i == sendText.length - 1 ||
-      i == sendText.length - 2
-    )
-      try {
-        if (quotes) {
-          for (
-            let index = 0;
-            index < buttonCreate.length || index === 0;
-            index++
-          ) {
-            channel.send({
-              embeds: await convQuotes(sendText[i]),
-              components: buttonCreate[index] || null,
-            });
-          }
-        } else {
-          for (
-            let index = 0;
-            index < buttonCreate.length || index === 0;
-            index++
-          ) {
-            channel.send({
-              content: sendText[i],
-              components: buttonCreate[index] || null,
-            });
-          }
-        }
-        //await message.channel.send(replyText.toString().match(/[\s\S]{1,2000}/g)[i]);
-      } catch (e) {
-        if (e.message !== "Missing Permissions") {
-          console.error(
-            "Discord  GET ERROR: SendToReplychannel: ",
-            e,
-            replyText,
-            channelid
-          );
-        }
-      }
-  }
-  return;
-}
-
-async function nonDice(message) {
-  await courtMessage({
-    result: "",
-    botname: "Discord",
-    inputStr: "",
-    shardids: shardid,
-  });
-  const groupid = (message.guild && message.guild.id) || "";
-  const userid =
-    (message.author && message.author.id) ||
-    (message.user && message.user.id) ||
-    "";
-  if (!groupid || !userid) return;
-  const displayname =
-    (message.member && message.member.user && message.member.user.tag) ||
-    (message.user && message.user.username) ||
-    "";
-  const membercount = message.guild ? message.guild.memberCount : 0;
-  try {
-    let LevelUp = await EXPUP(
-      groupid,
-      userid,
-      displayname,
-      "",
-      membercount,
-      "",
-      message
-    );
-    if (groupid && LevelUp && LevelUp.text) {
-      await SendToReplychannel({
-        replyText: `@${displayname} ${candle.checker()} ${
-          LevelUp && LevelUp.statue ? LevelUp.statue : ""
-        }\n${LevelUp.text}`,
-        channelid: message.channel.id,
-      });
-    }
-  } catch (error) {
-    console.error(
-      "await #534 EXPUP error",
-      error && error.name,
-      error && error.message,
-      error && error.reson
-    );
-  }
-  return null;
-}
 
 //Set Activity 可以自定義正在玩什麼
-
-function __privateMsg({ trigger, mainMsg, inputStr }) {
-  let privatemsg = 0;
-  if (trigger.match(/^dr$/i) && mainMsg && mainMsg[1]) {
-    privatemsg = 1;
-    inputStr = inputStr.replace(/^dr\s+/i, "");
-  }
-  if (trigger.match(/^ddr$/i) && mainMsg && mainMsg[1]) {
-    privatemsg = 2;
-    inputStr = inputStr.replace(/^ddr\s+/i, "");
-  }
-  if (trigger.match(/^dddr$/i) && mainMsg && mainMsg[1]) {
-    privatemsg = 3;
-    inputStr = inputStr.replace(/^dddr\s+/i, "");
-  }
-  return { inputStr, privatemsg };
-}
 
 async function count() {
   if (!client.cluster) return;
@@ -1119,19 +532,6 @@ function sendNewstoAll(rply) {
   }
 }
 
-async function handlingCommand(message) {
-  try {
-    const command = client.commands.get(message.commandName);
-    if (!command) return;
-    let answer = await command.execute(message).catch((error) => {
-      //console.error(error);
-      //await message.reply({ content: 'There was an error while executing this command!', ephemeral: true });
-    });
-    return answer;
-  } catch (error) {
-    return;
-  }
-}
 async function repeatMessage(discord, message) {
   try {
     await discord.delete();
@@ -1342,12 +742,12 @@ async function getAllshardIds() {
       return `\n現在的shard ID: ${results[3]}
 			所有启动中的shard ID:   ${results[0].join(", ")} 
 			所有启动中的shard online:   ${results[1]
-        .map((ele) => discordPresenceStatus[ele])
-        .join(", ")
-        .replace(/online/g, "在線")} 
+          .map((ele) => discordPresenceStatus[ele])
+          .join(", ")
+          .replace(/online/g, "在線")} 
 			所有启动中的shard ping:   ${results[2]
-        .map((ele) => ele.toFixed(0))
-        .join(", ")}`;
+          .map((ele) => ele.toFixed(0))
+          .join(", ")}`;
     })
     .catch((error) => {
       console.error(
@@ -1359,115 +759,6 @@ async function getAllshardIds() {
     });
 }
 
-async function handlingButtonCreate(message, input) {
-  const buttonsNames = input;
-  const row = [];
-  const totallyQuotient = ~~((buttonsNames.length - 1) / 5) + 1;
-  for (let index = 0; index < totallyQuotient; index++) {
-    row.push(new ActionRowBuilder());
-  }
-  for (let i = 0; i < buttonsNames.length; i++) {
-    const quot = ~~(i / 5);
-    const name = buttonsNames[i] || "null";
-    row[quot].addComponents(
-      new ButtonBuilder()
-        .setCustomId(`${name}_${i}`)
-        .setLabel(name)
-        .setStyle(buttonsStyle(i))
-    );
-  }
-  const arrayRow = await splitArray(5, row);
-  return arrayRow;
-  //for (let index = 0; index < arrayRow.length; index++) {
-  //	await message.reply({ content: ``, components: arrayRow[index] });
-  //}
-}
-
-async function handlingRequestRollingCharacter(message, input) {
-  const buttonsNames = input[0];
-  const characterName = input[1];
-  const charMode = input[2] == "char" ? true : false;
-  const row = [];
-  const totallyQuotient = ~~((buttonsNames.length - 1) / 5) + 1;
-  for (let index = 0; index < totallyQuotient; index++) {
-    row.push(new ActionRowBuilder());
-  }
-  for (let i = 0; i < buttonsNames.length; i++) {
-    const quot = ~~(i / 5);
-    const name = buttonsNames[i] || "null";
-    row[quot].addComponents(
-      new ButtonBuilder()
-        .setCustomId(`${name}_${i}`)
-        .setLabel(name)
-        .setStyle(buttonsStyle(i))
-    );
-  }
-  const arrayRow = await splitArray(5, row);
-  for (let index = 0; index < arrayRow.length; index++) {
-    if (arrayRow[0][0].components.length == 0) {
-      await message.reply({
-        content: `${characterName}的角色卡 没有技能 \n不能产生Button`,
-      });
-      continue;
-    }
-    try {
-      if (charMode)
-        await message.reply({
-          content: `${characterName}的角色卡`,
-          components: arrayRow[index],
-        });
-      else
-        await message.reply({
-          content: `${characterName}的角色`,
-          components: arrayRow[index],
-        });
-    } catch (error) {
-      console.error(
-        `error discord_bot handlingRequestRollingCharacter  #781 ${characterName} ${JSON.stringify(
-          arrayRow
-        )}`
-      );
-    }
-  }
-}
-
-async function handlingRequestRolling(message, buttonsNames, displayname = "") {
-  const row = [];
-  const totallyQuotient = ~~((buttonsNames.length - 1) / 5) + 1;
-  for (let index = 0; index < totallyQuotient; index++) {
-    row.push(new ActionRowBuilder());
-  }
-  for (let i = 0; i < buttonsNames.length; i++) {
-    const quot = ~~(i / 5);
-    const name = buttonsNames[i] || "null";
-    row[quot].addComponents(
-      new ButtonBuilder()
-        .setCustomId(`${name}_${i}`)
-        .setLabel(name)
-        .setStyle(buttonsStyle(i))
-    );
-  }
-  const arrayRow = await splitArray(5, row);
-  for (let index = 0; index < arrayRow.length; index++) {
-    try {
-      await message.reply({
-        content: `${displayname}要求掷骰/点击`,
-        components: arrayRow[index],
-      });
-    } catch (error) {}
-  }
-}
-async function splitArray(perChunk, inputArray) {
-  let myArray = [];
-  for (let i = 0; i < inputArray.length; i += perChunk) {
-    myArray.push(inputArray.slice(i, i + perChunk));
-  }
-  return myArray;
-}
-
-function buttonsStyle(num) {
-  return buttonStyles[num % 5];
-}
 
 function initInteractionCommands() {
   client.commands = new Collection();
@@ -1487,188 +778,6 @@ function pushArrayInteractionCommands(arrayCommands) {
   }
 }
 
-async function handlingResponMessage(message, answer = "") {
-  try {
-    let hasSendPermission = true;
-    /**
-				if (message.guild && message.guild.me) {
-					hasSendPermission = (message.channel && message.channel.permissionsFor(message.guild.me)) ? message.channel.permissionsFor(message.guild.me).has(PermissionsBitField.Flags.SEND_MESSAGES) : false;
-				}
-				 */
-// 如果 answer 不为空，将其设为 message.content
-    if (answer) message.content = answer;
-
-    // 确保 inputStr 永远是一个字符串
-    let inputStr = message.content ? String(message.content) : ""; // 使用 String() 保证 inputStr 是字符串
-
-    // 定义输入字符串
-    let mainMsg = inputStr.match(MESSAGE_SPLITOR);
-    let trigger = mainMsg && mainMsg[0] ? mainMsg[0].toString().toLowerCase() : "";
-
-    if (!trigger) return await nonDice(message);
-
-    const groupid = message.guildId ? message.guildId : "";
-    if ((trigger == ".me" || trigger == ".mee") && !z_stop(mainMsg, groupid))
-      return await __sendMeMessage({ message, inputStr, groupid });
-
-    let rplyVal = {};
-    const checkPrivateMsg = __privateMsg({ trigger, mainMsg, inputStr });
-    inputStr = checkPrivateMsg.inputStr; // 再次确保 inputStr 是字符串
-    let target = await exports.analytics.findRollList(
-      inputStr.match(MESSAGE_SPLITOR)
-    );
-
-    if (!target) return await nonDice(message);
-    if (!hasSendPermission) return;
-
-    const userid =
-      (message.author && message.author.id) ||
-      (message.user && message.user.id) ||
-      "";
-    const displayname =
-      (message.member && message.member.user && message.member.user.tag) ||
-      (message.user && message.user.username) ||
-      "";
-    const displaynameDiscord =
-      message.member && message.member.user && message.member.user.username
-        ? message.member.user.username
-        : "";
-    const membercount = message.guild ? message.guild.memberCount : 0;
-    const titleName =
-      (message.guild && message.guild.name ? message.guild.name + " " : "") +
-      (message.channel && message.channel.name ? message.channel.name : "");
-    const channelid = message.channelId ? message.channelId : "";
-    const userrole = __checkUserRole(groupid, message);
-
-    rplyVal = await exports.analytics.parseInput({
-      inputStr: inputStr, // 再次确保 inputStr 是字符串
-      groupid: groupid,
-      userid: userid,
-      userrole: userrole,
-      botname: "Discord",
-      displayname: displayname,
-      channelid: channelid,
-      displaynameDiscord: displaynameDiscord,
-      membercount: membercount,
-      discordClient: client,
-      discordMessage: message,
-      titleName: titleName,
-    });
-
-    if (rplyVal.requestRollingCharacter)
-      await handlingRequestRollingCharacter(
-        message,
-        rplyVal.requestRollingCharacter
-      );
-    if (rplyVal.requestRolling)
-      await handlingRequestRolling(
-        message,
-        rplyVal.requestRolling,
-        displaynameDiscord
-      );
-    if (rplyVal.buttonCreate)
-      rplyVal.buttonCreate = await handlingButtonCreate(
-        message,
-        rplyVal.buttonCreate
-      );
-    if (rplyVal.roleReactFlag) await roleReact(channelid, rplyVal);
-    if (rplyVal.newRoleReactFlag) await newRoleReact(message, rplyVal);
-    if (rplyVal.discordEditMessage) await handlingEditMessage(message, rplyVal);
-
-    if (rplyVal.myName) await repeatMessage(message, rplyVal);
-    if (rplyVal.myNames) await repeatMessages(message, rplyVal);
-
-    if (rplyVal.sendNews) sendNewstoAll(rplyVal);
-
-    if (rplyVal.sendImage) sendBufferImage(message, rplyVal, userid);
-    if (rplyVal.fileLink?.length > 0) sendFiles(message, rplyVal, userid);
-    if (rplyVal.respawn) respawnCluster2();
-    if (!rplyVal.text && !rplyVal.LevelUp) return;
-    if (process.env.mongoURL)
-      try {
-        const isNew = await newMessage.newUserChecker(userid, "Discord");
-        if (process.env.mongoURL && rplyVal.text && isNew) {
-          SendToId(userid, newMessage.firstTimeMessage(), true);
-        }
-      } catch (error) {
-        console.error(
-          `discord bot error #236`,
-          error && error.name && error.message
-        );
-      }
-
-    if (rplyVal.state) {
-      rplyVal.text += "\n" + (await count());
-      rplyVal.text +=
-        "\nPing: " + Number(Date.now() - message.createdTimestamp) + "ms";
-      rplyVal.text += await getAllshardIds();
-    }
-
-    if (groupid && rplyVal && rplyVal.LevelUp) {
-      await SendToReplychannel({
-        replyText: `<@${userid}>\n${rplyVal.LevelUp}`,
-        channelid,
-      });
-    }
-
-    if (rplyVal.discordExport) {
-      message.author.send({
-        content: "這是頻道 " + message.channel.name + " 的聊天紀錄",
-        files: [
-          new AttachmentBuilder("./tmp/" + rplyVal.discordExport + ".txt"),
-        ],
-      });
-    }
-    if (rplyVal.discordExportHtml) {
-      if (!link || !mongo) {
-        message.author.send({
-          content:
-            "這是頻道 " +
-            message.channel.name +
-            " 的聊天紀錄\n 密碼: " +
-            rplyVal.discordExportHtml[1],
-          files: ["./tmp/" + rplyVal.discordExportHtml[0] + ".html"],
-        });
-      } else {
-        message.author.send(
-          "這是頻道 " +
-            message.channel.name +
-            " 的聊天紀錄\n 密碼: " +
-            rplyVal.discordExportHtml[1] +
-            "\n請注意這是暫存檔案，會不定時移除，有需要請自行下載檔案。\n" +
-            link +
-            ":" +
-            port +
-            "/app/discord/" +
-            rplyVal.discordExportHtml[0] +
-            ".html"
-        );
-      }
-    }
-    if (!rplyVal.text) {
-      return;
-    } else
-      return {
-        privatemsg: checkPrivateMsg.privatemsg,
-        channelid,
-        groupid,
-        userid,
-        text: rplyVal.text,
-        message,
-        statue: rplyVal.statue,
-        quotes: rplyVal.quotes,
-        buttonCreate: rplyVal.buttonCreate,
-      };
-  } catch (error) {
-    console.error(
-      "handlingResponMessage Error: ",
-      error,
-      error && error.name,
-      error && error.message,
-      error && error.reson
-    );
-  }
-}
 const sendBufferImage = async (message, rplyVal, userid) => {
   await message.channel.send({
     content: `<@${userid}>\n你的Token已經送到，現在輸入 .token 為方型，.token2 為圓型 .token3 為按名字決定的隨機顏色`,
@@ -1705,114 +814,6 @@ const sendFiles = async (message, rplyVal, userid) => {
 
   return;
 };
-
-async function handlingSendMessage(input) {
-  const privatemsg = input.privatemsg || 0;
-  const channelid = input.channelid;
-  const groupid = input.groupid;
-  const userid = input.userid;
-  let sendText = input.text;
-  const message = input.message;
-  const statue = input.statue;
-  const quotes = input.quotes;
-  const buttonCreate = input.buttonCreate;
-  let TargetGMTempID = [];
-  let TargetGMTempdiyName = [];
-  let TargetGMTempdisplayname = [];
-  if (privatemsg > 1 && TargetGM) {
-    let groupInfo = (await privateMsgFinder(channelid)) || [];
-    groupInfo.forEach((item) => {
-      TargetGMTempID.push(item.userid);
-      TargetGMTempdiyName.push(item.diyName);
-      TargetGMTempdisplayname.push(item.displayname);
-    });
-  }
-  switch (true) {
-    case privatemsg == 1:
-      // 輸入dr  (指令) 私訊自己
-      //
-      if (groupid) {
-        await SendToReplychannel({
-          replyText: "<@" + userid + "> 暗骰給自己",
-          channelid,
-        });
-      }
-      if (userid) {
-        sendText = "<@" + userid + "> 的暗骰\n" + sendText;
-        SendToReply({ replyText: sendText, message });
-      }
-      return;
-    case privatemsg == 2:
-      //輸入ddr(指令) 私訊GM及自己
-      if (groupid) {
-        let targetGMNameTemp = "";
-        for (let i = 0; i < TargetGMTempID.length; i++) {
-          targetGMNameTemp =
-            targetGMNameTemp +
-            ", " +
-            (TargetGMTempdiyName[i] || "<@" + TargetGMTempID[i] + ">");
-        }
-        await SendToReplychannel({
-          replyText:
-            "<@" + userid + "> 暗骰進行中 \n目標: 自己 " + targetGMNameTemp,
-          channelid,
-        });
-      }
-      if (userid) {
-        sendText = "<@" + userid + "> 的暗骰\n" + sendText;
-      }
-      SendToReply({ replyText: sendText, message });
-      for (let i = 0; i < TargetGMTempID.length; i++) {
-        if (userid != TargetGMTempID[i]) {
-          SendToId(TargetGMTempID[i], sendText);
-        }
-      }
-      return;
-    case privatemsg == 3:
-      //輸入dddr(指令) 私訊GM
-      if (groupid) {
-        let targetGMNameTemp = "";
-        for (let i = 0; i < TargetGMTempID.length; i++) {
-          targetGMNameTemp =
-            targetGMNameTemp +
-            " " +
-            (TargetGMTempdiyName[i] || "<@" + TargetGMTempID[i] + ">");
-        }
-        await SendToReplychannel({
-          replyText:
-            "<@" + userid + "> 暗骰進行中 \n目標:  " + targetGMNameTemp,
-          channelid,
-        });
-      }
-      sendText = "<@" + userid + "> 的暗骰\n" + sendText;
-      for (let i = 0; i < TargetGMTempID.length; i++) {
-        SendToId(TargetGMTempID[i], sendText);
-      }
-      return;
-    default:
-      if (userid) {
-        sendText = `<@${userid}> ${
-          statue ? statue : ""
-        }${candle.checker()}\n${sendText}`;
-      }
-      if (groupid) {
-        await SendToReplychannel({
-          replyText: sendText,
-          channelid,
-          quotes: quotes,
-          buttonCreate: buttonCreate,
-        });
-      } else {
-        SendToReply({
-          replyText: sendText,
-          message,
-          quotes: quotes,
-          buttonCreate: buttonCreate,
-        });
-      }
-      return;
-  }
-}
 
 const convertRegex = function (str = "") {
   return new RegExp(str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1"));
@@ -1858,9 +859,7 @@ const connect = function () {
   });
 };
 
-function handlingButtonCommand(message) {
-  return message.component.label || "";
-}
+
 async function handlingEditMessage(message, rplyVal) {
   try {
     //type = reply
@@ -1921,180 +920,7 @@ async function sendCronWebhook({ channelid, replyText, data }) {
   let pair = webhook && webhook.isThread ? { threadId: channelid } : {};
   await webhook.webhook.send({ ...obj, ...pair });
 }
-async function handlingMultiServerMessage(message) {
-  if (!process.env.mongoURL) return;
-  let target = multiServer.multiServerChecker(message.channel.id);
-  if (!target) return;
-  else {
-    //	const targetsData = target;
-    const sendMessage = multiServerTarget(message);
-    //	for (let index = 0; index < targetsData.length; index++) {
-    const targetData = target;
-    let webhook = await manageWebhook({ channelId: targetData.channelid });
-    let pair =
-      webhook && webhook.isThread ? { threadId: targetData.channelid } : {};
-    await webhook?.webhook.send({ ...sendMessage, ...pair });
-    //	}
-  }
-  return;
-}
-function multiServerTarget(message) {
-  const obj = {
-    content: message.content,
-    username: message?._member?.nickname || message?._member?.displayName,
-    avatarURL: message.author.displayAvatarURL(),
-  };
-  return obj;
-}
 
-function __checkUserRole(groupid, message) {
-  /**
-   * 1 - 一般使用者
-   * 2 - 頻道管理員
-   * 3 - 群組管理員
-   */
-  try {
-    if (
-      groupid &&
-      message.member &&
-      message.member.permissions.has(PermissionsBitField.Flags.Administrator)
-    )
-      return 3;
-    if (
-      groupid &&
-      message.channel &&
-      message.channel.permissionsFor(message.member) &&
-      message.channel
-        .permissionsFor(message.member)
-        .has(PermissionsBitField.Flags.ManageChannels)
-    )
-      return 2;
-    return 1;
-  } catch (error) {
-    //	console.log('error', error)
-    return 1;
-  }
-}
-
-async function __handlingReplyMessage(message, result) {
-  const text = result.text;
-  const sendTexts = text.toString().match(/[\s\S]{1,2000}/g);
-  for (let index = 0; index < sendTexts?.length && index < 4; index++) {
-    const sendText = sendTexts[index];
-    try {
-      if (index == 0)
-        await message.reply({
-          embeds: await convQuotes(sendText),
-          ephemeral: false,
-        });
-      else
-        await message.channel.send({
-          embeds: await convQuotes(sendText),
-          ephemeral: false,
-        });
-    } catch (error) {
-      try {
-        await message.editReply({
-          embeds: await convQuotes(sendText),
-          ephemeral: false,
-        });
-      } catch (error) {
-        return;
-      }
-    }
-  }
-}
-
-async function __handlingInteractionMessage(message) {
-  switch (true) {
-    case message.isCommand(): {
-      const answer = await handlingCommand(message);
-      if (!answer) return;
-      const result = await handlingResponMessage(message, answer);
-      return replilyMessage(message, result);
-    }
-    case message.isButton(): {
-      const answer = handlingButtonCommand(message);
-      const result = await handlingResponMessage(message, answer);
-      const messageContent = message.message.content;
-      const displayname =
-        message.member && message.member.id ? `<@${message.member.id}>\n` : "";
-      const resultText = (result && result.text) || "";
-      if (/的角色卡$/.test(messageContent)) {
-        try {
-          if (resultText) {
-            return await message
-              .reply({
-                content: `${displayname}${messageContent.replace(
-                  /的角色卡$/,
-                  ""
-                )}進行掷骰 \n${resultText}`,
-                ephemeral: false,
-              })
-              .catch();
-          } else {
-            return await message
-              .reply({
-                content: `${displayname}沒有反應，請檢查按鈕內容`,
-                ephemeral: true,
-              })
-              .catch();
-          }
-        } catch (error) {
-          console.error();
-        }
-      }
-      if (/的角色$/.test(messageContent)) {
-        try {
-          return await message.reply({
-            content: `${displayname}${resultText}`,
-            ephemeral: false,
-          });
-        } catch (error) {
-          null;
-        }
-      }
-      if (resultText) {
-        const content = handlingCountButton(message, "roll");
-        handlingSendMessage(result);
-        try {
-          return await message.update({ content: content });
-        } catch (error) {
-          return;
-        }
-      } else {
-        const content = handlingCountButton(message, "count");
-        return await message
-          .update({ content: content })
-          .catch((error) =>
-            console.error(
-              "discord bot #192  error: ",
-              error && (error.name || error.message || error.reson),
-              content
-            )
-          );
-      }
-    }
-    default:
-      break;
-  }
-}
-
-async function __sendMeMessage({ message, inputStr, groupid }) {
-  inputStr = inputStr.replace(/^\.mee\s*/i, " ").replace(/^\.me\s*/i, " ");
-  if (inputStr.match(/^\s+$/)) {
-    inputStr = `.me 或 /mee 可以令骰娘重覆你的說話\n請輸入復述內容`;
-  }
-  if (groupid) {
-    await SendToReplychannel({
-      replyText: inputStr,
-      channelid: message.channel.id,
-    });
-  } else {
-    SendToReply({ replyText: inputStr, message });
-  }
-  return;
-}
 
 client.on("shardDisconnect", (event, shardID) => {
   console.log("shardDisconnect: ", event, shardID);
@@ -2119,25 +945,25 @@ if (debugMode)
  *
  * const dataFields = [];
   try {
-	await manager.broadcastEval((bot) => {
-	  return [bot.shard?.ids, bot.ws.status, bot.ws.ping, bot.guilds.cache.size];
-	}).then(async (results) => {
-	  results.map((data) => {
-		dataFields.push({
-		  status: data[1] === 0 ? 'online' : 'offline',
-		  ping: `${data[2]}ms`,
-		  guilds: data[3],
-		});
-	  });
-	});
+  await manager.broadcastEval((bot) => {
+    return [bot.shard?.ids, bot.ws.status, bot.ws.ping, bot.guilds.cache.size];
+  }).then(async (results) => {
+    results.map((data) => {
+    dataFields.push({
+      status: data[1] === 0 ? 'online' : 'offline',
+      ping: `${data[2]}ms`,
+      guilds: data[3],
+    });
+    });
+  });
   } catch (e: any) {
-	console.log(e);
+  console.log(e);
   }
 .addFields(
-	{ name: 'Regular field title', value: 'Some value here' },
-	{ name: '\u200B', value: '\u200B' },
-	{ name: 'Inline field title', value: 'Some value here', inline: true },
-	{ name: 'Inline field title', value: 'Some value here', inline: true },
+  { name: 'Regular field title', value: 'Some value here' },
+  { name: '\u200B', value: '\u200B' },
+  { name: 'Inline field title', value: 'Some value here', inline: true },
+  { name: 'Inline field title', value: 'Some value here', inline: true },
 )
 .addField('Inline field title', 'Some value here', true)
  */
