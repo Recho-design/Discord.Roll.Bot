@@ -29,7 +29,6 @@ async function handleMessageCreate(message) {
 
     // 检查消息是否来自服务器（guild），如果是私聊则跳过
     if (!message.guild) {
-      console.log("消息来自私聊，跳过过滤逻辑");
       return;
     }
 
@@ -37,18 +36,13 @@ async function handleMessageCreate(message) {
     const userId = message.author.id;
     const channelId = message.channel.id;
 
-
     // 应用过滤功能，只影响消息计数
-    const isFiltered = await isFilteredCountChannel(groupid, channelId);
+    const isFiltered = await isFilteredCountChannel(groupid, channelId, message);
 
-    // 添加控制台日志，显示过滤状态
+    // 如果频道被过滤，跳过计数逻辑
     if (isFiltered) {
-      console.log(`频道 ${channelId} 已被过滤，跳过计数`);
-      return;  // 如果频道被过滤，跳过计数，不影响其他功能
-    } else {
-      console.log(`频道 ${channelId} 未被过滤，继续计数`);
+      return;
     }
-
 
     // 记录消息的时间戳
     await schema.messageLog.findOneAndUpdate(
@@ -56,6 +50,7 @@ async function handleMessageCreate(message) {
       { $push: { messages: { timestamp: new Date() } } },
       { upsert: true, new: true }
     );
+
 
   } catch (error) {
     console.error("discord bot messageCreate error:", error);
