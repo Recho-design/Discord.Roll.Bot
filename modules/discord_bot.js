@@ -19,11 +19,12 @@ const {
 } = require('./handlers-message-receive');
 const {
   SendToReplychannel,
-  SendToReply,
-  SendToId 
+  SendToId
 } = require('./handlers-message-response');
 
-const { handlingInteractionMessage } = require('./handlers-interaction');
+const { handlingInteractionMessage } = require('./interaction');
+const { handleModalInteraction } = require('./mod-modal');
+const { handleSelectMenuInteraction } = require('./mod-select');
 
 const checkMongodb = require("../modules/dbWatchdog.js");
 const fs = require("node:fs");
@@ -96,7 +97,20 @@ client.on("guildCreate", async (guild) => {
 client.on("interactionCreate", async (interaction) => {
   try {
     if (interaction.user && interaction.user.bot) return;  // 忽略机器人消息
-    await handlingInteractionMessage(interaction);  
+
+    // 处理模态框交互
+    if (interaction.isModalSubmit()) {
+      await handleModalInteraction(interaction);
+      return;
+    }
+
+    // 处理选择菜单交互
+    if (interaction.isStringSelectMenu()) {
+      await handleSelectMenuInteraction(interaction);
+      return;
+    }
+    await handlingInteractionMessage(interaction);
+
   } catch (error) {
     console.error(
       "discord bot interactionCreate error",
@@ -106,6 +120,7 @@ client.on("interactionCreate", async (interaction) => {
     );
   }
 });
+
 
 client.on("messageReactionAdd", async (reaction, user) => {
   if (!checkMongodb.isDbOnline()) return;

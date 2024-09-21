@@ -1,4 +1,4 @@
-const { EmbedBuilder, ButtonBuilder, ActionRowBuilder,ButtonStyle} = require('discord.js');
+const { ButtonBuilder, ActionRowBuilder,ButtonStyle} = require('discord.js');
 
 const buttonStyles = [
   ButtonStyle.Danger,

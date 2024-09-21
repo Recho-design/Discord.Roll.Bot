@@ -1,5 +1,4 @@
-const { ActionRowBuilder, ButtonBuilder, } = require('discord.js');
-const { buttonsStyle, splitArray } = require('./mod-button');
+const { ButtonBuilder, ActionRowBuilder,ButtonStyle } = require('discord.js');
 
 
 // handlingRequestRolling 函数
@@ -71,7 +70,28 @@ async function handlingRequestRollingCharacter(message, input) {
   }
 }
 
+const buttonStyles = [
+  ButtonStyle.Danger,
+  ButtonStyle.Primary,
+  ButtonStyle.Secondary,
+  ButtonStyle.Success,
+  ButtonStyle.Danger,
+];
+
+function buttonsStyle(num) {
+  return buttonStyles[num % 5];
+}
+
+async function splitArray(perChunk, inputArray) {
+  let myArray = [];
+  for (let i = 0; i < inputArray.length; i += perChunk) {
+    myArray.push(inputArray.slice(i, i + perChunk));
+  }
+  return myArray;
+}
+
 module.exports = {
   handlingRequestRolling,
   handlingRequestRollingCharacter,
 };
+

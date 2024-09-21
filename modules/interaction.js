@@ -3,6 +3,8 @@ const { handlingResponMessage, handlingSendMessage, replilyMessage } = require('
 
 const { isControlButton } = require('./mod-button-collection');
 
+const schema = require('./schema');
+
 const convertRegex = function (str = "") {
   return new RegExp(str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1"));
 };
@@ -168,5 +170,54 @@ async function disableOldButtons(message) {
     }
   } catch (error) {
     console.error("Failed to disable old buttons:", error);
+  }
+}
+
+async function handleButtonInteraction(interaction) {
+  //删除角色卡
+  if (interaction.customId === "confirmDelete") {
+    await handleConfirmDelete(interaction);
+    return;
+  }
+}
+
+/**
+ * 处理确认删除按钮的交互
+ * @param {Interaction} interaction Discord 交互对象
+ */
+async function handleConfirmDelete(interaction) {
+  try {
+    await interaction.deferUpdate(); // 延迟更新以避免超时
+
+    // 获取用户之前选择的角色（这些角色已经在选择菜单中选择）
+    const selectedCharacterNames = interaction.message.content
+      .match(/(?<=选择了以下角色：).*/)[0]
+      .split(", ");
+
+    const userId = interaction.user.id;
+
+    // 执行删除操作
+    for (const characterName of selectedCharacterNames) {
+      await schema.characterCard.deleteOne({
+        id: userId,
+        name: characterName,
+      });
+    }
+
+    // 成功删除后，更新消息，禁用按钮和选择菜单
+    await interaction.editReply({
+      content: `成功删除角色: ${selectedCharacterNames.join(", ")}`,
+      components: [], // 禁用按钮和选择菜单
+    });
+  } catch (error) {
+    console.error(`删除角色时发生错误: ${error.message}`);
+    try {
+      await interaction.editReply({
+        content: "删除角色时发生错误，请稍后再试。",
+        components: [],
+      });
+    } catch (editError) {
+      console.error(`更新交互消息时发生错误: ${editError.message}`);
+    }
   }
 }
