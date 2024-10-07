@@ -26,6 +26,8 @@ const { handlingInteractionMessage } = require('./interaction');
 const { handleModalInteraction } = require('./mod-modal');
 const { handleSelectMenuInteraction } = require('./mod-select');
 
+const { startRoleCleanupTask,monitorBotMessages } = require('./roleManage.js');//临时身份组
+
 const checkMongodb = require("../modules/dbWatchdog.js");
 const fs = require("node:fs");
 const errorCount = [];
@@ -121,83 +123,6 @@ client.on("interactionCreate", async (interaction) => {
   }
 });
 
-
-client.on("messageReactionAdd", async (reaction, user) => {
-  if (!checkMongodb.isDbOnline()) return;
-  if (reaction.me) return;
-  const list = await schema.roleReact
-    .findOne({
-      messageID: reaction.message.id,
-      groupid: reaction.message.guildId,
-    })
-    .cache(30)
-    .catch((error) => {
-      console.error(
-        "discord_bot #802 mongoDB error: ",
-        error.name,
-        error.reson
-      );
-      checkMongodb.dbErrOccurs();
-    });
-  try {
-    if (!list || list.length === 0) return;
-    const detail = list.detail;
-    const findEmoji = detail.find(function (item) {
-      return (
-        item.emoji === reaction.emoji.name ||
-        item.emoji === `<:${reaction.emoji.name}:${reaction.emoji.id}>`
-      );
-    });
-    if (findEmoji) {
-      const member = await reaction.message.guild.members.fetch(user.id);
-      member.roles.add(findEmoji.roleID.replace(/\D/g, ""));
-    } else {
-      reaction.users.remove(user.id);
-    }
-  } catch (error) {
-    console.error(
-      "Discord bot messageReactionAdd #249 ",
-      error && error.name,
-      error && error.message,
-      error && error.reson
-    );
-  }
-});
-
-client.on("messageReactionRemove", async (reaction, user) => {
-  if (!checkMongodb.isDbOnline()) return;
-  if (reaction.me) return;
-  const list = await schema.roleReact
-    .findOne({
-      messageID: reaction.message.id,
-      groupid: reaction.message.guildId,
-    })
-    .catch((error) =>
-      console.error("discord_bot #817 mongoDB error: ", error.name, error.reson)
-    );
-  try {
-    if (!list || list.length === 0) return;
-    const detail = list.detail;
-    for (let index = 0; index < detail.length; index++) {
-      if (
-        detail[index].emoji === reaction.emoji.name ||
-        detail[index].emoji === `<:${reaction.emoji.name}:${reaction.emoji.id}>`
-      ) {
-        const member = await reaction.message.guild.members.fetch(user.id);
-        member.roles.remove(detail[index].roleID.replace(/\D/g, ""));
-      }
-    }
-  } catch (error) {
-    if (error.message === "Unknown Member") return;
-    console.error(
-      "Discord bot messageReactionRemove #268 ",
-      error && error.name,
-      error && error.message,
-      error && error.reson
-    );
-  }
-});
-
 const sleep = async (minutes) => {
   await new Promise((resolve) => {
     return setTimeout(resolve, minutes * 1000 * 60);
@@ -264,6 +189,9 @@ client.once("ready", async () => {
     }
     switchSetActivity = switchSetActivity % 2 ? 2 : 3;
   }, 180000);
+  //临时身份组处理
+  startRoleCleanupTask(client);
+  monitorBotMessages();
 });
 
 //inviteDelete

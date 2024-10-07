@@ -2,558 +2,157 @@
 if (!process.env.mongoURL) {
   return;
 }
-const VIP = require("../modules/veryImportantPerson");
-const FUNCTION_LIMIT = [3, 10, 50, 200, 200, 200, 200, 200];
-const schema = require("../modules/schema.js");
-const emojiRegex = require("emoji-regex");
-let regextemp = emojiRegex().toString();
-const regex = regextemp.replace(/^\//, "").replace(/\/g$/, "");
-//https://www.npmjs.com/package/emoji-regex
-const roleReactRegixMessage = /\[\[message\]\](.*)/is;
-const newRoleReactRegixMessageID = /\[\[messageID\]\]\s+(\d+)/is;
-const roleReactRegixDetail = new RegExp(
-  `(\\d+)\\s+(${regex}|(<a?)?:\\w+:(\\d+>)?)`,
-  "g"
-);
-const roleReactRegixDetail2 = new RegExp(
-  `^(\\d+)\\s+(${regex}|(<a?)?:\\w+:(\\d+>)?)`
-);
+const { SlashCommandBuilder, PermissionsBitField } = require('discord.js');
+const { Role } = require('discord.js'); 
+const { TemporaryRoleStock, TemporaryRole } = require('../modules/schema.js'); 
+
 const gameName = function () {
-  return "【身份组管理】.roleReact";
+  return "【身份组管理】";
 };
 
 const gameType = function () {
   return "Tool:role:骰娘爱你哦💖";
 };
-const prefixs = function () {
-  return [
-    {
-      first: /^\.roleReact$/i,
-      second: null,
-    },
-  ];
-};
+
 const getHelpMessage = function () {
-  return `【身份组管理】Discord限定功能
-让对指定信息的Reaction Emoji(😀😃😄)进行点击的用家
-分配指定的身份组别
+  return `【身份组管理】
 
-示范
-https://i.imgur.com/YCnCyET.mp4
-
-注意: 此功能需求【编辑身份组】及【增加Reaction】的权限，请确定授权。
-另外，使用者需要【管理者】权限。
-
-指令列表
-
-1.设定Reaction给予身份组
-首先去User Setting=>Advanced=>开启Developer Mode
-这会令你可以COPY ID
-再去Server Setting=>Roles=>新增或设定希望分配的身份组
-然后对该身份组按右键并按COPY ID，把该ID记下来
-
-接着，去任意频道中发布一段信息，并对该信息按右键后按COPY ID，和记下ID
-
-示例
-按🎨可得身份组-画家
-按😁可得身份组-大笑
-
-然后按以下格式输入指令
-
-.roleReact add
-身份组ID Emoji
-[[messageID]]
-发布信息的ID
-
-示例
-.roleReact add
-232312882291231263 🎨 
-123123478897792323 😁 
-[[messageID]]
-12312347889779233
-
-完成
-注意, 可以重复输入同样ID来增加新emoji
-
-2.显示列表
-.roleReact show
-
-3.删除
-.roleReact delete 序号
-删除方式是 delete 后面接上序号
-示例
-.roleReact delete 1
-
+注意: 此功能需求【编辑身份组】的权限，请确定授权。
 
     `;
 };
-const initialize = function () {
-  return "";
-};
 
-const rollDiceCommand = async function ({
-  inputStr,
-  mainMsg,
-  botname,
-  userrole,
-  groupid,
-}) {
-  let rply = {
-    default: "on",
-    type: "text",
-    text: "",
-  };
-  if (botname !== "Discord") {
-    rply.text = "此功能只能在Discord中使用";
-    return rply;
-  }
-  switch (true) {
-    case /^help$/i.test(mainMsg[1]) || !mainMsg[1]: {
-      rply.text = this.getHelpMessage();
-      rply.quotes = true;
-      return rply;
-    }
-    case !groupid || userrole < 3: {
-      rply.text = rejectUser(
-        !groupid ? "notInGroup" : userrole < 3 ? "notAdmin" : ""
-      );
-      return rply;
-    }
-    //new Type role React
-    case /^\.roleReact$/i.test(mainMsg[0]) && /^show$/i.test(mainMsg[1]): {
-      let list = await schema.roleReact
-        .find({ groupid: groupid })
-        .catch((error) =>
-          console.error("role #188 mongoDB error: ", error.name, error.reson)
-        );
-      rply.text = roleReactList(list);
-      return rply;
-    }
+const discordCommand = [
+  {
+    data: new SlashCommandBuilder()
+      .setName('addrole')
+      .setDescription('给自己添加一个临时身份组')
+      .addStringOption(option =>
+        option.setName('role_name')
+          .setDescription('要添加的身份组名称')
+          .setRequired(true))
+      .addStringOption(option =>
+        option.setName('color')
+          .setDescription('要添加的身份组颜色（Hex格式，如：#FF5733）')
+          .setRequired(true)),
 
-    case /^\.roleReact$/i.test(mainMsg[0]) && /^delete$/i.test(mainMsg[1]): {
-      if (!mainMsg[2] || !/\d+/i.test(mainMsg[2])) {
-        rply.text =
-          "移除指令为 .roleReact delete (序号) \n 如 .roleReact delete 1";
-        return rply;
-      }
+    async execute(interaction) {
       try {
-        let myNames = await schema.roleReact
-          .findOneAndRemove({ groupid: groupid, serial: mainMsg[2] })
-          .catch((error) =>
-            console.error("role #111 mongoDB error: ", error.name, error.reson)
-          );
-        if (myNames) {
-          rply.text = `移除成功，#${myNames.serial}\n${myNames.message}`;
-          return rply;
-        } else {
-          rply.text =
-            "移除出错\n移除指令为 .roleReact delete (序号) \n 如 .roleReact delete 1 \n序号请使用.roleReact show 查询";
-          return rply;
+        const roleName = interaction.options.getString('role_name');
+        const roleColor = interaction.options.getString('color');
+        const userId = interaction.user.id;
+        const guildId = interaction.guild.id;
+
+        // 延迟交互响应，告诉Discord稍后会回复
+        await interaction.deferReply({ ephemeral: true });
+
+        // 首先检查用户库存
+        const stockRecord = await TemporaryRoleStock.findOne({ userId, guildId });
+
+        if (!stockRecord || stockRecord.stockCount <= 0) {
+          await interaction.editReply({
+            content: '你没有足够的临时身份组库存。',
+          });
+          return;
         }
+
+        // 调用工具函数，为用户创建角色并添加
+        const role = await addRoleToUser(interaction.guild, interaction.member, roleName, roleColor);
+
+        // 将角色信息存入数据库，包含过期时间
+        const expirationDate = new Date();
+        expirationDate.setSeconds(expirationDate.getSeconds() + 20); // 设置角色20秒的过期时间
+
+        await TemporaryRole.create({
+          userId,
+          roleId: role.id,
+          guildId,
+          expiresAt: expirationDate,
+        });
+
+        // 减少库存
+        stockRecord.stockCount -= 1;
+        await stockRecord.save();
+
+        // 将身份组移动到最前面
+        await moveRoleToTop(role, interaction.guild);
+
+        // 格式化过期时间为字符串，方便展示
+        const formattedExpiration = expirationDate.toLocaleString(); // 使用Locale时间格式化
+
+        // 任务完成后，通过editReply发送最终的回复，包含过期时间
+        await interaction.editReply({
+          content: `成功为你添加了身份组：${roleName}，颜色：${roleColor}，过期时间：${formattedExpiration}。剩余库存：${stockRecord.stockCount}`,
+        });
       } catch (error) {
-        console.error("移除失败, inputStr: ", inputStr);
-        rply.text =
-          "移除出错\n移除指令为 .roleReact delete (序号) \n 如 .roleReact delete 1 \n序号请使用.roleReact show 查询";
-        return rply;
+        console.error('Error in addrole command:', error);
+        // 错误处理时，确保只回复一次
+        if (interaction.replied || interaction.deferred) {
+          await interaction.editReply({ content: '添加身份组时出错，请稍后再试。' });
+        } else {
+          await interaction.reply({ content: '添加身份组时出错，请稍后再试。', ephemeral: true });
+        }
       }
-    }
-
-    case /^\.roleReact$/i.test(mainMsg[0]) && /^add$/i.test(mainMsg[1]): {
-      if (!mainMsg[5]) {
-        rply.text = `输入资料失败，
-                本功能已改版，需要自行新增信息，并把信息ID填在下面
-
-                范例
-                .roleReact add
-                232312882291231263 🎨 
-                123123478897792323 😁 
-                [[messageID]]
-                946739512439073384
-
-                希望取得详细使用说明请输入.roleReact help 或到 https://bothelp.hktrpg.com`;
-        rply.quotes = true;
-        return rply;
-      }
-      let checkName = checknewroleReact(inputStr);
-      if (
-        !checkName ||
-        !checkName.detail ||
-        !checkName.messageID ||
-        checkName.detail.length === 0
-      ) {
-        rply.text = `输入资料失败，
-                本功能已改版，需要自行新增信息，并把信息ID填在下面
-                
-                范例
-                .roleReact add
-                232312882291231263 🎨 
-                123123478897792323 😁 
-                [[messageID]]
-                946739512439073384
-
-                希望取得详细使用说明请输入.roleReact help 或到 https://bothelp.hktrpg.com`;
-        rply.quotes = true;
-        return rply;
-      }
-
-      //已存在相同
-      let list = await schema.roleReact
-        .findOne({ groupid: groupid, messageID: checkName.messageID })
-        .catch((error) =>
-          console.error("role #240 mongoDB error: ", error.name, error.reson)
-        );
-      if (list) {
-        list.detail.push.apply(list.detail, checkName.detail);
-        await list
-          .save()
-          .catch((error) =>
-            console.error("role #244 mongoDB error: ", error.name, error.reson)
-          );
-        rply.text = `已成功更新。你现在可以试试role功能\n可以使用.roleReact show /  delete 操作 ${list.serial}`;
-        rply.newRoleReactFlag = true;
-        rply.newRoleReactMessageId = checkName.messageID;
-        rply.newRoleReactDetail = checkName.detail;
-        return rply;
-      }
-
-      //新增新的
-      let lv = await VIP.viplevelCheckGroup(groupid);
-      let limit = FUNCTION_LIMIT[lv];
-      let myNamesLength = await schema.roleReact
-        .countDocuments({ groupid: groupid })
-        .catch((error) =>
-          console.error("role #141 mongoDB error: ", error.name, error.reson)
-        );
-      if (myNamesLength >= limit) {
-        rply.text = ".roleReact 社区上限为" + limit + "个";
-        rply.quotes = true;
-        return rply;
-      }
-      const dateObj = new Date();
-      let month = dateObj.getMonth() + 1; //months from 1-12
-      let day = dateObj.getDate();
-      let year = dateObj.getFullYear();
-      let hour = dateObj.getHours();
-      let minute = dateObj.getMinutes();
-      let listSerial = await schema.roleReact
-        .find({ groupid: groupid }, "serial")
-        .catch((error) =>
-          console.error("role #268 mongoDB error: ", error.name, error.reson)
-        );
-      let serial = findTheNextSerial(listSerial);
-      let myName = new schema.roleReact({
-        message: `${year}/${month}/${day}  ${hour}:${minute} - ID: ${checkName.messageID}`,
-        groupid: groupid,
-        messageID: checkName.messageID,
-        serial: serial,
-        detail: checkName.detail,
-      });
-      try {
-        await myName
-          .save()
-          .catch((error) =>
-            console.error("role #277 mongoDB error: ", error.name, error.reson)
-          );
-        rply.text = `已成功增加。你现在可以试试role功能\n繼续用add 同样的messageID 可以新增新的emoji 到同一信息\n刪除可以使用.roleReact delete ${serial}`;
-        rply.newRoleReactFlag = true;
-        rply.newRoleReactMessageId = checkName.messageID;
-        rply.newRoleReactDetail = checkName.detail;
-        return rply;
-      } catch (error) {
-        console.error("role save error:", error);
-        rply.text = `储存失败\n请重新再试`;
-        return rply;
-      }
-    }
-
-    default: {
-      break;
     }
   }
-};
+];
 
 /**
-        case /^\.roleReact$/i.test(mainMsg[0]) && /^show$/i.test(mainMsg[1]): {
-            let list = await schema.roleReact.find({ groupid: groupid }).catch(error => console.error('role #100 mongoDB error: ', error.name, error.reson));
-            rply.text = roleReactList(list);
-            return rply;
-        }
+ * 将身份组移动到服务器角色列表的最前面
+ * @param {Role} role - 要移动的角色
+ * @param {Guild} guild - 服务器对象
+ */
+async function moveRoleToTop(role, guild) {
+  try {
+    // 获取当前服务器所有的身份组
+    const roles = guild.roles.cache;
 
-        case /^\.roleReact$/i.test(mainMsg[0]) && /^delete$/i.test(mainMsg[1]): {
-            if (!mainMsg[2] || !/\d+/i.test(mainMsg[2])) {
-                rply.text = '移除指令为 .roleReact delete (序号) \n 如 .roleReact delete 1'
-                return rply
-            }
-            try {
-                let myNames = await schema.roleReact.findOneAndRemove({ groupid: groupid, serial: mainMsg[2] }).catch(error => console.error('role #111 mongoDB error: ', error.name, error.reson));
-                if (myNames) {
-                    rply.text = `移除成功，#${myNames.serial}\n${myNames.message}`
-                    return rply
-                } else {
-                    rply.text = '移除出错\n移除指令为 .roleReact delete (序号) \n 如 .roleReact delete 1 \n序号请使用.roleReact show 查询'
-                    return rply
-                }
-            } catch (error) {
-                console.error("移除失败, inputStr: ", inputStr);
-                rply.text = '移除出错\n移除指令为 .roleReact delete (序号) \n 如 .roleReact delete 1 \n序号请使用.roleReact show 查询'
-                return rply
-            }
-        }
+    // 找到所有比当前身份组位置更高的身份组
+    const highestPosition = roles.reduce((highest, r) => {
+      return r.position > highest ? r.position : highest;
+    }, 0);
 
-        case /^\.roleReact$/i.test(mainMsg[0]) && /^add$/i.test(mainMsg[1]): {
-            if (!mainMsg[5]) {
-                rply.text = `输入资料失败，范例
-                .roleReact add
-                232312882291231263 🎨 
-                123123478897792323 😁 
-                [[message]]
-                按🎨可得身份组-畫家
-                按😁可得身份组-大笑
-                希望取得详细使用说明请输入.roleReact help`
-                rply.quotes = true;
-                return rply;
-            }
-            let lv = await VIP.viplevelCheckGroup(groupid);
-            let limit = FUNCTION_LIMIT[lv];
-            let myNamesLength = await schema.roleReact.countDocuments({ groupid: groupid }).catch(error => console.error('role #141 mongoDB error: ', error.name, error.reson));
-            if (myNamesLength >= limit) {
-                rply.text = '.roleReact 社区上限为' + limit + '个\n支援及解锁上限 https://www.patreon.com/HKTRPG\n';
-                rply.quotes = true;
-                return rply;
-            }
-            let checkName = checkRoleReact(inputStr);
-            if (!checkName || !checkName.message || !checkName.detail || checkName.detail.length === 0) {
-                rply.text = `输入资料失败，范例
-                .roleReact add
-                232312882291231263 🎨 
-                123123478897792323 😁 
-                [[message]]
-                按🎨可得身份组-畫家
-                按😁可得身份组-大笑
-                希望取得详细使用说明请输入.roleReact help`
-                rply.quotes = true;
-                return rply;
-            }
-            let list = await schema.roleReact.find({ groupid: groupid }, 'serial').catch(error => console.error('role #161 mongoDB error: ', error.name, error.reson));
-            let myName = new schema.roleReact({
-                message: checkName.message,
-                groupid: groupid,
-                serial: findTheNextSerial(list),
-                detail: checkName.detail
-            })
-            try {
-                let data = await myName.save().catch(error => console.error('role #169 mongoDB error: ', error.name, error.reson));
-                rply.roleReactFlag = true;
-                rply.roleReactMongooseId = data.id;
-                rply.roleReactMessage = checkName.message;
-                rply.roleReactDetail = checkName.detail;
-                return rply;
-            } catch (error) {
-                console.error('role save error:', error)
-                rply.text = `储存失败\n请重新再试，或联絡HKTRPG作者`;
-                return rply;
-            }
-        }
- 
+    // 将临时身份组移动到最高位置
+    await role.setPosition(highestPosition + 1);
+    console.log(`角色 ${role.name} 已成功移动到服务器角色列表最前面`);
+  } catch (error) {
+    console.error('移动身份组到服务器最前面时发生错误:', error);
+  }
+}
 
-*/
-
-function checkRoleReact(inputStr) {
-  let message = inputStr.match(roleReactRegixMessage);
-  inputStr = inputStr.replace(roleReactRegixMessage);
-  let detail = [];
-  let detailTemp = inputStr.match(roleReactRegixDetail);
-  for (let index = 0; index < detailTemp.length && index < 20; index++) {
-    const regDetail = detailTemp[index].match(roleReactRegixDetail2);
-    detail.push({
-      roleID: regDetail[1],
-      emoji: regDetail[2],
+/**
+ * 创建一个角色并添加给指定用户
+ * @param {Guild} guild - 服务器对象
+ * @param {GuildMember} member - 用户对象
+ * @param {String} roleName - 角色名称
+ * @param {String} roleColor - 角色颜色
+ * @returns {Role} - 创建的角色对象
+ */
+async function addRoleToUser(guild, member, roleName, roleColor) {
+  try {
+    // 在服务器中创建一个新角色
+    const role = await guild.roles.create({
+      name: roleName,
+      color: roleColor,
+      permissions: [PermissionsBitField.Flags.SendMessages, PermissionsBitField.Flags.ViewChannel],
+      reason: `用户 ${member.user.username} 创建了一个临时身份组`,
     });
-  }
-  return { message: message && message[1].replace(/^\n/, ""), detail };
-}
 
-function checknewroleReact(inputStr) {
-  let messageID = inputStr.match(newRoleReactRegixMessageID);
-  inputStr = inputStr.replace(newRoleReactRegixMessageID);
-  let detail = [];
-  let detailTemp = inputStr.match(roleReactRegixDetail);
-  for (let index = 0; index < detailTemp.length && index < 20; index++) {
-    const regDetail = detailTemp[index].match(roleReactRegixDetail2);
-    detail.push({
-      roleID: regDetail[1],
-      emoji: regDetail[2],
-    });
-  }
-  return { messageID: messageID && messageID[1].replace(/^\n/, ""), detail };
-}
+    // 将该角色添加给用户
+    await member.roles.add(role);
 
-const rejectUser = (reason) => {
-  switch (reason) {
-    case "notInGroup":
-      return "这功能只可以在频道中使用";
-    case "notAdmin":
-      return "这功能只可以由服务器管理员使用";
-    default:
-      return "这功能未能使用";
+    return role;
+  } catch (error) {
+    console.error('Error creating or adding role:', error);
+    throw new Error('无法创建或添加身份组');
   }
-};
-
-function roleReactList(list) {
-  let reply = "";
-  if (list && list.length > 0) {
-    list.sort(compareSerial);
-    for (let index = 0; index < list.length; index++) {
-      let item = list[index];
-      reply += `\n序号#${item.serial} \n 新增日期: ${item.message}\n`;
-      for (let index = 0; index < item.detail.length; index++) {
-        const role = item.detail[index];
-        reply += `身份ID#${role.roleID} emoji: ${role.emoji}\n`;
-      }
-    }
-  } else reply = "没有找到已设定的react 资料。";
-  return reply;
-}
-
-function compareSerial(a, b) {
-  if (a.serial < b.serial) {
-    return -1;
-  }
-  if (a.serial > b.serial) {
-    return 1;
-  }
-  return 0;
-}
-
-function findTheNextSerial(list) {
-  if (list.length === 0) return 1;
-  let serialList = [];
-  for (let index = 0; index < list.length; index++) {
-    serialList.push(list[index].serial);
-  }
-  serialList.sort(function (a, b) {
-    return a - b;
-  });
-  //[1,2,4,5]
-  for (let index = 0; index < serialList.length - 1; index++) {
-    if (serialList[index] !== index + 1) {
-      return index + 1;
-    }
-  }
-  return serialList[list.length - 1] + 1;
 }
 
 module.exports = {
-  rollDiceCommand: rollDiceCommand,
-  initialize: initialize,
+  discordCommand: discordCommand,
   getHelpMessage: getHelpMessage,
-  prefixs: prefixs,
   gameType: gameType,
   gameName: gameName,
 };
 
-/**
- * const roleInvitesRegixMessage = /(\d+)\s+(\S+)/g;
-case /^\.roleInvites$/i.test(mainMsg[0]) && /^add$/i.test(mainMsg[1]): {
-    if (!mainMsg[3]) {
-        rply.text = '输入资料失败，请仔细检查说明及范例\n希望取得使用说明请输入.roleInvites help'
-        rply.quotes = true;
-        return rply;
-    }
-    const lv = await VIP.viplevelCheckGroup(groupid);
-    const limit = FUNCTION_LIMIT[lv];
-    const myNamesLength = await schema.roleInvites.countDocuments({ groupid: groupid })
-    if (myNamesLength >= limit) {
-        rply.text = '.roleInvites 社区上限为' + limit + '个\n支援及解锁上限 https://www.patreon.com/HKTRPG\n';
-        rply.quotes = true;
-        return rply;
-    }
 
-    let checkName = checkroleInvites(inputStr);
-    if (!checkName || checkName.length == 0) {
-        rply.text = `输入资料失败，请仔细检查说明及范例
-.roleInvites add
-(身份组) (邀请連结/邀请码)
-希望取得使用说明请输入.roleInvites help`;
-        rply.quotes = true;
-        return rply;
-    }
-    if (myNamesLength + checkName.length >= limit) {
-        rply.text = '.roleInvites 社区上限为' + limit + '个\n一条邀请連结使用一个限额\n支援及解锁上限 https://www.patreon.com/HKTRPG\n';
-        rply.quotes = true;
-        return rply;
-    }
-    for (let index = 0; index < checkName.length; index++) {
-        let list = await schema.roleInvites.find({ groupid: groupid }, 'serial');
-        const myName = new schema.roleInvites({
-            groupid: groupid,
-            serial: findTheNextSerial(list),
-            roleID: checkName[index].roleID,
-            invitesLink: checkName[index].invitesLink
-        })
-        try {
-            await myName.save();
-            rply.text += `序号#${myName.serial}     ID: ${myName.roleID}       ${myName.invitesLink}\n`;
-
-        } catch (error) {
-            console.error('error', error)
-            rply.text = `储存失败\n请重新再试，或联絡HKTRPG作者}`;
-            return rply;
-        }
-    }
-    return rply;
-}
-function checkroleInvites(inputStr) {
-    inputStr = inputStr.replace(/^\s?\.roleInvites\s+add\s?\S?/i, '').replace(/https:\/\/discord.gg\/qUacvzUz/i, '')
-    let detail = []
-    let detailTemp = inputStr.match(roleInvitesRegixMessage);
-    for (let index = 0; index < detailTemp.length; index++) {
-        const regDetail = detailTemp[index].match((/(\S+)\s+(\S+)/u))
-        detail.push({
-            roleID: regDetail[1],
-            invitesLink: regDetail[2]
-        })
-    }
-    return detail;
-}
-
-  case /^\.roleInvites$/i.test(mainMsg[0]) && /^show$/i.test(mainMsg[1]): {
-            let list = await schema.roleInvites.find({ groupid: groupid });
-            rply.text = roleInvitesList(list);
-            return rply;
-        }
-
- case /^\.roleInvites$/i.test(mainMsg[0]) && /^delete$/i.test(mainMsg[1]): {
-            if (!mainMsg[2] || !/\d+/i.test(mainMsg[2])) {
-                rply.text = '移除指令为 .roleInvites delete (序号) \n 如 .roleInvites delete 1'
-                return rply
-            }
-            try {
-                let myNames = await schema.roleInvites.findOneAndRemove({ groupid: groupid, serial: mainMsg[2] })
-                if (myNames) {
-                    rply.text = `移除成功，#${myNames.serial}\n${myNames.invitesLink}`
-                    return rply
-                } else {
-                    rply.text = '移除出错\n移除指令为 .roleInvites delete (序号) \n 如 .roleInvites delete 1 \n序号请使用.roleInvites show 查询'
-                    return rply
-                }
-            } catch (error) {
-                console.error("移除失败, inputStr: ", inputStr);
-                rply.text = '移除出错\n移除指令为 .roleInvites delete (序号) \n 如 .roleInvites delete 1 \n序号请使用.roleInvites show 查询'
-                return rply
-            }
-        }
-        function roleInvitesList(list) {
-    let reply = '';
-    if (list && list.length > 0) {
-        list.sort(compareSerial);
-        for (let index = 0; index < list.length; index++) {
-            let item = list[index];
-            reply += `序号#${item.serial} \n身份ID#: ${item.roleID} 邀请連结: ${item.invitesLink}\n`;
-        }
-    }
-    else reply = "没有找到序号。"
-    return reply;
-}
-
- */

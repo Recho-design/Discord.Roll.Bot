@@ -37,30 +37,30 @@ const messageLog = mongoose.model('messageLog', new mongoose.Schema({
 
 //过滤频道ID
 const filteredChannels = mongoose.model(
-  "filteredChannels",
-  new mongoose.Schema({
-    groupid: {
-      type: String,
-      required: true,
-    },
-    categories: [
-      {
-        categoryid: { type: String, required: true }, // 类别ID
-        channels: [
-          {
-            channelid: { type: String, required: true }, // 子频道ID
-            isFiltered: { type: Boolean, default: false }, // 子频道是否被过滤
-            threads: [
-              {
-                threadid: { type: String, required: true }, // 子区ID
-                isFiltered: { type: Boolean, default: false }, // 子区是否被过滤
-              },
-            ],
-          },
+    "filteredChannels",
+    new mongoose.Schema({
+        groupid: {
+            type: String,
+            required: true,
+        },
+        categories: [
+            {
+                categoryid: { type: String, required: true }, // 类别ID
+                channels: [
+                    {
+                        channelid: { type: String, required: true }, // 子频道ID
+                        isFiltered: { type: Boolean, default: false }, // 子频道是否被过滤
+                        threads: [
+                            {
+                                threadid: { type: String, required: true }, // 子区ID
+                                isFiltered: { type: Boolean, default: false }, // 子区是否被过滤
+                            },
+                        ],
+                    },
+                ],
+            },
         ],
-      },
-    ],
-  })  
+    })
 );
 
 const chattest = mongoose.model('chattest', {
@@ -525,6 +525,19 @@ const mongodbState = async () => {
     } catch (error) { }
 }
 
+const TemporaryRole = mongoose.model('TemporaryRole', new mongoose.Schema({
+  userId: { type: String, required: true },
+  roleId: { type: String, required: true },
+  guildId: { type: String, required: true }, 
+  expiresAt: { type: Date, required: true },
+}));
+
+// 临时身份组库存 Schema
+const TemporaryRoleStock = mongoose.model('TemporaryRoleStock', new mongoose.Schema({
+  guildId: { type: String, required: true },  
+  userId: { type: String, required: true },   
+  stockCount: { type: Number, default: 0 },   
+}));
 
 module.exports = {
     mongodbState,
@@ -569,7 +582,9 @@ module.exports = {
     bcdiceRegedit,
     messageLog,
     filteredChannels,
-    mongodbState
+    mongodbState,
+    TemporaryRole,
+    TemporaryRoleStock
 }
 //const Cat = mongoose.model('Cat', { name: String });
 //const kitty = new Cat({ name: 'Zildjian' });
