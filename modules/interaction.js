@@ -27,7 +27,9 @@ async function handlingInteractionMessage(message) {
       case message.isButton(): {
         return await handleButtonInteraction(message);
       }
-
+      case message.isAutocomplete(): {  
+        return await handleAutocompleteInteraction(message);
+      }
       default:
         break;
     }
@@ -219,5 +221,33 @@ async function handleConfirmDelete(interaction) {
     } catch (editError) {
       console.error(`更新交互消息时发生错误: ${editError.message}`);
     }
+  }
+}
+
+/**
+ * 处理自动补全事件的函数
+ * @param {CommandInteraction} interaction - Discord interaction 对象，自动补全的请求
+ */
+async function handleAutocompleteInteraction(interaction) {
+  try {
+    // 获取用户输入的部分内容
+    const focusedValue = interaction.options.getFocused();
+
+    // 查询数据库中的 itemName，支持模糊匹配
+    const itemList = await schema.ItemList.find({
+      itemName: { $regex: new RegExp(focusedValue, 'i') }  // 使用正则表达式进行模糊匹配
+    }).limit(25);  // 限制返回25个结果
+
+    // 将结果映射为自动补全选项
+    const choices = itemList.map(item => ({
+      name: item.itemName,  // 选项的显示名称
+      value: item.itemName  // 选项的值
+    }));
+
+    // 返回选项给 Discord，显示在自动补全列表中
+    await interaction.respond(choices);
+
+  } catch (error) {
+    console.error('处理自动补全时发生错误:', error);
   }
 }

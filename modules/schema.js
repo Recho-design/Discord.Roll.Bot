@@ -526,17 +526,38 @@ const mongodbState = async () => {
 }
 
 const TemporaryRole = mongoose.model('TemporaryRole', new mongoose.Schema({
-  userId: { type: String, required: true },
-  roleId: { type: String, required: true },
-  guildId: { type: String, required: true }, 
-  expiresAt: { type: Date, required: true },
-}));
-
-// 临时身份组库存 Schema
-const TemporaryRoleStock = mongoose.model('TemporaryRoleStock', new mongoose.Schema({
   guildId: { type: String, required: true },  
   userId: { type: String, required: true },   
-  stockCount: { type: Number, default: 0 },   
+  roles: [
+    {
+      itemName: { type: String, required: true },  
+      roleId: { type: String, required: true },    
+      expiresAt: { type: Date, required: true },   
+    },
+  ],
+}));
+
+const TemporaryRoleStock = mongoose.model('TemporaryRoleStock', new mongoose.Schema({
+  guildId: { type: String, required: true },   
+  userId: { type: String, required: true },    
+  stocks: [
+    {
+      itemName: { type: String, required: true },  
+      stockCount: { type: Number, default: 0 },    
+    },
+  ],
+}));
+
+const ItemList = mongoose.model('ItemList', new mongoose.Schema({
+  itemName: {
+    type: String,
+    required: true, 
+    unique: true    // 确保物品名称唯一
+  },
+  range: {
+    type: String,
+    required: true 
+  },
 }));
 
 module.exports = {
@@ -584,7 +605,8 @@ module.exports = {
     filteredChannels,
     mongodbState,
     TemporaryRole,
-    TemporaryRoleStock
+    TemporaryRoleStock,
+    ItemList
 }
 //const Cat = mongoose.model('Cat', { name: String });
 //const kitty = new Cat({ name: 'Zildjian' });
