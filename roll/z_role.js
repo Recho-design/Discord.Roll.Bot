@@ -153,7 +153,7 @@ function parseExpirationRange(range) {
 const discordCommand = [
   {
     data: new SlashCommandBuilder()
-      .setName('addrole')
+      .setName('临时身份组')
       .setDescription('给自己添加一个临时身份组')
       .addStringOption(option =>
         option.setName('item')
@@ -290,7 +290,6 @@ async function moveRoleBelowBot(role, guild, botMember) {
 
     // 将临时身份组移动到机器人身份组下面
     await role.setPosition(botRolePosition - 1);
-    console.log(`角色 ${role.name} 已成功移动到机器人身份组的下面`);
   } catch (error) {
     console.error('将身份组移动到机器人身份组下面时发生错误:', error);
     throw error; // 继续抛出错误以便上层捕获处理

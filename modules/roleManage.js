@@ -35,13 +35,10 @@ function startRoleCleanupTask() {
             if (discordRole) {
               try {
                 await discordRole.delete('身份组已过期');
-                console.log(`成功删除身份组: ${discordRole.name} (ID: ${discordRole.id})`);
               } catch (roleError) {
                 console.error(`删除身份组时出错: ${role.roleId}`, roleError);
               }
-            } else {
-              console.log(`身份组未找到，可能已被手动删除: ${role.roleId}`);
-            }
+            } 
 
             // 从数据库中删除该过期角色记录
             try {
@@ -82,7 +79,6 @@ function monitorBotMessages() {
         // 检查是否为斜杠命令的回复
         if (message.interaction) {
           userInfo = message.interaction.user; // 获取触发命令的用户信息
-          console.log(`[${new Date().toLocaleString()}] 机器人在指定频道中回复了用户: ${userInfo.tag} (ID: ${userInfo.id})`);
         }
 
         // 检查是否有嵌入消息
@@ -90,14 +86,12 @@ function monitorBotMessages() {
           message.embeds.forEach(async (embed) => {
             // 检查描述是否存在
             if (embed.description) {
-              console.log(`[${new Date().toLocaleString()}] 分析嵌入消息描述: ${embed.description}`);
 
               // 使用正则表达式匹配嵌入消息中的库存使用记录
               const match = embed.description.match(purchaseRegex);
               if (match && userInfo) {
                 const usedCount = parseInt(match[1], 10);  // 提取购买数量
                 const itemName = match[2].trim();  // 提取物品名称，去除多余的空白字符
-                console.log(`检测到用户购买了 ${usedCount} 个 ${itemName}`);
 
                 // 验证物品名称是否存在于 ItemList
                 const itemExists = await ItemList.findOne({ itemName });
@@ -111,7 +105,7 @@ function monitorBotMessages() {
 
                 // 使用 message.channel.send() 向用户发送提示消息
                 await message.channel.send({
-                  content: `<@${userInfo.id}> 你购买了 ${usedCount} 个 ${itemName}，你可以使用 /addrole 命令来使用它们！`
+                  content: `<@${userInfo.id}> 你购买了 ${usedCount} 个 ${itemName}，可以使用 /临时身份组 命令来使用它们！`
                 });
               }
             }
@@ -143,11 +137,9 @@ async function updateTemporaryRoleStock(userId, guildId, itemName, usedCount) {
       if (stockItem) {
         // 如果条目存在，增加库存数
         stockItem.stockCount += usedCount;
-        console.log(`已更新 ${itemName} 的库存: 当前库存数为 ${stockItem.stockCount}`);
       } else {
         // 如果条目不存在，新增该条目
         stockRecord.stocks.push({ itemName, stockCount: usedCount });
-        console.log(`已为 ${itemName} 创建新库存条目: 当前库存数为 ${usedCount}`);
       }
       await stockRecord.save();
     } else {
@@ -157,7 +149,6 @@ async function updateTemporaryRoleStock(userId, guildId, itemName, usedCount) {
         guildId,
         stocks: [{ itemName, stockCount: usedCount }],
       });
-      console.log(`创建新库存记录: 用户ID ${userId}, 服务器ID ${guildId}, 物品: ${itemName}, 当前库存数: ${usedCount}`);
     }
   } catch (error) {
     console.error('更新临时身份组库存时发生错误:', error);
