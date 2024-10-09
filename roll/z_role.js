@@ -18,7 +18,7 @@ const getHelpMessage = function () {
   return `【道具管理】
 注意: 此功能需求【编辑身份组】的权限，请确定授权。
 .item list：列出当前道具及作用范围
-.item edit [名称] [范围(h、m、s为单位的时间)]：创建或更新一个道具
+.item edit [名称] [范围(d、h、m、s为单位的时间)]：创建或更新一个道具。例：.item edit 测试 1d
 .item del [名称]：删除一个道具
     `;
 };
@@ -77,8 +77,8 @@ const rollDiceCommand = async function ({
     }
 
     // 检查 range 是否符合时间简写格式（h, m, s）
-    if (!/^\d+[hmsHMS]$/.test(itemRange)) {
-      rply.text = "请提供有效的范围时间（如：7h, 30m, 15s）。";
+    if (!/^\d+[dhmsDHMS]$/.test(itemRange)) {
+      rply.text = "请提供有效的范围时间（如：7d，1h, 30m, 15s）。";
       return rply;
     }
 
@@ -133,7 +133,7 @@ const rollDiceCommand = async function ({
 
 // Helper function: 解析时间简写为秒数
 function parseExpirationRange(range) {
-  const timePattern = /^(\d+)([hmsHMS])$/;
+  const timePattern = /^(\d+)([dhmsDHMS])$/;
   const match = range.match(timePattern);
 
   if (!match) return null;
@@ -142,9 +142,10 @@ function parseExpirationRange(range) {
   const unit = match[2].toLowerCase();
 
   switch (unit) {
-    case 'h': return value * 60 * 60;  // 小时转为秒
-    case 'm': return value * 60;       // 分钟转为秒
-    case 's': return value;            // 秒保持不变
+    case 'd': return value * 24 * 60 * 60;
+    case 'h': return value * 60 * 60;
+    case 'm': return value * 60;
+    case 's': return value;
     default: return null;
   }
 }
@@ -234,16 +235,19 @@ const discordCommand = [
         const expirationDate = new Date();
         expirationDate.setSeconds(expirationDate.getSeconds() + expirationDuration);
 
-        // 保存到 TemporaryRole 数据库
-        await TemporaryRole.create({
-          userId,
-          guildId,
-          roles: [{
-            itemName,
-            roleId: role.id,
-            expiresAt: expirationDate,
-          }],
-        });
+        await TemporaryRole.updateOne(
+          { userId, guildId }, 
+          {
+            $push: {
+              roles: { 
+                itemName,
+                roleId: role.id,
+                expiresAt: expirationDate,
+              }
+            }
+          },
+          { upsert: true } 
+        );
 
         await moveRoleBelowBot(role, interaction.guild, interaction.guild.members.me);
 
@@ -283,7 +287,7 @@ async function moveRoleBelowBot(role, guild, botMember) {
     const botRolePosition = botRole.position;
 
     // 检查机器人是否有权限移动身份组
-    if (!botMember.permissions.has('MANAGE_ROLES')) {
+    if (!botMember.permissions.has(PermissionsBitField.Flags.ManageRoles)) {
       console.log('机器人没有 "管理身份组" 权限');
       throw new Error('机器人没有 "管理身份组" 权限');
     }

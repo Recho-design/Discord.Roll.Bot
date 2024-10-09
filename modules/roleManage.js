@@ -38,18 +38,45 @@ function startRoleCleanupTask() {
               } catch (roleError) {
                 console.error(`删除身份组时出错: ${role.roleId}`, roleError);
               }
-            } 
+            }
 
-            // 从数据库中删除该过期角色记录
+            // 从数据库中删除该过期角色记录，若 roles 为空则删除整个 TemporaryRole 条目
             try {
-              // 使用 MongoDB 的 $pull 操作从 roles 数组中移除该角色
+              // 使用 MongoDB 的 $pull 操作从 roles 数组中移除过期角色
               await TemporaryRole.updateOne(
                 { _id: tempRole._id },
                 { $pull: { roles: { roleId: role.roleId } } }
               );
-              console.log(`成功从数据库删除记录: Role ID ${role.roleId}, User ID: ${tempRole.userId}`);
+              console.log(`成功从数据库中移除过期角色: Role ID ${role.roleId}, User ID: ${tempRole.userId}`);
+
+              // 再次查询该条记录，检查 roles 数组是否已为空
+              const updatedTempRole = await TemporaryRole.findOne({ _id: tempRole._id });
+
+              if (updatedTempRole && updatedTempRole.roles.length === 0) {
+                // 如果 roles 数组为空，删除整个记录
+                await TemporaryRole.deleteOne({ _id: tempRole._id });
+                console.log(`由于 roles 数组为空，已删除整个 TemporaryRole 条目: User ID ${tempRole.userId}`);
+              }
+
             } catch (dbError) {
               console.error(`从数据库删除记录时出错: ${role.roleId}`, dbError);
+            }
+
+            // 检查该身份组是否还存在于服务器
+            const discordRoleExists = guild.roles.cache.get(role.roleId);
+            if (!discordRoleExists) {
+              console.log(`身份组 ${role.roleId} 已在服务器 ${tempRole.guildId} 中不存在，准备移除`);
+
+              try {
+                // 使用 MongoDB 的 $pull 操作从 roles 数组中移除无效身份组
+                await TemporaryRole.updateOne(
+                  { _id: tempRole._id },
+                  { $pull: { roles: { roleId: role.roleId } } }
+                );
+                console.log(`成功移除了无效身份组: Role ID ${role.roleId}`);
+              } catch (dbError) {
+                console.error(`移除无效身份组时出错: ${role.roleId}`, dbError);
+              }
             }
           }
         });
@@ -61,6 +88,52 @@ function startRoleCleanupTask() {
   }, 60000);  // 每隔1分钟运行一次
 }
 
+/**
+ * 每隔 24 小时检测并清理数据库中无效的身份组 ID
+ * 无效身份组：在对应的服务器中已不存在的身份组
+ */
+function checkInvalidRoleIdsTask() {
+  // 每隔 24 小时（86400000 毫秒）执行一次
+  setInterval(async () => {
+    try {
+      console.log("开始检测无效身份组 ID...");
+
+      // 查询所有 TemporaryRole 记录
+      const allRoles = await TemporaryRole.find({});
+      allRoles.forEach(async (tempRole) => {
+        tempRole.roles.forEach(async (role) => {
+
+          // 检查该 roleId 是否存在于对应的 Discord 服务器
+          const guild = client.guilds.cache.get(tempRole.guildId);
+          if (!guild) {
+            console.log(`无法找到服务器: ${tempRole.guildId}`);
+            return;
+          }
+
+          const discordRole = guild.roles.cache.get(role.roleId);
+          if (!discordRole) {
+            console.log(`检测到无效身份组: Role ID ${role.roleId}，将在数据库中移除`);
+
+            // 使用 MongoDB 的 $pull 操作从 roles 数组中移除无效的角色
+            try {
+              await TemporaryRole.updateOne(
+                { _id: tempRole._id },
+                { $pull: { roles: { roleId: role.roleId } } }
+              );
+              console.log(`成功移除无效身份组: Role ID ${role.roleId}, User ID: ${tempRole.userId}`);
+
+            } catch (dbError) {
+              console.error(`从数据库移除无效身份组时出错: ${role.roleId}`, dbError);
+            }
+          }
+        });
+      });
+
+    } catch (error) {
+      console.error('检测无效身份组 ID 时发生错误:', error);
+    }
+  }, 86430000);  // 每隔 24 小时运行一次，岔开时间
+}
 
 // 正则表达式：匹配 "You have bought [数量] [itemname]"，并支持 itemname 后的换行和其他字符
 const purchaseRegex = /You have bought (\d+) ([\s\S]+?)(?=\s*!|\s*\n|$)/;
@@ -158,4 +231,5 @@ async function updateTemporaryRoleStock(userId, guildId, itemName, usedCount) {
 module.exports = {
   startRoleCleanupTask,
   monitorBotMessages,
+  checkInvalidRoleIdsTask,
 };

@@ -26,7 +26,7 @@ const { handlingInteractionMessage } = require('./interaction');
 const { handleModalInteraction } = require('./mod-modal');
 const { handleSelectMenuInteraction } = require('./mod-select');
 
-const { startRoleCleanupTask,monitorBotMessages } = require('./roleManage.js');//临时身份组
+const { startRoleCleanupTask,monitorBotMessages,checkInvalidRoleIdsTask } = require('./roleManage.js');//临时身份组
 
 const checkMongodb = require("../modules/dbWatchdog.js");
 const fs = require("node:fs");
@@ -192,6 +192,7 @@ client.once("ready", async () => {
   //临时身份组处理
   startRoleCleanupTask(client);
   monitorBotMessages();
+  checkInvalidRoleIdsTask(client);
 });
 
 //inviteDelete
