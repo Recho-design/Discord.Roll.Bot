@@ -1,29 +1,25 @@
 const schema = require("./schema.js");
 
 const isFilteredCountChannel = async (groupid, channelId, message) => {
-  // 1. 在数据库中查找该群组的过滤信息
   let filtered = await schema.filteredChannels.findOne({
     groupid,
     $or: [
-      { "categories.channels.channelid": channelId }, // 查找子频道
-      { "categories.channels.threads.threadid": channelId }, // 查找子区
+      { "categories.channels.channelid": channelId },
+      { "categories.channels.threads.threadid": channelId },
     ],
   });
 
-  // 2. 如果找到了过滤信息，进一步检查
   if (filtered) {
-    // 检查子频道
     const category = filtered.categories.find((cat) =>
       cat.channels.some((ch) => ch.channelid === channelId)
     );
     if (category) {
       const channel = category.channels.find((ch) => ch.channelid === channelId);
       if (channel && channel.isFiltered) {
-        return true; // 该子频道已被过滤
+        return true;
       }
     }
 
-    // 检查子区
     const categoryWithThread = filtered.categories.find((cat) =>
       cat.channels.some((ch) =>
         ch.threads.some((th) => th.threadid === channelId)
@@ -37,26 +33,64 @@ const isFilteredCountChannel = async (groupid, channelId, message) => {
         (th) => th.threadid === channelId
       );
       if (thread && thread.isFiltered) {
-        return true; // 该子区已被过滤
+        return true;
       }
     }
   }
 
-  // 3. 过滤消息内容（表情和单个中文字）
 
-  // 正则表达式：只允许一个表情或者一个中文字
   const emojiRegex = /^<:\w+:\d+>$|^[\p{Emoji}]$/u;
   const singleChineseCharRegex = /^[\u4e00-\u9fff]$/;
 
   if (emojiRegex.test(message.content) || singleChineseCharRegex.test(message.content)) {
-    return true; // 消息只包含表情或单个中文字，过滤掉
+    return true;
   }
 
-  // 4. 如果没有找到任何过滤信息，返回 false
   return false;
 };
 
 
+const filterThreadIfNeeded = async (thread) => {
+  try {
+    const parentChannelId = thread.parentId;
+    const threadId = thread.id;
+    const guildId = thread.guildId;
+
+    const filteredData = await schema.filteredChannels.findOne({
+      groupid: guildId,
+      'categories.channels.channelid': parentChannelId,
+      'categories.channels.isFiltered': true,
+    });
+
+    if (filteredData) {
+      const category = filteredData.categories.find(cat =>
+        cat.channels.some(chan => chan.channelid === parentChannelId)
+      );
+
+      if (category) {
+        const channel = category.channels.find(chan => chan.channelid === parentChannelId);
+
+        const existingThread = channel.threads.find(thr => thr.threadid === threadId);
+
+        if (!existingThread) {
+          channel.threads.push({
+            threadid: threadId,
+            isFiltered: true,
+          });
+
+          await filteredData.save();
+          console.log(`子线程 ${threadId} 已被添加到过滤列表中。`);
+        } else {
+          console.log(`子线程 ${threadId} 已经存在于过滤列表中。`);
+        }
+      }
+    }
+  } catch (error) {
+    console.error("filterThreadIfNeeded 发生错误: ", error);
+  }
+};
+
 module.exports = {
   isFilteredCountChannel,
+  filterThreadIfNeeded
 };

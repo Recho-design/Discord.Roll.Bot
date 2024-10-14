@@ -26,7 +26,8 @@ const { handlingInteractionMessage } = require('./interaction');
 const { handleModalInteraction } = require('./mod-modal');
 const { handleSelectMenuInteraction } = require('./mod-select');
 
-const { startRoleCleanupTask,monitorBotMessages,checkInvalidRoleIdsTask } = require('./roleManage.js');//临时身份组
+const { startRoleCleanupTask,monitorBotMessages,checkInvalidRoleIdsTask } = require('./roleManage.js');
+const { filterThreadIfNeeded } = require('./channelFilter');
 
 const checkMongodb = require("../modules/dbWatchdog.js");
 const fs = require("node:fs");
@@ -92,6 +93,18 @@ client.on("guildCreate", async (guild) => {
       error && error.message,
       error && error.reson
     );
+  }
+});
+
+// 监听子线程创建来自动加入过滤列表
+client.on('threadCreate', async (thread) => {
+  try {
+    console.log(`检测到新线程创建: ${thread.name} (父频道ID: ${thread.parentId})`);
+
+    await filterThreadIfNeeded(thread);
+
+  } catch (error) {
+    console.error("threadCreate 事件处理错误: ", error);
   }
 });
 
