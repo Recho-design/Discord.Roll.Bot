@@ -176,30 +176,38 @@ const discordCommand = [
 
     async execute(interaction) {
       try {
+        // 获取斜杠命令的参数
         const roleName = interaction.options.getString('role_name');
         const roleColor = interaction.options.getString('color');
         const iconInput = interaction.options.getString('icon');
-        const itemName = interaction.options.getString('item');  // 获取物品名称
+        const itemName = interaction.options.getString('item');
         const userId = interaction.user.id;
         const guildId = interaction.guild.id;
 
-        await interaction.deferReply({ ephemeral: true });
+        console.log(`Received command with parameters: role_name=${roleName}, color=${roleColor}, item=${itemName}, icon=${iconInput}`);
 
-        // 查询 ItemList 中选择的物品
+        await interaction.deferReply({ ephemeral: true });
+        console.log("Reply deferred, now processing...");
+
+        // 查询物品列表
         const item = await ItemList.findOne({ itemName });
         if (!item) {
+          console.log(`Item not found: ${itemName}`);
           await interaction.editReply({ content: '选择的物品不存在。' });
           return;
         }
+        console.log(`Found item: ${itemName}, with range: ${item.range}`);
 
-        // 解析 item 中的 range 为秒数
+        // 解析物品中的 range 为秒数
         const expirationDuration = parseExpirationRange(item.range);
         if (!expirationDuration) {
+          console.log(`Invalid range format for item: ${itemName}`);
           await interaction.editReply({ content: '该物品的范围格式不正确。' });
           return;
         }
+        console.log(`Parsed expiration duration: ${expirationDuration} seconds`);
 
-        // 查询 TemporaryRoleStock 中的用户库存
+        // 查询用户的库存
         const stockRecord = await TemporaryRoleStock.findOne({
           userId,
           guildId,
@@ -207,60 +215,72 @@ const discordCommand = [
         });
 
         if (!stockRecord || !stockRecord.stocks || stockRecord.stocks.length === 0) {
+          console.log(`No stock found for user: ${userId}, guild: ${guildId}`);
           await interaction.editReply({ content: '你没有足够的库存。' });
           return;
         }
 
         const stockItem = stockRecord.stocks.find(stock => stock.itemName === itemName);
         if (!stockItem || stockItem.stockCount <= 0) {
+          console.log(`Not enough stock for item: ${itemName}`);
           await interaction.editReply({ content: `你没有足够的 ${itemName} 库存。` });
           return;
         }
+        console.log(`Stock available for item: ${itemName}, count: ${stockItem.stockCount}`);
 
+        // 解析图标
         let parsedIcon = null;
         if (iconInput) {
           parsedIcon = parseIcon(iconInput);
           if (!parsedIcon) {
-            await interaction.editReply({
-              content: '无效的图标，请输入标准 Emoji 或自定义表情。',
-            });
+            console.log(`Invalid icon input: ${iconInput}`);
+            await interaction.editReply({ content: '无效的图标，请输入标准 Emoji 或自定义表情。' });
             return;
           }
         }
+        console.log(`Parsed icon: ${parsedIcon}`);
 
         // 添加身份组
         const role = await addRoleToUser(interaction.guild, interaction.member, roleName, roleColor, parsedIcon);
+        console.log(`Role added: ${roleName} with id: ${role.id}`);
 
         // 设置身份组的过期时间
         const expirationDate = new Date();
         expirationDate.setSeconds(expirationDate.getSeconds() + expirationDuration);
+        console.log(`Role expiration date set to: ${expirationDate}`);
 
+        // 更新 TemporaryRole 数据库
         await TemporaryRole.updateOne(
-          { userId, guildId }, 
+          { userId, guildId },
           {
             $push: {
-              roles: { 
+              roles: {
                 itemName,
                 roleId: role.id,
                 expiresAt: expirationDate,
               }
             }
           },
-          { upsert: true } 
+          { upsert: true }
         );
+        console.log(`Temporary role record updated for user: ${userId}`);
 
+        // 确保身份组在机器人的身份组下方
         await moveRoleBelowBot(role, interaction.guild, interaction.guild.members.me);
+        console.log(`Role moved below bot role: ${roleName}`);
 
         const formattedExpiration = expirationDate.toLocaleString();
 
         // 回复用户
         await interaction.editReply({
-          content: `成功为你添加了身份组：${roleName}，颜色：${roleColor}，物品：${itemName}，过期时间：${formattedExpiration}。剩余库存：${stockItem.stockCount - 1}`,
+          content: `成功为你添加了身份组：${roleName}，颜色：${roleColor}，物品：${itemName}，图标：${parsedIcon}，过期时间：${formattedExpiration}。剩余库存：${stockItem.stockCount - 1}`,
         });
+        console.log(`Reply sent to user with success message`);
 
         // 更新库存
         stockItem.stockCount -= 1;
         await stockRecord.save();
+        console.log(`Stock updated for item: ${itemName}, new count: ${stockItem.stockCount}`);
 
       } catch (error) {
         console.error('Error in addrole command:', error);
@@ -273,6 +293,23 @@ const discordCommand = [
     },
   }
 ];
+
+// 工具 - 解析图标
+function parseIcon(input) {
+  // 匹配标准 Emoji 或自定义表情
+  const customEmojiRegex = /^<:\w+:\d+>$/; // 匹配自定义表情格式 <name:id>
+
+  if (customEmojiRegex.test(input)) {
+    return input;  // 输入是自定义表情
+  }
+
+  // 使用 Discord.js 内置的 Emoji 检查
+  if (/^[\u{1F600}-\u{1F64F}]$/u.test(input)) {
+    return input;  // 输入是标准 Emoji
+  }
+
+  return null;  // 如果输入既不是标准 Emoji 也不是自定义表情，则返回 null
+}
 
 /**
  * 将临时身份组移动到机器人身份组下面
@@ -306,17 +343,48 @@ async function moveRoleBelowBot(role, guild, botMember) {
  * @param {GuildMember} member - 用户对象
  * @param {String} roleName - 角色名称
  * @param {String} roleColor - 角色颜色
+ * @param {String|null} icon - 角色图标（标准 Emoji 或自定义表情）
  * @returns {Role} - 创建的角色对象
  */
-async function addRoleToUser(guild, member, roleName, roleColor) {
+async function addRoleToUser(guild, member, roleName, roleColor, icon = null) {
   try {
-    // 在服务器中创建一个新角色
-    const role = await guild.roles.create({
+    // 创建角色的选项对象
+    const roleOptions = {
       name: roleName,
       color: roleColor,
       permissions: [PermissionsBitField.Flags.SendMessages, PermissionsBitField.Flags.ViewChannel],
       reason: `用户 ${member.user.username} 创建了一个临时身份组`,
-    });
+    };
+
+    // 如果存在图标，判断是标准 Emoji 还是自定义表情
+    if (icon) {
+      // 自定义表情格式通常是 `<:name:id>`，需要将其转换为 Discord 的图片 URL
+      const customEmojiRegex = /^<:\w+:(\d+)>$/;
+      const emojiMatch = icon.match(customEmojiRegex);
+
+      if (emojiMatch) {
+        // 如果是自定义表情，提取表情 ID 并从缓存中获取表情对象
+        const emojiId = emojiMatch[1];
+        const emoji = guild.emojis.cache.get(emojiId);
+
+        if (emoji) {
+          // 判断表情是否为动画表情，并设置相应的 URL 扩展名
+          const emojiUrl = emoji.animated
+            ? `https://cdn.discordapp.com/emojis/${emojiId}.gif`
+            : `https://cdn.discordapp.com/emojis/${emojiId}.png`;
+
+          roleOptions.icon = emojiUrl;
+        } else {
+          throw new Error('无法找到自定义表情对象');
+        }
+      } else {
+        // 如果是标准 Emoji，直接使用
+        roleOptions.unicodeEmoji = icon;
+      }
+    }
+
+    // 在服务器中创建一个新角色
+    const role = await guild.roles.create(roleOptions);
 
     // 将该角色添加给用户
     await member.roles.add(role);

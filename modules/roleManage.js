@@ -85,7 +85,7 @@ function startRoleCleanupTask() {
     } catch (error) {
       console.error('角色清理任务中发生错误:', error);
     }
-  }, 60000);  // 每隔1分钟运行一次
+  }, 600000);  // 每隔10分钟运行一次
 }
 
 /**
